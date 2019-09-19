@@ -1,0 +1,1700 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="vers">1001</string>
+
+    <!--Clmp 模座-->
+    <string name="0000073E">开模行程</string>
+    <string name="00000480">关模一段压力</string>
+    <string name="00000481">关模一段速度</string>
+    <string name="00000482">关模一段终止位置</string>
+    <string name="00000483">关模二段压力</string>
+    <string name="00000484">关模二段速度</string>
+    <string name="00000485">关模二段终止位置</string>
+    <string name="00000486">关模三段压力</string>
+    <string name="00000487">关模三段速度</string>
+    <string name="00000488">关模三段终止位置</string>
+    <string name="00000489">关模低压压力</string>
+    <string name="0000048A">关模低压速度</string>
+    <string name="0000048B">关模低压终止位置</string>
+    <string name="0000048C">关模高压压力</string>
+    <string name="0000048D">关模高压速度</string>
+    <string name="00000730">开模一段压力</string>
+    <string name="00000731">开模一段速度</string>
+    <string name="00000732">开模一段终止位置</string>
+    <string name="00000733">开模二段压力</string>
+    <string name="00000734">开模二段速度</string>
+    <string name="00000735">开模二段终止位置</string>
+    <string name="00000736">开模三段压力</string>
+    <string name="00000737">开模三段速度</string>
+    <string name="00000738">开模三段终止位置</string>
+    <string name="00000739">开模四段压力</string>
+    <string name="0000073A">开模四段速度</string>
+    <string name="0000073B">开模四段终止位置</string>
+    <string name="0000073C">开模五段压力</string>
+    <string name="0000073D">开模五段速度</string>
+    
+    <string name="300FC21E">开模行程</string>
+    <string name="30090A00">防过冲</string>
+    <string name="300FC50A">智能关模</string>
+    <string name="300FC306">关模一段压力</string>
+    <string name="300FC303">关模一段速度</string>
+    <string name="300FC302">关模一段终止位置</string>
+    <string name="300FC30D">关模二段压力</string>
+    <string name="300FC30A">关模二段速度</string>
+    <string name="300FC309">关模二段终止位置</string>
+    <string name="300FC314">关模三段压力</string>
+    <string name="300FC311">关模三段速度</string>
+    <string name="300FC310">关模三段终止位置</string>
+    <string name="300FC31B">关模低压压力</string>
+    <string name="300FC318">关模低压速度</string>
+    <string name="300FC317">关模低压终止位置</string>
+    <string name="300FC322">关模高压压力</string>
+    <string name="300FC31F">关模高压速度</string>
+    <string name="300FC409">智能开模</string>
+    <string name="300FC206">开模一段压力</string>
+    <string name="300FC203">开模一段速度</string>
+    <string name="300FC202">开模一段终止位置</string>
+    <string name="300FC20D">开模二段压力</string>
+    <string name="300FC20A">开模二段速度</string>
+    <string name="300FC209">开模二段终止位置</string>
+    <string name="300FC214">开模三段压力</string>
+    <string name="300FC211">开模三段速度</string>
+    <string name="300FC210">开模三段终止位置</string>
+    <string name="300FC21B">开模四段压力</string>
+    <string name="300FC218">开模四段速度</string>
+    <string name="300FC217">开模四段终止位置</string>
+    <string name="300FC222">开模五段压力</string>
+    <string name="300FC21F">开模五段速度</string>
+   
+    <!--ClmpF 模座功能-->
+    <string name="000186DD">关模段数</string>
+    <string name="000186DE">开模段数</string>
+    <string name="000006F4">再循环计时</string>
+    <string name="0000048F">差动合模</string>
+    <string name="00000743">开模连动</string>
+    <string name="00000744">开模连动位置</string>
+    <string name="00018853">开关模控制方式</string>
+    <string name="00000741">开模泄压压力</string>
+    <string name="00000742">开模泄压速度</string>
+    <string name="0000020E">开模泄压计时</string>
+    <string name="00000497">压缩射出位置</string>
+    <string name="000006D6">压射转压模位置</string>
+    
+    <string name="10000202">关模段数</string>
+    <string name="10000201">开模段数</string>
+    
+    <string name="0000073F">开模快速</string>
+    <string name="0000049A">低压注射</string>
+    <string name="00000499">压缩不暂停压模</string>
+    <string name="00000496">锁模力使用</string>
+    <string name="00000490">关模快速</string>
+    <string name="000006D9">转压模时间</string>
+    <string name="000006D7">压缩不暂停射出</string>
+    <string name="00000495">锁模吨位</string>
+   
+    <!--ClmpP1 模座参一-->
+    <string name="00000070">关模一段压力Ramp</string>
+    <string name="00000071">关模一段速度Ramp</string>
+    <string name="00000072">关模二段压力Ramp</string>
+    <string name="00000073">关模二段速度Ramp</string>
+    <string name="00000074">关模三段压力Ramp</string>
+    <string name="00000075">关模三段速度Ramp</string>
+    <string name="00000076">关模低压压力Ramp</string>
+    <string name="00000077">关模低压速度Ramp</string>
+    <string name="00000078">关模高压压力Ramp</string>
+    <string name="00000079">关模高压速度Ramp</string>
+    <string name="0000007E">关模初Ramp最大计时</string>
+    <string name="0000007A">关模终压力Ramp</string>
+    <string name="0000007B">关模止流量Ramp</string>
+    <string name="0000007C">关模装模压力</string>
+    <string name="0000007D">关模装模速度</string>
+    
+    <string name="00000208">开模五段压力Ramp</string>
+    <string name="00000209">开模五段速度Ramp</string>
+    <string name="00000206">开模四段压力Ramp</string>
+    <string name="00000207">开模四段速度Ramp</string>
+    <string name="00000204">开模三段压力Ramp</string>
+    <string name="00000205">开模三段速度Ramp</string>
+    <string name="00000202">开模二段压力Ramp</string>
+    <string name="00000203">开模二段速度Ramp</string>
+    <string name="00000200">开模一段压力Ramp</string>
+    <string name="00000201">开模一段速度Ramp</string>
+    <string name="0000020A">开模止压力Ramp</string>
+    <string name="0000020B">开模止流量Ramp</string>
+    <string name="0000020C">开模装模压力</string>
+    <string name="0000020D">开模装模速度</string>
+    
+    <string name="00000089">关模差动阀延迟开计时</string>
+    <string name="00000088">关模差动阀延迟关计时</string>
+    <string name="0000007F">关模低压延迟进计时</string>
+    <string name="00000080">关模低压阀延迟计时</string>
+    <string name="00000018">自调模关模低压计时</string>
+    <string name="00000081">关模高压延迟进计时</string>
+    <string name="00000084">关模高压保持计时</string>
+    <string name="00000085">关模高压阀延迟计时</string>
+    <string name="00000090">关模开始比例阀延迟</string>
+    <string name="00000086">关模完阀延迟切计时</string>
+    <string name="00000087">关模完延迟计时</string>
+    
+    <string name="0000020F">开模一慢低压阀延迟送</string>
+    <string name="00000211">开模完延迟切阀计时</string>
+    <string name="00000212">开模完延迟计时</string>
+    <string name="00000215">开模开始比例阀延迟</string>
+    <string name="000000D7">开模位置有效区</string>
+    
+    <string name="300FC307">关模一段压力Ramp</string>
+    <string name="300FC304">关模一段速度上升ramp</string>
+    <string name="300FC305">关模一段速度下降ramp</string>
+    <string name="300FC30E">关模二段压力Ramp</string>
+    <string name="300FC30B">关模二段速度上升ramp</string>
+    <string name="300FC30C">关模二段速度下降ramp</string>
+    <string name="300FC315">关模三段压力Ramp</string>
+    <string name="300FC312">关模三段速度上升ramp</string>
+    <string name="300FC313">关模三段速度下降ramp</string>
+    <string name="300FC31C">关模低压压力Ramp</string>
+    <string name="300FC319">关模低压速度上升ramp</string>
+    <string name="300FC31A">关模低压速度下降ramp</string>
+    <string name="300FC323">关模高压压力Ramp</string>
+    <string name="300FC320">关模高压速度上升ramp</string>
+    <string name="300FC321">关模高压速度下降ramp</string>
+    <string name="300FC104">关模装模压力</string>
+    <string name="300FC105">关模装模压力Ramp</string>
+    <string name="300FC101">关模装模速度</string>
+    <string name="300FC102">关模装模速度Ramp</string>
+    
+    <string name="300FC207">开模一段压力Ramp</string>
+    <string name="300FC204">开模一段速度上升ramp</string>
+    <string name="300FC205">开模一段速度下降ramp</string>
+    <string name="300FC20E">开模二段压力Ramp</string>
+    <string name="300FC20B">开模二段速度上升ramp</string>
+    <string name="300FC20C">开模二段速度下降ramp</string>
+    <string name="300FC215">开模三段压力Ramp</string>
+    <string name="300FC212">开模三段速度上升ramp</string>
+    <string name="300FC213">开模三段速度下降ramp</string>
+    <string name="300FC21C">开模四段压力Ramp</string>
+    <string name="300FC219">开模四段速度上升ramp</string>
+    <string name="300FC21A">开模四段速度下降ramp</string>
+    <string name="300FC223">开模五段压力Ramp</string>
+    <string name="300FC220">开模五段速度上升ramp</string>
+    <string name="300FC221">开模五段速度下降ramp</string>
+    <string name="300FC004">开模装模压力</string>
+    <string name="300FC005">开模装模压力Ramp</string>
+    <string name="300FC001">开模装模速度</string>
+    <string name="300FC002">开模装模速度Ramp</string>
+    
+    <string name="00000095">中途关模Ramp</string>
+    <string name="0000021E">中途开模Ramp</string>
+ 
+    <!--ClmpP2 模座参二-->
+    <string name="300FC504">关模起始压力</string>
+    <string name="300FC505">关模起始速度</string>
+    <string name="300FC508">关模起始位置</string>
+    <string name="300FC507">关模启动加速度</string>
+    <string name="300FC506">关模启动压力Ramp</string>
+    
+    <string name="300FC404">开模起始压力</string>
+    <string name="300FC405">开模起始速度</string>
+    <string name="300FC408">开模起始位置</string>
+    <string name="300FC407">开模启动加速度</string>
+    <string name="300FC406">开模启动压力Ramp</string>
+    
+    <string name="00000093">中途关模压力</string>
+    <string name="00000094">中途关模流量</string>
+    <string name="0000049B">高压锁模流量2</string>
+    <string name="00000097">关模终保压计时</string>
+    <string name="0000008A">机器吨数</string>
+    <string name="0000008D">锁模监控上限（TON）</string>
+    <string name="0000008E">锁模监控下限（TON）</string>
+    <string name="0000008F">锁模安全上限（TON）</string>
+    <string name="0000008C">调模吨数一</string>
+    <string name="00000092">调模吨数二</string>
+    <string name="0000021C">中途开模压力</string>
+    <string name="0000021D">中途开模流量</string>
+    <string name="00000217">开模终提前底压</string>
+    <string name="00000218">开模终提前底流</string>
+    <string name="00000210">开模二慢压力延迟时间</string>
+    <string name="00000213">连动阀延迟开计时</string>
+    <string name="00000216">开模终提前距离一</string>
+    <string name="0000021A">开模终提前距离二</string>
+        
+    <!--ClmpSP 模座特参-->
+    <!--<string name="000186FA">压缩射出使用选择</string>-->
+    <!--<string name="000187F6">开关模压力上限</string>-->
+    <!--<string name="000187F7">开关模速度上限</string>-->
+    
+    <string name="00031186">开关模压力上限</string>
+    <string name="000186F8">低压注射</string>
+    <string name="000187F4">开关模快速压力上限</string>
+    <string name="000187EE">关模低压压力上限</string>
+    <string name="000187F1">高压锁模流量上限</string>
+    <string name="000187F8">开模一慢位置上限</string>
+    <string name="000186FB">锁模力显示保持</string>
+    <string name="00000096">关模流量系数</string>
+    <string name="000186F2">开关模快速</string>
+    <string name="000187F5">开关模快速流量上限</string>
+    <string name="000187EF">关模低压流量上限</string>
+    <string name="000187F6">开模一慢压力上限</string>
+    <string name="000187F7">开模一慢流量上限</string>
+    <string name="000186FA">锁模力</string>
+    <string name="00000214">开模流量系数</string>
+    
+    <!--ClmpC 模座调机-->
+    <string name="30094600">快速开关模压控KP</string>
+    <string name="30094700">快速开关模压控KI</string>
+    <string name="300FC401">开模位置控制KP</string>
+    <string name="300FC402">开模位置控制KI</string>
+    <string name="300FC40F">开模尾段速度</string>
+    <string name="300FC513">关模尾段速度</string>
+    <string name="300FC501">关模位置控制KP</string>
+    <string name="300FC502">关模位置控制KI</string>
+    <string name="30091000">停止减速度</string>
+    
+    <string name="300A0100">最小限制位置</string>
+    <string name="300A0200">最大限制位置</string>
+    <string name="30089600">模座位置来源类型</string>
+    <string name="30089700">模座位置来源通道</string>
+    <string name="3008A400">模座位置反馈反向</string>
+    <string name="3008A900">模座位置计算系数</string>
+    
+    <!--Inje 射出-->
+    <string name="00000690">射出一段压力</string>
+    <string name="00000691">射出一段速度</string>
+    <string name="00000694">射出一段终止位置</string>
+    <string name="00000696">射出二段压力</string>
+    <string name="00000697">射出二段速度</string>
+    <string name="0000069A">射出二段终止位置</string>
+    <string name="0000069C">射出三段压力</string>
+    <string name="0000069D">射出三段速度</string>
+    <string name="000006A0">射出三段终止位置</string>
+    <string name="000006A2">射出四段压力</string>
+    <string name="000006A3">射出四段速度</string>
+    <string name="000006A6">射出四段终止位置</string>
+    <string name="000006A8">射出五段压力</string>
+    <string name="000006A9">射出五段速度</string>
+    <string name="000006AC">射出五段终止位置</string>
+    <string name="000006AE">射出六段压力</string>
+    <string name="000006AF">射出六段速度</string>
+    <string name="0000067A">转保压方式</string>
+    <string name="00000678">转保压压力</string>
+    <string name="00000679">转保压位置</string>
+    <string name="00000692">转保压时间</string>
+    <string name="00000650">保压一段压力</string>
+    <string name="00000651">保压一段速度</string>
+    <string name="00000652">保压一段时间</string>
+    <string name="00000654">保压二段压力</string>
+    <string name="00000655">保压二段速度</string>
+    <string name="00000656">保压二段时间</string>
+    <string name="00000658">保压三段压力</string>
+    <string name="00000659">保压三段速度</string>
+    <string name="0000065A">保压三段时间</string>
+    <string name="0000065C">保压四段压力</string>
+    <string name="0000065D">保压四段速度</string>
+    <string name="0000065E">保压四段时间</string>
+    <string name="00000660">保压五段压力</string>
+    <string name="00000661">保压五段速度</string>
+    <string name="00000662">保压五段时间</string>
+    <string name="00000664">保压六段压力</string>
+    <string name="00000665">保压六段速度</string>
+    <string name="00000666">保压六段时间</string>
+    <string name="000006DA">射出安全压力</string>
+   
+    <!--Val 阀门-->
+    <string name="00003800">阀门一功能选择</string>
+    <string name="00003801">阀门一射出开时间</string>
+    <string name="00003802">阀门一射出关时间</string>
+    <string name="00003803">阀门一射出开位置</string>
+    <string name="00003804">阀门一射出关位置</string>
+    <string name="0000380F">阀门一保压开时间</string>
+    <string name="00003810">阀门一保压关时间</string>
+    <string name="00003811">阀门二功能选择</string>
+    <string name="00003812">阀门二射出开时间</string>
+    <string name="00003813">阀门二射出关时间</string>
+    <string name="00003814">阀门二射出开位置</string>
+    <string name="00003815">阀门二射出关位置</string>
+    <string name="00003820">阀门二保压开时间</string>
+    <string name="00003821">阀门二保压关时间</string>
+    <string name="00003822">阀门三功能选择</string>
+    <string name="00003823">阀门三射出开时间</string>
+    <string name="00003824">阀门三射出关时间</string>
+    <string name="00003825">阀门三射出开位置</string>
+    <string name="00003826">阀门三射出关位置</string>
+    <string name="00003831">阀门三保压开时间</string>
+    <string name="00003832">阀门三保压关时间</string>
+    <string name="00003833">阀门四功能选择</string>
+    <string name="00003834">阀门四射出开时间</string>
+    <string name="00003835">阀门四射出关时间</string>
+    <string name="00003836">阀门四射出开位置</string>
+    <string name="00003837">阀门四射出关位置</string>
+    <string name="00003842">阀门四保压开时间</string>
+    <string name="00003843">阀门四保压关时间</string>
+    <string name="00003844">阀门五功能选择</string>
+    <string name="00003845">阀门五射出开时间</string>
+    <string name="00003846">阀门五射出关时间</string>
+    <string name="00003847">阀门五射出开位置</string>
+    <string name="00003848">阀门五射出关位置</string>
+    <string name="00003853">阀门五保压开时间</string>
+    <string name="00003854">阀门五保压关时间</string>
+    <string name="00003855">阀门六功能选择</string>
+    <string name="00003856">阀门六射出开时间</string>
+    <string name="00003857">阀门六射出关时间</string>
+    <string name="00003858">阀门六射出开位置</string>
+    <string name="00003859">阀门六射出关位置</string>
+    <string name="00003864">阀门六保压开时间</string>
+    <string name="00003865">阀门六保压关时间</string>
+    <string name="00003866">阀门七功能选择</string>
+    <string name="00003867">阀门七射出开时间</string>
+    <string name="00003868">阀门七射出关时间</string>
+    <string name="00003869">阀门七射出开位置</string>
+    <string name="0000386A">阀门七射出关位置</string>
+    <string name="00003875">阀门七保压开时间</string>
+    <string name="00003876">阀门七保压关时间</string>
+    <string name="00003877">阀门八功能选择</string>
+    <string name="00003878">阀门八射出开时间</string>
+    <string name="00003879">阀门八射出关时间</string>
+    <string name="0000387A">阀门八射出开位置</string>
+    <string name="0000387B">阀门八射出关位置</string>
+    <string name="00003886">阀门八保压开时间</string>
+    <string name="00003887">阀门八保压关时间</string>
+    <string name="00003888">阀门九功能选择</string>
+    <string name="00003889">阀门九射出开时间</string>
+    <string name="0000388A">阀门九射出关时间</string>
+    <string name="0000388B">阀门九射出开位置</string>
+    <string name="0000388C">阀门九射出关位置</string>
+    <string name="00003897">阀门九保压开时间</string>
+    <string name="00003898">阀门九保压关时间</string>
+    <string name="00003899">阀门十功能选择</string>
+    <string name="0000389A">阀门十射出开时间</string>
+    <string name="0000389B">阀门十射出关时间</string>
+    <string name="0000389C">阀门十射出开位置</string>
+    <string name="0000389D">阀门十射出关位置</string>
+    <string name="000038A8">阀门十保压开时间</string>
+    <string name="000038A9">阀门十保压关时间</string>
+    <string name="000038AA">阀门十一功能选择</string>
+    <string name="000038AB">阀门十一射出开时间</string>
+    <string name="000038AC">阀门十一射出关时间</string>
+    <string name="000038AD">阀门十一射出开位置</string>
+    <string name="000038AE">阀门十一射出关位置</string>
+    <string name="000038B9">阀门十一保压开时间</string>
+    <string name="000038BA">阀门十一保压关时间</string>
+    <string name="000038BB">阀门十二功能选择</string>
+    <string name="000038BC">阀门十二射出开时间</string>
+    <string name="000038BD">阀门十二射出关时间</string>
+    <string name="000038BE">阀门十二射出开位置</string>
+    <string name="000038BF">阀门十二射出关位置</string>
+    <string name="000038CA">阀门十二保压开时间</string>
+    <string name="000038CB">阀门十二保压关时间</string>
+
+    <string name="0000068F">阀门动力模式选择</string>
+    <string name="00003B35">阀门压力</string>
+    <string name="00003B36">阀门速度</string>
+    <string name="00031181">全部阀门手动强制输出</string>
+    <string name="00031182">阀门手动强制输出时间</string>
+    
+    <!--InjeF 射出功能-->
+    <string name="000186DF">射出段数</string>
+    <string name="000186E0">保压段数</string>
+    <string name="000006CE">射出增速功能</string>
+    <string name="000006D0">射出快速功能</string>
+    <string name="00000008">射出放能流量</string>
+    <string name="000005C2">气体辅助选择</string>
+    <string name="000005C5">气辅动作位置</string>
+    <string name="000005C1">气体射胶计时</string>
+    <string name="000006D1">座进前射出计时</string>
+    <string name="000006D2">座进前射出距离</string>
+    <string name="0000067C">保压解压功能</string>
+    <string name="000005DF">流体射出</string>
+
+    <!--InjeF_bake 排气-->
+    <string name="00000440">脱气前延迟</string>
+    <string name="00000441">脱气后延迟</string>
+    <string name="00000446">射出后开模位置</string>
+    <string name="00000447">保压一开模位置</string>
+    <string name="00000448">保压二开模位置</string>
+    <string name="00000449">保压后开模位置</string>
+    
+    <!--InjeF_Shut 喷嘴-->
+    <string name="00000770">喷嘴功能</string>
+    <string name="00000266">喷嘴开控制方式</string>
+    <string name="00000261">喷嘴开压力</string>
+    <string name="00000262">喷嘴开速度</string>
+    <string name="00000260">喷嘴开动作计时</string>
+    <string name="00000267">喷嘴开保持计时</string>
+    <string name="00000264">喷嘴关控制方式</string>
+    <string name="00000263">喷嘴关动作计时</string>
+    <string name="00000265">喷嘴关保持计时</string>
+    
+    <!--InjeP 射出参数-->
+    <string name="00000160">射出一段压力Ramp</string>
+    <string name="00000161">射出一段速度Ramp</string>
+    <string name="00000162">射出二段压力Ramp</string>
+    <string name="00000163">射出二段速度Ramp</string>
+    <string name="00000164">射出三段压力Ramp</string>
+    <string name="00000165">射出三段速度Ramp</string>
+    <string name="00000166">射出四段压力Ramp</string>
+    <string name="00000167">射出四段速度Ramp</string>
+    <string name="00000168">射出五段压力Ramp</string>
+    <string name="00000169">射出五段速度Ramp</string>
+    <string name="0000016A">射出六段压力Ramp</string>
+    <string name="0000016B">射出六段速度Ramp</string>
+    <string name="00000174">射出终压力Ramp Down</string>
+    <string name="00000175">射出终速度Ramp Down</string>
+    <string name="00000176">射出装模压力</string>
+    <string name="00000177">射出装模速度</string>
+    <string name="00018826">速度最大值</string>
+    <string name="00000002">储能压力</string>
+    <string name="00000003">储能速度</string>
+    <string name="00000178">射出延迟计时</string>
+    <string name="00000179">射出完阀延迟切计时</string>
+    <string name="00000004">射出增速延迟计时</string>
+    <string name="0000017A">自动射出完延迟计时</string>
+    <string name="0000017F">保压泄压计时</string>
+    <string name="00000009">射出放能流量关Ramp</string>
+    <string name="0000000A">射出放能流量Ramp</string>
+    <string name="00000000">射出储能压力Ramp</string>
+    <string name="00000001">射出储能流量Ramp</string>
+    <string name="0000011E">阀门压力Ramp</string>
+    <string name="0000011F">阀门流量Ramp</string>
+    
+    <string name="0000013E">射出比例阀延迟</string>
+    <string name="00000120">保压一段压力Ramp</string>
+    <string name="00000121">保压一段速度Ramp</string>
+    <string name="00000122">保压二段压力Ramp</string>
+    <string name="00000123">保压二段速度Ramp</string>
+    <string name="00000124">保压三段压力Ramp</string>
+    <string name="00000125">保压三段速度Ramp</string>
+    <string name="00000126">保压四段压力Ramp</string>
+    <string name="00000127">保压四段速度Ramp</string>
+    <string name="00000128">保压五段压力Ramp</string>
+    <string name="00000129">保压五段速度Ramp</string>
+    <string name="0000012A">保压六段压力Ramp</string>
+    <string name="0000012B">保压六段速度Ramp</string>
+    
+    <!--InjeSP 射出特参-->
+    <string name="00030D4C">喷嘴控制选择</string>
+    <string name="000186F3">排气功能选择</string>
+    <string name="00018700">射出监控功能选择</string>
+    <string name="00018709">气体辅助选择</string>
+    <string name="000186E4">闭环注射选择</string>
+    <string name="000186E9">比例放能选择</string>
+    <string name="000186FE">預射功能选择</string>
+    <string name="0001870D">流体射出选择</string>
+
+    <string name="00018800">射出压力上限</string>
+    <string name="00018801">射出流量上限</string>
+    <string name="00018802">保压压力上限</string>
+    <string name="00018803">保压流量上限</string>
+    
+    <string name="0000017D">射出流量系数</string>
+    <string name="00031180">转保压扩展功能选择</string>
+    <string name="0000017C">射出曲线采样间隔</string>
+    <string name="00018723">射出快速功能</string>
+    <string name="00031185">COM2阀门动力源选择</string>
+    <string name="00030D4A">喷嘴压力上限</string>
+    <string name="0000011D">射出A阀门段数选择</string>
+    <string name="00030D4B">阀门压力上限</string>
+    <string name="0003118D">射出安全压力选择</string>
+    
+    <!--Chrg 储料-->
+    <string name="00000451">储料一段背压</string>
+    <string name="00000450">储料一段压力</string>
+    <string name="00000452">储料一段速度</string>
+    <string name="00000453">储料一段终止位置</string>
+    <string name="00000455">储料二段背压</string>
+    <string name="00000454">储料二段压力</string>
+    <string name="00000456">储料二段速度</string>
+    <string name="00000457">储料二段终止位置</string>
+    <string name="00000459">储料三段背压</string>
+    <string name="00000458">储料三段压力</string>
+    <string name="0000045A">储料三段速度</string>
+    <string name="0000045B">储料三段终止位置</string>
+    <string name="0000045D">储料四段背压</string>
+    <string name="0000045C">储料四段压力</string>
+    <string name="0000045E">储料四段速度</string>
+    <string name="0000045F">储料四段终止位置</string>
+    <string name="00000461">储料五段背压</string>
+    <string name="00000460">储料五段压力</string>
+    <string name="00000462">储料五段速度</string>
+    <string name="00000463">储料五段终止位置</string>
+    <string name="00000790">射退压力</string>
+    <string name="00000791">射退速度</string>
+    <string name="00000794">射退时间</string>
+    <string name="00000793">射退距离</string>
+    <string name="00000795">射退模式</string>
+    <string name="00000797">储前射退距离</string>
+    <string name="00000796">储前射退计时</string>
+    <string name="0000046C">再次储料位置</string>
+    <string name="0000046A">再次储料计时</string>
+    <string name="000004B8">储前冷却计时</string>
+    <string name="000004BA">冷却计时</string>
+    
+    <!--ChrgPurge 清料-->
+    <string name="00000760">清料选择</string>
+    <string name="00000761">清料次数</string>
+    <string name="00000762">清料时间</string>
+	
+	<!--ChrgF 储料功能-->
+	<string name="000186E3">储料段数</string>
+	<string name="00000465">储料背压阀</string>
+	<string name="00000469">储料连动功能</string>
+	<string name="0000005E">储料泄压计时</string>
+	<string name="000187EB">射退控制方式</string>
+	<string name="000187E9">储前射退方式</string>
+	<string name="000187EA">再次储料方式</string>
+	<string name="000186E1">储料段数</string>
+	<string name="00000467">储料快速功能</string>
+	
+	<!--ChrgCurve 储料曲线-->
+	<string name="00018825">储料曲线速度最大值</string>
+	
+    <!--ChrgP 储料参数-->
+    <string name="00000050">储料一段压力Ramp</string>
+    <string name="00000051">储料一段速度Ramp</string>
+    <string name="00000052">储料二段压力Ramp</string>
+    <string name="00000053">储料二段速度Ramp</string>
+    <string name="00000054">储料三段压力Ramp</string>
+    <string name="00000055">储料三段速度Ramp</string>
+    <string name="00000056">储料四段压力Ramp</string>
+    <string name="00000057">储料四段速度Ramp</string>
+    <string name="00000058">储料五段压力Ramp</string>
+    <string name="00000059">储料五段速度Ramp</string>
+    <string name="0000005A">储料终压力Ramp Down</string>
+    <string name="0000005B">储料终速度Ramp Down</string>
+    <string name="0000005C">储料装模压力</string>
+    <string name="0000005D">储料装模速度</string>
+    <string name="0000005F">储料完阀延迟切计时</string>
+    <string name="00000060">储料开始比例阀延迟</string>
+    <string name="00000280">射退压力Ramp</string>
+    <string name="00000281">射退速度Ramp</string>
+    <string name="00000284">射退完阀延迟切计时</string>
+    <string name="00000286">射退开始比例阀延迟</string>
+    <string name="00000287">储料后射退延迟</string>
+    <string name="00000062">原地储料A监控时间</string>
+    <string name="00000065">储料安全位置监控时间</string>
+    <string name="00000063">原地储料A检测距离</string>
+    <string name="00000064">储料安全位置检测偏差值</string>
+    <string name="000187DB">储料背压曲线选择</string>
+    
+    <string name="00000069">电预塑补油压力</string>
+    <string name="0000006A">电预塑补油流量</string>
+    <string name="0000015A">补油循环压力</string>
+    <string name="0000015B">补油循环流量</string>
+    
+    <!--ChrgSP 储料特参-->
+    <string name="00018702">储料泄压使用选择</string>
+    <string name="000186F0">储料连动功能选择</string>
+    <string name="0001870A">自动投料</string>
+    <string name="00018804">储料压力上限</string>
+    <string name="00018805">储料速度上限</string>
+    <string name="000187FE">背压压力上限</string>
+    <string name="00018806">射退压力上限</string>
+    <string name="00018807">射退速度上限</string>
+    <string name="00000061">储料流量系数</string>
+    <string name="00000066">单缸注射保护</string>
+    <string name="00031903">储料快速功能选择</string>
+    <string name="0003190C">电预塑补油选择</string>
+    <string name="0003119E">电预塑补油压力上限</string>
+    <string name="0003119F">电预塑补油流量上限</string>
+    
+    <string name="00000159">补油电机循环冷却</string>
+    
+    <!--Ejet 托模-->
+    <string name="000005A0">托进一段压力</string>
+    <string name="000005A1">托进一段速度</string>
+    <string name="000005A2">托进一段终止位置</string>
+    <string name="000005A3">托进二段压力</string>
+    <string name="000005A4">托进二段速度</string>
+    <string name="000005A5">托进二段终止位置</string>
+    <string name="000005A6">托退一段压力</string>
+    <string name="000005A7">托退一段速度</string>
+    <string name="000005A8">托退一段终止位置</string>
+    <string name="000005A9">托退二段压力</string>
+    <string name="000005AA">托退二段速度</string>
+    <string name="000005AB">托退二段终止位置</string>
+    <string name="000005AE">托进延迟时间</string>
+    <string name="000005AF">托退延迟时间</string>
+    <string name="000005AC">托模方式</string>
+    <string name="000005AD">托模次数</string>
+    <string name="000005B0">震动托模距离</string>
+    <string name="000005B9">逐步托模</string>
+    
+    <!--EjetAir 吹气-->
+    <string name="00003280">吹气1动作点</string>
+    <string name="00003200">吹气1起始位置</string>
+    <string name="00003201">吹气1延迟时间</string>
+    <string name="00003202">吹气1动作时间</string>
+    <string name="00003288">吹气2动作点</string>
+    <string name="00003240">吹气2起始位置</string>
+    <string name="00003241">吹气2延迟时间</string>
+    <string name="00003242">吹气2动作时间</string>
+    <string name="00003281">吹气3动作点</string>
+    <string name="00003208">吹气3起始位置</string>
+    <string name="00003209">吹气3延迟时间</string>
+    <string name="0000320A">吹气3动作时间</string>
+    <string name="00003289">吹气4动作点</string>
+    <string name="00003248">吹气4起始位置</string>
+    <string name="00003249">吹气4延迟时间</string>
+    <string name="0000324A">吹气4动作时间</string>
+    <string name="00003282">吹气5动作点</string>
+    <string name="00003210">吹气5起始位置</string>
+    <string name="00003211">吹气5延迟时间</string>
+    <string name="00003212">吹气5动作时间</string>
+    <string name="0000328A">吹气6动作点</string>
+    <string name="00003250">吹气6起始位置</string>
+    <string name="00003251">吹气6延迟时间</string>
+    <string name="00003252">吹气6动作时间</string>
+  
+    <!--EjetF 托模功能-->
+    <string name="000187E2">手动A/C/E按键 使用选择</string>
+    <string name="000187E3">手动B/D/F按键 使用选择</string>
+    <string name="000006F1">自动安全门</string>
+    <string name="000006F2">电眼检出选择</string>
+    <string name="000005B3">再次顶出</string>
+    <string name="00000493">模具保护再试</string>
+    <string name="00000701">模具已安装</string>
+    <string name="000005B7">模具顶出</string>
+    <string name="000005B5">托进一段暂停时间</string>
+    <string name="000006FC">不良品回圈继续</string>
+    <string name="00000245">半自动后安全门</string>
+    <string name="000006FF">安全门关连动</string>
+    <string name="00003290">再循环吹气模式</string>
+    
+    <!--EjetRCut 切断-->
+    <string name="00000769">进料口切断</string>
+    <string name="0000076D">进料口切断延迟时间</string>
+    <string name="0000076C">进料口切断托进位置</string>
+    <string name="0000076A">进料口切断托进压力</string>
+    <string name="0000076B">进料口切断托进速度</string>
+    <string name="0000076E">进料口切断保持计时</string>
+    <string name="0000076F">进料口切断托模退选择</string>
+   
+    <!--EjetP 托模参数-->
+    <string name="000000E0">托进一段压力Ramp</string>
+    <string name="000000E1">托进一段速度Ramp</string>
+    <string name="000000E2">托进二段压力Ramp</string>
+    <string name="000000E3">托进二段速度Ramp</string>
+    <string name="000000E4">托退一段压力Ramp</string>
+    <string name="000000E5">托退一段速度Ramp</string>
+    <string name="000000E6">托退二段压力Ramp</string>
+    <string name="000000E7">托退二段速度Ramp</string>
+    <string name="000000E8">托模终压力Ramp Down</string>
+    <string name="000000E9">托模终速度Ramp Down</string>
+    <string name="000000EA">托模装模压力</string>
+    <string name="000000EB">托模装模速度</string>
+    <string name="000000F4">托模终提前流量</string>
+    <string name="000000EC">震动托模计时</string>
+    <string name="00000250">安全门压力</string>
+    <string name="00000251">安全门速度</string>
+    <string name="00000252">安全门慢速压力</string>
+    <string name="00000253">安全门慢速速度</string>
+    <string name="00000256">安全门关延迟切计时</string>
+    <string name="00000255">安全门开计时</string>
+    <string name="000000F6">逐步托模监测时间</string>
+    <string name="00000257">自动门监控时间</string>
+    <string name="000000EF">托模位置有效区</string>
+    <string name="000000EE">托模退位置上限值</string>
+    <string name="000000F2">托模终提前位置</string>
+    <string name="000005BA">托模进终位置正有效区</string>
+    <string name="000000F7">逐步托模检测距离</string>
+    <string name="000001A0">托退最终位置不为0</string>
+    <string name="000000F8">手动托模不做托进延迟</string>
+    <string name="000000F0">托模进完阀延迟切计时</string>
+    <string name="000000F1">托模退完阀延迟切计时</string>
+    <string name="00031177">安全门开距</string>
+    <string name="00031178">单脉冲行程</string>
+    <string name="00031179">开距提前脉冲数</string>
+    
+    <!--EjetS 托模组态-->
+    <string name="00018808">托模压力上限</string>
+    <string name="00018809">托模速度上限</string>
+    <string name="000186E6">吹气使用组数</string>
+    <string name="000000F3">托模流量系数</string>
+    <string name="000186FC">半自动后安全门选择</string>
+    <string name="00031136">吹气扩展功能</string>
+    <string name="00031137">多次托模停留</string>
+    <string name="000186F9">不良品回圈继续选择</string>
+    <string name="000186F6">安全门关连动选择</string>
+    <string name="000186FD">模具顶出选择</string>
+    <string name="00031187">进料口切断选择</string>
+    <string name="0001870C">顶出暂停</string>
+    <string name="0001871F">逐步托模选择</string>
+    <string name="00030D67">模具已安装确认</string>
+    <string name="0003190A">模具保护再试选择</string>
+
+    <!--Core1 中一-->
+    <string name="000004C0">中子A功能选择</string>
+    <string name="000004C2">中子A进控制方式</string>
+    <string name="000004D1">中子A退控制方式</string>
+    <string name="000004C1">射出时中子A不保持</string>
+    <string name="000004C5">中子A进压力</string>
+    <string name="000004C6">中子A进速度</string>
+    <string name="000004C7">中子A进动作时间</string>
+    <string name="000004C8">中子A进绞牙计数</string>
+    <string name="000004C3">中子A进动作点</string>
+    <string name="000004C4">中子A进动作位置</string>
+    <string name="000004D4">中子A退压力</string>
+    <string name="000004D5">中子A退速度</string>
+    <string name="000004D6">中子A退动作时间</string>
+    <string name="000004D7">中子A退绞牙计数</string>
+    <string name="000004DD">中子A退绞牙退二计数</string>
+    <string name="000004D2">中子A退动作点</string>
+    <string name="000004D3">中子A退动作位置</string>
+    
+    <string name="000004E0">中子B功能选择</string>
+    <string name="000004E2">中子B进控制方式</string>
+    <string name="000004F1">中子B退控制方式</string>
+    <string name="000004E1">射出时中子B不保持</string>
+    <string name="000004E5">中子B进压力</string>
+    <string name="000004E6">中子B进速度</string>
+    <string name="000004E7">中子B进动作时间</string>
+    <string name="000004E8">中子B进绞牙计数</string>
+    <string name="000004E3">中子B进动作点</string>
+    <string name="000004E4">中子B进动作位置</string>
+    <string name="000004F4">中子B退压力</string>
+    <string name="000004F5">中子B退速度</string>
+    <string name="000004F6">中子B退动作时间</string>
+    <string name="000004F7">中子B退绞牙计数</string>
+    <string name="000004FD">中子B退绞牙退二计数</string>
+    <string name="000004F2">中子B退动作点</string>
+    <string name="000004F3">中子B退动作位置</string>
+ 
+    <!--Core2 中二-->
+    <string name="00000500">中子C功能选择</string>
+    <string name="00000502">中子C进控制方式</string>
+    <string name="00000511">中子C退控制方式</string>
+    <string name="00000501">射出时中子C不保持</string>
+    <string name="00000505">中子C进压力</string>
+    <string name="00000506">中子C进速度</string>
+    <string name="00000507">中子C进动作时间</string>
+    <string name="00000508">中子C进绞牙计数</string>
+    <string name="00000503">中子C进动作点</string>
+    <string name="00000504">中子C进动作位置</string>
+    <string name="00000514">中子C退压力</string>
+    <string name="00000515">中子C退速度</string>
+    <string name="00000516">中子C退动作时间</string>
+    <string name="00000517">中子C退绞牙计数</string>
+    <string name="0000051D">中子C退绞牙退二计数</string>
+    <string name="00000512">中子C退动作点</string>
+    <string name="00000513">中子C退动作位置</string>
+    
+    <string name="00000520">中子D功能选择</string>
+    <string name="00000522">中子D进控制方式</string>
+    <string name="00000531">中子D退控制方式</string>
+    <string name="00000521">射出时中子D不保持</string>
+    <string name="00000525">中子D进压力</string>
+    <string name="00000526">中子D进速度</string>
+    <string name="00000527">中子D进动作时间</string>
+    <string name="00000528">中子D进绞牙计数</string>
+    <string name="00000523">中子D进动作点</string>
+    <string name="00000524">中子D进动作位置</string>
+    <string name="00000534">中子D退压力</string>
+    <string name="00000535">中子D退速度</string>
+    <string name="00000536">中子D退动作时间</string>
+    <string name="00000537">中子D退绞牙计数</string>
+    <string name="0000053D">中子D退绞牙退二计数</string>
+    <string name="00000532">中子D退动作点</string>
+    <string name="00000533">中子D退动作位置</string>
+    
+    <!--Core3 中三-->
+    <string name="00000540">中子E功能选择</string>
+    <string name="00000542">中子E进控制方式</string>
+    <string name="00000551">中子E退控制方式</string>
+    <string name="00000541">射出时中子E不保持</string>
+    <string name="00000545">中子E进压力</string>
+    <string name="00000546">中子E进速度</string>
+    <string name="00000547">中子E进动作时间</string>
+    <string name="00000548">中子E进绞牙计数</string>
+    <string name="00000543">中子E进动作点</string>
+    <string name="00000544">中子E进动作位置</string>
+    <string name="00000554">中子E退压力</string>
+    <string name="00000555">中子E退速度</string>
+    <string name="00000556">中子E退动作时间</string>
+    <string name="00000557">中子E退绞牙计数</string>
+    <string name="0000055D">中子E退绞牙退二计数</string>
+    <string name="00000552">中子E退动作点</string>
+    <string name="00000553">中子E退动作位置</string>
+    
+    <string name="00000560">中子F功能选择</string>
+    <string name="00000562">中子F进控制方式</string>
+    <string name="00000571">中子F退控制方式</string>
+    <string name="00000561">射出时中子F不保持</string>
+    <string name="00000565">中子F进压力</string>
+    <string name="00000566">中子F进速度</string>
+    <string name="00000567">中子F进动作时间</string>
+    <string name="00000568">中子F进绞牙计数</string>
+    <string name="00000563">中子F进动作点</string>
+    <string name="00000564">中子F进动作位置</string>
+    <string name="00000574">中子F退压力</string>
+    <string name="00000575">中子F退速度</string>
+    <string name="00000576">中子F退动作时间</string>
+    <string name="00000577">中子F退绞牙计数</string>
+    <string name="0000057D">中子F退绞牙退二计数</string>
+    <string name="00000572">中子F退动作点</string>
+    <string name="00000573">中子F退动作位置</string>
+    
+    <!--Core4 中四-->
+    <string name="000032A0">中子G功能选择</string>
+    <string name="000032A2">中子G进控制方式</string>
+    <string name="000032B1">中子G退控制方式</string>
+    <string name="000032A1">射出时中子G不保持</string>
+    <string name="000032A5">中子G进压力</string>
+    <string name="000032A6">中子G进速度</string>
+    <string name="000032A7">中子G进动作时间</string>
+    <string name="000032A8">中子G进绞牙计数</string>
+    <string name="000032A3">中子G进动作点</string>
+    <string name="000032A4">中子G进动作位置</string>
+    <string name="000032B4">中子G退压力</string>
+    <string name="000032B5">中子G退速度</string>
+    <string name="000032B6">中子G退动作时间</string>
+    <string name="000032B7">中子G退绞牙计数</string>
+    <string name="000032BD">中子G退绞牙退二计数</string>
+    <string name="000032B2">中子G退动作点</string>
+    <string name="000032B3">中子G退动作位置</string>
+    
+    <string name="000032C0">中子H功能选择</string>
+    <string name="000032C2">中子H进控制方式</string>
+    <string name="000032D1">中子H退控制方式</string>
+    <string name="000032C1">射出时中子H不保持</string>
+    <string name="000032C5">中子H进压力</string>
+    <string name="000032C6">中子H进速度</string>
+    <string name="000032C7">中子H进动作时间</string>
+    <string name="000032C8">中子H进绞牙计数</string>
+    <string name="000032C3">中子H进动作点</string>
+    <string name="000032C4">中子H进动作位置</string>
+    <string name="000032D4">中子H退压力</string>
+    <string name="000032D5">中子H退速度</string>
+    <string name="000032D6">中子H退动作时间</string>
+    <string name="000032D7">中子H退绞牙计数</string>
+    <string name="000032DD">中子H退绞牙退二计数</string>
+    <string name="000032D2">中子H退动作点</string>
+    <string name="000032D3">中子H退动作位置</string>
+    <!--CoreF  中子功能-->
+    <string name="00000586">特殊中子功能</string>
+    <string name="00000587">特殊中子时间一</string>
+    <string name="00000588">特殊中子时间二</string>
+    <string name="000187E1">手动中子按键选择</string>
+    <string name="00000594">绞牙退二控制方式</string>
+    <string name="00000595">绞牙退二动作位置</string>
+    <string name="000004D8">绞牙退二压力</string>
+    <string name="000004D9">绞牙退二速度</string>
+    
+    <!--CoreP  中子参数-->
+    <string name="000000A0">中子A进压力Ramp</string>
+    <string name="000000A1">中子A进速度Ramp</string>
+    <string name="000000A4">中子A退压力Ramp</string>
+    <string name="000000A5">中子A退速度Ramp</string>
+    <string name="000000A8">中子B进压力Ramp</string>
+    <string name="000000A9">中子B进速度Ramp</string>
+    <string name="000000AC">中子B退压力Ramp</string>
+    <string name="000000AD">中子B退速度Ramp</string>
+    <string name="000000B0">中子C进压力Ramp</string>
+    <string name="000000B1">中子C进速度Ramp</string>
+    <string name="000000B4">中子C退压力Ramp</string>
+    <string name="000000B5">中子C退速度Ramp</string>
+    <string name="000000B8">中子D进压力Ramp</string>
+    <string name="000000B9">中子D进速度Ramp</string>
+    <string name="000000BC">中子D退压力Ramp</string>
+    <string name="000000BD">中子D退速度Ramp</string>
+    <string name="000000C0">中子E进压力Ramp</string>
+    <string name="000000C1">中子E进速度Ramp</string>
+    <string name="000000C4">中子E退压力Ramp</string>
+    <string name="000000C5">中子E退速度Ramp</string>
+    <string name="000000C8">中子F进压力Ramp</string>
+    <string name="000000C9">中子F进速度Ramp</string>
+    <string name="000000CC">中子F退压力Ramp</string>
+    <string name="000000CD">中子F退速度Ramp</string>
+    
+    <string name="00003000">中子G进压力Ramp</string>
+    <string name="00003001">中子G进速度Ramp</string>
+    <string name="00003004">中子G退压力Ramp</string>
+    <string name="00003005">中子G退速度Ramp</string>
+    
+    <string name="00003008">中子H进压力Ramp</string>
+    <string name="00003009">中子H进速度Ramp</string>
+    <string name="0000300C">中子H退压力Ramp</string>
+    <string name="0000300D">中子H退速度Ramp</string>
+
+    <string name="000000D0">中子终压力Ramp Down</string>
+    <string name="000000D1">中子终速度Ramp Down</string>
+    <string name="0001881A">中子压力上限</string>
+    <string name="0001881B">中子速度上限</string>
+    <string name="000000D2">中子进延迟计时</string>
+    <string name="000000D9">中子进开始比例阀延迟开</string>
+    <string name="000000DB">中子进结束方向阀延迟切</string>
+    <string name="000000D5">中子保护</string>
+    <string name="000000D3">中子退延迟计时</string>
+    <string name="000000DA">中子退开始比例阀延迟开</string>
+    <string name="000000DC">中子退结束方向阀延迟切</string>
+    <string name="000000D4">绞牙结束前慢速齿数</string>
+    <string name="000000DD">中子进结束延迟计时</string>
+    <string name="000000DE">中子退结束延迟计时</string>
+    <string name="000000D8">中子中途动作延迟</string>
+    <string name="000000DF">中子/阀门泄压计时</string>
+    <string name="00003030">中子装模压力</string>
+    <string name="00003031">中子装模流量</string>
+    <string name="0000058B">进退限位器检查</string>
+    <string name="00000596">开关模全行程检查中子信号</string>
+    
+    <!--CoreS  中子组态-->
+    <string name="000186E5">中子组数</string>
+    <string name="0001877E">绞牙退二选择</string>
+    <string name="0003117F">中子保持</string>
+    
+    <!--Nozzle  座台-->
+    <string name="00000713">座台进二段压力</string>
+    <string name="00000714">座台进二段速度</string>
+    <string name="00000715">座台进二段终止位置</string>
+    <string name="00000710">座台进一段压力</string>
+    <string name="00000711">座台进一段速度</string>
+    <string name="00000717">座台进一段时间</string>
+    <string name="00000712">座台进一段终止位置</string>
+    <string name="000001ED">座台退二段压力</string>
+    <string name="000001EE">座台退二段速度</string>
+    <string name="0000071A">座台退二段终止位置</string>
+    <string name="00000718">座台退一段压力</string>
+    <string name="00000719">座台退一段速度</string>
+    <string name="0000071C">座台退一段时间</string>
+    <string name="000001EF">座台退一段终止位置</string>
+    <string name="0000071D">座台后退模式选择</string>
+    <string name="0000071B">座退延迟时间</string>
+    <string name="00031128">公模模具重量</string>
+
+    <!--Adjmold 调模-->
+    <string name="00000430">调模进压力</string>
+    <string name="00000431">调模进速度</string>
+    <string name="00000432">调模进慢速速度</string>
+    <string name="00000433">调模进自动计数</string>
+    
+    <!--NozzleP  座台参数-->
+    <string name="000001E2">座台进二段压力Ramp</string>
+    <string name="000001E3">座台进二段速度Ramp</string>
+    <string name="000001E0">座台进一段压力Ramp</string>
+    <string name="000001E1">座台进一段速度Ramp</string>
+    <string name="000001E6">座台退二段压力Ramp</string>
+    <string name="000001E7">座台退二段速度Ramp</string>
+    <string name="000001E4">座台退一段压力Ramp</string>
+    <string name="000001E5">座台退一段速度Ramp</string>
+    <string name="000001E8">座台终压力Ramp Down</string>
+    <string name="000001E9">座台终速度Ramp Down</string>
+    <string name="000001EA">座台装模压力</string>
+    <string name="000001EB">座台装模速度</string>
+    <string name="0001880D">座台压力上限</string>
+    <string name="0001880E">座台速度上限</string>
+    <string name="000001EC">首模座台慢速计时</string>
+    <string name="000001F4">座台进完方向阀延迟切</string>
+    <string name="000001F5">座台退完方向阀延迟切</string>
+    <string name="000001F6">座台进检查关模终</string>
+    <string name="000001FF">座台进比例阀延迟</string>
+    <string name="000001FE">座台退比例阀延迟</string>
+    <string name="00031129">公模模具重量 系数1</string>
+    <string name="0003112A">公模模具重量 系数2</string>
+    <string name="0003112B">公模模具重量上限</string>
+    
+    <!--NozzleS  座台组态-->
+    <string name="00031130">公模模具重量选择</string>
+    <string name="0001880B">座台进压力上限</string>
+    <string name="00018818">座台退压力上限</string>
+    <string name="0001880C">座台速度上限</string>
+    <string name="0001881C">调模压力上限</string>
+    <string name="0001881D">调模速度上限</string>
+    
+    <!--Temp 温度-->
+    <string name="00003B40">温度1设定值</string>
+    <string name="00003B41">温度2设定值</string>
+    <string name="00003B42">温度3设定值</string>
+    <string name="00003B43">温度4设定值</string>
+    <string name="00003B44">温度5设定值</string>
+    <string name="00003B45">温度6设定值</string>
+    <string name="00003B46">温度7设定值</string>
+    <string name="00003B47">温度8设定值</string>
+    <string name="00003B48">温度9设定值</string>
+    <string name="00003B49">温度10设定值</string>
+    <string name="00003B4A">温度11设定值</string>
+    <string name="00003BA0">温度1上偏差</string>
+    <string name="00003BA1">温度2上偏差</string>
+    <string name="00003BA2">温度3上偏差</string>
+    <string name="00003BA3">温度4上偏差</string>
+    <string name="00003BA4">温度5上偏差</string>
+    <string name="00003BA5">温度6上偏差</string>
+    <string name="00003BA6">温度7上偏差</string>
+    <string name="00003BA7">温度8上偏差</string>
+    <string name="00003BA8">温度9上偏差</string>
+    <string name="00003BA9">温度10上偏差</string>
+    <string name="00003BAA">温度11上偏差</string>
+    <string name="00003C00">温度1下偏差</string>
+    <string name="00003C01">温度2下偏差</string>
+    <string name="00003C02">温度3下偏差</string>
+    <string name="00003C03">温度4下偏差</string>
+    <string name="00003C04">温度5下偏差</string>
+    <string name="00003C05">温度6下偏差</string>
+    <string name="00003C06">温度7下偏差</string>
+    <string name="00003C07">温度8下偏差</string>
+    <string name="00003C08">温度9下偏差</string>
+    <string name="00003C09">温度10下偏差</string>
+    <string name="00003C0A">温度11下偏差</string>
+    <string name="0000368D">温度1手动百分比</string>
+    <string name="0000368E">温度2手动百分比</string>
+    <string name="0000368F">温度3手动百分比</string>
+    <string name="00003690">温度4手动百分比</string>
+    <string name="00003691">温度5手动百分比</string>
+    <string name="00003692">温度6手动百分比</string>
+    <string name="00003693">温度7手动百分比</string>
+    <string name="00003694">温度8手动百分比</string>
+    <string name="00003695">温度9手动百分比</string>
+    <string name="00003696">温度10手动百分比</string>
+    <string name="00003697">温度11手动百分比</string>
+    <string name="00003664">保温使用选择</string>
+    <string name="00003663">保温温度</string>
+    <string name="00003C60">防冷启动计时</string>
+    <string name="00000042">自动转入半温计时</string>
+    <string name="000187DF">射嘴百分比功能</string>
+    <string name="50B2000D">手动加热百分比</string>
+    <string name="00003668">手动温控周期</string>
+    
+    <!--TempF 温度功能-->
+    <string name="00018781">电热定时开，星期日小时</string>
+    <string name="00018782">电热定时开，星期日分钟</string>
+    <string name="0001878B">电热定时开，星期一小时</string>
+    <string name="0001878C">电热定时开，星期一分钟</string>
+    <string name="00018795">电热定时开，星期二小时</string>
+    <string name="00018796">电热定时开，星期二分钟</string>
+    <string name="0001879F">电热定时开，星期三小时</string>
+    <string name="000187A0">电热定时开，星期三分钟</string>
+    <string name="000187A9">电热定时开，星期四小时</string>
+    <string name="000187AA">电热定时开，星期四分钟</string>
+    <string name="000187B3">电热定时开，星期五小时</string>
+    <string name="000187B4">电热定时开，星期五分钟</string>
+    <string name="000187BD">电热定时开，星期六小时</string>
+    <string name="000187BE">电热定时开，星期六分钟</string>
+    <string name="00018786">电热定时关，星期日小时</string>
+    <string name="00018787">电热定时关，星期日分钟</string>
+    <string name="00018790">电热定时关，星期一小时</string>
+    <string name="00018791">电热定时关，星期一分钟</string>
+    <string name="0001879A">电热定时关，星期二小时</string>
+    <string name="0001879B">电热定时关，星期二分钟</string>
+    <string name="000187A4">电热定时关，星期三小时</string>
+    <string name="000187A5">电热定时关，星期三分钟</string>
+    <string name="000187AE">电热定时关，星期四小时</string>
+    <string name="000187AF">电热定时关，星期四分钟</string>
+    <string name="000187B8">电热定时关，星期五小时</string>
+    <string name="000187B9">电热定时关，星期五分钟</string>
+    <string name="000187C2">电热定时关，星期六小时</string>
+    <string name="000187C3">电热定时关，星期六分钟</string>
+    <string name="00018780">电热定时开，星期日使用选择</string>
+    <string name="00018785">电热定时关，星期日使用选择</string>
+    <string name="0001878A">电热定时开，星期一使用选择</string>
+    <string name="0001878F">电热定时关，星期一使用选择</string>
+    <string name="00018794">电热定时开，星期二使用选择</string>
+    <string name="00018799">电热定时关，星期二使用选择</string>
+    <string name="0001879E">电热定时开，星期三使用选择</string>
+    <string name="000187A3">电热定时关，星期三使用选择</string>
+    <string name="000187A8">电热定时开，星期四使用选择</string>
+    <string name="000187AD">电热定时关，星期四使用选择</string>
+    <string name="000187B2">电热定时开，星期五使用选择</string>
+    <string name="000187B7">电热定时关，星期五使用选择</string>
+    <string name="000187BC">电热定时开，星期六使用选择</string>
+    <string name="000187C1">电热定时关，星期六使用选择</string>
+    
+    <!--TempP 温度参数-->
+    <string name="00003666">料管冷却开偏差值</string>
+    <string name="00003667">料管冷却关偏差值</string>
+    <string name="00003662">电热连续加温检查度数</string>
+    <string name="00003681">允许最高料温</string>
+    <string name="0000366B">油箱油温上限</string>
+    <string name="0000366A">油箱油温下限</string>
+    <string name="0000366C">油温高开冷却器</string>
+    <string name="0000366D">油温低关冷却器</string>
+    <string name="00031170">油温冷却器</string>
+    <string name="000036ED">滤油网#0检知温度</string>
+    <string name="0000366E">油温预热使用</string>
+    <string name="0000366F">油温预热第二阶段压力</string>
+    <string name="00003670">油温预热第二阶段速度</string>
+    <string name="00003683">油温预热第一阶段压力</string>
+    <string name="00003684">油温预热第一阶段速度</string>
+    <string name="00003682">油温预热第一阶段结束温度</string>
+    <string name="00003688">油温预热第一阶段动作时间</string>
+    <string name="00000048">关闭电热计时</string>
+    <string name="00000049">关闭电热计时</string>
+    <string name="00003C72">电热关闭后持续冷却计时</string>
+    <string name="00003C73">电热关闭后持续冷却计时</string>
+    <string name="0000368C">料温允许上偏差</string>
+    <string name="000001D3">电机电扇开温度</string>
+    <string name="000001D4">电机电扇关温度</string>
+    <string name="000001D5">电机温度上限</string>
+    <string name="000187D5">电机温度显示</string>
+    <string name="0000367E">落料口偏差值</string>
+    <string name="10000713">料温软启动温度</string>
+    <string name="10000714">料温软启动计时（min）</string>
+    
+    <!--TempS 温度特参-->
+    <string name="0001870B">驱动器温度状态</string>
+    <string name="00018716">油温预热选择</string>
+    <string name="000002C1">落料口选择</string>
+    <string name="00031199">料温上偏差上限</string>
+    <string name="0003119A">料温下偏差上限</string>
+    <string name="0001871D">防冷启动测试</string>
+    <string name="000001CF">电机温度检测</string>
+    <string name="00030D46">料温软启动</string>
+
+
+    <!--TempPID 温度PID-->
+    <string name="00003600">温度1功能选择</string>
+    <string name="00003601">温度2功能选择</string>
+    <string name="00003602">温度3功能选择</string>
+    <string name="00003603">温度4功能选择</string>
+    <string name="00003604">温度5功能选择</string>
+    <string name="00003605">温度6功能选择</string>
+    <string name="00003606">温度7功能选择</string>
+    <string name="00003607">温度8功能选择</string>
+    <string name="00003608">温度9功能选择</string>
+    <string name="00003609">温度10功能选择</string>
+    <string name="0000360A">温度11功能选择</string>
+    
+    <string name="50B20002">温度1使用选择</string>
+    <string name="50B20102">温度2使用选择</string>
+    <string name="50B20202">温度3使用选择</string>
+    <string name="50B20302">温度4使用选择</string>
+    <string name="50B20402">温度5使用选择</string>
+    <string name="50B20502">温度6使用选择</string>
+    <string name="50B20602">温度7使用选择</string>
+    <string name="50B20702">温度8使用选择</string>
+    <string name="50B20802">温度9使用选择</string>
+    <string name="50B20902">温度10使用选择</string>
+    <string name="50B20A02">温度11使用选择</string>
+
+    <string name="50B20004">温度1同步加温</string>
+    <string name="50B20104">温度2同步加温</string>
+    <string name="50B20204">温度3同步加温</string>
+    <string name="50B20304">温度4同步加温</string>
+    <string name="50B20404">温度5同步加温</string>
+    <string name="50B20504">温度6同步加温</string>
+    <string name="50B20604">温度7同步加温</string>
+    <string name="50B20704">温度8同步加温</string>
+    <string name="50B20804">温度9同步加温</string>
+    <string name="50B20904">温度10同步加温</string>
+    <string name="50B20A04">温度11同步加温</string>
+
+    <string name="10000701">料温感温线类型</string>   
+    <string name="10000711">同步加温功能</string> 
+    <string name="10000705">温度自学习</string>
+    <string name="10000712">同步加温温度</string>
+    <string name="10000728">加热类型</string> 
+    <string name="50B20013">温度1 KP</string>
+    <string name="50B20113">温度2 KP</string>
+    <string name="50B20213">温度3 KP</string>
+    <string name="50B20313">温度4 KP</string>
+    <string name="50B20413">温度5 KP</string>
+    <string name="50B20513">温度6 KP</string>
+    <string name="50B20613">温度7 KP</string>
+    <string name="50B20713">温度8 KP</string>
+    <string name="50B20813">温度9 KP</string>
+    <string name="50B20913">温度10 KP</string>
+    <string name="50B20A13">温度11 KP</string>
+    <string name="50B20014">温度1 KI</string>
+    <string name="50B20114">温度2 KI</string>
+    <string name="50B20214">温度3 KI</string>
+    <string name="50B20314">温度4 KI</string>
+    <string name="50B20414">温度5 KI</string>
+    <string name="50B20514">温度6 KI</string>
+    <string name="50B20614">温度7 KI</string>
+    <string name="50B20714">温度8 KI</string>
+    <string name="50B20814">温度9 KI</string>
+    <string name="50B20914">温度10 KI</string>
+    <string name="50B20A14">温度11 KI</string>
+    <string name="50B20015">温度1 KD</string>
+    <string name="50B20115">温度2 KD</string>
+    <string name="50B20215">温度3 KD</string>
+    <string name="50B20315">温度4 KD</string>
+    <string name="50B20415">温度5 KD</string>
+    <string name="50B20515">温度6 KD</string>
+    <string name="50B20615">温度7 KD</string>
+    <string name="50B20715">温度8 KD</string>
+    <string name="50B20815">温度9 KD</string>
+    <string name="50B20915">温度10 KD</string>
+    <string name="50B20A15">温度11 KD</string>
+    <string name="50B20016">温度1 Ramp</string>
+    <string name="50B20116">温度2 Ramp</string>
+    <string name="50B20216">温度3 Ramp</string>
+    <string name="50B20316">温度4 Ramp</string>
+    <string name="50B20416">温度5 Ramp</string>
+    <string name="50B20516">温度6 Ramp</string>
+    <string name="50B20616">温度7 Ramp</string>
+    <string name="50B20716">温度8 Ramp</string>
+    <string name="50B20816">温度9 Ramp</string>
+    <string name="50B20916">温度10 Ramp</string>
+    <string name="50B20A16">温度11 Ramp</string>
+    
+    
+    <!--FastP    参数-->
+    <string name="00000193">润滑1自动润滑模数</string>
+    <string name="0000018F">润滑1润滑警报时间</string>
+    <string name="00000196">润滑1润滑保持计时</string>
+    <string name="00000198">润滑1润滑间隔时间</string>
+    <string name="00000194">润滑1自动润滑总计时</string>
+    <string name="0000018E">润滑1自动润滑次数</string>
+    <string name="00000191">开机后前两模润滑</string>
+    <string name="0000019B">润滑2自动润滑模数</string>
+    <string name="0000019E">润滑2润滑警报时间</string>
+    <string name="0000019C">润滑2润滑保持计时</string>
+    <string name="00000184">润滑2润滑间隔时间</string>
+    <string name="000001DA">润滑2自动润滑总计时</string>
+    <string name="00000185">润滑2自动润滑次数</string>
+    <string name="000001D9">润滑3自动润滑模数</string>
+    <string name="000001D7">润滑3润滑警报时间</string>
+    <string name="000001DC">润滑3润滑保持计时</string>
+    <string name="000001DE">润滑3润滑间隔时间</string>
+    <string name="000001DF">润滑3自动润滑次数</string>
+    
+    <string name="000001D2">马达保护计时</string>
+    <string name="000001D0">马达启动时间</string>
+    <string name="000001D1">马达间隔时间</string>
+    <string name="00000044">自动关闭电机时间（min）</string>
+    <string name="00018850">机械手中途下降位置下限</string>
+    <string name="00000150">泵浦延迟开</string>
+    
+    <string name="0000039D">马达温度</string>
+    <string name="0000039C">马达温度设定</string>
+    <string name="00000140">速度比例开一</string>
+    <string name="00000141">速度比例开二</string>
+    <string name="00000142">速度比例开三</string>
+    <string name="00000143">速度比例开四</string>
+    <string name="00000144">速度比例开五</string>
+    <string name="00000145">速度比例开六</string>
+    <string name="00000146">速度比例开七</string>
+    <string name="00000147">速度比例开八</string>
+    
+    <!--FastP_Lubr  参数-->
+    <string name="0003113B">润滑1 润滑模数切换前 自动润滑模数</string>
+    <string name="0003113D">润滑1 润滑模数切换前 润滑警报时间</string>
+    <string name="00030D53">润滑1 润滑模数切换前 润滑保持计时</string>
+    <string name="0003113E">润滑1 润滑模数切换前 润滑间隔时间</string>
+    <string name="0003113F">润滑1 润滑模数切换前 自动润滑次数</string>
+    <string name="00031140">润滑1 润滑模数切换后 自动润滑模数</string>
+    <string name="00031141">润滑1 润滑模数切换后 润滑警报时间</string>
+    <string name="00030D54">润滑1 润滑模数切换后 润滑保持计时</string>
+    <string name="00031142">润滑1 润滑模数切换后 润滑间隔时间</string>
+    <string name="00031143">润滑1 润滑模数切换后 自动润滑次数</string>
+    <string name="00030D74">润滑1 开机润滑时数</string>
+
+    <string name="00031146">润滑2 润滑模数切换前 自动润滑模数</string>
+    <string name="00031148">润滑2 润滑模数切换前 润滑警报时间</string>
+    <string name="00030D55">润滑2 润滑模数切换前 润滑保持计时</string>
+    <string name="00031149">润滑2 润滑模数切换前 润滑间隔时间</string>
+    <string name="0003114A">润滑2 润滑模数切换前 自动润滑次数</string>
+    <string name="0003114B">润滑2 润滑模数切换后 自动润滑模数</string>
+    <string name="0003114C">润滑2 润滑模数切换后 润滑警报时间</string>
+    <string name="00030D56">润滑2 润滑模数切换后 润滑保持计时</string>
+    <string name="0003114D">润滑2 润滑模数切换后 润滑间隔时间</string>
+    <string name="0003114E">润滑2 润滑模数切换后 自动润滑次数</string>
+    <string name="00030D75">润滑2 开机润滑时数</string>
+
+    <string name="00031151">润滑3 润滑模数切换前 自动润滑模数</string>
+    <string name="00031153">润滑3 润滑模数切换前 润滑警报时间</string>
+    <string name="00030D57">润滑3 润滑模数切换前 润滑保持计时</string>
+    <string name="00031154">润滑3 润滑模数切换前 润滑间隔时间</string>
+    <string name="00031155">润滑3 润滑模数切换前 自动润滑次数</string>
+    <string name="00031156">润滑3 润滑模数切换后 自动润滑模数</string>
+    <string name="00031157">润滑3 润滑模数切换后 润滑警报时间</string>
+    <string name="00030D58">润滑3 润滑模数切换后 润滑保持计时</string>
+    <string name="00031158">润滑3 润滑模数切换后 润滑间隔时间</string>
+    <string name="00031159">润滑3 润滑模数切换后 自动润滑次数</string>
+
+    <string name="0003112F">开机自动润滑天数</string>
+
+    <string name="00031144">润滑1 润滑模数上限</string>
+    <string name="00031145">润滑1 润滑模数下限</string>
+    <string name="0003114F">润滑2 润滑模数上限</string>
+    <string name="00031150">润滑2 润滑模数下限</string>
+    <string name="0003115A">润滑3 润滑模数上限</string>
+    <string name="0003115B">润滑3 润滑模数下限</string>
+
+    <string name="0003115C">调模润滑间隔天数</string>
+    <string name="00030D59">调模润滑警报计时</string>
+    <string name="0003115E">调模润滑保持时间</string>
+   
+    <string name="00000027">调模润滑间隔天数</string>
+    <string name="00000020">调模润滑警报计时</string>
+    <string name="00000026">调模润滑保持时间</string>
+  
+    <string name="00031916">尾板支架润滑参数系数</string>
+
+    <!--RbtTake 取出-->
+    <string name="000006F0">机械手</string>
+    <string name="0000058C">机械手与中子配合</string>
+    <string name="00000703">机械手中途控制</string>
+    <string name="00000700">机械手中途下降位置</string>
+    <string name="00000702">机械手中途下降时间</string>
+
+    <!--PID-->
+    <string name="30094000">第一组KP</string>
+    <string name="30095A00">第二组KP</string>
+    <string name="30095D00">第三组KP</string>
+    <string name="30096000">第四组KP</string>
+    <string name="30094100">第一组KI</string>
+    <string name="30095B00">第二组KI</string>
+    <string name="30095E00">第三组KI</string>
+    <string name="30096100">第四组KI</string>
+    <string name="30095500">其他模式</string>
+    <string name="30095600">低压KP</string>
+    <string name="30095800">高压KP</string>
+    <string name="30095700">低压压力</string>
+    <string name="30095900">高压压力</string>
+    <string name="0000036A">PID选择 1</string>
+    <string name="0000036B">PID选择 2</string>
+    <string name="0000036C">PID选择B 1</string>
+    <string name="0000036D">PID选择B 2</string>
+	
+	<!--参数-->
+	<string name="30094E00">泄压KP</string>
+    <string name="30095100">反转保护速度</string>
+    <string name="30095200">反转保护时间</string>
+    <string name="30095300">反转最小压力</string>
+    <string name="30094300">压力控制压力特参</string>
+    <string name="30094400">压力控制速度特参</string>
+    <string name="3008A800">实际速度特参</string>
+    <string name="300A0400">系统压力警报压力上限</string>
+    <string name="3009C100">系统压力警报时间上限</string>
+	<string name="10000101">轴号1</string>
+	<string name="10000102">轴号2</string>
+	<string name="10000103">轴号3</string>
+	<string name="10000104">轴号4</string>
+	<string name="10000105">轴号5</string>
+	<string name="10000106">轴号6</string>
+	<string name="10000107">轴号7</string>
+	<string name="10000108">轴号8</string>
+	<string name="10000109">轴号9</string>
+	<string name="1000010A">轴号10</string>
+	<string name="10000080">动力系统配置1</string>
+	<string name="10000081">动力系统配置2</string>
+	<string name="10000082">动力系统配置3</string>
+	<string name="10000083">动力系统配置4</string>
+	<string name="400FF800">底压底流功能</string>
+	<string name="400FF801">系统底压</string>
+	<string name="400FF802">系统底流</string>
+	<string name="300FC40E">比例方向阀通道</string>
+	
+	<!--机器驱动1-->
+	<string name="30083200">驱动器1 最大转速</string>
+	<string name="30083700">驱动器1 型号</string>
+	<string name="30083600">驱动器1 节点ID</string>
+	<string name="30089E00">驱动器1 扭力来源类型</string>
+	<string name="30089F00">驱动器1 扭力来源通道</string>
+	<string name="3008A500">驱动器1 扭力来源反向</string>
+	<string name="3008AA00">驱动器1 扭力来源系数</string>
+	<string name="30089C00">驱动器1 速度输出类型</string>
+	<string name="30089D00">驱动器1 速度输出通道</string>
+	<string name="3008A200">驱动器1 速度输出反向</string>
+	<string name="3008AB00">驱动器1 速度输出系数</string>
+	<string name="3008A000">驱动器1 扭力输出类型</string>
+	<string name="3008A100">驱动器1 扭力输出通道</string>
+	<string name="3008AC00">驱动器1 扭力输出系数</string>
+	<string name="30089800">驱动器1 压力类型</string>
+	<string name="30089900">驱动器1 压力通道</string>
+	<!--机器驱动2-->
+	<string name="3008B200">驱动器2 最大转速</string>
+	<string name="3008B700">驱动器2 型号</string>
+	<string name="3008B600">驱动器2 节点ID</string>
+	<string name="3008C400">驱动器2 扭力来源类型</string>
+	<string name="3008C500">驱动器2 扭力来源通道</string>
+	<string name="3008CB00">驱动器2 扭力来源反向</string>
+	<string name="3008D000">驱动器2 扭力来源系数</string>
+	<string name="3008C200">驱动器2 速度输出类型</string>
+	<string name="3008C300">驱动器2 速度输出通道</string>
+	<string name="3008C800">驱动器2 速度输出反向</string>
+	<string name="3008D100">驱动器2 速度输出系数</string>
+	<string name="3008C600">驱动器2 扭力输出类型</string>
+	<string name="3008C700">驱动器2 扭力输出通道</string>
+	<string name="3008D200">驱动器2 扭力输出系数</string>
+	<string name="3008BE00">驱动器2 压力类型</string>
+	<string name="3008BF00">驱动器2 压力通道</string>
+	<!--机器驱动3-->
+	<string name="31083200">驱动器3 最大转速</string>
+	<string name="31083700">驱动器3 型号</string>
+	<string name="31083600">驱动器3 节点ID</string>
+	<string name="31089E00">驱动器3 扭力来源类型</string>
+	<string name="31089F00">驱动器3 扭力来源通道</string>
+	<string name="3108A500">驱动器3 扭力来源反向</string>
+	<string name="3108AA00">驱动器3 扭力来源系数</string>
+	<string name="31089C00">驱动器3 速度输出类型</string>
+	<string name="31089D00">驱动器3 速度输出通道</string>
+	<string name="3108A200">驱动器3 速度输出反向</string>
+	<string name="3108AB00">驱动器3 速度输出系数</string>
+	<string name="3108A000">驱动器3 扭力输出类型</string>
+	<string name="3108A100">驱动器3 扭力输出通道</string>
+	<string name="3108AC00">驱动器3 扭力输出系数</string>
+	<string name="31089800">驱动器3 压力类型</string>
+	<string name="31089900">驱动器3 压力通道</string>
+	<!--机器驱动4-->
+	<string name="3108B200">驱动器4 最大转速</string>
+	<string name="3108B700">驱动器4 型号</string>
+	<string name="3108B600">驱动器4 节点ID</string>
+	<string name="3108C400">驱动器4 扭力来源类型</string>
+	<string name="3108C500">驱动器4 扭力来源通道</string>
+	<string name="3108CB00">驱动器4 扭力来源反向</string>
+	<string name="3108D000">驱动器4 扭力来源系数</string>
+	<string name="3108C200">驱动器4 速度输出类型</string>
+	<string name="3108C300">驱动器4 速度输出通道</string>
+	<string name="3108C800">驱动器4 速度输出反向</string>
+	<string name="3108D100">驱动器4 速度输出系数</string>
+	<string name="3108C600">驱动器4 扭力输出类型</string>
+	<string name="3108C700">驱动器4 扭力输出通道</string>
+	<string name="3108D200">驱动器4 扭力输出系数</string>
+	<string name="3108BE00">驱动器4 压力类型</string>
+	<string name="3108BF00">驱动器4 压力通道</string>
+		
+	<!--Moni1 监测一-->
+	<string name="00000A00">自动监测</string>
+	<string name="00031904">参考值</string>
+	<string name="00018720">记忆卡监测</string>
+	<string name="0001AFA8">关模时间误差百分比</string>
+	<string name="0001AFD4">关模时间误差量</string>
+	<string name="0001B02A">关模时间参考值</string>
+	<string name="0001AFA9">关模低压时间误差百分比</string>
+	<string name="0001AFD5">关模低压时间误差量</string>
+	<string name="0001B02B">关模低压时间参考值</string>
+	<string name="0001AFAA">关模高压时间误差百分比</string>
+	<string name="0001AFD6">关模高压时间误差量</string>
+	<string name="0001B02C">关模高压时间参考值</string>
+	<string name="0001AFAB">开模时间误差百分比</string>
+	<string name="0001AFD7">开模时间误差量</string>
+	<string name="0001B02D">开模时间参考值</string>
+	<string name="0001AFAF">射出终点误差百分比</string>
+	<string name="0001AFDB">射出终点误差量</string>
+	<string name="0001B031">射出终点参考值</string>
+	<string name="0001AFA4">循环时间误差百分比</string>
+	<string name="0001AFD0">循环时间误差量</string>
+	<string name="0001B026">循环时间参考值</string>
+	<string name="0001AFB5">托模时间误差百分比</string>
+	<string name="0001AFE1">托模时间误差量</string>
+	<string name="0001B037">托模时间参考值</string>
+	<string name="0001AFAC">开模终点误差百分比</string>
+	<string name="0001AFD8">开模终点误差量</string>
+	<string name="0001B02E">开模终点参考值</string>
+	<string name="0001AFB7">射出尖压误差百分比</string>
+	<string name="0001AFE3">射出尖压误差量</string>
+	<string name="0001B039">射出尖压参考值</string>
+	<string name="0001AFA5">射出时间误差百分比</string>
+	<string name="0001AFD1">射出时间误差量</string>
+	<string name="0001B027">射出时间参考值</string>
+	<string name="0001AFAE">保压转换位置误差百分比</string>
+	<string name="0001AFDA">保压转换位置误差量</string>
+	<string name="0001B030">保压转换位置参考值</string>
+	<string name="0001AFA6">保压转换时间误差百分比</string>
+	<string name="0001AFD2">保压转换时间误差量</string>
+	<string name="0001B028">保压转换时间参考值</string>
+	<string name="0001AFB2">保压转换压力误差百分比</string>
+	<string name="0001AFDE">保压转换压力误差量</string>
+	<string name="0001B034">保压转换压力参考值</string>
+	<string name="0001AFB0">射出监控误差百分比</string>
+	<string name="0001AFDC">射出监控误差量</string>
+	<string name="0001B032">射出监控参考值</string>
+	<string name="0001AFAD">射出起点误差百分比</string>
+	<string name="0001AFD9">射出起点误差量</string>
+	<string name="0001B02F">射出起点参考值</string>
+	<string name="0001AFA7">储料时间误差百分比</string>
+	<string name="0001AFD3">储料时间误差量</string>
+	<string name="0001B029">储料时间参考值</string>
+	<string name="0001AFB4">射退时间误差百分比</string>
+	<string name="0001AFE0">射退时间误差量</string>
+	<string name="0001B036">射退时间参考值</string>
+	
+	<!--Moni2 监测二-->
+	<string name="000187CA">取样间隔次数</string>
+	
+	<!--Prod 生产-->
+	<string name="0001882F">生产批号</string>
+	<string name="000186DB">单模产品总数</string>
+	<string name="000187C6">目标产品总数</string>
+	<string name="000187C8">目标包装总数</string>
+	<string name="000006FD">允许不良品数</string>
+	<string name="00000704">允许连续不良品数</string>
+	<string name="00000706">自动监测关闭时不良品信号输出</string>
+	<string name="00031173">自动监测回手动状态关闭</string>
+	
+	<!--Energy 能耗-->
+	<string name="00031134">每模产品重量</string>
+	<!--OthrP 警报-参数-->
+	<string name="00000031">自动警报启动模数</string>
+	<string name="00000034">关低压计时警报上限</string>
+	<string name="00000035">关高压计时警报上限</string>
+	<string name="00000036">储料计时警报上限</string>
+	<string name="00000038">射退计时警报上限</string>
+	<string name="00000032">全程计时警报上限</string>
+	<string name="00003C62">警报切电热功能</string>
+	<string name="00000040">蜂鸣器警报次数</string>
+	<string name="000001AA">包装数警报时间</string>
+	
+	<!--DA-->
+	<string name="000187ED">起始通道</string>
+
+	<!--Molds-->
+	<string name="0003112D">模号ID选择</string>
+	
+	
+	<!--EnergyP 能耗-参数-->
+	<string name="0003113A">电表系数</string>
+	
+	<!--控制-->
+	<string name="00000ACE">控制系统</string>
+	<string name="00000AC7">厂商机器码</string>
+	<string name="00000B21">电子尺1机械行程</string>
+	<string name="00000F36">电子尺1现在位置</string>
+	<string name="00000B22">电子尺2机械行程</string>
+	<string name="00000F37">电子尺2现在位置</string>
+	<string name="00000B23">电子尺3机械行程</string>
+	<string name="00000F38">电子尺3现在位置</string>
+	<string name="00000B24">电子尺4机械行程</string>
+	<string name="00000EF1">电子尺4现在位置</string>
+	<string name="00000B25">电子尺5机械行程</string>
+	<string name="00000EF2">电子尺5现在位置</string>
+	<string name="00000B26">电子尺6机械行程</string>
+	<string name="00000EF3">电子尺6现在位置</string>
+	<string name="00000B27">电子尺7机械行程</string>
+	<string name="00000EF4">电子尺7现在位置</string>
+	<string name="00000B28">电子尺8机械行程</string>
+	<string name="00000EF5">电子尺8现在位置</string>
+	<string name="00000B29">电子尺9机械行程</string>
+	<string name="00000F3E">电子尺9现在位置</string>
+	<string name="00000B2A">电子尺10机械行程</string>
+	<string name="00000F3F">电子尺10现在位置</string>
+	<string name="00000B2B">电子尺11机械行程</string>
+	<string name="00000EF8">电子尺11现在位置</string>
+	<string name="00000B2C">电子尺12机械行程</string>
+	<string name="00000EF9">电子尺12现在位置</string>
+	<string name="00000AC1">控制码1</string>
+	<string name="00000AC2">控制码2</string>
+	<string name="00000AC3">控制码3</string>
+	<string name="00000AC4">控制码4</string>
+	<string name="00000AC5">控制码5</string>
+	<string name="00000AC6">控制码6</string>
+	<string name="00000AE9">系统压力上限</string>
+	<string name="00000AEA">关模高压压力上限</string>
+	<string name="00000AEB">储料RPM孔数</string>
+	<string name="00000AC9">油路控制</string>
+	<string name="00000ACB">位置尺控制</string>
+	
+	<!--机器主卡-->
+	<string name="1B003200">AD1外设量程</string>
+	<string name="1B003500">AD1外设最小电压</string>
+	<string name="1B003400">AD1外设最大电压</string>
+	<string name="1B003600">AD2外设量程</string>
+	<string name="1B003900">AD2外设最小电压</string>
+	<string name="1B003800">AD2外设最大电压</string>
+	<string name="1B003A00">AD3外设量程</string>
+	<string name="1B003D00">AD3外设最小电压</string>
+	<string name="1B003C00">AD3外设最大电压</string>
+	<string name="1B003E00">AD4外设量程</string>
+	<string name="1B004100">AD4外设最小电压</string>
+	<string name="1B004000">AD4外设最大电压</string>
+	
+	<!--Paras 其他-->
+    <string name="000003D0">特殊参数 S0</string>
+    <string name="000003D1">特殊参数 S1</string>
+    <string name="000003D2">特殊参数 S2</string>
+    <string name="000003D3">特殊参数 S3</string>
+    <string name="000003D4">特殊参数 S4</string>
+    <string name="000003D5">特殊参数 S5</string>
+    <string name="000003D6">特殊参数 S6</string>
+    <string name="000003D7">特殊参数 S7</string>
+    <string name="000003D8">特殊参数 S8</string>
+    <string name="000003D9">特殊参数 S9</string>
+    <string name="000003DA">特殊参数 S10</string>
+    <string name="000003DB">特殊参数 S11</string>
+    <string name="000003DC">特殊参数 S12</string>
+    <string name="000003DD">特殊参数 S13</string>
+    <string name="000003DE">特殊参数 S14</string>
+    <string name="000003DF">特殊参数 S15</string>
+    
+    <string name="000003E0">特殊参数 T0</string>
+    <string name="000003E1">特殊参数 T1</string>
+    <string name="000003E2">特殊参数 T2</string>
+    <string name="000003E3">特殊参数 T3</string>
+    <string name="000003E4">特殊参数 T4</string>
+    <string name="000003E5">特殊参数 T5</string>
+    <string name="000003E6">特殊参数 T6</string>
+    <string name="000003E7">特殊参数 T7</string>
+    <string name="000003E8">特殊参数 T8</string>
+    <string name="000003E9">特殊参数 T9</string>
+    <string name="000003EA">特殊参数 T10</string>
+    <string name="000003EB">特殊参数 T11</string>
+    <string name="000003EC">特殊参数 T12</string>
+    <string name="000003ED">特殊参数 T13</string>
+    <string name="000003EE">特殊参数 T14</string>
+    <string name="000003EF">特殊参数 T15</string>
+    
+    <string name="000008D0">特殊参数 U0</string>
+    <string name="000008D1">特殊参数 U1</string>
+    <string name="000008D2">特殊参数 U2</string>
+    <string name="000008D3">特殊参数 U3</string>
+    <string name="000008D4">特殊参数 U4</string>
+    <string name="000008D5">特殊参数 U5</string>
+    <string name="000008D6">特殊参数 U6</string>
+    <string name="000008D7">特殊参数 U7</string>
+    <string name="000008D8">特殊参数 U8</string>
+    <string name="000008D9">特殊参数 U9</string>
+    <string name="000008DA">特殊参数 U10</string>
+    <string name="000008DB">特殊参数 U11</string>
+    <string name="000008DC">特殊参数 U12</string>
+    <string name="000008DD">特殊参数 U13</string>
+    <string name="000008DE">特殊参数 U14</string>
+    <string name="000008DF">特殊参数 U15</string>
+    
+    <string name="000008E0">特殊参数 V0</string>
+    <string name="000008E1">特殊参数 V1</string>
+    <string name="000008E2">特殊参数 V2</string>
+    <string name="000008E3">特殊参数 V3</string>
+    <string name="000008E4">特殊参数 V4</string>
+    <string name="000008E5">特殊参数 V5</string>
+    <string name="000008E6">特殊参数 V6</string>
+    <string name="000008E7">特殊参数 V7</string>
+    <string name="000008E8">特殊参数 V8</string>
+    <string name="000008E9">特殊参数 V9</string>
+    <string name="000008EA">特殊参数 V10</string>
+    <string name="000008EB">特殊参数 V11</string>
+    <string name="000008EC">特殊参数 V12</string>
+    <string name="000008ED">特殊参数 V13</string>
+    <string name="000008EE">特殊参数 V14</string>
+    <string name="000008EF">特殊参数 V15</string>
+    
+    <!--SPara 配置-->
+    <string name="0001870A">采样推力座数据</string>
+    <string name="0001870C">28开关模位置闭环选择</string>
+    
+	<!--系统-->
+	<string name="000186AA">由闲置时间启动</string>
+	<string name="000186AC">由开模次数启动</string>
+	<string name="000186AE">屏保动画使用选择</string>
+	
+	
+	<!--建置-->
+	<string name="0001872B">出厂日期 月</string>
+	<string name="0001872C">出厂日期 日</string>
+	<string name="0001872A">出厂日期 年</string>
+	
+	<string name="0001872F">交付日期 月</string>
+	<string name="00018730">交付日期 日</string>
+	<string name="0001872E">交付日期 年</string>
+	<string name="00018733">停机期数</string>
+	<string name="00018735">停车间隔天数</string>
+	<string name="0001873F">停车时间 小时</string>
+	<string name="00018740">停车时间 分</string>
+	<string name="0001873A">停车警告 天数</string>
+	<string name="00018742">停车警告 间隔分钟</string>
+	
+	<!--组态-->
+	<string name="0001877A">计数显示</string>
+	<string name="00031188">冷却计时修改记录</string>
+	<string name="0003117A">调模润滑选择</string>
+	<string name="0003117B">润滑选择</string>
+	<string name="00031189">电动门类型选择</string>
+	<string name="0001871B">电表选择</string>
+	<string name="0001877C">机械手中途控制选择</string>
+	<string name="00018722">记忆卡监测选择</string>
+	
+	<!--组态-->
+	<string name="00018855">DA通道配置1</string>
+	<string name="00018856">DA通道配置2</string>
+	<string name="00018857">DA通道配置3</string>
+	<string name="00018858">DA通道配置4</string>
+	
+	
+</resources>

@@ -1,0 +1,1700 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="vers">1001</string>
+
+    <!--Clmp Clamp-->
+    <string name="0000073E">Open Stroke</string>
+    <string name="00000480">Close #1 Pressure</string>
+    <string name="00000481">Close #1 Speed</string>
+    <string name="00000482">Close #1 End Position</string>
+    <string name="00000483">Close #2 Pressure</string>
+    <string name="00000484">Close #2 Speed</string>
+    <string name="00000485">Close #2 End Position</string>
+    <string name="00000486">Close #3 Pressure</string>
+    <string name="00000487">Close #3 Speed</string>
+    <string name="00000488">Close #3 End Position</string>
+    <string name="00000489">Close Protect Pressure</string>
+    <string name="0000048A">Close Protect Speed</string>
+    <string name="0000048B">Close Protect End Position</string>
+    <string name="0000048C">Close HignPress Pressure</string>
+    <string name="0000048D">Close HignPress Speed</string>
+    <string name="00000730">Open #1 Pressure</string>
+    <string name="00000731">Open #1 Speed</string>
+    <string name="00000732">Open #1 End Position</string>
+    <string name="00000733">Open #2 Pressure</string>
+    <string name="00000734">Open #2 Speed</string>
+    <string name="00000735">Open #2 End Position</string>
+    <string name="00000736">Open #3 Pressure</string>
+    <string name="00000737">Open #3 Speed</string>
+    <string name="00000738">Open #3 End Position</string>
+    <string name="00000739">Open #4 Pressure</string>
+    <string name="0000073A">Open #4 Speed</string>
+    <string name="0000073B">Open #4 End Position</string>
+    <string name="0000073C">Open #5 Pressure</string>
+    <string name="0000073D">Open #5 Speed</string>
+    
+    <string name="300FC21E">Open Stroke</string>
+    <string name="30090A00">Prevent Overshoot</string>
+    <string name="300FC50A">Intelligent Close</string>
+    <string name="300FC306">Close #1 Pressure</string>
+    <string name="300FC303">Close #1 Speed</string>
+    <string name="300FC302">Close #1 End Position</string>
+    <string name="300FC30D">Close #2 Pressure</string>
+    <string name="300FC30A">Close #2 Speed</string>
+    <string name="300FC309">Close #2 End Position</string>
+    <string name="300FC314">Close #3 Pressure</string>
+    <string name="300FC311">Close #3 Speed</string>
+    <string name="300FC310">Close #3 End Position</string>
+    <string name="300FC31B">Close Protect Pressure</string>
+    <string name="300FC318">Close Protect Speed</string>
+    <string name="300FC317">Close Protect End Position</string>
+    <string name="300FC322">Close HignPress Pressure</string>
+    <string name="300FC31F">Close HignPress Speed</string>
+    <string name="300FC409">Intelligent Open</string>
+    <string name="300FC206">Open #1 Pressure</string>
+    <string name="300FC203">Open #1 Speed</string>
+    <string name="300FC202">Open #1 End Position</string>
+    <string name="300FC20D">Open #2 Pressure</string>
+    <string name="300FC20A">Open #2 Speed</string>
+    <string name="300FC209">Open #2 End Position</string>
+    <string name="300FC214">Open #3 Pressure</string>
+    <string name="300FC211">Open #3 Speed</string>
+    <string name="300FC210">Open #3 End Position</string>
+    <string name="300FC21B">Open #4 Pressure</string>
+    <string name="300FC218">Open #4 Speed</string>
+    <string name="300FC217">Open #4 End Position</string>
+    <string name="300FC222">Open #5 Pressure</string>
+    <string name="300FC21F">Open #5 Speed</string>
+   
+    <!--ClmpF ClampFunc-->
+    <string name="000186DD">Close Rank</string>
+    <string name="000186DE">Open Rank</string>
+    <string name="000006F4">Cycle Delay Time</string>
+    <string name="0000048F">Close Ultra</string>
+    <string name="00000743">Open Link Option</string>
+    <string name="00000744">Open Link Position</string>
+    <string name="00018853">Clamp Control Mode</string>
+    <string name="00000741">Open Drain Press</string>
+    <string name="00000742">Open Drain Speed</string>
+    <string name="0000020E">Open Drain Time</string>
+    <string name="00000497">InjectMolding Option Position</string>
+    <string name="000006D6">InjMld ToPresMold Position</string>
+    
+    <string name="10000202">Close Rank</string>
+    <string name="10000201">Open Rank</string>
+    
+    <string name="0000073F">Open Fast</string>
+    <string name="0000049A">Low Press Inject</string>
+    <string name="00000499">Not Pause Clmp</string>
+    <string name="00000496">Clmp Force</string>
+    <string name="00000490">Ult Speed</string>
+    <string name="000006D9">Turn TO Clmp Time</string>
+    <string name="000006D7">Not Pause Inject</string>
+    <string name="00000495">Clmp TON</string>
+   
+    <!--ClmpP1 ClampPara1-->
+    <string name="00000070">Close #1 Press Ramp</string>
+    <string name="00000071">Close #1 Speed Ramp</string>
+    <string name="00000072">Close #2 Press Ramp</string>
+    <string name="00000073">Close #2 Speed Ramp</string>
+    <string name="00000074">Close #3 Press Ramp</string>
+    <string name="00000075">Close #3 Speed Ramp</string>
+    <string name="00000076">Close Protect Press Ramp</string>
+    <string name="00000077">Close Protect Speed Ramp</string>
+    <string name="00000078">Close HighPress Press Ramp</string>
+    <string name="00000079">Close HighPress Speed Ramp</string>
+    <string name="0000007E">Close Start Ramp Time</string>
+    <string name="0000007A">Close End Press Ramp</string>
+    <string name="0000007B">Close End Speed Ramp</string>
+    <string name="0000007C">Close Setup Press</string>
+    <string name="0000007D">Close Setup Speed</string>
+    
+    <string name="00000208">Open #5 Press Ramp</string>
+    <string name="00000209">Open #5 Speed Ramp</string>
+    <string name="00000206">Open #4 Press Ramp</string>
+    <string name="00000207">Open #4 Speed Ramp</string>
+    <string name="00000204">Open #3 Press Ramp</string>
+    <string name="00000205">Open #3 Speed Ramp</string>
+    <string name="00000202">Open #2 Press Ramp</string>
+    <string name="00000203">Open #2 Speed Ramp</string>
+    <string name="00000200">Open #1 Press Ramp</string>
+    <string name="00000201">Open #1 Speed Ramp</string>
+    <string name="0000020A">Open End Press Ramp</string>
+    <string name="0000020B">Open End Speed Ramp</string>
+    <string name="0000020C">Open Setup Press</string>
+    <string name="0000020D">Open Setup Speed</string>
+    
+    <string name="00000089">Close UltraValve On Delay</string>
+    <string name="00000088">Close UltraValve Off Delay</string>
+    <string name="0000007F">Close LowPres Hydraulic Delay</string>
+    <string name="00000080">Close LowPres Valve Delay</string>
+    <string name="00000018">AutoAdjust Protect Time</string>
+    <string name="00000081">Close HighPress Hydraulic Delay</string>
+    <string name="00000084">Close HighPress Hold Time</string>
+    <string name="00000085">Close HighPress Valve Delay</string>
+    <string name="00000090">Close Start Proportional Valve Delay</string>
+    <string name="00000086">Close End Valve Delay</string>
+    <string name="00000087">Close End Delay</string>
+    
+    <string name="0000020F">Open Slow1 Protect Valve Delay On</string>
+    <string name="00000211">Open End Valve Delay</string>
+    <string name="00000212">Open End Delay</string>
+    <string name="00000215">Open Start Proportional Valve Delay</string>
+    <string name="000000D7">Mold Open Effect Area</string>
+    
+    <string name="300FC307">Close #1 Press Ramp</string>
+    <string name="300FC304">Close #1 Speed Rise Ramp</string>
+    <string name="300FC305">Close #1 Speed Fall Ramp</string>
+    <string name="300FC30E">Close #2 Press Ramp</string>
+    <string name="300FC30B">Close #2 Speed Rise Ramp</string>
+    <string name="300FC30C">Close #2 Speed Fall Ramp</string>
+    <string name="300FC315">Close #3 Press Ramp</string>
+    <string name="300FC312">Close #3 Speed Rise Ramp</string>
+    <string name="300FC313">Close #3 Speed Fall Ramp</string>
+    <string name="300FC31C">Close Protect Press Ramp</string>
+    <string name="300FC319">Close Protect Speed Rise Ramp</string>
+    <string name="300FC31A">Close Protect Speed Fall Ramp</string>
+    <string name="300FC323">Close HighPress Press Ramp</string>
+    <string name="300FC320">Close HighPress Speed Rise Ramp</string>
+    <string name="300FC321">Close HighPress Speed Fall Ramp</string>
+    <string name="300FC104">Close Setup Press</string>
+    <string name="300FC105">Close Setup Press Ramp</string>
+    <string name="300FC101">Close Setup Speed</string>
+    <string name="300FC102">Close Setup Speed Ramp</string>
+    
+    <string name="300FC207">Open #1 Press Ramp</string>
+    <string name="300FC204">Open #1 Speed Rise Ramp</string>
+    <string name="300FC205">Open #1 Speed Fall Ramp</string>
+    <string name="300FC20E">Open #2 Press Ramp</string>
+    <string name="300FC20B">Open #2 Speed Rise Ramp</string>
+    <string name="300FC20C">Open #2 Speed Fall Ramp</string>
+    <string name="300FC215">Open #3 Press Ramp</string>
+    <string name="300FC212">Open #3 Speed Rise Ramp</string>
+    <string name="300FC213">Open #3 Speed Fall Ramp</string>
+    <string name="300FC21C">Open #4 Press Ramp</string>
+    <string name="300FC219">Open #4 Speed Rise Ramp</string>
+    <string name="300FC21A">Open #4 Speed Fall Ramp</string>
+    <string name="300FC223">Open #5 Press Ramp</string>
+    <string name="300FC220">Open #5 Speed Rise Ramp</string>
+    <string name="300FC221">Open #5 Speed Fall Ramp</string>
+    <string name="300FC004">Open Setup Press</string>
+    <string name="300FC005">Open Setup Press Ramp</string>
+    <string name="300FC001">Open Setup Speed</string>
+    <string name="300FC002">Open Setup Speed Ramp</string>
+    
+    <string name="00000095">Middle Close Ramp</string>
+    <string name="0000021E">Middle Open Ramp</string>
+ 
+    <!--ClmpP2 ClampPara2-->
+    <string name="300FC504">Close Start Pressure</string>
+    <string name="300FC505">Close Start Speed</string>
+    <string name="300FC508">Close Start Position</string>
+    <string name="300FC507">Start Accel Close</string>
+    <string name="300FC506">Start Press Close Ramp</string>
+    
+    <string name="300FC404">Start Open Pressure</string>
+    <string name="300FC405">Start Open Speed</string>
+    <string name="300FC408">Start Open Position</string>
+    <string name="300FC407">Start Open Accel</string>
+    <string name="300FC406">Open Start Press Ramp</string>
+    
+    <string name="00000093">Middle Close Pres</string>
+    <string name="00000094">Middle Close Flow</string>
+    <string name="0000049B">Cls Hi_Pres Flow 2</string>
+    <string name="00000097">Cls End Hold Dly</string>
+    <string name="0000008A">Machine Tonnage</string>
+    <string name="0000008D">Clamp Positive Cushion(Ton)</string>
+    <string name="0000008E">Clamp Negative Cushion(Ton)</string>
+    <string name="0000008F">Clamp Positive Safety(%)</string>
+    <string name="0000008C">Adjust Ton #1</string>
+    <string name="00000092">Adjust Ton #2</string>
+    <string name="0000021C">Middle Opn Pres</string>
+    <string name="0000021D">Middle Opn Flow</string>
+    <string name="00000217">OpenEnd Bef MinPrs</string>
+    <string name="00000218">OpenEnd Bef MinFlow</string>
+    <string name="00000210">Mld Open Slow2 Pres Dly</string>
+    <string name="00000213">Delay On Link Valve</string>
+    <string name="00000216">Distance1 Bef OpenEnd</string>
+    <string name="0000021A">Distance2 Bef OpenEnd</string>
+
+    <!--ClmpSP ClampSpecialPara-->
+    <!--<string name="000186FA">Inject Molding Option</string>-->
+    <!--<string name="000187F6">Clamp Max Pressure</string>-->
+    <!--<string name="000187F7">Clamp Max Speed</string>-->
+    
+    <string name="00031186">Mold Press Limit</string>
+    <string name="000186F8">Low Press Inject</string>
+    <string name="000187F4">Mold Fast Press Limit</string>
+    <string name="000187EE">Close Slow Press Limit</string>
+    <string name="000187F1">Close Hi_Pres Flow Limit</string>
+    <string name="000187F8">Open Slow1 Pos Limit</string>
+    <string name="000186FB">Hold Force Show</string>
+    <string name="00000096">Close Flow Quotiety</string>
+    <string name="000186F2">Open/Close High Speed</string>
+    <string name="000187F5">Mold Fast Flow Limit</string>
+    <string name="000187EF">Close Slow Flow Limit</string>
+    <string name="000187F6">Open Slow1 Press Limit</string>
+    <string name="000187F7">Open Slow1 Flow Limit</string>
+    <string name="000186FA">Force Sensor</string>
+    <string name="00000214">Open Flow Quotiety</string>
+    
+    <!--ClmpC ClampAdjustMach-->
+    <string name="30094600">FastMold PressCtrl KP</string>
+    <string name="30094700">FastMold PressCtrl KI</string>
+    <string name="300FC401">Open Position Control KP</string>
+    <string name="300FC402">Open Position Control KI</string>
+    <string name="300FC40F">Open End Speed</string>
+    <string name="300FC513">Close End Speed</string>
+    <string name="300FC501">Close Position Control KP</string>
+    <string name="300FC502">Close Position Control KI</string>
+    <string name="30091000">Stop Deceleration</string>
+    
+    <string name="300A0100">Min Position Limit</string>
+    <string name="300A0200">Max Postion Limit</string>
+    <string name="30089600">Clamp Position Type</string>
+    <string name="30089700">Clamp Position  Channel</string>
+    <string name="3008A400">Clamp Position  Reverse</string>
+    <string name="3008A900">Clamp Position  Coefficient</string>
+
+    <!--Inje Inject-->
+    <string name="00000690">Inject #1 Pressure</string>
+    <string name="00000691">Inject #1 Speed</string>
+    <string name="00000694">Inject #1 End Position</string>
+    <string name="00000696">Inject #2 Pressure</string>
+    <string name="00000697">Inject #2 Speed</string>
+    <string name="0000069A">Inject #2 End Position</string>
+    <string name="0000069C">Inject #3 Pressure</string>
+    <string name="0000069D">Inject #3 Speed</string>
+    <string name="000006A0">Inject #3 End Position</string>
+    <string name="000006A2">Inject #4 Pressure</string>
+    <string name="000006A3">Inject #4 Speed</string>
+    <string name="000006A6">Inject #4 End Position</string>
+    <string name="000006A8">Inject #5 Pressure</string>
+    <string name="000006A9">Inject #5 Speed</string>
+    <string name="000006AC">Inject #5 End Position</string>
+    <string name="000006AE">Inject #6 Pressure</string>
+    <string name="000006AF">Inject #6 Speed</string>
+    <string name="0000067A">Transfer Mode</string>
+    <string name="00000678">Transfer Press</string>
+    <string name="00000679">Transfer Position</string>
+    <string name="00000692">Transfer Time</string>
+    <string name="00000650">Hold #1 Pressure</string>
+    <string name="00000651">Hold #1 Speed</string>
+    <string name="00000652">Hold #1 Time</string>
+    <string name="00000654">Hold #2 Pressure</string>
+    <string name="00000655">Hold #2 Speed</string>
+    <string name="00000656">Hold #2 Time</string>
+    <string name="00000658">Hold #3 Pressure</string>
+    <string name="00000659">Hold #3 Speed</string>
+    <string name="0000065A">Hold #3 Time</string>
+    <string name="0000065C">Hold #4 Pressure</string>
+    <string name="0000065D">Hold #4 Speed</string>
+    <string name="0000065E">Hold #4 Time</string>
+    <string name="00000660">Hold #5 Pressure</string>
+    <string name="00000661">Hold #5 Speed</string>
+    <string name="00000662">Hold #5 Time</string>
+    <string name="00000664">Hold #6 Pressure</string>
+    <string name="00000665">Hold #6 Speed</string>
+    <string name="00000666">Hold #6 Time</string>
+    <string name="000006DA">Inject Safe Pressure</string>
+
+    <!--Val Valve-->
+    <string name="00003800">Valve 1 Function Select</string>
+    <string name="00003801">Valve 1 Inject On Time</string>
+    <string name="00003802">Valve 1 Inject Off Time</string>
+    <string name="00003803">Valve 1 Inject On Position</string>
+    <string name="00003804">Valve 1 Inject Off Position</string>
+    <string name="0000380F">Valve 1 Hold On Time</string>
+    <string name="00003810">Valve 1 Hold Off Time</string>
+    <string name="00003811">Valve 2 Function Select</string>
+    <string name="00003812">Valve 2 Inject On Time</string>
+    <string name="00003813">Valve 2 Inject Off Time</string>
+    <string name="00003814">Valve 2 Inject On Position</string>
+    <string name="00003815">Valve 2 Inject Off Position</string>
+    <string name="00003820">Valve 2 Hold On Time</string>
+    <string name="00003821">Valve 2 Hold Off Time</string>
+    <string name="00003822">Valve 3 Function Select</string>
+    <string name="00003823">Valve 3 Inject On Time</string>
+    <string name="00003824">Valve 3 Inject Off Time</string>
+    <string name="00003825">Valve 3 Inject On Position</string>
+    <string name="00003826">Valve 3 Inject Off Position</string>
+    <string name="00003831">Valve 3 Hold On Time</string>
+    <string name="00003832">Valve 3 Hold Off Time</string>
+    <string name="00003833">Valve 4 Function Select</string>
+    <string name="00003834">Valve 4 Inject On Time</string>
+    <string name="00003835">Valve 4 Inject Off Time</string>
+    <string name="00003836">Valve 4 Inject On Position</string>
+    <string name="00003837">Valve 4 Inject Off Position</string>
+    <string name="00003842">Valve 4 Hold On Time</string>
+    <string name="00003843">Valve 4 Hold Off Time</string>
+    <string name="00003844">Valve 5 Function Select</string>
+    <string name="00003845">Valve 5 Inject On Time</string>
+    <string name="00003846">Valve 5 Inject Off Time</string>
+    <string name="00003847">Valve 5 Inject On Position</string>
+    <string name="00003848">Valve 5 Inject Off Position</string>
+    <string name="00003853">Valve 5 Hold On Time</string>
+    <string name="00003854">Valve 5 Hold Off Time</string>
+    <string name="00003855">Valve 6 Function Select</string>
+    <string name="00003856">Valve 6 Inject On Time</string>
+    <string name="00003857">Valve 6 Inject Off Time</string>
+    <string name="00003858">Valve 6 Inject On Position</string>
+    <string name="00003859">Valve 6 Inject Off Position</string>
+    <string name="00003864">Valve 6 Hold On Time</string>
+    <string name="00003865">Valve 6 Hold Off Time</string>
+    <string name="00003866">Valve 7 Function Select</string>
+    <string name="00003867">Valve 7 Inject On Time</string>
+    <string name="00003868">Valve 7 Inject Off Time</string>
+    <string name="00003869">Valve 7 Inject On Position</string>
+    <string name="0000386A">Valve 7 Inject Off Position</string>
+    <string name="00003875">Valve 7 Hold On Time</string>
+    <string name="00003876">Valve 7 Hold Off Time</string>
+    <string name="00003877">Valve 8 Function Select</string>
+    <string name="00003878">Valve 8 Inject On Time</string>
+    <string name="00003879">Valve 8 Inject Off Time</string>
+    <string name="0000387A">Valve 8 Inject On Position</string>
+    <string name="0000387B">Valve 8 Inject Off Position</string>
+    <string name="00003886">Valve 8 Hold On Time</string>
+    <string name="00003887">Valve 8 Hold Off Time</string>
+    <string name="00003888">Valve 9 Function Select</string>
+    <string name="00003889">Valve 9 Inject On Time</string>
+    <string name="0000388A">Valve 9 Inject Off Time</string>
+    <string name="0000388B">Valve 9 Inject On Position</string>
+    <string name="0000388C">Valve 9 Inject Off Position</string>
+    <string name="00003897">Valve 9 Hold On Time</string>
+    <string name="00003898">Valve 9 Hold Off Time</string>
+    <string name="00003899">Valve 10 Function Select</string>
+    <string name="0000389A">Valve 10 Inject On Time</string>
+    <string name="0000389B">Valve 10 Inject Off Time</string>
+    <string name="0000389C">Valve 10 Inject On Position</string>
+    <string name="0000389D">Valve 10 Inject Off Position</string>
+    <string name="000038A8">Valve 10 Hold On Time</string>
+    <string name="000038A9">Valve 10 Hold Off Time</string>
+    <string name="000038AA">Valve 11 Function Select</string>
+    <string name="000038AB">Valve 11 Inject On Time</string>
+    <string name="000038AC">Valve 11 Inject Off Time</string>
+    <string name="000038AD">Valve 11 Inject On Position</string>
+    <string name="000038AE">Valve 11 Inject Off Position</string>
+    <string name="000038B9">Valve 11 Hold On Time</string>
+    <string name="000038BA">Valve 11 Hold Off Time</string>
+    <string name="000038BB">Valve 12 Function Select</string>
+    <string name="000038BC">Valve 12 Inject On Time</string>
+    <string name="000038BD">Valve 12 Inject Off Time</string>
+    <string name="000038BE">Valve 12 Inject On Position</string>
+    <string name="000038BF">Valve 12 Inject Off Position</string>
+    <string name="000038CA">Valve 12 Hold On Time</string>
+    <string name="000038CB">Valve 12 Hold Off Time</string>
+
+    <string name="0000068F">Valve Power Mode Option</string>
+    <string name="00003B35">Valve Pressure</string>
+    <string name="00003B36">Valve Speed</string>
+    <string name="00031181">All Valve Manual Output</string>
+    <string name="00031182">Valve Manual Output Time</string>
+
+    <!--InjeF InjectFunc-->
+    <string name="000186DF">Inject Rank</string>
+    <string name="000186E0">Hold Rank</string>
+    <string name="000006CE">Inject Add Speed Fun</string>
+    <string name="000006D0">Inject Fast Fun</string>
+    <string name="00000008">Inject Release Energy Flow</string>
+    <string name="000005C2">Gas Inject Select</string>
+    <string name="000005C5">Gas Inject Posi</string>
+    <string name="000005C1">Gas Inject Time</string>
+    <string name="000006D1">Inject Time Before NozAdv</string>
+    <string name="000006D2">Inject Dist Before NozAdv</string>
+    <string name="0000067C">Release HoldPres</string>
+    <string name="000005DF">Fluid Inje</string>
+
+    <!--InjeF_bake -->
+    <string name="00000440">Delay Before Exhaust</string>
+    <string name="00000441">Delay After Exhaust</string>
+    <string name="00000446">Open Clmp Postion After Inject</string>
+    <string name="00000447">Hold Press 1 Open Clmp Postion</string>
+    <string name="00000448">Hold Press 2 Open Clmp Postion</string>
+    <string name="00000449">Open Clmp Postion After Hold Press</string>
+    
+    <!--InjeF_Shut -->
+    <string name="00000770">Shut Function</string>
+    <string name="00000266">Shut On Mode Option</string>
+    <string name="00000261">Shut On Press</string>
+    <string name="00000262">Shut On Speed</string>
+    <string name="00000260">Shut On Act Time</string>
+    <string name="00000267">Shut On Hold Time</string>
+    <string name="00000264">Shut Off Mode Option</string>
+    <string name="00000263">Shut Off Act Time</string>
+    <string name="00000265">Shut Off Hold Time</string>
+
+    <!--InjeP InjectPara-->
+    <string name="00000160">Inject #1 Pressure Ramp</string>
+    <string name="00000161">Inject #1 Speed Ramp</string>
+    <string name="00000162">Inject #2 Pressure Ramp</string>
+    <string name="00000163">Inject #2 Speed Ramp</string>
+    <string name="00000164">Inject #3 Pressure Ramp</string>
+    <string name="00000165">Inject #3 Speed Ramp</string>
+    <string name="00000166">Inject #4 Pressure Ramp</string>
+    <string name="00000167">Inject #4 Speed Ramp</string>
+    <string name="00000168">Inject #5 Pressure Ramp</string>
+    <string name="00000169">Inject #5 Speed Ramp</string>
+    <string name="0000016A">Inject #6 Pressure Ramp</string>
+    <string name="0000016B">Inject #6 Speed Ramp</string>
+    <string name="00000174">Inject End Pressure Ramp Down</string>
+    <string name="00000175">Inject End Speed Ramp Down</string>
+    <string name="00000176">Inject Setup Pressure</string>
+    <string name="00000177">Inject Setup Speed</string>
+    <string name="00018826">Max Speed</string>
+    <string name="00000002">Storage Pressure</string>
+    <string name="00000003">Storage Speed</string>
+    <string name="00000178">Inject Delay</string>
+    <string name="00000179">Inject End Valve Delay Off</string>
+    <string name="00000004">Accumuaator Delay</string>
+    <string name="0000017A">Auto Inje End Delay Time</string>
+    <string name="0000017F">Hold Press Drain Press Time</string>
+    <string name="00000009">Inje Release Energy Flow Off Ramp</string>
+    <string name="0000000A">Inje Release Energy Flow Ramp</string>
+    <string name="00000000">Inje Accumulate Energy Press Ramp</string>
+    <string name="00000001">Inje Accumulate Energy Flow Ramp</string>
+    <string name="0000011E">Valve Press Ramp</string>
+    <string name="0000011F">Valve Flow Ramp</string>
+
+    <string name="0000013E">Inject PValve Delay</string>
+    <string name="00000120">Hold #1 Pressure Ramp</string>
+    <string name="00000121">Hold #1 Speed Ramp</string>
+    <string name="00000122">Hold #2 Pressure Ramp</string>
+    <string name="00000123">Hold #2 Speed Ramp</string>
+    <string name="00000124">Hold #3 Pressure Ramp</string>
+    <string name="00000125">Hold #3 Speed Ramp</string>
+    <string name="00000126">Hold #4 Pressure Ramp</string>
+    <string name="00000127">Hold #4 Speed Ramp</string>
+    <string name="00000128">Hold #5 Pressure Ramp</string>
+    <string name="00000129">Hold #5 Speed Ramp</string>
+    <string name="0000012A">Hold #6 Pressure Ramp</string>
+    <string name="0000012B">Hold #6 Speed Ramp</string>
+    
+    <!--InjeSP InjectSpecialPara-->
+    <string name="00030D4C">Shut Control Option</string>
+    <string name="000186F3">Bakelite Option</string>
+    <string name="00018700">Inject Cushion Option</string>
+    <string name="00018709">Gas-Assisted Option</string>
+    <string name="000186E4">Closed Loop Injection Option</string>
+    <string name="000186E9">Proportional Discharge Option</string>
+    <string name="000186FE">Pre Injection Function</string>
+    <string name="0001870D">Fluid Injection Option</string>
+
+    <string name="00018800">Inject Max Pressure</string>
+    <string name="00018801">Inject Max Speed</string>
+    <string name="00018802">Hold Max Pressure</string>
+    <string name="00018803">Hold Max Speed</string>   
+    
+    <string name="0000017D">Inject Flow Ratio</string>
+    <string name="00031180">Transfer Hold Extend Funtion</string>
+    <string name="0000017C">Inject Curve Sampleing Interval</string>
+    <string name="00018723">Inject Fast Function</string>
+    <string name="00031185">COM2 Valve Power Supply Option</string>
+    <string name="00030D4A">Shut Max Pressure</string>
+    <string name="0000011D">Inject A Valve Segment Option</string>
+    <string name="00030D4B">Valve Max Pressure</string>
+    <string name="0003118D">Inject Safe Pressure Option</string>
+    
+    <!--Chrg Charge-->
+    <string name="00000451">Charge #1 BackPressure</string>
+    <string name="00000450">Charge #1 Pressure</string>
+    <string name="00000452">Charge #1 Speed</string>
+    <string name="00000453">Charge #1 End Position</string>
+    <string name="00000455">Charge #2 BackPressure</string>
+    <string name="00000454">Charge #2 Pressure</string>
+    <string name="00000456">Charge #2 Speed</string>
+    <string name="00000457">Charge #2 End Position</string>
+    <string name="00000459">Charge #3 BackPressure</string>
+    <string name="00000458">Charge #3 Pressure</string>
+    <string name="0000045A">Charge #3 Speed</string>
+    <string name="0000045B">Charge #3 End Position</string>
+    <string name="0000045D">Charge #4 BackPressure</string>
+    <string name="0000045C">Charge #4 Pressure</string>
+    <string name="0000045E">Charge #4 Speed</string>
+    <string name="0000045F">Charge #4 End Position</string>
+    <string name="00000461">Charge #5 BackPressure</string>
+    <string name="00000460">Charge #5 Pressure</string>
+    <string name="00000462">Charge #5 Speed</string>
+    <string name="00000463">Charge #5 End Position</string>
+    <string name="00000790">Suckback Pressure</string>
+    <string name="00000791">SuckBack Speed</string>
+    <string name="00000794">SuckBack Time</string>
+    <string name="00000793">SuckBack Distance</string>
+    <string name="00000795">SuckBack ActMode</string>
+    <string name="00000797">SuckBack Distance Before Charge</string>
+    <string name="00000796">SuckBack Time Before Charge</string>
+    <string name="0000046C">FlowMolding Position</string>
+    <string name="0000046A">FlowMolding Time</string>
+    <string name="000004B8">Cool Time Before Charge</string>
+    <string name="000004BA">Cool Time</string>
+    
+    <!--ChrgPurge ChargePurge-->
+    <string name="00000760">Purge Option</string>
+    <string name="00000761">Purge Count</string>
+    <string name="00000762">Purge Time</string>
+	
+	<!--ChrgF ChargeFunc-->
+	<string name="000186E3">Charge Rank</string>
+	<string name="00000465">Charge BackPress Valve</string>
+	<string name="00000469">Charg Mld Link</string>
+	<string name="0000005E">Charge Valve Delay</string>
+	<string name="000187EB">SuckBack Mode</string>
+	<string name="000187E9">SuckBack Mode Before Charge</string>
+	<string name="000187EA">FlowMding Mode</string>
+	<string name="000186E1">Charge Rank</string>
+	<string name="00000467">Charg Fast</string>
+	
+	<!--ChrgCurve-->
+	<string name="00018825">Charge Curve Max Speed :</string>
+	
+    <!--ChrgP ChargePara-->
+    <string name="00000050">Charge #1 Pressure Ramp</string>
+    <string name="00000051">Charge #1 Speed Ramp</string>
+    <string name="00000052">Charge #2 Pressure Ramp</string>
+    <string name="00000053">Charge #2 Speed Ramp</string>
+    <string name="00000054">Charge #3 Pressure Ramp</string>
+    <string name="00000055">Charge #3 Speed Ramp</string>
+    <string name="00000056">Charge #4 Pressure Ramp</string>
+    <string name="00000057">Charge #4 Speed Ramp</string>
+    <string name="00000058">Charge #5 Pressure Ramp</string>
+    <string name="00000059">Charge #5 Speed Ramp</string>
+    <string name="0000005A">Charge End Pressure Ramp Down</string>
+    <string name="0000005B">Charge End Speed Ramp Down</string>
+    <string name="0000005C">Charge Steup Pressure</string>
+    <string name="0000005D">Charge Steup Speed</string>
+    <string name="0000005F">Charge End Valve Delay Off</string>
+    <string name="00000060">Charge Start Proportional Valve Delay</string>
+    <string name="00000280">SuckBack Press Ramp</string>
+    <string name="00000281">SuckBack Speed Ramp</string>
+    <string name="00000284">Suck End Valve Delay Off</string>
+    <string name="00000286">Suck Start Proportional Valve Delay</string>
+    <string name="00000287">Suck Delay After Charge</string>
+    <string name="00000062">ChgA No Move Moni Time</string>
+    <string name="00000065">Chrg Safe Pos Moni Time</string>
+    <string name="00000063">ChgA No Move Moni Distance</string>
+    <string name="00000064">Chrg Safe Pos Check Offset</string>
+    <string name="000187DB">ChrgBkPrs CurveOpt</string>
+    
+    <string name="00000069">Elec Prefiguration Oil Press</string>
+    <string name="0000006A">Elec Prefiguration Oil Speed</string>
+    <string name="0000015A">Supply Oil Circulating Press</string>
+    <string name="0000015B">Supply Oil Circulating Flow</string>
+
+    <!--ChrgSP SpecialPara-->
+    <string name="00018702">RelBkPsChg Opt</string>
+    <string name="000186F0">Charg Mld Link Opt</string>
+    <string name="0001870A">Auto Feed</string>
+    <string name="00018804">Chrg Max Prs</string>
+    <string name="00018805">Chrg Max Flow</string>
+    <string name="000187FE">BkPrs Max Prs</string>
+    <string name="00018806">SkBk Max Prs</string>
+    <string name="00018807">SkBk Max Flow</string>
+    <string name="00000061">Charge Flow Quotiety</string>
+    <string name="00000066">OneJar Inje Protect</string>
+    <string name="00031903">Charg Fast Opt</string>
+    <string name="0003190C">Ele Prefiguration Oil</string>
+    <string name="0003119E">Ele Prefiguration Oil Press Max</string>
+    <string name="0003119F">Ele Prefiguration Oil Flow Max</string>
+
+    <string name="00000159">Supply Oil Motor CoolRound</string>
+    
+    <!--Ejet Eject-->
+    <string name="000005A0">Eject Adv 1 Pressure</string>
+    <string name="000005A1">Eject Adv 1 Speed</string>
+    <string name="000005A2">Eject Adv 1 End Position</string>
+    <string name="000005A3">Eject Adv 2 Pressure</string>
+    <string name="000005A4">Eject Adv 2 Speed</string>
+    <string name="000005A5">Eject Adv 2 End Position</string>
+    <string name="000005A6">Eject Ret 1 Pressure</string>
+    <string name="000005A7">Eject Ret 1 Speed</string>
+    <string name="000005A8">Eject Ret 1 End Position</string>
+    <string name="000005A9">Eject Ret 2 Pressure</string>
+    <string name="000005AA">Eject Ret 2 Speed</string>
+    <string name="000005AB">Eject Ret 2 End Position</string>
+    <string name="000005AE">Eject Adv Delay Time</string>
+    <string name="000005AF">Eject Ret Delay Time</string>
+    <string name="000005AC">Eject Mode</string>
+    <string name="000005AD">Eject Count</string>
+    <string name="000005B0">Vibr Eject Dist</string>
+    <string name="000005B9">Grad Ejet</string>
+    
+    <!--EjetAir AirBlast -->
+    <string name="00003280">AirBlast 1 Act Point</string>
+    <string name="00003200">AirBlast 1 Start Position</string>
+    <string name="00003201">AirBlast 1 Delay Time</string>
+    <string name="00003202">AirBlast 1 Act Time</string>
+    <string name="00003288">AirBlast 2 Act Point</string>
+    <string name="00003240">AirBlast 2 Start Position</string>
+    <string name="00003241">AirBlast 2 Delay Time</string>
+    <string name="00003242">AirBlast 2 Act Time</string>
+    <string name="00003281">AirBlast 3 Act Point</string>
+    <string name="00003208">AirBlast 3 Start Position</string>
+    <string name="00003209">AirBlast 3 Delay Time</string>
+    <string name="0000320A">AirBlast 3 Act Time</string>
+    <string name="00003289">AirBlast 4 Act Point</string>
+    <string name="00003248">AirBlast 4 Start Position</string>
+    <string name="00003249">AirBlast 4 Delay Time</string>
+    <string name="0000324A">AirBlast 4 Act Time</string>
+    <string name="00003282">AirBlast 5 Act Point</string>
+    <string name="00003210">AirBlast 5 Start Position</string>
+    <string name="00003211">AirBlast 5 Delay Time</string>
+    <string name="00003212">AirBlast 5 Act Time</string>
+    <string name="0000328A">AirBlast 6 Act Point</string>
+    <string name="00003250">AirBlast 6 Start Position</string>
+    <string name="00003251">AirBlast 6 Delay Time</string>
+    <string name="00003252">AirBlast 6 Act Time</string>
+  
+    <!--EjetF EjectFunc-->
+    <string name="000006F0">Robot Option</string>
+    <string name="000187E2">Manual Key A/C/E Use Option</string>
+    <string name="000187E3">Manual Key B/D/F Use Option</string>
+    <string name="000006F1">Power Door</string>
+    <string name="000006F2">Sensor Check</string>
+    <string name="000005B3">Eject Again</string>
+    <string name="00000493">Mld Protect Try Again</string>
+    <string name="00000701">Mold Setting Opt</string>
+    <string name="000005B7">Mold Eject</string>
+    <string name="000005B5">EjtAdv #1 Pause Time</string>
+    <string name="000006FC">Bad Unit Circle</string>
+    <string name="00000245">Semi RearDoor</string>
+    <string name="000006FF">Close Door Link</string>
+    <string name="00003290">Recycle Air Opt</string>
+
+    <!--EjetRCut 切断-->
+    <string name="00000769">RCut</string>
+    <string name="0000076D">RCut Dely</string>
+    <string name="0000076C">RCut EjtAdv Postion</string>
+    <string name="0000076A">RCut EjtAdv Press</string>
+    <string name="0000076B">RCut EjtAdv Speed</string>
+    <string name="0000076E">RCut EjtAdv Hold Time</string>
+    <string name="0000076F">RCut EjtAdv EjtRet Opt</string>
+   
+    <!--EjetF EjectPara-->
+    <string name="000000E0">Eject Adv 1 Pressure Ramp</string>
+    <string name="000000E1">Eject Adv 1 Speed Ramp</string>
+    <string name="000000E2">Eject Adv 2 Pressure Ramp</string>
+    <string name="000000E3">Eject Adv 2 Speed Ramp</string>
+    <string name="000000E4">Eject Ret 1 Pressure Ramp</string>
+    <string name="000000E5">Eject Ret 1 Speed Ramp</string>
+    <string name="000000E6">Eject Ret 2 Pressure Ramp</string>
+    <string name="000000E7">Eject Ret 2 Speed Ramp</string>
+    <string name="000000E8">Eject End Press Ramp Down</string>
+    <string name="000000E9">Eject End Speed Ramp Down</string>
+    <string name="000000EA">Eject Setup Pressure</string>
+    <string name="000000EB">Eject Setup Speed</string>
+    <string name="000000F4">EjtEnd BefFlow</string>
+    <string name="000000EC">Vibrate Eject Time</string>
+    <string name="00000250">Power Door Pres</string>
+    <string name="00000251">Power Door Spd</string>
+    <string name="00000252">Power Door Pres2</string>
+    <string name="00000253">Power Door Spd 2</string>
+    <string name="00000256">Door Close Delay</string>
+    <string name="00000255">Door Open Time</string>
+    <string name="000000F6">Grad Ejet Moni Tim</string>
+    <string name="00000257">Auto Door Moni Tim</string>
+    <string name="000000EF">Eject Effect Area</string>
+    <string name="000000EE">Max Eject Ret Position</string>
+    <string name="000000F2">EjtRetEnd BefPos</string>
+    <string name="000005BA">Ejet In End Posn Posive Effet Area</string>
+    <string name="000000F7">Grad Ejet Check Length</string>
+    <string name="000001A0">Eject Bwd End Pos Not Zero</string>
+    <string name="000000F8">Manu Ejet Not Ejet In Dly</string>
+    <string name="000000F0">EjtAdv End ValveOff Dly</string>
+    <string name="000000F1">EjtRet End ValveOff Dly</string>
+    <string name="00031177">Safe Door Open Posn</string>
+    <string name="00031178">Single Pulse Travel</string>
+    <string name="00031179">Pulses Before Safe Door Open Posn</string>
+
+    <!--EjetS EjetSpecialPara-->
+    <string name="00018808">Ejt Max Prs</string>
+    <string name="00018809">Ejt Max Flow</string>
+    <string name="000186E6">Air Blast Group</string>
+    <string name="000000F3">Ejt Flow Ratio</string>
+    <string name="000186FC">Semi RearDoor Opt</string>
+    <string name="00031136">Air Extend Func</string>
+    <string name="00031137">Repeat Ejt Hold</string>
+    <string name="000186F9">Bad Unit Circle Opt</string>
+    <string name="000186F6">Close Door Link Opt</string>
+    <string name="000186FD">Mold Eject Opt</string>
+    <string name="00031187">RCut Opt</string>
+    <string name="0001870C">EjectAdv Pause</string>
+    <string name="0001871F">Grad Ejet Opt</string>
+    <string name="00030D67">Mold Setting Corfirm</string>
+    <string name="0003190A">Mld Prototect Try Again Opt</string>
+    
+    <!--Core1 Core1-->
+    <string name="000004C0">Core A Function</string>
+    <string name="000004C2">Core A In Mode Option</string>
+    <string name="000004D1">Core A Out Mode Option</string>
+    <string name="000004C1">Inject Core A Not Hold</string>
+    <string name="000004C5">Core A In Pressure</string>
+    <string name="000004C6">Core A In Speed</string>
+    <string name="000004C7">Core A In Act Time</string>
+    <string name="000004C8">Core A In UnScrew Count</string>
+    <string name="000004C3">Core A In Act Point</string>
+    <string name="000004C4">Core A In Act Position</string>
+    <string name="000004D4">Core A Out Pressure</string>
+    <string name="000004D5">Core A Out Speed</string>
+    <string name="000004D6">Core A Out Act Time</string>
+    <string name="000004D7">Core A Out UnScrew Count</string>
+    <string name="000004DD">Core A Out 2nd UnScrew Count</string>
+    <string name="000004D2">Core A Out Act Point</string>
+    <string name="000004D3">Core A Out Act Position</string>
+    
+    <string name="000004E0">Core B Function</string>
+    <string name="000004E2">Core B In Mode Option</string>
+    <string name="000004F1">Core B Out Mode Option</string>
+    <string name="000004E1">Inject Core B Not Hold</string>
+    <string name="000004E5">Core B In Pressure</string>
+    <string name="000004E6">Core B In Speed</string>
+    <string name="000004E7">Core B In Act Time</string>
+    <string name="000004E8">Core B In UnScrew Count</string>
+    <string name="000004E3">Core B In Act Point</string>
+    <string name="000004E4">Core B In Act Position</string>
+    <string name="000004F4">Core B Out Pressure</string>
+    <string name="000004F5">Core B Out Speed</string>
+    <string name="000004F6">Core B Out Act Time</string>
+    <string name="000004F7">Core B Out UnScrew Count</string>
+    <string name="000004FD">Core B Out 2nd UnScrew Count</string>
+    <string name="000004F2">Core B Out Act Point</string>
+    <string name="000004F3">Core B Out Act Position</string>
+ 
+    <!--Core2 Core2-->
+    <string name="00000500">Core C Function</string>
+    <string name="00000502">Core C In Mode Option</string>
+    <string name="00000511">Core C Out Mode Option</string>
+    <string name="00000501">Inject Core C Not Hold</string>
+    <string name="00000505">Core C In Pressure</string>
+    <string name="00000506">Core C In Speed</string>
+    <string name="00000507">Core C In Act Time</string>
+    <string name="00000508">Core C In UnScrew Count</string>
+    <string name="00000503">Core C In Act Point</string>
+    <string name="00000504">Core C In Act Position</string>
+    <string name="00000514">Core C Out Pressure</string>
+    <string name="00000515">Core C Out Speed</string>
+    <string name="00000516">Core C Out Act Time</string>
+    <string name="00000517">Core C Out UnScrew Count</string>
+    <string name="0000051D">Core C Out 2nd UnScrew Count</string>
+    <string name="00000512">Core C Out Act Point</string>
+    <string name="00000513">Core C Out Act Position</string>
+    
+    <string name="00000520">Core D Function</string>
+    <string name="00000522">Core D In Mode Option</string>
+    <string name="00000531">Core D Out Mode Option</string>
+    <string name="00000521">Inject Core D Not Hold</string>
+    <string name="00000525">Core D In Pressure</string>
+    <string name="00000526">Core D In Speed</string>
+    <string name="00000527">Core D In Act Time</string>
+    <string name="00000528">Core D In UnScrew Count</string>
+    <string name="00000523">Core D In Act Point</string>
+    <string name="00000524">Core D In Act Position</string>
+    <string name="00000534">Core D Out Pressure</string>
+    <string name="00000535">Core D Out Speed</string>
+    <string name="00000536">Core D Out Act Time</string>
+    <string name="00000537">Core D Out UnScrew Count</string>
+    <string name="0000053D">Core D Out 2nd UnScrew Count</string>
+    <string name="00000532">Core D Out Act Point</string>
+    <string name="00000533">Core D Out Act Position</string>
+    
+    <!--Core3 Core3-->
+    <string name="00000540">Core E Function</string>
+    <string name="00000542">Core E In Mode Option</string>
+    <string name="00000551">Core E Out Mode Option</string>
+    <string name="00000541">Inject Core E Not Hold</string>
+    <string name="00000545">Core E In Pressure</string>
+    <string name="00000546">Core E In Speed</string>
+    <string name="00000547">Core E In Act Time</string>
+    <string name="00000548">Core E In UnScrew Count</string>
+    <string name="00000543">Core E In Act Point</string>
+    <string name="00000544">Core E In Act Position</string>
+    <string name="00000554">Core E Out Pressure</string>
+    <string name="00000555">Core E Out Speed</string>
+    <string name="00000556">Core E Out Act Time</string>
+    <string name="00000557">Core E Out UnScrew Count</string>
+    <string name="0000055D">Core E Out 2nd UnScrew Count</string>
+    <string name="00000552">Core E Out Act Point</string>
+    <string name="00000553">Core E Out Act Position</string>
+    
+    <string name="00000560">Core F Function</string>
+    <string name="00000562">Core F In Mode Option</string>
+    <string name="00000571">Core F Out Mode Option</string>
+    <string name="00000561">Inject Core F Not Hold</string>
+    <string name="00000565">Core F In Pressure</string>
+    <string name="00000566">Core F In Speed</string>
+    <string name="00000567">Core F In Act Time</string>
+    <string name="00000568">Core F In UnScrew Count</string>
+    <string name="00000563">Core F In Act Point</string>
+    <string name="00000564">Core F In Act Position</string>
+    <string name="00000574">Core F Out Pressure</string>
+    <string name="00000575">Core F Out Speed</string>
+    <string name="00000576">Core F Out Act Time</string>
+    <string name="00000577">Core F Out UnScrew Count</string>
+    <string name="0000057D">Core F Out 2nd UnScrew Count</string>
+    <string name="00000572">Core F Out Act Point</string>
+    <string name="00000573">Core F Out Act Position</string>
+
+    <!--Core4 Core4-->
+    <string name="000032A0">Core G Function</string>
+    <string name="000032A2">Core G In Mode Option</string>
+    <string name="000032B1">Core G Out Mode Option</string>
+    <string name="000032A1">Inject Core G Not Hold</string>
+    <string name="000032A5">Core G In Pressure</string>
+    <string name="000032A6">Core G In Speed</string>
+    <string name="000032A7">Core G In Act Time</string>
+    <string name="000032A8">Core G In UnScrew Count</string>
+    <string name="000032A3">Core G In Act Point</string>
+    <string name="000032A4">Core G In Act Position</string>
+    <string name="000032B4">Core G Out Pressure</string>
+    <string name="000032B5">Core G Out Speed</string>
+    <string name="000032B6">Core G Out Act Time</string>
+    <string name="000032B7">Core G Out UnScrew Count</string>
+    <string name="000032BD">Core G Out 2nd UnScrew Count</string>
+    <string name="000032B2">Core G Out Act Point</string>
+    <string name="000032B3">Core G Out Act Position</string>
+                          
+    <string name="000032C0">Core H Function</string>
+    <string name="000032C2">Core H In Mode Option</string>
+    <string name="000032D1">Core H Out Mode Option</string>
+    <string name="000032C1">Inject Core H Not Hold</string>
+    <string name="000032C5">Core H In Pressure</string>
+    <string name="000032C6">Core H In Speed</string>
+    <string name="000032C7">Core H In Act Time</string>
+    <string name="000032C8">Core H In UnScrew Count</string>
+    <string name="000032C3">Core H In Act Point</string>
+    <string name="000032C4">Core H In Act Position</string>
+    <string name="000032D4">Core H Out Pressure</string>
+    <string name="000032D5">Core H Out Speed</string>
+    <string name="000032D6">Core H Out Act Time</string>
+    <string name="000032D7">Core H Out UnScrew Count</string>
+    <string name="000032DD">Core H Out 2nd UnScrew Count</string>
+    <string name="000032D2">Core H Out Act Point</string>
+    <string name="000032D3">Core H Out Act Position</string>
+    
+    <!--CoreF  CoreFunc-->
+    <string name="00000586">Special Core Function</string>
+    <string name="00000587">Core Act Time 1</string>
+    <string name="00000588">Core Act Time 2</string>
+    <string name="000187E1">Core C Key Option</string>
+    <string name="00000594">Scrw Ret 2 Mode Option</string>
+    <string name="00000595">Scrw Ret 2 Act Postion</string>
+    <string name="000004D8">Scrw Ret 2 Press</string>
+    <string name="000004D9">Scrw Ret 2 Speed</string>
+    
+    <!--CoreP  CorePara-->
+    <string name="000000A0">Core A In Pressure Ramp</string>
+    <string name="000000A1">Core A In Speed Ramp</string>
+    <string name="000000A4">Core A Out Pressure Ramp</string>
+    <string name="000000A5">Core A Out Speed Ramp</string>
+    <string name="000000A8">Core B In Pressure Ramp</string>
+    <string name="000000A9">Core B In Speed Ramp</string>
+    <string name="000000AC">Core B Out Pressure Ramp</string>
+    <string name="000000AD">Core B Out Speed Ramp</string>
+    <string name="000000B0">Core C In Pressure Ramp</string> 
+    <string name="000000B1">Core C In Speed Ramp</string> 
+    <string name="000000B4">Core C Out Pressure Ramp</string> 
+    <string name="000000B5">Core C Out Speed Ramp</string> 
+    <string name="000000B8">Core D In Pressure Ramp</string>
+    <string name="000000B9">Core D In Speed Ramp</string>
+    <string name="000000BC">Core D Out Pressure Ramp</string>
+    <string name="000000BD">Core D Out Speed Ramp</string>
+    <string name="000000C0">Core E In Pressure Ramp</string> 
+    <string name="000000C1">Core E In Speed Ramp</string> 
+    <string name="000000C4">Core E Out Pressure Ramp</string> 
+    <string name="000000C5">Core E Out Speed Ramp</string> 
+    <string name="000000C8">Core F In Pressure Ramp</string>
+    <string name="000000C9">Core F In Speed Ramp</string>
+    <string name="000000CC">Core F Out Pressure Ramp</string>
+    <string name="000000CD">Core F Out Speed Ramp</string>
+
+    <string name="00003000">Core G In Pressure Ramp</string>
+    <string name="00003001">Core G In Speed Ramp</string>
+    <string name="00003004">Core G Out Pressure Ramp</string>
+    <string name="00003005">Core G Out Speed Ramp</string>
+    
+    <string name="00003008">Core H In Pressure Ramp</string>
+    <string name="00003009">Core H In Speed Ramp</string>
+    <string name="0000300C">Core H Out Pressure Ramp</string>
+    <string name="0000300D">Core H Out Speed Ramp</string>
+
+    <string name="000000D0">Core End Prese Ramp Down</string>
+    <string name="000000D1">Core End Speed Ramp Down</string>
+    <string name="0001881A">Core Max Pressure</string>
+    <string name="0001881B">Core Max Speed</string>
+    <string name="000000D2">Core In Act Delay</string>
+    <string name="000000D9">Core In Start Valve On Delay</string>
+    <string name="000000DB">Core In End Valve Off Delay</string>
+    <string name="000000D5">Core Protect Option</string>
+    <string name="000000D3">Core Out Act Delay</string>
+    <string name="000000DA">Core Out Start Valve On Delay</string>
+    <string name="000000DC">Core Out End Valve Off Delay</string>
+    <string name="000000D4">Screw Slow Count</string>
+    <string name="000000DD">Core in End  Delay</string>
+    <string name="000000DE">Core Out End Delay</string>
+    <string name="000000D8">Core Middle Act Delay</string>
+    <string name="000000DF">Core/Vlv Release Pres Time</string>
+    <string name="00003030">Core Setup Press</string>
+    <string name="00003031">Core Setup Flow</string>
+    <string name="0000058B">In/Out Limit Check</string>
+    <string name="00000596">Check core PB during open and close</string>
+    
+    <!--CoreS  中子组态-->
+    <string name="000186E5">Core Group</string>
+    <string name="0001877E">Scrw Ret 2 Option</string>
+    <string name="0003117F">Core Hold</string>
+    
+    <!--Nozzle  Nozzle-->
+    <string name="00000713">Nozzle Adv 2 Pressure</string>
+    <string name="00000714">Nozzle Adv 2 Speed</string>
+    <string name="00000715">Nozzle Adv 2 End Position</string>
+    <string name="00000710">Nozzle Adv 1 Pressure</string>
+    <string name="00000711">Nozzle Adv 1 Speed</string>
+    <string name="00000717">Nozzle Adv 1 Time</string>
+    <string name="00000712">Nozzle Adv 1 End Position</string>
+    <string name="000001ED">Nozzle Ret 2 Pressure</string>
+    <string name="000001EE">Nozzle Ret 2 Speed</string>
+    <string name="0000071A">Nozzle Ret 2 End Position</string>
+    <string name="00000718">Nozzle Ret 1 Pressure</string>
+    <string name="00000719">Nozzle Ret 1 Speed</string>
+    <string name="0000071C">Nozzle Ret 1 Time</string>
+    <string name="000001EF">Nozzle Ret 1 End Position</string>
+    <string name="0000071D">Sprue Back Option</string>
+    <string name="0000071B">Nozzle Ret Dly Time</string>
+    <string name="00031128">MPMoldWeight</string>
+
+    <!--Adjmold Adjust-->
+    <string name="00000430">Adjust Adv Pressure</string>
+    <string name="00000431">Adjust Adv Speed</string>
+    <string name="00000432">Adjust Adv Slow Speed</string>
+    <string name="00000433">Adjust Adv Auto Count</string>
+    
+    <!--NozzleP  NozzlePara-->
+    <string name="000001E2">Nozzle Adv 2 Pressure Ramp</string>
+    <string name="000001E3">Nozzle Adv 2 Speed Ramp</string>
+    <string name="000001E0">Nozzle Adv 1 Pressure Ramp</string>
+    <string name="000001E1">Nozzle Adv 1 Speed Ramp</string>
+    <string name="000001E6">Nozzle Ret 2 Pressure Ramp</string>
+    <string name="000001E7">Nozzle Ret 2 Speed Ramp</string>
+    <string name="000001E4">Nozzle Ret 1 Pressure Ramp</string>
+    <string name="000001E5">Nozzle Ret 1 Speed Ramp</string>
+    <string name="000001E8">Nozzle End Pressrue Ramp Down</string>
+    <string name="000001E9">Nozzle End Speed Ramp Down</string>
+    <string name="000001EA">Nozzle Steup Pressure</string>
+    <string name="000001EB">Nozzle Steup Speed</string>
+    <string name="0001880D">Nozzle Max Pressure</string>
+    <string name="0001880E">Nozzle Max Speed</string>
+    <string name="000001EC">Nozzle Fwd Slow Time</string>
+    <string name="000001F4">Nozzle Fwd End DValve Off Delay</string>
+    <string name="000001F5">Nozzle Bwd End DValve Off Delay</string>
+    <string name="000001F6">Nozzle Fwd Chk Close End</string>
+    <string name="000001FF">Nozzle Fwd Proportional Valve Delay Off</string>
+    <string name="000001FE">Nozzle Bwd Proportional Valve Delay Off</string>
+    <string name="00031129">MPMoldWeight Modulus1</string>
+    <string name="0003112A">MPMoldWeight Modulus2</string>
+    <string name="0003112B">MPMoldWeightLmt</string>
+    
+    <!--NozzleS  座台组态-->
+    <string name="00031130">MPMoldWeight Option</string>
+    <string name="0001880B">NzlAdv Prs UpLimit</string>
+    <string name="00018818">NzlRet Prs UpLimit</string>
+    <string name="0001880C">Nozzle Flow Limit</string>
+    <string name="0001881C">Adjust Pressure Limit</string>
+    <string name="0001881D">Adjust Flow Limit</string>
+    
+    <!--Temp Temperature-->
+    <string name="00003B40">Temperature 1 Setting</string>
+    <string name="00003B41">Temperature 2 Setting</string>
+    <string name="00003B42">Temperature 3 Setting</string>
+    <string name="00003B43">Temperature 4 Setting</string>
+    <string name="00003B44">Temperature 5 Setting</string>
+    <string name="00003B45">Temperature 6 Setting</string>
+    <string name="00003B46">Temperature 7 Setting</string>
+    <string name="00003B47">Temperature 8 Setting</string>
+    <string name="00003B48">Temperature 9 Setting</string>
+    <string name="00003B49">Temperature 10 Setting</string>
+    <string name="00003B4A">Temperature 11 Setting</string>
+    <string name="00003BA0">Temperature 1 Up Limit</string>
+    <string name="00003BA1">Temperature 2 Up Limit</string>
+    <string name="00003BA2">Temperature 3 Up Limit</string>
+    <string name="00003BA3">Temperature 4 Up Limit</string>
+    <string name="00003BA4">Temperature 5 Up Limit</string>
+    <string name="00003BA5">Temperature 6 Up Limit</string>
+    <string name="00003BA6">Temperature 7 Up Limit</string>
+    <string name="00003BA7">Temperature 8 Up Limit</string>
+    <string name="00003BA8">Temperature 9 Up Limit</string>
+    <string name="00003BA9">Temperature 10 Up Limit</string>
+    <string name="00003BAA">Temperature 11 Up Limit</string>
+    <string name="00003C00">Temperature 1 Down Limit</string>
+    <string name="00003C01">Temperature 2 Down Limit</string>
+    <string name="00003C02">Temperature 3 Down Limit</string>
+    <string name="00003C03">Temperature 4 Down Limit</string>
+    <string name="00003C04">Temperature 5 Down Limit</string>
+    <string name="00003C05">Temperature 6 Down Limit</string>
+    <string name="00003C06">Temperature 7 Down Limit</string>
+    <string name="00003C07">Temperature 8 Down Limit</string>
+    <string name="00003C08">Temperature 9 Down Limit</string>
+    <string name="00003C09">Temperature 10 Down Limit</string>
+    <string name="00003C0A">Temperature 11 Down Limit</string>
+    <string name="0000368D">Temperature 1 ManualPer.(%)</string>
+    <string name="0000368E">Temperature 2 ManualPer.(%)</string>
+    <string name="0000368F">Temperature 3 ManualPer.(%)</string>
+    <string name="00003690">Temperature 4 ManualPer.(%)</string>
+    <string name="00003691">Temperature 5 ManualPer.(%)</string>
+    <string name="00003692">Temperature 6 ManualPer.(%)</string>
+    <string name="00003693">Temperature 7 ManualPer.(%)</string>
+    <string name="00003694">Temperature 8 ManualPer.(%)</string>
+    <string name="00003695">Temperature 9 ManualPer.(%)</string>
+    <string name="00003696">Temperature 10 ManualPer.(%)</string>
+    <string name="00003697">Temperature 11 ManualPer.(%)</string>
+    <string name="00003664">Keep Warm Option</string>
+    <string name="00003663">Standby Temperature</string>
+    <string name="00003C60">Keep Warm Time(Minute)</string>
+    <string name="00000042">Auto TurnTo HalfWarm Time(Minute)</string>
+    <string name="000187DF">Shutoff Percent Heat Option</string> 
+    <string name="50B2000D">Manual Heat Percent</string>
+    <string name="00003668">Manual Heat Cycle Time</string>
+    
+    <!--TempF TemperatureFunc-->
+    <string name="00018781">Heater Timing On, Sunday Hour</string>
+    <string name="00018782">Heater Timing On, Sunday Minute</string>
+    <string name="0001878B">Heater Timing On, Monday Hour</string>
+    <string name="0001878C">Heater Timing On, Monday Minute</string>
+    <string name="00018795">Heater Timing On, Tuesday Hour</string>
+    <string name="00018796">Heater Timing On, Tuesday Minute</string>
+    <string name="0001879F">Heater Timing On, Wednesday Hour</string>
+    <string name="000187A0">Heater Timing On, Wednesday Minute</string>
+    <string name="000187A9">Heater Timing On, Thursday Hour</string>
+    <string name="000187AA">Heater Timing On, Thursday Minute</string>
+    <string name="000187B3">Heater Timing On, Friday Hour</string>
+    <string name="000187B4">Heater Timing On, Friday Minute</string>
+    <string name="000187BD">Heater Timing On, Saturday Hour</string>
+    <string name="000187BE">Heater Timing On, Saturday Minute</string>
+    <string name="00018786">Heater Timing Off, Sunday Hour</string>
+    <string name="00018787">Heater Timing Off, Sunday Minute</string>
+    <string name="00018790">Heater Timing Off, Monday Hour</string>
+    <string name="00018791">Heater Timing Off, Monday Minute</string>
+    <string name="0001879A">Heater Timing Off, Tuesday Hour</string>
+    <string name="0001879B">Heater Timing Off, Tuesday Minute</string>
+    <string name="000187A4">Heater Timing Off, Wednesday Hour</string>
+    <string name="000187A5">Heater Timing Off, Wednesday Minute</string>
+    <string name="000187AE">Heater Timing Off, Thursday Hour</string>
+    <string name="000187AF">Heater Timing Off, Thursday Minute</string>
+    <string name="000187B8">Heater Timing Off, Friday Hour</string>
+    <string name="000187B9">Heater Timing Off, Friday Minute</string>
+    <string name="000187C2">Heater Timing Off, Saturday Hour</string>
+    <string name="000187C3">Heater Timing Off, Saturday Minute</string>
+    <string name="00018780">Heater Timing On, Sunday Option</string>
+    <string name="00018785">Heater Timing Off, Sunday Option</string>
+    <string name="0001878A">Heater Timing On, Monday Option</string>
+    <string name="0001878F">Heater Timing Off, Monday Option</string>
+    <string name="00018794">Heater Timing On, Tuesday Option</string>
+    <string name="00018799">Heater Timing Off, Tuesday Option</string>
+    <string name="0001879E">Heater Timing On, Wednesday Option</string>
+    <string name="000187A3">Heater Timing Off, Wednesday Option</string>
+    <string name="000187A8">Heater Timing On, Thursday Option</string>
+    <string name="000187AD">Heater Timing Off, Thursday Option</string>
+    <string name="000187B2">Heater Timing On, Friday Option</string>
+    <string name="000187B7">Heater Timing Off, Friday Option</string>
+    <string name="000187BC">Heater Timing On, Saturday Option</string>
+    <string name="000187C1">Heater Timing Off, Saturday Option</string>
+    
+    <!--TempP TemperaturePara-->
+    <string name="00003666">Cooler On Deviate</string>
+    <string name="00003667">Cooler Off Deviate</string>
+    <string name="00003662">Temperature Not Up</string>
+    <string name="00003681">MAX barrel temp</string>
+    <string name="0000366B">Oil Temp Up Limit</string>
+    <string name="0000366A">Oil Temp Low Limit</string>
+    <string name="0000366C">Oil Temp Cool On</string>
+    <string name="0000366D">Oil Temp Cool Off</string>
+    <string name="00031170">Oil Temp Opt</string>
+    <string name="000036ED">FiltBlk #0 Chk Temp</string>
+    <string name="0000366E">Oil Heat</string>
+    <string name="0000366F">Oil Heat #2 Press</string>
+    <string name="00003670">Oil Heat #2 Speed</string>
+    <string name="00003683">Oil Heat #1 Press</string>
+    <string name="00003684">Oil Heat #1 Speed</string>
+    <string name="00003682">Oil Heat #1 End Degree</string>
+    <string name="00003688">Oil Heat #1 Time</string>
+    <string name="00000048">Heater Off Time(min)</string>
+    <string name="00000049">Heater Off Time(min)</string>
+    <string name="00003C72">Cooling Time After Heat Off(min)</string>
+    <string name="00003C73">Cooling Time After Heat Off(min)</string>
+    <string name="0000368C">Temp Allow Up Limit</string>
+    <string name="000001D3">Motor Fan On Temp</string>
+    <string name="000001D4">Motor Fan Off Temp</string>
+    <string name="000001D5">Motor Temp Up Limit</string>
+    <string name="000187D5">Motor Temp Display</string>
+    <string name="0000367E">Hopper Deviate</string>
+    <string name="10000713">TempMsstDeg</string>
+    <string name="10000714">TempMsstTim(min)</string>
+    
+    <!--TempS 温度特参-->
+    <string name="0001870B">Driver Status Show</string>
+    <string name="00018716">Oil Heat</string>
+    <string name="000002C1">Hopper Opt</string>
+    <string name="00031199">Temp Max Offset</string>
+    <string name="0003119A">Temp Low Max Offset</string>
+    <string name="0001871D">Soak Time Test</string>
+    <string name="000001CF">Motor Temp Chk</string>
+    <string name="00030D46">Temp Msst Option</string>
+
+
+    <!--TempPID 温度PID-->
+    <string name="00003600">Temperature 1 Option</string>
+    <string name="00003601">Temperature 2 Option</string>
+    <string name="00003602">Temperature 3 Option</string>
+    <string name="00003603">Temperature 4 Option</string>
+    <string name="00003604">Temperature 5 Option</string>
+    <string name="00003605">Temperature 6 Option</string>
+    <string name="00003606">Temperature 7 Option</string>
+    <string name="00003607">Temperature 8 Option</string>
+    <string name="00003608">Temperature 9 Option</string>
+    <string name="00003609">Temperature 10 Option</string>
+    <string name="0000360A">Temperature 11 Option</string>
+
+    <string name="50B20002">Temperature 1 Use Option</string>
+    <string name="50B20102">Temperature 2 Use Option</string>
+    <string name="50B20202">Temperature 3 Use Option</string>
+    <string name="50B20302">Temperature 4 Use Option</string>
+    <string name="50B20402">Temperature 5 Use Option</string>
+    <string name="50B20502">Temperature 6 Use Option</string>
+    <string name="50B20602">Temperature 7 Use Option</string>
+    <string name="50B20702">Temperature 8 Use Option</string>
+    <string name="50B20802">Temperature 9 Use Option</string>
+    <string name="50B20902">Temperature 10 Use Option</string>
+    <string name="50B20A02">Temperature 11 Use Option</string>
+
+    <string name="50B20004">Temperature 1 Synchronous Heating</string>
+    <string name="50B20104">Temperature 2 Synchronous Heating</string>
+    <string name="50B20204">Temperature 3 Synchronous Heating</string>
+    <string name="50B20304">Temperature 4 Synchronous Heating</string>
+    <string name="50B20404">Temperature 5 Synchronous Heating</string>
+    <string name="50B20504">Temperature 6 Synchronous Heating</string>
+    <string name="50B20604">Temperature 7 Synchronous Heating</string>
+    <string name="50B20704">Temperature 8 Synchronous Heating</string>
+    <string name="50B20804">Temperature 9 Synchronous Heating</string>
+    <string name="50B20904">Temperature 10 Synchronous Heating</string>
+    <string name="50B20A04">Temperature 11 Synchronous Heating</string>
+
+    <string name="10000701">Temperature Sensor Type</string>
+    <string name="10000711">Synchronous Heating Option</string> 
+    <string name="10000705">Temperature Auto PID Option</string>
+    <string name="10000712">Synchronous Heating Temperature</string>
+    <string name="10000728">Heating Type</string> 
+    <string name="50B20013">Temperature 1 KP</string>
+    <string name="50B20113">Temperature 2 KP</string>
+    <string name="50B20213">Temperature 3 KP</string>
+    <string name="50B20313">Temperature 4 KP</string>
+    <string name="50B20413">Temperature 5 KP</string>
+    <string name="50B20513">Temperature 6 KP</string>
+    <string name="50B20613">Temperature 7 KP</string>
+    <string name="50B20713">Temperature 8 KP</string>
+    <string name="50B20813">Temperature 9 KP</string>
+    <string name="50B20913">Temperature 10 KP</string>
+    <string name="50B20A13">Temperature 11 KP</string>
+    <string name="50B20014">Temperature 1 KI</string>
+    <string name="50B20114">Temperature 2 KI</string>
+    <string name="50B20214">Temperature 3 KI</string>
+    <string name="50B20314">Temperature 4 KI</string>
+    <string name="50B20414">Temperature 5 KI</string>
+    <string name="50B20514">Temperature 6 KI</string>
+    <string name="50B20614">Temperature 7 KI</string>
+    <string name="50B20714">Temperature 8 KI</string>
+    <string name="50B20814">Temperature 9 KI</string>
+    <string name="50B20914">Temperature 10 KI</string>
+    <string name="50B20A14">Temperature 11 KI</string>
+    <string name="50B20015">Temperature 1 KD</string>
+    <string name="50B20115">Temperature 2 KD</string>
+    <string name="50B20215">Temperature 3 KD</string>
+    <string name="50B20315">Temperature 4 KD</string>
+    <string name="50B20415">Temperature 5 KD</string>
+    <string name="50B20515">Temperature 6 KD</string>
+    <string name="50B20615">Temperature 7 KD</string>
+    <string name="50B20715">Temperature 8 KD</string>
+    <string name="50B20815">Temperature 9 KD</string>
+    <string name="50B20915">Temperature 10 KD</string>
+    <string name="50B20A15">Temperature 11 KD</string>
+    <string name="50B20016">Temperature 1 Ramp</string>
+    <string name="50B20116">Temperature 2 Ramp</string>
+    <string name="50B20216">Temperature 3 Ramp</string>
+    <string name="50B20316">Temperature 4 Ramp</string>
+    <string name="50B20416">Temperature 5 Ramp</string>
+    <string name="50B20516">Temperature 6 Ramp</string>
+    <string name="50B20616">Temperature 7 Ramp</string>
+    <string name="50B20716">Temperature 8 Ramp</string>
+    <string name="50B20816">Temperature 9 Ramp</string>
+    <string name="50B20916">Temperature 10 Ramp</string>
+    <string name="50B20A16">Temperature 11 Ramp</string>
+    
+    
+    <!--FastP    Para-->
+    <string name="00000193">Lubricator 1 ShotCount</string>
+    <string name="0000018F">Lubricator 1 Alarm Time</string>
+    <string name="00000196">Lubricator 1 Hold Time</string>
+    <string name="00000198">Lubricator 1 Interval Time</string>
+    <string name="00000194">Lubricator 1 TotalTime</string>
+    <string name="0000018E">Lubricator 1 Times</string>
+    <string name="00000191">Power On, Lubricator For Fist Two Unit</string>
+    <string name="0000019B">Lubricator 2 ShotCount</string>
+    <string name="0000019E">Lubricator 2 Alarm Time</string>
+    <string name="0000019C">Lubricator 2 Hold Time</string>
+    <string name="00000184">Lubricator 2 Interval Time</string>
+    <string name="000001DA">Lubricator 2 TotalTime</string>
+    <string name="00000185">Lubricator 2 Times</string>
+    <string name="000001D9">Lubricator 3 ShotCount</string>
+    <string name="000001D7">Lubricator 3 Alarm Time</string>
+    <string name="000001DC">Lubricator 3 Hold Time</string>
+    <string name="000001DE">Lubricator 3 Interval Time</string>
+    <string name="000001DF">Lubricator 3 Times</string>
+
+    <string name="000001D2">Motor On Hold Time</string>
+    <string name="000001D0">Motor Y Start Time</string>
+    <string name="000001D1">Motor Delta Time</string>
+    <string name="00000044">Auto turn off machine time(min)</string>
+    <string name="00018850">Robot Middle DownPos Min</string>
+    <string name="00000150">Pump Dly On</string>
+
+    <string name="0000039D">Motor Temperature Option</string>
+    <string name="0000039C">Motor Temperature Setting</string>
+    <string name="00000140">Power Match 1</string>
+    <string name="00000141">Power Match 2</string>
+    <string name="00000142">Power Match 3</string>
+    <string name="00000143">Power Match 4</string>
+    <string name="00000144">Power Match 5</string>
+    <string name="00000145">Power Match 6</string>
+    <string name="00000146">Power Match 7</string>
+    <string name="00000147">Power Match 8</string>
+    
+    <!--FastP_Lubr  Para-->
+    <string name="0003113B">Lubricator 1 ShotCount Before LubChange</string>
+    <string name="0003113D">Lubricator 1 Alarm Time Before LubChange </string>
+    <string name="00030D53">Lubricator 1 Hold Time Before LubChange</string>
+    <string name="0003113E">Lubricator 1 Interval Time Before LubChange</string>
+    <string name="0003113F">Lubricator 1 Times Before LubChange</string>
+    <string name="00031140">Lubricator 1 ShotCount After LubChange</string>
+    <string name="00031141">Lubricator 1 Alarm Time After LubChange</string>
+    <string name="00030D54">Lubricator 1 Hold Time After LubChange</string>
+    <string name="00031142">Lubricator 1 Interval Time After LubChange</string>
+    <string name="00031143">Lubricator 1 Times After LubChange</string>
+    <string name="00030D74">Lubricator 1 Power On LubHour</string>
+
+    <string name="00031146">Lubricator 2 ShotCount Before LubChange</string>
+    <string name="00031148">Lubricator 2 Alarm Time Before LubChange </string>
+    <string name="00030D55">Lubricator 2 Hold Time Before LubChange</string>
+    <string name="00031149">Lubricator 2 Interval Time Before LubChange</string>
+    <string name="0003114A">Lubricator 2 Times Before LubChange</string>
+    <string name="0003114B">Lubricator 2 ShotCount After LubChange</string>
+    <string name="0003114C">Lubricator 2 Alarm Time After LubChange</string>
+    <string name="00030D56">Lubricator 2 Hold Time After LubChange</string>
+    <string name="0003114D">Lubricator 2 Interval Time After LubChange</string>
+    <string name="0003114E">Lubricator 2 Times After LubChange</string>
+    <string name="00030D75">Lubricator 2 Power On LubHour</string>
+
+    <string name="00031151">Lubricator 3 ShotCount Before LubChange</string>
+    <string name="00031153">Lubricator 3 Alarm Time Before LubChange </string>
+    <string name="00030D57">Lubricator 3 Hold Time Before LubChange</string>
+    <string name="00031154">Lubricator 3 Interval Time Before LubChange</string>
+    <string name="00031155">Lubricator 3 Times Before LubChange</string>
+    <string name="00031156">Lubricator 3 ShotCount After LubChange</string>
+    <string name="00031157">Lubricator 3 Alarm Time After LubChange</string>
+    <string name="00030D58">Lubricator 3 Hold Time After LubChange</string>
+    <string name="00031158">Lubricator 3 Interval Time After LubChange</string>
+    <string name="00031159">Lubricator 3 Times After LubChange</string>
+
+    <string name="0003112F">Power On LubDay</string>
+
+    <string name="00031144">Lubricator 1 Count Limit Up</string>
+    <string name="00031145">Lubricator 1 Count Limit Low</string>
+    <string name="0003114F">Lubricator 2 Count Limit Up</string>
+    <string name="00031150">Lubricator 2 Count Limit Low</string>
+    <string name="0003115A">Lubricator 3 Count Limit Up</string>
+    <string name="0003115B">Lubricator 3 Count Limit Low</string>
+
+    <string name="0003115C">Adjust Lubricator Interval Day</string>
+    <string name="00030D59">Adjust Lubricator Alarm Time</string>
+    <string name="0003115E">Adjust Lubricator Hold Time</string>
+   
+    <string name="00000027">Adjust Lubricator Interval Day</string>
+    <string name="00000020">Adjust Lubricator Alarm Time</string>
+    <string name="00000026">Adjust Lubricator Hold Time</string>
+  
+    <string name="00031916">TailBoard LubPara Coef</string>
+
+    <!--RbtTake -->
+    <string name="000006F0">Robot Mode</string>
+    <string name="0000058C">Robot With Core</string>
+    <string name="00000703">Robot Middle Option</string>
+    <string name="00000700">Robot Middle Down Postion</string>
+    <string name="00000702">Robot Middle Down Time</string>
+
+    <!--PID-->
+    <string name="30094000">Group 1 KP</string>
+    <string name="30095A00">Group 2 KP</string>
+    <string name="30095D00">Group 3 KP</string>
+    <string name="30096000">Group 4 KP</string>
+    <string name="30094100">Group 1 KI</string>
+    <string name="30095B00">Group 2 KI</string>
+    <string name="30095E00">Group 3 KI</string>
+    <string name="30096100">Group 4 KI</string>
+    <string name="30095500">Other Mode</string>
+    <string name="30095600">LowPress KP</string>
+    <string name="30095800">HighPress KP</string>
+    <string name="30095700">LowPress Pressure</string>
+    <string name="30095900">HighPress Pressure</string>
+    <string name="0000036A">PID Option 1</string>
+    <string name="0000036B">PID Option 2</string>
+    <string name="0000036C">PID Option B 1</string>
+    <string name="0000036D">PID Option B 2</string>
+	
+	<!--Para-->
+	<string name="30094E00">Pressure Release KP</string>
+    <string name="30095100">Reversal Guard Speed</string>
+    <string name="30095200">Reversal Guard Time</string>
+    <string name="30095300">Reversal Min Pressure</string>
+    <string name="30094300">Pressure Control Pressure Special Parameter</string>
+    <string name="30094400">Pressure Control Speed Special Parameter</string>
+    <string name="3008A800">Real Speed Special Parameter</string>
+    <string name="300A0400">Pressure Alarm Pressure Limit</string>
+    <string name="3009C100">Pressure Alarm Time Limit</string>
+	<string name="10000101">Axial 1 ID</string>
+	<string name="10000102">Axial 2 ID</string>
+	<string name="10000103">Axial 3 ID</string>
+	<string name="10000104">Axial 4 ID</string>
+	<string name="10000105">Axial 5 ID</string>
+	<string name="10000106">Axial 6 ID</string>
+	<string name="10000107">Axial 7 ID</string>
+	<string name="10000108">Axial 8 ID</string>
+	<string name="10000109">Axial 9 ID</string>
+	<string name="1000010A">Axial 10 ID</string>
+	<string name="10000080">Power System Configure 1</string>
+	<string name="10000081">Power System Configure 2</string>
+	<string name="10000082">Power System Configure 3</string>
+	<string name="10000083">Power System Configure 4</string>
+	<string name="400FF800">Base Pressure Speed Option</string>
+	<string name="400FF801">System Base Pressure</string>
+	<string name="400FF802">System Base Speed</string>
+	<string name="300FC40E">Proportional Directional Valve Channel</string>
+	
+	<!--MachDrive1-->
+	<string name="30083200">Driver 1 Max RPM</string>
+	<string name="30083700">Driver 1 Type</string>
+	<string name="30083600">Driver 1 Node ID</string>
+	<string name="30089E00">Driver 1 Torsion Source Type</string>
+	<string name="30089F00">Driver 1 Torsion Source Channel</string>
+	<string name="3008A500">Driver 1 Torsion Source Reverse</string>
+	<string name="3008AA00">Driver 1 Torsion Source Coefficient</string>
+	<string name="30089C00">Driver 1 Speed Output Type</string>
+	<string name="30089D00">Driver 1 Speed Output Channel</string>
+	<string name="3008A200">Driver 1 Speed Output Reverse</string>
+	<string name="3008AB00">Driver 1 Speed Output Coefficient</string>
+	<string name="3008A000">Driver 1 Torsion Output Type</string>
+	<string name="3008A100">Driver 1 Torsion Output Channel</string>
+	<string name="3008AC00">Driver 1 Torsion Output Coefficient</string>
+	<string name="30089800">Driver 1 Pressure Type</string>
+	<string name="30089900">Driver 1 Pressure Channel</string>
+	<!--MachDrive2-->
+	<string name="3008B200">Driver 2 Max RPM</string>
+	<string name="3008B700">Driver 2 Type</string>
+	<string name="3008B600">Driver 2 Node ID</string>
+	<string name="3008C400">Driver 2 Torsion Source Type</string>
+	<string name="3008C500">Driver 2 Torsion Source Channel</string>
+	<string name="3008CB00">Driver 2 Torsion Source Reverse</string>
+	<string name="3008D000">Driver 2 Torsion Source Coefficient</string>
+	<string name="3008C200">Driver 2 Speed Output Type</string>
+	<string name="3008C300">Driver 2 Speed Output Channel</string>
+	<string name="3008C800">Driver 2 Speed Output Reverse</string>
+	<string name="3008D100">Driver 2 Speed Output Coefficient</string>
+	<string name="3008C600">Driver 2 Torsion Output Type</string>
+	<string name="3008C700">Driver 2 Torsion Output Channel</string>
+	<string name="3008D200">Driver 2 Torsion Output Coefficient</string>
+	<string name="3008BE00">Driver 2 Pressure Type</string>
+	<string name="3008BF00">Driver 2 Pressure Channel</string>
+	<!--MachDrive3-->
+	<string name="31083200">Driver 3 Max RPM</string>
+	<string name="31083700">Driver 3 Type</string>
+	<string name="31083600">Driver 3 Node ID</string>
+	<string name="31089E00">Driver 3 Torsion Source Type</string>
+	<string name="31089F00">Driver 3 Torsion Source Channel</string>
+	<string name="3108A500">Driver 3 Torsion Source Reverse</string>
+	<string name="3108AA00">Driver 3 Torsion Source Coefficient</string>
+	<string name="31089C00">Driver 3 Speed Output Type</string>
+	<string name="31089D00">Driver 3 Speed Output Channel</string>
+	<string name="3108A200">Driver 3 Speed Output Reverse</string>
+	<string name="3108AB00">Driver 3 Speed Output Coefficient</string>
+	<string name="3108A000">Driver 3 Torsion Output Type</string>
+	<string name="3108A100">Driver 3 Torsion Output Channel</string>
+	<string name="3108AC00">Driver 3 Torsion Output Coefficient</string>
+	<string name="31089800">Driver 3 Pressure Type</string>
+	<string name="31089900">Driver 3 Pressure Channel</string>
+	<!--MachDrive4-->
+	<string name="3108B200">Driver 4 Max RPM</string>
+	<string name="3108B700">Driver 4 Type</string>
+	<string name="3108B600">Driver 4 Node ID</string>
+	<string name="3108C400">Driver 4 Torsion Source Type</string>
+	<string name="3108C500">Driver 4 Torsion Source Channel</string>
+	<string name="3108CB00">Driver 4 Torsion Source Reverse</string>
+	<string name="3108D000">Driver 4 Torsion Source Coefficient</string>
+	<string name="3108C200">Driver 4 Speed Output Type</string>
+	<string name="3108C300">Driver 4 Speed Output Channel</string>
+	<string name="3108C800">Driver 4 Speed Output Reverse</string>
+	<string name="3108D100">Driver 4 Speed Output Coefficient</string>
+	<string name="3108C600">Driver 4 Torsion Output Type</string>
+	<string name="3108C700">Driver 4 Torsion Output Channel</string>
+	<string name="3108D200">Driver 4 Torsion Output Coefficient</string>
+	<string name="3108BE00">Driver 4 Pressure Type</string>
+	<string name="3108BF00">Driver 4 Pressure Channel</string>
+		
+	<!--Moni1 Monitor1-->
+	<string name="00000A00">Auto Alarm Option</string>
+	<string name="00031904">Refer Value</string>
+	<string name="00018720">Memeory Card Moni</string>
+	<string name="0001AFA8">Close Time Delta Percent</string>
+	<string name="0001AFD4">Close Time Delta Value</string>
+	<string name="0001B02A">Close Time Refer Value</string>
+	<string name="0001AFA9">Close Protect Time Delta Percent</string>
+	<string name="0001AFD5">Close Protect Time Delta Value</string>
+	<string name="0001B02B">Close Protect Time Refer Value</string>
+	<string name="0001AFAA">Close HighPress Time Delta Percent</string>
+	<string name="0001AFD6">Close HighPress Time Delta Value</string>
+	<string name="0001B02C">Close HighPress Time Refer Value</string>
+	<string name="0001AFAB">Open Time Delta Percent</string>
+	<string name="0001AFD7">Open Time Delta Value</string>
+	<string name="0001B02D">Open Time Refer Value</string>
+	<string name="0001AFAF">Inject End Position Delta Percent</string>
+	<string name="0001AFDB">Inject End Position Delta Value</string>
+	<string name="0001B031">Inject End Position Refer Value</string>
+	<string name="0001AFA4">Cycle Time Delta Percent</string>
+	<string name="0001AFD0">Cycle Time Delta Value</string>
+	<string name="0001B026">Cycle Time Refer Value</string>
+	<string name="0001AFB5">Eject Time Delta Percent</string>
+	<string name="0001AFE1">Eject Time Delta Value</string>
+	<string name="0001B037">Eject Time Refer Value</string>
+	<string name="0001AFAC">Open Mold Delta Percent</string>
+	<string name="0001AFD8">Open Mold Delta Value</string>
+	<string name="0001B02E">Open Mold Refer Value</string>
+	<string name="0001AFB7">Inje Peak Delta Percent</string>
+	<string name="0001AFE3">Inje Peak Delta Value</string>
+	<string name="0001B039">Inje Peak Refer Value</string>
+	<string name="0001AFA5">Inject Time Delta Percent</string>
+	<string name="0001AFD1">Inject Time Delta Value</string>
+	<string name="0001B027">Inject Time Refer Value </string>
+	<string name="0001AFAE">TurnTo Hold Position Delta Percent</string>
+	<string name="0001AFDA">TurnTo Hold Position Delta Value</string>
+	<string name="0001B030">TurnTo Hold Position Refer Value</string>
+	<string name="0001AFA6">TurnTo Hold Time Delta Percent</string>
+	<string name="0001AFD2">TurnTo Hold Time Delta Value</string>
+	<string name="0001B028">TurnTo Hold Time Refer Value</string>
+	<string name="0001AFB2">TurnTo Hold Pressure Delta Percent</string>
+	<string name="0001AFDE">TurnTo Hold Pressure Delta Value</string>
+	<string name="0001B034">TurnTo Hold Pressure Refer Value</string>
+	<string name="0001AFB0">Inject Cushion Position Delta Percent</string>
+	<string name="0001AFDC">Inject Cushion Position Delta Value</string>
+	<string name="0001B032">Inject Cushion Position Refer Value</string>
+	<string name="0001AFAD">Inject Start Position Delta Percent</string>
+	<string name="0001AFD9">Inject Start Position Delta Value</string>
+	<string name="0001B02F">Inject Start Position Refer Value</string>
+	<string name="0001AFA7">Charge Time Delta Percent</string>
+	<string name="0001AFD3">Charge Time Delta Value</string>
+	<string name="0001B029">Charge Time Refer Value</string>
+	<string name="0001AFB4">SuckBack Time Delta Percent</string>
+	<string name="0001AFE0">SuckBack Time Delta Value</string>
+	<string name="0001B036">SuckBack Time Refer Value</string>
+	
+	<!--Moni2 Monitor2-->
+	<string name="000187CA">Minitor2 Sampling Interval</string>
+	
+	<!--Prod Produce-->
+	<string name="0001882F">Lot Number</string>
+	<string name="000186DB">Count Per ShotCount</string>
+	<string name="000187C6">ShotCount Setting</string>
+	<string name="000187C8">Package Count Setting</string>
+	<string name="000006FD">Reject Count Set</string>
+	<string name="00000704">Continuous Reject Count Set</string>
+	<string name="00000706">Auto Moni Off Reject Signal Out</string>
+	<string name="00031173">Auto Moni To Manu Status Off</string>
+	
+	<!--Energy Energy-->
+	<string name="00031134">Product Weight Per ShotCount</string>
+	<!--OthrP AlarmPara-->
+	<string name="00000031">Start Auto Alarm ShotCount</string>
+	<string name="00000034">Close Protect Max Time</string>
+	<string name="00000035">Close HighPress Max Time</string>
+	<string name="00000036">Charge Max Time</string>
+	<string name="00000038">SuckBack Max Time</string>
+	<string name="00000032">Cycle Max Time</string>
+	<string name="00003C62">Heater Off By Alarm</string>
+	<string name="00000040">Buzzer Count</string>
+	<string name="000001AA">Pack Count Alarm Time</string>
+	
+	<!--DA-->
+	<string name="000187ED">Start Channel</string>
+
+	<!--Molds-->
+	<string name="0003112D">Mold ID Option</string>
+
+	<!--EnergyP EnergyPara-->
+	<string name="0003113A">Ammeter Parameter</string>
+
+	<!--SystemConfig-->
+	<string name="00000ACE">DSP System</string>
+	<string name="00000AC7">Machine Code</string>
+	<string name="00000B21">AD Meter 1 Mechanical Traval</string>
+	<string name="00000F36">AD Meter 1 Current Position</string>
+	<string name="00000B22">AD Meter 2 Mechanical Traval</string>
+	<string name="00000F37">AD Meter 2 Current Position</string>
+	<string name="00000B23">AD Meter 3 Mechanical Traval</string>
+	<string name="00000F38">AD Meter 3 Current Position</string>
+	<string name="00000B24">AD Meter 4 Mechanical Traval</string>
+	<string name="00000EF1">AD Meter 4 Current Position</string>
+	<string name="00000B25">AD Meter 5 Mechanical Traval</string>
+	<string name="00000EF2">AD Meter 5 Current Position</string>
+	<string name="00000B26">AD Meter 6 Mechanical Traval</string>
+	<string name="00000EF3">AD Meter 6 Current Position</string>
+	<string name="00000B27">AD Meter 7 Mechanical Traval</string>
+	<string name="00000EF4">AD Meter 7 Current Position</string>
+	<string name="00000B28">AD Meter 8 Mechanical Traval</string>
+	<string name="00000EF5">AD Meter 8 Current Position</string>
+	<string name="00000B29">AD Meter 9 Mechanical Traval</string>
+	<string name="00000F3E">AD Meter 9 Current Position</string>
+	<string name="00000B2A">AD Meter 10 Mechanical Traval</string>
+	<string name="00000F3F">AD Meter 10 Current Position</string>
+	<string name="00000B2B">AD Meter 11 Mechanical Traval</string>
+	<string name="00000EF8">AD Meter 11 Current Position</string>
+	<string name="00000B2C">AD Meter 12 Mechanical Traval</string>
+	<string name="00000EF9">AD Meter 12 Current Position</string>
+	<string name="00000AC1">Control Code 1</string>
+	<string name="00000AC2">Control Code 2</string>
+	<string name="00000AC3">Control Code 3</string>
+	<string name="00000AC4">Control Code 4</string>
+	<string name="00000AC5">Control Code 5</string>
+	<string name="00000AC6">Control Code 6</string>
+	<string name="00000AE9">System Pressure Limit</string>
+	<string name="00000AEA">Close HignPress Pressure Limit</string>
+	<string name="00000AEB">Charge RPM Hole Count</string>
+	<string name="00000AC9">Hydraulic Control Code</string>
+	<string name="00000ACB">Position Control Code</string>
+	
+	<!--MachCard-->
+	<string name="1B003200">AD1 Range</string>
+	<string name="1B003500">AD1 Min Voltage</string>
+	<string name="1B003400">AD1 Max Voltage</string>
+	<string name="1B003600">AD2 Range</string>
+	<string name="1B003900">AD2 Min Voltage</string>
+	<string name="1B003800">AD2 Max Voltage</string>
+	<string name="1B003A00">AD3 Range</string>
+	<string name="1B003D00">AD3 Min Voltage</string>
+	<string name="1B003C00">AD3 Max Voltage</string>
+	<string name="1B003E00">AD4 Range</string>
+	<string name="1B004100">AD4 Min Voltage</string>
+	<string name="1B004000">AD4 Max Voltage</string>
+	
+	<!--Paras Other-->
+    <string name="000003D0">Special Parameter S0</string>
+    <string name="000003D1">Special Parameter S1</string>
+    <string name="000003D2">Special Parameter S2</string>
+    <string name="000003D3">Special Parameter S3</string>
+    <string name="000003D4">Special Parameter S4</string>
+    <string name="000003D5">Special Parameter S5</string>
+    <string name="000003D6">Special Parameter S6</string>
+    <string name="000003D7">Special Parameter S7</string>
+    <string name="000003D8">Special Parameter S8</string>
+    <string name="000003D9">Special Parameter S9</string>
+    <string name="000003DA">Special Parameter S10</string>
+    <string name="000003DB">Special Parameter S11</string>
+    <string name="000003DC">Special Parameter S12</string>
+    <string name="000003DD">Special Parameter S13</string>
+    <string name="000003DE">Special Parameter S14</string>
+    <string name="000003DF">Special Parameter S15</string>
+    
+    <string name="000003E0">Special Parameter T0</string>
+    <string name="000003E1">Special Parameter T1</string>
+    <string name="000003E2">Special Parameter T2</string>
+    <string name="000003E3">Special Parameter T3</string>
+    <string name="000003E4">Special Parameter T4</string>
+    <string name="000003E5">Special Parameter T5</string>
+    <string name="000003E6">Special Parameter T6</string>
+    <string name="000003E7">Special Parameter T7</string>
+    <string name="000003E8">Special Parameter T8</string>
+    <string name="000003E9">Special Parameter T9</string>
+    <string name="000003EA">Special Parameter T10</string>
+    <string name="000003EB">Special Parameter T11</string>
+    <string name="000003EC">Special Parameter T12</string>
+    <string name="000003ED">Special Parameter T13</string>
+    <string name="000003EE">Special Parameter T14</string>
+    <string name="000003EF">Special Parameter T15</string>
+    
+    <string name="000008D0">Special Parameter U0</string>
+    <string name="000008D1">Special Parameter U1</string>
+    <string name="000008D2">Special Parameter U2</string>
+    <string name="000008D3">Special Parameter U3</string>
+    <string name="000008D4">Special Parameter U4</string>
+    <string name="000008D5">Special Parameter U5</string>
+    <string name="000008D6">Special Parameter U6</string>
+    <string name="000008D7">Special Parameter U7</string>
+    <string name="000008D8">Special Parameter U8</string>
+    <string name="000008D9">Special Parameter U9</string>
+    <string name="000008DA">Special Parameter U10</string>
+    <string name="000008DB">Special Parameter U11</string>
+    <string name="000008DC">Special Parameter U12</string>
+    <string name="000008DD">Special Parameter U13</string>
+    <string name="000008DE">Special Parameter U14</string>
+    <string name="000008DF">Special Parameter U15</string>
+    
+    <string name="000008E0">Special Parameter V0</string>
+    <string name="000008E1">Special Parameter V1</string>
+    <string name="000008E2">Special Parameter V2</string>
+    <string name="000008E3">Special Parameter V3</string>
+    <string name="000008E4">Special Parameter V4</string>
+    <string name="000008E5">Special Parameter V5</string>
+    <string name="000008E6">Special Parameter V6</string>
+    <string name="000008E7">Special Parameter V7</string>
+    <string name="000008E8">Special Parameter V8</string>
+    <string name="000008E9">Special Parameter V9</string>
+    <string name="000008EA">Special Parameter V10</string>
+    <string name="000008EB">Special Parameter V11</string>
+    <string name="000008EC">Special Parameter V12</string>
+    <string name="000008ED">Special Parameter V13</string>
+    <string name="000008EE">Special Parameter V14</string>
+    <string name="000008EF">Special Parameter V15</string>
+    
+    <!--SPara FuncConfig-->
+    <string name="0001870A">Sampling Cross Oil Position Option</string>
+    <string name="0001870C">28 ClampPosition PID Option</string>
+    
+	<!--System-->
+	<string name="000186AA">Start By Ideal Time</string>
+	<string name="000186AC">Start By ShotCount</string>
+	<string name="000186AE">ScreenSaver Option</string>
+	
+	<!--Install-->
+	<string name="0001872B">MachineOut Data(Month)</string>
+	<string name="0001872C">MachineOut Data(Day)</string>
+	<string name="0001872A">MachineOut Data(Year)</string>
+	                      
+	<string name="0001872F">Sell Date(Month)</string>
+	<string name="00018730">Sell Date(Day)</string>
+	<string name="0001872E">Sell Date(Year)</string>
+	<string name="00018733">Stop Stages</string>
+	<string name="00018735">Stop Internal Days</string>
+	<string name="0001873F">Stop Time(Hour)</string>
+	<string name="00018740">Stop Time(Minute)</string>
+	<string name="0001873A">Alarm Days</string>
+	<string name="00018742">Alarm Internal Minute</string>
+
+	<!--SystS1-->
+	<string name="0001877A">Count Show</string>
+	<string name="00031188">Cool Time Record</string>
+	<string name="0003117A">Adjust Lubricator Option</string>
+	<string name="0003117B">Lubricator Option</string>
+	<string name="00031189">Electric Door Option</string>
+	<string name="0001871B">Ammeter Option</string>
+	<string name="0001877C">Robot Middle Option</string>
+	<string name="00018722">Memeory Card Moni Option</string>
+	
+	<!--组态-->
+	<string name="00018855">DA Channel Configure 1</string>
+	<string name="00018856">DA Channel Configure 2</string>
+	<string name="00018857">DA Channel Configure 3</string>
+	<string name="00018858">DA Channel Configure 4</string>
+	
+
+</resources>
