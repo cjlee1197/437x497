@@ -1,0 +1,638 @@
+ViewDiag_MLC:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  titleID =ROBOT_STR_PLC_C
+  printname =MLC_C.bmp
+  OnCreateA =OnCreate_MLC_C
+  EditStartNo:CtmEditX1
+    left =80
+    top =30
+    right =145
+    bottom =69
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65500
+    fontsize =2
+    colorcontrol =4
+    destcolor =65400
+    maxchar =3
+    align =0
+    maxdb =FALSE
+  end
+  goto:CtmStaticX2
+    left =20
+    top =30
+    right =78
+    bottom =70
+    wtype =36
+    fgc =0
+    bgc =44568
+    fontsize =2
+    textID =ROBOT_PARAM_NO_GOTO
+    align =34
+  end
+  BtnPageUp:CtmToolButton
+    left =350
+    top =28
+    right =440
+    bottom =68
+    taborder =1
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_PAGEUP
+    key =26624
+  end
+  BtnPageDown:CtmToolButton
+    left =490
+    top =28
+    right =580
+    bottom =68
+    taborder =2
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_PAGEDOWN
+    key =27904
+  end
+  Static00:CtmStaticX2
+    left =20
+    top =81
+    right =290
+    bottom =121
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  Static10:CtmStaticX2
+    left =20
+    top =129
+    right =290
+    bottom =169
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox8:CtmSelectBox
+    left =59
+    top =129
+    right =79
+    bottom =169
+    wtype =55
+    group =8
+  end
+  Static20:CtmStaticX2
+    left =20
+    top =177
+    right =290
+    bottom =217
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox16:CtmSelectBox
+    left =59
+    top =177
+    right =79
+    bottom =217
+    wtype =55
+    group =16
+  end
+  Static30:CtmStaticX2
+    left =20
+    top =225
+    right =290
+    bottom =265
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox24:CtmSelectBox
+    left =59
+    top =225
+    right =79
+    bottom =265
+    wtype =55
+    group =24
+  end
+  Static40:CtmStaticX2
+    left =20
+    top =273
+    right =290
+    bottom =313
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox32:CtmSelectBox
+    left =59
+    top =273
+    right =79
+    bottom =313
+    wtype =55
+    group =32
+  end
+  Static50:CtmStaticX2
+    left =20
+    top =321
+    right =290
+    bottom =361
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox40:CtmSelectBox
+    left =59
+    top =321
+    right =79
+    bottom =361
+    wtype =55
+    group =40
+  end
+  Static60:CtmStaticX2
+    left =20
+    top =369
+    right =290
+    bottom =409
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox48:CtmSelectBox
+    left =59
+    top =369
+    right =79
+    bottom =409
+    wtype =55
+    group =48
+  end
+  Static70:CtmStaticX2
+    left =20
+    top =417
+    right =290
+    bottom =457
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox56:CtmSelectBox
+    left =59
+    top =417
+    right =79
+    bottom =457
+    wtype =55
+    group =56
+  end
+  Static80:CtmStaticX2
+    left =20
+    top =465
+    right =290
+    bottom =505
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox64:CtmSelectBox
+    left =59
+    top =465
+    right =79
+    bottom =505
+    wtype =55
+    group =64
+  end
+  Static90:CtmStaticX2
+    left =20
+    top =513
+    right =290
+    bottom =553
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox72:CtmSelectBox
+    left =59
+    top =513
+    right =79
+    bottom =553
+    wtype =55
+    group =72
+  end
+  StaticA0:CtmStaticX2
+    left =20
+    top =561
+    right =290
+    bottom =601
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox80:CtmSelectBox
+    left =59
+    top =561
+    right =79
+    bottom =601
+    wtype =55
+    group =80
+  end
+  StaticB0:CtmStaticX2
+    left =20
+    top =609
+    right =290
+    bottom =649
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox88:CtmSelectBox
+    left =59
+    top =609
+    right =79
+    bottom =649
+    wtype =55
+    group =88
+  end
+  StaticC0:CtmStaticX2
+    left =20
+    top =657
+    right =290
+    bottom =697
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox96:CtmSelectBox
+    left =59
+    top =657
+    right =79
+    bottom =697
+    wtype =55
+    group =96
+  end
+  StaticD0:CtmStaticX2
+    left =20
+    top =705
+    right =290
+    bottom =745
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox104:CtmSelectBox
+    left =59
+    top =705
+    right =79
+    bottom =745
+    wtype =55
+    group =104
+  end
+  StaticE0:CtmStaticX2
+    left =20
+    top =753
+    right =290
+    bottom =793
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox112:CtmSelectBox
+    left =59
+    top =81
+    right =79
+    bottom =121
+    wtype =55
+    group =112
+  end
+  StaticF0:CtmStaticX2
+    left =20
+    top =801
+    right =290
+    bottom =841
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox120:CtmSelectBox
+    left =59
+    top =801
+    right =79
+    bottom =841
+    wtype =55
+    group =120
+  end
+  Static01:CtmStaticX2
+    left =310
+    top =81
+    right =580
+    bottom =121
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox01:CtmSelectBox
+    left =349
+    top =81
+    right =369
+    bottom =121
+    wtype =55
+    group =1
+  end
+  Static11:CtmStaticX2
+    left =310
+    top =129
+    right =580
+    bottom =169
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox9:CtmSelectBox
+    left =349
+    top =129
+    right =369
+    bottom =169
+    wtype =55
+    group =9
+  end
+  Static21:CtmStaticX2
+    left =310
+    top =177
+    right =580
+    bottom =217
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox17:CtmSelectBox
+    left =349
+    top =177
+    right =369
+    bottom =217
+    wtype =55
+    group =17
+  end
+  Static31:CtmStaticX2
+    left =310
+    top =225
+    right =580
+    bottom =265
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox25:CtmSelectBox
+    left =349
+    top =225
+    right =369
+    bottom =265
+    wtype =55
+    group =25
+  end
+  Static41:CtmStaticX2
+    left =310
+    top =273
+    right =580
+    bottom =313
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox33:CtmSelectBox
+    left =349
+    top =273
+    right =369
+    bottom =313
+    wtype =55
+    group =33
+  end
+  Static51:CtmStaticX2
+    left =310
+    top =321
+    right =580
+    bottom =361
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox41:CtmSelectBox
+    left =349
+    top =321
+    right =369
+    bottom =361
+    wtype =55
+    group =41
+  end
+  Static61:CtmStaticX2
+    left =310
+    top =369
+    right =580
+    bottom =409
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox49:CtmSelectBox
+    left =349
+    top =369
+    right =369
+    bottom =409
+    wtype =55
+    group =49
+  end
+  Static71:CtmStaticX2
+    left =310
+    top =417
+    right =580
+    bottom =457
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox57:CtmSelectBox
+    left =349
+    top =417
+    right =369
+    bottom =457
+    wtype =55
+    group =57
+  end
+  Static81:CtmStaticX2
+    left =310
+    top =465
+    right =580
+    bottom =505
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox65:CtmSelectBox
+    left =349
+    top =465
+    right =369
+    bottom =505
+    wtype =55
+    group =65
+  end
+  Static91:CtmStaticX2
+    left =310
+    top =513
+    right =580
+    bottom =553
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox73:CtmSelectBox
+    left =349
+    top =513
+    right =369
+    bottom =553
+    wtype =55
+    group =73
+  end
+  StaticA1:CtmStaticX2
+    left =310
+    top =561
+    right =580
+    bottom =601
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox81:CtmSelectBox
+    left =349
+    top =561
+    right =369
+    bottom =601
+    wtype =55
+    group =81
+  end
+  StaticB1:CtmStaticX2
+    left =310
+    top =609
+    right =580
+    bottom =649
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox89:CtmSelectBox
+    left =349
+    top =609
+    right =369
+    bottom =649
+    wtype =55
+    group =89
+  end
+  StaticC1:CtmStaticX2
+    left =310
+    top =657
+    right =580
+    bottom =697
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox97:CtmSelectBox
+    left =349
+    top =657
+    right =369
+    bottom =697
+    wtype =55
+    group =97
+  end
+  StaticD1:CtmStaticX2
+    left =310
+    top =705
+    right =580
+    bottom =745
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox105:CtmSelectBox
+    left =349
+    top =705
+    right =369
+    bottom =745
+    wtype =55
+    group =105
+  end
+  StaticE1:CtmStaticX2
+    left =310
+    top =753
+    right =580
+    bottom =793
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox113:CtmSelectBox
+    left =349
+    top =753
+    right =369
+    bottom =793
+    wtype =55
+    group =113
+  end
+  StaticF1:CtmStaticX2
+    left =310
+    top =801
+    right =580
+    bottom =841
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox121:CtmSelectBox
+    left =349
+    top =801
+    right =369
+    bottom =841
+    wtype =55
+    group =121
+  end
+  SelectBox00:CtmSelectBox
+    left =59
+    top =753
+    right =79
+    bottom =793
+    wtype =55
+  end
+end

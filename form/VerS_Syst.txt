@@ -1,0 +1,1264 @@
+ViewVersSyst:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =423
+  wtype =48
+  titleID =VW_VERSION
+  canstop =TRUE
+  printname =2-8-VersionSyst.bmp
+  ImageSystMap_HMI:CtmImageBox
+    left =30
+    top =10
+    right =93
+    bottom =126
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_HMI.bmp
+    keycolor =63519
+  end
+  ImageSystMap_Line1:CtmImageBox
+    left =92
+    top =58
+    right =372
+    bottom =65
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_HLine.bmp
+    keycolor =63519
+  end
+  StaticHMI:CtmStaticX2
+    left =105
+    top =81
+    right =140
+    bottom =99
+    wtype =48
+    fgc =0
+    textID =VW_VERSION_HMI
+    align =32
+  end
+  StaticM3KEY:CtmStaticX2
+    left =105
+    top =101
+    right =143
+    bottom =119
+    wtype =48
+    fgc =0
+    textID =VW_VERSION_M3KEY
+    align =32
+  end
+  editMMIVersion:CtmEdit
+    left =145
+    top =82
+    right =207
+    bottom =100
+    wtype =48
+    maxchar =7
+    align =32
+  end
+  StaticMMINO:CtmStaticX2
+    left =208
+    top =82
+    right =218
+    bottom =100
+    wtype =48
+    fgc =0
+    text =-
+    align =32
+  end
+  editMMIDate:CtmEdit
+    left =220
+    top =82
+    right =255
+    bottom =100
+    wtype =48
+    maxchar =4
+    align =0
+  end
+  editM3KeyboardVersion:CtmEditX2
+    left =145
+    top =102
+    right =220
+    bottom =120
+    wtype =48
+    maxchar =8
+    align =32
+  end
+  ImageSystMap_DSP:CtmImageBox
+    left =370
+    top =35
+    right =482
+    bottom =84
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_DSP.bmp
+    keycolor =63519
+  end
+  ImageSystMap_Line11:CtmImageBox
+    left =420
+    top =83
+    right =427
+    bottom =113
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_VLine.bmp
+    keycolor =63519
+  end
+  Edit55:CtmEditX1
+    left =386
+    top =15
+    right =418
+    bottom =33
+    wtype =48
+    taborder =-3
+    fgc =0
+    maxchar =2
+    align =0
+    value =55
+  end
+  ImageSysMapDsp55_STATE:CtmImageBox
+    left =368
+    top =15
+    right =384
+    bottom =31
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  editVERSION1:CtmEditX2
+    left =276
+    top =5
+    right =316
+    bottom =23
+    wtype =48
+    maxchar =4
+    align =32
+    dbid0 =CONF_CODE_WRITE_NULL_DATA7
+  end
+  editDATEYEAR:CtmEditX2
+    left =324
+    top =5
+    right =364
+    bottom =23
+    wtype =48
+    maxchar =4
+    align =32
+    dbid0 =CONF_CODE_WRITE_NULL_DATA8
+  end
+  editLIBVERSION1:CtmEditX2
+    left =276
+    top =25
+    right =316
+    bottom =43
+    wtype =48
+    maxchar =4
+    align =32
+    dbid0 =CONF_CODE_WRITE_NULL_DATA15
+  end
+  editLIBDATEYEAR:CtmEditX2
+    left =324
+    top =25
+    right =364
+    bottom =43
+    wtype =48
+    maxchar =4
+    align =32
+    dbid0 =CONF_CODE_WRITE_NULL_DATA16
+  end
+  StaticDSP_MINUS1:CtmStaticX2
+    left =314
+    top =5
+    right =324
+    bottom =23
+    wtype =48
+    fgc =0
+    text =-
+  end
+  StaticDSP_MINUS2:CtmStaticX2
+    left =314
+    top =25
+    right =324
+    bottom =43
+    wtype =48
+    fgc =0
+    text =-
+  end
+  edit28:CtmEditX1
+    left =433
+    top =15
+    right =465
+    bottom =33
+    wtype =48
+    taborder =-3
+    fgc =0
+    maxchar =2
+    align =0
+    value =28
+  end
+  ImageSysMapDsp28_STATE:CtmImageBox
+    left =468
+    top =15
+    right =484
+    bottom =31
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  editM3Version_Boot:CtmEdit
+    left =486
+    top =25
+    right =566
+    bottom =top+18
+    wtype =48
+    //taborder =-3
+    maxchar =9
+    align =0
+    promptID =M3_CONF_CONFIGURATION_VERSIONINFO10
+  end
+  editM3Version_Self:CtmEdit
+    left =486
+    top =5
+    right =566
+    bottom =top+18
+    wtype =48
+    //taborder =-3
+    maxchar =9
+    align =0
+    promptID =M3_CONF_CONFIGURATION_VERSIONINFO2
+  end
+  StaticSystMap_TMIO:CtmStaticX2
+    left =436
+    top =321
+    right =496
+    bottom =341
+    wtype =48
+    fgc =0
+    textID =VW_TMIOT
+    align =34
+  end
+  ImageSystMap_TMIO:CtmImageBox
+    left =510
+    top =306
+    right =533
+    bottom =359
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_TEMP.png
+    keycolor =63519
+  end
+  StaticSystMapL3_TMIO_NUM1:CtmStaticX2
+    left =537
+    top =302
+    right =547
+    bottom =320
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_1
+    align =34
+  end
+  StaticSystMapL3_TMIO_NUM2:CtmStaticX2
+    left =537
+    top =322
+    right =547
+    bottom =340
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_2
+    align =34
+  end
+  StaticSystMapL3_TMIO_NUM3:CtmStaticX2
+    left =537
+    top =342
+    right =547
+    bottom =360
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_3
+    align =34
+  end
+  StaticSystMapL3_TMIO_NUM4:CtmStaticX2
+    left =660
+    top =303
+    right =670
+    bottom =321
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_4
+    align =34
+  end
+  StaticSystMapL3_TMIO_NUM5:CtmStaticX2
+    left =660
+    top =323
+    right =670
+    bottom =341
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_5
+    align =34
+  end
+  StaticSystMapL3_TMIO_NUM6:CtmStaticX2
+    left =660
+    top =343
+    right =670
+    bottom =361
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_6
+    align =34
+  end
+  ImageSystMapL4_TMIOSTATE1:CtmImageBox
+    left =551
+    top =303
+    right =567
+    bottom =319
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapL4_TMIOSTATE2:CtmImageBox
+    left =551
+    top =323
+    right =567
+    bottom =339
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapL4_TMIOSTATE3:CtmImageBox
+    left =551
+    top =343
+    right =567
+    bottom =359
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapL4_TMIOSTATE4:CtmImageBox
+    left =674
+    top =304
+    right =690
+    bottom =320
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapL4_TMIOSTATE5:CtmImageBox
+    left =674
+    top =324
+    right =690
+    bottom =340
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapL4_TMIOSTATE6:CtmImageBox
+    left =674
+    top =344
+    right =690
+    bottom =360
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  editM3Version_TMIO1:CtmEditX2
+    left =571
+    top =303
+    right =651
+    bottom =321
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_REMOTEIO_CARD1_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_TMIO2:CtmEditX2
+    left =571
+    top =323
+    right =651
+    bottom =341
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_REMOTEIO_CARD2_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_TMIO3:CtmEditX2
+    left =571
+    top =343
+    right =651
+    bottom =361
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_REMOTEIO_CARD3_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_TMIO4:CtmEditX2
+    left =694
+    top =304
+    right =774
+    bottom =322
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_REMOTEIO_CARD4_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_TMIO5:CtmEditX2
+    left =694
+    top =324
+    right =774
+    bottom =342
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_REMOTEIO_CARD5_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_TMIO6:CtmEditX2
+    left =694
+    top =344
+    right =774
+    bottom =362
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_REMOTEIO_CARD6_CONFIGURATION_VERSIONINFO1
+  end
+  StaticSystMap_TEMP:CtmStaticX2
+    left =435
+    top =168
+    right =525
+    bottom =188
+    wtype =48
+    fgc =0
+    textID =VW_RMTP12
+  end
+  ImageSystMapR1_TEMP1:CtmImageBox
+    left =510
+    top =131
+    right =533
+    bottom =184
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_TEMP.png
+    keycolor =63519
+  end
+  StaticSystMapR1_TEMP_NUM1:CtmStaticX2
+    left =538
+    top =143
+    right =548
+    bottom =161
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_1
+    align =34
+  end
+  StaticSystMapR1_TEMP_NUM2:CtmStaticX2
+    left =538
+    top =163
+    right =548
+    bottom =181
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_2
+    align =34
+  end
+  StaticSystMapR1_TEMP_NUM3:CtmStaticX2
+    left =538
+    top =183
+    right =548
+    bottom =201
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_3
+    align =34
+  end
+  StaticSystMapR1_TEMP_NUM4:CtmStaticX2
+    left =538
+    top =203
+    right =548
+    bottom =221
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_4
+    align =34
+  end
+  StaticSystMapR1_TEMP_NUM5:CtmStaticX2
+    left =660
+    top =143
+    right =670
+    bottom =161
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_5
+    align =34
+  end
+  StaticSystMapR1_TEMP_NUM6:CtmStaticX2
+    left =660
+    top =163
+    right =670
+    bottom =181
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_6
+    align =34
+  end
+  StaticSystMapR1_TEMP_NUM7:CtmStaticX2
+    left =660
+    top =183
+    right =670
+    bottom =201
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_7
+    align =34
+  end
+  StaticSystMapR1_TEMP_NUM8:CtmStaticX2
+    left =660
+    top =203
+    right =670
+    bottom =221
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_8
+    align =34
+  end
+  ImageSystMapR2_TEMPSTATE1:CtmImageBox
+    left =552
+    top =144
+    right =568
+    bottom =160
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapR2_TEMPSTATE2:CtmImageBox
+    left =552
+    top =164
+    right =568
+    bottom =180
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapR2_TEMPSTATE3:CtmImageBox
+    left =552
+    top =184
+    right =568
+    bottom =200
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapR2_TEMPSTATE4:CtmImageBox
+    left =552
+    top =204
+    right =568
+    bottom =220
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapR2_TEMPSTATE5:CtmImageBox
+    left =674
+    top =144
+    right =690
+    bottom =160
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapR2_TEMPSTATE6:CtmImageBox
+    left =674
+    top =164
+    right =690
+    bottom =180
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapR2_TEMPSTATE7:CtmImageBox
+    left =674
+    top =184
+    right =690
+    bottom =200
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapR2_TEMPSTATE8:CtmImageBox
+    left =674
+    top =204
+    right =690
+    bottom =220
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  editM3Version_Temp1:CtmEditX2
+    left =568
+    top =144
+    right =648
+    bottom =162
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_TEMPER_CARD1_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_Temp2:CtmEditX2
+    left =568
+    top =164
+    right =648
+    bottom =182
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_TEMPER_CARD2_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_Temp3:CtmEditX2
+    left =568
+    top =184
+    right =648
+    bottom =202
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_TEMPER_CARD3_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_Temp4:CtmEditX2
+    left =568
+    top =204
+    right =648
+    bottom =222
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_TEMPER_CARD4_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_Temp5:CtmEditX2
+    left =694
+    top =144
+    right =774
+    bottom =162
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_TEMPER_CARD5_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_Temp6:CtmEditX2
+    left =694
+    top =164
+    right =774
+    bottom =182
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_TEMPER_CARD6_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_Temp7:CtmEditX2
+    left =694
+    top =184
+    right =774
+    bottom =202
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_TEMPER_CARD7_CONFIGURATION_VERSIONINFO1
+  end
+  editM3Version_Temp8:CtmEditX2
+    left =694
+    top =204
+    right =774
+    bottom =222
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =M3_CONF_TEMPER_CARD8_CONFIGURATION_VERSIONINFO1
+  end
+  ImageSystMap_Right1:CtmImageBox
+    left =423
+    top =111
+    right =499
+    bottom =168
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_RIGHT.bmp
+    keycolor =63519
+  end
+  ImageSystMap_Right2:CtmImageBox
+    left =423
+    top =164
+    right =499
+    bottom =255
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_RIGHT2.bmp
+    keycolor =63519
+  end
+  ImageSystMap_Right3:CtmImageBox
+    left =423
+    top =253
+    right =499
+    bottom =344
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_RIGHT2.bmp
+    keycolor =63519
+  end
+  ImageSystMapR4_PWM1:CtmImageBox
+    left =510
+    top =234
+    right =558
+    bottom =273
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_PWM.bmp
+    keycolor =63519
+  end
+  StaticSystMap_PWRMT:CtmStaticX2
+    left =435
+    top =257
+    right =495
+    bottom =295
+    wtype =48
+    fgc =0
+    textID =VW_PWRMT
+  end
+  StaticSystMapR3_PWRMT_NUM1:CtmStaticX2
+    left =562
+    top =234
+    right =572
+    bottom =252
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_1
+    align =34
+  end
+  StaticSystMapR3_PWRMT_NUM2:CtmStaticX2
+    left =562
+    top =254
+    right =572
+    bottom =272
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_2
+    align =34
+  end
+  StaticSystMapR3_PWRMT_NUM3:CtmStaticX2
+    left =562
+    top =274
+    right =572
+    bottom =292
+    wtype =48
+    fgc =0
+    bgc =42296
+    textID =VW_PARAMETER1_3
+    align =34
+  end
+  ImageSystMapR4_PWMSTATE1:CtmImageBox
+    left =576
+    top =235
+    right =592
+    bottom =251
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapR4_PWMSTATE2:CtmImageBox
+    left =576
+    top =255
+    right =592
+    bottom =271
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  ImageSystMapR4_PWMSTATE3:CtmImageBox
+    left =576
+    top =275
+    right =592
+    bottom =291
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/DriverTempGray.bmp
+    keycolor =63519
+  end
+  editM3Version_Ammter1:CtmEditX2
+    left =596
+    top =235
+    right =676
+    bottom =253
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =PWMTRCARD1_INTERFACE_DWVERSION1
+  end
+  editM3Version_Ammter2:CtmEditX2
+    left =596
+    top =255
+    right =676
+    bottom =273
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =PWMTRCARD2_INTERFACE_DWVERSION1
+  end
+  editM3Version_Ammter3:CtmEditX2
+    left =596
+    top =275
+    right =676
+    bottom =293
+    wtype =48
+    taborder =-3
+    maxchar =8
+    align =0
+    dbid0 =PWMTRCARD3_INTERFACE_DWVERSION1
+  end
+//Axis1
+  ImageAxisVers1_Left:CtmImageBox
+    left =348
+    top =111
+    right =424
+    bottom =168
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_LEFT.bmp
+    keycolor =63519
+  end
+  ImageAxisVers1:CtmImageBox
+    left =316
+    top =131
+    right =339
+    bottom =184
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_TEMP.png
+    keycolor =63519
+  end
+  StaticAxisVers1:CtmStaticX2
+    left =347
+    top =168
+    right =407
+    bottom =188
+    wtype =48
+    fgc =0
+    textID =BTN_01_09_04AXISCARD
+    align =34
+  end
+  editAxisVers1App:CtmEdit
+    left =349-8
+    top =115
+    right =418
+    bottom =135
+    wtype =48
+    maxchar =9
+    align =0
+    promptID =M3_CONF_CARD1_CONFIGURATION_VERSIONINFO2
+  end
+  editAxisVers1Boot:CtmEdit
+    left =349-8
+    top =140
+    right =418
+    bottom =160
+    wtype =48
+    maxchar =9
+    align =0
+    promptID =M3_CONF_CARD1_CONFIGURATION_CARDID
+  end
+  ImageAxis1Driver1:CtmImageBox
+    left =248
+    top =155
+    right =273
+    bottom =188
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/austone.bmp
+    keycolor =63519
+  end
+  StaticAxis1Driver1:CtmStaticX2
+    left =174
+    top =130
+    right =234
+    bottom =150
+    wtype =48
+    fgc =0
+    textID =VW_OVER_CLP
+    align =34
+  end
+  editAxis1Driver1_Date1:CtmEdit
+    left =181
+    top =150
+    right =240
+    bottom =170
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD1_CONFIGURATION_VERSIONINFO4
+  end
+  editAxis1Driver1_Date2:CtmEdit
+    left =181
+    top =173
+    right =240
+    bottom =193
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD1_CONFIGURATION_VERSIONINFO6
+  end
+  StaticAxis1Driver2:CtmStaticX2
+    left =99
+    top =129
+    right =159
+    bottom =149
+    wtype =48
+    fgc =0
+    textID =VW_OVER_EJT
+    align =34
+  end
+  editAxis1Driver2_Date1:CtmEdit
+    left =105
+    top =150
+    right =164
+    bottom =170
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD1_CONFIGURATION_VERSIONINFO8
+  end
+  editAxis1Driver2_Date2:CtmEdit
+    left =105
+    top =173
+    right =164
+    bottom =193
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD1_CONFIGURATION_VERSIONINF10
+  end
+//Axis2
+  ImageAxisVers2_Left:CtmImageBox
+    left =348
+    top =164
+    right =424
+    bottom =255
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_LEFT2.bmp
+    keycolor =63519
+  end
+  ImageAxisVers2:CtmImageBox
+    left =316
+    top =214
+    right =339
+    bottom =267
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_TEMP.png
+    keycolor =63519
+  end
+  StaticAxisVers2:CtmStaticX2
+    left =347
+    top =251
+    right =407
+    bottom =271
+    wtype =48
+    fgc =0
+    textID =BTN_01_09_04AXISCARD
+    align =34
+  end
+  editAxisVers2App:CtmEdit
+    left =349-8
+    top =203
+    right =418
+    bottom =223
+    wtype =48
+    maxchar =9
+    align =0
+    promptID =M3_CONF_CARD2_CONFIGURATION_VERSIONINFO2
+  end
+  editAxisVers2Boot:CtmEdit
+    left =349-8
+    top =228
+    right =418
+    bottom =248
+    wtype =48
+    maxchar =9
+    align =0
+    promptID =M3_CONF_CARD2_CONFIGURATION_CARDID
+  end
+  ImageAxis2Driver1:CtmImageBox
+    left =248
+    top =238
+    right =273
+    bottom =271
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/austone.bmp
+    keycolor =63519
+  end
+  StaticAxis2Driver1:CtmStaticX2
+    left =174
+    top =213
+    right =234
+    bottom =233
+    wtype =48
+    fgc =0
+    textID =VW_OVER_INJ
+    align =34
+  end
+  editAxis2Driver1_Date1:CtmEdit
+    left =181
+    top =233
+    right =240
+    bottom =253
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD2_CONFIGURATION_VERSIONINFO4
+  end
+  editAxis2Driver1_Date2:CtmEdit
+    left =181
+    top =256
+    right =240
+    bottom =276
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD2_CONFIGURATION_VERSIONINFO6
+  end
+  StaticAxis2Driver2:CtmStaticX2
+    left =99
+    top =212
+    right =159
+    bottom =232
+    wtype =48
+    fgc =0
+    textID =VW_PANEL_CHARGE
+    align =34
+  end
+  editAxis2Driver2_Date1:CtmEdit
+    left =105
+    top =233
+    right =164
+    bottom =253
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD2_CONFIGURATION_VERSIONINFO8
+  end
+  editAxis2Driver2_Date2:CtmEdit
+    left =105
+    top =256
+    right =164
+    bottom =276
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD2_CONFIGURATION_VERSIONINF10
+  end
+//Axis3
+  ImageAxisVers3_Left:CtmImageBox
+    left =348
+    top =253
+    right =424
+    bottom =344
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_LEFT2.bmp
+    keycolor =63519
+  end
+  ImageAxisVers3:CtmImageBox
+    left =316
+    top =311
+    right =339
+    bottom =364
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/SystMap_TEMP.png
+    keycolor =63519
+  end
+  StaticAxisVers3:CtmStaticX2
+    left =347
+    top =348
+    right =407
+    bottom =368
+    wtype =48
+    fgc =0
+    textID =BTN_01_09_04AXISCARD
+    align =34
+  end
+  editAxisVers3App:CtmEdit
+    left =349-8
+    top =296
+    right =418
+    bottom =316
+    wtype =48
+    maxchar =9
+    align =0
+    promptID =M3_CONF_CARD3_CONFIGURATION_VERSIONINFO2
+  end
+  editAxisVers3Boot:CtmEdit
+    left =349-8
+    top =321
+    right =418
+    bottom =341
+    wtype =48
+    maxchar =9
+    align =0
+    promptID =M3_CONF_CARD3_CONFIGURATION_CARDID
+  end
+  ImageAxis3Driver1:CtmImageBox
+    left =248
+    top =325
+    right =273
+    bottom =358
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_7AS/image/austone.bmp
+    keycolor =63519
+  end
+  StaticAxis3Driver1:CtmStaticX2
+    left =174
+    top =300
+    right =234
+    bottom =320
+    wtype =48
+    fgc =0
+    textID =VW_CONFIG_NOZPOSN
+    align =34
+  end
+  editAxis3Driver1_Date1:CtmEdit
+    left =181
+    top =320
+    right =240
+    bottom =340
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD3_CONFIGURATION_VERSIONINFO4
+  end
+  editAxis3Driver1_Date2:CtmEdit
+    left =181
+    top =343
+    right =240
+    bottom =363
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD3_CONFIGURATION_VERSIONINFO6
+ end
+  StaticAxis3Driver2:CtmStaticX2
+    left =99
+    top =299
+    right =159
+    bottom =319
+    wtype =48
+    fgc =0
+    textID =VW_MONI2_TITLE9
+    align =34
+  end
+  editAxis3Driver2_Date1:CtmEdit
+    left =105
+    top =320
+    right =164
+    bottom =340
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD3_CONFIGURATION_VERSIONINFO8
+  end
+  editAxis3Driver2_Date2:CtmEdit
+    left =105
+    top =343
+    right =164
+    bottom =363
+    wtype =48
+    maxchar =8
+    align =0
+    promptID =M3_CONF_CARD3_CONFIGURATION_VERSIONINF10
+  end
+end

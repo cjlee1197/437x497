@@ -1,0 +1,73 @@
+ViewMsgBoxFileOpen:CtmFormView
+  left =180
+  top =330
+  right =520
+  bottom =470
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =340
+    bottom =140
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_340X140.png
+    keycolor =63519
+  end
+  btnYes:CtmToolButton
+    left =15
+    top =80
+    right =95
+    bottom =105
+    wtype =39
+    taborder =0
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_CODE_EDIT
+  end
+  btnNo:CtmToolButton
+    left =130
+    top =80
+    right =210
+    bottom =105
+    wtype =39
+    taborder =1
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_RUN
+  end
+  btnCancel:CtmToolButton
+    left =245
+    top =80
+    right =325
+    bottom =105
+    wtype =39
+    taborder =2
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  FileName:CtmStaticX2
+    left =120
+    top =25
+    right =290
+    bottom =50
+    wtype =48
+    fgc =0
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =23
+    top =25
+    right =120
+    bottom =50
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_FILE_NAME
+  end
+end

@@ -1,0 +1,886 @@
+ViewDiag_ServP1:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  wtype =48
+  titleID =ROBOT_BTN_MAKERPARAMETER
+  printname =Diag_MakerP.bmp
+  OnCreateA =OnCreateMakerP
+  EditStartNo:CtmEditX1
+    left =86
+    top =10
+    right =154
+    bottom =37
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65500
+    colorcontrol =4
+    destcolor =65400
+    maxchar =3
+    align =0
+    max =73
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =14
+    top =10
+    right =82
+    bottom =37
+    wtype =36
+    fgc =0
+    bgc =44568
+    textID =ROBOT_PARAM_NO_GOTO
+    align =34
+  end
+  StaticWORK_NO:CtmStaticX2
+    left =14
+    top =43
+    right =61
+    bottom =70
+    wtype =36
+    fgc =0
+    bgc =44568
+    textID =PARAM_INDEX
+    align =34
+  end
+  StaticWORK_DATA:CtmStaticX2
+    left =61
+    top =43
+    right =155
+    bottom =70
+    wtype =36
+    fgc =0
+    bgc =44568
+    textID =PARAM_VAULE
+    align =34
+  end
+  ImageBoxLock:CtmImageBox
+    left =62
+    top =44
+    right =87
+    bottom =69
+    wtype =55
+    type =2
+    imagepath =res_tm640/LockON.png
+    keycolor =63519
+  end
+  StaticPARAM_TEXT:CtmStaticX2
+    left =155
+    top =43
+    right =586
+    bottom =70
+    wtype =36
+    fgc =0
+    bgc =44568
+    textID =PARAM_INFORNATION
+    align =34
+  end
+  StaticTABLE001:CtmStaticX2
+    left =14
+    top =70
+    right =60
+    bottom =99
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE002:CtmEditX1
+    privilege =4
+    left =61
+    top =70
+    right =154
+    bottom =99
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE003:CtmStaticX2
+    left =155
+    top =70
+    right =585
+    bottom =99
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE011:CtmStaticX2
+    left =14
+    top =100
+    right =60
+    bottom =129
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE012:CtmEditX1
+    privilege =4
+    left =61
+    top =100
+    right =154
+    bottom =129
+    wtype =35
+    taborder =2
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE013:CtmStaticX2
+    left =155
+    top =100
+    right =585
+    bottom =129
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE021:CtmStaticX2
+    left =14
+    top =130
+    right =60
+    bottom =159
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE022:CtmEditX1
+    privilege =4
+    left =61
+    top =130
+    right =154
+    bottom =159
+    wtype =35
+    taborder =3
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE023:CtmStaticX2
+    left =155
+    top =130
+    right =585
+    bottom =159
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE031:CtmStaticX2
+    left =14
+    top =160
+    right =60
+    bottom =189
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE032:CtmEditX1
+    privilege =4
+    left =61
+    top =160
+    right =154
+    bottom =189
+    wtype =35
+    taborder =4
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE033:CtmStaticX2
+    left =155
+    top =160
+    right =585
+    bottom =189
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE041:CtmStaticX2
+    left =14
+    top =190
+    right =60
+    bottom =219
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE042:CtmEditX1
+    privilege =4
+    left =61
+    top =190
+    right =154
+    bottom =219
+    wtype =35
+    taborder =5
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE043:CtmStaticX2
+    left =155
+    top =190
+    right =585
+    bottom =219
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE051:CtmStaticX2
+    left =14
+    top =220
+    right =60
+    bottom =249
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE052:CtmEditX1
+    privilege =4
+    left =61
+    top =220
+    right =154
+    bottom =249
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE053:CtmStaticX2
+    left =155
+    top =220
+    right =585
+    bottom =249
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE061:CtmStaticX2
+    left =14
+    top =250
+    right =60
+    bottom =279
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE062:CtmEditX1
+    privilege =4
+    left =61
+    top =250
+    right =154
+    bottom =279
+    wtype =35
+    taborder =7
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE063:CtmStaticX2
+    left =155
+    top =250
+    right =585
+    bottom =279
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE071:CtmStaticX2
+    left =14
+    top =280
+    right =60
+    bottom =309
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE072:CtmEditX1
+    privilege =4
+    left =61
+    top =280
+    right =154
+    bottom =309
+    wtype =35
+    taborder =8
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE073:CtmStaticX2
+    left =155
+    top =280
+    right =585
+    bottom =309
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE081:CtmStaticX2
+    left =14
+    top =310
+    right =60
+    bottom =339
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE082:CtmEditX1
+    privilege =4
+    left =61
+    top =310
+    right =154
+    bottom =339
+    wtype =35
+    taborder =9
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE083:CtmStaticX2
+    left =155
+    top =310
+    right =585
+    bottom =339
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE091:CtmStaticX2
+    left =14
+    top =340
+    right =60
+    bottom =369
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE092:CtmEditX1
+    privilege =4
+    left =61
+    top =340
+    right =154
+    bottom =369
+    wtype =35
+    taborder =10
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE093:CtmStaticX2
+    left =155
+    top =340
+    right =585
+    bottom =369
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0A1:CtmStaticX2
+    left =14
+    top =370
+    right =60
+    bottom =399
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0A2:CtmEditX1
+    privilege =4
+    left =61
+    top =370
+    right =154
+    bottom =399
+    wtype =35
+    taborder =11
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0A3:CtmStaticX2
+    left =155
+    top =370
+    right =585
+    bottom =399
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0B1:CtmStaticX2
+    left =14
+    top =400
+    right =60
+    bottom =429
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0B2:CtmEditX1
+    privilege =4
+    left =61
+    top =400
+    right =154
+    bottom =429
+    wtype =35
+    taborder =12
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0B3:CtmStaticX2
+    left =155
+    top =400
+    right =585
+    bottom =429
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0C1:CtmStaticX2
+    left =14
+    top =430
+    right =60
+    bottom =459
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0C2:CtmEditX1
+    privilege =4
+    left =61
+    top =430
+    right =154
+    bottom =459
+    wtype =35
+    taborder =13
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0C3:CtmStaticX2
+    left =155
+    top =430
+    right =585
+    bottom =459
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0D1:CtmStaticX2
+    left =14
+    top =460
+    right =60
+    bottom =489
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0D2:CtmEditX1
+    privilege =4
+    left =61
+    top =460
+    right =154
+    bottom =489
+    wtype =35
+    taborder =14
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0D3:CtmStaticX2
+    left =155
+    top =460
+    right =585
+    bottom =489
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0E1:CtmStaticX2
+    left =14
+    top =490
+    right =60
+    bottom =519
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0E2:CtmEditX1
+    privilege =4
+    left =61
+    top =490
+    right =154
+    bottom =519
+    wtype =35
+    taborder =15
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0E3:CtmStaticX2
+    left =155
+    top =490
+    right =585
+    bottom =519
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0F1:CtmStaticX2
+    left =14
+    top =520
+    right =60
+    bottom =549
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0F2:CtmEditX1
+    privilege =4
+    left =61
+    top =520
+    right =154
+    bottom =549
+    wtype =35
+    taborder =16
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0F3:CtmStaticX2
+    left =155
+    top =520
+    right =585
+    bottom =549
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0G1:CtmStaticX2
+    left =14
+    top =550
+    right =60
+    bottom =579
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0G2:CtmEditX1
+    privilege =4
+    left =61
+    top =550
+    right =154
+    bottom =579
+    wtype =35
+    taborder =17
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0G3:CtmStaticX2
+    left =155
+    top =550
+    right =585
+    bottom =579
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0H1:CtmStaticX2
+    left =14
+    top =580
+    right =60
+    bottom =609
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0H2:CtmEditX1
+    privilege =4
+    left =61
+    top =580
+    right =154
+    bottom =609
+    wtype =35
+    taborder =18
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0H3:CtmStaticX2
+    left =155
+    top =580
+    right =585
+    bottom =609
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0I1:CtmStaticX2
+    left =14
+    top =610
+    right =60
+    bottom =639
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0I2:CtmEditX1
+    privilege =4
+    left =61
+    top =610
+    right =154
+    bottom =639
+    wtype =35
+    taborder =19
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0I3:CtmStaticX2
+    left =155
+    top =610
+    right =585
+    bottom =639
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0J1:CtmStaticX2
+    left =14
+    top =640
+    right =60
+    bottom =669
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0J2:CtmEditX1
+    privilege =4
+    left =61
+    top =640
+    right =154
+    bottom =669
+    wtype =35
+    taborder =20
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0J3:CtmStaticX2
+    left =155
+    top =640
+    right =585
+    bottom =669
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0K1:CtmStaticX2
+    left =14
+    top =670
+    right =60
+    bottom =699
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0K2:CtmEditX1
+    privilege =4
+    left =61
+    top =670
+    right =154
+    bottom =699
+    wtype =35
+    taborder =21
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0K3:CtmStaticX2
+    left =155
+    top =670
+    right =585
+    bottom =699
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0L1:CtmStaticX2
+    left =14
+    top =700
+    right =60
+    bottom =729
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0L2:CtmEditX1
+    privilege =4
+    left =61
+    top =700
+    right =154
+    bottom =729
+    wtype =35
+    taborder =22
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0L3:CtmStaticX2
+    left =155
+    top =700
+    right =585
+    bottom =729
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0M1:CtmStaticX2
+    left =14
+    top =730
+    right =60
+    bottom =759
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0M2:CtmEditX1
+    privilege =4
+    left =61
+    top =730
+    right =154
+    bottom =759
+    wtype =35
+    taborder =23
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0M3:CtmStaticX2
+    left =155
+    top =730
+    right =585
+    bottom =759
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0N1:CtmStaticX2
+    left =14
+    top =760
+    right =60
+    bottom =789
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0N2:CtmEditX1
+    privilege =4
+    left =61
+    top =760
+    right =154
+    bottom =789
+    wtype =35
+    taborder =24
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0N3:CtmStaticX2
+    left =155
+    top =760
+    right =585
+    bottom =789
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0O1:CtmStaticX2
+    left =14
+    top =790
+    right =60
+    bottom =819
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0O2:CtmEditX1
+    privilege =4
+    left =61
+    top =790
+    right =154
+    bottom =819
+    wtype =35
+    taborder =25
+    fgc =0
+    bgc =65500
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0O3:CtmStaticX2
+    left =155
+    top =790
+    right =585
+    bottom =819
+    wtype =34
+    fgc =0
+    bgc =55038
+  end
+  StaticTABLE0P1:CtmStaticX2
+    left =14
+    top =820
+    right =60
+    bottom =849
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+  StaticTABLE0P2:CtmEditX1
+    privilege =4
+    left =61
+    top =820
+    right =154
+    bottom =849
+    wtype =35
+    taborder =26
+    fgc =0
+    bgc =65400
+    maxchar =12
+    align =0
+  end
+  StaticTABLE0P3:CtmStaticX2
+    left =155
+    top =820
+    right =585
+    bottom =849
+    wtype =34
+    fgc =0
+    bgc =44572
+  end
+end

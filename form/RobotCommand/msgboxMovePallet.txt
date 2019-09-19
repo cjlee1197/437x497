@@ -1,0 +1,269 @@
+ViewMsgBoxMovePallet:CtmFormView
+  left =105
+  top =308
+  right =595
+  bottom =778
+  wtype =34871
+  bgc =65535
+  extag =10000
+  LinuxCtmImageBox1:CtmImageBox
+    left =0
+    top =0
+    right =490
+    bottom =470
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_490X470.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =28
+    top =114
+    right =462
+    bottom =221
+    wtype =5
+    bgc =42260
+    bordercolor =0
+  end
+  EditPalletNO:CtmEditX1
+    left =238
+    top =129
+    right =301
+    bottom =159
+    wtype =35
+    taborder =1
+    fgc =0
+    fontsize =2
+    type =18
+    maxchar =2
+    align =34
+    min =1
+    max =50
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  btnOK:CtmToolButton
+    left =64
+    top =374
+    right =184
+    bottom =414
+    wtype =39
+    taborder =6
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_OK
+  end
+  btnCancel:CtmToolButton
+    left =308
+    top =373
+    right =428
+    bottom =413
+    wtype =39
+    taborder =7
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =28
+    top =220
+    right =462
+    bottom =353
+    wtype =5
+    bgc =42260
+    bordercolor =0
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =45
+    top =231
+    right =185
+    bottom =259
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_MSG_STR_MOVEPARA
+    align =34
+  end
+  StaticSpeed:CtmStaticX2
+    left =44
+    top =269
+    right =220
+    bottom =304
+    wtype =37
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_STR_SPEED
+    align =34
+  end
+  btnSpeedP:CtmToolButton
+    left =44
+    top =304
+    right =98
+    bottom =342
+    wtype =39
+    taborder =3
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_PLUS
+  end
+  btnSpeedM:CtmToolButton
+    left =167
+    top =304
+    right =221
+    bottom =342
+    wtype =39
+    taborder =4
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_MINUS
+  end
+  ShowSpeed:CtmStaticX2
+    left =97
+    top =303
+    right =167
+    bottom =342
+    wtype =37
+    fgc =0
+    bgc =50712
+    fontsize =2
+    align =34
+  end
+  ShowMoveType:CtmImageBox
+    left =323
+    top =20
+    right =453
+    bottom =90
+    wtype =37
+    imagepath =res_tm640/PTP.png
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =38
+    top =42
+    right =136
+    bottom =77
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_MOVE_MODE
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =55
+    top =129
+    right =154
+    bottom =157
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_TABLE
+  end
+  EditZRel:CtmEditX1
+    left =238
+    top =171
+    right =371
+    bottom =201
+    wtype =35
+    taborder =2
+    fontsize =2
+    type =18
+    maxchar =9
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TableStatic02:CtmStaticX2
+    left =56
+    top =172
+    right =224
+    bottom =200
+    wtype =48
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_STR_MOVE_PALLET_Z_REL
+  end
+  StaticZUnit:CtmStaticX2
+    left =371
+    top =172
+    right =406
+    bottom =200
+    wtype =48
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_UNIT_MM
+  end
+  SelectMoveType:CtmSelectEdit
+    left =136
+    top =38
+    right =290
+    bottom =78
+    taborder =0
+    fontsize =2
+    maxchar =20
+    listnum =2
+    strID0 =ROBOT_COMMAND_PTP_PALLET
+    strID1 =ROBOT_COMMAND_LINE_PALLET
+  end
+  btnSoftNessP:CtmToolButton
+    left =263
+    top =304
+    right =316
+    bottom =342
+    wtype =39
+    taborder =20
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_PLUS
+  end
+  ShowSoftNess:CtmStaticX2
+    left =316
+    top =303
+    right =386
+    bottom =342
+    wtype =37
+    fgc =0
+    bgc =50712
+    fontsize =2
+    align =34
+  end
+  btnSoftNessM:CtmToolButton
+    left =386
+    top =304
+    right =440
+    bottom =342
+    wtype =39
+    taborder =21
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_MINUS
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =263
+    top =269
+    right =439
+    bottom =304
+    wtype =37
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_STR_SOFTNESS
+    align =34
+  end
+end

@@ -1,0 +1,117 @@
+ViewMsgBoxSetVar:CtmFormView
+  left =260
+  top =150
+  right =540
+  bottom =340
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =280
+    bottom =190
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_280X190.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =20
+    top =20
+    right =265
+    bottom =130
+    wtype =5
+    bgc =46486
+    bordercolor =0
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =20
+    top =20
+    right =265
+    bottom =60
+    wtype =5
+    bgc =38034
+    bordercolor =0
+  end
+  StaticMessage:CtmStaticX2
+    left =60
+    top =30
+    right =220
+    bottom =50
+    wtype =48
+    fgc =0
+    textID =ROBOT_COMMAND_SETVAR
+    align =34
+  end
+  EditTABLE01:CtmEditX1
+    left =50
+    top =85
+    right =90
+    bottom =105
+    wtype =32
+    taborder =0
+    type =18
+    maxchar =3
+    align =34
+    min =1
+    max =999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  StaticX1:CtmStaticX2
+    left =30
+    top =85
+    right =50
+    bottom =105
+    fgc =0
+    bgc =46486
+    textID =ROBOT_COMMAND_STR_VAR_SIGN
+    align =36
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =90
+    top =85
+    right =120
+    bottom =105
+    fgc =0
+    bgc =46486
+    textID =ROBOT_COMMAND_STR_EQUAL_SIGN
+    align =34
+  end
+  btnOK:CtmToolButton
+    left =30
+    top =145
+    right =100
+    bottom =170
+    wtype =39
+    taborder =2
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_OK
+  end
+  btnCancel:CtmToolButton
+    left =185
+    top =145
+    right =255
+    bottom =170
+    wtype =39
+    taborder =3
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  EditTABLE02:CtmEdit
+    left =120
+    top =85
+    right =260
+    bottom =105
+    wtype =32
+    taborder =1
+    maxchar =60
+    align =33
+  end
+end

@@ -1,0 +1,84 @@
+mainform:CtmMainFrame
+  left =0
+  top =0
+  right =599
+  bottom =1023
+  wtype =351
+  promptbar:CtmPromptBar
+    left =0
+    top =919
+    right =599
+    bottom =948
+    wtype =39
+    bgc =63519
+    DateTime:CtmStaticX2
+      left =460
+      top =5
+      right =598
+      bottom =25
+      wtype =48
+      fgc =0
+    end
+    StaticPrompt:CtmStaticX2
+      left =40
+      top =5
+      right =450
+      bottom =25
+      wtype =48
+      fgc =0
+    end
+  end
+  view:CtmView
+    left =0
+    top =100
+    right =599
+    bottom =919
+    wtype =39
+    bgc =59196
+    overviewname =Over.txt
+    ImageBGLOGO:CtmImageBox
+      left =0
+      top =0
+      right =599
+      bottom =819
+      wtype =55
+      type =2
+      imagepath =res_tm640/bk.bmp
+      keycolor =63519
+    end
+  end
+  statusbar0:CtmStatusBar
+    left =0
+    top =0
+    right =599
+    bottom =100
+    wtype =23
+    BmpstatusbarBG:CtmImageBox
+      left =0
+      top =0
+      right =599
+      bottom =100
+      wtype =55
+      type =2
+      imagepath =res_tm640/StateBarBG.bmp
+      keycolor =63519
+    end
+    SaveScreenBtn:CtmToolButton
+      left =544
+      top =8
+      right =589
+      bottom =43
+      bgc =57051
+      buttontype =0
+      captionID =ROBOT_BTN_SAVE_SCREEN
+    end
+  end
+  maintoolbar:CtmToolBar
+    left =0
+    top =948
+    right =599
+    bottom =1023
+    wtype =39
+    maintool =toolbar_01.txt
+  end
+end

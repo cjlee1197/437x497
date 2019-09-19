@@ -1,0 +1,1259 @@
+ViewCodeEdit:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  wtype =48
+  titleID =ROBOT_VIEW_CODEEDIT
+  printname =CodeEdit.bmp
+  LinuxCtmStaticX212:CtmStaticX2
+    left =480
+    top =569
+    right =599
+    bottom =614
+    wtype =38
+    bgc =59196
+    bordercolor =0
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =90
+    top =569
+    right =260
+    bottom =614
+    wtype =38
+    bgc =59196
+    bordercolor =0
+  end
+  keybackimage:CtmImageBox
+    left =1
+    top =614
+    right =598
+    bottom =870
+    wtype =55
+    type =2
+    imagepath =res_tm640/keybordmask.png
+    keycolor =63519
+  end
+  BtnKeyExcept:CtmToolButton
+    privilege =2
+    left =302
+    top =826
+    right =353
+    bottom =866
+    wtype =39
+    taborder =310
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_BRACKET_RIGHT
+    group =3
+  end
+  BtnKeyMultiply:CtmToolButton
+    privilege =2
+    left =250
+    top =826
+    right =301
+    bottom =866
+    wtype =39
+    taborder =309
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOR_STR_BRACKET_LEFT
+    group =3
+  end
+  BtnKeyLess:CtmToolButton
+    privilege =2
+    left =188
+    top =826
+    right =239
+    bottom =866
+    wtype =39
+    taborder =308
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_OR
+    group =3
+  end
+  BtnKeyplus:CtmToolButton
+    privilege =2
+    left =136
+    top =826
+    right =187
+    bottom =866
+    wtype =39
+    taborder =307
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_AND
+    group =3
+  end
+  BtnKeyEqual:CtmToolButton
+    privilege =2
+    left =74
+    top =826
+    right =125
+    bottom =866
+    wtype =39
+    taborder =304
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_DATE_SLASH
+    group =3
+  end
+  BtnKeyExclamation:CtmToolButton
+    privilege =2
+    left =22
+    top =826
+    right =73
+    bottom =866
+    wtype =39
+    taborder =303
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_OPERATION_MULTIPLY
+    group =3
+  end
+  BtnKeyOther3:CtmToolButton
+    privilege =2
+    left =510
+    top =742
+    right =561
+    bottom =782
+    wtype =39
+    taborder =316
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_SEMICIOLON
+    group =3
+  end
+  BtnKeyOther5:CtmToolButton
+    privilege =2
+    left =458
+    top =742
+    right =509
+    bottom =782
+    wtype =39
+    taborder =315
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_MSG_STR_RIGHT
+    group =3
+  end
+  BtnKeyOther4:CtmToolButton
+    privilege =2
+    left =406
+    top =742
+    right =457
+    bottom =782
+    wtype =39
+    taborder =314
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_MSG_STR_LEFT
+    group =3
+  end
+  BtnKeyRightParentheses:CtmToolButton
+    privilege =2
+    left =364
+    top =826
+    right =415
+    bottom =866
+    wtype =39
+    taborder =311
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_BOTTOMLINE
+    group =3
+  end
+  BtnKeyLeftParentheses:CtmToolButton
+    privilege =2
+    left =429
+    top =785
+    right =480
+    bottom =825
+    wtype =39
+    taborder =313
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_COMMAND_STR_EQUAL_SIGN
+    group =3
+  end
+  BtnKeyOr:CtmToolButton
+    left =377
+    top =785
+    right =428
+    bottom =825
+    wtype =39
+    taborder =312
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_MARVEL
+    group =3
+  end
+  BtnKeyAnd:CtmToolButton
+    privilege =2
+    left =175
+    top =785
+    right =226
+    bottom =825
+    wtype =39
+    taborder =306
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_COMMAND_STR_VAR_SIGN
+    group =3
+  end
+  BtnKeyBootomLine:CtmToolButton
+    privilege =2
+    left =123
+    top =785
+    right =174
+    bottom =825
+    wtype =39
+    taborder =305
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_SYMBOL_MOUSE
+    group =3
+  end
+  BtnKeyHashtag:CtmToolButton
+    privilege =2
+    left =61
+    top =785
+    right =112
+    bottom =825
+    wtype =39
+    taborder =302
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_MINUS
+    group =3
+  end
+  BtnKeyAt:CtmToolButton
+    privilege =2
+    left =9
+    top =785
+    right =60
+    bottom =825
+    wtype =39
+    taborder =301
+    bgc =46712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_PLUS
+    group =3
+  end
+  BtnKeyBackSpace:CtmToolButton
+    privilege =2
+    left =524
+    top =619
+    right =595
+    bottom =659
+    wtype =39
+    taborder =407
+    fgc =65535
+    bgc =33808
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_BACKSPACE
+    group =4
+  end
+  BtnKeyEnter:CtmToolButton
+    privilege =2
+    left =501
+    top =701
+    right =586
+    bottom =741
+    wtype =39
+    taborder =406
+    fgc =65535
+    bgc =33808
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_ENTER
+    group =4
+  end
+  BtnKeySpace:CtmToolButton
+    privilege =2
+    left =237
+    top =785
+    right =366
+    bottom =825
+    wtype =39
+    taborder =405
+    fgc =65535
+    bgc =33808
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_SPACE
+    group =4
+  end
+  BtnKeyDown:CtmToolButton
+    privilege =2
+    left =490
+    top =827
+    right =541
+    bottom =867
+    wtype =39
+    taborder =402
+    fgc =65535
+    bgc =1055
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_BOTTOM
+    group =4
+  end
+  BtnKeyRight:CtmToolButton
+    privilege =2
+    left =542
+    top =827
+    right =593
+    bottom =867
+    wtype =39
+    taborder =404
+    fgc =65535
+    bgc =1055
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_RIGHT
+    group =4
+  end
+  BtnKeyUp:CtmToolButton
+    privilege =2
+    left =490
+    top =786
+    right =541
+    bottom =826
+    wtype =39
+    taborder =401
+    fgc =65535
+    bgc =1055
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_TOP
+    group =4
+  end
+  BtnKeyLeft:CtmToolButton
+    privilege =2
+    left =438
+    top =827
+    right =489
+    bottom =867
+    wtype =39
+    taborder =403
+    fgc =65535
+    bgc =1055
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_LEFT
+    group =4
+  end
+  BtnKeyLetterZ:CtmToolButton
+    privilege =2
+    left =42
+    top =742
+    right =93
+    bottom =782
+    wtype =39
+    taborder =226
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_Z
+    group =2
+  end
+  BtnKeyLetterY:CtmToolButton
+    privilege =2
+    left =284
+    top =660
+    right =335
+    bottom =700
+    wtype =39
+    taborder =225
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_Y
+    group =2
+  end
+  BtnKeyLetterX:CtmToolButton
+    privilege =2
+    left =94
+    top =742
+    right =145
+    bottom =782
+    wtype =39
+    taborder =224
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_X
+    group =2
+  end
+  BtnKeyLetterW:CtmToolButton
+    privilege =2
+    left =76
+    top =660
+    right =127
+    bottom =700
+    wtype =39
+    taborder =223
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_W
+    group =2
+  end
+  BtnKeyLetterV:CtmToolButton
+    privilege =2
+    left =198
+    top =742
+    right =249
+    bottom =782
+    wtype =39
+    taborder =222
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_V
+    group =2
+  end
+  BtnKeyLetterU:CtmToolButton
+    privilege =2
+    left =336
+    top =660
+    right =387
+    bottom =700
+    wtype =39
+    taborder =221
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_U
+    group =2
+  end
+  BtnKeyLetterT:CtmToolButton
+    privilege =2
+    left =232
+    top =660
+    right =283
+    bottom =700
+    wtype =39
+    taborder =220
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_T
+    group =2
+  end
+  BtnKeyLetterS:CtmToolButton
+    privilege =2
+    left =85
+    top =701
+    right =136
+    bottom =741
+    wtype =39
+    taborder =219
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_S
+    group =2
+  end
+  BtnKeyLetterR:CtmToolButton
+    privilege =2
+    left =180
+    top =660
+    right =231
+    bottom =700
+    wtype =39
+    taborder =218
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_R
+    group =2
+  end
+  BtnKeyLetterQ:CtmToolButton
+    privilege =2
+    left =24
+    top =660
+    right =75
+    bottom =700
+    wtype =39
+    taborder =217
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_Q
+    group =2
+  end
+  BtnKeyLetterP:CtmToolButton
+    privilege =2
+    left =492
+    top =660
+    right =543
+    bottom =700
+    wtype =39
+    taborder =216
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_P
+    group =2
+  end
+  BtnKeyLetterO:CtmToolButton
+    privilege =2
+    left =440
+    top =660
+    right =491
+    bottom =700
+    wtype =39
+    taborder =215
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_O
+    group =2
+  end
+  BtnKeyLetterN:CtmToolButton
+    privilege =2
+    left =302
+    top =742
+    right =353
+    bottom =782
+    wtype =39
+    taborder =214
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_N
+    group =2
+  end
+  BtnKeyLetterM:CtmToolButton
+    privilege =2
+    left =354
+    top =742
+    right =405
+    bottom =782
+    wtype =39
+    taborder =213
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_M
+    group =2
+  end
+  BtnKeyLetterL:CtmToolButton
+    privilege =2
+    left =449
+    top =701
+    right =500
+    bottom =741
+    wtype =39
+    taborder =212
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_L
+    group =2
+  end
+  BtnKeyLetterK:CtmToolButton
+    privilege =2
+    left =397
+    top =701
+    right =448
+    bottom =741
+    wtype =39
+    taborder =211
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_K
+    group =2
+  end
+  BtnKeyLetterJ:CtmToolButton
+    privilege =2
+    left =345
+    top =701
+    right =396
+    bottom =741
+    wtype =39
+    taborder =210
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_J
+    group =2
+  end
+  BtnKeyLetterI:CtmToolButton
+    privilege =2
+    left =388
+    top =660
+    right =439
+    bottom =700
+    wtype =39
+    taborder =209
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_I
+    group =2
+  end
+  BtnKeyLetterH:CtmToolButton
+    privilege =2
+    left =293
+    top =701
+    right =344
+    bottom =741
+    wtype =39
+    taborder =208
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_H
+    group =2
+  end
+  BtnKeyLetterG:CtmToolButton
+    privilege =2
+    left =241
+    top =701
+    right =292
+    bottom =741
+    wtype =39
+    taborder =207
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_G
+    group =2
+  end
+  BtnKeyLetterF:CtmToolButton
+    privilege =2
+    left =189
+    top =701
+    right =240
+    bottom =741
+    wtype =39
+    taborder =206
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_F
+    group =2
+  end
+  BtnKeyLetterE:CtmToolButton
+    privilege =2
+    left =128
+    top =660
+    right =179
+    bottom =700
+    wtype =39
+    taborder =205
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_E
+    group =2
+  end
+  BtnKeyLetterD:CtmToolButton
+    privilege =2
+    left =137
+    top =701
+    right =188
+    bottom =741
+    wtype =39
+    taborder =204
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_D
+    group =2
+  end
+  BtnKeyLetterC:CtmToolButton
+    privilege =2
+    left =146
+    top =742
+    right =197
+    bottom =782
+    wtype =39
+    taborder =203
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_C
+    group =2
+  end
+  BtnKeyLetterB:CtmToolButton
+    privilege =2
+    left =250
+    top =742
+    right =301
+    bottom =782
+    wtype =39
+    taborder =202
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_B
+    group =2
+  end
+  BtnKeyLetterA:CtmToolButton
+    privilege =2
+    left =33
+    top =701
+    right =84
+    bottom =741
+    wtype =39
+    taborder =201
+    bgc =50712
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_LETTER_A
+    group =2
+  end
+  BtnKeyDecimal:CtmToolButton
+    privilege =2
+    left =544
+    top =660
+    right =595
+    bottom =700
+    wtype =39
+    taborder =111
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_STR_POINT
+    group =1
+  end
+  BtnKeyNum0:CtmToolButton
+    privilege =2
+    left =472
+    top =619
+    right =523
+    bottom =659
+    wtype =39
+    taborder =110
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_NUM_0
+    group =1
+  end
+  BtnKeyNum9:CtmToolButton
+    privilege =2
+    left =420
+    top =619
+    right =471
+    bottom =659
+    wtype =39
+    taborder =109
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_NUM_9
+    group =1
+  end
+  BtnKeyNum8:CtmToolButton
+    privilege =2
+    left =368
+    top =619
+    right =419
+    bottom =659
+    wtype =39
+    taborder =108
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_NUM_8
+    group =1
+  end
+  BtnKeyNum7:CtmToolButton
+    privilege =2
+    left =316
+    top =619
+    right =367
+    bottom =659
+    wtype =39
+    taborder =107
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_NUM_7
+    group =1
+  end
+  BtnKeyNum6:CtmToolButton
+    privilege =2
+    left =264
+    top =619
+    right =315
+    bottom =659
+    wtype =39
+    taborder =106
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_NUM_6
+    group =1
+  end
+  BtnKeyNum5:CtmToolButton
+    privilege =2
+    left =212
+    top =619
+    right =263
+    bottom =659
+    wtype =39
+    taborder =105
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_NUM_5
+    group =1
+  end
+  BtnKeyNum4:CtmToolButton
+    privilege =2
+    left =160
+    top =619
+    right =211
+    bottom =659
+    wtype =39
+    taborder =104
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_NUM_4
+    group =1
+  end
+  BtnKeyNum3:CtmToolButton
+    privilege =2
+    left =108
+    top =619
+    right =159
+    bottom =659
+    wtype =39
+    taborder =103
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_NUM_3
+    group =1
+  end
+  BtnKeyNum2:CtmToolButton
+    privilege =2
+    left =56
+    top =619
+    right =107
+    bottom =659
+    wtype =39
+    taborder =102
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_NUM_2
+    group =1
+  end
+  BtnKeyNum1:CtmToolButton
+    privilege =2
+    left =4
+    top =619
+    right =55
+    bottom =659
+    wtype =39
+    taborder =101
+    bgc =46681
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_NUM_1
+    group =1
+  end
+  LinuxCtmLineTable2:CtmLineTable
+    left =10
+    top =10
+    right =226
+    bottom =220
+  end
+  StaticEditFileName1:CtmStaticX2
+    left =23
+    top =70
+    right =103
+    bottom =97
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_FILE_NAME
+  end
+  StaticEditFileNmae:CtmStaticX2
+    left =103
+    top =70
+    right =208
+    bottom =97
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  mask:CtmStaticX2
+    left =235
+    top =43
+    right =589
+    bottom =175
+    wtype =5
+    bgc =50712
+    bordercolor =0
+  end
+  btnCommand01:CtmToolButton
+    privilege =2
+    left =243
+    top =52
+    right =353
+    bottom =87
+    taborder =5
+    bgc =57051
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_COMMAND_PTP
+  end
+  btnCommand02:CtmToolButton
+    privilege =2
+    left =358
+    top =52
+    right =468
+    bottom =87
+    taborder =6
+    bgc =57051
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_COMMAND_LIN
+  end
+  btnCommand03:CtmToolButton
+    privilege =2
+    left =473
+    top =52
+    right =583
+    bottom =87
+    taborder =7
+    bgc =57051
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_COMMAND_CIRC
+  end
+  btnCommand04:CtmToolButton
+    privilege =2
+    left =243
+    top =92
+    right =353
+    bottom =127
+    taborder =8
+    bgc =57051
+    fontsize =2
+    buttontype =0
+  end
+  btnCommand05:CtmToolButton
+    privilege =2
+    left =358
+    top =92
+    right =468
+    bottom =127
+    taborder =9
+    bgc =57051
+    fontsize =2
+    buttontype =0
+  end
+  btnCommand06:CtmToolButton
+    privilege =2
+    left =473
+    top =92
+    right =583
+    bottom =127
+    taborder =10
+    bgc =57051
+    fontsize =2
+    buttontype =0
+  end
+  btnCommand07:CtmToolButton
+    privilege =2
+    left =243
+    top =132
+    right =353
+    bottom =167
+    taborder =11
+    bgc =57051
+    fontsize =2
+    buttontype =0
+  end
+  btnCommand08:CtmToolButton
+    privilege =2
+    left =358
+    top =132
+    right =468
+    bottom =167
+    taborder =12
+    bgc =57051
+    fontsize =2
+    buttontype =0
+  end
+  btnModeCommand1:CtmToolButton
+    left =235
+    top =8
+    right =310
+    bottom =43
+    taborder =1
+    space =5
+    upbitmap =res_cnc/modeC1_2.png
+    keycolor =65519
+  end
+  btnModeCommand2:CtmToolButton
+    left =310
+    top =8
+    right =385
+    bottom =43
+    taborder =2
+    upbitmap =res_cnc/modeC2_1.png
+    keycolor =65519
+  end
+  btnModeCommand3:CtmToolButton
+    left =385
+    top =8
+    right =460
+    bottom =43
+    taborder =3
+    upbitmap =res_cnc/modeC3_1.png
+    keycolor =65519
+  end
+  btnModeCommand4:CtmToolButton
+    left =460
+    top =8
+    right =535
+    bottom =43
+    taborder =4
+    upbitmap =res_cnc/modeC4_1.png
+    keycolor =65519
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =235
+    top =175
+    right =589
+    bottom =215
+    wtype =5
+    bgc =59196
+    bordercolor =0
+  end
+  btnListUp:CtmToolButton
+    left =243
+    top =180
+    right =308
+    bottom =210
+    taborder =14
+    bgc =33823
+    upbitmap =res_tm640/ListUp.png
+    keycolor =65519
+  end
+  btnListDown:CtmToolButton
+    left =516
+    top =180
+    right =581
+    bottom =210
+    taborder =15
+    bgc =33823
+    upbitmap =res_tm640/ListDown.png
+    keycolor =65519
+  end
+  btnCommand09:CtmToolButton
+    privilege =2
+    left =473
+    top =132
+    right =583
+    bottom =167
+    taborder =13
+    bgc =57051
+    fontsize =2
+    buttontype =0
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =23
+    top =139
+    right =128
+    bottom =166
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_MODIFY_DATE
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =23
+    top =174
+    right =128
+    bottom =201
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_MODIFY_TIME
+  end
+  ModifyTime:CtmStaticX2
+    left =103
+    top =174
+    right =208
+    bottom =201
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  ModifyDate:CtmStaticX2
+    left =103
+    top =140
+    right =208
+    bottom =167
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =23
+    top =30
+    right =128
+    bottom =57
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_EDIT_FILE_INFO
+  end
+  SelStart:CtmEditX1
+    left =98
+    top =578
+    right =154
+    bottom =608
+    wtype =35
+    taborder =16
+    bgc =65535
+    maxchar =5
+    align =34
+    min =1
+    max =99999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  SelEnd:CtmEditX1
+    left =194
+    top =578
+    right =250
+    bottom =608
+    wtype =35
+    taborder =17
+    bgc =65535
+    maxchar =5
+    align =34
+    min =1
+    max =99999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =167
+    top =577
+    right =184
+    bottom =609
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_TO
+    align =34
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =260
+    top =569
+    right =480
+    bottom =614
+    wtype =38
+    bgc =59196
+    bordercolor =0
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =1
+    top =569
+    right =90
+    bottom =614
+    wtype =38
+    fgc =0
+    bgc =59196
+    fontsize =2
+    bordercolor =0
+    textID =ROBOT_STR_SELECT_LINE
+    align =34
+  end
+  btnCopy:CtmToolButton
+    privilege =2
+    left =274
+    top =575
+    right =361
+    bottom =610
+    wtype =39
+    taborder =18
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    align =34
+    captionID =ROBOT_BTN_FILE_COPY
+  end
+  btnPatse:CtmToolButton
+    privilege =2
+    left =377
+    top =575
+    right =464
+    bottom =610
+    wtype =39
+    taborder =19
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_FILE_PASTE
+  end
+  btnDelLine:CtmToolButton
+    privilege =2
+    left =498
+    top =575
+    right =585
+    bottom =610
+    wtype =39
+    taborder =20
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_FILE_DELETE
+  end
+  Page:CtmStaticX2
+    left =375
+    top =182
+    right =455
+    bottom =209
+    wtype =48
+    fgc =0
+  end
+  LTextMemoProg:CtmMTextMemo
+    left =30
+    top =230
+    right =570
+    bottom =560
+    wtype =0x23
+    fgc =0 
+    taborder =0
+    no_bgc =40147
+    no_fgc =0
+    bgc =0xD69A
+    user_row =-1
+  end
+end

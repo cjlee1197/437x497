@@ -1,0 +1,495 @@
+ViewDrive_Info:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =INDEX_DRIVE_INFO
+  printname =Drive_Info.bmp
+  LinuxCtmStaticX22:CtmStaticX2
+    left =52
+    top =468
+    right =152
+    bottom =500
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_CL_KP
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =36
+    top =468
+    right =52
+    bottom =500
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =52
+    top =508
+    right =152
+    bottom =540
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_CL_KI
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =324
+    top =468
+    right =424
+    bottom =500
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_VL_KP
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =36
+    top =508
+    right =52
+    bottom =540
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =308
+    top =468
+    right =324
+    bottom =500
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =324
+    top =508
+    right =424
+    bottom =540
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_VL_KI
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =52
+    top =588
+    right =152
+    bottom =620
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_BUS_V
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =52
+    top =676
+    right =152
+    bottom =708
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_DRIVE_TMP
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =308
+    top =508
+    right =324
+    bottom =540
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =36
+    top =588
+    right =52
+    bottom =620
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =36
+    top =676
+    right =52
+    bottom =708
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =324
+    top =676
+    right =424
+    bottom =708
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_MOTOR_TMP
+  end
+  LinuxCtmImageBox7:CtmImageBox
+    left =308
+    top =676
+    right =324
+    bottom =708
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =52
+    top =716
+    right =152
+    bottom =748
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_DRIVE_I
+  end
+  LinuxCtmStaticX213:CtmStaticX2
+    left =324
+    top =716
+    right =424
+    bottom =748
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_MOTOR_RPM
+  end
+  LinuxCtmStaticX214:CtmStaticX2
+    left =52
+    top =396
+    right =152
+    bottom =428
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_DRIVE_ID
+  end
+  LinuxCtmImageBox8:CtmImageBox
+    left =36
+    top =716
+    right =52
+    bottom =748
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox9:CtmImageBox
+    left =308
+    top =716
+    right =324
+    bottom =748
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox10:CtmImageBox
+    left =36
+    top =396
+    right =52
+    bottom =428
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX215:CtmStaticX2
+    left =324
+    top =396
+    right =444
+    bottom =428
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DRIVE_INFO_LAST_ALARM
+  end
+  LinuxCtmImageBox11:CtmImageBox
+    left =308
+    top =396
+    right =324
+    bottom =428
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  STR_DRIVE_ID:CtmStaticX2
+    left =154
+    top =396
+    right =274
+    bottom =428
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+  STR_LAST_ALARM:CtmStaticX2
+    left =446
+    top =396
+    right =546
+    bottom =428
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+  STR_CL_KP:CtmStaticX2
+    left =154
+    top =468
+    right =274
+    bottom =500
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+  end
+  STR_CL_KI:CtmStaticX2
+    left =154
+    top =508
+    right =274
+    bottom =540
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+  end
+  STR_VL_KP:CtmStaticX2
+    left =426
+    top =468
+    right =546
+    bottom =500
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+  end
+  STR_VL_KI:CtmStaticX2
+    left =426
+    top =508
+    right =546
+    bottom =540
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+  end
+  STR_BUS_V:CtmStaticX2
+    left =154
+    top =588
+    right =274
+    bottom =620
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+  end
+  STR_DRIVE_TMP:CtmStaticX2
+    left =154
+    top =676
+    right =274
+    bottom =708
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+  end
+  STR_MOTOR_TMP:CtmStaticX2
+    left =426
+    top =676
+    right =546
+    bottom =708
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+  end
+  STR_DRIVE_I:CtmStaticX2
+    left =154
+    top =716
+    right =274
+    bottom =748
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+  end
+  STR_MOTOR_RPM:CtmStaticX2
+    left =426
+    top =716
+    right =546
+    bottom =748
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+  end
+  Btn_Axis_X1:CtmToolButton
+    left =20
+    top =37
+    right =130
+    bottom =97
+    wtype =48
+    taborder =51
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_XAXIS
+    upbitmap =res_tm640/pic/PileBtnSelect.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =1
+  end
+  Btn_Axis_Y1:CtmToolButton
+    left =20
+    top =101
+    right =130
+    bottom =161
+    wtype =48
+    taborder =52
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_YAXIS
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =2
+    action =255
+    formname =Pile_2.txt
+  end
+  Btn_Axis_Z:CtmToolButton
+    left =20
+    top =165
+    right =130
+    bottom =225
+    wtype =48
+    taborder =53
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_ZAXIS
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =3
+    action =255
+    formname =Pile_3.txt
+  end
+  Btn_Axis_X2:CtmToolButton
+    left =20
+    top =229
+    right =130
+    bottom =289
+    wtype =48
+    taborder =54
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_X2AXIS
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =4
+    action =255
+    formname =Pile_4.txt
+  end
+  Btn_Axis_Y2:CtmToolButton
+    left =20
+    top =293
+    right =130
+    bottom =353
+    wtype =48
+    taborder =55
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_Y2AXIS
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =5
+    action =255
+    formname =Pile_4.txt
+  end
+  IMG_Axis:CtmImageBox
+    left =149
+    top =46
+    right =525
+    bottom =342
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/DriveInfo_Axis1.bmp
+    keycolor =63519
+  end
+end

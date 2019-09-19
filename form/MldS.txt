@@ -1,0 +1,889 @@
+ViewMldS:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  wtype =32
+  titleID =PICKER_BTN_MOLD
+  printname =MoldSave.bmp
+  StaticSOURCE:CtmStaticX2
+    left =39
+    top =179
+    right =104
+    bottom =219
+    wtype =33
+    fgc =0
+    bgc =65535
+    fontsize =1
+    colorchange =20
+    destcolor =28057
+    bordercolor =2470
+    textID =VW_MOLD_TITLE
+    align =34
+  end
+  StaticSTITLE1:CtmStaticX2
+    left =104
+    top =179
+    right =402
+    bottom =219
+    wtype =33
+    fgc =0
+    bgc =65535
+    fontsize =1
+    colorchange =20
+    destcolor =28057
+    bordercolor =2470
+    textID =PICKER_FILE_FILENAME
+    align =34
+  end
+  StaticSTITLE2:CtmStaticX2
+    left =402
+    top =179
+    right =534
+    bottom =219
+    wtype =33
+    fgc =0
+    bgc =65535
+    fontsize =1
+    colorchange =20
+    destcolor =28057
+    bordercolor =2470
+    textID =VW_MOLD_TITLE2
+    align =34
+  end
+  editDESTIMEDIA:CtmSelectEdit
+    left =347
+    top =18
+    right =407
+    bottom =43
+    wtype =55
+    taborder =0
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    leftcontrol =editSAVEMODESEL
+    upcontrol =editNEWNAME
+    visible =FALSE
+    bordercolor =33808
+    maxchar =20
+    promptID =MSG_SYSTEM_CHECKBOX
+    strID0 =VW_MOLD_MMISAVE
+    strID1 =VW_MOLD_MEMORYCARD
+  end
+  editTAXISMEDIA:CtmSelectEdit
+    left =414
+    top =17
+    right =474
+    bottom =42
+    wtype =55
+    taborder =1
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    rightcontrol =editSAVEMODESEL
+    leftcontrol =editDESTIMEDIA
+    visible =FALSE
+    bordercolor =33808
+    maxchar =20
+    promptID =MSG_SYSTEM_CHECKBOX
+    strID0 =VW_MOLD_DATE
+    strID1 =VW_MOLD_NAME
+  end
+  buttonUPTWENTY:CtmToolButton
+    left =39
+    top =632
+    right =175
+    bottom =668
+    wtype =36
+    taborder =2
+    bgc =54970
+    fontsize =1
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    buttontype =0
+    align =34
+    captionID =VW_MOLD_CHECKUPTWENTY
+  end
+  buttonDOWNTWENTY:CtmToolButton
+    left =398
+    top =632
+    right =534
+    bottom =668
+    wtype =36
+    taborder =3
+    bgc =54970
+    fontsize =1
+    rightcontrol =buttonUPTWENTY
+    upcontrol =editTAXISMEDIA
+    buttontype =0
+    align =34
+    captionID =VW_MOLD_CHECKDOWNTWENTY
+  end
+  editNEWNAME:CtmEdit
+    left =120
+    top =706
+    right =291
+    bottom =738
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =65535
+    fontsize =1
+    upcontrol =buttonUPTWENTY
+    downcontrol =editDESTIMEDIA
+    bordercolor =33808
+    promptID =MSG_INPUT_ALPHANUMERIC
+    maxchar =12
+    align =32
+  end
+  editDESTITable001:CtmEdit
+    left =39
+    top =219
+    right =104
+    bottom =259
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable002:CtmEdit
+    left =104
+    top =219
+    right =402
+    bottom =259
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =12
+    align =32
+  end
+  editDESTITable003:CtmEdit
+    left =402
+    top =219
+    right =534
+    bottom =259
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable011:CtmEdit
+    left =39
+    top =259
+    right =104
+    bottom =299
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable012:CtmEdit
+    left =104
+    top =259
+    right =402
+    bottom =299
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =12
+    align =32
+  end
+  editDESTITable013:CtmEdit
+    left =402
+    top =259
+    right =534
+    bottom =299
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable021:CtmEdit
+    left =39
+    top =299
+    right =104
+    bottom =339
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable022:CtmEdit
+    left =104
+    top =299
+    right =402
+    bottom =339
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =12
+    align =32
+  end
+  editDESTITable023:CtmEdit
+    left =402
+    top =299
+    right =534
+    bottom =339
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable031:CtmEdit
+    left =39
+    top =339
+    right =104
+    bottom =379
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable032:CtmEdit
+    left =104
+    top =339
+    right =402
+    bottom =379
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =12
+    align =32
+  end
+  editDESTITable033:CtmEdit
+    left =402
+    top =339
+    right =534
+    bottom =379
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable041:CtmEdit
+    left =39
+    top =379
+    right =104
+    bottom =419
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable042:CtmEdit
+    left =104
+    top =379
+    right =402
+    bottom =419
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =12
+    align =32
+  end
+  editDESTITable043:CtmEdit
+    left =402
+    top =379
+    right =534
+    bottom =419
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable051:CtmEdit
+    left =39
+    top =419
+    right =104
+    bottom =459
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable052:CtmEdit
+    left =104
+    top =419
+    right =402
+    bottom =459
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =12
+    align =32
+  end
+  editDESTITable053:CtmEdit
+    left =402
+    top =419
+    right =534
+    bottom =459
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable061:CtmEdit
+    left =39
+    top =459
+    right =104
+    bottom =499
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable062:CtmEdit
+    left =104
+    top =459
+    right =402
+    bottom =499
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =12
+    align =32
+  end
+  editDESTITable063:CtmEdit
+    left =402
+    top =459
+    right =534
+    bottom =499
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable071:CtmEdit
+    left =39
+    top =499
+    right =104
+    bottom =539
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable072:CtmEdit
+    left =104
+    top =499
+    right =402
+    bottom =539
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =12
+    align =32
+  end
+  editDESTITable073:CtmEdit
+    left =402
+    top =499
+    right =534
+    bottom =539
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable081:CtmEdit
+    left =39
+    top =539
+    right =104
+    bottom =579
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable082:CtmEdit
+    left =104
+    top =539
+    right =402
+    bottom =579
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =12
+    align =32
+  end
+  editDESTITable083:CtmEdit
+    left =402
+    top =539
+    right =534
+    bottom =579
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  Button_Save:CtmToolButton
+    left =20
+    top =4
+    right =120
+    bottom =54
+    wtype =48
+    taborder =51
+    fontsize =1
+    align =34
+    captionID =BTN_02_05_01
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
+  end
+  Button_Read:CtmToolButton
+    left =120
+    top =4
+    right =220
+    bottom =54
+    wtype =48
+    taborder =52
+    fontsize =1
+    align =34
+    captionID =BTN_02_05_02
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =MldR.txt
+  end
+  Button_Del:CtmToolButton
+    left =220
+    top =4
+    right =320
+    bottom =54
+    wtype =48
+    taborder =53
+    fontsize =1
+    align =34
+    captionID =BTN_02_05_03
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =MldD.txt
+  end
+  editSAVEMODESEL:CtmSelectEdit
+    left =483
+    top =18
+    right =543
+    bottom =43
+    wtype =55
+    taborder =4
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    rightcontrol =editDESTIMEDIA
+    upcontrol =editCONFIRM
+    downcontrol =editCONFIRM
+    visible =FALSE
+    bordercolor =33808
+    maxchar =20
+    promptID =MSG_SYSTEM_CHECKBOX
+    listnum =2
+    strID0 =VW_MOLD_MODEHELPSAVEAS
+    strID1 =VW_MOLD_MODEHELPREPLACE
+  end
+  editCONFIRM:CtmSelectEdit
+    left =446
+    top =742
+    right =582
+    bottom =774
+    wtype =55
+    taborder =10
+    fgc =0
+    bgc =65535
+    fontsize =1
+    rightcontrol =editNEWNAME
+    upcontrol =editSAVEMODESEL
+    downcontrol =editSAVEMODESEL
+    visible =FALSE
+    bordercolor =33808
+    maxchar =20
+    promptID =MSG_SYSTEM_CHECKBOX
+    listnum =2
+    strID0 =VW_PLAN_ESC
+    strID1 =VW_PLAN_OK
+  end
+  editSOURCEMAX:CtmEditX1
+    left =155
+    top =100
+    right =291
+    bottom =132
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    maxchar =10
+    align =32
+  end
+  editSOURCEREMAIN:CtmEditX1
+    left =446
+    top =100
+    right =582
+    bottom =132
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    maxchar =10
+    align =32
+  end
+  StaticDESTIMEDIA:CtmStaticX2
+    left =30
+    top =65
+    right =150
+    bottom =97
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MOLD_OBJECT
+    align =34
+  end
+  StaticSOURCEMAX:CtmStaticX2
+    left =30
+    top =100
+    right =150
+    bottom =132
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MOLD_MAXIMUM
+    align =34
+  end
+  StaticCHECKBRIGHTMODE:CtmStaticX2
+    left =322
+    top =65
+    right =442
+    bottom =97
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MOLD_CHECK
+    align =34
+  end
+  StaticSOURCEREMAIN:CtmStaticX2
+    left =322
+    top =100
+    right =442
+    bottom =132
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MOLD_REMAIN
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =32
+    top =707
+    right =118
+    bottom =739
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_FILE_FILENAME
+    align =34
+  end
+  StaticSAVEMODE:CtmStaticX2
+    left =32
+    top =742
+    right =152
+    bottom =774
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MOLD_SAVEMODE
+    align =34
+  end
+  BtnSortType:CtmToolButton
+    left =445
+    top =65
+    right =581
+    bottom =97
+    wtype =33
+    taborder =15
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    buttontype =0
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  BtnDestMedia:CtmToolButton
+    left =155
+    top =65
+    right =291
+    bottom =97
+    wtype =33
+    taborder =16
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    buttontype =0
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  BtnSaveType:CtmToolButton
+    left =155
+    top =742
+    right =291
+    bottom =774
+    wtype =33
+    taborder =17
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    buttontype =0
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  BtnConfirm:CtmToolButton
+    left =299
+    top =742
+    right =435
+    bottom =774
+    wtype =33
+    taborder =18
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    buttontype =0
+    captionID =VW_MOLD_PMD2
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =14
+    top =65
+    right =30
+    bottom =97
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =14
+    top =100
+    right =30
+    bottom =132
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =306
+    top =65
+    right =322
+    bottom =97
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =306
+    top =100
+    right =322
+    bottom =132
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =16
+    top =742
+    right =32
+    bottom =774
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =16
+    top =707
+    right =32
+    bottom =739
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  editDESTITable091:CtmEdit
+    left =39
+    top =579
+    right =104
+    bottom =619
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+  editDESTITable092:CtmEdit
+    left =104
+    top =579
+    right =402
+    bottom =619
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =12
+    align =32
+  end
+  editDESTITable093:CtmEdit
+    left =402
+    top =579
+    right =534
+    bottom =619
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =32
+  end
+end

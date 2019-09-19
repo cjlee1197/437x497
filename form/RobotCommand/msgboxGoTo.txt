@@ -1,0 +1,214 @@
+ViewMsgBoxGoTo:CtmFormView
+  left =259
+  top =308
+  right =595
+  bottom =775
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =336
+    bottom =467
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_336X467.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =28
+    top =28
+    right =308
+    bottom =322
+    wtype =5
+    bgc =46486
+    bordercolor =0
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =28
+    top =28
+    right =308
+    bottom =84
+    wtype =5
+    bgc =38034
+    bordercolor =0
+  end
+  StaticMessage:CtmStaticX2
+    left =28
+    top =41
+    right =308
+    bottom =71
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_COMMAND_GOTO
+    align =34
+  end
+  StaticX1:CtmStaticX2
+    left =140
+    top =86
+    right =168
+    bottom =114
+    fgc =0
+    bgc =46486
+  end
+  btnOK:CtmToolButton
+    left =30
+    top =399
+    right =150
+    bottom =439
+    wtype =39
+    taborder =7
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_OK
+  end
+  btnCancel:CtmToolButton
+    left =185
+    top =399
+    right =305
+    bottom =439
+    wtype =39
+    taborder =8
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  EditTable01:CtmEditX1
+    left =125
+    top =98
+    right =223
+    bottom =133
+    wtype =35
+    taborder =0
+    fontsize =2
+    type =18
+    maxchar =4
+    align =36
+    min =1
+    max =9999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =226
+    top =102
+    right =254
+    bottom =130
+    fgc =0
+    bgc =46486
+    fontsize =2
+    textID =ROBOT_COMMAND_STR_LINE
+  end
+  StaticX2:CtmStaticX2
+    left =77
+    top =102
+    right =123
+    bottom =130
+    fgc =0
+    bgc =46486
+    fontsize =2
+    textID =ROBOT_MSG_GOTO
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =28
+    top =148
+    right =308
+    bottom =379
+    wtype =5
+    bgc =38034
+    bordercolor =0
+  end
+  CheckBoxUseIf:CtmCheckBox
+    left =48
+    top =164
+    right =83
+    bottom =199
+    wtype =48
+    taborder =1
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =92
+    top =164
+    right =244
+    bottom =204
+    wtype =48
+    fontsize =2
+    textID =ROBOT_STR_GOTO_USE_IF
+  end
+  SelectEditInt1:CtmSelectEdit
+    left =101
+    top =215
+    right =182
+    bottom =255
+    taborder =2
+    fontsize =2
+    maxchar =10
+    listnum =2
+    strID0 =ROBOT_COMMAND_STR_VAR_SIGN
+    strID1 =ROBOT_STR_VALUE
+  end
+  SelectEditInt2:CtmSelectEdit
+    left =101
+    top =319
+    right =182
+    bottom =359
+    taborder =5
+    fontsize =2
+    maxchar =10
+    listnum =2
+    strID0 =ROBOT_COMMAND_STR_VAR_SIGN
+    strID1 =ROBOT_STR_VALUE
+  end
+  SelectEditCondition:CtmSelectEdit
+    left =101
+    top =267
+    right =258
+    bottom =307
+    taborder =4
+    maxchar =15
+    listnum =4
+    strID0 =ROBOT_STR_MORE
+    strID1 =ROBOT_STR_LESS
+    strID2 =ROBOT_STR_EQUAL
+    strID3 =ROBOT_STR_NOT_EQUAL
+  end
+  EditInt1:CtmEditX1
+    left =193
+    top =215
+    right =258
+    bottom =255
+    wtype =35
+    taborder =3
+    fontsize =2
+    type =18
+    maxchar =4
+    align =36
+    min =1
+    max =999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditInt2:CtmEditX1
+    left =193
+    top =319
+    right =258
+    bottom =359
+    wtype =35
+    taborder =6
+    fontsize =2
+    type =18
+    maxchar =4
+    align =36
+    min =1
+    max =999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+end

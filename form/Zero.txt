@@ -1,0 +1,416 @@
+ViewZero:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =BTN_PICKER_ZERO
+  printname =Zero.bmp
+  Encoder_X1:CtmEditX1
+    left =134
+    top =139
+    right =274
+    bottom =171
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_INTERFACE_POSNOW_X1
+  end
+  Encoder_Y1:CtmEditX1
+    left =278
+    top =139
+    right =418
+    bottom =171
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_INTERFACE_POSNOW_Y1
+  end
+  LinuxCtmStaticX216:CtmStaticX2
+    left =22
+    top =140
+    right =122
+    bottom =172
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =POS_NOW
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =22
+    top =268
+    right =122
+    bottom =300
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =POS_ZERO
+    align =34
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =22
+    top =196
+    right =122
+    bottom =228
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =AXIS_ZERO
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =134
+    top =92
+    right =274
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_XAXIS
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =278
+    top =92
+    right =418
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_YAXIS
+    align =34
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =422
+    top =92
+    right =562
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_ZAXIS
+    align =34
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =134
+    top =364
+    right =274
+    bottom =396
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_X2AXIS
+    align =34
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =278
+    top =364
+    right =418
+    bottom =396
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_Y2AXIS
+    align =34
+  end
+  Encoder_X2:CtmEditX1
+    left =134
+    top =411
+    right =274
+    bottom =443
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_INTERFACE_POSNOW_X2
+  end
+  Encoder_Y2:CtmEditX1
+    left =278
+    top =411
+    right =418
+    bottom =443
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_INTERFACE_POSNOW_Y2
+  end
+  ZeroPos_X1:CtmEditX1
+    left =134
+    top =267
+    right =274
+    bottom =299
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV27
+  end
+  ZeroPos_Y1:CtmEditX1
+    left =278
+    top =267
+    right =418
+    bottom =299
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV28
+  end
+  ZeroPos_X2:CtmEditX1
+    left =134
+    top =539
+    right =274
+    bottom =571
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV30
+  end
+  ZeroPos_Y2:CtmEditX1
+    left =278
+    top =539
+    right =418
+    bottom =571
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV31
+  end
+  Encoder_Z:CtmEditX1
+    left =422
+    top =139
+    right =562
+    bottom =171
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_INTERFACE_POSNOW_Z
+  end
+  ZeroPos_Z:CtmEditX1
+    left =422
+    top =267
+    right =562
+    bottom =299
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV29
+  end
+  BtnZero_X1:CtmToolButton
+    left =174
+    top =186
+    right =232
+    bottom =244
+    taborder =80
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    key =34
+    LinuxCtmImageBox2:CtmImageBox
+      left =0
+      top =0
+      right =58
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/SetZero.bmp
+      keycolor =63519
+    end
+  end
+  BtnZero_Y1:CtmToolButton
+    left =318
+    top =186
+    right =376
+    bottom =244
+    taborder =81
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    key =34
+    LinuxCtmImageBox1:CtmImageBox
+      left =0
+      top =0
+      right =58
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/SetZero.bmp
+      keycolor =63519
+    end
+  end
+  BtnZero_Z:CtmToolButton
+    left =462
+    top =186
+    right =520
+    bottom =244
+    taborder =82
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    key =34
+    LinuxCtmImageBox3:CtmImageBox
+      left =0
+      top =0
+      right =58
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/SetZero.bmp
+      keycolor =63519
+    end
+  end
+  BtnZero_X2:CtmToolButton
+    left =174
+    top =458
+    right =234
+    bottom =518
+    taborder =83
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    key =34
+    LinuxCtmImageBox4:CtmImageBox
+      left =0
+      top =0
+      right =58
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/SetZero.bmp
+      keycolor =63519
+    end
+  end
+  BtnZero_Y2:CtmToolButton
+    left =318
+    top =458
+    right =378
+    bottom =518
+    taborder =84
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    key =34
+    LinuxCtmImageBox5:CtmImageBox
+      left =0
+      top =0
+      right =58
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/SetZero.bmp
+      keycolor =63519
+    end
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =6
+    top =140
+    right =22
+    bottom =172
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox7:CtmImageBox
+    left =6
+    top =196
+    right =22
+    bottom =228
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox8:CtmImageBox
+    left =6
+    top =268
+    right =22
+    bottom =300
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+end

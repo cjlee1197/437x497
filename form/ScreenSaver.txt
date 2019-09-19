@@ -1,0 +1,996 @@
+ViewScreenSaver:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =599
+  wtype =34919
+  bgc =0
+  ImageBG:CtmImageBox
+    left =20
+    top =20
+    right =185
+    bottom =135
+    wtype =48
+    type =2
+    imagepath =res_tm640/ScreenSaveBG.bmp
+    ImageBhorizontal0PART00:CtmImageBox
+      left =9
+      top =10
+      right =23
+      bottom =14
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART01:CtmImageBox
+      left =9
+      top =28
+      right =23
+      bottom =32
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART02:CtmImageBox
+      left =9
+      top =46
+      right =23
+      bottom =50
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART03:CtmImageBox
+      left =5
+      top =14
+      right =9
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART04:CtmImageBox
+      left =23
+      top =14
+      right =27
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART05:CtmImageBox
+      left =5
+      top =32
+      right =9
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART06:CtmImageBox
+      left =23
+      top =32
+      right =27
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART10:CtmImageBox
+      left =36
+      top =10
+      right =50
+      bottom =14
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART11:CtmImageBox
+      left =36
+      top =28
+      right =50
+      bottom =32
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART12:CtmImageBox
+      left =36
+      top =46
+      right =50
+      bottom =50
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART13:CtmImageBox
+      left =32
+      top =14
+      right =36
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART14:CtmImageBox
+      left =50
+      top =14
+      right =54
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART15:CtmImageBox
+      left =32
+      top =32
+      right =36
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART16:CtmImageBox
+      left =50
+      top =32
+      right =54
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBSpacePoint0:CtmImageBox
+      left =54
+      top =43
+      right =59
+      bottom =49
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bpoint.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART20:CtmImageBox
+      left =63
+      top =10
+      right =77
+      bottom =14
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART21:CtmImageBox
+      left =63
+      top =28
+      right =77
+      bottom =32
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART22:CtmImageBox
+      left =63
+      top =46
+      right =77
+      bottom =50
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART23:CtmImageBox
+      left =59
+      top =14
+      right =63
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART24:CtmImageBox
+      left =77
+      top =14
+      right =81
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART25:CtmImageBox
+      left =59
+      top =32
+      right =63
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART26:CtmImageBox
+      left =77
+      top =32
+      right =81
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART30:CtmImageBox
+      left =90
+      top =10
+      right =104
+      bottom =14
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART31:CtmImageBox
+      left =90
+      top =28
+      right =104
+      bottom =32
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART32:CtmImageBox
+      left =90
+      top =46
+      right =104
+      bottom =50
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART33:CtmImageBox
+      left =86
+      top =14
+      right =90
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART34:CtmImageBox
+      left =104
+      top =14
+      right =108
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART35:CtmImageBox
+      left =86
+      top =32
+      right =90
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART36:CtmImageBox
+      left =104
+      top =32
+      right =108
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBSpacePoint1:CtmImageBox
+      left =108
+      top =43
+      right =113
+      bottom =49
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bpoint.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART40:CtmImageBox
+      left =117
+      top =10
+      right =131
+      bottom =14
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART41:CtmImageBox
+      left =117
+      top =28
+      right =131
+      bottom =32
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART42:CtmImageBox
+      left =117
+      top =46
+      right =131
+      bottom =50
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART43:CtmImageBox
+      left =113
+      top =14
+      right =117
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART44:CtmImageBox
+      left =131
+      top =14
+      right =135
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART45:CtmImageBox
+      left =113
+      top =32
+      right =117
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART46:CtmImageBox
+      left =131
+      top =32
+      right =135
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART50:CtmImageBox
+      left =144
+      top =10
+      right =158
+      bottom =14
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART51:CtmImageBox
+      left =144
+      top =28
+      right =158
+      bottom =32
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART52:CtmImageBox
+      left =144
+      top =46
+      right =158
+      bottom =50
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART53:CtmImageBox
+      left =140
+      top =14
+      right =144
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART54:CtmImageBox
+      left =158
+      top =14
+      right =162
+      bottom =28
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART55:CtmImageBox
+      left =140
+      top =32
+      right =144
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART56:CtmImageBox
+      left =158
+      top =32
+      right =162
+      bottom =46
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART60:CtmImageBox
+      left =9
+      top =70
+      right =23
+      bottom =74
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART61:CtmImageBox
+      left =9
+      top =88
+      right =23
+      bottom =92
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART62:CtmImageBox
+      left =9
+      top =106
+      right =23
+      bottom =110
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART63:CtmImageBox
+      left =5
+      top =74
+      right =9
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART64:CtmImageBox
+      left =23
+      top =74
+      right =27
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART65:CtmImageBox
+      left =5
+      top =92
+      right =9
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART66:CtmImageBox
+      left =23
+      top =92
+      right =27
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART70:CtmImageBox
+      left =36
+      top =70
+      right =50
+      bottom =74
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART71:CtmImageBox
+      left =36
+      top =88
+      right =50
+      bottom =92
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART72:CtmImageBox
+      left =36
+      top =106
+      right =50
+      bottom =110
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART73:CtmImageBox
+      left =32
+      top =74
+      right =36
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART74:CtmImageBox
+      left =50
+      top =74
+      right =54
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART75:CtmImageBox
+      left =32
+      top =92
+      right =36
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART76:CtmImageBox
+      left =50
+      top =92
+      right =54
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBColonPoint0:CtmImageBox
+      left =54
+      top =83
+      right =59
+      bottom =89
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bpoint.bmp
+      keycolor =4095
+    end
+    ImageBColonPoint1:CtmImageBox
+      left =54
+      top =92
+      right =59
+      bottom =98
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bpoint.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART80:CtmImageBox
+      left =63
+      top =70
+      right =77
+      bottom =74
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART81:CtmImageBox
+      left =63
+      top =88
+      right =77
+      bottom =92
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART82:CtmImageBox
+      left =63
+      top =106
+      right =77
+      bottom =110
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART83:CtmImageBox
+      left =59
+      top =74
+      right =63
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART84:CtmImageBox
+      left =77
+      top =74
+      right =81
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART85:CtmImageBox
+      left =59
+      top =92
+      right =63
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART86:CtmImageBox
+      left =77
+      top =92
+      right =81
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART90:CtmImageBox
+      left =90
+      top =70
+      right =104
+      bottom =74
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART91:CtmImageBox
+      left =90
+      top =88
+      right =104
+      bottom =92
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PART92:CtmImageBox
+      left =90
+      top =106
+      right =104
+      bottom =110
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART93:CtmImageBox
+      left =86
+      top =74
+      right =90
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART94:CtmImageBox
+      left =104
+      top =74
+      right =108
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART95:CtmImageBox
+      left =86
+      top =92
+      right =90
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PART96:CtmImageBox
+      left =104
+      top =92
+      right =108
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBPoint0:CtmImageBox
+      left =108
+      top =104
+      right =113
+      bottom =110
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bpoint.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PARTA0:CtmImageBox
+      left =117
+      top =70
+      right =131
+      bottom =74
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PARTA1:CtmImageBox
+      left =117
+      top =88
+      right =131
+      bottom =92
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PARTA2:CtmImageBox
+      left =117
+      top =106
+      right =131
+      bottom =110
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PARTA3:CtmImageBox
+      left =113
+      top =74
+      right =117
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PARTA4:CtmImageBox
+      left =131
+      top =74
+      right =135
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PARTA5:CtmImageBox
+      left =113
+      top =92
+      right =117
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PARTA6:CtmImageBox
+      left =131
+      top =92
+      right =135
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PARTB0:CtmImageBox
+      left =144
+      top =70
+      right =158
+      bottom =74
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PARTB1:CtmImageBox
+      left =144
+      top =88
+      right =158
+      bottom =92
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBhorizontal0PARTB2:CtmImageBox
+      left =144
+      top =106
+      right =158
+      bottom =110
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bhorizontal.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PARTB3:CtmImageBox
+      left =140
+      top =74
+      right =144
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PARTB4:CtmImageBox
+      left =158
+      top =74
+      right =162
+      bottom =88
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PARTB5:CtmImageBox
+      left =140
+      top =92
+      right =144
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+    ImageBvertical0PARTB6:CtmImageBox
+      left =158
+      top =92
+      right =162
+      bottom =106
+      wtype =48
+      visible =FALSE
+      type =2
+      imagepath =res_tm640/Bvertical.bmp
+      keycolor =4095
+    end
+  end
+end

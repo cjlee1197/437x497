@@ -1,0 +1,130 @@
+mainform:CtmMainFrame
+  left =0
+  top =0
+  right =599
+  bottom =1023
+  wtype =351
+  promptbar:CtmPromptBar
+    left =0
+    top =49
+    right =599
+    bottom =78
+    wtype =39
+    bgc =63519
+    DateTime:CtmStaticX2
+      left =460
+      top =5
+      right =598
+      bottom =25
+      wtype =48
+      fgc =0
+    end
+    StaticPrompt:CtmStaticX2
+      left =40
+      top =5
+      right =450
+      bottom =25
+      wtype =48
+      fgc =0
+    end
+  end
+  view:CtmView
+    left =0
+    top =78
+    right =599
+    bottom =948
+    wtype =39
+    bgc =59196
+    overviewname =Over.txt
+    ImageBGLOGO:CtmImageBox
+      left =0
+      top =0
+      right =599
+      bottom =870
+      wtype =55
+      type =2
+      imagepath =res_tm640/bk.bmp
+      keycolor =63519
+    end
+  end
+  statusbar0:CtmStatusBar
+    left =0
+    top =0
+    right =599
+    bottom =49
+    wtype =23
+    BmpstatusbarBG:CtmImageBox
+      left =0
+      top =0
+      right =599
+      bottom =49
+      wtype =55
+      type =2
+      imagepath =res_tm640/logo_Robot.bmp
+      keycolor =63519
+    end
+    CoordianteStatic:CtmStaticX2
+      left =424
+      top =26
+      right =520
+      bottom =46
+      wtype =48
+      fgc =65535
+    end
+    SaveScreenBtn:CtmToolButton
+      left =544
+      top =8
+      right =589
+      bottom =43
+      bgc =57051
+      buttontype =0
+      captionID =ROBOT_BTN_SAVE_SCREEN
+    end
+    servoimage:CtmImageBox
+      left =265
+      top =8
+      right =311
+      bottom =44
+      wtype =55
+      type =2
+      imagepath =res_tm640/servo_off.png
+      keycolor =63519
+    end
+  end
+  maintoolbar:CtmToolBar
+    left =0
+    top =948
+    right =599
+    bottom =1023
+    wtype =39
+    maintool =toolbar_01.txt
+  end
+  StaticTitle2:CtmStaticX2
+    left =424
+    top =5
+    right =520
+    bottom =25
+    wtype =48
+    fgc =65535
+  end
+  FileStr:CtmStaticX2
+    left =339
+    top =4
+    right =421
+    bottom =24
+    wtype =48
+    fgc =65535
+    textID =ROBOT_TITLE_WORK_FILE
+    align =36
+  end
+  CoordinateStatus:CtmStaticX2
+    left =339
+    top =25
+    right =421
+    bottom =45
+    wtype =48
+    fgc =65535
+    textID =ROBOT_TITLE_COORDINATE
+    align =36
+  end
+end

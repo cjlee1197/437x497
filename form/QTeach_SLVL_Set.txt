@@ -1,0 +1,197 @@
+ViewQTeachSLVLSet:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =TEACH_QTEACH_SLVL_SET
+  printname =QTeach_SLVL_Set.bmp
+  LinuxCtmStaticX211:CtmStaticX2
+    left =45
+    top =84
+    right =155
+    bottom =116
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH_SLVL_PICK
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =45
+    top =436
+    right =155
+    bottom =468
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH_SLVL_POUT
+    align =34
+  end
+  BtnSetDone:CtmToolButton
+    left =432
+    top =18
+    right =542
+    bottom =78
+    wtype =48
+    taborder =24
+    bgc =54970
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =TEACH_QTEACH_SETDONE
+    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    key =97
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =207
+    top =24
+    right =387
+    bottom =64
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH_SLVL_SET
+    align =34
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =72
+    top =128
+    right =472
+    bottom =428
+    type =2
+    imagepath =res_tm640/pic/picker/QTeach_Pick_SLVL.bmp
+    keycolor =63519
+  end
+  Pick_SLVL:CtmEditX1
+    left =437
+    top =300
+    right =537
+    bottom =340
+    wtype =35
+    taborder =5
+    fgc =1055
+    bgc =65535
+    fontsize =1
+    bordercolor =0
+    maxchar =10
+    align =36
+    precision =2
+    max =999999
+    minid =MACHINE_LIMITS_AXIS_Y1_MINPOSTION
+    maxid =MACHINE_LIMITS_AXIS2_MAXPOSTION
+    dbid1 =MACHINE_PROFILE_NUM3_EQUIPMENT2_ACTION_PARAMETER1
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =72
+    top =480
+    right =472
+    bottom =780
+    type =2
+    imagepath =res_tm640/pic/picker/QTeach_PickOut_SLVL.bmp
+    keycolor =63519
+  end
+  PickOut_SLVL:CtmEditX1
+    left =381
+    top =692
+    right =481
+    bottom =732
+    wtype =35
+    taborder =6
+    fgc =1055
+    bgc =65535
+    fontsize =1
+    bordercolor =0
+    maxchar =10
+    align =36
+    precision =2
+    max =999999
+    minid =MACHINE_LIMITS_AXIS_Y1_MINPOSTION
+    maxid =MACHINE_LIMITS_AXIS2_MAXPOSTION
+    dbid1 =MACHINE_PROFILE_NUM3_EQUIPMENT2_ACTION_PARAMETER2
+  end
+  Pick_Dis:CtmEditX1
+    left =437
+    top =244
+    right =537
+    bottom =284
+    wtype =35
+    taborder =5
+    fgc =0
+    bgc =65535
+    fontsize =1
+    enabled =FALSE
+    bordercolor =0
+    maxchar =10
+    align =36
+    precision =2
+    max =999999
+  end
+  PickOut_Dis:CtmEditX1
+    left =197
+    top =776
+    right =297
+    bottom =816
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =65535
+    fontsize =1
+    enabled =FALSE
+    bordercolor =0
+    maxchar =10
+    align =36
+    precision =2
+    max =999999
+  end
+  LinuxCtmStaticX830:CtmStaticX2
+    left =542
+    top =244
+    right =582
+    bottom =284
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+    align =18
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =542
+    top =300
+    right =582
+    bottom =340
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+    align =18
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =486
+    top =692
+    right =526
+    bottom =732
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+    align =18
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =302
+    top =776
+    right =342
+    bottom =816
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+    align =18
+  end
+end

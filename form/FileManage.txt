@@ -1,0 +1,52 @@
+ViewFileManage:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =451
+  wtype =48
+  titleID =ROBOT_VIEW_FILEMANAGE
+  printname =FileManage.bmp
+  StaticProcess:CtmStaticX2
+    left =65
+    top =30
+    right =225
+    bottom =60
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_WORKSPACE_SELECT
+  end
+  SelectEditFileDir:CtmSelectEdit
+    left =250
+    top =30
+    right =380
+    bottom =50
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65400
+    maxchar =120
+    listnum =2
+    strID0 =ROBOT_PATH_WORKSPACE_LOCAL
+    strID1 =ROBOT_PATH_WORKSPACE_USB
+  end
+  Static_Title:CtmStaticX2
+    left =60
+    top =80
+    right =260
+    bottom =96
+    wtype =48
+    fgc =0
+    bgc =733
+    textID =ROBOT_STR_WORKSPACE_LIST
+  end
+  Static_Title2:CtmStaticX2
+    left =360
+    top =80
+    right =560
+    bottom =96
+    wtype =48
+    fgc =0
+    bgc =733
+    textID =ROBOT_STR_FILE_LIST
+  end
+end

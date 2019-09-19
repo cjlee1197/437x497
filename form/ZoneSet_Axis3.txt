@@ -1,0 +1,204 @@
+ViewGuideSet:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =INDEX_ZONE_SET
+  printname =ZoneSet_Axis3.bmp
+  LinuxCtmEditX18:CtmEditX1
+    left =122
+    top =532
+    right =252
+    bottom =564
+    wtype =35
+    taborder =11
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =300000
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS1_MINPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS1_MAXPOSTION
+  end
+  LinuxCtmStaticX210:CtmStaticX2
+    left =20
+    top =532
+    right =112
+    bottom =564
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_MAXPOSTION
+    align =34
+  end
+  LinuxCtmEditX19:CtmEditX1
+    left =266
+    top =532
+    right =396
+    bottom =564
+    wtype =35
+    taborder =12
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =300000
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS2_MINPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS2_MAXPOSTION
+  end
+  LinuxCtmEditX110:CtmEditX1
+    left =410
+    top =532
+    right =540
+    bottom =564
+    wtype =35
+    taborder =13
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =300000
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS3_MINPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS3_MAXPOSTION
+  end
+  LinuxCtmStaticX214:CtmStaticX2
+    left =556
+    top =532
+    right =588
+    bottom =564
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =4
+    top =532
+    right =20
+    bottom =564
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =122
+    top =486
+    right =252
+    bottom =518
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_XAXIS
+    align =34
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =266
+    top =486
+    right =396
+    bottom =518
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_YAXIS
+    align =34
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =410
+    top =486
+    right =540
+    bottom =518
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_ZAXIS
+    align =34
+  end
+  LinuxCtmImageBox8:CtmImageBox
+    left =-1
+    top =21
+    right =599
+    bottom =471
+    type =2
+    imagepath =res_tm640/pic/picker/ZoneSet_Axis3.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =4
+    top =584
+    right =20
+    bottom =616
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX2262:CtmStaticX2
+    left =20
+    top =584
+    right =170
+    bottom =616
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MAXPOSLIMIT
+    align =34
+  end
+  LinuxCtmEditX16:CtmEditX1
+    left =179
+    top =584
+    right =309
+    bottom =616
+    wtype =35
+    taborder =20
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    max =20000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =SYSX_OTHERS_OTHERS_DWORD_RESERVED4
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =316
+    top =584
+    right =348
+    bottom =616
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+end

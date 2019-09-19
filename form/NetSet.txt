@@ -1,0 +1,664 @@
+ViewNetSet:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =423
+  titleID =VW_INETSET
+  printname =2-7-8-Netset.bmp
+  StaticINETSET:CtmStaticX2
+    left =211
+    top =20
+    right =501
+    bottom =top+25
+    wtype =33
+    fgc =0
+    bgc =42367
+    fontsize =2
+    bordercolor =35953
+    textID =VW_INETSET
+    align =34
+  end
+  StaticINET_LOCALIP:CtmStaticX2
+    left =100
+    top =55
+    right =left+100
+    bottom =top+23
+    wtype =49
+    fgc =0
+    fontsize =2
+    bordercolor =21293
+    textID =VW_INET_LOCALIP
+    align =34
+  end
+  StaticINET_NETMASK:CtmStaticX2
+    left =100
+    top =85
+    right =left+100
+    bottom =top+23
+    wtype =49
+    fgc =0
+    fontsize =2
+    bordercolor =21293
+    textID =VW_INET_NETMASK
+    align =34
+  end
+  StaticINET_GATEWAY:CtmStaticX2
+    left =100
+    top =115
+    right =left+100
+    bottom =top+23
+    wtype =49
+    fgc =0
+    fontsize =2
+    bordercolor =21293
+    textID =VW_INET_GATEWAY
+    align =34
+  end
+  StaticINET_POINT11:CtmStaticX2
+    left =266
+    top =55
+    right =276
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+  end
+  StaticINET_POINT12:CtmStaticX2
+    left =341
+    top =55
+    right =351
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+  end
+  StaticINET_POINT13:CtmStaticX2
+    left =416
+    top =55
+    right =426
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+  end
+  StaticINET_POINT21:CtmStaticX2
+    left =266
+    top =85
+    right =276
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+  end
+  StaticINET_POINT22:CtmStaticX2
+    left =341
+    top =85
+    right =351
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+  end
+  StaticINET_POINT23:CtmStaticX2
+    left =416
+    top =85
+    right =426
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+  end
+  StaticINET_POINT31:CtmStaticX2
+    left =266
+    top =115
+    right =276
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+  end
+  StaticINET_POINT32:CtmStaticX2
+    left =341
+    top =115
+    right =351
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+  end
+  StaticINET_POINT33:CtmStaticX2
+    left =416
+    top =115
+    right =426
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+  end
+  editLocalIP_0:CtmEditX1
+    left =211
+    top =55
+    right =261
+    bottom =top+22
+    wtype =33
+    taborder =1
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editLocalIP_1:CtmEditX1
+    left =286
+    top =55
+    right =336
+    bottom =top+22
+    wtype =33
+    taborder =2
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editLocalIP_2:CtmEditX1
+    left =361
+    top =55
+    right =411
+    bottom =top+22
+    wtype =33
+    taborder =3
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editLocalIP_3:CtmEditX1
+    left =436
+    top =55
+    right =486
+    bottom =top+22
+    wtype =33
+    taborder =4
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editNetMask_0:CtmEditX1
+    left =211
+    top =85
+    right =261
+    bottom =top+22
+    wtype =33
+    taborder =5
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editNetMask_1:CtmEditX1
+    left =286
+    top =85
+    right =336
+    bottom =top+22
+    wtype =33
+    taborder =6
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editNetMask_2:CtmEditX1
+    left =361
+    top =85
+    right =411
+    bottom =top+22
+    wtype =33
+    taborder =7
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editNetMask_3:CtmEditX1
+    left =436
+    top =85
+    right =486
+    bottom =top+22
+    wtype =33
+    taborder =8
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editGetway_0:CtmEditX1
+    left =211
+    top =115
+    right =261
+    bottom =top+22
+    wtype =33
+    taborder =9
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editGetway_1:CtmEditX1
+    left =286
+    top =115
+    right =336
+    bottom =top+22
+    wtype =33
+    taborder =10
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editGetway_2:CtmEditX1
+    left =361
+    top =115
+    right =411
+    bottom =top+22
+    wtype =33
+    taborder =11
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editGetway_3:CtmEditX1
+    left =436
+    top =115
+    right =486
+    bottom =top+22
+    wtype =33
+    taborder =12
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  StaticINETIP:CtmStaticX2
+    left =100
+    top =165
+    right =left+100
+    bottom =top+23
+    wtype =49
+    fgc =0
+    fontsize =2
+    bordercolor =21293
+    textID =VW_INET_IP
+    align =34
+  end
+  StaticINET_MACSELECT:CtmStaticX2
+    left =100
+    top =195
+    right =left+100
+    bottom =top+23
+    wtype =49
+    fgc =0
+    bgc =52825
+    fontsize =2
+    bordercolor =21293
+    textID =VW_INET_MACSELECT
+    align =34
+  end
+  StaticINETJUDGE:CtmStaticX2
+    left =100
+    top =225
+    right =left+100
+    bottom =top+23
+    wtype =49
+    fgc =0
+    fontsize =2
+    bordercolor =21293
+    textID =VW_INET_JUDGE
+    align =34
+  end
+  editServerIP_0:CtmEditX1
+    left =211
+    top =165
+    right =261
+    bottom =top+22
+    wtype =33
+    taborder =20
+    bgc =65535
+    fontsize =2
+    bordercolor =33808
+    maxchar =3
+    align =32
+    max =255
+    maxdb =FALSE
+  end
+  StaticIPPoint_0:CtmStaticX2
+    left =266
+    top =165
+    right =281
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+    align =32
+  end
+  editServerIP_1:CtmEditX1
+    left =286
+    top =165
+    right =336
+    bottom =top+22
+    wtype =33
+    taborder =21
+    bgc =65535
+    fontsize =2
+    downcontrol =editCONFIRMNET
+    bordercolor =33808
+    maxchar =3
+    align =32
+    max =255
+    maxdb =FALSE
+  end
+  StaticIPPoint_1:CtmStaticX2
+    left =341
+    top =165
+    right =356
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+    align =32
+  end
+  editServerIP_2:CtmEditX1
+    left =361
+    top =165
+    right =411
+    bottom =top+22
+    wtype =33
+    taborder =22
+    bgc =65535
+    fontsize =2
+    bordercolor =33808
+    maxchar =3
+    align =32
+    max =255
+    maxdb =FALSE
+  end
+  StaticIPPoint_2:CtmStaticX2
+    left =416
+    top =165
+    right =431
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =.
+    align =32
+  end
+  editServerIP_3:CtmEditX1
+    left =436
+    top =165
+    right =486
+    bottom =top+22
+    wtype =33
+    taborder =23
+    bgc =65535
+    fontsize =2
+    downcontrol =editCONFIRMNET
+    bordercolor =33808
+    maxchar =3
+    align =32
+    max =255
+    maxdb =FALSE
+  end
+  editSelectMac:CtmSelectEdit
+    left =211
+    top =195
+    right =left+80
+    bottom =top+22
+    wtype =33
+    taborder =25
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    maxchar =10
+    focuscolor =64876
+    promptID =MSG_SYSTEM_CHECKBOX
+    listnum =2
+    strID0 =VW_INET_MAC1
+    strID1 =VW_INET_MAC2
+  end
+  editCONFIRMNET:CtmSelectEdit
+    left =211
+    top =225
+    right =left+80
+    bottom =top+22
+    wtype =33
+    taborder =26
+    bgc =65535
+    bordercolor =33808
+    fontsize =2
+    upcontrol =editIP_0
+    maxchar =10
+    focuscolor =64876
+    promptID =MSG_SYSTEM_CHECKBOX
+    listnum =2
+    strID0 =VW_PLAN_ESC
+    strID1 =VW_PLAN_OK
+    strID2 =VW_INJECT_RESET
+  end
+  StaticSERIP_LOCALMAC:CtmStaticX2
+    left =80
+    top =255
+    right =left+120
+    bottom =top+22
+    wtype =49
+    fgc =0
+    fontsize =2
+    bordercolor =21293
+    textID =VW_SERIP_LOCALMAC
+    align =34
+  end
+  editMAC_0:CtmEditX2
+    left =211
+    top =255
+    right =241
+    bottom =top+22
+    wtype =33
+    taborder =30
+    bgc =65535
+    fontsize =2
+    bordercolor =33808
+    type =32
+    maxchar =2
+    align =2
+    max =255
+  end
+  StaticMAC0:CtmStaticX2
+    left =243
+    top =255
+    right =258
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =-
+  end
+  editMAC_1:CtmEditX2
+    left =261
+    top =255
+    right =291
+    bottom =top+22
+    wtype =33
+    taborder =31
+    bgc =65535
+    fontsize =2
+    bordercolor =33808
+    type =32
+    maxchar =2
+    align =32
+    max =255
+  end
+  StaticMAC1:CtmStaticX2
+    left =293
+    top =255
+    right =308
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =-
+  end
+  editMAC_2:CtmEditX2
+    left =311
+    top =255
+    right =341
+    bottom =top+22
+    wtype =33
+    taborder =32
+    bgc =65535
+    fontsize =2
+    bordercolor =33808
+    type =32
+    maxchar =2
+    align =32
+    max =255
+  end
+  StaticMAC2:CtmStaticX2
+    left =343
+    top =255
+    right =358
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =-
+  end
+  editMAC_3:CtmEditX2
+    left =361
+    top =255
+    right =391
+    bottom =top+22
+    wtype =33
+    taborder =33
+    bgc =65535
+    fontsize =2
+    bordercolor =33808
+    type =32
+    maxchar =2
+    align =32
+    max =255
+  end
+  StaticMAC3:CtmStaticX2
+    left =393
+    top =255
+    right =408
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =-
+  end
+  editMAC_4:CtmEditX2
+    left =411
+    top =255
+    right =441
+    bottom =top+22
+    wtype =33
+    taborder =34
+    bgc =65535
+    fontsize =2
+    bordercolor =33808
+    type =32
+    maxchar =2
+    align =32
+    max =255
+  end
+  StaticMAC4:CtmStaticX2
+    left =443
+    top =255
+    right =458
+    bottom =top+20
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =-
+  end
+  editMAC_5:CtmEditX2
+    left =461
+    top =255
+    right =491
+    bottom =top+22
+    wtype =33
+    taborder =35
+    bgc =65535
+    fontsize =2
+    bordercolor =33808
+    type =32
+    maxchar =2
+    align =32
+    max =255
+  end
+  editCONFIRMMAC:CtmSelectEdit
+    left =501
+    top =255
+    right =561
+    bottom =top+22
+    wtype =33
+    taborder =40
+    bgc =65535
+    fontsize =2
+    bordercolor =33808
+    maxchar =10
+    focuscolor =64876
+    promptID =MSG_SYSTEM_CHECKBOX
+    listnum =2
+    strID0 =VW_PLAN_ESC
+    strID1 =VW_PLAN_OK
+  end
+end

@@ -1,0 +1,424 @@
+ViewSUBTECH_1:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =467
+  titleID =BTN_PICKER_PROGRAM
+  printname =OnlineProgram0.bmp
+  StaticSOURCE:CtmStaticX2
+    left =39
+    top =61
+    right =99
+    bottom =94
+    wtype =33
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    bordercolor =53039
+    textID =VW_ALARM_NO
+    align =34
+  end
+  EditNo1:CtmEdit
+    left =15
+    top =93
+    right =35
+    bottom =126
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo2:CtmEdit
+    left =15
+    top =126
+    right =35
+    bottom =159
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo3:CtmEdit
+    left =15
+    top =159
+    right =35
+    bottom =192
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo4:CtmEdit
+    left =15
+    top =192
+    right =35
+    bottom =225
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo5:CtmEdit
+    left =15
+    top =225
+    right =35
+    bottom =258
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =99
+    top =61
+    right =299
+    bottom =94
+    wtype =33
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    bordercolor =53039
+    textID =VW_INJECT_ACTIVE
+    align =34
+  end
+  ToolButtonBoxAct1:CtmToolButton
+    left =99
+    top =93
+    right =299
+    bottom =127
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =65503
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    bordercolor =53039
+    buttontype =0
+  end
+  ToolButtonBoxAct2:CtmToolButton
+    left =99
+    top =126
+    right =299
+    bottom =160
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =65503
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    bordercolor =53039
+    buttontype =0
+  end
+  ToolButtonBoxAct3:CtmToolButton
+    left =99
+    top =159
+    right =299
+    bottom =193
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =65503
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    bordercolor =53039
+    buttontype =0
+  end
+  ToolButtonBoxAct4:CtmToolButton
+    left =99
+    top =192
+    right =299
+    bottom =226
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =65503
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    bordercolor =53039
+    buttontype =0
+  end
+  ToolButtonBoxAct5:CtmToolButton
+    left =99
+    top =225
+    right =299
+    bottom =259
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =65503
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    bordercolor =53039
+    buttontype =0
+  end
+  ButtonAct1:CtmToolButton
+    left =32
+    top =270
+    right =142
+    bottom =326
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =54970
+    fontsize =2
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    captionID =VM_AXISACT
+    upbitmap =res_7ZTQ8/pic/ButtonUp.bmp
+    downbitmap =res_7ZTQ8/pic/ButtonDown.bmp
+    key =1
+  end
+  ButtonAct2:CtmToolButton
+    left =32
+    top =337
+    right =142
+    bottom =393
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =54970
+    fontsize =2
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    captionID =PICKER_WAIT
+    upbitmap =res_7ZTQ8/pic/ButtonUp.bmp
+    downbitmap =res_7ZTQ8/pic/ButtonDown.bmp
+    key =2
+  end
+  ButtonAct3:CtmToolButton
+    left =32
+    top =404
+    right =142
+    bottom =460
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =54970
+    fontsize =2
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    captionID =PICKER_PERMIT
+    upbitmap =res_7ZTQ8/pic/ButtonUp.bmp
+    downbitmap =res_7ZTQ8/pic/ButtonDown.bmp
+    key =3
+  end
+  ButtonAct4:CtmToolButton
+    left =192
+    top =337
+    right =302
+    bottom =393
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =54970
+    fontsize =2
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    captionID =PICKER_VALVE
+    upbitmap =res_7ZTQ8/pic/ButtonUp.bmp
+    downbitmap =res_7ZTQ8/pic/ButtonDown.bmp
+    key =4
+  end
+  ButtonAct5:CtmToolButton
+    left =192
+    top =270
+    right =302
+    bottom =326
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =54970
+    fontsize =2
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    captionID =PICKER_LABEL
+    upbitmap =res_7ZTQ8/pic/ButtonUp.bmp
+    downbitmap =res_7ZTQ8/pic/ButtonDown.bmp
+    key =5
+  end
+  ButtonAct6:CtmToolButton
+    left =352
+    top =270
+    right =462
+    bottom =326
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =54970
+    fontsize =2
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    captionID =PICKER_JUMP
+    upbitmap =res_7ZTQ8/pic/ButtonUp.bmp
+    downbitmap =res_7ZTQ8/pic/ButtonDown.bmp
+    key =6
+  end
+  ButtonAct7:CtmToolButton
+    left =192
+    top =404
+    right =302
+    bottom =460
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =54970
+    fontsize =2
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    captionID =VW_PUMP_TEST
+    upbitmap =res_7ZTQ8/pic/ButtonUp.bmp
+    downbitmap =res_7ZTQ8/pic/ButtonDown.bmp
+    key =8
+  end
+  ButtonAct8:CtmToolButton
+    left =352
+    top =337
+    right =462
+    bottom =393
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =54970
+    fontsize =2
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    captionID =VW_PICKER_PILE
+    upbitmap =res_7ZTQ8/pic/ButtonUp.bmp
+    downbitmap =res_7ZTQ8/pic/ButtonDown.bmp
+    key =12
+  end
+  ButtonStartEdit:CtmToolButton
+    left =336
+    top =66
+    right =446
+    bottom =122
+    wtype =33
+    taborder =-1
+    fgc =19374
+    bgc =38395
+    fontsize =2
+    colorcontrol =4
+    destcolor =57182
+    align =34
+    captionID =BTN_RETURN2
+    upbitmap =res_7ZTQ8/pic/ButtonUp.bmp
+    downbitmap =res_7ZTQ8/pic/ButtonDown.bmp
+    key =14
+  end
+  StaticNo1:CtmEdit
+    left =39
+    top =93
+    right =99
+    bottom =126
+    wtype =33
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  StaticNo2:CtmEdit
+    left =39
+    top =126
+    right =99
+    bottom =159
+    wtype =33
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  StaticNo3:CtmEdit
+    left =39
+    top =159
+    right =99
+    bottom =192
+    wtype =33
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  StaticNo4:CtmEdit
+    left =39
+    top =192
+    right =99
+    bottom =225
+    wtype =33
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  StaticNo5:CtmEdit
+    left =39
+    top =225
+    right =99
+    bottom =258
+    wtype =33
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =2
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+end

@@ -1,0 +1,573 @@
+ViewRemote_IO:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =777
+  wtype =48
+  titleID =PICKER_IO
+  printname =Robot_IO2.bmp
+  SelectBox10:CtmSelectBox
+    left =22
+    top =66
+    right =272
+    bottom =91
+    wtype =55
+    fgc =0
+    fontsize =1
+  end
+  SelectBox11:CtmSelectBox
+    left =22
+    top =94
+    right =272
+    bottom =119
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =1
+  end
+  SelectBox12:CtmSelectBox
+    left =22
+    top =122
+    right =272
+    bottom =147
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =2
+  end
+  SelectBox13:CtmSelectBox
+    left =22
+    top =150
+    right =272
+    bottom =175
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =3
+  end
+  SelectBox14:CtmSelectBox
+    left =22
+    top =178
+    right =272
+    bottom =203
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =4
+  end
+  SelectBox15:CtmSelectBox
+    left =22
+    top =206
+    right =272
+    bottom =231
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =5
+  end
+  SelectBox16:CtmSelectBox
+    left =22
+    top =234
+    right =272
+    bottom =259
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =6
+  end
+  SelectBox17:CtmSelectBox
+    left =22
+    top =262
+    right =272
+    bottom =287
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =7
+  end
+  SelectBox18:CtmSelectBox
+    left =22
+    top =290
+    right =272
+    bottom =315
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =8
+  end
+  SelectBox19:CtmSelectBox
+    left =22
+    top =318
+    right =272
+    bottom =343
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =9
+  end
+  SelectBox1A:CtmSelectBox
+    left =22
+    top =346
+    right =272
+    bottom =371
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =10
+  end
+  SelectBox1B:CtmSelectBox
+    left =22
+    top =374
+    right =272
+    bottom =399
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =11
+  end
+  SelectBox1C:CtmSelectBox
+    left =22
+    top =402
+    right =272
+    bottom =427
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =12
+  end
+  SelectBox1D:CtmSelectBox
+    left =22
+    top =430
+    right =272
+    bottom =455
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =13
+  end
+  SelectBox1E:CtmSelectBox
+    left =22
+    top =458
+    right =272
+    bottom =483
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =14
+  end
+  SelectBox1F:CtmSelectBox
+    left =22
+    top =486
+    right =272
+    bottom =511
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =15
+  end
+  SelectBox20:CtmSelectBox
+    left =335
+    top =66
+    right =585
+    bottom =91
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =16
+  end
+  SelectBox21:CtmSelectBox
+    left =335
+    top =94
+    right =585
+    bottom =119
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =17
+  end
+  SelectBox22:CtmSelectBox
+    left =335
+    top =122
+    right =585
+    bottom =147
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =18
+  end
+  SelectBox23:CtmSelectBox
+    left =335
+    top =150
+    right =585
+    bottom =175
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =19
+  end
+  SelectBox24:CtmSelectBox
+    left =335
+    top =178
+    right =585
+    bottom =203
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =20
+  end
+  SelectBox25:CtmSelectBox
+    left =335
+    top =206
+    right =585
+    bottom =231
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =21
+  end
+  SelectBox26:CtmSelectBox
+    left =335
+    top =234
+    right =585
+    bottom =259
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =22
+  end
+  SelectBox27:CtmSelectBox
+    left =335
+    top =262
+    right =585
+    bottom =287
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =23
+  end
+  SelectBox28:CtmSelectBox
+    left =335
+    top =290
+    right =585
+    bottom =315
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =24
+  end
+  SelectBox29:CtmSelectBox
+    left =335
+    top =318
+    right =585
+    bottom =343
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =25
+  end
+  SelectBox2A:CtmSelectBox
+    left =335
+    top =346
+    right =585
+    bottom =371
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =26
+  end
+  SelectBox2B:CtmSelectBox
+    left =335
+    top =374
+    right =585
+    bottom =399
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =27
+  end
+  SelectBox2C:CtmSelectBox
+    left =335
+    top =402
+    right =585
+    bottom =427
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =28
+  end
+  SelectBox2D:CtmSelectBox
+    left =335
+    top =430
+    right =585
+    bottom =455
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =29
+  end
+  SelectBox2E:CtmSelectBox
+    left =335
+    top =458
+    right =585
+    bottom =483
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =30
+  end
+  SelectBox2F:CtmSelectBox
+    left =335
+    top =486
+    right =585
+    bottom =511
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =31
+  end
+  Button_IO1:CtmToolButton
+    left =20
+    top =4
+    right =120
+    bottom =54
+    wtype =48
+    taborder =4
+    fontsize =1
+    align =34
+    captionID =VW_PICKER_MACHINE
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Internal_IO.txt
+  end
+  Button_IO2:CtmToolButton
+    left =120
+    top =4
+    right =220
+    bottom =54
+    wtype =48
+    taborder =5
+    fontsize =1
+    align =34
+    captionID =VW_PICKER_PICKER
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
+  end
+  EX_OUT_10:CtmSelectBox
+    left =335
+    top =514
+    right =585
+    bottom =539
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =23
+  end
+  EX_OUT_11:CtmSelectBox
+    left =335
+    top =542
+    right =585
+    bottom =567
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =24
+  end
+  EX_OUT_12:CtmSelectBox
+    left =335
+    top =570
+    right =585
+    bottom =595
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =25
+  end
+  EX_OUT_13:CtmSelectBox
+    left =335
+    top =598
+    right =585
+    bottom =623
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =26
+  end
+  EX_OUT_14:CtmSelectBox
+    left =335
+    top =626
+    right =585
+    bottom =651
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =27
+  end
+  EX_OUT_15:CtmSelectBox
+    left =335
+    top =654
+    right =585
+    bottom =679
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =28
+  end
+  EX_OUT_16:CtmSelectBox
+    left =335
+    top =682
+    right =585
+    bottom =707
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =29
+  end
+  EX_OUT_17:CtmSelectBox
+    left =335
+    top =710
+    right =585
+    bottom =735
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =30
+  end
+  EX_OUT_18:CtmSelectBox
+    left =335
+    top =738
+    right =585
+    bottom =763
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =31
+  end
+  EX_IN_10:CtmSelectBox
+    left =22
+    top =514
+    right =327
+    bottom =539
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =7
+  end
+  EX_IN_11:CtmSelectBox
+    left =22
+    top =542
+    right =327
+    bottom =567
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =8
+  end
+  EX_IN_12:CtmSelectBox
+    left =22
+    top =570
+    right =327
+    bottom =595
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =9
+  end
+  EX_IN_13:CtmSelectBox
+    left =22
+    top =598
+    right =327
+    bottom =623
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =10
+  end
+  EX_IN_14:CtmSelectBox
+    left =22
+    top =626
+    right =327
+    bottom =651
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =11
+  end
+  EX_IN_15:CtmSelectBox
+    left =22
+    top =654
+    right =327
+    bottom =679
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =12
+  end
+  EX_IN_16:CtmSelectBox
+    left =22
+    top =682
+    right =327
+    bottom =707
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =13
+  end
+  EX_IN_17:CtmSelectBox
+    left =22
+    top =710
+    right =327
+    bottom =735
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =14
+  end
+  EX_IN_18:CtmSelectBox
+    left =22
+    top =738
+    right =327
+    bottom =763
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =15
+  end
+  BtnBack:CtmToolButton
+    left =68
+    top =820
+    right =152
+    bottom =877
+    wtype =48
+    taborder =72
+    align =18
+    upbitmap =res_tm640/pic/BtnBackUp.bmp
+    key =72
+    action =255
+    formname =Param.txt
+  end
+  BtnHome:CtmToolButton
+    left =244
+    top =820
+    right =328
+    bottom =877
+    wtype =48
+    taborder =70
+    align =18
+    upbitmap =res_tm640/pic/BtnHomeUp.bmp
+    key =70
+    action =255
+    formname =Param.txt
+  end
+  BtnMenu:CtmToolButton
+    left =420
+    top =820
+    right =504
+    bottom =877
+    wtype =48
+    taborder =71
+    align =18
+    upbitmap =res_tm640/pic/BtnMenuUp.bmp
+    key =71
+    action =255
+    formname =Param.txt
+  end
+end

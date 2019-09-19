@@ -1,0 +1,1022 @@
+ViewDiag_MLC:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  titleID =ROBOT_STR_PLC_O
+  printname =MLC_O.bmp
+  OnCreateA =OnCreate_MLC_O
+  EditStartNo:CtmEditX1
+    left =80
+    top =30
+    right =145
+    bottom =69
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65500
+    fontsize =2
+    colorcontrol =4
+    destcolor =65400
+    maxchar =3
+    align =34
+    maxdb =FALSE
+  end
+  btngoto:CtmStaticX2
+    left =20
+    top =30
+    right =78
+    bottom =70
+    wtype =36
+    fgc =0
+    bgc =44568
+    fontsize =2
+    textID =ROBOT_PARAM_NO_GOTO
+    align =34
+  end
+  Static00:CtmStaticX2
+    left =72
+    top =81
+    right =292
+    bottom =121
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox00:CtmSelectBox
+    left =111
+    top =81
+    right =131
+    bottom =121
+    wtype =55
+  end
+  Static01:CtmStaticX2
+    left =72
+    top =129
+    right =292
+    bottom =169
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox01:CtmSelectBox
+    left =111
+    top =129
+    right =131
+    bottom =169
+    wtype =55
+    group =2
+  end
+  Static02:CtmStaticX2
+    left =72
+    top =177
+    right =292
+    bottom =217
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox02:CtmSelectBox
+    left =111
+    top =177
+    right =131
+    bottom =217
+    wtype =55
+    group =8
+  end
+  Static03:CtmStaticX2
+    left =72
+    top =225
+    right =292
+    bottom =265
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox03:CtmSelectBox
+    left =111
+    top =225
+    right =131
+    bottom =265
+    wtype =55
+    group =10
+  end
+  Static04:CtmStaticX2
+    left =72
+    top =273
+    right =292
+    bottom =313
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox04:CtmSelectBox
+    left =111
+    top =273
+    right =131
+    bottom =313
+    wtype =55
+    group =16
+  end
+  Static05:CtmStaticX2
+    left =72
+    top =321
+    right =292
+    bottom =361
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox05:CtmSelectBox
+    left =111
+    top =321
+    right =131
+    bottom =361
+    wtype =55
+    group =18
+  end
+  Static06:CtmStaticX2
+    left =72
+    top =369
+    right =292
+    bottom =409
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox06:CtmSelectBox
+    left =111
+    top =369
+    right =131
+    bottom =409
+    wtype =55
+    group =24
+  end
+  Static07:CtmStaticX2
+    left =72
+    top =417
+    right =292
+    bottom =457
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox07:CtmSelectBox
+    left =111
+    top =417
+    right =131
+    bottom =457
+    wtype =55
+    group =26
+  end
+  Static08:CtmStaticX2
+    left =72
+    top =465
+    right =292
+    bottom =505
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox08:CtmSelectBox
+    left =111
+    top =465
+    right =131
+    bottom =505
+    wtype =55
+    group =32
+  end
+  Static09:CtmStaticX2
+    left =72
+    top =513
+    right =292
+    bottom =553
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox09:CtmSelectBox
+    left =111
+    top =513
+    right =131
+    bottom =553
+    wtype =55
+    group =34
+  end
+  Static10:CtmStaticX2
+    left =72
+    top =561
+    right =292
+    bottom =601
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox10:CtmSelectBox
+    left =111
+    top =561
+    right =131
+    bottom =601
+    wtype =55
+    group =40
+  end
+  Static11:CtmStaticX2
+    left =72
+    top =609
+    right =292
+    bottom =649
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox11:CtmSelectBox
+    left =111
+    top =609
+    right =131
+    bottom =649
+    wtype =55
+    group =42
+  end
+  Static12:CtmStaticX2
+    left =72
+    top =657
+    right =292
+    bottom =697
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox12:CtmSelectBox
+    left =111
+    top =657
+    right =131
+    bottom =697
+    wtype =55
+    group =48
+  end
+  Static13:CtmStaticX2
+    left =72
+    top =705
+    right =292
+    bottom =745
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox13:CtmSelectBox
+    left =111
+    top =705
+    right =131
+    bottom =745
+    wtype =55
+    group =50
+  end
+  Static14:CtmStaticX2
+    left =72
+    top =753
+    right =292
+    bottom =793
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox14:CtmSelectBox
+    left =111
+    top =753
+    right =131
+    bottom =793
+    wtype =55
+    group =56
+  end
+  Static15:CtmStaticX2
+    left =72
+    top =801
+    right =292
+    bottom =841
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox15:CtmSelectBox
+    left =111
+    top =801
+    right =131
+    bottom =841
+    wtype =55
+    group =58
+  end
+  Static16:CtmStaticX2
+    left =364
+    top =81
+    right =584
+    bottom =121
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox16:CtmSelectBox
+    left =403
+    top =81
+    right =423
+    bottom =121
+    wtype =55
+    group =1
+  end
+  Static17:CtmStaticX2
+    left =364
+    top =129
+    right =584
+    bottom =169
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox17:CtmSelectBox
+    left =403
+    top =129
+    right =423
+    bottom =169
+    wtype =55
+    group =3
+  end
+  Static18:CtmStaticX2
+    left =364
+    top =177
+    right =584
+    bottom =217
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox18:CtmSelectBox
+    left =403
+    top =177
+    right =423
+    bottom =217
+    wtype =55
+    group =9
+  end
+  Static19:CtmStaticX2
+    left =364
+    top =225
+    right =584
+    bottom =265
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox19:CtmSelectBox
+    left =403
+    top =225
+    right =423
+    bottom =265
+    wtype =55
+    group =11
+  end
+  Static20:CtmStaticX2
+    left =364
+    top =273
+    right =584
+    bottom =313
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox20:CtmSelectBox
+    left =404
+    top =273
+    right =424
+    bottom =313
+    wtype =55
+    group =17
+  end
+  Static21:CtmStaticX2
+    left =364
+    top =321
+    right =584
+    bottom =361
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox21:CtmSelectBox
+    left =404
+    top =321
+    right =424
+    bottom =361
+    wtype =55
+    group =19
+  end
+  Static22:CtmStaticX2
+    left =364
+    top =369
+    right =584
+    bottom =409
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox22:CtmSelectBox
+    left =404
+    top =369
+    right =424
+    bottom =409
+    wtype =55
+    group =25
+  end
+  Static23:CtmStaticX2
+    left =364
+    top =417
+    right =584
+    bottom =457
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox23:CtmSelectBox
+    left =404
+    top =417
+    right =424
+    bottom =457
+    wtype =55
+    group =27
+  end
+  Static24:CtmStaticX2
+    left =364
+    top =465
+    right =584
+    bottom =505
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox24:CtmSelectBox
+    left =404
+    top =465
+    right =424
+    bottom =505
+    wtype =55
+    group =33
+  end
+  Static25:CtmStaticX2
+    left =364
+    top =513
+    right =584
+    bottom =553
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox25:CtmSelectBox
+    left =404
+    top =513
+    right =424
+    bottom =553
+    wtype =55
+    group =35
+  end
+  Static26:CtmStaticX2
+    left =364
+    top =561
+    right =584
+    bottom =601
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox26:CtmSelectBox
+    left =404
+    top =561
+    right =424
+    bottom =601
+    wtype =55
+    group =41
+  end
+  Static27:CtmStaticX2
+    left =364
+    top =609
+    right =584
+    bottom =649
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox27:CtmSelectBox
+    left =404
+    top =609
+    right =424
+    bottom =649
+    wtype =55
+    group =43
+  end
+  Static28:CtmStaticX2
+    left =364
+    top =657
+    right =584
+    bottom =697
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox28:CtmSelectBox
+    left =404
+    top =657
+    right =424
+    bottom =697
+    wtype =55
+    group =49
+  end
+  Static29:CtmStaticX2
+    left =364
+    top =705
+    right =584
+    bottom =745
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox29:CtmSelectBox
+    left =404
+    top =705
+    right =424
+    bottom =745
+    wtype =55
+    group =51
+  end
+  Static30:CtmStaticX2
+    left =364
+    top =753
+    right =584
+    bottom =793
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  SelectBox30:CtmSelectBox
+    left =404
+    top =753
+    right =424
+    bottom =793
+    wtype =55
+    group =57
+  end
+  Static31:CtmStaticX2
+    left =364
+    top =801
+    right =584
+    bottom =841
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  SelectBox31:CtmSelectBox
+    left =404
+    top =801
+    right =424
+    bottom =841
+    wtype =55
+    group =59
+  end
+  BtnPageUp:CtmToolButton
+    left =350
+    top =28
+    right =440
+    bottom =68
+    taborder =2
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_PAGEUP
+    key =26624
+  end
+  BtnPageDown:CtmToolButton
+    left =490
+    top =28
+    right =580
+    bottom =68
+    taborder =4
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_PAGEDOWN
+    key =27904
+  end
+  BtnStatus00:CtmToolButton
+    privilege =2
+    left =15
+    top =81
+    right =70
+    bottom =121
+    taborder =5
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus01:CtmToolButton
+    privilege =2
+    left =15
+    top =129
+    right =70
+    bottom =169
+    taborder =6
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus02:CtmToolButton
+    privilege =2
+    left =15
+    top =177
+    right =70
+    bottom =217
+    taborder =7
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus03:CtmToolButton
+    privilege =2
+    left =15
+    top =225
+    right =70
+    bottom =265
+    taborder =8
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus04:CtmToolButton
+    privilege =2
+    left =15
+    top =273
+    right =70
+    bottom =313
+    taborder =9
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus05:CtmToolButton
+    privilege =2
+    left =15
+    top =321
+    right =70
+    bottom =361
+    taborder =10
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus06:CtmToolButton
+    privilege =2
+    left =15
+    top =369
+    right =70
+    bottom =409
+    taborder =11
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus07:CtmToolButton
+    privilege =2
+    left =15
+    top =417
+    right =70
+    bottom =457
+    taborder =12
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus08:CtmToolButton
+    privilege =2
+    left =15
+    top =465
+    right =70
+    bottom =505
+    taborder =13
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus09:CtmToolButton
+    privilege =2
+    left =15
+    top =513
+    right =70
+    bottom =553
+    taborder =14
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus10:CtmToolButton
+    privilege =2
+    left =15
+    top =561
+    right =70
+    bottom =601
+    taborder =15
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus11:CtmToolButton
+    privilege =2
+    left =15
+    top =609
+    right =70
+    bottom =649
+    taborder =16
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus12:CtmToolButton
+    privilege =2
+    left =15
+    top =657
+    right =70
+    bottom =697
+    taborder =17
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus13:CtmToolButton
+    privilege =2
+    left =15
+    top =705
+    right =70
+    bottom =745
+    taborder =18
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus14:CtmToolButton
+    privilege =2
+    left =15
+    top =753
+    right =70
+    bottom =793
+    taborder =19
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus15:CtmToolButton
+    privilege =2
+    left =15
+    top =801
+    right =70
+    bottom =841
+    taborder =20
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus16:CtmToolButton
+    privilege =2
+    left =307
+    top =81
+    right =362
+    bottom =121
+    taborder =21
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus17:CtmToolButton
+    privilege =2
+    left =307
+    top =129
+    right =362
+    bottom =169
+    taborder =22
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus18:CtmToolButton
+    privilege =2
+    left =307
+    top =177
+    right =362
+    bottom =217
+    taborder =23
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus19:CtmToolButton
+    privilege =2
+    left =307
+    top =225
+    right =362
+    bottom =265
+    taborder =24
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus20:CtmToolButton
+    privilege =2
+    left =307
+    top =273
+    right =362
+    bottom =313
+    taborder =25
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus21:CtmToolButton
+    privilege =2
+    left =307
+    top =321
+    right =362
+    bottom =361
+    taborder =26
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus22:CtmToolButton
+    privilege =2
+    left =307
+    top =369
+    right =362
+    bottom =409
+    taborder =27
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus23:CtmToolButton
+    privilege =2
+    left =307
+    top =417
+    right =362
+    bottom =457
+    taborder =28
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus24:CtmToolButton
+    privilege =2
+    left =307
+    top =465
+    right =362
+    bottom =505
+    taborder =29
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus25:CtmToolButton
+    privilege =2
+    left =307
+    top =513
+    right =362
+    bottom =553
+    taborder =30
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus26:CtmToolButton
+    privilege =2
+    left =307
+    top =561
+    right =362
+    bottom =601
+    taborder =31
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus27:CtmToolButton
+    privilege =2
+    left =307
+    top =609
+    right =362
+    bottom =649
+    taborder =32
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus28:CtmToolButton
+    privilege =2
+    left =307
+    top =657
+    right =362
+    bottom =697
+    taborder =33
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus29:CtmToolButton
+    privilege =2
+    left =307
+    top =705
+    right =362
+    bottom =745
+    taborder =34
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus30:CtmToolButton
+    privilege =2
+    left =307
+    top =753
+    right =362
+    bottom =793
+    taborder =35
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+  BtnStatus31:CtmToolButton
+    privilege =2
+    left =307
+    top =801
+    right =362
+    bottom =841
+    taborder =36
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ON/OFF
+  end
+end

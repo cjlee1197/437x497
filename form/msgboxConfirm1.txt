@@ -1,0 +1,43 @@
+ViewMsgBoxConfirm:CtmFormView
+  left =150
+  top =645
+  right =598
+  bottom =861
+  wtype =34871
+  bgc =65535
+  extag =10000
+  viewtype =5
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =448
+    bottom =216
+    wtype =55
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_448X216.png
+    keycolor =63519
+  end
+  StaticMessage:CtmStaticX2
+    left =50
+    top =40
+    right =400
+    bottom =96
+    wtype =48
+    fgc =0
+    fontsize =2
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =56
+    top =154
+    right =420
+    bottom =210
+    wtype =48
+    fgc =29582
+    fontsize =2
+    textID =ROBOT_STR_TOUCH_EXIT
+    align =36
+  end
+end

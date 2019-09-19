@@ -1,0 +1,329 @@
+ViewRevert:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  wtype =48
+  taborder =0
+  titleID =ROBOT_STR_SYSTEM_RE
+  printname =Revert.bmp
+  LinuxCtmLineTable2:CtmLineTable
+    left =97
+    top =58
+    right =497
+    bottom =438
+    fontsize =2
+  end
+  DatabaseExplorer:CtmFileExplorer
+    left =122
+    top =135
+    right =357
+    bottom =410
+    wtype =0x24
+    fgc =0
+    fontsize =2
+    no_bgc =40147
+    no_fgc =0
+    taborder =10
+    bgc =0xffff
+    showtype=1
+  end
+  LinuxCtmLineTable1:CtmLineTable
+    left =97
+    top =501
+    right =497
+    bottom =840
+    fontsize =2
+  end
+  StaticMSG_RESET_MMI:CtmStaticX2
+    left =122
+    top =517
+    right =427
+    bottom =545
+    wtype =36
+    fgc =0
+    bgc =42296
+    fontsize =2
+    colorcontrol =2
+    destcolor =57052
+    textID =MSG_RESET_MMI
+  end
+  StaticMSG_RESET_FACTORY:CtmStaticX2
+    left =122
+    top =694
+    right =247
+    bottom =722
+    wtype =36
+    fgc =0
+    bgc =42296
+    fontsize =2
+    colorcontrol =2
+    destcolor =57052
+    textID =VW_RESET_ADJDATERESET
+  end
+  CheckBoxRESET_ALL:CtmCheckBox
+    left =123
+    top =555
+    right =148
+    bottom =577
+    wtype =48
+    taborder =1
+    fgc =0
+    fontsize =2
+    destcolor =0
+  end
+  CheckBoxRESET_DB:CtmCheckBox
+    left =150
+    top =587
+    right =172
+    bottom =609
+    wtype =48
+    taborder =2
+    fgc =0
+    fontsize =2
+  end
+  CheckBoxRESET_HISTORY:CtmCheckBox
+    left =150
+    top =619
+    right =172
+    bottom =641
+    wtype =48
+    taborder =3
+    fgc =0
+    fontsize =2
+  end
+  editPASSWORD:CtmEdit
+    left =352
+    top =694
+    right =432
+    bottom =722
+    wtype =35
+    taborder =6
+    bgc =65535
+    fontsize =2
+    type =128
+    maxchar =4
+    align =36
+  end
+  CheckBoxRESET_FACTORMACHINE:CtmCheckBox
+    left =127
+    top =732
+    right =149
+    bottom =754
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  buttonCONFIRM:CtmToolButton
+    privilege =5
+    left =162
+    top =780
+    right =262
+    bottom =820
+    wtype =39
+    taborder =8
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_OK
+  end
+  buttonCANCEL:CtmToolButton
+    left =332
+    top =780
+    right =432
+    bottom =820
+    wtype =39
+    taborder =9
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =257
+    top =694
+    right =354
+    bottom =722
+    wtype =48
+    fgc =0
+    bgc =33808
+    fontsize =2
+    textID =ROBOT_MSG_ENTER_PASSWORD
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =150
+    top =555
+    right =278
+    bottom =577
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_RESET_HMI
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =175
+    top =619
+    right =298
+    bottom =641
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_RESET_ALARM
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =175
+    top =587
+    right =298
+    bottom =609
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_RESET_DATABASE
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =150
+    top =732
+    right =293
+    bottom =754
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_FACTORY
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =122
+    top =76
+    right =467
+    bottom =104
+    wtype =36
+    fgc =0
+    bgc =42296
+    fontsize =2
+    colorcontrol =2
+    destcolor =57052
+    textID =ROBOT_STR_DATABASE_BKRE
+  end
+  BtnDataBackup:CtmToolButton
+    left =373
+    top =133
+    right =477
+    bottom =173
+    wtype =39
+    taborder =11
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_STR_DATABASE_BACKUP
+  end
+  BtnDataRe:CtmToolButton
+    privilege =4
+    left =373
+    top =370
+    right =477
+    bottom =410
+    wtype =39
+    taborder =13
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_DATABASE_RE
+  end
+  BtnDataDelete:CtmToolButton
+    privilege =4
+    left =373
+    top =241
+    right =477
+    bottom =281
+    wtype =39
+    taborder =12
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_FILE_DELETE
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =122
+    top =108
+    right =357
+    bottom =128
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =RPBPT_STR_DATABASE_FILE
+  end
+  LinuxCtmStaticX213:CtmStaticX2
+    left =99
+    top =463
+    right =497
+    bottom =498
+    wtype =48
+    fgc =0
+    bgc =40411
+    fontsize =2
+    textID =ROBOT_STR_SYSTEM_RESET
+    align =34
+  end
+  LinuxCtmStaticX214:CtmStaticX2
+    left =99
+    top =20
+    right =497
+    bottom =55
+    wtype =48
+    fgc =0
+    bgc =40411
+    fontsize =2
+    textID =ROBOT_STR_BKRE
+    align =34
+  end
+  CheckBoxTeachPointFile:CtmCheckBox
+    left =150
+    top =651
+    right =172
+    bottom =673
+    wtype =48
+    taborder =4
+    fgc =0
+    fontsize =2
+    destcolor =0
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =175
+    top =651
+    right =298
+    bottom =673
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_BTN_TEACHPOINT_DELETE
+  end
+  BtnDataReName:CtmToolButton
+    privilege =4
+    left =373
+    top =193
+    right =477
+    bottom =233
+    wtype =39
+    taborder =14
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_FILE_RENAME
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =123
+    top =576
+    right =148
+    bottom =673
+    wtype =55
+    fontsize =2
+    type =2
+    imagepath =res_tm640/revert_checkbox.bmp
+    keycolor =63519
+  end
+end

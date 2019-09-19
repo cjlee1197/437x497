@@ -1,0 +1,550 @@
+ViewInformation:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  titleID =ROBOT_VIEW_INFORMATION
+  printname =Information.bmp
+  LinuxCtmLineTable4:CtmLineTable
+    left =50
+    top =506
+    right =550
+    bottom =699
+  end
+  ImgMachinePic:CtmImageBox
+    left =50
+    top =15
+    right =250
+    bottom =331
+    wtype =55
+    fontsize =2
+    type =2
+    imagepath =res_tm640/robot_200x316.png
+    keycolor =63519
+  end
+  LinuxCtmLineTable1:CtmLineTable
+    left =50
+    top =341
+    right =550
+    bottom =496
+  end
+  LinuxCtmLineTable2:CtmLineTable
+    left =252
+    top =15
+    right =550
+    bottom =331
+    stype =16384
+    vertrows =2
+    vertpoints1 =85
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =282
+    top =26
+    right =352
+    bottom =56
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_MODEL
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =282
+    top =63
+    right =352
+    bottom =93
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_LOAD
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =267
+    top =106
+    right =337
+    bottom =136
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_RANGE_1
+  end
+  LinuxCtmStaticX213:CtmStaticX2
+    left =267
+    top =144
+    right =337
+    bottom =174
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_RANGE_2
+  end
+  LinuxCtmStaticX215:CtmStaticX2
+    left =267
+    top =181
+    right =337
+    bottom =211
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_RANGE_3
+  end
+  LinuxCtmStaticX217:CtmStaticX2
+    left =267
+    top =218
+    right =337
+    bottom =248
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_RANGE_4
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =267
+    top =256
+    right =337
+    bottom =286
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_RANGE_5
+  end
+  LinuxCtmStaticX221:CtmStaticX2
+    left =267
+    top =293
+    right =337
+    bottom =323
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_RANGE_6
+  end
+  LinuxCtmStaticX223:CtmStaticX2
+    left =90
+    top =409
+    right =168
+    bottom =439
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_HMI_VERSION
+  end
+  LinuxCtmStaticX225:CtmStaticX2
+    left =320
+    top =409
+    right =398
+    bottom =439
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_CNC_VERSION
+  end
+  LinuxCtmStaticX227:CtmStaticX2
+    left =90
+    top =449
+    right =168
+    bottom =479
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_PLC_VERSION
+  end
+  LinuxCtmStaticX229:CtmStaticX2
+    left =218
+    top =359
+    right =383
+    bottom =389
+    wtype =50
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_VERSION
+    align =34
+  end
+  LinuxCtmStaticX230:CtmStaticX2
+    left =320
+    top =449
+    right =440
+    bottom =479
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  LinuxCtmStaticX231:CtmStaticX2
+    left =447
+    top =449
+    right =507
+    bottom =479
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  LinuxCtmStaticX232:CtmStaticX2
+    left =218
+    top =524
+    right =383
+    bottom =554
+    wtype =50
+    fgc =0
+    bgc =1055
+    fontsize =2
+    colorcontrol =4
+    destcolor =65520
+    textID =ROBOT_STR_MACHINE_INFO
+    align =34
+  end
+  LinuxCtmStaticX233:CtmStaticX2
+    left =275
+    top =566
+    right =350
+    bottom =596
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_OUT_FACTORY
+  end
+  LinuxCtmStaticX234:CtmStaticX2
+    left =336
+    top =594
+    right =356
+    bottom =624
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_YEAR
+  end
+  LinuxCtmStaticX235:CtmStaticX2
+    left =411
+    top =594
+    right =431
+    bottom =624
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_MONTH
+  end
+  LinuxCtmStaticX236:CtmStaticX2
+    left =486
+    top =594
+    right =506
+    bottom =624
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_DATE
+  end
+  LinuxCtmStaticX237:CtmStaticX2
+    left =486
+    top =659
+    right =506
+    bottom =689
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_DATE
+  end
+  LinuxCtmStaticX238:CtmStaticX2
+    left =411
+    top =659
+    right =431
+    bottom =689
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_MONTH
+  end
+  LinuxCtmStaticX239:CtmStaticX2
+    left =336
+    top =659
+    right =356
+    bottom =689
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_YEAR
+  end
+  LinuxCtmStaticX240:CtmStaticX2
+    left =275
+    top =631
+    right =350
+    bottom =661
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_TRADING_DATE
+  end
+  LinuxCtmStaticX241:CtmStaticX2
+    left =100
+    top =596
+    right =190
+    bottom =626
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_MACHINE_ID
+  end
+  EditTradeDate01:CtmEditX1
+    left =275
+    top =659
+    right =335
+    bottom =689
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    destcolor =42556
+    type =18
+    maxchar =4
+    align =36
+  end
+  EditTradeDate02:CtmEditX1
+    left =375
+    top =659
+    right =410
+    bottom =689
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    destcolor =42556
+    type =18
+    maxchar =2
+    align =36
+  end
+  EditTradeDate03:CtmEditX1
+    left =450
+    top =659
+    right =485
+    bottom =689
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    destcolor =42556
+    type =18
+    maxchar =2
+    align =36
+  end
+  EditFactoryDate01:CtmEditX1
+    left =275
+    top =594
+    right =335
+    bottom =624
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    destcolor =42556
+    type =18
+    maxchar =4
+    align =36
+  end
+  EditFactoryDate02:CtmEditX1
+    left =375
+    top =594
+    right =410
+    bottom =624
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    destcolor =42556
+    type =18
+    maxchar =2
+    align =36
+  end
+  EditFactoryDate03:CtmEditX1
+    left =450
+    top =594
+    right =485
+    bottom =624
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    destcolor =42556
+    type =18
+    maxchar =2
+    align =36
+  end
+  StaticVersionTable01:CtmStaticX2
+    left =167
+    top =409
+    right =277
+    bottom =439
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticVersionTable02:CtmStaticX2
+    left =397
+    top =409
+    right =507
+    bottom =439
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticVersionTable03:CtmStaticX2
+    left =167
+    top =449
+    right =277
+    bottom =479
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticMachTable01:CtmStaticX2
+    left =351
+    top =26
+    right =537
+    bottom =56
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticMachTable02:CtmStaticX2
+    left =351
+    top =63
+    right =537
+    bottom =93
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticMachTable03:CtmStaticX2
+    left =336
+    top =106
+    right =537
+    bottom =136
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticMachTable04:CtmStaticX2
+    left =336
+    top =144
+    right =537
+    bottom =174
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticMachTable05:CtmStaticX2
+    left =336
+    top =181
+    right =537
+    bottom =211
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticMachTable06:CtmStaticX2
+    left =336
+    top =218
+    right =537
+    bottom =248
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticMachTable07:CtmStaticX2
+    left =336
+    top =256
+    right =537
+    bottom =286
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticMachTable08:CtmStaticX2
+    left =336
+    top =293
+    right =537
+    bottom =323
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  EditMachineNO:CtmEdit
+    left =100
+    top =624
+    right =220
+    bottom =654
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    type =4
+    maxchar =10
+    align =36
+  end
+  LinuxCtmLineTable3:CtmLineTable
+    left =50
+    top =709
+    right =550
+    bottom =855
+  end
+  ImgAgentsPic:CtmImageBox
+    left =90
+    top =722
+    right =310
+    bottom =774
+    wtype =55
+    fontsize =2
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =90
+    top =783
+    right =140
+    bottom =813
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_TEL
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =90
+    top =814
+    right =140
+    bottom =844
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_ADDRESS
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =312
+    top =783
+    right =362
+    bottom =813
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_FAX
+  end
+  StaticComTable01:CtmStaticX2
+    left =143
+    top =783
+    right =273
+    bottom =813
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticComTable02:CtmStaticX2
+    left =365
+    top =783
+    right =495
+    bottom =813
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticComTable03:CtmStaticX2
+    left =143
+    top =814
+    right =495
+    bottom =844
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+end

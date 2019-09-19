@@ -1,0 +1,266 @@
+ViewTeachOption:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  titleID =BTN_PICKER_PROGRAM
+  printname =TeachOption.bmp
+  LinuxCtmToolButton3:CtmToolButton
+    left =404
+    top =340
+    right =584
+    bottom =460
+    wtype =48
+    taborder =-1
+    fgc =19374
+    fontUNWidth =30
+    fontUNHeight =30
+    captionID =TEACH_CHECK
+    upbitmap =res_tm640/pic/ButtonUp5.bmp
+    key =6
+    action =255
+    formname =Syst.txt
+    LinuxCtmImageBox6:CtmImageBox
+      left =4
+      top =40
+      right =40
+      bottom =76
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Syst.bmp
+    end
+  end
+  LinuxCtmToolButton1:CtmToolButton
+    left =20
+    top =188
+    right =200
+    bottom =308
+    wtype =48
+    taborder =-1
+    fgc =19374
+    fontUNWidth =30
+    fontUNHeight =30
+    captionID =TEACH_MODE
+    upbitmap =res_tm640/pic/ButtonUp5.bmp
+    key =1
+    action =255
+    formname =Param.txt
+    LinuxCtmImageBox5:CtmImageBox
+      left =4
+      top =40
+      right =40
+      bottom =76
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Func.bmp
+    end
+  end
+  LinuxCtmToolButton4:CtmToolButton
+    left =212
+    top =340
+    right =392
+    bottom =460
+    wtype =48
+    taborder =-1
+    fgc =19374
+    fontUNWidth =30
+    fontUNHeight =30
+    captionID =TEACH_PP_CURVE
+    upbitmap =res_tm640/pic/ButtonUp5.bmp
+    key =5
+    action =255
+    formname =Prod.txt
+    LinuxCtmImageBox2:CtmImageBox
+      left =4
+      top =40
+      right =40
+      bottom =76
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Prod.bmp
+    end
+  end
+  LinuxCtmToolButton7:CtmToolButton
+    left =404
+    top =188
+    right =584
+    bottom =308
+    wtype =48
+    taborder =-1
+    fgc =19374
+    fontUNWidth =30
+    fontUNHeight =30
+    captionID =TEACH_POS_ADJ
+    upbitmap =res_tm640/pic/ButtonUp5.bmp
+    key =3
+    LinuxCtmImageBox4:CtmImageBox
+      left =4
+      top =40
+      right =40
+      bottom =76
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Safe.bmp
+    end
+  end
+  LinuxCtmToolButton8:CtmToolButton
+    left =212
+    top =188
+    right =392
+    bottom =308
+    wtype =48
+    taborder =-1
+    fgc =19374
+    fontUNWidth =30
+    fontUNHeight =30
+    captionID =TEACH_POS_VEL
+    upbitmap =res_tm640/pic/ButtonUp5.bmp
+    key =2
+    action =255
+    formname =Pile_1.txt
+    LinuxCtmImageBox8:CtmImageBox
+      left =4
+      top =40
+      right =40
+      bottom =76
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Pile.bmp
+    end
+  end
+  LinuxCtmToolButton2:CtmToolButton
+    left =20
+    top =340
+    right =200
+    bottom =460
+    wtype =48
+    taborder =-1
+    fgc =19374
+    fontUNWidth =30
+    fontUNHeight =30
+    captionID =TEACH_TIME
+    upbitmap =res_tm640/pic/ButtonUp5.bmp
+    key =4
+    action =255
+    LinuxCtmImageBox1:CtmImageBox
+      left =4
+      top =40
+      right =40
+      bottom =76
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Safe.bmp
+    end
+  end
+  LinuxCtmToolButton5:CtmToolButton
+    left =404
+    top =644
+    right =584
+    bottom =764
+    wtype =48
+    taborder =-1
+    fgc =19374
+    fontUNWidth =30
+    fontUNHeight =30
+    captionID =BTN_PICKER_SUBTECH
+    upbitmap =res_tm640/pic/ButtonUp5.bmp
+    key =12
+    action =255
+    formname =Syst.txt
+    LinuxCtmImageBox3:CtmImageBox
+      left =4
+      top =40
+      right =40
+      bottom =76
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Syst.bmp
+    end
+  end
+  LinuxCtmToolButton6:CtmToolButton
+    left =212
+    top =644
+    right =392
+    bottom =764
+    wtype =48
+    taborder =-1
+    fgc =19374
+    fontUNWidth =30
+    fontUNHeight =30
+    captionID =VW_PILE_PARA
+    upbitmap =res_tm640/pic/ButtonUp5.bmp
+    key =11
+    action =255
+    formname =Prod.txt
+    LinuxCtmImageBox7:CtmImageBox
+      left =4
+      top =40
+      right =40
+      bottom =76
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Prod.bmp
+    end
+  end
+  LinuxCtmToolButton9:CtmToolButton
+    left =20
+    top =644
+    right =200
+    bottom =764
+    wtype =48
+    taborder =-1
+    fgc =19374
+    fontUNWidth =30
+    fontUNHeight =30
+    captionID =TEACH_ADVANCE
+    upbitmap =res_tm640/pic/ButtonUp5.bmp
+    key =10
+    action =255
+    LinuxCtmImageBox9:CtmImageBox
+      left =4
+      top =40
+      right =40
+      bottom =76
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Safe.bmp
+    end
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =20
+    top =132
+    right =584
+    bottom =164
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontUNWidth =30
+    fontUNHeight =30
+    bordercolor =35953
+    textID =TEACH_QTEACH
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =20
+    top =564
+    right =584
+    bottom =596
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontUNWidth =30
+    fontUNHeight =30
+    bordercolor =35953
+    textID =TEACH_ADVANCE
+    align =34
+  end
+end

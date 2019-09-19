@@ -1,0 +1,143 @@
+ViewVersionManage:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  wtype =48
+  taborder =0
+  titleID =INDEX_SYS_UPDATE
+  printname =VersionManage.bmp
+  OpenUsb:CtmToolButton
+    left =60
+    top =35
+    right =240
+    bottom =75
+    wtype =39
+    taborder =1
+    bgc =54970
+    fontsize =2
+    colorcontrol =4
+    buttontype =0
+    captionID =ROBOT_BTN_OPEN_USB
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  OpenBk:CtmToolButton
+    left =360
+    top =35
+    right =540
+    bottom =75
+    wtype =39
+    taborder =7
+    bgc =54970
+    fontsize =2
+    colorcontrol =4
+    buttontype =0
+    captionID =ROBOT_BTN_OPEN_BK
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  ReadVer:CtmToolButton
+    left =360
+    top =340
+    right =540
+    bottom =380
+    wtype =39
+    taborder =2
+    bgc =54970
+    fontsize =2
+    colorcontrol =4
+    buttontype =0
+    captionID =ROBOT_STR_READ_OLD_VERSION
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  NowVersionInfo:CtmStaticX2
+    left =70
+    top =420
+    right =230
+    bottom =450
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_NOW_VERSION_INFO
+  end
+  SelVersionInfo:CtmStaticX2
+    left =370
+    top =420
+    right =530
+    bottom =450
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_SEL_VERSION_INFO
+  end
+  SetUpdateFile:CtmToolButton
+    left =200
+    top =770
+    right =430
+    bottom =810
+    wtype =39
+    taborder =5
+    bgc =54970
+    fontsize =2
+    colorcontrol =4
+    buttontype =0
+    captionID =ROBOT_STR_READ_UPDATE_FILE
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  ReStart:CtmToolButton
+    left =450
+    top =770
+    right =580
+    bottom =810
+    wtype =39
+    taborder =6
+    bgc =54970
+    fontsize =2
+    colorcontrol =4
+    buttontype =0
+    captionID =ROBOT_STR_RESTART_SYSTEM
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  VersionManage:CtmFileExplorer
+    left =60
+    top =90
+    right =530
+    bottom =330
+    wtype =0x24
+    fgc =0
+    fontsize =2
+    no_bgc =40147
+    no_fgc =0
+    taborder =0
+    bgc =0xffff
+    showtype=0
+  end
+  NowInfoText:CtmMTextMemo
+    left =20
+    top =460
+    right =280
+    bottom =750
+    wtype =0x23
+    fgc =0 
+    taborder =3
+    no_bgc =40147
+    no_fgc =0
+    bgc =0xD69A
+  end
+  SelInfoText:CtmMTextMemo
+    left =320
+    top =460
+    right =580
+    bottom =750
+    wtype =0x23
+    fgc =0 
+    taborder =4
+    no_bgc =40147
+    no_fgc =0
+    bgc =0xD69A
+  end
+end

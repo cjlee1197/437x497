@@ -1,0 +1,587 @@
+ViewOriginSet:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  wtype =51
+  bgc =65535
+  titleID =ROBOT_VIEW_ORIGINSET
+  bordercolor =0
+  printname =OriginSet.bmp
+  ImageBGJ1:CtmImageBox
+    left =25
+    top =25
+    right =260
+    bottom =175
+    wtype =37
+    type =2
+    imagepath =res_tm640/bord_235_150.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =35
+    top =85
+    right =145
+    bottom =125
+    wtype =37
+    fgc =0
+    bgc =65535
+    textID =ROBOT_STR_ENCODER_VALUE
+    align =34
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =25
+    top =195
+    right =260
+    bottom =345
+    wtype =37
+    type =2
+    imagepath =res_tm640/bord_235_150.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =25
+    top =195
+    right =50
+    bottom =220
+    wtype =37
+    fgc =0
+    bgc =50712
+    textID =ROBOT_STR_COORDINATE_J2
+    align =34
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =35
+    top =255
+    right =145
+    bottom =295
+    wtype =37
+    fgc =0
+    bgc =65535
+    textID =ROBOT_STR_ENCODER_VALUE
+    align =34
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =25
+    top =365
+    right =260
+    bottom =515
+    wtype =37
+    type =2
+    imagepath =res_tm640/bord_235_150.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =25
+    top =365
+    right =50
+    bottom =390
+    wtype =37
+    fgc =0
+    bgc =50712
+    textID =ROBOT_STR_COORDINATE_J3
+    align =34
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =35
+    top =425
+    right =145
+    bottom =465
+    wtype =37
+    fgc =0
+    bgc =65535
+    textID =ROBOT_STR_ENCODER_VALUE
+    align =34
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =25
+    top =535
+    right =260
+    bottom =685
+    wtype =37
+    type =2
+    imagepath =res_tm640/bord_235_150.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =25
+    top =535
+    right =50
+    bottom =560
+    wtype =37
+    fgc =0
+    bgc =50712
+    textID =ROBOT_STR_COORDINATE_J4
+    align =34
+  end
+  LinuxCtmStaticX210:CtmStaticX2
+    left =35
+    top =595
+    right =145
+    bottom =635
+    wtype =37
+    fgc =0
+    bgc =65535
+    textID =ROBOT_STR_ENCODER_VALUE
+    align =34
+  end
+  EditEncoderJ1:CtmEditX1
+    left =35
+    top =125
+    right =145
+    bottom =160
+    wtype =37
+    fgc =0
+    bgc =65535
+    maxchar =14
+    align =0
+    max =9999999999
+    maxdb =FALSE
+  end
+  EditEncoderJ2:CtmEditX1
+    left =35
+    top =295
+    right =145
+    bottom =330
+    wtype =37
+    fgc =0
+    bgc =65535
+    maxchar =14
+    align =0
+    max =9999999999
+    maxdb =FALSE
+  end
+  EditEncoderJ3:CtmEditX1
+    left =35
+    top =465
+    right =145
+    bottom =500
+    wtype =37
+    fgc =0
+    bgc =65535
+    maxchar =14
+    align =0
+    max =9999999999
+    maxdb =FALSE
+  end
+  EditEncoderJ4:CtmEditX1
+    left =35
+    top =635
+    right =145
+    bottom =670
+    wtype =37
+    fgc =0
+    bgc =65535
+    maxchar =14
+    align =0
+    max =9999999999
+    maxdb =FALSE
+  end
+  BtnBKJ1:CtmToolButton
+    privilege =3
+    left =155
+    top =80
+    right =247
+    bottom =115
+    wtype =39
+    taborder =0
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_BRAKES
+  end
+  BtnBKJ2:CtmToolButton
+    privilege =3
+    left =155
+    top =250
+    right =247
+    bottom =285
+    wtype =39
+    taborder =1
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_BRAKES
+  end
+  BtnBKJ3:CtmToolButton
+    privilege =3
+    left =155
+    top =420
+    right =247
+    bottom =455
+    wtype =39
+    taborder =2
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_BRAKES
+  end
+  BtnBKJ4:CtmToolButton
+    privilege =3
+    left =155
+    top =590
+    right =247
+    bottom =625
+    wtype =39
+    taborder =3
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_BRAKES
+  end
+  BtnCorrection01:CtmToolButton
+    privilege =3
+    left =155
+    top =35
+    right =247
+    bottom =70
+    wtype =39
+    taborder =6
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_CORRECTION
+  end
+  BtnCorrection02:CtmToolButton
+    privilege =3
+    left =155
+    top =205
+    right =247
+    bottom =240
+    wtype =39
+    taborder =7
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_CORRECTION
+  end
+  BtnCorrection03:CtmToolButton
+    privilege =3
+    left =155
+    top =375
+    right =247
+    bottom =410
+    wtype =39
+    taborder =8
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_CORRECTION
+  end
+  BtnCorrection04:CtmToolButton
+    privilege =3
+    left =155
+    top =545
+    right =247
+    bottom =580
+    wtype =39
+    taborder =9
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_CORRECTION
+  end
+  BtnZero01:CtmToolButton
+    privilege =3
+    left =155
+    top =125
+    right =247
+    bottom =160
+    wtype =39
+    taborder =12
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_MULTITURN_ZERO
+  end
+  BtnZero02:CtmToolButton
+    privilege =3
+    left =155
+    top =295
+    right =247
+    bottom =330
+    wtype =39
+    taborder =13
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_MULTITURN_ZERO
+  end
+  BtnZero03:CtmToolButton
+    privilege =3
+    left =155
+    top =465
+    right =247
+    bottom =500
+    wtype =39
+    taborder =14
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_MULTITURN_ZERO
+  end
+  BtnZero04:CtmToolButton
+    privilege =3
+    left =155
+    top =635
+    right =247
+    bottom =670
+    wtype =39
+    taborder =15
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_MULTITURN_ZERO
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =25
+    top =25
+    right =50
+    bottom =50
+    wtype =37
+    fgc =0
+    bgc =50712
+    textID =ROBOT_STR_COORDINATE_J1
+    align =34
+  end
+  StaticBrake01:CtmStaticX2
+    left =62
+    top =37
+    right =143
+    bottom =73
+    wtype =48
+    fgc =0
+    bgc =65535
+    textID =ROBOT_BTN_BRAKES_ON
+    align =34
+  end
+  StaticBrake02:CtmStaticX2
+    left =62
+    top =207
+    right =143
+    bottom =243
+    wtype =48
+    fgc =0
+    bgc =65535
+    textID =ROBOT_BTN_BRAKES_ON
+    align =34
+  end
+  StaticBrake03:CtmStaticX2
+    left =62
+    top =377
+    right =143
+    bottom =413
+    wtype =48
+    fgc =0
+    bgc =65535
+    textID =ROBOT_BTN_BRAKES_ON
+    align =34
+  end
+  StaticBrake04:CtmStaticX2
+    left =62
+    top =547
+    right =143
+    bottom =583
+    wtype =48
+    fgc =0
+    bgc =65535
+    textID =ROBOT_BTN_BRAKES_ON
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =560
+    top =200
+    right =590
+    bottom =263
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J1
+    align =34
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =560
+    top =286
+    right =590
+    bottom =349
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J2
+    align =34
+  end
+  LinuxCtmStaticX215:CtmStaticX2
+    left =560
+    top =372
+    right =590
+    bottom =435
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J3
+    align =34
+  end
+  LinuxCtmStaticX216:CtmStaticX2
+    left =560
+    top =458
+    right =590
+    bottom =521
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J4
+    align =34
+  end
+  LinuxCtmStaticX217:CtmStaticX2
+    left =560
+    top =544
+    right =590
+    bottom =607
+    wtype =48
+    fgc =0
+    textID =x
+    align =34
+  end
+  LinuxCtmStaticX218:CtmStaticX2
+    left =560
+    top =630
+    right =590
+    bottom =693
+    wtype =48
+    fgc =0
+    textID =x
+    align =34
+  end
+  LinuxCtmStaticX247:CtmStaticX2
+    left =560
+    top =716
+    right =590
+    bottom =779
+    wtype =48
+    fgc =0
+    textID =x
+    align =34
+  end
+  LinuxCtmStaticX231:CtmStaticX2
+    left =560
+    top =802
+    right =590
+    bottom =865
+    wtype =48
+    fgc =0
+    textID =x
+    align =34
+  end
+  LinuxCtmLineTable1:CtmLineTable
+    left =400
+    top =450
+    right =540
+    bottom =822
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =419
+    top =522
+    right =523
+    bottom =556
+    wtype =54
+    fgc =0
+    textID =ROBOT_STR_SPEED
+    align =34
+  end
+  StaticSpeedShow:CtmStaticX2
+    left =419
+    top =557
+    right =523
+    bottom =591
+    wtype =37
+    fgc =0
+    bgc =55068
+    text =40%
+    align =34
+  end
+  btnPlus:CtmToolButton
+    left =419
+    top =591
+    right =470
+    bottom =631
+    wtype =39
+    taborder =31
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_PLUS
+  end
+  btnMinus:CtmToolButton
+    left =472
+    top =591
+    right =523
+    bottom =631
+    wtype =39
+    taborder =32
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_MINUS
+  end
+  LinuxCtmStaticX221:CtmStaticX2
+    left =419
+    top =651
+    right =523
+    bottom =685
+    wtype =54
+    fgc =0
+    textID =ROBOT_STR_MOVE_MODE
+    align =34
+  end
+  LinuxCtmStaticX222:CtmStaticX2
+    left =420
+    top =735
+    right =524
+    bottom =769
+    wtype =54
+    fgc =0
+    textID =ROBOT_STR_JOG
+    align =34
+  end
+  SelectEditJog:CtmSelectEdit
+    left =420
+    top =770
+    right =524
+    bottom =802
+    wtype =37
+    taborder =34
+    maxchar =15
+    listnum =3
+    strID0 =ROBOT_STR_INC_POS_1
+    strID1 =ROBOT_STR_INC_POS_2
+    strID2 =ROBOT_STR_INC_POS_3
+  end
+  BtnMoveMode:CtmToolButton
+    left =419
+    top =686
+    right =523
+    bottom =718
+    wtype =39
+    taborder =33
+    fgc =65535
+    bgc =1046
+    buttontype =0
+  end
+  BtnCoordinateMM:CtmToolButton
+    left =419
+    top =461
+    right =523
+    bottom =495
+    wtype =39
+    taborder =0
+    fgc =65535
+    bgc =16
+    buttontype =0
+  end
+  LinuxCtmStaticX248:CtmStaticX2
+    left =401
+    top =386
+    right =540
+    bottom =430
+    wtype =54
+    fgc =0
+    textID =ROBOT_VIEW_MANUALMODE
+    align =34
+  end
+end

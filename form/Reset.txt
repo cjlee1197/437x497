@@ -1,0 +1,124 @@
+ViewReset:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =777
+  wtype =48
+  titleID =MSG_RESET
+  printname =2-7-4-Reset.bmp
+  StaticMSG_RESET_MMI:CtmStaticX2
+    left =121
+    top =153
+    right =416
+    bottom =185
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =MSG_RESET_MMI
+    align =34
+  end
+  CheckBoxRESET_ALL:CtmCheckBox
+    left =121
+    top =199
+    right =240
+    bottom =227
+    wtype =48
+    taborder =1
+    fgc =0
+    fontsize =1
+    textID =VW_RESET_ALL
+    promptID =MSG_SYSTEM_CHECKBOX
+  end
+  CheckBoxRESET_MOLD:CtmCheckBox
+    left =121
+    top =239
+    right =240
+    bottom =267
+    wtype =48
+    taborder =2
+    fgc =0
+    fontsize =1
+    textID =VW_RESET_MOLDSETDATA
+    promptID =MSG_SYSTEM_CHECKBOX
+  end
+  CheckBoxRESET_MACHINE:CtmCheckBox
+    left =304
+    top =239
+    right =424
+    bottom =267
+    wtype =48
+    taborder =3
+    fgc =0
+    fontsize =1
+    textID =VW_MACH_MACHDATA
+    promptID =MSG_SYSTEM_CHECKBOX
+  end
+  buttonCONFIRM:CtmToolButton
+    left =121
+    top =289
+    right =241
+    bottom =321
+    wtype =36
+    taborder =10
+    bgc =54970
+    fontsize =1
+    buttontype =0
+    align =34
+    captionID =MSG_ENTER
+    key =7178
+  end
+  buttonCANCEL:CtmToolButton
+    left =304
+    top =289
+    right =424
+    bottom =321
+    wtype =36
+    taborder =11
+    bgc =54970
+    fontsize =1
+    buttontype =0
+    align =34
+    captionID =MSG_CANCEL1
+    key =11779
+  end
+  BtnBack:CtmToolButton
+    left =68
+    top =820
+    right =152
+    bottom =877
+    wtype =48
+    taborder =72
+    align =18
+    upbitmap =res_tm640/pic/BtnBackUp.bmp
+    key =72
+    action =255
+    formname =Param.txt
+  end
+  BtnHome:CtmToolButton
+    left =244
+    top =820
+    right =328
+    bottom =877
+    wtype =48
+    taborder =70
+    align =18
+    upbitmap =res_tm640/pic/BtnHomeUp.bmp
+    key =70
+    action =255
+    formname =Param.txt
+  end
+  BtnMenu:CtmToolButton
+    left =420
+    top =820
+    right =504
+    bottom =877
+    wtype =48
+    taborder =71
+    align =18
+    upbitmap =res_tm640/pic/BtnMenuUp.bmp
+    key =71
+    action =255
+    formname =Param.txt
+  end
+end

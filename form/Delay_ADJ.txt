@@ -1,0 +1,233 @@
+ViewDelay_ADJ:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =INDEX_DELAY_ADJ
+  printname =DELAY_ADJ.bmp
+  MARM_FWD_DT:CtmEditX1
+    left =293
+    top =204
+    right =381
+    bottom =236
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =188
+    top =204
+    right =288
+    bottom =236
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =DELAY_ADJ_MARM_FWD_DT
+  end
+  MARM_BWD_DT:CtmEditX1
+    left =293
+    top =260
+    right =381
+    bottom =292
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =188
+    top =260
+    right =288
+    bottom =292
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =DELAY_ADJ_MARM_BWD_DT
+  end
+  LinuxCtmStaticX216:CtmStaticX2
+    left =293
+    top =156
+    right =381
+    bottom =188
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_INJPRO_SECOND
+    align =34
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =172
+    top =204
+    right =188
+    bottom =236
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =172
+    top =260
+    right =188
+    bottom =292
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =382
+    top =204
+    right =414
+    bottom =236
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_CHARGE_SEC
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =382
+    top =260
+    right =414
+    bottom =292
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_CHARGE_SEC
+  end
+  PICK_DT:CtmEditX1
+    left =293
+    top =316
+    right =381
+    bottom =348
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =188
+    top =316
+    right =288
+    bottom =348
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =DELAY_ADJ_PICK_DT
+  end
+  EJET_DT:CtmEditX1
+    left =293
+    top =372
+    right =381
+    bottom =404
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =188
+    top =372
+    right =288
+    bottom =404
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =DELAY_ADJ_EJET_DT
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =172
+    top =316
+    right =188
+    bottom =348
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =172
+    top =372
+    right =188
+    bottom =404
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =382
+    top =316
+    right =414
+    bottom =348
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_CHARGE_SEC
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =382
+    top =372
+    right =414
+    bottom =404
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_CHARGE_SEC
+  end
+end

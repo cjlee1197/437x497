@@ -1,0 +1,213 @@
+ViewQTeachDone:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =TEACH_QTEACH_DONE
+  printname =QTeach_Done.bmp
+  BtnDownload:CtmToolButton
+    left =237
+    top =424
+    right =347
+    bottom =484
+    wtype =48
+    taborder =3
+    bgc =54970
+    titleID =PICKER_ACTION
+    fontsize =1
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/PGBtn_Download.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+  end
+  LoadingBar:CtmStaticX2
+    left =96
+    top =524
+    right =124
+    bottom =556
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+  LoadingMask:CtmStaticX2
+    left =96
+    top =524
+    right =280
+    bottom =556
+    wtype =39
+    fgc =65535
+    bgc =63422
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =237
+    top =484
+    right =347
+    bottom =516
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_DOWNLOAD
+    align =34
+  end
+  LoadingStr:CtmStaticX2
+    left =280
+    top =524
+    right =312
+    bottom =556
+    wtype =39
+    fgc =0
+    bgc =63422
+    fontsize =1
+    bordercolor =35953
+    text =100
+    align =34
+  end
+  LoadingMask2:CtmStaticX2
+    left =312
+    top =524
+    right =496
+    bottom =556
+    wtype =39
+    fgc =65535
+    bgc =63422
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+  BtnLastP:CtmToolButton
+    left =240
+    top =594
+    right =350
+    bottom =654
+    wtype =48
+    taborder =2
+    bgc =54970
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =TEACH_QTEACH_BACK_EDIT
+    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    key =9
+  end
+  Img_QTeach_Done:CtmImageBox
+    left =72
+    top =112
+    right =522
+    bottom =382
+    type =2
+    imagepath =res_tm640/pic/picker/QTeach_ReadyDownP.bmp
+    keycolor =63519
+  end
+  Btn_SingleNextStep:CtmToolButton
+    left =392
+    top =682
+    right =502
+    bottom =742
+    wtype =48
+    taborder =1
+    bgc =54970
+    titleID =PICKER_ACTION
+    fontsize =1
+    enabled =FALSE
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/PGBtn_NextStep.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+  end
+  Btn_SingleCycle:CtmToolButton
+    left =240
+    top =682
+    right =350
+    bottom =742
+    wtype =48
+    taborder =15
+    bgc =54970
+    titleID =PICKER_ACTION
+    fontsize =1
+    enabled =FALSE
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    LinuxCtmImageBox10:CtmImageBox
+      left =0
+      top =0
+      right =110
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/PGBtn_SingleCyc.bmp
+    end
+  end
+  Str_SingleCycle:CtmStaticX2
+    left =240
+    top =742
+    right =350
+    bottom =774
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_SINGLECYCLE
+    align =34
+  end
+  Str_SingleNextStep:CtmStaticX2
+    left =392
+    top =742
+    right =502
+    bottom =774
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_NEXTSTEP
+    align =34
+  end
+  Btn_SingleStep:CtmToolButton
+    left =85
+    top =682
+    right =195
+    bottom =742
+    wtype =48
+    taborder =4
+    bgc =54970
+    fontsize =1
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/PGBtn_SingleRun.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+  end
+  Str_SingleStep:CtmStaticX2
+    left =85
+    top =742
+    right =195
+    bottom =774
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_SINGLE_START
+    align =34
+  end
+  Mask_SingleStep:CtmStaticX2
+    left =72
+    top =664
+    right =512
+    bottom =800
+    wtype =32
+    bgc =63422
+  end
+end

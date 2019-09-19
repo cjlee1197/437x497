@@ -1,0 +1,426 @@
+ViewMsgBoxMoveCommandRel:CtmFormView
+  left =60
+  top =94
+  right =595
+  bottom =664
+  wtype =34871
+  bgc =65535
+  extag =10000
+  LinuxCtmImageBox1:CtmImageBox
+    left =0
+    top =0
+    right =535
+    bottom =570
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_535X570.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =28
+    top =359
+    right =507
+    bottom =491
+    wtype =5
+    bgc =42260
+    bordercolor =0
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =28
+    top =167
+    right =507
+    bottom =360
+    wtype =5
+    bgc =42260
+    bordercolor =0
+  end
+  EditTABLE01:CtmEditX1
+    left =85
+    top =232
+    right =218
+    bottom =262
+    wtype =35
+    taborder =4
+    fontsize =2
+    type =18
+    maxchar =9
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TableStatic00:CtmStaticX2
+    left =57
+    top =234
+    right =85
+    bottom =262
+    wtype =48
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_X
+  end
+  StaticUnit01:CtmStaticX2
+    left =218
+    top =234
+    right =253
+    bottom =262
+    wtype =48
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_UNIT_MM
+  end
+  EditTABLE02:CtmEditX1
+    left =85
+    top =273
+    right =218
+    bottom =303
+    wtype =35
+    taborder =5
+    fontsize =2
+    type =18
+    maxchar =9
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TableStatic01:CtmStaticX2
+    left =57
+    top =274
+    right =85
+    bottom =302
+    wtype =48
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Y
+  end
+  StaticUnit02:CtmStaticX2
+    left =218
+    top =274
+    right =253
+    bottom =302
+    wtype =48
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_UNIT_MM
+  end
+  EditTABLE03:CtmEditX1
+    left =85
+    top =317
+    right =218
+    bottom =347
+    wtype =35
+    taborder =6
+    fontsize =2
+    type =18
+    maxchar =9
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TableStatic02:CtmStaticX2
+    left =57
+    top =318
+    right =85
+    bottom =346
+    wtype =48
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Z
+  end
+  StaticUnit03:CtmStaticX2
+    left =218
+    top =318
+    right =253
+    bottom =346
+    wtype =48
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_UNIT_MM
+  end
+  EditTABLE04:CtmEditX1
+    left =309
+    top =233
+    right =442
+    bottom =263
+    wtype =35
+    taborder =7
+    fontsize =2
+    type =18
+    maxchar =6
+    align =36
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TableStatic03:CtmStaticX2
+    left =281
+    top =234
+    right =309
+    bottom =262
+    wtype =48
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RZ
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =442
+    top =234
+    right =477
+    bottom =262
+    wtype =48
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_UNIT_DEG
+  end
+  SelectMoveType:CtmSelectEdit
+    left =136
+    top =38
+    right =318
+    bottom =78
+    taborder =0
+    fontsize =2
+    maxchar =21
+    listnum =3
+    strID0 =ROBOT_COMMAND_PTPREL
+    strID1 =ROBOT_COMMAND_LINREL
+    strID2 =ROBOT_COMMAND_CIRCREL
+  end
+  ShowMoveType:CtmImageBox
+    left =351
+    top =20
+    right =481
+    bottom =90
+    wtype =37
+    imagepath =res_tm640/PTP.png
+  end
+  StaticMessage:CtmStaticX2
+    left =46
+    top =370
+    right =186
+    bottom =398
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_MSG_STR_MOVEPARA
+    align =34
+  end
+  btnOK:CtmToolButton
+    left =74
+    top =511
+    right =194
+    bottom =551
+    wtype =39
+    taborder =17
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_OK
+  end
+  btnCancel:CtmToolButton
+    left =340
+    top =511
+    right =460
+    bottom =551
+    wtype =39
+    taborder =18
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =38
+    top =41
+    right =136
+    bottom =76
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_MOVE_MODE
+  end
+  btnSpeedP:CtmToolButton
+    left =63
+    top =439
+    right =117
+    bottom =477
+    wtype =39
+    taborder =8
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_PLUS
+  end
+  btnSpeedM:CtmToolButton
+    left =185
+    top =439
+    right =239
+    bottom =477
+    wtype =39
+    taborder =9
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_MINUS
+  end
+  ShowSpeed:CtmStaticX2
+    left =116
+    top =438
+    right =186
+    bottom =477
+    wtype =37
+    fgc =0
+    bgc =50712
+    fontsize =2
+    align =34
+  end
+  StaticSpeed:CtmStaticX2
+    left =63
+    top =404
+    right =239
+    bottom =439
+    wtype =37
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_STR_SPEED
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =28
+    top =110
+    right =507
+    bottom =168
+    wtype =5
+    bgc =42260
+    bordercolor =0
+  end
+  TitleSetOne:CtmToolButton
+    left =201
+    top =119
+    right =341
+    bottom =159
+    wtype =34
+    taborder =1
+    bgc =2047
+    fontsize =2
+    bordercolor =0
+    buttontype =0
+    captionID =ROBOT_MSG_COMMAND_MOVE_GOTO
+  end
+  SelectPointType:CtmSelectEdit
+    left =37
+    top =119
+    right =187
+    bottom =159
+    taborder =3
+    fontsize =2
+    maxchar =20
+    maxindex =2
+    listnum =2
+    strID0 =ROBOT_POINT_TYPE_REL_COORD
+    strID1 =ROBOT_POINT_TYPE_REL_AXIS
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =54
+    top =185
+    right =292
+    bottom =220
+    wtype =37
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_MSG_COMMAND_INPUT_CUSTOM
+  end
+  TitleSetTwoMark:CtmStaticX2
+    left =352
+    top =115
+    right =500
+    bottom =162
+    bgc =42260
+    bordercolor =0
+  end
+  TitleSetTwo:CtmToolButton
+    left =356
+    top =119
+    right =496
+    bottom =159
+    wtype =34
+    taborder =2
+    bgc =50712
+    fontsize =2
+    bordercolor =0
+    buttontype =0
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =293
+    top =405
+    right =469
+    bottom =440
+    wtype =37
+    fgc =0
+    bgc =50712
+    fontsize =2
+    textID =ROBOT_STR_SOFTNESS
+    align =34
+  end
+  btnSoftNessP:CtmToolButton
+    left =293
+    top =440
+    right =346
+    bottom =478
+    wtype =39
+    taborder =20
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_PLUS
+  end
+  ShowSoftNess:CtmStaticX2
+    left =346
+    top =439
+    right =416
+    bottom =478
+    wtype =37
+    fgc =0
+    bgc =50712
+    fontsize =2
+    align =34
+  end
+  btnSoftNessM:CtmToolButton
+    left =416
+    top =440
+    right =470
+    bottom =478
+    wtype =39
+    taborder =21
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_MINUS
+  end
+end

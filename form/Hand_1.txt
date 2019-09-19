@@ -1,0 +1,750 @@
+ViewHand:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  fgc =36049
+  titleID =PICKER_HAND
+  printname =Hand.bmp
+  BtnServo:CtmToolButton
+    left =379
+    top =134
+    right =489
+    bottom =202
+    wtype =33
+    taborder =100
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    LinuxCtmImageBox1:CtmImageBox
+      left =29
+      top =8
+      right =81
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/servo.bmp
+      keycolor =63519
+    end
+  end
+  BmpServo:CtmImageBox
+    left =348
+    top =156
+    right =373
+    bottom =181
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  SelectEditManualType:CtmSelectEdit
+    left =471
+    top =6
+    right =581
+    bottom =46
+    wtype =55
+    taborder =50
+    fgc =0
+    bgc =65535
+    visible =FALSE
+    bordercolor =33808
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_TYPE
+    maxchar =20
+    focuscolor =64876
+    promptID =MSG_SYSTEM_CHECKBOX
+    listnum =2
+    strID0 =PICKER_CONTINUE
+    strID1 =PICKER_POINTMOVE
+  end
+  EditSet_X_FWDSpeed:CtmEditX1
+    left =28
+    top =282
+    right =98
+    bottom =322
+    wtype =35
+    taborder =51
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    min =1
+    max =10
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS1_FWD_PERCENTAGEOFSPEED
+  end
+  CtmStaticXSetS1Unit:CtmStaticX2
+    left =100
+    top =290
+    right =130
+    bottom =316
+    wtype =48
+    fgc =0
+    bgc =42652
+    fontsize =1
+    colorcontrol =4
+    colorchange =20
+    destcolor =28057
+    bordercolor =65535
+    textID =VW_UNIT_PERCENT
+    textID1 =DLG_SYSTEM_PERCENT
+  end
+  LinuxCtmStaticX234:CtmStaticX2
+    left =100
+    top =389
+    right =130
+    bottom =415
+    wtype =48
+    fgc =0
+    bgc =42652
+    fontsize =1
+    colorcontrol =4
+    colorchange =20
+    destcolor =28057
+    bordercolor =65535
+    textID =VW_UNIT_PERCENT
+    textID1 =DLG_SYSTEM_PERCENT
+  end
+  EditSet_Y_FWDSpeed:CtmEditX1
+    left =28
+    top =381
+    right =98
+    bottom =421
+    wtype =35
+    taborder =52
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    min =1
+    max =10
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS2_FWD_PERCENTAGEOFSPEED
+  end
+  LinuxCtmStaticX237:CtmStaticX2
+    left =100
+    top =492
+    right =130
+    bottom =518
+    wtype =48
+    fgc =0
+    bgc =42652
+    fontsize =1
+    colorcontrol =4
+    colorchange =20
+    destcolor =28057
+    bordercolor =65535
+    textID =VW_UNIT_PERCENT
+    textID1 =DLG_SYSTEM_PERCENT
+  end
+  EditSet_Z_FWDSpeed:CtmEditX1
+    left =28
+    top =484
+    right =98
+    bottom =524
+    wtype =35
+    taborder =53
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    min =1
+    max =10
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS3_FWD_PERCENTAGEOFSPEED
+  end
+  EditSet_Z_PreDistance:CtmEditX1
+    left =164
+    top =484
+    right =234
+    bottom =524
+    wtype =35
+    taborder =63
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    min =1
+    max =1000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS3_MINPOSITION
+  end
+  EditSet_Y_PreDistance:CtmEditX1
+    left =164
+    top =381
+    right =234
+    bottom =421
+    wtype =35
+    taborder =62
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    min =1
+    max =1000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS2_MINPOSITION
+  end
+  EditSet_X_PreDistance:CtmEditX1
+    left =164
+    top =282
+    right =234
+    bottom =322
+    wtype =35
+    taborder =61
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    min =1
+    max =1000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS1_MINPOSITION
+  end
+  Button_para:CtmToolButton
+    left =20
+    top =4
+    right =120
+    bottom =54
+    wtype =48
+    taborder =1
+    fontsize =1
+    align =34
+    captionID =BTN_02_PARA
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
+  end
+  Button_out:CtmToolButton
+    left =120
+    top =4
+    right =220
+    bottom =54
+    wtype =48
+    taborder =2
+    fontsize =1
+    align =34
+    captionID =VW_CHARGE_BACKPRSVALVE_HELP_OUT
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Hand_2.txt
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =237
+    top =290
+    right =280
+    bottom =314
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =237
+    top =389
+    right =280
+    bottom =413
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =237
+    top =492
+    right =280
+    bottom =516
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  EditSet_X2_FWDSpeed:CtmEditX1
+    left =28
+    top =586
+    right =98
+    bottom =626
+    wtype =35
+    taborder =54
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    max =10
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS4_FWD_PERCENTAGEOFSPEED
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =100
+    top =594
+    right =130
+    bottom =620
+    wtype =48
+    fgc =0
+    bgc =42652
+    fontsize =1
+    colorcontrol =4
+    colorchange =20
+    destcolor =28057
+    bordercolor =65535
+    textID =VW_UNIT_PERCENT
+    textID1 =DLG_SYSTEM_PERCENT
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =100
+    top =693
+    right =130
+    bottom =719
+    wtype =48
+    fgc =0
+    bgc =42652
+    fontsize =1
+    colorcontrol =4
+    colorchange =20
+    destcolor =28057
+    bordercolor =65535
+    textID =VW_UNIT_PERCENT
+    textID1 =DLG_SYSTEM_PERCENT
+  end
+  EditSet_Y2_FWDSpeed:CtmEditX1
+    left =28
+    top =685
+    right =98
+    bottom =725
+    wtype =35
+    taborder =55
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    max =10
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS5_FWD_PERCENTAGEOFSPEED
+  end
+  EditSet_Y2_PreDistance:CtmEditX1
+    left =164
+    top =685
+    right =234
+    bottom =725
+    wtype =35
+    taborder =65
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    min =1
+    max =1000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS5_MINPOSITION
+  end
+  EditSet_X2_PreDistance:CtmEditX1
+    left =164
+    top =586
+    right =234
+    bottom =626
+    wtype =35
+    taborder =64
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    min =1
+    max =1000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS4_MINPOSITION
+  end
+  LinuxCtmStaticX210:CtmStaticX2
+    left =237
+    top =594
+    right =280
+    bottom =618
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =237
+    top =693
+    right =280
+    bottom =717
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  Button_X_Back:CtmToolButton
+    left =310
+    top =266
+    right =420
+    bottom =334
+    wtype =33
+    taborder =71
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =30
+    LinuxCtmImageBox8:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/X_Back.bmp
+      keycolor =63519
+    end
+  end
+  Button_X_FWD:CtmToolButton
+    left =445
+    top =266
+    right =555
+    bottom =334
+    wtype =33
+    taborder =66
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =77
+    LinuxCtmImageBox6:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/X_FWD.bmp
+      keycolor =63519
+    end
+  end
+  Button_Y_Back:CtmToolButton
+    left =310
+    top =365
+    right =420
+    bottom =433
+    wtype =33
+    taborder =72
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =31
+    LinuxCtmImageBox10:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/Y_Back.bmp
+      keycolor =63519
+    end
+  end
+  Button_Y_FWD:CtmToolButton
+    left =445
+    top =365
+    right =555
+    bottom =433
+    wtype =33
+    taborder =67
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =28
+    LinuxCtmImageBox7:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/Y_FWD.bmp
+      keycolor =63519
+    end
+  end
+  Button_Z_Back:CtmToolButton
+    left =310
+    top =468
+    right =420
+    bottom =536
+    wtype =33
+    taborder =73
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =32
+    LinuxCtmImageBox11:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/Z_Back.bmp
+      keycolor =63519
+    end
+  end
+  Button_Z_FWD:CtmToolButton
+    left =445
+    top =468
+    right =555
+    bottom =536
+    wtype =33
+    taborder =68
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =29
+    LinuxCtmImageBox9:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/Z_FWD.bmp
+      keycolor =63519
+    end
+  end
+  Button_X2_Back:CtmToolButton
+    left =310
+    top =570
+    right =420
+    bottom =638
+    wtype =33
+    taborder =80
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =30
+    LinuxCtmImageBox3:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/X2_Back.bmp
+      keycolor =63519
+    end
+  end
+  Button_X2_FWD:CtmToolButton
+    left =445
+    top =570
+    right =555
+    bottom =638
+    wtype =33
+    taborder =69
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =77
+    LinuxCtmImageBox2:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/X2_FWD.bmp
+      keycolor =63519
+    end
+  end
+  Button_Y2_Back:CtmToolButton
+    left =310
+    top =669
+    right =420
+    bottom =737
+    wtype =33
+    taborder =81
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =31
+    LinuxCtmImageBox12:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/Y2_Back.bmp
+      keycolor =63519
+    end
+  end
+  Button_Y2_FWD:CtmToolButton
+    left =445
+    top =669
+    right =555
+    bottom =737
+    wtype =33
+    taborder =70
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =28
+    LinuxCtmImageBox4:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/Y2_FWD.bmp
+      keycolor =63519
+    end
+  end
+  StaticEdit_ForwardSpeed:CtmStaticX2
+    left =44
+    top =212
+    right =154
+    bottom =244
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_FORWARDSPEED
+    align =34
+  end
+  StaticEdit_PointDistance:CtmStaticX2
+    left =180
+    top =212
+    right =290
+    bottom =244
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_POINTDISTANCE
+    align =34
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =368
+    top =84
+    right =488
+    bottom =116
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =O_SDR_067
+    align =34
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =352
+    top =84
+    right =368
+    bottom =116
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox14:CtmImageBox
+    left =28
+    top =212
+    right =44
+    bottom =244
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox15:CtmImageBox
+    left =164
+    top =212
+    right =180
+    bottom =244
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+end

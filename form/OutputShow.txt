@@ -1,0 +1,552 @@
+ViewIOShow:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =451
+  titleID =ROBOT_VIEW_OUTPUT
+  printname =OutputShow.bmp
+  OnCreateA =OnCreate_Output
+  Static0:CtmStaticX2
+    left =20
+    top =18
+    right =370
+    bottom =38
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static1:CtmStaticX2
+    left =405
+    top =18
+    right =755
+    bottom =38
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static2:CtmStaticX2
+    left =20
+    top =44
+    right =370
+    bottom =64
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static3:CtmStaticX2
+    left =405
+    top =44
+    right =755
+    bottom =64
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static10:CtmStaticX2
+    left =20
+    top =70
+    right =370
+    bottom =90
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static11:CtmStaticX2
+    left =405
+    top =70
+    right =755
+    bottom =90
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static12:CtmStaticX2
+    left =20
+    top =96
+    right =370
+    bottom =116
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static13:CtmStaticX2
+    left =405
+    top =96
+    right =755
+    bottom =116
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static20:CtmStaticX2
+    left =20
+    top =122
+    right =370
+    bottom =142
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static21:CtmStaticX2
+    left =405
+    top =122
+    right =755
+    bottom =142
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static22:CtmStaticX2
+    left =20
+    top =148
+    right =370
+    bottom =168
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static23:CtmStaticX2
+    left =405
+    top =148
+    right =755
+    bottom =168
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static30:CtmStaticX2
+    left =20
+    top =174
+    right =370
+    bottom =194
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static31:CtmStaticX2
+    left =405
+    top =174
+    right =755
+    bottom =194
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static32:CtmStaticX2
+    left =20
+    top =200
+    right =370
+    bottom =220
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static33:CtmStaticX2
+    left =405
+    top =200
+    right =755
+    bottom =220
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static40:CtmStaticX2
+    left =20
+    top =226
+    right =370
+    bottom =246
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static41:CtmStaticX2
+    left =405
+    top =226
+    right =755
+    bottom =246
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static42:CtmStaticX2
+    left =20
+    top =252
+    right =370
+    bottom =272
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static43:CtmStaticX2
+    left =405
+    top =252
+    right =755
+    bottom =272
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static50:CtmStaticX2
+    left =20
+    top =278
+    right =370
+    bottom =298
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static51:CtmStaticX2
+    left =405
+    top =278
+    right =755
+    bottom =298
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static52:CtmStaticX2
+    left =20
+    top =304
+    right =370
+    bottom =324
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static53:CtmStaticX2
+    left =405
+    top =304
+    right =755
+    bottom =324
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static60:CtmStaticX2
+    left =20
+    top =330
+    right =370
+    bottom =350
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static61:CtmStaticX2
+    left =405
+    top =330
+    right =755
+    bottom =350
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static62:CtmStaticX2
+    left =20
+    top =356
+    right =370
+    bottom =376
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static63:CtmStaticX2
+    left =405
+    top =356
+    right =755
+    bottom =376
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static70:CtmStaticX2
+    left =20
+    top =382
+    right =370
+    bottom =402
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static71:CtmStaticX2
+    left =405
+    top =382
+    right =755
+    bottom =402
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  Static72:CtmStaticX2
+    left =20
+    top =408
+    right =370
+    bottom =428
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  Static73:CtmStaticX2
+    left =405
+    top =408
+    right =755
+    bottom =428
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  SelectBox0:CtmSelectBox
+    left =49
+    top =18
+    right =59
+    bottom =38
+    wtype =55
+  end
+  SelectBox1:CtmSelectBox
+    left =434
+    top =18
+    right =444
+    bottom =38
+    wtype =55
+    group =1
+  end
+  SelectBox2:CtmSelectBox
+    left =49
+    top =44
+    right =59
+    bottom =64
+    wtype =55
+    group =2
+  end
+  SelectBox3:CtmSelectBox
+    left =434
+    top =44
+    right =444
+    bottom =64
+    wtype =55
+    group =3
+  end
+  SelectBox8:CtmSelectBox
+    left =49
+    top =70
+    right =59
+    bottom =90
+    wtype =55
+    group =8
+  end
+  SelectBox9:CtmSelectBox
+    left =434
+    top =70
+    right =444
+    bottom =90
+    wtype =55
+    group =9
+  end
+  SelectBox10:CtmSelectBox
+    left =49
+    top =96
+    right =59
+    bottom =116
+    wtype =55
+    group =10
+  end
+  SelectBox11:CtmSelectBox
+    left =434
+    top =96
+    right =444
+    bottom =116
+    wtype =55
+    group =11
+  end
+  SelectBox16:CtmSelectBox
+    left =49
+    top =122
+    right =59
+    bottom =142
+    wtype =55
+    group =16
+  end
+  SelectBox17:CtmSelectBox
+    left =434
+    top =122
+    right =444
+    bottom =142
+    wtype =55
+    group =17
+  end
+  SelectBox18:CtmSelectBox
+    left =49
+    top =148
+    right =59
+    bottom =168
+    wtype =55
+    group =18
+  end
+  SelectBox19:CtmSelectBox
+    left =434
+    top =148
+    right =444
+    bottom =168
+    wtype =55
+    group =19
+  end
+  SelectBox24:CtmSelectBox
+    left =49
+    top =174
+    right =59
+    bottom =194
+    wtype =55
+    group =24
+  end
+  SelectBox25:CtmSelectBox
+    left =434
+    top =174
+    right =444
+    bottom =194
+    wtype =55
+    group =25
+  end
+  SelectBox26:CtmSelectBox
+    left =49
+    top =200
+    right =59
+    bottom =220
+    wtype =55
+    group =26
+  end
+  SelectBox27:CtmSelectBox
+    left =434
+    top =200
+    right =444
+    bottom =220
+    wtype =55
+    group =27
+  end
+  SelectBox32:CtmSelectBox
+    left =49
+    top =226
+    right =59
+    bottom =246
+    wtype =55
+    group =32
+  end
+  SelectBox33:CtmSelectBox
+    left =434
+    top =226
+    right =444
+    bottom =246
+    wtype =55
+    group =33
+  end
+  SelectBox34:CtmSelectBox
+    left =49
+    top =252
+    right =59
+    bottom =272
+    wtype =55
+    group =34
+  end
+  SelectBox35:CtmSelectBox
+    left =434
+    top =252
+    right =444
+    bottom =272
+    wtype =55
+    group =35
+  end
+  SelectBox40:CtmSelectBox
+    left =49
+    top =278
+    right =59
+    bottom =298
+    wtype =55
+    group =40
+  end
+  SelectBox41:CtmSelectBox
+    left =434
+    top =278
+    right =444
+    bottom =298
+    wtype =55
+    group =41
+  end
+  SelectBox42:CtmSelectBox
+    left =49
+    top =304
+    right =59
+    bottom =324
+    wtype =55
+    group =42
+  end
+  SelectBox43:CtmSelectBox
+    left =434
+    top =304
+    right =444
+    bottom =324
+    wtype =55
+    group =43
+  end
+  SelectBox48:CtmSelectBox
+    left =49
+    top =330
+    right =59
+    bottom =350
+    wtype =55
+    group =48
+  end
+  SelectBox49:CtmSelectBox
+    left =434
+    top =330
+    right =444
+    bottom =350
+    wtype =55
+    group =49
+  end
+  SelectBox50:CtmSelectBox
+    left =49
+    top =356
+    right =59
+    bottom =376
+    wtype =55
+    group =50
+  end
+  SelectBox51:CtmSelectBox
+    left =434
+    top =356
+    right =444
+    bottom =376
+    wtype =55
+    group =51
+  end
+  SelectBox56:CtmSelectBox
+    left =49
+    top =382
+    right =59
+    bottom =402
+    wtype =55
+    group =56
+  end
+  SelectBox57:CtmSelectBox
+    left =434
+    top =382
+    right =444
+    bottom =402
+    wtype =55
+    group =57
+  end
+  SelectBox58:CtmSelectBox
+    left =49
+    top =408
+    right =59
+    bottom =428
+    wtype =55
+    group =58
+  end
+  SelectBox59:CtmSelectBox
+    left =434
+    top =408
+    right =444
+    bottom =428
+    wtype =55
+    group =59
+  end
+end

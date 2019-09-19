@@ -1,0 +1,1314 @@
+ViewCoordinateSet:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  wtype =32
+  titleID =ROBOT_STR_COORDINATE_TOOL
+  printname =ToolCoordinateSet.bmp
+  OnCreateA =OnCreateA_Tool
+  StaticTitle:CtmStaticX2
+    left =11
+    top =29
+    right =100
+    bottom =64
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_TOOL
+    align =34
+  end
+  BtnPageUp:CtmToolButton
+    left =385
+    top =29
+    right =460
+    bottom =64
+    taborder =90
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_PAGEUP
+  end
+  BtnPageDown:CtmToolButton
+    left =511
+    top =29
+    right =586
+    bottom =64
+    taborder =91
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_PAGEDOWN
+  end
+  StaticAutoAlarm:CtmStaticX2
+    left =90
+    top =29
+    right =380
+    bottom =64
+    wtype =48
+    fgc =63488
+    fontsize =2
+    align =34
+  end
+  StaticShowPage:CtmStaticX2
+    left =467
+    top =29
+    right =503
+    bottom =64
+    wtype =48
+    fgc =0
+    fontsize =2
+    align =34
+  end
+  LinuxCtmLineTable1:CtmLineTable
+    left =10
+    top =88
+    right =590
+    bottom =827
+    stype =49152
+    vertrows =8
+    horicols =2
+    vertpoints0 =92
+    vertpoints1 =92
+    vertpoints2 =92
+    vertpoints3 =92
+    vertpoints4 =92
+    vertpoints5 =92
+    vertpoints6 =92
+    vertpoints7 =92
+    horipoints0 =100
+  end
+  EditTABLE01:CtmEditX1
+    privilege =2
+    left =164
+    top =99
+    right =264
+    bottom =131
+    wtype =35
+    taborder =6
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE02:CtmEditX1
+    privilege =2
+    left =319
+    top =99
+    right =419
+    bottom =131
+    wtype =35
+    taborder =7
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE03:CtmEditX1
+    privilege =2
+    left =474
+    top =99
+    right =574
+    bottom =131
+    wtype =35
+    taborder =8
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE04:CtmEditX1
+    privilege =2
+    left =164
+    top =140
+    right =264
+    bottom =172
+    wtype =35
+    taborder =9
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE11:CtmEditX1
+    privilege =2
+    left =164
+    top =191
+    right =264
+    bottom =223
+    wtype =35
+    taborder =12
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE12:CtmEditX1
+    privilege =2
+    left =319
+    top =191
+    right =419
+    bottom =223
+    wtype =35
+    taborder =13
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE13:CtmEditX1
+    privilege =2
+    left =474
+    top =191
+    right =574
+    bottom =223
+    wtype =35
+    taborder =14
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE14:CtmEditX1
+    privilege =2
+    left =164
+    top =232
+    right =264
+    bottom =264
+    wtype =35
+    taborder =15
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE21:CtmEditX1
+    privilege =2
+    left =164
+    top =283
+    right =264
+    bottom =315
+    wtype =35
+    taborder =18
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE22:CtmEditX1
+    privilege =2
+    left =319
+    top =283
+    right =419
+    bottom =315
+    wtype =35
+    taborder =19
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE23:CtmEditX1
+    privilege =2
+    left =474
+    top =283
+    right =574
+    bottom =315
+    wtype =35
+    taborder =20
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE24:CtmEditX1
+    privilege =2
+    left =164
+    top =324
+    right =264
+    bottom =356
+    wtype =35
+    taborder =21
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE31:CtmEditX1
+    privilege =2
+    left =164
+    top =375
+    right =264
+    bottom =407
+    wtype =35
+    taborder =24
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE32:CtmEditX1
+    privilege =2
+    left =319
+    top =375
+    right =419
+    bottom =407
+    wtype =35
+    taborder =25
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE33:CtmEditX1
+    privilege =2
+    left =474
+    top =375
+    right =574
+    bottom =407
+    wtype =35
+    taborder =26
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE34:CtmEditX1
+    privilege =2
+    left =164
+    top =416
+    right =264
+    bottom =448
+    wtype =35
+    taborder =27
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE41:CtmEditX1
+    privilege =2
+    left =164
+    top =467
+    right =264
+    bottom =499
+    wtype =35
+    taborder =30
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE42:CtmEditX1
+    privilege =2
+    left =319
+    top =467
+    right =419
+    bottom =499
+    wtype =35
+    taborder =31
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE43:CtmEditX1
+    privilege =2
+    left =474
+    top =467
+    right =574
+    bottom =499
+    wtype =35
+    taborder =32
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE44:CtmEditX1
+    privilege =2
+    left =164
+    top =508
+    right =264
+    bottom =540
+    wtype =35
+    taborder =33
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE51:CtmEditX1
+    privilege =2
+    left =164
+    top =559
+    right =264
+    bottom =591
+    wtype =35
+    taborder =36
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE52:CtmEditX1
+    privilege =2
+    left =319
+    top =559
+    right =419
+    bottom =591
+    wtype =35
+    taborder =37
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE53:CtmEditX1
+    privilege =2
+    left =474
+    top =559
+    right =574
+    bottom =591
+    wtype =35
+    taborder =38
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE54:CtmEditX1
+    privilege =2
+    left =164
+    top =600
+    right =264
+    bottom =632
+    wtype =35
+    taborder =39
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE61:CtmEditX1
+    privilege =2
+    left =164
+    top =651
+    right =264
+    bottom =683
+    wtype =35
+    taborder =42
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE62:CtmEditX1
+    privilege =2
+    left =319
+    top =651
+    right =419
+    bottom =683
+    wtype =35
+    taborder =43
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE63:CtmEditX1
+    privilege =2
+    left =474
+    top =651
+    right =574
+    bottom =683
+    wtype =35
+    taborder =44
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE64:CtmEditX1
+    privilege =2
+    left =164
+    top =692
+    right =264
+    bottom =724
+    wtype =35
+    taborder =45
+    bgc =65500
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE71:CtmEditX1
+    privilege =2
+    left =164
+    top =743
+    right =264
+    bottom =775
+    wtype =35
+    taborder =48
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE72:CtmEditX1
+    privilege =2
+    left =319
+    top =743
+    right =419
+    bottom =775
+    wtype =35
+    taborder =49
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE73:CtmEditX1
+    privilege =2
+    left =474
+    top =743
+    right =574
+    bottom =775
+    wtype =35
+    taborder =50
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-9999999
+    max =9999999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE74:CtmEditX1
+    privilege =2
+    left =164
+    top =784
+    right =264
+    bottom =816
+    wtype =35
+    taborder =51
+    bgc =65400
+    fontsize =2
+    type =18
+    maxchar =10
+    align =36
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  BtnGroupNum01:CtmToolButton
+    left =22
+    top =97
+    right =102
+    bottom =133
+    wtype =34
+    taborder =78
+    bgc =55038
+    fontsize =2
+    buttontype =1
+    captionID0 =ROBOT_STR_NO
+  end
+  BtnGroupNum02:CtmToolButton
+    left =22
+    top =189
+    right =102
+    bottom =225
+    wtype =34
+    taborder =79
+    bgc =44572
+    fontsize =2
+    buttontype =1
+    captionID0 =ROBOT_STR_NO
+  end
+  BtnGroupNum03:CtmToolButton
+    left =22
+    top =281
+    right =102
+    bottom =317
+    wtype =34
+    taborder =80
+    bgc =55038
+    fontsize =2
+    buttontype =1
+    captionID0 =ROBOT_STR_NO
+  end
+  BtnGroupNum04:CtmToolButton
+    left =22
+    top =373
+    right =102
+    bottom =409
+    wtype =34
+    taborder =81
+    bgc =44572
+    fontsize =2
+    buttontype =1
+    captionID0 =ROBOT_STR_NO
+  end
+  BtnGroupNum05:CtmToolButton
+    left =22
+    top =465
+    right =102
+    bottom =501
+    wtype =34
+    taborder =82
+    bgc =55038
+    fontsize =2
+    buttontype =1
+    captionID0 =ROBOT_STR_NO
+  end
+  BtnGroupNum06:CtmToolButton
+    left =22
+    top =557
+    right =102
+    bottom =593
+    wtype =34
+    taborder =83
+    bgc =44572
+    fontsize =2
+    buttontype =1
+    captionID0 =ROBOT_STR_NO
+  end
+  BtnGroupNum07:CtmToolButton
+    left =22
+    top =649
+    right =102
+    bottom =685
+    wtype =34
+    taborder =84
+    bgc =55038
+    fontsize =2
+    buttontype =1
+    captionID0 =ROBOT_STR_NO
+  end
+  BtnGroupNum08:CtmToolButton
+    left =22
+    top =741
+    right =102
+    bottom =777
+    wtype =34
+    taborder =85
+    bgc =44572
+    fontsize =2
+    buttontype =1
+    captionID0 =ROBOT_STR_NO
+  end
+  BtnSetCoordValue01:CtmToolButton
+    privilege =2
+    left =22
+    top =138
+    right =102
+    bottom =174
+    taborder =92
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    LinuxCtmImageBox1:CtmImageBox
+      left =1
+      top =1
+      right =79
+      bottom =35
+      wtype =55
+      fontsize =2
+      type =2
+      imagepath =res_tm640/CoordinateSetImage.png
+      keycolor =63519
+    end
+  end
+  BtnSetCoordValue02:CtmToolButton
+    privilege =2
+    left =22
+    top =230
+    right =102
+    bottom =266
+    taborder =93
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    LinuxCtmImageBox2:CtmImageBox
+      left =1
+      top =1
+      right =79
+      bottom =35
+      wtype =55
+      fontsize =2
+      type =2
+      imagepath =res_tm640/CoordinateSetImage.png
+      keycolor =63519
+    end
+  end
+  BtnSetCoordValue03:CtmToolButton
+    privilege =2
+    left =22
+    top =322
+    right =102
+    bottom =358
+    taborder =94
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    LinuxCtmImageBox3:CtmImageBox
+      left =1
+      top =1
+      right =79
+      bottom =35
+      wtype =55
+      fontsize =2
+      type =2
+      imagepath =res_tm640/CoordinateSetImage.png
+      keycolor =63519
+    end
+  end
+  BtnSetCoordValue04:CtmToolButton
+    privilege =2
+    left =22
+    top =414
+    right =102
+    bottom =450
+    taborder =95
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    LinuxCtmImageBox4:CtmImageBox
+      left =1
+      top =1
+      right =79
+      bottom =35
+      wtype =55
+      fontsize =2
+      type =2
+      imagepath =res_tm640/CoordinateSetImage.png
+      keycolor =63519
+    end
+  end
+  BtnSetCoordValue05:CtmToolButton
+    privilege =2
+    left =22
+    top =506
+    right =102
+    bottom =542
+    taborder =96
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    LinuxCtmImageBox5:CtmImageBox
+      left =1
+      top =1
+      right =79
+      bottom =35
+      wtype =55
+      fontsize =2
+      type =2
+      imagepath =res_tm640/CoordinateSetImage.png
+      keycolor =63519
+    end
+  end
+  BtnSetCoordValue06:CtmToolButton
+    privilege =2
+    left =22
+    top =598
+    right =102
+    bottom =634
+    taborder =97
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    LinuxCtmImageBox6:CtmImageBox
+      left =1
+      top =1
+      right =79
+      bottom =35
+      wtype =55
+      fontsize =2
+      type =2
+      imagepath =res_tm640/CoordinateSetImage.png
+      keycolor =63519
+    end
+  end
+  BtnSetCoordValue07:CtmToolButton
+    privilege =2
+    left =22
+    top =690
+    right =102
+    bottom =726
+    taborder =98
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    LinuxCtmImageBox7:CtmImageBox
+      left =1
+      top =1
+      right =79
+      bottom =35
+      wtype =55
+      fontsize =2
+      type =2
+      imagepath =res_tm640/CoordinateSetImage.png
+      keycolor =63519
+    end
+  end
+  BtnSetCoordValue08:CtmToolButton
+    privilege =2
+    left =22
+    top =782
+    right =102
+    bottom =818
+    taborder =99
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    LinuxCtmImageBox8:CtmImageBox
+      left =1
+      top =1
+      right =79
+      bottom =35
+      wtype =55
+      fontsize =2
+      type =2
+      imagepath =res_tm640/CoordinateSetImage.png
+      keycolor =63519
+    end
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =119
+    top =99
+    right =164
+    bottom =131
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_X
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =274
+    top =99
+    right =319
+    bottom =131
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Y
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =429
+    top =99
+    right =474
+    bottom =131
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Z
+    align =34
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =119
+    top =140
+    right =164
+    bottom =172
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RZ
+    align =34
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =429
+    top =191
+    right =474
+    bottom =223
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Z
+    align =34
+  end
+  LinuxCtmStaticX213:CtmStaticX2
+    left =274
+    top =191
+    right =319
+    bottom =223
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Y
+    align =34
+  end
+  LinuxCtmStaticX215:CtmStaticX2
+    left =119
+    top =232
+    right =164
+    bottom =264
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RZ
+    align =34
+  end
+  LinuxCtmStaticX216:CtmStaticX2
+    left =119
+    top =191
+    right =164
+    bottom =223
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_X
+    align =34
+  end
+  LinuxCtmStaticX218:CtmStaticX2
+    left =429
+    top =283
+    right =474
+    bottom =315
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Z
+    align =34
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =274
+    top =283
+    right =319
+    bottom =315
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Y
+    align =34
+  end
+  LinuxCtmStaticX221:CtmStaticX2
+    left =119
+    top =324
+    right =164
+    bottom =356
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RZ
+    align =34
+  end
+  LinuxCtmStaticX222:CtmStaticX2
+    left =119
+    top =283
+    right =164
+    bottom =315
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_X
+    align =34
+  end
+  LinuxCtmStaticX224:CtmStaticX2
+    left =429
+    top =375
+    right =474
+    bottom =407
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Z
+    align =34
+  end
+  LinuxCtmStaticX225:CtmStaticX2
+    left =274
+    top =375
+    right =319
+    bottom =407
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Y
+    align =34
+  end
+  LinuxCtmStaticX227:CtmStaticX2
+    left =119
+    top =416
+    right =164
+    bottom =448
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RZ
+    align =34
+  end
+  LinuxCtmStaticX228:CtmStaticX2
+    left =119
+    top =375
+    right =164
+    bottom =407
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_X
+    align =34
+  end
+  LinuxCtmStaticX230:CtmStaticX2
+    left =429
+    top =467
+    right =474
+    bottom =499
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Z
+    align =34
+  end
+  LinuxCtmStaticX231:CtmStaticX2
+    left =274
+    top =467
+    right =319
+    bottom =499
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Y
+    align =34
+  end
+  LinuxCtmStaticX233:CtmStaticX2
+    left =119
+    top =508
+    right =164
+    bottom =540
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RZ
+    align =34
+  end
+  LinuxCtmStaticX234:CtmStaticX2
+    left =119
+    top =467
+    right =164
+    bottom =499
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_X
+    align =34
+  end
+  LinuxCtmStaticX236:CtmStaticX2
+    left =429
+    top =559
+    right =474
+    bottom =591
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Z
+    align =34
+  end
+  LinuxCtmStaticX237:CtmStaticX2
+    left =274
+    top =559
+    right =319
+    bottom =591
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Y
+    align =34
+  end
+  LinuxCtmStaticX239:CtmStaticX2
+    left =119
+    top =600
+    right =164
+    bottom =632
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RZ
+    align =34
+  end
+  LinuxCtmStaticX240:CtmStaticX2
+    left =119
+    top =559
+    right =164
+    bottom =591
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_X
+    align =34
+  end
+  LinuxCtmStaticX242:CtmStaticX2
+    left =429
+    top =651
+    right =474
+    bottom =683
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Z
+    align =34
+  end
+  LinuxCtmStaticX243:CtmStaticX2
+    left =274
+    top =651
+    right =319
+    bottom =683
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Y
+    align =34
+  end
+  LinuxCtmStaticX245:CtmStaticX2
+    left =119
+    top =692
+    right =164
+    bottom =724
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RZ
+    align =34
+  end
+  LinuxCtmStaticX246:CtmStaticX2
+    left =119
+    top =651
+    right =164
+    bottom =683
+    wtype =52
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_X
+    align =34
+  end
+  LinuxCtmStaticX248:CtmStaticX2
+    left =429
+    top =743
+    right =474
+    bottom =775
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Z
+    align =34
+  end
+  LinuxCtmStaticX249:CtmStaticX2
+    left =274
+    top =743
+    right =319
+    bottom =775
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Y
+    align =34
+  end
+  LinuxCtmStaticX251:CtmStaticX2
+    left =119
+    top =784
+    right =164
+    bottom =816
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RZ
+    align =34
+  end
+  LinuxCtmStaticX252:CtmStaticX2
+    left =119
+    top =743
+    right =164
+    bottom =775
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_X
+    align =34
+  end
+end

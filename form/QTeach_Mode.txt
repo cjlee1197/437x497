@@ -1,0 +1,536 @@
+ViewQTeach:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =TEACH_QTEACH_MODE
+  printname =QTeach_Mode.bmp
+  LinuxCtmStaticX28:CtmStaticX2
+    left =207
+    top =24
+    right =387
+    bottom =64
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_MODE
+    align =34
+  end
+  BtnTeachStart:CtmToolButton
+    left =432
+    top =18
+    right =542
+    bottom =78
+    wtype =48
+    taborder =24
+    bgc =54970
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =TEACH_QTEACH_START
+    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    key =98
+  end
+  LinuxCtmToolButton4:CtmToolButton
+    left =48
+    top =18
+    right =158
+    bottom =78
+    wtype =48
+    taborder =23
+    bgc =54970
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =TEACH_QTEACH_CANCEL
+    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    key =99
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =391
+    top =312
+    right =451
+    bottom =352
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_SUCKER
+    align =34
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =95
+    top =312
+    right =215
+    bottom =352
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH_CUT
+    align =34
+  end
+  Select_Clamp1:CtmToolButton
+    left =102
+    top =360
+    right =212
+    bottom =428
+    wtype =33
+    taborder =35
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/clamp1_off.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =21
+  end
+  Select_Suck1:CtmToolButton
+    left =366
+    top =360
+    right =476
+    bottom =428
+    wtype =33
+    taborder =33
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/CupulaClose1.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =19
+  end
+  Select_Clamp2:CtmToolButton
+    left =102
+    top =449
+    right =212
+    bottom =517
+    wtype =33
+    taborder =36
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/clamp2_off.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =22
+  end
+  Select_Suck2:CtmToolButton
+    left =366
+    top =449
+    right =476
+    bottom =517
+    wtype =33
+    taborder =34
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/CupulaClose2.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =20
+  end
+  Str_ClampSelect:CtmStaticX2
+    left =231
+    top =256
+    right =368
+    bottom =296
+    wtype =32
+    fgc =0
+    bgc =63422
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH_SELECT
+    align =34
+  end
+  Check_Suck1:CtmToolButton
+    left =318
+    top =376
+    right =358
+    bottom =416
+    wtype =33
+    taborder =49
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =31
+  end
+  Check_Suck2:CtmToolButton
+    left =318
+    top =464
+    right =358
+    bottom =504
+    wtype =33
+    taborder =50
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =32
+  end
+  Check_Clamp1:CtmToolButton
+    left =54
+    top =376
+    right =94
+    bottom =416
+    wtype =33
+    taborder =51
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =33
+  end
+  Check_Clamp2:CtmToolButton
+    left =54
+    top =464
+    right =94
+    bottom =504
+    wtype =33
+    taborder =52
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =34
+  end
+  Check_Pile:CtmToolButton
+    left =54
+    top =600
+    right =94
+    bottom =640
+    wtype =33
+    taborder =96
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =60
+  end
+  DetectSelect_Clamp2:CtmToolButton
+    left =222
+    top =464
+    right =262
+    bottom =504
+    wtype =33
+    taborder =68
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =34
+  end
+  DetectSelect_Suck2:CtmToolButton
+    left =486
+    top =464
+    right =526
+    bottom =504
+    wtype =33
+    taborder =66
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =32
+  end
+  DetectSelect_Clamp1:CtmToolButton
+    left =222
+    top =376
+    right =262
+    bottom =416
+    wtype =33
+    taborder =67
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =33
+  end
+  DetectSelect_Suck1:CtmToolButton
+    left =486
+    top =376
+    right =526
+    bottom =416
+    wtype =33
+    taborder =65
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =31
+  end
+  Str_Detect2:CtmStaticX2
+    left =487
+    top =312
+    right =547
+    bottom =352
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH_DETECT
+    align =34
+  end
+  Str_Detect1:CtmStaticX2
+    left =223
+    top =312
+    right =283
+    bottom =352
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH_DETECT
+    align =34
+  end
+  Detect_Mask1:CtmStaticX2
+    left =220
+    top =304
+    right =284
+    bottom =516
+    wtype =32
+    bgc =63422
+  end
+  Check_SubSync:CtmToolButton
+    left =310
+    top =152
+    right =350
+    bottom =192
+    wtype =33
+    taborder =82
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+  end
+  Check_SubUse:CtmToolButton
+    left =94
+    top =152
+    right =134
+    bottom =192
+    wtype =33
+    taborder =80
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+  end
+  Btn_SubUse:CtmToolButton
+    left =135
+    top =152
+    right =285
+    bottom =192
+    wtype =48
+    taborder =81
+    bgc =65535
+    fontsize =1
+    captionID =TEACH_QTEACH_SUBUSED
+  end
+  Btn_SubSync:CtmToolButton
+    left =351
+    top =152
+    right =501
+    bottom =192
+    wtype =48
+    taborder =83
+    bgc =65535
+    fontsize =1
+    captionID =TEACH_QTEACH_SUBARMSYNC
+  end
+  Btn_PileUse:CtmToolButton
+    left =103
+    top =600
+    right =253
+    bottom =640
+    wtype =48
+    taborder =112
+    bgc =65535
+    fontsize =1
+    captionID =TEACH_QTEACH_PILEUSE
+  end
+  Btn_PileUse1:CtmToolButton
+    left =103
+    top =672
+    right =253
+    bottom =712
+    wtype =48
+    taborder =113
+    bgc =65535
+    fontsize =1
+    captionID =TEACH_QTEACH_PILE1
+  end
+  Btn_PileUse2:CtmToolButton
+    left =103
+    top =728
+    right =253
+    bottom =768
+    wtype =48
+    taborder =114
+    bgc =65535
+    fontsize =1
+    captionID =TEACH_QTEACH_PILE2
+  end
+  Btn_PileUse3:CtmToolButton
+    left =311
+    top =672
+    right =461
+    bottom =712
+    wtype =48
+    taborder =115
+    bgc =65535
+    fontsize =1
+    captionID =TEACH_QTEACH_PILE3
+  end
+  Btn_PileUse4:CtmToolButton
+    left =311
+    top =728
+    right =461
+    bottom =768
+    wtype =48
+    taborder =116
+    bgc =65535
+    fontsize =1
+    captionID =TEACH_QTEACH_PILE4
+  end
+  Mask_SubArm:CtmStaticX2
+    left =92
+    top =144
+    right =512
+    bottom =200
+    wtype =32
+    bgc =63422
+  end
+  Choose_Pile1:CtmToolButton
+    left =54
+    top =672
+    right =94
+    bottom =712
+    wtype =33
+    taborder =97
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =61
+  end
+  Choose_Pile2:CtmToolButton
+    left =54
+    top =728
+    right =94
+    bottom =768
+    wtype =33
+    taborder =98
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =62
+  end
+  Choose_Pile3:CtmToolButton
+    left =262
+    top =672
+    right =302
+    bottom =712
+    wtype =33
+    taborder =99
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =63
+  end
+  Choose_Pile4:CtmToolButton
+    left =262
+    top =728
+    right =302
+    bottom =768
+    wtype =33
+    taborder =100
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =64
+  end
+  Mask_Pile:CtmStaticX2
+    left =52
+    top =664
+    right =464
+    bottom =776
+    wtype =32
+    bgc =63422
+  end
+  Detect_Mask2:CtmStaticX2
+    left =484
+    top =304
+    right =548
+    bottom =516
+    wtype =32
+    bgc =63422
+  end
+  Check_Move:CtmToolButton
+    left =54
+    top =548
+    right =94
+    bottom =588
+    wtype =33
+    taborder =89
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =31
+  end
+  Btn_Check_Move:CtmToolButton
+    left =103
+    top =548
+    right =253
+    bottom =588
+    wtype =48
+    taborder =105
+    bgc =65535
+    fontsize =1
+    captionID =TEACH_QTEACH_MOVPICK
+  end
+end

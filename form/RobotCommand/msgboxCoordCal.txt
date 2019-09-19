@@ -1,0 +1,242 @@
+ViewMsgBoxCoordCal:CtmFormView
+  left =245
+  top =200
+  right =595
+  bottom =710
+  wtype =34871
+  bgc =65535
+  extag =10000
+  LinuxCtmImageBox1:CtmImageBox
+    left =0
+    top =0
+    right =350
+    bottom =510
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_350X510.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =28
+    top =320
+    right =323
+    bottom =430
+    wtype =5
+    bgc =46486
+    bordercolor =0
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =28
+    top =251
+    right =323
+    bottom =321
+    wtype =5
+    bgc =46486
+    bordercolor =0
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =28
+    top =142
+    right =323
+    bottom =252
+    wtype =5
+    bgc =46486
+    bordercolor =0
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =28
+    top =83
+    right =323
+    bottom =143
+    wtype =5
+    bgc =46486
+    bordercolor =0
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =28
+    top =28
+    right =323
+    bottom =84
+    wtype =5
+    bgc =38034
+    bordercolor =0
+  end
+  PointTABLE01:CtmEditX1
+    left =164
+    top =96
+    right =220
+    bottom =131
+    wtype =35
+    taborder =0
+    fgc =0
+    fontsize =2
+    type =18
+    maxchar =3
+    align =34
+    min =1
+    max =100
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =45
+    top =96
+    right =164
+    bottom =131
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_SETCOOORD_C
+    align =34
+  end
+  Point01:CtmEditX1
+    left =190
+    top =207
+    right =253
+    bottom =242
+    wtype =35
+    taborder =2
+    fgc =0
+    fontsize =2
+    type =18
+    maxchar =3
+    align =34
+    min =1
+    max =100
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  Point02:CtmEditX1
+    left =190
+    top =385
+    right =253
+    bottom =420
+    wtype =35
+    taborder =5
+    fgc =0
+    fontsize =2
+    type =18
+    maxchar =3
+    align =34
+    min =1
+    max =100
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =220
+    top =96
+    right =255
+    bottom =131
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_COMMAND_STR_EQUAL_SIGN
+    align =34
+  end
+  SelectEditCal:CtmSelectEdit
+    left =190
+    top =266
+    right =277
+    bottom =306
+    taborder =3
+    fontsize =2
+    listnum =4
+    strID0 =ROBOT_OPERATION_SUM
+    strID1 =ROBOT_OPERATION_MINUS
+    strID2 =ROBOT_OPERATION_MULTIPLY
+    strID3 =ROBOT_OPERATION_DIVIDE
+  end
+  btnOK:CtmToolButton
+    left =46
+    top =450
+    right =166
+    bottom =490
+    wtype =39
+    taborder =6
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_OK
+  end
+  btnCancel:CtmToolButton
+    left =196
+    top =450
+    right =308
+    bottom =490
+    wtype =39
+    taborder =7
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  StaticMessage:CtmStaticX2
+    left =28
+    top =42
+    right =323
+    bottom =70
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_COMMAND_SET_TABLE
+    align =34
+  end
+  SelectEditPoint01:CtmSelectEdit
+    left =190
+    top =157
+    right =302
+    bottom =197
+    taborder =1
+    fontsize =2
+    maxchar =11
+    listnum =2
+    strID0 =ROBOT_STR_SETCOOORD_C
+    strID1 =ROBOT_STR_TEACHERPOINT_P
+  end
+  SelectEditPoint02:CtmSelectEdit
+    left =190
+    top =335
+    right =302
+    bottom =375
+    taborder =4
+    fontsize =2
+    maxchar =11
+    listnum =2
+    strID0 =ROBOT_STR_SETCOOORD_C
+    strID1 =ROBOT_STR_TEACHERPOINT_P
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =45
+    top =181
+    right =172
+    bottom =216
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_ONE_COORDINATE
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =45
+    top =361
+    right =172
+    bottom =396
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_TWO_COORDINATE
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =45
+    top =268
+    right =171
+    bottom =303
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_CAL_MODE
+  end
+end

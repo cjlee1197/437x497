@@ -1,0 +1,19 @@
+ViewTouchScreenAdjust:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =599
+  wtype =34855
+  bgc =0
+  extag =10000
+  ImagePonit1:CtmImageBox
+    left =380
+    top =280
+    right =400
+    bottom =300
+    wtype =48
+    type =2
+    imagepath =res_ht800/touch_bmp/touch_adjust.bmp
+    keycolor =0
+  end
+end

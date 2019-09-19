@@ -1,0 +1,200 @@
+ViewUSBManage:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =870
+  wtype =48
+  titleID =ROBOT_PATH_WORKSPACE_USB
+  printname =USBManage.bmp
+  LinuxCtmLineTable2:CtmLineTable
+    left =30
+    top =472
+    right =570
+    bottom =842
+    stype =32768
+    vertrows =-1
+    horicols =1
+  end
+  LinuxCtmLineTable1:CtmLineTable
+    left =30
+    top =22
+    right =570
+    bottom =397
+    stype =32768
+    vertrows =-1
+    horicols =1
+  end
+  HMIFileExplorer:CtmFileExplorer
+    left =47
+    top =117
+    right =400
+    bottom =380
+    wtype =0x24
+    fgc =0
+    no_bgc =40147
+    no_fgc =0
+    taborder =0
+    bgc =0xffff
+    showtype=1
+  end
+  USBFileExplorer:CtmFileExplorer
+    left =47
+    top =567
+    right =400
+    bottom =830
+    wtype =0x24
+    fgc =0
+    no_bgc =40147
+    no_fgc =0
+    taborder =1
+    bgc =0xffff
+    showtype=1
+  end
+  StaticHMIAlarm:CtmStaticX2
+    left =47
+    top =77
+    right =320
+    bottom =107
+    wtype =16
+    fgc =63488
+    bgc =0
+    textID =ROBOT_STR_FILE_HMI_ALARM
+  end
+  StaticHMIDateType:CtmStaticX2
+    left =47
+    top =37
+    right =140
+    bottom =70
+    wtype =37
+    fgc =0
+    bgc =50712
+    textID =ROBOT_STR_HMI_DATE
+    align =34
+  end
+  SelectEditHMIDateType:CtmSelectEdit
+    left =151
+    top =35
+    right =301
+    bottom =68
+    wtype =34
+    taborder =2
+    maxchar =30
+    listnum =5
+    strID0 =ROBOT_STR_PROG_DATE
+    strID1 =ROBOT_STR_SCREEN_DATE
+    strID2 =RPBPT_STR_DATABASE_FILE
+    strID3 =ROBOT_STR_PLC_DATE
+    strID4 =ROBOT_MSG_COMMAND_TP
+  end
+  BtnMoveFileToUSB:CtmToolButton
+    left =430
+    top =102
+    right =540
+    bottom =137
+    taborder =3
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ROBOT_STR_DATE_MOVE1
+  end
+  BtnUSBMount:CtmToolButton
+    left =159
+    top =487
+    right =272
+    bottom =520
+    wtype =34
+    taborder =7
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ROBOT_STR_SWITCH_USB
+  end
+  StaticUSB:CtmStaticX2
+    left =47
+    top =487
+    right =140
+    bottom =520
+    wtype =37
+    fgc =0
+    bgc =50712
+    textID =ROBOT_STR_USB_DATE
+    align =34
+  end
+  BtnMoveFileToHMI:CtmToolButton
+    left =430
+    top =550
+    right =540
+    bottom =585
+    taborder =9
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ROBOT_STR_DATE_MOVE2
+  end
+  StaticUSBAlarm:CtmStaticX2
+    left =47
+    top =537
+    right =380
+    bottom =567
+    wtype =16
+    fgc =63488
+    bgc =0
+    textID =ROBOT_STR_FILE_USB_ALARM
+  end
+  btnLocalRaname:CtmToolButton
+    left =450
+    top =217
+    right =540
+    bottom =252
+    taborder =5
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ROBOT_BTN_FILE_RENAME
+  end
+  btnLocalDelete:CtmToolButton
+    left =450
+    top =262
+    right =540
+    bottom =297
+    taborder =6
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ROBOT_BTN_FILE_DELETE
+  end
+  btnUsbRaname:CtmToolButton
+    left =450
+    top =665
+    right =540
+    bottom =700
+    taborder =11
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ROBOT_BTN_FILE_RENAME
+  end
+  btnUsbDelete:CtmToolButton
+    left =450
+    top =710
+    right =540
+    bottom =745
+    taborder =12
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ROBOT_BTN_FILE_DELETE
+  end
+  btnUmountDevice:CtmToolButton
+    left =289
+    top =487
+    right =402
+    bottom =520
+    wtype =34
+    taborder =8
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ROBOT_UMOUNT_DEVICE
+  end
+end

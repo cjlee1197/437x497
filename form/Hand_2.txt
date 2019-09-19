@@ -1,0 +1,537 @@
+ViewHand:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =PICKER_HAND
+  printname =Hand.bmp
+  BmpClamp2:CtmImageBox
+    left =84
+    top =263
+    right =109
+    bottom =288
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpClamp1:CtmImageBox
+    left =84
+    top =166
+    right =109
+    bottom =191
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  Button_Horizontal:CtmToolButton
+    left =193
+    top =406
+    right =303
+    bottom =474
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Clamp_Horizontal.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =17
+  end
+  Btn_VACUUMON:CtmToolButton
+    left =110
+    top =529
+    right =220
+    bottom =597
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =23
+  end
+  BmpPileHorizontal:CtmImageBox
+    left =167
+    top =444
+    right =192
+    bottom =469
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpPileVertical:CtmImageBox
+    left =28
+    top =444
+    right =53
+    bottom =469
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpVacuum:CtmImageBox
+    left =84
+    top =567
+    right =109
+    bottom =592
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  Button_Vertical:CtmToolButton
+    left =54
+    top =406
+    right =164
+    bottom =474
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Clamp_Vertical.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =18
+  end
+  Button_para:CtmToolButton
+    left =20
+    top =4
+    right =120
+    bottom =54
+    wtype =48
+    taborder =1
+    fontsize =1
+    align =34
+    captionID =BTN_02_PARA
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Hand_1.txt
+  end
+  Button_out:CtmToolButton
+    left =120
+    top =4
+    right =220
+    bottom =54
+    wtype =48
+    taborder =2
+    fontsize =1
+    align =34
+    captionID =VW_CHARGE_BACKPRSVALVE_HELP_OUT
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
+  end
+  Btn_Clamp1:CtmToolButton
+    left =110
+    top =128
+    right =220
+    bottom =196
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =1
+  end
+  Btn_Suck2:CtmToolButton
+    left =399
+    top =225
+    right =509
+    bottom =293
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =11
+  end
+  Btn_Suck1:CtmToolButton
+    left =399
+    top =128
+    right =509
+    bottom =196
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =9
+  end
+  Btn_Clamp2:CtmToolButton
+    left =110
+    top =225
+    right =220
+    bottom =293
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =3
+  end
+  Btn_STATICON:CtmToolButton
+    left =399
+    top =529
+    right =509
+    bottom =597
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =21
+  end
+  Btn_CONVEYERON:CtmToolButton
+    left =399
+    top =406
+    right =509
+    bottom =474
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =25
+  end
+  BmpStatic:CtmImageBox
+    left =374
+    top =567
+    right =399
+    bottom =592
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpConveyor:CtmImageBox
+    left =374
+    top =444
+    right =399
+    bottom =469
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpBlow1:CtmImageBox
+    left =374
+    top =166
+    right =399
+    bottom =191
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpBlow2:CtmImageBox
+    left =374
+    top =263
+    right =399
+    bottom =288
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  LinuxCtmStaticX20:CtmStaticX2
+    left =95
+    top =84
+    right =225
+    bottom =116
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_CHUCKING
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =375
+    top =84
+    right =505
+    bottom =116
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_SUCKER
+    align =34
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =95
+    top =363
+    right =225
+    bottom =395
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_POSTURE
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =375
+    top =363
+    right =505
+    bottom =395
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_REMOTE_O_19
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =95
+    top =486
+    right =225
+    bottom =518
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_REMOTE_O_16
+    align =34
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =375
+    top =486
+    right =505
+    bottom =518
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_HITELEC
+    align =34
+  end
+  BtnBack:CtmToolButton
+    left =68
+    top =820
+    right =152
+    bottom =877
+    wtype =48
+    taborder =72
+    align =18
+    upbitmap =res_tm640/pic/BtnBackUp.bmp
+    key =72
+    action =255
+    formname =Param.txt
+  end
+  BtnHome:CtmToolButton
+    left =244
+    top =820
+    right =328
+    bottom =877
+    wtype =48
+    taborder =70
+    align =18
+    upbitmap =res_tm640/pic/BtnHomeUp.bmp
+    key =70
+    action =255
+    formname =Param.txt
+  end
+  BtnMenu:CtmToolButton
+    left =420
+    top =820
+    right =504
+    bottom =877
+    wtype =48
+    taborder =71
+    align =18
+    upbitmap =res_tm640/pic/BtnMenuUp.bmp
+    key =71
+    action =255
+    formname =Param.txt
+  end
+  LinuxCtmImageBox13:CtmImageBox
+    left =79
+    top =84
+    right =95
+    bottom =116
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =359
+    top =84
+    right =375
+    bottom =116
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =359
+    top =364
+    right =375
+    bottom =396
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =79
+    top =363
+    right =95
+    bottom =395
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox7:CtmImageBox
+    left =79
+    top =486
+    right =95
+    bottom =518
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox8:CtmImageBox
+    left =359
+    top =486
+    right =375
+    bottom =518
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  OutClamp1:CtmImageBox
+    left =84
+    top =134
+    right =109
+    bottom =159
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutClamp2:CtmImageBox
+    left =84
+    top =231
+    right =109
+    bottom =256
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutBlow1:CtmImageBox
+    left =374
+    top =134
+    right =399
+    bottom =159
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutBlow2:CtmImageBox
+    left =374
+    top =231
+    right =399
+    bottom =256
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutPileVertical:CtmImageBox
+    left =28
+    top =412
+    right =53
+    bottom =437
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutConveyor:CtmImageBox
+    left =374
+    top =412
+    right =399
+    bottom =437
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutVacuum:CtmImageBox
+    left =84
+    top =535
+    right =109
+    bottom =560
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutStatic:CtmImageBox
+    left =374
+    top =535
+    right =399
+    bottom =560
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutPileHorizontal:CtmImageBox
+    left =167
+    top =412
+    right =192
+    bottom =437
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+end

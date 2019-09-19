@@ -1,0 +1,57 @@
+ViewMsgBox:CtmFormView
+  left =62
+  top =180
+  right =510
+  bottom =396
+  wtype =34871
+  bgc =65535
+  fontsize =2
+  extag =10000
+  imageBackGround1:CtmImageBox
+    left =0
+    top =0
+    right =448
+    bottom =216
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_448X216.png
+    keycolor =63519
+  end
+  StaticText:CtmStaticX2
+    privilege =-5
+    left =56
+    top =28
+    right =392
+    bottom =101
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  btnOK:CtmToolButton
+    left =75
+    top =149
+    right =195
+    bottom =189
+    wtype =39
+    taborder =0
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_OK
+  end
+  btnCancel:CtmToolButton
+    left =253
+    top =149
+    right =373
+    bottom =189
+    wtype =39
+    taborder =1
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+end

@@ -1,0 +1,116 @@
+ViewMsgBoxUserLogin:CtmFormView
+  left =125
+  top =250
+  right =475
+  bottom =540
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =350
+    bottom =290
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_350X290.bmp
+    keycolor =63519
+  end
+  BtnCancel:CtmToolButton
+    left =204
+    top =225
+    right =304
+    bottom =260
+    wtype =39
+    taborder =4
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  BtnLogin:CtmToolButton
+    left =35
+    top =225
+    right =135
+    bottom =260
+    wtype =39
+    taborder =3
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_STR_LOGIN
+  end
+  StaticUserId:CtmStaticX2
+    left =35
+    top =90
+    right =105
+    bottom =124
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_USER_ID
+    align =34
+  end
+  SelectEditUserId:CtmSelectEdit
+    left =145
+    top =90
+    right =280
+    bottom =125
+    wtype =37
+    taborder =1
+    fontsize =2
+    maxchar =15
+    listnum =3
+  end
+  StaticUserPassword:CtmStaticX2
+    left =35
+    top =150
+    right =105
+    bottom =184
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_PASSWORD
+    align =34
+  end
+  StaticUserLogin:CtmStaticX2
+    left =15
+    top =30
+    right =119
+    bottom =64
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_USER_LOGIN
+    align =34
+  end
+  EditPassword:CtmEdit
+    left =145
+    top =150
+    right =280
+    bottom =185
+    wtype =35
+    taborder =2
+    bgc =65535
+    fontsize =2
+    type =132
+    maxchar =12
+    align =34
+  end
+  btnUserManager:CtmToolButton
+    left =215
+    top =30
+    right =315
+    bottom =65
+    wtype =39
+    taborder =0
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_STR_USER_MANAGER
+  end
+end

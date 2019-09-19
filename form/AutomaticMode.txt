@@ -1,0 +1,1150 @@
+ViewAutomaticMode:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  wtype =48
+  titleID =ROBOT_VIEW_AUTOMATICMODE
+  printname =AutomaticMode.bmp
+  LTextMemoProg:CtmMTextMemo
+    left =10
+    top =210
+    right =590
+    bottom =560
+    wtype =0x23
+    fgc =0
+    taborder =-2
+    no_bgc =40147
+    no_fgc =0
+    enabled =FALSE
+    bgc =0xD69A
+  end
+  LinuxCtmLineTable1:CtmLineTable
+    left =294
+    top =15
+    right =579
+    bottom =200
+    fontsize =2
+  end
+  LinuxCtmLineTable2:CtmLineTable
+    left =232
+    top =570
+    right =582
+    bottom =863
+    fontsize =2
+  end
+  LinuxCtmLineTable3:CtmLineTable
+    left =10
+    top =15
+    right =292
+    bottom =200
+    fontsize =2
+  end
+  StaticWorkFile:CtmStaticX2
+    left =20
+    top =25
+    right =95
+    bottom =52
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_TITLE_WORK_FILE
+  end
+  StaticFileName:CtmStaticX2
+    left =97
+    top =25
+    right =282
+    bottom =52
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  StaticRunTime:CtmStaticX2
+    left =20
+    top =57
+    right =95
+    bottom =84
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_CYCLE_TIME
+  end
+  EditCycleTimeH:CtmEditX1
+    left =96
+    top =57
+    right =143
+    bottom =84
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    colorchange =0
+    destcolor =57182
+    type =18
+    maxchar =4
+    align =36
+  end
+  StaticHour:CtmStaticX2
+    left =143
+    top =57
+    right =163
+    bottom =84
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_HOUR
+  end
+  EditCycleTimeM:CtmEditX1
+    left =169
+    top =57
+    right =203
+    bottom =84
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    colorchange =0
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =36
+  end
+  StaticMinute:CtmStaticX2
+    left =203
+    top =57
+    right =223
+    bottom =84
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_MINUTE
+  end
+  EditCycleTimeS:CtmEditX1
+    left =229
+    top =57
+    right =262
+    bottom =84
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    colorchange =0
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =36
+  end
+  StaticSecond:CtmStaticX2
+    left =262
+    top =57
+    right =282
+    bottom =84
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_SECOND
+  end
+  StaticLineSpeed:CtmStaticX2
+    left =20
+    top =89
+    right =90
+    bottom =109
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_LINESPEED
+  end
+  ProgressBarLenSpeed:CtmProgressBar
+    left =90
+    top =89
+    right =190
+    bottom =109
+    wtype =32
+    fgc =33808
+    fontsize =2
+    colorcontrol =272
+    colorchange =18
+  end
+  StaticXSpeed:CtmStaticX2
+    left =20
+    top =115
+    right =40
+    bottom =135
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_J1
+  end
+  ProgressBarAxisXSpeed:CtmProgressBar
+    left =40
+    top =115
+    right =140
+    bottom =135
+    wtype =32
+    fgc =33808
+    fontsize =2
+    colorcontrol =272
+    colorchange =18
+  end
+  StaticYSpeed:CtmStaticX2
+    left =20
+    top =141
+    right =40
+    bottom =161
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_J2
+  end
+  ProgressBarAxisYSpeed:CtmProgressBar
+    left =40
+    top =141
+    right =140
+    bottom =161
+    wtype =32
+    fgc =33808
+    fontsize =2
+    colorcontrol =272
+    colorchange =18
+  end
+  StaticZSpeed:CtmStaticX2
+    left =20
+    top =167
+    right =40
+    bottom =187
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_J3
+  end
+  ProgressBarAxisZSpeed:CtmProgressBar
+    left =40
+    top =167
+    right =140
+    bottom =187
+    wtype =32
+    fgc =33808
+    fontsize =2
+    colorcontrol =272
+    colorchange =18
+  end
+  StaticASpeed:CtmStaticX2
+    left =161
+    top =115
+    right =181
+    bottom =135
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_J4
+  end
+  ProgressBarAxisASpeed:CtmProgressBar
+    left =181
+    top =115
+    right =281
+    bottom =135
+    wtype =32
+    fgc =33808
+    fontsize =2
+    colorcontrol =272
+    colorchange =18
+  end
+  StaticBSpeed:CtmStaticX2
+    left =161
+    top =141
+    right =181
+    bottom =161
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_J5
+  end
+  ProgressBarAxisBSpeed:CtmProgressBar
+    left =181
+    top =141
+    right =281
+    bottom =161
+    wtype =32
+    fgc =33808
+    fontsize =2
+    colorcontrol =272
+    colorchange =18
+  end
+  StaticCSpeed:CtmStaticX2
+    left =161
+    top =167
+    right =181
+    bottom =187
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_J6
+  end
+  ProgressBarAxisCSpeed:CtmProgressBar
+    left =181
+    top =167
+    right =281
+    bottom =187
+    wtype =32
+    fgc =33808
+    fontsize =2
+    colorcontrol =272
+    colorchange =18
+  end
+  StaticCoord01:CtmStaticX2
+    left =305
+    top =67
+    right =325
+    bottom =94
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_X
+  end
+  StaticCoord02:CtmStaticX2
+    left =305
+    top =109
+    right =325
+    bottom =136
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Y
+  end
+  StaticCoord03:CtmStaticX2
+    left =305
+    top =151
+    right =325
+    bottom =178
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_Z
+  end
+  StaticCoord04:CtmStaticX2
+    left =442
+    top =67
+    right =462
+    bottom =94
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RX
+  end
+  StaticCoord05:CtmStaticX2
+    left =442
+    top =109
+    right =462
+    bottom =136
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RY
+  end
+  StaticCoord06:CtmStaticX2
+    left =442
+    top =151
+    right =462
+    bottom =178
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_COORDINATE_RZ
+  end
+  EditTABLE07:CtmEditX1
+    left =325
+    top =67
+    right =405
+    bottom =94
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57150
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  EditTABLE08:CtmEditX1
+    left =325
+    top =109
+    right =405
+    bottom =136
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57150
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  EditTABLE09:CtmEditX1
+    left =325
+    top =151
+    right =405
+    bottom =178
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57150
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  EditTABLE10:CtmEditX1
+    left =463
+    top =67
+    right =543
+    bottom =94
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57150
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE11:CtmEditX1
+    left =463
+    top =109
+    right =543
+    bottom =136
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57150
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE12:CtmEditX1
+    left =463
+    top =151
+    right =543
+    bottom =178
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57150
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =543
+    top =67
+    right =570
+    bottom =94
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_UNIT_DEG
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =543
+    top =109
+    right =570
+    bottom =136
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_UNIT_DEG
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =543
+    top =151
+    right =570
+    bottom =178
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_UNIT_DEG
+  end
+  StaticUnit04:CtmStaticX2
+    left =405
+    top =67
+    right =432
+    bottom =94
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_UNIT_MM
+  end
+  StaticUnit05:CtmStaticX2
+    left =405
+    top =109
+    right =432
+    bottom =136
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_UNIT_MM
+  end
+  StaticUnit06:CtmStaticX2
+    left =405
+    top =151
+    right =432
+    bottom =178
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_UNIT_MM
+  end
+  StaticRunMode:CtmStaticX2
+    left =417
+    top =632
+    right =502
+    bottom =672
+    wtype =54
+    fgc =0
+    fontsize =2
+    textID =ROBOT_BTN_RUN_MODE
+    align =34
+  end
+  StaticSpeed:CtmStaticX2
+    left =250
+    top =782
+    right =425
+    bottom =812
+    wtype =54
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_SPEED
+    align =34
+  end
+  BtnRunModeShow:CtmToolButton
+    left =503
+    top =632
+    right =563
+    bottom =672
+    wtype =39
+    taborder =3
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+  end
+  BtnCycleShow:CtmToolButton
+    left =343
+    top =682
+    right =403
+    bottom =722
+    wtype =39
+    taborder =4
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+  end
+  StaticCycle:CtmStaticX2
+    left =249
+    top =682
+    right =342
+    bottom =722
+    wtype =54
+    fgc =0
+    fontsize =2
+    textID =ROBOT_BTN_CYCLE
+    align =34
+  end
+  Btnoption:CtmToolButton
+    left =343
+    top =732
+    right =403
+    bottom =772
+    wtype =39
+    taborder =5
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CYCLE_CLOSE
+  end
+  Btnblkskip:CtmToolButton
+    left =503
+    top =732
+    right =563
+    bottom =772
+    wtype =39
+    taborder =6
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CYCLE_CLOSE
+  end
+  Staticoption:CtmStaticX2
+    left =249
+    top =732
+    right =342
+    bottom =772
+    wtype =54
+    fgc =0
+    fontsize =2
+    textID =ROBOT_AUTO_BTN_OPTION
+    align =34
+  end
+  Staticblkskip:CtmStaticX2
+    left =417
+    top =732
+    right =502
+    bottom =772
+    wtype =54
+    fgc =0
+    fontsize =2
+    textID =ROBOT_AUTO_BTN_BLKSKIP
+    align =34
+  end
+  StaticSpeedShow:CtmStaticX2
+    left =310
+    top =813
+    right =365
+    bottom =853
+    wtype =37
+    fgc =0
+    bgc =50712
+    fontsize =2
+    align =34
+  end
+  btnPlus:CtmToolButton
+    left =250
+    top =813
+    right =310
+    bottom =853
+    wtype =39
+    taborder =1
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_PLUS
+  end
+  btnMinus:CtmToolButton
+    left =365
+    top =813
+    right =425
+    bottom =853
+    wtype =39
+    taborder =2
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_MINUS
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =417
+    top =682
+    right =502
+    bottom =722
+    wtype =54
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_MACHINE_LOCK
+    align =34
+  end
+  BtnMachineLock:CtmToolButton
+    left =503
+    top =682
+    right =563
+    bottom =722
+    wtype =39
+    taborder =7
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CYCLE_CLOSE
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =249
+    top =632
+    right =342
+    bottom =672
+    wtype =54
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_AUTO_START_NO
+    align =34
+  end
+  EditStartBlkNo:CtmEditX1
+    left =343
+    top =632
+    right =403
+    bottom =672
+    wtype =35
+    taborder =8
+    bgc =65535
+    fontsize =2
+    maxchar =5
+    align =34
+    min =1
+    max =99999
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  BtnCoordinateMode:CtmToolButton
+    left =305
+    top =25
+    right =425
+    bottom =60
+    wtype =39
+    taborder =9
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_STR_COORDINATE_CARTESIAN
+  end
+  LimitFlag01:CtmImageBox
+    left =325
+    top =96
+    right =333
+    bottom =101
+    wtype =55
+    bgc =65535
+    fontsize =2
+    type =2
+    imagepath =res_tm640/flag.png
+    keycolor =63519
+  end
+  LimitFlag02:CtmImageBox
+    left =325
+    top =138
+    right =333
+    bottom =143
+    wtype =55
+    bgc =65535
+    fontsize =2
+    type =2
+    imagepath =res_tm640/flag.png
+    keycolor =63519
+  end
+  LimitFlag03:CtmImageBox
+    left =325
+    top =180
+    right =333
+    bottom =185
+    wtype =55
+    bgc =65535
+    fontsize =2
+    type =2
+    imagepath =res_tm640/flag.png
+    keycolor =63519
+  end
+  LimitFlag04:CtmImageBox
+    left =463
+    top =96
+    right =471
+    bottom =101
+    wtype =55
+    bgc =65535
+    fontsize =2
+    type =2
+    imagepath =res_tm640/flag.png
+    keycolor =63519
+  end
+  LimitFlag05:CtmImageBox
+    left =463
+    top =138
+    right =471
+    bottom =143
+    wtype =55
+    bgc =65535
+    fontsize =2
+    type =2
+    imagepath =res_tm640/flag.png
+    keycolor =63519
+  end
+  LimitFlag06:CtmImageBox
+    left =463
+    top =180
+    right =471
+    bottom =185
+    wtype =55
+    bgc =65535
+    fontsize =2
+    type =2
+    imagepath =res_tm640/flag.png
+    keycolor =63519
+  end
+  LimitMask01:CtmStaticX2
+    left =323
+    top =95
+    right =408
+    bottom =102
+    bgc =59196
+    fontsize =2
+  end
+  LimitMask02:CtmStaticX2
+    left =323
+    top =137
+    right =408
+    bottom =144
+    bgc =59196
+    fontsize =2
+  end
+  LimitMask03:CtmStaticX2
+    left =323
+    top =179
+    right =408
+    bottom =186
+    bgc =59196
+    fontsize =2
+  end
+  LimitMask04:CtmStaticX2
+    left =461
+    top =95
+    right =546
+    bottom =102
+    bgc =59196
+    fontsize =2
+  end
+  LimitMask05:CtmStaticX2
+    left =461
+    top =137
+    right =546
+    bottom =144
+    bgc =59196
+    fontsize =2
+  end
+  LimitMask06:CtmStaticX2
+    left =461
+    top =179
+    right =546
+    bottom =186
+    bgc =59196
+    fontsize =2
+  end
+  LinuxCtmLineTable4:CtmLineTable
+    left =10
+    top =570
+    right =230
+    bottom =863
+    fontsize =2
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =20
+    top =580
+    right =121
+    bottom =620
+    wtype =54
+    fgc =0
+    fontsize =2
+    textID =ROBOT_AUTOVIEW_SHOW_IO
+    align =34
+  end
+  btnIOSwitch1:CtmToolButton
+    left =20
+    top =630
+    right =80
+    bottom =667
+    wtype =39
+    taborder =10
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_LETTER_I
+  end
+  btnIOSwitch2:CtmToolButton
+    left =20
+    top =675
+    right =80
+    bottom =712
+    wtype =39
+    taborder =11
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_LETTER_I
+  end
+  btnIOSwitch3:CtmToolButton
+    left =20
+    top =720
+    right =80
+    bottom =757
+    wtype =39
+    taborder =12
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_LETTER_I
+  end
+  btnIOSwitch4:CtmToolButton
+    left =20
+    top =765
+    right =80
+    bottom =802
+    wtype =39
+    taborder =13
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_LETTER_I
+  end
+  btnIOSwitch5:CtmToolButton
+    left =20
+    top =810
+    right =80
+    bottom =847
+    wtype =39
+    taborder =14
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_LETTER_I
+  end
+  editIONum1:CtmEditX1
+    left =88
+    top =630
+    right =153
+    bottom =667
+    wtype =35
+    taborder =15
+    bgc =65535
+    fontsize =2
+    maxchar =5
+    align =34
+    min =1
+    max =32
+    value=1
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  editIONum2:CtmEditX1
+    left =88
+    top =675
+    right =153
+    bottom =712
+    wtype =35
+    taborder =16
+    bgc =65535
+    fontsize =2
+    maxchar =5
+    align =34
+    min =1
+    max =32
+    value=1
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  editIONum3:CtmEditX1
+    left =88
+    top =720
+    right =153
+    bottom =757
+    wtype =35
+    taborder =17
+    bgc =65535
+    fontsize =2
+    maxchar =5
+    align =34
+    min =1
+    max =32
+    value=1
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  editIONum4:CtmEditX1
+    left =88
+    top =765
+    right =153
+    bottom =802
+    wtype =35
+    taborder =18
+    bgc =65535
+    fontsize =2
+    maxchar =5
+    align =34
+    min =1
+    max =32
+    value=1
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  editIONum5:CtmEditX1
+    left =88
+    top =810
+    right =153
+    bottom =847
+    wtype =35
+    taborder =19
+    bgc =65535
+    fontsize =2
+    maxchar =5
+    align =34
+    min =1
+    max =32
+    value=1
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  imageIOStatus1:CtmImageBox
+    left =179
+    top =630
+    right =219
+    bottom =667
+    wtype =55
+    fontsize =2
+    type =2
+    keycolor =16777215
+  end
+  imageIOStatus2:CtmImageBox
+    left =179
+    top =675
+    right =219
+    bottom =712
+    wtype =55
+    fontsize =2
+    type =2
+    keycolor =16777215
+  end
+  imageIOStatus3:CtmImageBox
+    left =179
+    top =720
+    right =219
+    bottom =757
+    wtype =55
+    fontsize =2
+    type =2
+    keycolor =16777215
+  end
+  imageIOStatus4:CtmImageBox
+    left =179
+    top =765
+    right =219
+    bottom =802
+    wtype =55
+    fontsize =2
+    type =2
+    keycolor =16777215
+  end
+  imageIOStatus5:CtmImageBox
+    left =179
+    top =810
+    right =219
+    bottom =847
+    wtype =55
+    fontsize =2
+    type =2
+    keycolor =16777215
+  end
+  StaticMotionSwitch:CtmStaticX2
+    left =249
+    top =579
+    right =359
+    bottom =624
+    wtype =54
+    fgc =0
+    fontsize =2
+    textID =ROBOT_AUTOVIEW_SHOW_MOTION
+    align =34
+  end
+  StaticShowAxisSpeed01:CtmStaticX2
+    left =38
+    top =111
+    right =143
+    bottom =138
+    wtype =48
+    fgc =0
+    text =deg/s\0
+    align =34
+  end
+  StaticShowAxisSpeed02:CtmStaticX2
+    left =38
+    top =137
+    right =143
+    bottom =164
+    wtype =48
+    fgc =0
+    text =deg/s\0
+    align =34
+  end
+  StaticShowAxisSpeed03:CtmStaticX2
+    left =38
+    top =163
+    right =143
+    bottom =190
+    wtype =48
+    fgc =0
+    text =deg/s\0
+    align =34
+  end
+  StaticShowAxisSpeed04:CtmStaticX2
+    left =179
+    top =111
+    right =284
+    bottom =138
+    wtype =48
+    fgc =0
+    text =deg/s\0
+    align =34
+  end
+  StaticShowAxisSpeed05:CtmStaticX2
+    left =179
+    top =137
+    right =284
+    bottom =164
+    wtype =48
+    fgc =0
+    text =deg/s\0
+    align =34
+  end
+  StaticShowAxisSpeed06:CtmStaticX2
+    left =179
+    top =163
+    right =284
+    bottom =190
+    wtype =48
+    fgc =0
+    text =deg/s\0
+    align =34
+  end
+  StaticShowLineSpeed:CtmStaticX2
+    left =88
+    top =85
+    right =193
+    bottom =112
+    wtype =48
+    fgc =0
+    text =mm/s\0
+    align =34
+  end
+end

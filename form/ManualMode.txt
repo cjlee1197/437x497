@@ -1,0 +1,1868 @@
+ViewManualMode:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  wtype =48
+  titleID =ROBOT_VIEW_MANUALMODE
+  printname =ManualMode.bmp
+  LinuxCtmLineTable2:CtmLineTable
+    left =20
+    top =529
+    right =390
+    bottom =862
+    rightcontrol =0
+    upcontrol =0
+    vertrows =2
+  end
+  LimitFlag01:CtmImageBox
+    left =60
+    top =769
+    right =68
+    bottom =774
+    wtype =55
+    bgc =65535
+    type =2
+    imagepath =res_tm640/flag.png
+    keycolor =63519
+  end
+  LimitFlag02:CtmImageBox
+    left =60
+    top =806
+    right =68
+    bottom =811
+    wtype =55
+    bgc =65535
+    type =2
+    imagepath =res_tm640/flag.png
+    keycolor =63519
+  end
+  LimitFlag03:CtmImageBox
+    left =60
+    top =843
+    right =68
+    bottom =848
+    wtype =55
+    bgc =65535
+    type =2
+    imagepath =res_tm640/flag.png
+    keycolor =63519
+  end
+  LimitFlag04:CtmImageBox
+    left =229
+    top =769
+    right =237
+    bottom =774
+    wtype =55
+    bgc =65535
+    type =2
+    imagepath =res_tm640/flag.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX240:CtmStaticX2
+    left =58
+    top =842
+    right =185
+    bottom =849
+    bgc =59196
+  end
+  LinuxCtmStaticX239:CtmStaticX2
+    left =58
+    top =805
+    right =185
+    bottom =812
+    bgc =59196
+  end
+  LinuxCtmStaticX238:CtmStaticX2
+    left =58
+    top =768
+    right =185
+    bottom =775
+    bgc =59196
+  end
+  LinuxCtmStaticX242:CtmStaticX2
+    left =227
+    top =768
+    right =354
+    bottom =775
+    bgc =59196
+  end
+  CoordinateJoint:CtmStaticX2
+    left =40
+    top =703
+    right =141
+    bottom =733
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_JOINT
+    align =34
+  end
+  CoordinateCartesian:CtmStaticX2
+    left =40
+    top =535
+    right =140
+    bottom =565
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_CARTESIAN
+    align =34
+  end
+  StaticX1:CtmStaticX2
+    left =40
+    top =740
+    right =61
+    bottom =766
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J1
+  end
+  StaticY1:CtmStaticX2
+    left =40
+    top =777
+    right =61
+    bottom =803
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J2
+  end
+  StaticZ1:CtmStaticX2
+    left =40
+    top =814
+    right =61
+    bottom =840
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J3
+  end
+  StaticX2:CtmStaticX2
+    left =40
+    top =573
+    right =60
+    bottom =599
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_X
+  end
+  StaticY2:CtmStaticX2
+    left =40
+    top =610
+    right =60
+    bottom =636
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_Y
+  end
+  StaticZ2:CtmStaticX2
+    left =40
+    top =647
+    right =60
+    bottom =673
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_Z
+  end
+  StaticRX1:CtmStaticX2
+    left =209
+    top =740
+    right =230
+    bottom =766
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J4
+  end
+  StaticRX2:CtmStaticX2
+    left =209
+    top =573
+    right =229
+    bottom =599
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_RZ
+  end
+  EditTABLE01:CtmEditX1
+    left =60
+    top =740
+    right =183
+    bottom =767
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE02:CtmEditX1
+    left =60
+    top =777
+    right =183
+    bottom =804
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE03:CtmEditX1
+    left =60
+    top =814
+    right =183
+    bottom =841
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE04:CtmEditX1
+    left =229
+    top =740
+    right =352
+    bottom =767
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditTABLE07:CtmEditX1
+    left =60
+    top =573
+    right =182
+    bottom =600
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  EditTABLE08:CtmEditX1
+    left =60
+    top =610
+    right =182
+    bottom =637
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  EditTABLE09:CtmEditX1
+    left =60
+    top =647
+    right =182
+    bottom =674
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  EditTABLE10:CtmEditX1
+    left =229
+    top =573
+    right =351
+    bottom =600
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =350
+    top =740
+    right =376
+    bottom =766
+    wtype =48
+    fgc =0
+    textID =ROBOT_UNIT_DEG
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =350
+    top =573
+    right =375
+    bottom =599
+    wtype =48
+    fgc =0
+    textID =ROBOT_UNIT_DEG
+  end
+  StaticUnit01:CtmStaticX2
+    left =180
+    top =740
+    right =206
+    bottom =766
+    wtype =48
+    fgc =0
+    textID =ROBOT_UNIT_DEG
+  end
+  StaticUnit02:CtmStaticX2
+    left =180
+    top =777
+    right =206
+    bottom =803
+    wtype =48
+    fgc =0
+    textID =ROBOT_UNIT_DEG
+  end
+  StaticUnit03:CtmStaticX2
+    left =180
+    top =814
+    right =206
+    bottom =840
+    wtype =48
+    fgc =0
+    textID =ROBOT_UNIT_DEG
+  end
+  StaticUnit04:CtmStaticX2
+    left =180
+    top =573
+    right =200
+    bottom =599
+    wtype =48
+    fgc =0
+    textID =ROBOT_UNIT_MM
+  end
+  StaticUnit05:CtmStaticX2
+    left =180
+    top =610
+    right =200
+    bottom =636
+    wtype =48
+    fgc =0
+    textID =ROBOT_UNIT_MM
+  end
+  StaticUnit06:CtmStaticX2
+    left =180
+    top =647
+    right =200
+    bottom =673
+    wtype =48
+    fgc =0
+    textID =ROBOT_UNIT_MM
+  end
+  StaticNo:CtmStaticX2
+    left =8
+    top =19
+    right =48
+    bottom =49
+    wtype =38
+    fgc =0
+    bgc =34006
+    colorcontrol =260
+    destcolor =46780
+    textID =ROBOT_STR_NO
+    align =34
+  end
+  StaticTPC1:CtmStaticX2
+    left =48
+    top =19
+    right =173
+    bottom =49
+    wtype =38
+    fgc =0
+    bgc =34006
+    colorcontrol =260
+    destcolor =46780
+    textID =ROBOT_STR_COORDINATE_X
+    align =34
+  end
+  StaticTPC2:CtmStaticX2
+    left =173
+    top =19
+    right =298
+    bottom =49
+    wtype =38
+    fgc =0
+    bgc =34006
+    colorcontrol =260
+    destcolor =46780
+    textID =ROBOT_STR_COORDINATE_Y
+    align =34
+  end
+  StaticTPC3:CtmStaticX2
+    left =298
+    top =19
+    right =423
+    bottom =49
+    wtype =38
+    fgc =0
+    bgc =34006
+    colorcontrol =260
+    destcolor =46780
+    textID =ROBOT_STR_COORDINATE_Z
+    align =34
+  end
+  StaticTPC4:CtmStaticX2
+    left =423
+    top =19
+    right =548
+    bottom =49
+    wtype =38
+    fgc =0
+    bgc =34006
+    colorcontrol =260
+    destcolor =46780
+    textID =ROBOT_STR_COORDINATE_RZ
+    align =34
+  end
+  TPTABLE00:CtmEditX1
+    left =48
+    top =50
+    right =173
+    bottom =74
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =1
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE01:CtmEditX1
+    left =173
+    top =50
+    right =298
+    bottom =74
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =1
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE02:CtmEditX1
+    left =298
+    top =50
+    right =423
+    bottom =74
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =1
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE03:CtmEditX1
+    left =423
+    top =50
+    right =548
+    bottom =74
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =1
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE07:CtmEditX1
+    left =48
+    top =74
+    right =173
+    bottom =98
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE08:CtmEditX1
+    left =173
+    top =74
+    right =298
+    bottom =98
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE09:CtmEditX1
+    left =298
+    top =74
+    right =423
+    bottom =98
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE10:CtmEditX1
+    left =423
+    top =74
+    right =548
+    bottom =98
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE14:CtmEditX1
+    left =48
+    top =98
+    right =173
+    bottom =122
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =3
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE15:CtmEditX1
+    left =173
+    top =98
+    right =298
+    bottom =122
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =3
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE16:CtmEditX1
+    left =298
+    top =98
+    right =423
+    bottom =122
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =3
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE17:CtmEditX1
+    left =423
+    top =98
+    right =548
+    bottom =122
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =3
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE21:CtmEditX1
+    left =48
+    top =122
+    right =173
+    bottom =146
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =4
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE22:CtmEditX1
+    left =173
+    top =122
+    right =298
+    bottom =146
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =4
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE23:CtmEditX1
+    left =298
+    top =122
+    right =423
+    bottom =146
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =4
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE24:CtmEditX1
+    left =423
+    top =122
+    right =548
+    bottom =146
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =4
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE28:CtmEditX1
+    left =48
+    top =146
+    right =173
+    bottom =170
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =5
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE29:CtmEditX1
+    left =173
+    top =146
+    right =298
+    bottom =170
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =5
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE30:CtmEditX1
+    left =298
+    top =146
+    right =423
+    bottom =170
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =5
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE31:CtmEditX1
+    left =423
+    top =146
+    right =548
+    bottom =170
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =5
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE35:CtmEditX1
+    left =48
+    top =170
+    right =173
+    bottom =194
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =6
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE36:CtmEditX1
+    left =173
+    top =170
+    right =298
+    bottom =194
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =6
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE37:CtmEditX1
+    left =298
+    top =170
+    right =423
+    bottom =194
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =6
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE38:CtmEditX1
+    left =423
+    top =170
+    right =548
+    bottom =194
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =6
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE42:CtmEditX1
+    left =48
+    top =194
+    right =173
+    bottom =218
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =7
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE43:CtmEditX1
+    left =173
+    top =194
+    right =298
+    bottom =218
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =7
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE44:CtmEditX1
+    left =298
+    top =194
+    right =423
+    bottom =218
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =7
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE45:CtmEditX1
+    left =423
+    top =194
+    right =548
+    bottom =218
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =7
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE49:CtmEditX1
+    left =48
+    top =218
+    right =173
+    bottom =242
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =8
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE50:CtmEditX1
+    left =173
+    top =218
+    right =298
+    bottom =242
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =8
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE51:CtmEditX1
+    left =298
+    top =218
+    right =423
+    bottom =242
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =8
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE52:CtmEditX1
+    left =423
+    top =218
+    right =548
+    bottom =242
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =8
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE56:CtmEditX1
+    left =48
+    top =242
+    right =173
+    bottom =266
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =9
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE57:CtmEditX1
+    left =173
+    top =242
+    right =298
+    bottom =266
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =9
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE58:CtmEditX1
+    left =298
+    top =242
+    right =423
+    bottom =266
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =9
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE59:CtmEditX1
+    left =423
+    top =242
+    right =548
+    bottom =266
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =9
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE63:CtmEditX1
+    left =48
+    top =266
+    right =173
+    bottom =290
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =10
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE64:CtmEditX1
+    left =173
+    top =266
+    right =298
+    bottom =290
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =10
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE65:CtmEditX1
+    left =298
+    top =266
+    right =423
+    bottom =290
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =10
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE66:CtmEditX1
+    left =423
+    top =266
+    right =548
+    bottom =290
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =10
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE70:CtmEditX1
+    left =48
+    top =290
+    right =173
+    bottom =314
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =11
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE71:CtmEditX1
+    left =173
+    top =290
+    right =298
+    bottom =314
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =11
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  NoTABLE00:CtmEditX1
+    left =8
+    top =50
+    right =48
+    bottom =74
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =1
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE01:CtmEditX1
+    left =8
+    top =74
+    right =48
+    bottom =98
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE02:CtmEditX1
+    left =8
+    top =98
+    right =48
+    bottom =122
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =3
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE03:CtmEditX1
+    left =8
+    top =122
+    right =48
+    bottom =146
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =4
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE04:CtmEditX1
+    left =8
+    top =146
+    right =48
+    bottom =170
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =5
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE05:CtmEditX1
+    left =8
+    top =170
+    right =48
+    bottom =194
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =6
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE06:CtmEditX1
+    left =8
+    top =194
+    right =48
+    bottom =218
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =7
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE07:CtmEditX1
+    left =8
+    top =218
+    right =48
+    bottom =242
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =8
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE08:CtmEditX1
+    left =8
+    top =242
+    right =48
+    bottom =266
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =9
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE09:CtmEditX1
+    left =8
+    top =266
+    right =48
+    bottom =290
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =10
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE10:CtmEditX1
+    left =8
+    top =290
+    right =48
+    bottom =314
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =11
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  NoTABLE11:CtmEditX1
+    left =8
+    top =314
+    right =48
+    bottom =338
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =12
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =2
+    align =33
+    max =99
+    maxdb =FALSE
+  end
+  PageUp:CtmToolButton
+    left =108
+    top =345
+    right =178
+    bottom =370
+    wtype =39
+    taborder =24
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_PAGEUP
+  end
+  PageDown:CtmToolButton
+    left =377
+    top =345
+    right =447
+    bottom =370
+    wtype =39
+    taborder =25
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_PAGEDOWN
+  end
+  TPTABLE72:CtmEditX1
+    left =298
+    top =290
+    right =423
+    bottom =314
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =11
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE73:CtmEditX1
+    left =423
+    top =290
+    right =548
+    bottom =314
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =11
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  TPTABLE77:CtmEditX1
+    left =48
+    top =314
+    right =173
+    bottom =338
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =12
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE78:CtmEditX1
+    left =173
+    top =314
+    right =298
+    bottom =338
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =12
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE79:CtmEditX1
+    left =298
+    top =314
+    right =423
+    bottom =338
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =12
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =9
+    align =33
+    precision =3
+    max =99999999
+    maxdb =FALSE
+  end
+  TPTABLE80:CtmEditX1
+    left =423
+    top =314
+    right =548
+    bottom =338
+    wtype =38
+    taborder =-1
+    bgc =44505
+    extag =12
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =8
+    align =33
+    precision =3
+    min =-180000
+    max =180000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmLineTable22:CtmLineTable
+    left =20
+    top =385
+    right =390
+    bottom =520
+  end
+  BtnRun:CtmToolButton
+    left =272
+    top =433
+    right =344
+    bottom =505
+    taborder =23
+    extag =20001
+    upbitmap =res_tm640/RUNUP.bmp
+    downbitmap =res_tm640/RUNDOWN.bmp
+  end
+  CheckBoxHome:CtmCheckBox
+    left =27
+    top =396
+    right =54
+    bottom =423
+    wtype =48
+    taborder =30
+  end
+  CheckBoxTP:CtmCheckBox
+    left =27
+    top =448
+    right =54
+    bottom =475
+    wtype =48
+    taborder =20
+  end
+  Mode2Str07:CtmStaticX2
+    left =60
+    top =397
+    right =139
+    bottom =422
+    wtype =16
+    fgc =0
+    textID =ROBOT_BTN_BACKTO_HOME
+  end
+  Mode2Str14:CtmStaticX2
+    left =60
+    top =449
+    right =139
+    bottom =474
+    wtype =16
+    fgc =0
+    textID =ROBOT_BTN_MOVETO_TEACHPOINT
+  end
+  EditTeachPointNO:CtmEditX1
+    left =148
+    top =449
+    right =213
+    bottom =475
+    wtype =36
+    taborder =-3
+    bgc =44505
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =3
+    align =0
+    min =1
+    max =24
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  ImageBoxRuning:CtmImageBox
+    left =258
+    top =403
+    right =358
+    bottom =430
+    type =2
+    imagepath =res_tm640/run0.png
+    keycolor =63519
+  end
+  LinuxCtmLineTable1:CtmLineTable
+    left =400
+    top =490
+    right =540
+    bottom =862
+  end
+  StaticSpeed:CtmStaticX2
+    left =419
+    top =562
+    right =523
+    bottom =596
+    wtype =54
+    fgc =0
+    textID =ROBOT_STR_SPEED
+    align =34
+  end
+  StaticSpeedShow:CtmStaticX2
+    left =419
+    top =597
+    right =523
+    bottom =631
+    wtype =37
+    fgc =0
+    bgc =55068
+    text =40%
+    align =34
+  end
+  btnPlus:CtmToolButton
+    left =419
+    top =631
+    right =470
+    bottom =671
+    wtype =39
+    taborder =16
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_PLUS
+  end
+  btnMinus:CtmToolButton
+    left =472
+    top =631
+    right =523
+    bottom =671
+    wtype =39
+    taborder =17
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_BTN_MINUS
+  end
+  StaticMoveMode:CtmStaticX2
+    left =419
+    top =691
+    right =523
+    bottom =725
+    wtype =54
+    fgc =0
+    textID =ROBOT_STR_MOVE_MODE
+    align =34
+  end
+  StaticJog:CtmStaticX2
+    left =420
+    top =775
+    right =524
+    bottom =809
+    wtype =54
+    fgc =0
+    textID =ROBOT_STR_JOG
+    align =34
+  end
+  SelectEditJog:CtmSelectEdit
+    left =420
+    top =810
+    right =524
+    bottom =842
+    wtype =37
+    taborder =19
+    maxchar =15
+    listnum =3
+    strID0 =ROBOT_STR_INC_POS_1
+    strID1 =ROBOT_STR_INC_POS_2
+    strID2 =ROBOT_STR_INC_POS_3
+  end
+  BtnMoveMode:CtmToolButton
+    left =419
+    top =726
+    right =523
+    bottom =758
+    wtype =39
+    taborder =18
+    fgc =65535
+    bgc =1046
+    buttontype =0
+  end
+  BtnCoordinateMM:CtmToolButton
+    left =419
+    top =501
+    right =523
+    bottom =535
+    wtype =39
+    taborder =0
+    fgc =65535
+    bgc =16
+    buttontype =0
+  end
+  StaticC1:CtmStaticX2
+    left =560
+    top =200
+    right =590
+    bottom =263
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J1
+    align =34
+  end
+  StaticC2:CtmStaticX2
+    left =560
+    top =286
+    right =590
+    bottom =349
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J2
+    align =34
+  end
+  StaticC3:CtmStaticX2
+    left =560
+    top =372
+    right =590
+    bottom =435
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J3
+    align =34
+  end
+  StaticC4:CtmStaticX2
+    left =560
+    top =458
+    right =590
+    bottom =521
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_COORDINATE_J4
+    align =34
+  end
+  StaticC5:CtmStaticX2
+    left =560
+    top =544
+    right =590
+    bottom =607
+    wtype =48
+    fgc =0
+    textID =x
+    align =34
+  end
+  StaticC6:CtmStaticX2
+    left =560
+    top =630
+    right =590
+    bottom =693
+    wtype =48
+    fgc =0
+    textID =x
+    align =34
+  end
+  LinuxCtmStaticX247:CtmStaticX2
+    left =560
+    top =716
+    right =590
+    bottom =779
+    wtype =48
+    fgc =0
+    textID =x
+    align =34
+  end
+  LinuxCtmStaticX231:CtmStaticX2
+    left =560
+    top =802
+    right =590
+    bottom =865
+    wtype =48
+    fgc =0
+    textID =x
+    align =34
+  end
+  ButtonSelPTP:CtmToolButton
+    left =146
+    top =476
+    right =221
+    bottom =510
+    wtype =39
+    taborder =32
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_STR_PTP
+  end
+  ButtonSelLine:CtmToolButton
+    left =60
+    top =476
+    right =135
+    bottom =510
+    wtype =39
+    taborder =33
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =ROBOT_STR_LINE
+  end
+end

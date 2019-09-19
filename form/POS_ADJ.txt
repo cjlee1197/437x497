@@ -1,0 +1,958 @@
+ViewPOS_ADJ:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =777
+  titleID =INDEX_POS_ADJ
+  printname =POS_ADJ.bmp
+  P2_POS_ADJ_X1:CtmEditX1
+    left =125
+    top =140
+    right =213
+    bottom =172
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    value =-10000
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  P2_POS_ADJ_Y1:CtmEditX1
+    left =218
+    top =140
+    right =306
+    bottom =172
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  P2_POS_ADJ_Z:CtmEditX1
+    left =311
+    top =140
+    right =399
+    bottom =172
+    wtype =35
+    taborder =2
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =20
+    top =140
+    right =120
+    bottom =172
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_GROUP_2
+  end
+  edit_Motor_Diameter_X:CtmEditX1
+    left =125
+    top =196
+    right =213
+    bottom =228
+    wtype =35
+    taborder =5
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  edit_Motor_Diameter_Y:CtmEditX1
+    left =218
+    top =196
+    right =306
+    bottom =228
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  edit_Motor_Diameter_Z:CtmEditX1
+    left =311
+    top =196
+    right =399
+    bottom =228
+    wtype =35
+    taborder =7
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =20
+    top =196
+    right =120
+    bottom =228
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_GROUP_3
+  end
+  edit_Motor_Ratio_X:CtmEditX1
+    left =125
+    top =252
+    right =213
+    bottom =284
+    wtype =35
+    taborder =10
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  edit_Motor_Ratio_Y:CtmEditX1
+    left =218
+    top =252
+    right =306
+    bottom =284
+    wtype =35
+    taborder =11
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  edit_Motor_Ratio_Z:CtmEditX1
+    left =311
+    top =252
+    right =399
+    bottom =284
+    wtype =35
+    taborder =12
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =20
+    top =252
+    right =120
+    bottom =284
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_GROUP_4
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =311
+    top =92
+    right =399
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_ZAXIS
+    align =34
+  end
+  LinuxCtmStaticX216:CtmStaticX2
+    left =125
+    top =92
+    right =213
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_XAXIS
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =218
+    top =92
+    right =306
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_YAXIS
+    align =34
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =497
+    top =92
+    right =585
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_Y2AXIS
+    align =34
+  end
+  LinuxCtmStaticX210:CtmStaticX2
+    left =404
+    top =92
+    right =492
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_X2AXIS
+    align =34
+  end
+  P2_POS_ADJ_X2:CtmEditX1
+    left =404
+    top =140
+    right =492
+    bottom =172
+    wtype =35
+    taborder =3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  P2_POS_ADJ_Y2:CtmEditX1
+    left =497
+    top =140
+    right =585
+    bottom =172
+    wtype =35
+    taborder =4
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  edit_Motor_Diameter_X2:CtmEditX1
+    left =404
+    top =196
+    right =492
+    bottom =228
+    wtype =35
+    taborder =8
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  edit_Motor_Diameter_Y2:CtmEditX1
+    left =497
+    top =196
+    right =585
+    bottom =228
+    wtype =35
+    taborder =9
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  edit_Motor_Ratio_X2:CtmEditX1
+    left =404
+    top =252
+    right =492
+    bottom =284
+    wtype =35
+    taborder =13
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  edit_Motor_Ratio_Y2:CtmEditX1
+    left =497
+    top =252
+    right =585
+    bottom =284
+    wtype =35
+    taborder =14
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  BtnBack:CtmToolButton
+    left =68
+    top =820
+    right =152
+    bottom =877
+    wtype =48
+    taborder =72
+    align =18
+    upbitmap =res_tm640/pic/BtnBackUp.bmp
+    key =72
+    action =255
+    formname =Param.txt
+  end
+  BtnHome:CtmToolButton
+    left =244
+    top =820
+    right =328
+    bottom =877
+    wtype =48
+    taborder =70
+    align =18
+    upbitmap =res_tm640/pic/BtnHomeUp.bmp
+    key =70
+    action =255
+    formname =Param.txt
+  end
+  BtnMenu:CtmToolButton
+    left =420
+    top =820
+    right =504
+    bottom =877
+    wtype =48
+    taborder =71
+    align =18
+    upbitmap =res_tm640/pic/BtnMenuUp.bmp
+    key =71
+    action =255
+    formname =Param.txt
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =4
+    top =140
+    right =20
+    bottom =172
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =4
+    top =196
+    right =20
+    bottom =228
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =4
+    top =252
+    right =20
+    bottom =284
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmEditX11:CtmEditX1
+    left =125
+    top =308
+    right =213
+    bottom =340
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_COMMUNICATION_IMM_PICKCOMPENSATEPOSITION_X1
+  end
+  LinuxCtmEditX12:CtmEditX1
+    left =218
+    top =308
+    right =306
+    bottom =340
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_COMMUNICATION_IMM_PICKCOMPENSATEPOSITION_Y1
+  end
+  LinuxCtmEditX13:CtmEditX1
+    left =311
+    top =308
+    right =399
+    bottom =340
+    wtype =35
+    taborder =2
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_COMMUNICATION_IMM_PICKCOMPENSATEPOSITION_Z
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =20
+    top =308
+    right =120
+    bottom =340
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_GROUP_5
+  end
+  LinuxCtmEditX14:CtmEditX1
+    left =125
+    top =364
+    right =213
+    bottom =396
+    wtype =35
+    taborder =5
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmEditX15:CtmEditX1
+    left =218
+    top =364
+    right =306
+    bottom =396
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmEditX16:CtmEditX1
+    left =311
+    top =364
+    right =399
+    bottom =396
+    wtype =35
+    taborder =7
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =20
+    top =364
+    right =120
+    bottom =396
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_GROUP_6
+  end
+  LinuxCtmEditX17:CtmEditX1
+    left =125
+    top =420
+    right =213
+    bottom =452
+    wtype =35
+    taborder =10
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmEditX18:CtmEditX1
+    left =218
+    top =420
+    right =306
+    bottom =452
+    wtype =35
+    taborder =11
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmEditX19:CtmEditX1
+    left =311
+    top =420
+    right =399
+    bottom =452
+    wtype =35
+    taborder =12
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =20
+    top =420
+    right =120
+    bottom =452
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_GROUP_7
+  end
+  LinuxCtmEditX110:CtmEditX1
+    left =404
+    top =308
+    right =492
+    bottom =340
+    wtype =35
+    taborder =3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_COMMUNICATION_IMM_PICKCOMPENSATEPOSITION_X2
+  end
+  LinuxCtmEditX111:CtmEditX1
+    left =497
+    top =308
+    right =585
+    bottom =340
+    wtype =35
+    taborder =4
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_COMMUNICATION_IMM_PICKCOMPENSATEPOSITION_Y2
+  end
+  LinuxCtmEditX112:CtmEditX1
+    left =404
+    top =364
+    right =492
+    bottom =396
+    wtype =35
+    taborder =8
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmEditX113:CtmEditX1
+    left =497
+    top =364
+    right =585
+    bottom =396
+    wtype =35
+    taborder =9
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmEditX114:CtmEditX1
+    left =404
+    top =420
+    right =492
+    bottom =452
+    wtype =35
+    taborder =13
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmEditX115:CtmEditX1
+    left =497
+    top =420
+    right =585
+    bottom =452
+    wtype =35
+    taborder =14
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =4
+    top =308
+    right =20
+    bottom =340
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =4
+    top =364
+    right =20
+    bottom =396
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =4
+    top =420
+    right =20
+    bottom =452
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmEditX116:CtmEditX1
+    left =125
+    top =476
+    right =213
+    bottom =508
+    wtype =35
+    taborder =10
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmEditX117:CtmEditX1
+    left =218
+    top =476
+    right =306
+    bottom =508
+    wtype =35
+    taborder =11
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmEditX118:CtmEditX1
+    left =311
+    top =476
+    right =399
+    bottom =508
+    wtype =35
+    taborder =12
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =20
+    top =476
+    right =120
+    bottom =508
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_GROUP_8
+  end
+  LinuxCtmEditX119:CtmEditX1
+    left =404
+    top =476
+    right =492
+    bottom =508
+    wtype =35
+    taborder =13
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmEditX120:CtmEditX1
+    left =497
+    top =476
+    right =585
+    bottom =508
+    wtype =35
+    taborder =14
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    precision =2
+    min =-10000
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmImageBox7:CtmImageBox
+    left =4
+    top =476
+    right =20
+    bottom =508
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+end

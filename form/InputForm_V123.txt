@@ -1,0 +1,300 @@
+ViewInputForm:CtmFormView
+  left =0
+  top =0
+  right =230
+  bottom =400
+  wtype =34855
+  viewtype =2
+  imageBG1:CtmImageBox
+    left =0
+    top =0
+    right =230
+    bottom =400
+    imagepath =res_ht800/touch_bmp/input_bg1.bmp
+  end
+  imageBG2:CtmImageBox
+    left =0
+    top =0
+    right =230
+    bottom =40
+    imagepath =res_ht800/touch_bmp/input_bg2.bmp
+  end
+  imageBG3:CtmImageBox
+    left =10
+    top =40
+    right =220
+    bottom =170
+    imagepath =res_ht800/touch_bmp/input_bg3.bmp
+  end
+  imageBG4:CtmImageBox
+    left =10
+    top =180
+    right =220
+    bottom =390
+    imagepath =res_ht800/touch_bmp/input_bg4.bmp
+  end
+  staticTitle:CtmStaticX2
+    left =10
+    top =45
+    right =220
+    bottom =71
+    wtype =48
+    textID =VM_QUALITY_MM
+    align =34
+  end
+  inputValue:CtmEditX1
+    left =10
+    top =76
+    right =215
+    bottom =102
+    wtype =48
+    taborder =-1
+    fgc =65535
+    maxchar =15
+    align =0
+  end
+  staticMinValue:CtmStaticX2
+    left =10
+    top =107
+    right =110
+    bottom =133
+    wtype =48
+    textID =VW_MACH_MINVALUE
+    align =34
+  end
+  editMinValue:CtmEditX1
+    left =110
+    top =107
+    right =215
+    bottom =133
+    wtype =48
+    taborder =-1
+    fgc =65535
+    maxchar =15
+    align =0
+  end
+  staticMaxValue:CtmStaticX2
+    left =10
+    top =138
+    right =110
+    bottom =164
+    wtype =48
+    textID =VW_MACH_MAXVALUE
+    align =34
+  end
+  editMaxValue:CtmEditX1
+    left =110
+    top =138
+    right =215
+    bottom =164
+    wtype =48
+    taborder =-1
+    fgc =65535
+    maxchar =15
+    align =0
+  end
+  btnClose:CtmToolButton
+    left =193
+    top =2
+    right =228
+    bottom =37
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/close.bmp
+    downbitmap =res_ht800/touch_bmp/close_down.bmp
+    keycolor =63519
+    key =42496
+  end
+  btnNum7:CtmToolButton
+    left =14
+    top =184
+    right =62
+    bottom =232
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/7.bmp
+    downbitmap =res_ht800/touch_bmp/7_down.bmp
+    keycolor =63519
+    key =55
+  end
+  btnNum8:CtmToolButton
+    left =65
+    top =184
+    right =113
+    bottom =232
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/8.bmp
+    downbitmap =res_ht800/touch_bmp/8_down.bmp
+    keycolor =63519
+    key =56
+  end
+  btnNum9:CtmToolButton
+    left =116
+    top =184
+    right =164
+    bottom =232
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/9.bmp
+    downbitmap =res_ht800/touch_bmp/9_down.bmp
+    keycolor =63519
+    key =57
+  end
+  btnBackSpace:CtmToolButton
+    left =167
+    top =184
+    right =215
+    bottom =232
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/backspace_small.bmp
+    downbitmap =res_ht800/touch_bmp/backspace_small_down.bmp
+    keycolor =63519
+    key =3592
+  end
+  btnNum4:CtmToolButton
+    left =14
+    top =235
+    right =62
+    bottom =283
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/4.bmp
+    downbitmap =res_ht800/touch_bmp/4_down.bmp
+    keycolor =63519
+    key =52
+  end
+  btnNum5:CtmToolButton
+    left =65
+    top =235
+    right =113
+    bottom =283
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/5.bmp
+    downbitmap =res_ht800/touch_bmp/5_down.bmp
+    keycolor =63519
+    key =53
+  end
+  btnNum6:CtmToolButton
+    left =116
+    top =235
+    right =164
+    bottom =283
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/6.bmp
+    downbitmap =res_ht800/touch_bmp/6_down.bmp
+    keycolor =63519
+    key =54
+  end
+  btnNumAdd:CtmToolButton
+    left =167
+    top =235
+    right =215
+    bottom =283
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/add.bmp
+    downbitmap =res_ht800/touch_bmp/add_down.bmp
+    keycolor =63519
+    key =3371
+  end
+  btnNum1:CtmToolButton
+    left =14
+    top =286
+    right =62
+    bottom =334
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/1.bmp
+    downbitmap =res_ht800/touch_bmp/1_down.bmp
+    keycolor =63519
+    key =49
+  end
+  btnNum2:CtmToolButton
+    left =65
+    top =286
+    right =113
+    bottom =334
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/2.bmp
+    downbitmap =res_ht800/touch_bmp/2_down.bmp
+    keycolor =63519
+    key =50
+  end
+  btnNum3:CtmToolButton
+    left =116
+    top =286
+    right =164
+    bottom =334
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/3.bmp
+    downbitmap =res_ht800/touch_bmp/3_down.bmp
+    keycolor =63519
+    key =51
+  end
+  btnNumMinus:CtmToolButton
+    left =167
+    top =286
+    right =215
+    bottom =334
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/minus.bmp
+    downbitmap =res_ht800/touch_bmp/minus_down.bmp
+    keycolor =63519
+    key =45
+  end
+  btnNumDot:CtmToolButton
+    left =14
+    top =337
+    right =62
+    bottom =385
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/dot.bmp
+    downbitmap =res_ht800/touch_bmp/dot_down.bmp
+    keycolor =63519
+    key =46
+  end
+  btnNum0:CtmToolButton
+    left =65
+    top =337
+    right =113
+    bottom =385
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/0.bmp
+    downbitmap =res_ht800/touch_bmp/0_down.bmp
+    keycolor =63519
+    key =48
+  end
+  btnCancel:CtmToolButton
+    left =116
+    top =337
+    right =164
+    bottom =385
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/cancel.bmp
+    downbitmap =res_ht800/touch_bmp/cancel_down.bmp
+    keycolor =63519
+    key =11779
+  end
+  btnEnter:CtmToolButton
+    left =167
+    top =337
+    right =215
+    bottom =385
+    wtype =55
+    taborder =-1
+    upbitmap =res_ht800/touch_bmp/ok.bmp
+    downbitmap =res_ht800/touch_bmp/ok_down.bmp
+    keycolor =63519
+    key =7178
+  end
+end

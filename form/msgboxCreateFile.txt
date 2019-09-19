@@ -1,0 +1,44 @@
+ViewMsgBoxCreateFile:CtmFormView
+  left =400
+  top =49
+  right =799
+  bottom =501
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =399
+    bottom =452
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/CommandExplanationBG.bmp
+    keycolor =63519
+  end
+  btnPageDown:CtmToolButton
+    left =234
+    top =405
+    right =334
+    bottom =440
+    wtype =39
+    taborder =0
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =BTN_NEXT
+  end
+  btnPageUp:CtmToolButton
+    left =65
+    top =405
+    right =165
+    bottom =440
+    wtype =39
+    taborder =1
+    fgc =65535
+    bgc =1046
+    buttontype =0
+    captionID =BTN_RETUEN
+  end
+end

@@ -1,0 +1,200 @@
+ViewFuncopt:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =EFFECT_CONTROLOPTION
+  printname =Param.bmp
+  LinuxCtmStaticX21:CtmStaticX2
+    left =30
+    top =192
+    right =190
+    bottom =224
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_POSE_RUN
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =30
+    top =259
+    right =190
+    bottom =291
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_POSE_INMOLD
+    align =34
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =30
+    top =326
+    right =190
+    bottom =358
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_MACHINE_AUTOSTOP
+    align =34
+  end
+  MovePostType0:CtmToolButton
+    left =205
+    top =192
+    right =305
+    bottom =224
+    taborder =1
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =VW_CLAMP_NOUSE
+  end
+  MovePostType1:CtmToolButton
+    left =333
+    top =192
+    right =433
+    bottom =224
+    taborder =2
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =PICKER_VERTICAL
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  MovePostType2:CtmToolButton
+    left =461
+    top =192
+    right =561
+    bottom =224
+    taborder =3
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =PICKER_HORIZONTAL
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  MoldPostType0:CtmToolButton
+    left =205
+    top =259
+    right =305
+    bottom =291
+    taborder =4
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =VW_CLAMP_NOUSE
+  end
+  MoldPostType1:CtmToolButton
+    left =333
+    top =259
+    right =433
+    bottom =291
+    taborder =5
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =PICKER_VERTICAL
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  MoldPostType2:CtmToolButton
+    left =461
+    top =259
+    right =561
+    bottom =291
+    taborder =6
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =PICKER_HORIZONTAL
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  MachineZero:CtmToolButton
+    left =205
+    top =326
+    right =305
+    bottom =358
+    taborder =7
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =PICKER_MACHINE_ZERO
+  end
+  MachineNext:CtmToolButton
+    left =333
+    top =326
+    right =433
+    bottom =358
+    taborder =8
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =PICKER_MACHINE_NEXT
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =14
+    top =192
+    right =30
+    bottom =224
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =14
+    top =259
+    right =30
+    bottom =291
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =14
+    top =326
+    right =30
+    bottom =358
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+end

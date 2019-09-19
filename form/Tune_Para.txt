@@ -1,0 +1,609 @@
+ViewTune_Para:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  wtype =48
+  titleID =ROBOT_STR_TUNE
+  printname =Tune.bmp
+  LinuxCtmLineTable1:CtmLineTable
+    left =25
+    top =30
+    right =574
+    bottom =840
+    rightcontrol =0
+    upcontrol =0
+    stype =16384
+    vertrows =2
+    vertpoints1 =220
+  end
+  StaticTableIndex01:CtmStaticX2
+    left =40
+    top =318
+    right =90
+    bottom =353
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =34
+  end
+  EditTableValue01:CtmEditX1
+    privilege =4
+    left =88
+    top =318
+    right =206
+    bottom =353
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65500
+    fontsize =2
+    maxchar =12
+    align =36
+  end
+  StaticTableText01:CtmStaticX2
+    left =204
+    top =318
+    right =559
+    bottom =353
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticTableAvail01:CtmStaticX2
+    left =599
+    top =180
+    right =696
+    bottom =207
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaticTableIndex02:CtmStaticX2
+    left =40
+    top =353
+    right =90
+    bottom =388
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =34
+  end
+  EditTableValue02:CtmEditX1
+    privilege =4
+    left =88
+    top =353
+    right =206
+    bottom =388
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65400
+    fontsize =2
+    maxchar =12
+    align =36
+  end
+  StaticTableText02:CtmStaticX2
+    left =204
+    top =353
+    right =559
+    bottom =388
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticTableAvail02:CtmStaticX2
+    left =599
+    top =200
+    right =696
+    bottom =227
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaticTableIndex03:CtmStaticX2
+    left =40
+    top =388
+    right =90
+    bottom =423
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =34
+  end
+  EditTableValue03:CtmEditX1
+    privilege =4
+    left =88
+    top =388
+    right =206
+    bottom =423
+    wtype =35
+    taborder =2
+    fgc =0
+    bgc =65500
+    fontsize =2
+    maxchar =12
+    align =36
+  end
+  StaticTableText03:CtmStaticX2
+    left =204
+    top =388
+    right =559
+    bottom =423
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticTableAvail03:CtmStaticX2
+    left =599
+    top =220
+    right =696
+    bottom =247
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaticTableIndex04:CtmStaticX2
+    left =40
+    top =423
+    right =90
+    bottom =458
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =34
+  end
+  EditTableValue04:CtmEditX1
+    privilege =4
+    left =88
+    top =423
+    right =206
+    bottom =458
+    wtype =35
+    taborder =3
+    fgc =0
+    bgc =65400
+    fontsize =2
+    maxchar =12
+    align =36
+  end
+  StaticTableText04:CtmStaticX2
+    left =204
+    top =423
+    right =559
+    bottom =458
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticTableAvail04:CtmStaticX2
+    left =599
+    top =240
+    right =696
+    bottom =267
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaticTableIndex05:CtmStaticX2
+    left =40
+    top =458
+    right =90
+    bottom =493
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =34
+  end
+  EditTableValue05:CtmEditX1
+    privilege =4
+    left =88
+    top =458
+    right =206
+    bottom =493
+    wtype =35
+    taborder =4
+    fgc =0
+    bgc =65500
+    fontsize =2
+    maxchar =12
+    align =36
+  end
+  StaticTableText05:CtmStaticX2
+    left =204
+    top =458
+    right =559
+    bottom =493
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticTableAvail05:CtmStaticX2
+    left =599
+    top =260
+    right =696
+    bottom =287
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaticTableIndex06:CtmStaticX2
+    left =40
+    top =493
+    right =90
+    bottom =528
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =34
+  end
+  EditTableValue06:CtmEditX1
+    privilege =4
+    left =88
+    top =493
+    right =206
+    bottom =528
+    wtype =35
+    taborder =5
+    fgc =0
+    bgc =65400
+    fontsize =2
+    maxchar =12
+    align =36
+  end
+  StaticTableText06:CtmStaticX2
+    left =204
+    top =493
+    right =559
+    bottom =528
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticTableAvail06:CtmStaticX2
+    left =599
+    top =280
+    right =696
+    bottom =307
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaticTableIndex07:CtmStaticX2
+    left =40
+    top =528
+    right =90
+    bottom =563
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =34
+  end
+  EditTableValue07:CtmEditX1
+    privilege =4
+    left =88
+    top =528
+    right =206
+    bottom =563
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =65500
+    fontsize =2
+    maxchar =12
+    align =36
+  end
+  StaticTableText07:CtmStaticX2
+    left =204
+    top =528
+    right =559
+    bottom =563
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticTableAvail07:CtmStaticX2
+    left =599
+    top =300
+    right =696
+    bottom =327
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaticTableIndex08:CtmStaticX2
+    left =40
+    top =563
+    right =90
+    bottom =598
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =34
+  end
+  EditTableValue08:CtmEditX1
+    privilege =4
+    left =88
+    top =563
+    right =206
+    bottom =598
+    wtype =35
+    taborder =7
+    fgc =0
+    bgc =65400
+    fontsize =2
+    maxchar =12
+    align =36
+  end
+  StaticTableText08:CtmStaticX2
+    left =204
+    top =563
+    right =559
+    bottom =598
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticTableAvail08:CtmStaticX2
+    left =599
+    top =320
+    right =696
+    bottom =347
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaticTableIndex09:CtmStaticX2
+    left =40
+    top =598
+    right =90
+    bottom =633
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =34
+  end
+  EditTableValue09:CtmEditX1
+    privilege =4
+    left =88
+    top =598
+    right =206
+    bottom =633
+    wtype =35
+    taborder =8
+    fgc =0
+    bgc =65500
+    fontsize =2
+    maxchar =12
+    align =36
+  end
+  StaticTableText09:CtmStaticX2
+    left =204
+    top =598
+    right =559
+    bottom =633
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticTableAvail09:CtmStaticX2
+    left =599
+    top =340
+    right =696
+    bottom =367
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaticTableIndex10:CtmStaticX2
+    left =40
+    top =633
+    right =90
+    bottom =668
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =34
+  end
+  EditTableValue10:CtmEditX1
+    privilege =4
+    left =88
+    top =633
+    right =206
+    bottom =668
+    wtype =35
+    taborder =9
+    fgc =0
+    bgc =65400
+    fontsize =2
+    maxchar =12
+    align =36
+  end
+  StaticTableText10:CtmStaticX2
+    left =204
+    top =633
+    right =559
+    bottom =668
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticTableAvail10:CtmStaticX2
+    left =599
+    top =360
+    right =696
+    bottom =387
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaticTUNE_AVAILABLELN:CtmStaticX2
+    left =599
+    top =154
+    right =696
+    bottom =189
+    wtype =36
+    fgc =0
+    bgc =44568
+    textID =ROBOT_STR_TUNE_AVAILABLELN
+    align =34
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =40
+    top =279
+    right =90
+    bottom =319
+    wtype =36
+    fgc =0
+    bgc =44568
+    fontsize =2
+    textID =PARAM_INDEX
+    align =34
+  end
+  StaticWORK_DATA:CtmStaticX2
+    left =88
+    top =279
+    right =206
+    bottom =319
+    wtype =36
+    fgc =0
+    bgc =44568
+    fontsize =2
+    textID =PARAM_VAULE
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =204
+    top =279
+    right =559
+    bottom =319
+    wtype =36
+    fgc =0
+    bgc =44568
+    fontsize =2
+    textID =PARAM_INFORNATION
+    align =34
+  end
+  ImageBoxLock:CtmImageBox
+    left =93
+    top =283
+    right =125
+    bottom =315
+    wtype =55
+    fontsize =2
+    type =2
+    imagepath =res_tm640/LockON.png
+    keycolor =63519
+  end
+  BtnParamGroup01:CtmToolButton
+    left =80
+    top =60
+    right =210
+    bottom =100
+    wtype =39
+    taborder =10
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID0 =ROBOT_STR_COMMMON_PARAM
+  end
+  BtnParamGroup03:CtmToolButton
+    left =80
+    top =120
+    right =210
+    bottom =160
+    wtype =39
+    taborder =11
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID0 =ROBOT_STR_1_AXIS_PARAM
+  end
+  BtnParamGroup04:CtmToolButton
+    left =235
+    top =120
+    right =365
+    bottom =160
+    wtype =39
+    taborder =12
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID0 =ROBOT_STR_2_AXIS_PARAM
+  end
+  BtnParamGroup05:CtmToolButton
+    left =390
+    top =120
+    right =520
+    bottom =160
+    wtype =39
+    taborder =13
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID0 =ROBOT_STR_3_AXIS_PARAM
+  end
+  BtnParamGroup06:CtmToolButton
+    left =80
+    top =180
+    right =210
+    bottom =220
+    wtype =39
+    taborder =14
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID0 =ROBOT_STR_4_AXIS_PARAM
+  end
+  BtnParamGroup07:CtmToolButton
+    left =235
+    top =180
+    right =365
+    bottom =220
+    wtype =39
+    taborder =15
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID0 =ROBOT_STR_5_AXIS_PARAM
+  end
+  BtnParamGroup8:CtmToolButton
+    left =390
+    top =180
+    right =520
+    bottom =220
+    wtype =39
+    taborder =16
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID0 =ROBOT_STR_6_AXIS_PARAM
+  end
+end

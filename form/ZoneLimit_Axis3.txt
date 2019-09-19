@@ -1,0 +1,235 @@
+ViewZoneLimit:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =BTN_PICKER_INMOLD
+  printname =ZoneLimit_Axis3.bmp
+  Img_ZoneLimit:CtmImageBox
+    left =150
+    top =21
+    right =580
+    bottom =471
+    type =2
+    imagepath =res_tm640/pic/picker/LimitSet.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =20
+    top =495
+    right =36
+    bottom =527
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  ZoneLimit_Str1:CtmStaticX2
+    left =36
+    top =495
+    right =286
+    bottom =527
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =ZONELIMIT_Zone
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =20
+    top =550
+    right =36
+    bottom =582
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  ZoneLimit_Str2:CtmStaticX2
+    left =36
+    top =550
+    right =286
+    bottom =582
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =ZONELIMIT_X_MIN
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =20
+    top =605
+    right =36
+    bottom =637
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  ZoneLimit_Str3:CtmStaticX2
+    left =36
+    top =605
+    right =286
+    bottom =637
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =ZONELIMIT_X_MAX
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =428
+    top =495
+    right =460
+    bottom =527
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =428
+    top =550
+    right =460
+    bottom =582
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =428
+    top =605
+    right =460
+    bottom =637
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  Btn_Axis_ALL:CtmToolButton
+    left =20
+    top =229
+    right =130
+    bottom =289
+    wtype =48
+    taborder =48
+    fontsize =1
+    align =34
+    captionID =ZONELIMIT_PARAM
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =77
+  end
+  Btn_Axis_X1:CtmToolButton
+    left =20
+    top =37
+    right =130
+    bottom =97
+    wtype =48
+    taborder =51
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_XAXIS
+    upbitmap =res_tm640/pic/PileBtnSelect.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =1
+  end
+  Btn_Axis_Y1:CtmToolButton
+    left =20
+    top =101
+    right =130
+    bottom =161
+    wtype =48
+    taborder =52
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_YAXIS
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =2
+    action =255
+    formname =Pile_2.txt
+  end
+  Btn_Axis_Z:CtmToolButton
+    left =20
+    top =165
+    right =130
+    bottom =225
+    wtype =48
+    taborder =53
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_ZAXIS
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =3
+    action =255
+    formname =Pile_3.txt
+  end
+  ZoneLimit_Data1:CtmEditX1
+    left =298
+    top =495
+    right =418
+    bottom =527
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =300000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_LIMITS_AXIS1_MAXPOSTION
+  end
+  ZoneLimit_Data2:CtmEditX1
+    left =298
+    top =550
+    right =418
+    bottom =582
+    wtype =35
+    taborder =2
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_LIMITS_AXIS_X1_MINPOSTION
+  end
+  ZoneLimit_Data3:CtmEditX1
+    left =298
+    top =605
+    right =418
+    bottom =637
+    wtype =35
+    taborder =3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    max =200000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_LIMITS_AXIS_X1_MAXPOSTION
+  end
+end

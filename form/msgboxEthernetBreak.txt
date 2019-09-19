@@ -1,0 +1,39 @@
+ViewMsgBoxEthernetBreak:CtmFormView
+  left =140
+  top =200
+  right =460
+  bottom =340
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =320
+    bottom =140
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_320X140.png
+    keycolor =63519
+  end
+  StaticMessage:CtmStaticX2
+    left =23
+    top =15
+    right =301
+    bottom =65
+    wtype =48
+    fgc =0
+    textID =ROBOT_STR_ETHERNET_BREAK
+    align =34
+  end
+  StaticMessage1:CtmStaticX2
+    left =33
+    top =100
+    right =311
+    bottom =135
+    wtype =48
+    fgc =29582
+    align =36
+  end
+end

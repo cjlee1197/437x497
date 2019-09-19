@@ -1,0 +1,83 @@
+ViewInstlogin:CtmFormView
+  left =200
+  top =140
+  right =497
+  bottom =326
+  wtype =34855
+  bgc =59164
+  extag =10000
+  printname =InstLogin.bmp
+  imageBackGround1:CtmImageBox
+    left =0
+    top =0
+    right =297
+    bottom =187
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/password.bmp
+    keycolor =63519
+  end
+  StaticTextLogin:CtmStaticX2
+    left =99
+    top =4
+    right =199
+    bottom =29
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =DLG_INSTALL
+    align =1
+  end
+  StaticInstLogin:CtmStaticX2
+    left =30
+    top =65
+    right =150
+    bottom =90
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =DLG_STARTUP_PASSWORD
+    align =1
+  end
+  editInstLogin:CtmEdit
+    left =150
+    top =65
+    right =230
+    bottom =90
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65535
+    fontsize =1
+    type =384
+    maxchar =20
+    align =0
+  end
+  OK_Button:CtmToolButton
+    left =57
+    top =140
+    right =147
+    bottom =170
+    wtype =36
+    taborder =1
+    bgc =18143
+    fontsize =1
+    buttontype =0
+    captionID =MSG_ENTER
+    key =7178
+  end
+  Cancel_Button:CtmToolButton
+    left =152
+    top =140
+    right =242
+    bottom =170
+    wtype =36
+    taborder =2
+    bgc =18143
+    fontsize =1
+    buttontype =0
+    captionID =MSG_CANCEL1
+    key =11779
+  end
+end

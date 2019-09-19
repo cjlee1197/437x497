@@ -1,0 +1,148 @@
+ViewMsgBoxOMSet:CtmFormView
+  left =196
+  top =308
+  right =595
+  bottom =612
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =399
+    bottom =304
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_399X304.png
+    keycolor =63519
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =28
+    top =28
+    right =371
+    bottom =216
+    wtype =5
+    bgc =46486
+    fontsize =2
+    bordercolor =0
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =28
+    top =28
+    right =371
+    bottom =84
+    wtype =5
+    bgc =38034
+    fontsize =2
+    bordercolor =0
+  end
+  StaticMessage:CtmStaticX2
+    left =88
+    top =41
+    right =312
+    bottom =71
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_COMMAND_OM_SET
+    align =34
+  end
+  StaticX1:CtmStaticX2
+    left =57
+    top =104
+    right =121
+    bottom =144
+    fgc =0
+    bgc =46486
+    fontsize =2
+    textID =ROBOT_STR_SERIALNUM
+    align =36
+  end
+  EditTable01:CtmEditX1
+    left =132
+    top =104
+    right =202
+    bottom =144
+    wtype =35
+    taborder =0
+    fontsize =2
+    type =18
+    maxchar =2
+    align =34
+    min =1
+    max =100
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =70
+    top =156
+    right =134
+    bottom =196
+    fgc =0
+    bgc =46486
+    fontsize =2
+    align =36
+  end
+  EditTable02:CtmEditX1
+    left =132
+    top =156
+    right =202
+    bottom =196
+    wtype =35
+    taborder =1
+    fontsize =2
+    type =18
+    align =34
+    max =1
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  btnOK:CtmToolButton
+    left =48
+    top =236
+    right =168
+    bottom =276
+    wtype =39
+    taborder =2
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_OK
+  end
+  btnCancel:CtmToolButton
+    left =231
+    top =236
+    right =351
+    bottom =276
+    wtype =39
+    taborder =3
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =208
+    top =104
+    right =328
+    bottom =144
+    fgc =0
+    bgc =46486
+    fontsize =2
+    textID =ROBOT_COMMAND_STR_OM_NO
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =208
+    top =156
+    right =328
+    bottom =196
+    fgc =0
+    bgc =46486
+    fontsize =2
+    textID =ROBOT_COMMAND_STR_OM_STATE
+  end
+end

@@ -1,0 +1,108 @@
+ViewMsgBoxFileSelect:CtmFormView
+  left =97
+  top =180
+  right =503
+  bottom =500
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =406
+    bottom =320
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_406X320.png
+    keycolor =63519
+  end
+  StaticMessage:CtmStaticX2
+    left =28
+    top =28
+    right =378
+    bottom =77
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_MSG_TEMP
+  end
+  btnYes:CtmToolButton
+    left =25
+    top =252
+    right =135
+    bottom =292
+    wtype =39
+    taborder =0
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_MSG_TEMP_OPENA
+  end
+  btnNo:CtmToolButton
+    left =150
+    top =252
+    right =260
+    bottom =292
+    wtype =39
+    taborder =1
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_MSG_TEMP_OPENB
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =45
+    top =147
+    right =378
+    bottom =182
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_MSG_TEMP_OPENA_MORE
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =45
+    top =197
+    right =378
+    bottom =232
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_MSG_TEMP_OPENB_MORE
+  end
+  btnCancel:CtmToolButton
+    left =271
+    top =252
+    right =381
+    bottom =292
+    wtype =39
+    taborder =2
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =45
+    top =97
+    right =165
+    bottom =132
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_EDIT_FILENAME
+  end
+  FileName:CtmStaticX2
+    left =166
+    top =97
+    right =378
+    bottom =132
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+end

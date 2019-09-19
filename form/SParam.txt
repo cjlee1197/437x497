@@ -1,0 +1,372 @@
+ViewSParam:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =819
+  titleID =BTN_02_PARA
+  printname =Param.bmp
+  LinuxCtmEditX114:CtmEditX1
+    left =100
+    top =101
+    right =179
+    bottom =125
+    wtype =33
+    taborder =1
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV07
+  end
+  LinuxCtmToolButton1:CtmToolButton
+    left =20
+    top =4
+    right =120
+    bottom =39
+    wtype =48
+    taborder =51
+    fgc =19374
+    fontsize =1
+    align =34
+    captionID =BTN_02_PARA
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Param.txt
+  end
+  LinuxCtmToolButton3:CtmToolButton
+    left =220
+    top =4
+    right =320
+    bottom =39
+    wtype =48
+    taborder =53
+    fgc =19374
+    fontsize =1
+    align =34
+    captionID =VW_VALVE_FUNCTION
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Funcopt.txt
+  end
+  Button_Para2:CtmToolButton
+    left =320
+    top =4
+    right =420
+    bottom =39
+    wtype =48
+    taborder =54
+    fgc =19374
+    fontsize =1
+    align =34
+    captionID =BTNX_BACK
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Func.txt
+  end
+  LinuxCtmEditX11:CtmEditX1
+    left =100
+    top =141
+    right =179
+    bottom =165
+    wtype =33
+    taborder =2
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV08
+  end
+  LinuxCtmEditX12:CtmEditX1
+    left =100
+    top =181
+    right =179
+    bottom =205
+    wtype =33
+    taborder =3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV09
+  end
+  LinuxCtmEditX13:CtmEditX1
+    left =100
+    top =221
+    right =179
+    bottom =245
+    wtype =33
+    taborder =4
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV10
+  end
+  LinuxCtmEditX14:CtmEditX1
+    left =100
+    top =261
+    right =179
+    bottom =285
+    wtype =33
+    taborder =5
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV11
+  end
+  LinuxCtmEditX15:CtmEditX1
+    left =100
+    top =301
+    right =179
+    bottom =325
+    wtype =33
+    taborder =6
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV12
+  end
+  LinuxCtmToolButton2:CtmToolButton
+    left =120
+    top =4
+    right =220
+    bottom =39
+    wtype =48
+    taborder =52
+    fgc =36256
+    fontsize =1
+    align =34
+    captionID =BTN_01_03_6SPPA
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
+  end
+  LinuxCtmEditX16:CtmEditX1
+    left =212
+    top =101
+    right =291
+    bottom =125
+    wtype =33
+    taborder =10
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV13
+  end
+  LinuxCtmEditX17:CtmEditX1
+    left =212
+    top =141
+    right =291
+    bottom =165
+    wtype =33
+    taborder =11
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV14
+  end
+  LinuxCtmEditX18:CtmEditX1
+    left =212
+    top =181
+    right =291
+    bottom =205
+    wtype =33
+    taborder =12
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV15
+  end
+  LinuxCtmEditX19:CtmEditX1
+    left =212
+    top =221
+    right =291
+    bottom =245
+    wtype =33
+    taborder =13
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV16
+  end
+  LinuxCtmEditX110:CtmEditX1
+    left =212
+    top =261
+    right =291
+    bottom =285
+    wtype =33
+    taborder =14
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV17
+  end
+  LinuxCtmEditX111:CtmEditX1
+    left =212
+    top =301
+    right =291
+    bottom =325
+    wtype =33
+    taborder =15
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV18
+  end
+  LinuxCtmEditX112:CtmEditX1
+    left =324
+    top =101
+    right =403
+    bottom =125
+    wtype =33
+    taborder =20
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV19
+  end
+  LinuxCtmEditX113:CtmEditX1
+    left =324
+    top =141
+    right =403
+    bottom =165
+    wtype =33
+    taborder =21
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV20
+  end
+  LinuxCtmEditX115:CtmEditX1
+    left =324
+    top =181
+    right =403
+    bottom =205
+    wtype =33
+    taborder =22
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV21
+  end
+  LinuxCtmEditX116:CtmEditX1
+    left =324
+    top =221
+    right =403
+    bottom =245
+    wtype =33
+    taborder =23
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV22
+  end
+  LinuxCtmEditX117:CtmEditX1
+    left =324
+    top =261
+    right =403
+    bottom =285
+    wtype =33
+    taborder =24
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV23
+  end
+  LinuxCtmEditX118:CtmEditX1
+    left =324
+    top =301
+    right =403
+    bottom =325
+    wtype =33
+    taborder =25
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =1000000
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV24
+  end
+end

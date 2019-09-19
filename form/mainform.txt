@@ -1,0 +1,369 @@
+mainform:CtmMainFrame
+  left =0
+  top =0
+  right =599
+  bottom =65535
+  wtype =351
+  promptbar:CtmPromptBar
+    left =0
+    top =90
+    right =599
+    bottom =134
+    wtype =39
+    bgc =63519
+    DateTime:CtmStaticX2
+      left =447
+      top =5
+      right =592
+      bottom =33
+      wtype =48
+      fgc =65535
+      fontsize =2
+    end
+    StaticPrompt:CtmStaticX2
+      left =8
+      top =5
+      right =418
+      bottom =33
+      wtype =48
+      fgc =0
+      fontsize =2
+    end
+  end
+  view:CtmView
+    left =0
+    top =134
+    right =599
+    bottom =963
+    wtype =39
+    bgc =59196
+    overviewname =Over.txt
+    ImageBGLOGO:CtmImageBox
+      left =0
+      top =0
+      right =599
+      bottom =829
+      wtype =55
+      type =2
+      imagepath =res_tm640/pic/Background.bmp
+      keycolor =63519
+    end
+  end
+  statusbar0:CtmStatusBar
+    left =0
+    top =0
+    right =599
+    bottom =90
+    wtype =23
+    BmpstatusbarBG:CtmImageBox
+      left =0
+      top =0
+      right =599
+      bottom =90
+      wtype =55
+      type =2
+      imagepath =res_tm640/StateBarBG.bmp
+    end
+    BmpLogo:CtmImageBox
+      left =5
+      top =2
+      right =125
+      bottom =46
+      wtype =48
+      visible =FALSE
+      enabled =FALSE
+      type =2
+      style =3
+      imagepath =res_tm640/pic/LOGO.bmp
+      keycolor =63519
+    end
+    BmpPickerMode:CtmImageBox
+      left =39
+      top =42
+      right =69
+      bottom =72
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/Hand.bmp
+      keycolor =63519
+    end
+    BmpMoveMode:CtmImageBox
+      left =39
+      top =72
+      right =69
+      bottom =87
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/Hand.bmp
+      keycolor =63519
+    end
+    BmpPICKER:CtmImageBox
+      left =72
+      top =45
+      right =112
+      bottom =75
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/taskcomm-off.bmp
+      keycolor =63519
+    end
+    BmpALARM:CtmImageBox
+      left =552
+      top =5
+      right =592
+      bottom =5
+      wtype =48
+      visible =FALSE
+      enabled =FALSE
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Alarm.bmp
+      keycolor =63519
+    end
+    BmpPickerEnable:CtmImageBox
+      left =112
+      top =45
+      right =152
+      bottom =75
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/motoroff.bmp
+      keycolor =63519
+    end
+    SaveScreenBtn:CtmToolButton
+      left =0
+      top =6
+      right =34
+      bottom =40
+      wtype =48
+      taborder =100
+      fontsize =2
+      keycolor =63519
+    end
+    UserLoginBtn:CtmToolButton
+      left =3
+      top =52
+      right =35
+      bottom =84
+      wtype =48
+      taborder =101
+      fontsize =2
+      upbitmap =res_tm640/pic/User.bmp
+      downbitmap =res_tm640/pic/UserDown.bmp
+      keycolor =63519
+    end
+    BmpAxis_Z:CtmImageBox
+      left =185
+      top =5
+      right =235
+      bottom =45
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Axis_Z.bmp
+      keycolor =63519
+    end
+    EditZposition:CtmEditX1
+      left =235
+      top =10
+      right =323
+      bottom =42
+      wtype =48
+      taborder =-3
+      fgc =65535
+      bgc =65503
+      fontsize =1
+      bordercolor =36256
+      maxchar =10
+      align =36
+      precision =2
+      value =999999
+      dbid1 =MACHINE_INTERFACE_CONTROL_ZAXISPOSITION
+    end
+    BmpAxis_X:CtmImageBox
+      left =323
+      top =5
+      right =373
+      bottom =45
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Axis_X.bmp
+      keycolor =63519
+    end
+    EditXposition:CtmEditX1
+      left =373
+      top =10
+      right =461
+      bottom =42
+      wtype =48
+      taborder =-3
+      fgc =65535
+      bgc =65503
+      fontsize =1
+      bordercolor =36256
+      maxchar =10
+      align =36
+      precision =2
+      dbid1 =MACHINE_INTERFACE_CONTROL_XAXISPOSITION
+    end
+    BmpAxis_Y:CtmImageBox
+      left =461
+      top =5
+      right =511
+      bottom =45
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Axis_Y.bmp
+      keycolor =63519
+    end
+    EditYposition:CtmEditX1
+      left =511
+      top =10
+      right =599
+      bottom =42
+      wtype =48
+      taborder =-3
+      fgc =65535
+      bgc =65503
+      fontsize =1
+      bordercolor =36256
+      maxchar =10
+      align =36
+      precision =2
+      dbid1 =MACHINE_INTERFACE_CONTROL_YAXISPOSITION
+    end
+    BmpAxis_X2:CtmImageBox
+      left =323
+      top =48
+      right =373
+      bottom =88
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Axis_X2.bmp
+      keycolor =63519
+    end
+    EditX2position:CtmEditX1
+      left =373
+      top =53
+      right =461
+      bottom =85
+      wtype =48
+      taborder =-3
+      fgc =65535
+      bgc =65503
+      fontsize =1
+      bordercolor =36256
+      maxchar =10
+      align =36
+      precision =2
+      dbid1 =MACHINE_INTERFACE_CONTROL_X2AXISPOSITION
+    end
+    BmpAxis_Y2:CtmImageBox
+      left =461
+      top =48
+      right =511
+      bottom =88
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Axis_Y2.bmp
+      keycolor =63519
+    end
+    EditY2position:CtmEditX1
+      left =511
+      top =53
+      right =599
+      bottom =85
+      wtype =48
+      taborder =-3
+      fgc =65535
+      bgc =65503
+      fontsize =1
+      bordercolor =36256
+      maxchar =10
+      align =36
+      precision =2
+      dbid1 =MACHINE_INTERFACE_CONTROL_Y2AXISPOSITION
+    end
+    PickerSpeed:CtmEditX1
+      left =267
+      top =53
+      right =317
+      bottom =85
+      wtype =48
+      taborder =-3
+      fgc =65535
+      bgc =65503
+      fontsize =1
+      bordercolor =36256
+      maxchar =10
+      align =36
+      dbid1 =MACHINE_CONFIGURATION_PERCENTAGEOFSPEED
+    end
+    Img_Speed:CtmImageBox
+      left =217
+      top =48
+      right =267
+      bottom =88
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Speed.bmp
+      keycolor =63519
+    end
+    BmpState:CtmImageBox
+      left =135
+      top =5
+      right =185
+      bottom =45
+      wtype =48
+      type =2
+      style =3
+      keycolor =63519
+    end
+  end
+  maintoolbar:CtmToolBar
+    left =0
+    top =963
+    right =599
+    bottom =1024
+    wtype =39
+    maintool =toolbar_01.txt
+  end
+  StaticTitle:CtmStaticX2
+    left =34
+    top =6
+    right =134
+    bottom =40
+    wtype =48
+    fgc =65535
+    fontsize =1
+  end
+  StaticTitle2:CtmStaticX2
+    left =162
+    top =56
+    right =192
+    bottom =90
+    wtype =48
+    fgc =65535
+    fontsize =1
+    align =34
+  end
+  StrUserID:CtmStaticX2
+    left =3
+    top =52
+    right =35
+    bottom =86
+    wtype =48
+    fgc =65535
+    fontsize =1
+    align =34
+  end
+end

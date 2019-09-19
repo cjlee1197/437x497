@@ -1,0 +1,23 @@
+splash:CtmWndSplash
+	bgc =55167
+	left =0
+	top =0
+	right =599
+	bottom =1023
+	StaticCAPTION:CtmStaticX2
+		left =479
+		top =899
+		right =599
+		bottom =921
+		wtype =48
+		text =version
+	end
+	StaticIP:CtmStaticX2
+		left =479
+		top =931
+		right =599
+		bottom =953
+		wtype =48
+		text =version
+	end
+end

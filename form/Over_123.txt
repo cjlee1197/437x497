@@ -1,0 +1,552 @@
+ViewOver_IML:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =819
+  wtype =48
+  titleID =VW_PAT_OVERVIEW
+  printname =Over.bmp
+  StaticSpeed_1:CtmStaticX2
+    left =310
+    top =160
+    right =326
+    bottom =195
+    wtype =34
+    fgc =0
+    bgc =17527
+    fontsize =1
+  end
+  StaticSpeed_2:CtmStaticX2
+    left =327
+    top =160
+    right =343
+    bottom =195
+    wtype =34
+    fgc =0
+    bgc =17527
+    fontsize =1
+  end
+  StaticSpeed_3:CtmStaticX2
+    left =344
+    top =160
+    right =360
+    bottom =195
+    wtype =34
+    fgc =0
+    bgc =17527
+    fontsize =1
+  end
+  StaticSpeed_4:CtmStaticX2
+    left =361
+    top =160
+    right =377
+    bottom =195
+    wtype =34
+    fgc =0
+    bgc =17527
+    fontsize =1
+  end
+  StaticSpeed_5:CtmStaticX2
+    left =378
+    top =160
+    right =394
+    bottom =195
+    wtype =34
+    fgc =0
+    bgc =17527
+    fontsize =1
+  end
+  StaticSpeed_6:CtmStaticX2
+    left =395
+    top =160
+    right =411
+    bottom =195
+    wtype =34
+    fgc =0
+    bgc =17527
+    fontsize =1
+  end
+  StaticSpeed_7:CtmStaticX2
+    left =412
+    top =160
+    right =428
+    bottom =195
+    wtype =34
+    fgc =0
+    bgc =17527
+    fontsize =1
+  end
+  StaticSpeed_8:CtmStaticX2
+    left =429
+    top =160
+    right =445
+    bottom =195
+    wtype =34
+    fgc =0
+    bgc =17527
+    fontsize =1
+  end
+  StaticSpeed_9:CtmStaticX2
+    left =446
+    top =160
+    right =462
+    bottom =195
+    wtype =34
+    fgc =0
+    bgc =17527
+    fontsize =1
+  end
+  StaticSpeed_10:CtmStaticX2
+    left =463
+    top =160
+    right =479
+    bottom =195
+    wtype =34
+    fgc =0
+    bgc =17527
+    fontsize =1
+  end
+  StaticSpeed:CtmStaticX2
+    left =342
+    top =123
+    right =397
+    bottom =153
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_FAST_SPEED
+  end
+  EditSpeedValue:CtmEditX1
+    left =408
+    top =118
+    right =456
+    bottom =150
+    wtype =48
+    taborder =-3
+    fgc =19374
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    dbid0 =MACHINE_CONFIGURATION_PERCENTAGEOFSPEED
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =386
+    top =123
+    right =410
+    bottom =153
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =DLG_SYSTEM_PERCENT
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =81
+    top =198
+    right =168
+    bottom =223
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VM_CLAMP_TAKETIME
+  end
+  editMOLDCLSREALCOL000:CtmEditX1
+    left =163
+    top =235
+    right =243
+    bottom =260
+    wtype =49
+    taborder =-3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =14
+    align =32
+    precision =2
+    spepre =1
+    dbid0 =MACHINE_INTERFACE_MONITOR_RSV08
+  end
+  LinuxCtmStaticX210:CtmStaticX2
+    left =81
+    top =235
+    right =168
+    bottom =260
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =PICKER_CYCLETIME
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =81
+    top =87
+    right =168
+    bottom =112
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_ENERGY_TOTAL_GPROC
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =81
+    top =50
+    right =168
+    bottom =75
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_ENERGY_TOTAL_NUM
+  end
+  LinuxCtmStaticX213:CtmStaticX2
+    left =81
+    top =161
+    right =168
+    bottom =186
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =PICKER_SAMPLECOUNT
+  end
+  LinuxCtmEditX11:CtmEditX1
+    left =163
+    top =198
+    right =243
+    bottom =223
+    wtype =49
+    taborder =-3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =14
+    align =32
+    spepre =1
+    dbid0 =MACHINE_INTERFACE_MONITOR_TAKE_TIME
+  end
+  TotalGoodCount:CtmEditX1
+    left =163
+    top =87
+    right =243
+    bottom =112
+    wtype =49
+    taborder =-3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =14
+    align =32
+  end
+  TotalCount:CtmEditX1
+    left =163
+    top =50
+    right =243
+    bottom =75
+    wtype =49
+    taborder =-3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =14
+    align =32
+    dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED6
+  end
+  TotalSampleCount:CtmEditX1
+    left =163
+    top =161
+    right =243
+    bottom =186
+    wtype =49
+    taborder =-3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =14
+    align =32
+    dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED7
+  end
+  LinuxCtmStaticX214:CtmStaticX2
+    left =81
+    top =124
+    right =168
+    bottom =149
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_ENERGY_TOTAL_BPROC
+  end
+  TotalbadCount:CtmEditX1
+    left =163
+    top =124
+    right =243
+    bottom =149
+    wtype =49
+    taborder =-3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =14
+    align =32
+    dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED8
+  end
+  StaticSOURCE:CtmStaticX2
+    left =29
+    top =306
+    right =75
+    bottom =341
+    wtype =33
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    textID =VW_ALARM_NO
+    align =34
+  end
+  EditNo1:CtmEdit
+    left =29
+    top =341
+    right =75
+    bottom =376
+    wtype =33
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+  end
+  EditNo2:CtmEdit
+    left =29
+    top =376
+    right =75
+    bottom =411
+    wtype =33
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+  end
+  EditNo3:CtmEdit
+    left =29
+    top =411
+    right =75
+    bottom =446
+    wtype =33
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+  end
+  EditNo4:CtmEdit
+    left =29
+    top =446
+    right =75
+    bottom =481
+    wtype =33
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+  end
+  EditNo5:CtmEdit
+    left =29
+    top =481
+    right =75
+    bottom =516
+    wtype =33
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+  end
+  LinuxCtmStaticX215:CtmStaticX2
+    left =76
+    top =306
+    right =536
+    bottom =340
+    wtype =33
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    textID =VW_INJECT_ACTIVE
+    align =34
+  end
+  ToolButtonBoxAct1:CtmToolButton
+    left =76
+    top =341
+    right =536
+    bottom =376
+    wtype =33
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    buttontype =1
+  end
+  ToolButtonBoxAct2:CtmToolButton
+    left =76
+    top =376
+    right =536
+    bottom =411
+    wtype =33
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    buttontype =1
+  end
+  ToolButtonBoxAct3:CtmToolButton
+    left =76
+    top =411
+    right =536
+    bottom =446
+    wtype =33
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    buttontype =1
+  end
+  ToolButtonBoxAct4:CtmToolButton
+    left =76
+    top =446
+    right =536
+    bottom =481
+    wtype =33
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    buttontype =1
+  end
+  ToolButtonBoxAct5:CtmToolButton
+    left =76
+    top =481
+    right =536
+    bottom =516
+    wtype =33
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    bordercolor =33808
+    buttontype =1
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =93
+    top =558
+    right =503
+    bottom =734
+    type =2
+    imagepath =res_tm640/linetable_1.bmp
+    keycolor =63519
+  end
+  SelectBox11:CtmSelectBox
+    left =136
+    top =629
+    right =280
+    bottom =654
+    wtype =55
+    fgc =19374
+    fontsize =1
+    textID =PCIKER_INNER_I_02
+    group =1
+  end
+  SelectBox12:CtmSelectBox
+    left =136
+    top =659
+    right =280
+    bottom =684
+    wtype =55
+    fgc =19374
+    fontsize =1
+    textID =PCIKER_INNER_I_03
+    group =2
+  end
+  SelectBox13:CtmSelectBox
+    left =136
+    top =689
+    right =280
+    bottom =714
+    wtype =55
+    fgc =19374
+    fontsize =1
+    textID =PCIKER_INNER_I_04
+    group =3
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =152
+    top =579
+    right =252
+    bottom =609
+    wtype =48
+    fgc =19374
+    bgc =42367
+    fontsize =1
+    bordercolor =35953
+    textID =VW_KEY_ENTER
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =336
+    top =579
+    right =436
+    bottom =609
+    wtype =48
+    fgc =19374
+    bgc =42367
+    fontsize =1
+    bordercolor =35953
+    textID =VW_CHARGE_BACKPRSVALVE_HELP_OUT
+    align =34
+  end
+  SelectBox20:CtmSelectBox
+    left =320
+    top =629
+    right =464
+    bottom =654
+    wtype =55
+    fgc =19374
+    fontsize =1
+    textID =PICKER_INNER_O_01
+    group =16
+  end
+  SelectBox21:CtmSelectBox
+    left =320
+    top =659
+    right =464
+    bottom =684
+    wtype =55
+    fgc =19374
+    fontsize =1
+    textID =PICKER_INNER_O_02
+    group =17
+  end
+  SelectBox22:CtmSelectBox
+    left =320
+    top =689
+    right =464
+    bottom =714
+    wtype =55
+    fgc =19374
+    fontsize =1
+    textID =PICKER_INNER_O_03
+    group =18
+  end
+end

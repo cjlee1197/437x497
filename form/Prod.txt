@@ -1,0 +1,304 @@
+ViewProd:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =777
+  wtype =48
+  titleID =BTNX_03_PMD1
+  printname =Product.bmp
+  StaticOTHER_COUNTPERUNIT:CtmStaticX2
+    left =104
+    top =122
+    right =264
+    bottom =154
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_OTHER_COUNTPERUNIT
+    align =34
+  end
+  StaticOTHERCOUNTPERUNIT_0UNIT:CtmStaticX2
+    left =439
+    top =122
+    right =499
+    bottom =154
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_OVER_CNT
+  end
+  StaticOTHERSHOTCNTREAL_0UNIT:CtmStaticX2
+    left =439
+    top =170
+    right =499
+    bottom =202
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_OVER_CNT
+  end
+  StaticOTHERPACKREAL_0UNIT:CtmStaticX2
+    left =439
+    top =218
+    right =499
+    bottom =250
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_OVER_CNT
+  end
+  editCOUNTPERUNIT:CtmEditX1
+    left =274
+    top =122
+    right =434
+    bottom =154
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =32
+    max =99
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =SYSX_OTHERS_OTHERS_INT_RESERVED2
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =104
+    top =218
+    right =264
+    bottom =250
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_ENERGY_TOTAL_GPROC
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =104
+    top =170
+    right =264
+    bottom =202
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_ENERGY_TOTAL_NUM
+    align =34
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =104
+    top =314
+    right =264
+    bottom =346
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_SAMPLECOUNT
+    align =34
+  end
+  TotalGoodCount:CtmEditX1
+    left =274
+    top =218
+    right =434
+    bottom =250
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =53039
+    maxchar =14
+    align =32
+  end
+  TotalCount:CtmEditX1
+    left =274
+    top =170
+    right =434
+    bottom =202
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =53039
+    maxchar =14
+    align =32
+    dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED6
+  end
+  TotalSampleCount:CtmEditX1
+    left =274
+    top =314
+    right =434
+    bottom =346
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =53039
+    maxchar =14
+    align =32
+    dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED7
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =104
+    top =266
+    right =264
+    bottom =298
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_ENERGY_TOTAL_BPROC
+    align =34
+  end
+  TotalbadCount:CtmEditX1
+    left =274
+    top =266
+    right =434
+    bottom =298
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =53039
+    maxchar =14
+    align =32
+    dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED8
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =439
+    top =266
+    right =499
+    bottom =298
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_OVER_CNT
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =439
+    top =314
+    right =499
+    bottom =346
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_OVER_CNT
+  end
+  BtnBack:CtmToolButton
+    left =68
+    top =820
+    right =152
+    bottom =877
+    wtype =48
+    taborder =72
+    align =18
+    upbitmap =res_tm640/pic/BtnBackUp.bmp
+    key =72
+    action =255
+    formname =Param.txt
+  end
+  BtnHome:CtmToolButton
+    left =244
+    top =820
+    right =328
+    bottom =877
+    wtype =48
+    taborder =70
+    align =18
+    upbitmap =res_tm640/pic/BtnHomeUp.bmp
+    key =70
+    action =255
+    formname =Param.txt
+  end
+  BtnMenu:CtmToolButton
+    left =420
+    top =820
+    right =504
+    bottom =877
+    wtype =48
+    taborder =71
+    align =18
+    upbitmap =res_tm640/pic/BtnMenuUp.bmp
+    key =71
+    action =255
+    formname =Param.txt
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =88
+    top =122
+    right =104
+    bottom =154
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =88
+    top =170
+    right =104
+    bottom =202
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =88
+    top =218
+    right =104
+    bottom =250
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =88
+    top =266
+    right =104
+    bottom =298
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =88
+    top =314
+    right =104
+    bottom =346
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+end

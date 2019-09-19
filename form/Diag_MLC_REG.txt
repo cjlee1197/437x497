@@ -1,0 +1,735 @@
+ViewDiag_MLC:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  titleID =ROBOT_STR_PLC_SCRACT
+  printname =MLC_REG.bmp
+  OnCreateA =OnCreate_MLC_Reg
+  BtnPageUp:CtmToolButton
+    left =347
+    top =28
+    right =437
+    bottom =68
+    taborder =1
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_PAGEUP
+    key =26624
+  end
+  BtnPageDown:CtmToolButton
+    left =487
+    top =28
+    right =577
+    bottom =68
+    taborder =2
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =1
+    captionID =ROBOT_BTN_PAGEDOWN
+    key =27904
+  end
+  EditStartNo:CtmEditX1
+    left =80
+    top =30
+    right =138
+    bottom =69
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65500
+    fontsize =2
+    colorcontrol =4
+    destcolor =65400
+    maxchar =3
+    align =34
+    maxdb =FALSE
+  end
+  goto:CtmStaticX2
+    left =20
+    top =30
+    right =78
+    bottom =70
+    wtype =36
+    fgc =0
+    bgc =44568
+    fontsize =2
+    textID =ROBOT_PARAM_NO_GOTO
+    align =34
+  end
+  StaIndex0:CtmStaticX2
+    left =20
+    top =81
+    right =70
+    bottom =121
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  Static0:CtmStaticX2
+    left =71
+    top =81
+    right =291
+    bottom =121
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndex10:CtmStaticX2
+    left =20
+    top =129
+    right =70
+    bottom =169
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  Static10:CtmStaticX2
+    left =71
+    top =129
+    right =291
+    bottom =169
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndex20:CtmStaticX2
+    left =20
+    top =177
+    right =70
+    bottom =217
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  Static20:CtmStaticX2
+    left =71
+    top =177
+    right =291
+    bottom =217
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndex30:CtmStaticX2
+    left =20
+    top =225
+    right =70
+    bottom =265
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  Static30:CtmStaticX2
+    left =71
+    top =225
+    right =291
+    bottom =265
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndex40:CtmStaticX2
+    left =20
+    top =273
+    right =70
+    bottom =313
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  Static40:CtmStaticX2
+    left =71
+    top =273
+    right =291
+    bottom =313
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndex50:CtmStaticX2
+    left =20
+    top =321
+    right =70
+    bottom =361
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  Static50:CtmStaticX2
+    left =71
+    top =321
+    right =291
+    bottom =361
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndex60:CtmStaticX2
+    left =20
+    top =369
+    right =70
+    bottom =409
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  Static60:CtmStaticX2
+    left =71
+    top =369
+    right =291
+    bottom =409
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndex70:CtmStaticX2
+    left =20
+    top =417
+    right =70
+    bottom =457
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  Static70:CtmStaticX2
+    left =71
+    top =417
+    right =291
+    bottom =457
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndex80:CtmStaticX2
+    left =20
+    top =465
+    right =70
+    bottom =505
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  Static80:CtmStaticX2
+    left =71
+    top =465
+    right =291
+    bottom =505
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndex90:CtmStaticX2
+    left =20
+    top =513
+    right =70
+    bottom =553
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  Static90:CtmStaticX2
+    left =71
+    top =513
+    right =291
+    bottom =553
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndexA0:CtmStaticX2
+    left =20
+    top =561
+    right =70
+    bottom =601
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  StaticA0:CtmStaticX2
+    left =71
+    top =561
+    right =291
+    bottom =601
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndexB0:CtmStaticX2
+    left =20
+    top =609
+    right =70
+    bottom =649
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  StaticB0:CtmStaticX2
+    left =71
+    top =609
+    right =291
+    bottom =649
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndexC0:CtmStaticX2
+    left =20
+    top =657
+    right =70
+    bottom =697
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  StaticC0:CtmStaticX2
+    left =71
+    top =657
+    right =291
+    bottom =697
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndexD0:CtmStaticX2
+    left =20
+    top =705
+    right =70
+    bottom =745
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  StaticD0:CtmStaticX2
+    left =71
+    top =705
+    right =291
+    bottom =745
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndexE0:CtmStaticX2
+    left =20
+    top =753
+    right =70
+    bottom =793
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  StaticE0:CtmStaticX2
+    left =71
+    top =753
+    right =291
+    bottom =793
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndexF0:CtmStaticX2
+    left =20
+    top =801
+    right =70
+    bottom =841
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  StaticF0:CtmStaticX2
+    left =71
+    top =801
+    right =291
+    bottom =841
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndex1:CtmStaticX2
+    left =310
+    top =81
+    right =360
+    bottom =121
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  Static1:CtmStaticX2
+    left =361
+    top =81
+    right =581
+    bottom =121
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndex11:CtmStaticX2
+    left =310
+    top =129
+    right =360
+    bottom =169
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  Static11:CtmStaticX2
+    left =361
+    top =129
+    right =581
+    bottom =169
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndex21:CtmStaticX2
+    left =310
+    top =177
+    right =360
+    bottom =217
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  Static21:CtmStaticX2
+    left =361
+    top =177
+    right =581
+    bottom =217
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndex31:CtmStaticX2
+    left =310
+    top =225
+    right =360
+    bottom =265
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  Static31:CtmStaticX2
+    left =361
+    top =225
+    right =581
+    bottom =265
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndex41:CtmStaticX2
+    left =310
+    top =273
+    right =360
+    bottom =313
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  Static41:CtmStaticX2
+    left =361
+    top =273
+    right =581
+    bottom =313
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndex51:CtmStaticX2
+    left =310
+    top =321
+    right =360
+    bottom =361
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  Static51:CtmStaticX2
+    left =361
+    top =321
+    right =581
+    bottom =361
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndex61:CtmStaticX2
+    left =310
+    top =369
+    right =360
+    bottom =409
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  Static61:CtmStaticX2
+    left =361
+    top =369
+    right =581
+    bottom =409
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndex71:CtmStaticX2
+    left =310
+    top =417
+    right =360
+    bottom =457
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  Static71:CtmStaticX2
+    left =361
+    top =417
+    right =581
+    bottom =457
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndex81:CtmStaticX2
+    left =310
+    top =465
+    right =360
+    bottom =505
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  Static81:CtmStaticX2
+    left =361
+    top =465
+    right =581
+    bottom =505
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndex91:CtmStaticX2
+    left =310
+    top =513
+    right =360
+    bottom =553
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  Static91:CtmStaticX2
+    left =361
+    top =513
+    right =581
+    bottom =553
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndexA1:CtmStaticX2
+    left =310
+    top =561
+    right =360
+    bottom =601
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  StaticA1:CtmStaticX2
+    left =361
+    top =561
+    right =581
+    bottom =601
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndexB1:CtmStaticX2
+    left =310
+    top =609
+    right =360
+    bottom =649
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  StaticB1:CtmStaticX2
+    left =361
+    top =609
+    right =581
+    bottom =649
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndexC1:CtmStaticX2
+    left =310
+    top =657
+    right =360
+    bottom =697
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  StaticC1:CtmStaticX2
+    left =361
+    top =657
+    right =581
+    bottom =697
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndexD1:CtmStaticX2
+    left =310
+    top =705
+    right =360
+    bottom =745
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  StaticD1:CtmStaticX2
+    left =361
+    top =705
+    right =581
+    bottom =745
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaIndexE1:CtmStaticX2
+    left =310
+    top =753
+    right =360
+    bottom =793
+    wtype =48
+    fgc =0
+    bgc =55038
+    fontsize =2
+    align =10
+  end
+  StaticE1:CtmStaticX2
+    left =361
+    top =753
+    right =581
+    bottom =793
+    wtype =35
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaIndexF1:CtmStaticX2
+    left =310
+    top =801
+    right =360
+    bottom =841
+    wtype =48
+    fgc =0
+    bgc =44572
+    fontsize =2
+    align =10
+  end
+  StaticF1:CtmStaticX2
+    left =361
+    top =801
+    right =581
+    bottom =841
+    wtype =35
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+end

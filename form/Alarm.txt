@@ -1,0 +1,839 @@
+ViewAlarm:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =777
+  wtype =48
+  titleID =VW_ALARM
+  printname =Alarm.bmp
+  LineTableTABLE1:CtmLineTable
+    left =10
+    top =182
+    right =590
+    bottom =552
+    wtype =52
+    bordercolor =0
+    stype =33280
+    vertrows =10
+    horicols =4
+    horipoints0 =0
+    horipoints1 =43
+    horipoints2 =43
+    horipoints3 =254
+    horipoints4 =155
+    horipoints5 =85
+  end
+  StaticVW_ALARM_TOTALCOUNT:CtmStaticX2
+    left =304
+    top =69
+    right =480
+    bottom =101
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_ALARM_TOTALCOUNT
+    align =34
+  end
+  StaticVW_ALARM_STARTNO:CtmStaticX2
+    left =12
+    top =69
+    right =184
+    bottom =101
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_ALARM_STARTNO
+    align =34
+  end
+  StaticVW_ALARM_RESET:CtmStaticX2
+    left =12
+    top =104
+    right =184
+    bottom =136
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_ALARM_RESET
+    align =34
+  end
+  StaticVW_ALARM_NO:CtmStaticX2
+    left =12
+    top =144
+    right =56
+    bottom =176
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_ALARM_NO
+    align =34
+  end
+  StaticVW_ALARM_CODE:CtmStaticX2
+    left =58
+    top =144
+    right =102
+    bottom =176
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_ALARM_CODE
+    align =34
+  end
+  StaticVW_ALARM_DESCRIPTION:CtmStaticX2
+    left =104
+    top =144
+    right =344
+    bottom =176
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_ALARM_DESCRIPTION
+    align =34
+  end
+  StaticVW_ALARM_STARTTIME:CtmStaticX2
+    left =348
+    top =144
+    right =488
+    bottom =176
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_ALARM_STARTTIME
+    align =34
+  end
+  StaticVW_ALARM_RESETTIME:CtmStaticX2
+    left =492
+    top =144
+    right =587
+    bottom =176
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_ALARM_RESETTIME
+    align =34
+  end
+  StaticTABLE001:CtmStaticX2
+    left =16
+    top =190
+    right =48
+    bottom =208
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE002:CtmStaticX2
+    left =59
+    top =190
+    right =97
+    bottom =210
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE003:CtmStaticX2
+    left =1
+    top =190
+    right =6
+    bottom =210
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE004:CtmStaticX2
+    left =104
+    top =190
+    right =344
+    bottom =212
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE005:CtmStaticX2
+    left =354
+    top =190
+    right =425
+    bottom =210
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE006:CtmStaticX2
+    left =430
+    top =190
+    right =496
+    bottom =210
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE007:CtmStaticX2
+    left =514
+    top =190
+    right =580
+    bottom =210
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE011:CtmStaticX2
+    left =16
+    top =228
+    right =48
+    bottom =248
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE012:CtmStaticX2
+    left =59
+    top =228
+    right =97
+    bottom =248
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE013:CtmStaticX2
+    left =1
+    top =228
+    right =6
+    bottom =248
+    wtype =48
+    fgc =0
+  end
+  StaticTABLE014:CtmStaticX2
+    left =104
+    top =228
+    right =344
+    bottom =250
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE015:CtmStaticX2
+    left =354
+    top =228
+    right =425
+    bottom =248
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE016:CtmStaticX2
+    left =430
+    top =228
+    right =496
+    bottom =248
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE017:CtmStaticX2
+    left =514
+    top =228
+    right =580
+    bottom =248
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE021:CtmStaticX2
+    left =16
+    top =264
+    right =48
+    bottom =284
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE022:CtmStaticX2
+    left =59
+    top =264
+    right =97
+    bottom =284
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE023:CtmStaticX2
+    left =1
+    top =264
+    right =6
+    bottom =284
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE024:CtmStaticX2
+    left =104
+    top =262
+    right =344
+    bottom =284
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE025:CtmStaticX2
+    left =354
+    top =264
+    right =425
+    bottom =284
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE026:CtmStaticX2
+    left =430
+    top =264
+    right =496
+    bottom =284
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE027:CtmStaticX2
+    left =514
+    top =264
+    right =580
+    bottom =284
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE031:CtmStaticX2
+    left =16
+    top =302
+    right =48
+    bottom =322
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE032:CtmStaticX2
+    left =59
+    top =302
+    right =97
+    bottom =322
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE033:CtmStaticX2
+    left =1
+    top =302
+    right =6
+    bottom =322
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE034:CtmStaticX2
+    left =104
+    top =300
+    right =344
+    bottom =322
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE035:CtmStaticX2
+    left =354
+    top =302
+    right =425
+    bottom =322
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE036:CtmStaticX2
+    left =430
+    top =302
+    right =496
+    bottom =322
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE037:CtmStaticX2
+    left =514
+    top =302
+    right =580
+    bottom =322
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE041:CtmStaticX2
+    left =16
+    top =340
+    right =48
+    bottom =360
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE042:CtmStaticX2
+    left =59
+    top =340
+    right =97
+    bottom =360
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE043:CtmStaticX2
+    left =1
+    top =340
+    right =6
+    bottom =360
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE044:CtmStaticX2
+    left =104
+    top =338
+    right =344
+    bottom =360
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE045:CtmStaticX2
+    left =354
+    top =340
+    right =425
+    bottom =360
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE046:CtmStaticX2
+    left =430
+    top =340
+    right =496
+    bottom =360
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE047:CtmStaticX2
+    left =514
+    top =340
+    right =580
+    bottom =360
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE051:CtmStaticX2
+    left =16
+    top =378
+    right =48
+    bottom =398
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE052:CtmStaticX2
+    left =59
+    top =378
+    right =97
+    bottom =398
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE053:CtmStaticX2
+    left =1
+    top =378
+    right =6
+    bottom =398
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE054:CtmStaticX2
+    left =104
+    top =376
+    right =344
+    bottom =398
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE055:CtmStaticX2
+    left =354
+    top =378
+    right =425
+    bottom =398
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE056:CtmStaticX2
+    left =430
+    top =378
+    right =496
+    bottom =398
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE057:CtmStaticX2
+    left =514
+    top =378
+    right =580
+    bottom =398
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE061:CtmStaticX2
+    left =16
+    top =416
+    right =48
+    bottom =436
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE062:CtmStaticX2
+    left =59
+    top =416
+    right =97
+    bottom =436
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE063:CtmStaticX2
+    left =1
+    top =416
+    right =6
+    bottom =436
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE064:CtmStaticX2
+    left =104
+    top =414
+    right =344
+    bottom =436
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE065:CtmStaticX2
+    left =354
+    top =416
+    right =425
+    bottom =436
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE066:CtmStaticX2
+    left =430
+    top =416
+    right =496
+    bottom =436
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE067:CtmStaticX2
+    left =514
+    top =416
+    right =580
+    bottom =436
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE071:CtmStaticX2
+    left =16
+    top =454
+    right =48
+    bottom =474
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE072:CtmStaticX2
+    left =59
+    top =454
+    right =97
+    bottom =474
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE073:CtmStaticX2
+    left =1
+    top =454
+    right =6
+    bottom =474
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE074:CtmStaticX2
+    left =104
+    top =452
+    right =344
+    bottom =474
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE075:CtmStaticX2
+    left =354
+    top =454
+    right =425
+    bottom =474
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE076:CtmStaticX2
+    left =430
+    top =454
+    right =496
+    bottom =474
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE077:CtmStaticX2
+    left =514
+    top =454
+    right =580
+    bottom =474
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE081:CtmStaticX2
+    left =16
+    top =487
+    right =48
+    bottom =507
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE082:CtmStaticX2
+    left =59
+    top =487
+    right =97
+    bottom =507
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE083:CtmStaticX2
+    left =1
+    top =487
+    right =6
+    bottom =507
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE084:CtmStaticX2
+    left =104
+    top =487
+    right =344
+    bottom =509
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE085:CtmStaticX2
+    left =354
+    top =487
+    right =425
+    bottom =507
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE086:CtmStaticX2
+    left =430
+    top =487
+    right =496
+    bottom =507
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE087:CtmStaticX2
+    left =514
+    top =487
+    right =580
+    bottom =507
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE091:CtmStaticX2
+    left =16
+    top =527
+    right =48
+    bottom =547
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE092:CtmStaticX2
+    left =59
+    top =527
+    right =97
+    bottom =547
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE093:CtmStaticX2
+    left =1
+    top =527
+    right =6
+    bottom =547
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE094:CtmStaticX2
+    left =104
+    top =525
+    right =344
+    bottom =547
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE095:CtmStaticX2
+    left =354
+    top =527
+    right =425
+    bottom =547
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE096:CtmStaticX2
+    left =430
+    top =527
+    right =496
+    bottom =547
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  StaticTABLE097:CtmStaticX2
+    left =514
+    top =527
+    right =580
+    bottom =547
+    wtype =48
+    fgc =0
+    bgc =55167
+  end
+  editTOTALCOUNT:CtmEditX1
+    left =484
+    top =69
+    right =588
+    bottom =99
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    maxchar =10
+    align =32
+  end
+  editSTARTNO:CtmEditX1
+    left =190
+    top =69
+    right =294
+    bottom =99
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    promptID =MSG_INPUT_NUMERIC
+    maxchar =14
+    align =32
+    value =1
+    min =1
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  editRESET:CtmSelectEdit
+    left =190
+    top =104
+    right =296
+    bottom =134
+    wtype =33
+    taborder =1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =80
+    promptID =MSG_SYSTEM_CHECKBOX
+    listnum =2
+    strID0 =VW_OTHER_NOUSE
+    strID1 =VW_INJECT_RESET
+  end
+  BtnBack:CtmToolButton
+    left =68
+    top =820
+    right =152
+    bottom =877
+    wtype =48
+    taborder =72
+    align =18
+    upbitmap =res_tm640/pic/BtnBackUp.bmp
+    key =72
+    action =255
+    formname =Param.txt
+  end
+  BtnHome:CtmToolButton
+    left =244
+    top =820
+    right =328
+    bottom =877
+    wtype =48
+    taborder =70
+    align =18
+    upbitmap =res_tm640/pic/BtnHomeUp.bmp
+    key =70
+    action =255
+    formname =Param.txt
+  end
+  BtnMenu:CtmToolButton
+    left =420
+    top =820
+    right =504
+    bottom =877
+    wtype =48
+    taborder =71
+    align =18
+    upbitmap =res_tm640/pic/BtnMenuUp.bmp
+    key =71
+    action =255
+    formname =Param.txt
+  end
+end

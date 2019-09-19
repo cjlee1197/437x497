@@ -1,0 +1,881 @@
+ViewIndex:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =INDEX_MENUI
+  printname =Index.bmp
+  BGBlock:CtmEdit
+    left =0
+    top =236
+    right =599
+    bottom =246
+    wtype =32
+    taborder =-3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+  end
+  LinuxCtmToolButton1:CtmToolButton
+    left =12
+    top =40
+    right =147
+    bottom =132
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    align =16
+    key =1
+    action =255
+    formname =Param.txt
+    LinuxCtmImageBox5:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Mech.bmp
+    end
+  end
+  LinuxCtmToolButton7:CtmToolButton
+    left =300
+    top =40
+    right =435
+    bottom =132
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    align =16
+    key =3
+    LinuxCtmImageBox4:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Zero.bmp
+    end
+  end
+  LinuxCtmToolButton8:CtmToolButton
+    left =156
+    top =40
+    right =291
+    bottom =132
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    align =16
+    key =2
+    action =255
+    formname =Pile_1.txt
+    LinuxCtmImageBox8:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Speed.bmp
+    end
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =28
+    top =4
+    right =73
+    bottom =36
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_MECH
+    align =34
+  end
+  LinuxCtmToolButton2:CtmToolButton
+    left =12
+    top =140
+    right =147
+    bottom =232
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =4
+    action =255
+    formname =Param.txt
+    LinuxCtmImageBox1:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Zone.bmp
+    end
+  end
+  LinuxCtmToolButton6:CtmToolButton
+    left =444
+    top =386
+    right =579
+    bottom =478
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    align =16
+    key =7
+    LinuxCtmImageBox7:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Mold.bmp
+    end
+  end
+  ListMark:CtmImageBox
+    left =74
+    top =4
+    right =110
+    bottom =40
+    wtype =48
+    visible =FALSE
+    enabled =FALSE
+    type =2
+    style =3
+    imagepath =res_tm640/pic/Mech.bmp
+    keycolor =63519
+  end
+  LinuxCtmEdit1:CtmEdit
+    left =0
+    top =482
+    right =599
+    bottom =492
+    wtype =32
+    taborder =-3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =28
+    top =250
+    right =73
+    bottom =282
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_TEACH
+    align =34
+  end
+  LinuxCtmToolButton5:CtmToolButton
+    left =12
+    top =286
+    right =147
+    bottom =378
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =11
+    action =255
+    formname =Param.txt
+    LinuxCtmImageBox6:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_QTeach.bmp
+    end
+  end
+  LinuxCtmToolButton17:CtmToolButton
+    left =12
+    top =386
+    right =147
+    bottom =478
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =12
+    action =255
+    formname =Pile_1.txt
+    LinuxCtmImageBox17:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Teach.bmp
+    end
+  end
+  LinuxCtmToolButton18:CtmToolButton
+    left =156
+    top =386
+    right =291
+    bottom =478
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =13
+    LinuxCtmImageBox18:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Pile.bmp
+    end
+  end
+  LinuxCtmToolButton20:CtmToolButton
+    left =300
+    top =386
+    right =435
+    bottom =478
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =14
+    LinuxCtmImageBox20:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Sub.bmp
+    end
+  end
+  LinuxCtmImageBox19:CtmImageBox
+    left =82
+    top =244
+    right =118
+    bottom =280
+    wtype =48
+    visible =FALSE
+    enabled =FALSE
+    type =2
+    style =3
+    imagepath =res_tm640/pic/Teach.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =28
+    top =496
+    right =73
+    bottom =528
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_MONI
+    align =34
+  end
+  LinuxCtmImageBox21:CtmImageBox
+    left =82
+    top =492
+    right =118
+    bottom =528
+    wtype =48
+    visible =FALSE
+    enabled =FALSE
+    type =2
+    style =3
+    imagepath =res_tm640/pic/Moni.bmp
+    keycolor =63519
+  end
+  LinuxCtmToolButton12:CtmToolButton
+    left =12
+    top =532
+    right =147
+    bottom =624
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =22
+    LinuxCtmImageBox12:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Alarm.bmp
+    end
+  end
+  LinuxCtmToolButton10:CtmToolButton
+    left =156
+    top =532
+    right =291
+    bottom =624
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =23
+    action =255
+    formname =Param.txt
+    LinuxCtmImageBox10:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_History.bmp
+    end
+  end
+  LinuxCtmEdit3:CtmEdit
+    left =0
+    top =630
+    right =599
+    bottom =640
+    wtype =32
+    taborder =-3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =28
+    top =644
+    right =73
+    bottom =676
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_SYS
+    align =34
+  end
+  LinuxCtmToolButton13:CtmToolButton
+    left =12
+    top =682
+    right =147
+    bottom =774
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =31
+    action =255
+    formname =Param.txt
+    LinuxCtmImageBox13:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Prod.bmp
+    end
+  end
+  LinuxCtmToolButton14:CtmToolButton
+    left =300
+    top =682
+    right =435
+    bottom =774
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =33
+    LinuxCtmImageBox14:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Reset.bmp
+    end
+  end
+  LinuxCtmToolButton15:CtmToolButton
+    left =156
+    top =682
+    right =291
+    bottom =774
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =32
+    action =255
+    formname =Pile_1.txt
+    LinuxCtmImageBox15:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Syst.bmp
+    end
+  end
+  LinuxCtmToolButton16:CtmToolButton
+    left =444
+    top =682
+    right =579
+    bottom =774
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =34
+    action =255
+    formname =Param.txt
+    LinuxCtmImageBox16:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Ver.bmp
+    end
+  end
+  LinuxCtmImageBox23:CtmImageBox
+    left =82
+    top =652
+    right =118
+    bottom =688
+    wtype =48
+    visible =FALSE
+    enabled =FALSE
+    type =2
+    style =3
+    imagepath =res_tm640/pic/System.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox9:CtmImageBox
+    left =12
+    top =4
+    right =28
+    bottom =36
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox11:CtmImageBox
+    left =12
+    top =250
+    right =28
+    bottom =282
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox22:CtmImageBox
+    left =12
+    top =496
+    right =28
+    bottom =528
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox24:CtmImageBox
+    left =12
+    top =644
+    right =28
+    bottom =676
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmToolButton9:CtmToolButton
+    left =156
+    top =286
+    right =291
+    bottom =378
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =15
+    action =255
+    formname =Param.txt
+    LinuxCtmImageBox25:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Mode.bmp
+    end
+  end
+  LinuxCtmToolButton11:CtmToolButton
+    left =300
+    top =286
+    right =435
+    bottom =378
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =16
+    action =255
+    formname =Param.txt
+    LinuxCtmImageBox26:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Detect.bmp
+    end
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =12
+    top =100
+    right =147
+    bottom =132
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_MCH_P
+    align =34
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =156
+    top =100
+    right =291
+    bottom =132
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_SPD_P
+    align =34
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =300
+    top =100
+    right =435
+    bottom =132
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_ZERO
+    align =34
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =444
+    top =446
+    right =579
+    bottom =478
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_TEACHFILE
+    align =34
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =12
+    top =200
+    right =147
+    bottom =232
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_ZONE_SET
+    align =34
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =12
+    top =346
+    right =147
+    bottom =378
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH
+    align =34
+  end
+  LinuxCtmStaticX213:CtmStaticX2
+    left =156
+    top =346
+    right =291
+    bottom =378
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_MODE_SLC
+    align =34
+  end
+  LinuxCtmStaticX214:CtmStaticX2
+    left =300
+    top =346
+    right =435
+    bottom =378
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_DTC
+    align =34
+  end
+  LinuxCtmStaticX215:CtmStaticX2
+    left =12
+    top =446
+    right =147
+    bottom =478
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_ADVANCE
+    align =34
+  end
+  LinuxCtmStaticX216:CtmStaticX2
+    left =156
+    top =446
+    right =291
+    bottom =478
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_PILE
+    align =34
+  end
+  LinuxCtmStaticX217:CtmStaticX2
+    left =300
+    top =446
+    right =435
+    bottom =478
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_SUB
+    align =34
+  end
+  LinuxCtmStaticX218:CtmStaticX2
+    left =12
+    top =592
+    right =147
+    bottom =624
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_ALRAM_HIS
+    align =34
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =156
+    top =592
+    right =291
+    bottom =624
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_OP_HIS
+    align =34
+  end
+  LinuxCtmStaticX221:CtmStaticX2
+    left =12
+    top =742
+    right =147
+    bottom =774
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_OP_MANAGE
+    align =34
+  end
+  LinuxCtmStaticX222:CtmStaticX2
+    left =156
+    top =742
+    right =291
+    bottom =774
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_SYS_SET
+    align =34
+  end
+  LinuxCtmStaticX223:CtmStaticX2
+    left =300
+    top =742
+    right =435
+    bottom =774
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_SYS_UPDATE
+    align =34
+  end
+  LinuxCtmStaticX224:CtmStaticX2
+    left =444
+    top =742
+    right =579
+    bottom =774
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_VERINFO
+    align =34
+  end
+  LinuxCtmToolButton4:CtmToolButton
+    left =444
+    top =286
+    right =579
+    bottom =378
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    align =16
+    key =17
+    LinuxCtmImageBox3:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_Pos_Adj.bmp
+    end
+  end
+  LinuxCtmStaticX210:CtmStaticX2
+    left =444
+    top =346
+    right =579
+    bottom =378
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_DELAY_ADJ
+    align =34
+  end
+  LinuxCtmToolButton19:CtmToolButton
+    left =300
+    top =532
+    right =435
+    bottom =624
+    wtype =48
+    taborder =-1
+    bgc =65535
+    fontsize =1
+    key =24
+    action =255
+    formname =Param.txt
+    LinuxCtmImageBox27:CtmImageBox
+      left =35
+      top =0
+      right =95
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/Index_DriveInfo.bmp
+    end
+  end
+  LinuxCtmStaticX220:CtmStaticX2
+    left =300
+    top =592
+    right =435
+    bottom =624
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =INDEX_DRIVE_INFO
+    align =34
+  end
+end

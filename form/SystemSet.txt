@@ -1,0 +1,324 @@
+ViewSystemSet:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  titleID =ROBOT_VIEW_SYSTEMSET
+  printname =SystemSet.bmp
+  LinuxCtmLineTable2:CtmLineTable
+    left =110
+    top =377
+    right =489
+    bottom =610
+    fontsize =2
+  end
+  LinuxCtmLineTable1:CtmLineTable
+    left =110
+    top =67
+    right =489
+    bottom =300
+    fontsize =2
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =141
+    top =86
+    right =432
+    bottom =123
+    wtype =36
+    fgc =0
+    bgc =42296
+    fontsize =2
+    colorcontrol =16
+    destcolor =57052
+    textID =ROBOT_SCREENSAVER
+  end
+  LanguageSelectEdit:CtmSelectEdit
+    left =317
+    top =239
+    right =432
+    bottom =276
+    wtype =35
+    taborder =5
+    fontsize =2
+    maxchar =15
+    listnum =2
+    strID0 =SYSTEM_LAN_CHINESE
+    strID1 =SYSTEM_LAN_ENGLISH
+  end
+  BtnSystemSetCancel:CtmToolButton
+    left =326
+    top =553
+    right =426
+    bottom =593
+    wtype =39
+    taborder =13
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  BtnSystemSetOK:CtmToolButton
+    privilege =4
+    left =175
+    top =553
+    right =275
+    bottom =593
+    wtype =39
+    taborder =12
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_FILE_SAVE
+  end
+  LanguageStatic:CtmStaticX2
+    left =141
+    top =239
+    right =311
+    bottom =276
+    wtype =36
+    fgc =0
+    bgc =42648
+    fontsize =2
+    colorcontrol =4
+    destcolor =44630
+    textID =ROBOT_LANGUAGE_SELECT
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =141
+    top =133
+    right =311
+    bottom =170
+    wtype =36
+    fgc =0
+    bgc =42648
+    fontsize =2
+    colorcontrol =4
+    destcolor =44630
+    textID =ROBOT_SCREENSAVER_IDLE
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =421
+    top =133
+    right =461
+    bottom =170
+    wtype =48
+    fgc =0
+    bgc =65535
+    fontsize =2
+    text =min
+    textID =VW_TEMP_MINUTE
+    align =34
+  end
+  EditScreenSaverIdle:CtmEditX1
+    left =326
+    top =133
+    right =416
+    bottom =170
+    wtype =35
+    taborder =1
+    bgc =65535
+    fontsize =2
+    align =36
+    dbid0 =SYS_HMI_NULL_NULL_SCREENSAVERTIME
+  end
+  StaticDATE:CtmStaticX2
+    left =141
+    top =441
+    right =260
+    bottom =478
+    wtype =36
+    fgc =0
+    bgc =42648
+    fontsize =2
+    colorcontrol =4
+    destcolor =44630
+    textID =ROBOT_DATE
+  end
+  StaticTIME:CtmStaticX2
+    left =141
+    top =486
+    right =260
+    bottom =523
+    wtype =36
+    fgc =0
+    bgc =42648
+    fontsize =2
+    colorcontrol =4
+    destcolor =44630
+    textID =ROBOT_TIME
+  end
+  StaticSLASH1:CtmStaticX2
+    left =315
+    top =441
+    right =330
+    bottom =478
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_DATE_SLASH
+  end
+  StaticSLASH2:CtmStaticX2
+    left =385
+    top =441
+    right =400
+    bottom =478
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_DATE_SLASH
+  end
+  StaticCOLON1:CtmStaticX2
+    left =315
+    top =486
+    right =330
+    bottom =523
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_TIME_COLON
+  end
+  StaticCOLON2:CtmStaticX2
+    left =385
+    top =486
+    right =400
+    bottom =525
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_TIME_COLON
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =141
+    top =191
+    right =432
+    bottom =228
+    wtype =36
+    fgc =0
+    bgc =42296
+    fontsize =2
+    colorcontrol =16
+    destcolor =57052
+    textID =ROBOT_LANGUAGE_SET
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =141
+    top =396
+    right =421
+    bottom =433
+    wtype =36
+    fgc =0
+    bgc =42296
+    fontsize =2
+    colorcontrol =16
+    destcolor =57052
+    textID =ROBOT_DATE_SET
+  end
+  DateEditYEAR:CtmEditX1
+    privilege =4
+    left =261
+    top =441
+    right =311
+    bottom =478
+    wtype =35
+    taborder =6
+    fgc =33288
+    bgc =65535
+    fontsize =2
+    destcolor =57182
+    maxchar =6
+    align =36
+    max =99
+    maxdb =FALSE
+  end
+  DateEditMONTH:CtmEditX1
+    privilege =4
+    left =331
+    top =441
+    right =381
+    bottom =478
+    wtype =35
+    taborder =7
+    fgc =33288
+    bgc =65535
+    fontsize =2
+    destcolor =57182
+    maxchar =6
+    align =36
+    min =1
+    max =12
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  DateEditDAY:CtmEditX1
+    privilege =4
+    left =401
+    top =441
+    right =451
+    bottom =478
+    wtype =35
+    taborder =8
+    fgc =33288
+    bgc =65535
+    fontsize =2
+    destcolor =57182
+    maxchar =6
+    align =36
+    min =1
+    max =31
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  DateEditHOUR:CtmEditX1
+    privilege =4
+    left =261
+    top =486
+    right =311
+    bottom =523
+    wtype =35
+    taborder =9
+    fgc =33288
+    bgc =65535
+    fontsize =2
+    destcolor =57182
+    maxchar =6
+    align =36
+    max =23
+    maxdb =FALSE
+  end
+  DateEditMINUTE:CtmEditX1
+    privilege =4
+    left =331
+    top =486
+    right =381
+    bottom =523
+    wtype =35
+    taborder =10
+    fgc =33288
+    bgc =65535
+    fontsize =2
+    destcolor =57182
+    maxchar =6
+    align =36
+    max =59
+    maxdb =FALSE
+  end
+  DateEditSECOND:CtmEditX1
+    privilege =4
+    left =401
+    top =486
+    right =451
+    bottom =523
+    wtype =35
+    taborder =11
+    fgc =33288
+    bgc =65535
+    fontsize =2
+    destcolor =57182
+    maxchar =6
+    align =36
+    max =59
+    maxdb =FALSE
+  end
+end

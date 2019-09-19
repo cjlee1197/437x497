@@ -1,0 +1,634 @@
+ViewRemoteSet:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =452
+  titleID =_FENU_REMOTE
+  printname =RemoteSet.bmp
+  Static_colorbg_tit5:CtmStaticX2
+    left =166
+    top =38
+    right =416
+    bottom =50
+    wtype =33
+    bgc =38395
+    colorcontrol =16
+    colorchange =3
+    destcolor =57150
+  end
+  Static_colorbg_tit52:CtmStaticX2
+    left =166
+    top =50
+    right =416
+    bottom =62
+    wtype =33
+    bgc =38395
+    colorcontrol =16
+    colorchange =7
+    destcolor =57150
+  end
+  Static_colorbg_tit53:CtmStaticX2
+    left =166
+    top =41
+    right =416
+    bottom =58
+    wtype =32
+    bgc =57150
+    colorcontrol =16
+    colorchange =9
+  end
+  StaticINETSET:CtmStaticX2
+    left =166
+    top =41
+    right =426
+    bottom =62
+    wtype =48
+    fgc =0
+    bgc =46486
+    textID =ROBOT_INET_SET
+  end
+  StaticLOCALIP:CtmStaticX2
+    left =166
+    top =67
+    right =286
+    bottom =88
+    wtype =33
+    fgc =0
+    bgc =61375
+    textID =ROBOT_LOCAL_IP_ADDRESS
+  end
+  editLOCALIP_0:CtmEditX1
+    left =166
+    top =92
+    right =202
+    bottom =113
+    wtype =33
+    taborder =25
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =202
+    top =92
+    right =214
+    bottom =113
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALIP_1:CtmEditX1
+    left =216
+    top =92
+    right =252
+    bottom =113
+    wtype =33
+    taborder =26
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =252
+    top =92
+    right =264
+    bottom =113
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALIP_2:CtmEditX1
+    left =266
+    top =92
+    right =302
+    bottom =113
+    wtype =33
+    taborder =27
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =302
+    top =92
+    right =314
+    bottom =113
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALIP_3:CtmEditX1
+    left =316
+    top =92
+    right =352
+    bottom =113
+    wtype =33
+    taborder =28
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editLOCALMASK_0:CtmEditX1
+    left =166
+    top =117
+    right =202
+    bottom =138
+    wtype =33
+    taborder =30
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =202
+    top =117
+    right =214
+    bottom =138
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALMASK_1:CtmEditX1
+    left =216
+    top =117
+    right =252
+    bottom =138
+    wtype =33
+    taborder =31
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =252
+    top =117
+    right =264
+    bottom =138
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALMASK_2:CtmEditX1
+    left =266
+    top =117
+    right =302
+    bottom =138
+    wtype =33
+    taborder =32
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =302
+    top =117
+    right =314
+    bottom =138
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALMASK_3:CtmEditX1
+    left =316
+    top =117
+    right =352
+    bottom =138
+    wtype =33
+    taborder =33
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  editLOCALGATEWAY_0:CtmEditX1
+    left =166
+    top =142
+    right =202
+    bottom =163
+    wtype =33
+    taborder =35
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX210:CtmStaticX2
+    left =202
+    top =142
+    right =214
+    bottom =163
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALGATEWAY_1:CtmEditX1
+    left =216
+    top =142
+    right =252
+    bottom =163
+    wtype =33
+    taborder =36
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =252
+    top =142
+    right =264
+    bottom =163
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALGATEWAY_2:CtmEditX1
+    left =266
+    top =142
+    right =302
+    bottom =163
+    wtype =33
+    taborder =37
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =302
+    top =142
+    right =314
+    bottom =163
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALGATEWAY_3:CtmEditX1
+    left =316
+    top =142
+    right =352
+    bottom =163
+    wtype =33
+    taborder =38
+    bgc =38395
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  StaticINETIP:CtmStaticX2
+    left =166
+    top =182
+    right =286
+    bottom =203
+    wtype =33
+    fgc =0
+    bgc =61375
+    textID =ROBOT_LOCAL_IP_SERVER
+  end
+  editLOCALDSTIP_0:CtmEditX1
+    left =166
+    top =207
+    right =202
+    bottom =228
+    wtype =33
+    taborder =40
+    bgc =38395
+    downcontrol =editCONTROLTYPE
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  StaticIPPoint_0:CtmStaticX2
+    left =202
+    top =207
+    right =214
+    bottom =228
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALDSTIP_1:CtmEditX1
+    left =216
+    top =207
+    right =252
+    bottom =228
+    wtype =33
+    taborder =41
+    bgc =38395
+    downcontrol =editCONTROLTYPE
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  StaticIPPoint_1:CtmStaticX2
+    left =252
+    top =207
+    right =264
+    bottom =228
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALDSTIP_2:CtmEditX1
+    left =266
+    top =207
+    right =302
+    bottom =228
+    wtype =33
+    taborder =42
+    bgc =38395
+    downcontrol =editCONTROLTYPE
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  StaticIPPoint_2:CtmStaticX2
+    left =302
+    top =207
+    right =314
+    bottom =228
+    wtype =48
+    fgc =0
+    text =.
+  end
+  editLOCALDSTIP_3:CtmEditX1
+    left =316
+    top =207
+    right =352
+    bottom =228
+    wtype =33
+    taborder =43
+    bgc =38395
+    downcontrol =editCONTROLTYPE
+    colorcontrol =4
+    destcolor =57182
+    maxchar =3
+    align =0
+    max =255
+    maxdb =FALSE
+  end
+  StaticSERIP_LOCALMAC:CtmStaticX2
+    left =165
+    top =317
+    right =310
+    bottom =338
+    wtype =33
+    fgc =0
+    bgc =61375
+    textID =ROBOT_LOCAL_PY_ADDRESS
+  end
+  StaticINETJUDGE:CtmStaticX2
+    left =166
+    top =280
+    right =276
+    bottom =301
+    wtype =33
+    fgc =0
+    bgc =61375
+    textID =ROBOT_NETCARD_SELECT
+  end
+  editMACSwitch:CtmSelectEdit
+    left =281
+    top =244
+    right =382
+    bottom =265
+    wtype =33
+    taborder =44
+    bgc =38395
+    upcontrol =editLOCALDSTIP_3
+    downcontrol =SelecteditLANGUAGE
+    colorcontrol =4
+    maxchar =14
+    promptID =MSG_SYSTEM_CHECKBOX
+    listnum =1
+    strID0 =ROBOT_MAC1
+  end
+  editMAC_0:CtmEditX2
+    left =165
+    top =342
+    right =188
+    bottom =363
+    wtype =33
+    bgc =38395
+    enabled =FALSE
+    colorcontrol =4
+    destcolor =57182
+    type =32
+    maxchar =2
+    align =0
+    max =255
+  end
+  StaticMAC0:CtmStaticX2
+    left =186
+    top =342
+    right =198
+    bottom =363
+    wtype =48
+    fgc =0
+    bgc =61375
+    enabled =FALSE
+    text =-
+  end
+  editMAC_1:CtmEditX2
+    left =195
+    top =342
+    right =218
+    bottom =363
+    wtype =33
+    bgc =38395
+    enabled =FALSE
+    colorcontrol =4
+    destcolor =57182
+    type =32
+    maxchar =2
+    align =0
+    max =255
+  end
+  StaticMAC1:CtmStaticX2
+    left =216
+    top =342
+    right =228
+    bottom =363
+    wtype =48
+    fgc =0
+    bgc =61375
+    enabled =FALSE
+    text =-
+  end
+  editMAC_2:CtmEditX2
+    left =225
+    top =342
+    right =248
+    bottom =363
+    wtype =33
+    taborder =45
+    bgc =38395
+    enabled =FALSE
+    colorcontrol =4
+    destcolor =57182
+    type =32
+    maxchar =2
+    align =0
+    max =255
+  end
+  StaticMAC2:CtmStaticX2
+    left =246
+    top =342
+    right =258
+    bottom =363
+    wtype =48
+    fgc =0
+    bgc =61375
+    enabled =FALSE
+    text =-
+  end
+  editMAC_3:CtmEditX2
+    left =255
+    top =342
+    right =278
+    bottom =363
+    wtype =33
+    taborder =46
+    bgc =38395
+    enabled =FALSE
+    colorcontrol =4
+    destcolor =57182
+    type =32
+    maxchar =2
+    align =0
+    max =255
+  end
+  StaticMAC3:CtmStaticX2
+    left =276
+    top =342
+    right =288
+    bottom =363
+    wtype =48
+    fgc =0
+    bgc =61375
+    enabled =FALSE
+    text =-
+  end
+  editMAC_4:CtmEditX2
+    left =285
+    top =342
+    right =308
+    bottom =363
+    wtype =33
+    taborder =47
+    bgc =38395
+    enabled =FALSE
+    colorcontrol =4
+    destcolor =57182
+    type =32
+    maxchar =2
+    align =0
+    max =255
+  end
+  StaticMAC4:CtmStaticX2
+    left =306
+    top =342
+    right =318
+    bottom =363
+    wtype =48
+    fgc =0
+    bgc =61375
+    enabled =FALSE
+    text =-
+  end
+  editMAC_5:CtmEditX2
+    left =315
+    top =342
+    right =338
+    bottom =363
+    wtype =33
+    taborder =48
+    bgc =38395
+    upcontrol =editCONFIRMNET
+    enabled =FALSE
+    colorcontrol =4
+    destcolor =57182
+    type =32
+    maxchar =2
+    align =0
+    max =255
+  end
+  StaticMACSwitch:CtmStaticX2
+    left =166
+    top =244
+    right =276
+    bottom =265
+    wtype =33
+    fgc =0
+    bgc =61375
+    textID =ROBOT_INET_LINK
+  end
+  editCONFIRMNET:CtmSelectEdit
+    left =281
+    top =280
+    right =382
+    bottom =301
+    wtype =33
+    taborder =55
+    bgc =38395
+    colorcontrol =4
+    stype =1
+    maxchar =50
+    promptID =MSG_SYSTEM_CHECKBOX
+    listnum =2
+    strID0 =ROBOT_INET_LINK_CANCEL
+    strID1 =ROBOT_INET_LINK_OK
+  end
+end

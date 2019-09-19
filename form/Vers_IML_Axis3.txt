@@ -1,0 +1,317 @@
+ViewVers:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  wtype =33
+  titleID =INDEX_VERINFO
+  printname =2-7-4-Vers.bmp
+  LinuxCtmStaticX26:CtmStaticX2
+    left =68
+    top =44
+    right =168
+    bottom =76
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =EFFECT_PROGRAMMMIVERS
+    align =34
+  end
+  editKernelVersion:CtmEditX1
+    left =68
+    top =76
+    right =168
+    bottom =108
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    maxchar =8
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =92
+    top =268
+    right =192
+    bottom =300
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_DSP_VERSION
+    align =34
+  end
+  BmpAxis_Z:CtmImageBox
+    left =57
+    top =109
+    right =178
+    bottom =249
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/437x497.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =57
+    top =338
+    right =217
+    bottom =424
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/Controller.bmp
+    keycolor =63519
+  end
+  LinuxCtmEditX21:CtmEditX2
+    left =58
+    top =249
+    right =62
+    bottom =338
+    wtype =39
+    taborder =-3
+    fgc =65535
+    bgc =1040
+    fontsize =1
+    maxchar =8
+    align =34
+  end
+  LinuxCtmEditX213:CtmEditX2
+    left =92
+    top =300
+    right =192
+    bottom =332
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    maxchar =8
+    align =34
+    dbid0 =MACHINE_CONFSYS_ELECNAMEPLATE_HARDWARE_PN
+  end
+  Str_Controller_Date:CtmStaticX2
+    left =194
+    top =300
+    right =249
+    bottom =332
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+  BmpController:CtmImageBox
+    left =68
+    top =270
+    right =93
+    bottom =295
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =193
+    top =468
+    right =248
+    bottom =500
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_HAP5_ROBOT_XAXIS
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =305
+    top =468
+    right =360
+    bottom =500
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_HAP5_ROBOT_YAXIS
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =417
+    top =468
+    right =472
+    bottom =500
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =VW_HAP5_ROBOT_ZAXIS
+    align =34
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =209
+    top =586
+    right =244
+    bottom =710
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/Drive.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =313
+    top =586
+    right =348
+    bottom =710
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/Drive.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =417
+    top =586
+    right =452
+    bottom =710
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/Drive.bmp
+    keycolor =63519
+  end
+  LinuxCtmEditX26:CtmEditX2
+    left =80
+    top =424
+    right =85
+    bottom =537
+    wtype =39
+    taborder =-3
+    fgc =65535
+    bgc =1040
+    fontsize =1
+    maxchar =8
+    align =34
+  end
+  LinuxCtmEditX27:CtmEditX2
+    left =80
+    top =537
+    right =437
+    bottom =541
+    wtype =39
+    taborder =-3
+    fgc =65535
+    bgc =1040
+    fontsize =1
+    maxchar =8
+    align =34
+  end
+  LinuxCtmEditX28:CtmEditX2
+    left =224
+    top =537
+    right =229
+    bottom =587
+    wtype =39
+    taborder =-3
+    fgc =65535
+    bgc =1040
+    fontsize =1
+    maxchar =8
+    align =34
+  end
+  LinuxCtmEditX29:CtmEditX2
+    left =432
+    top =537
+    right =437
+    bottom =587
+    wtype =39
+    taborder =-3
+    fgc =65535
+    bgc =1040
+    fontsize =1
+    maxchar =8
+    align =34
+  end
+  LinuxCtmEditX210:CtmEditX2
+    left =328
+    top =537
+    right =333
+    bottom =587
+    wtype =39
+    taborder =-3
+    fgc =65535
+    bgc =1040
+    fontsize =1
+    maxchar =8
+    align =34
+  end
+  BmpDrive1:CtmImageBox
+    left =168
+    top =470
+    right =193
+    bottom =495
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpDrive2:CtmImageBox
+    left =280
+    top =470
+    right =305
+    bottom =495
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpDrive3:CtmImageBox
+    left =392
+    top =470
+    right =417
+    bottom =495
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  Str_Drive_Ver1:CtmStaticX2
+    left =194
+    top =500
+    right =249
+    bottom =532
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+  Str_Drive_Ver2:CtmStaticX2
+    left =306
+    top =500
+    right =361
+    bottom =532
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+  Str_Drive_Ver3:CtmStaticX2
+    left =418
+    top =500
+    right =473
+    bottom =532
+    wtype =33
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+end

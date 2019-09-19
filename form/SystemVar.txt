@@ -1,0 +1,1947 @@
+ViewSystemVar:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  wtype =48
+  titleID =ROBOT_VIEW_SYSTEM_VAR
+  printname =SystemVar.bmp
+  LinuxCtmLineTable2:CtmLineTable
+    left =23
+    top =545
+    right =570
+    bottom =861
+    fontsize =2
+  end
+  LinuxCtmLineTable1:CtmLineTable
+    left =23
+    top =9
+    right =570
+    bottom =535
+    fontsize =2
+    stype =16384
+    vertrows =2
+    vertpoints1 =83
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =401
+    top =20
+    right =485
+    bottom =50
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_PARAM_START_INDEX
+    align =2
+  end
+  EditStartNo:CtmEditX1
+    left =489
+    top =20
+    right =539
+    bottom =48
+    wtype =35
+    taborder =65
+    fgc =0
+    bgc =65535
+    fontsize =2
+    maxchar =3
+    align =0
+    value =1
+    min =1
+    max =41
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  Static_WORK_NO:CtmStaticX2
+    left =41
+    top =100
+    right =93
+    bottom =125
+    wtype =52
+    fgc =0
+    bgc =55068
+    fontsize =2
+    textID =ROBOT_PARAM_INDEX
+    align =2
+  end
+  Static_WORK_DATA:CtmStaticX2
+    left =94
+    top =100
+    right =199
+    bottom =125
+    wtype =52
+    fgc =0
+    bgc =55068
+    fontsize =2
+    textID =ROBOT_PARAM_VAULE
+    align =2
+  end
+  Static_WORK_NO1:CtmStaticX2
+    left =216
+    top =100
+    right =268
+    bottom =125
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_PARAM_INDEX
+    align =2
+  end
+  Static_WORK_DATA1:CtmStaticX2
+    left =269
+    top =100
+    right =374
+    bottom =125
+    wtype =52
+    fgc =0
+    fontsize =2
+    textID =ROBOT_PARAM_VAULE
+    align =2
+  end
+  Static_WORK_NO2:CtmStaticX2
+    left =391
+    top =100
+    right =443
+    bottom =125
+    wtype =52
+    fgc =0
+    bgc =55068
+    fontsize =2
+    textID =ROBOT_PARAM_INDEX
+    align =2
+  end
+  Static_WORK_DATA2:CtmStaticX2
+    left =444
+    top =100
+    right =549
+    bottom =125
+    wtype =52
+    fgc =0
+    bgc =55068
+    fontsize =2
+    textID =ROBOT_PARAM_VAULE
+    align =2
+  end
+  EditTABLE000:CtmStaticX2
+    left =41
+    top =125
+    right =93
+    bottom =150
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE001:CtmEditX1
+    left =94
+    top =125
+    right =199
+    bottom =150
+    wtype =36
+    taborder =8
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE010:CtmStaticX2
+    left =41
+    top =150
+    right =93
+    bottom =175
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE011:CtmEditX1
+    left =94
+    top =150
+    right =199
+    bottom =175
+    wtype =36
+    taborder =6
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE020:CtmStaticX2
+    left =41
+    top =175
+    right =93
+    bottom =200
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE021:CtmEditX1
+    left =94
+    top =175
+    right =199
+    bottom =200
+    wtype =36
+    taborder =7
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE030:CtmStaticX2
+    left =41
+    top =200
+    right =93
+    bottom =225
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE031:CtmEditX1
+    left =94
+    top =200
+    right =199
+    bottom =225
+    wtype =36
+    taborder =8
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE040:CtmStaticX2
+    left =41
+    top =225
+    right =93
+    bottom =250
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE041:CtmEditX1
+    left =94
+    top =225
+    right =199
+    bottom =250
+    wtype =36
+    taborder =9
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE050:CtmStaticX2
+    left =41
+    top =250
+    right =93
+    bottom =275
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE051:CtmEditX1
+    left =94
+    top =250
+    right =199
+    bottom =275
+    wtype =36
+    taborder =10
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE060:CtmStaticX2
+    left =41
+    top =275
+    right =93
+    bottom =300
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE061:CtmEditX1
+    left =94
+    top =275
+    right =199
+    bottom =300
+    wtype =36
+    taborder =11
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE070:CtmStaticX2
+    left =41
+    top =300
+    right =93
+    bottom =325
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE071:CtmEditX1
+    left =94
+    top =300
+    right =199
+    bottom =325
+    wtype =36
+    taborder =12
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE080:CtmStaticX2
+    left =41
+    top =325
+    right =93
+    bottom =350
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE081:CtmEditX1
+    left =94
+    top =325
+    right =199
+    bottom =350
+    wtype =36
+    taborder =13
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE090:CtmStaticX2
+    left =41
+    top =350
+    right =93
+    bottom =375
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE091:CtmEditX1
+    left =94
+    top =350
+    right =199
+    bottom =375
+    wtype =36
+    taborder =14
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE0A0:CtmStaticX2
+    left =41
+    top =375
+    right =93
+    bottom =400
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE0A1:CtmEditX1
+    left =94
+    top =375
+    right =199
+    bottom =400
+    wtype =36
+    taborder =15
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE0B0:CtmStaticX2
+    left =41
+    top =400
+    right =93
+    bottom =425
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE0B1:CtmEditX1
+    left =94
+    top =400
+    right =199
+    bottom =425
+    wtype =36
+    taborder =16
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE0C0:CtmStaticX2
+    left =41
+    top =425
+    right =93
+    bottom =450
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE0C1:CtmEditX1
+    left =94
+    top =425
+    right =199
+    bottom =450
+    wtype =36
+    taborder =17
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE0D0:CtmStaticX2
+    left =41
+    top =450
+    right =93
+    bottom =475
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE0D1:CtmEditX1
+    left =94
+    top =450
+    right =199
+    bottom =475
+    wtype =36
+    taborder =18
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE0E0:CtmStaticX2
+    left =41
+    top =475
+    right =93
+    bottom =500
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE0E1:CtmEditX1
+    left =94
+    top =475
+    right =199
+    bottom =500
+    wtype =36
+    taborder =19
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE0F0:CtmStaticX2
+    left =41
+    top =500
+    right =93
+    bottom =525
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE0F1:CtmEditX1
+    left =94
+    top =500
+    right =199
+    bottom =525
+    wtype =36
+    taborder =20
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE0G0:CtmStaticX2
+    left =216
+    top =125
+    right =268
+    bottom =150
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE0G1:CtmEditX1
+    left =269
+    top =125
+    right =374
+    bottom =150
+    wtype =36
+    taborder =21
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE0H0:CtmStaticX2
+    left =216
+    top =150
+    right =268
+    bottom =175
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE0H1:CtmEditX1
+    left =269
+    top =150
+    right =374
+    bottom =175
+    wtype =36
+    taborder =22
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE0I0:CtmStaticX2
+    left =216
+    top =175
+    right =268
+    bottom =200
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE0I1:CtmEditX1
+    left =269
+    top =175
+    right =374
+    bottom =200
+    wtype =36
+    taborder =23
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE0J0:CtmStaticX2
+    left =216
+    top =200
+    right =268
+    bottom =225
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE0J1:CtmEditX1
+    left =269
+    top =200
+    right =374
+    bottom =225
+    wtype =36
+    taborder =24
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE100:CtmStaticX2
+    left =216
+    top =225
+    right =268
+    bottom =250
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE101:CtmEditX1
+    left =269
+    top =225
+    right =374
+    bottom =250
+    wtype =36
+    taborder =25
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE110:CtmStaticX2
+    left =216
+    top =250
+    right =268
+    bottom =275
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE111:CtmEditX1
+    left =269
+    top =250
+    right =374
+    bottom =275
+    wtype =36
+    taborder =26
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE120:CtmStaticX2
+    left =216
+    top =275
+    right =268
+    bottom =300
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE121:CtmEditX1
+    left =269
+    top =275
+    right =374
+    bottom =300
+    wtype =36
+    taborder =27
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE130:CtmStaticX2
+    left =216
+    top =300
+    right =268
+    bottom =325
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE131:CtmEditX1
+    left =269
+    top =300
+    right =374
+    bottom =325
+    wtype =36
+    taborder =28
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE140:CtmStaticX2
+    left =216
+    top =325
+    right =268
+    bottom =350
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE141:CtmEditX1
+    left =269
+    top =325
+    right =374
+    bottom =350
+    wtype =36
+    taborder =29
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE150:CtmStaticX2
+    left =216
+    top =350
+    right =268
+    bottom =375
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE151:CtmEditX1
+    left =269
+    top =350
+    right =374
+    bottom =375
+    wtype =36
+    taborder =30
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE160:CtmStaticX2
+    left =216
+    top =375
+    right =268
+    bottom =400
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE161:CtmEditX1
+    left =269
+    top =375
+    right =374
+    bottom =400
+    wtype =36
+    taborder =31
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE170:CtmStaticX2
+    left =216
+    top =400
+    right =268
+    bottom =425
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE171:CtmEditX1
+    left =269
+    top =400
+    right =374
+    bottom =425
+    wtype =36
+    taborder =32
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE180:CtmStaticX2
+    left =216
+    top =425
+    right =268
+    bottom =450
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE181:CtmEditX1
+    left =269
+    top =425
+    right =374
+    bottom =450
+    wtype =36
+    taborder =33
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE190:CtmStaticX2
+    left =216
+    top =450
+    right =268
+    bottom =475
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE191:CtmEditX1
+    left =269
+    top =450
+    right =374
+    bottom =475
+    wtype =36
+    taborder =34
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE1A0:CtmStaticX2
+    left =216
+    top =475
+    right =268
+    bottom =500
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE1A1:CtmEditX1
+    left =269
+    top =475
+    right =374
+    bottom =500
+    wtype =36
+    taborder =35
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE1B0:CtmStaticX2
+    left =216
+    top =500
+    right =268
+    bottom =525
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE1B1:CtmEditX1
+    left =269
+    top =500
+    right =374
+    bottom =525
+    wtype =36
+    taborder =36
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE1C0:CtmStaticX2
+    left =391
+    top =125
+    right =443
+    bottom =150
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE1C1:CtmEditX1
+    left =444
+    top =125
+    right =549
+    bottom =150
+    wtype =36
+    taborder =37
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE1D0:CtmStaticX2
+    left =391
+    top =150
+    right =443
+    bottom =175
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE1D1:CtmEditX1
+    left =444
+    top =150
+    right =549
+    bottom =175
+    wtype =36
+    taborder =38
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE1E0:CtmStaticX2
+    left =391
+    top =175
+    right =443
+    bottom =200
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE1E1:CtmEditX1
+    left =444
+    top =175
+    right =549
+    bottom =200
+    wtype =36
+    taborder =39
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE1F0:CtmStaticX2
+    left =391
+    top =200
+    right =443
+    bottom =225
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE1F1:CtmEditX1
+    left =444
+    top =200
+    right =549
+    bottom =225
+    wtype =36
+    taborder =40
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE1G0:CtmStaticX2
+    left =391
+    top =225
+    right =443
+    bottom =250
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE1G1:CtmEditX1
+    left =444
+    top =225
+    right =549
+    bottom =250
+    wtype =36
+    taborder =41
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE1H0:CtmStaticX2
+    left =391
+    top =250
+    right =443
+    bottom =275
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE1H1:CtmEditX1
+    left =444
+    top =250
+    right =549
+    bottom =275
+    wtype =36
+    taborder =42
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE1I0:CtmStaticX2
+    left =391
+    top =275
+    right =443
+    bottom =300
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE1I1:CtmEditX1
+    left =444
+    top =275
+    right =549
+    bottom =300
+    wtype =36
+    taborder =43
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE1J0:CtmStaticX2
+    left =391
+    top =300
+    right =443
+    bottom =325
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE1J1:CtmEditX1
+    left =444
+    top =300
+    right =549
+    bottom =325
+    wtype =36
+    taborder =44
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE200:CtmStaticX2
+    left =391
+    top =325
+    right =443
+    bottom =350
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE201:CtmEditX1
+    left =444
+    top =325
+    right =549
+    bottom =350
+    wtype =36
+    taborder =45
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE210:CtmStaticX2
+    left =391
+    top =350
+    right =443
+    bottom =375
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE211:CtmEditX1
+    left =444
+    top =350
+    right =549
+    bottom =375
+    wtype =36
+    taborder =46
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE220:CtmStaticX2
+    left =391
+    top =375
+    right =443
+    bottom =400
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE221:CtmEditX1
+    left =444
+    top =375
+    right =549
+    bottom =400
+    wtype =36
+    taborder =47
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE230:CtmStaticX2
+    left =391
+    top =400
+    right =443
+    bottom =425
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE231:CtmEditX1
+    left =444
+    top =400
+    right =549
+    bottom =425
+    wtype =36
+    taborder =48
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE240:CtmStaticX2
+    left =391
+    top =425
+    right =443
+    bottom =450
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE241:CtmEditX1
+    left =444
+    top =425
+    right =549
+    bottom =450
+    wtype =36
+    taborder =49
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE250:CtmStaticX2
+    left =391
+    top =450
+    right =443
+    bottom =475
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE251:CtmEditX1
+    left =444
+    top =450
+    right =549
+    bottom =475
+    wtype =36
+    taborder =50
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE260:CtmStaticX2
+    left =391
+    top =475
+    right =443
+    bottom =500
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  EditTABLE261:CtmEditX1
+    left =444
+    top =475
+    right =549
+    bottom =500
+    wtype =36
+    taborder =51
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  EditTABLE270:CtmStaticX2
+    left =391
+    top =500
+    right =443
+    bottom =525
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  EditTABLE271:CtmEditX1
+    left =444
+    top =500
+    right =549
+    bottom =525
+    wtype =36
+    taborder =52
+    fgc =0
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    maxchar =10
+    align =0
+  end
+  StaticDataName01:CtmStaticX2
+    left =35
+    top =600
+    right =205
+    bottom =625
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticDataName02:CtmStaticX2
+    left =35
+    top =625
+    right =205
+    bottom =650
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticDataName03:CtmStaticX2
+    left =35
+    top =650
+    right =205
+    bottom =675
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticDataName04:CtmStaticX2
+    left =305
+    top =600
+    right =474
+    bottom =625
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticDataName05:CtmStaticX2
+    left =305
+    top =625
+    right =474
+    bottom =650
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticDataName06:CtmStaticX2
+    left =305
+    top =650
+    right =474
+    bottom =675
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticDataName07:CtmStaticX2
+    left =35
+    top =685
+    right =205
+    bottom =710
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticDataName08:CtmStaticX2
+    left =35
+    top =710
+    right =205
+    bottom =735
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticDataName09:CtmStaticX2
+    left =35
+    top =735
+    right =205
+    bottom =760
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticDataName10:CtmStaticX2
+    left =305
+    top =685
+    right =474
+    bottom =710
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticDataName11:CtmStaticX2
+    left =305
+    top =710
+    right =474
+    bottom =735
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticDataName12:CtmStaticX2
+    left =305
+    top =735
+    right =474
+    bottom =760
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticDataName13:CtmStaticX2
+    left =35
+    top =770
+    right =205
+    bottom =795
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticDataName14:CtmStaticX2
+    left =35
+    top =795
+    right =205
+    bottom =820
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticDataName15:CtmStaticX2
+    left =35
+    top =820
+    right =205
+    bottom =845
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticDataName16:CtmStaticX2
+    left =305
+    top =770
+    right =474
+    bottom =795
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  StaticDataName17:CtmStaticX2
+    left =305
+    top =795
+    right =474
+    bottom =820
+    wtype =34
+    fgc =0
+    bgc =55038
+    fontsize =2
+  end
+  StaticDataName18:CtmStaticX2
+    left =305
+    top =820
+    right =474
+    bottom =845
+    wtype =34
+    fgc =0
+    bgc =44572
+    fontsize =2
+  end
+  BtnLocal:CtmToolButton
+    left =47
+    top =31
+    right =137
+    bottom =72
+    wtype =39
+    taborder =0
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_STR_LOCAL_VAR
+  end
+  BtnGlobal:CtmToolButton
+    left =157
+    top =31
+    right =247
+    bottom =72
+    wtype =39
+    taborder =1
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_STR_GLOBAL_VAR
+  end
+  BtnSystemVar:CtmToolButton
+    left =269
+    top =31
+    right =359
+    bottom =72
+    wtype =39
+    taborder =2
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_STR_SYSTEM_VAR
+  end
+  StaticDataType:CtmStaticX2
+    left =232
+    top =553
+    right =367
+    bottom =595
+    wtype =48
+    fgc =0
+    bgc =55068
+    fontsize =2
+    align =2
+  end
+  BtnUp:CtmToolButton
+    left =403
+    top =54
+    right =463
+    bottom =86
+    wtype =39
+    taborder =3
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    upbitmap =res_tm640/sLeftArrowUp.png
+    downbitmap =res_tm640/sLeftArrowDn.png
+  end
+  BtnDown:CtmToolButton
+    left =486
+    top =54
+    right =546
+    bottom =86
+    wtype =39
+    taborder =4
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    upbitmap =res_tm640/sRightArrowUp.png
+    downbitmap =res_tm640/sRightArrowDn.png
+  end
+  BtnShowDataPageDown:CtmToolButton
+    left =147
+    top =553
+    right =217
+    bottom =593
+    wtype =39
+    taborder =66
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    upbitmap =res_tm640/lLeftArrowUp.png
+    downbitmap =res_tm640/lLeftArrowDn.png
+  end
+  BtnShowDataPageUp:CtmToolButton
+    left =382
+    top =553
+    right =452
+    bottom =593
+    wtype =39
+    taborder =67
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    upbitmap =res_tm640/lRightArrowUp.png
+    downbitmap =res_tm640/lRightArrowDn.png
+  end
+  EditDataValue01:CtmEditX1
+    left =205
+    top =600
+    right =290
+    bottom =625
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    max =99999999
+    maxdb =FALSE
+  end
+  EditDataValue02:CtmEditX1
+    left =205
+    top =625
+    right =290
+    bottom =650
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    max =99999999
+    maxdb =FALSE
+  end
+  EditDataValue03:CtmEditX1
+    left =205
+    top =650
+    right =290
+    bottom =675
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    max =99999999
+    maxdb =FALSE
+  end
+  EditDataValue04:CtmEditX1
+    left =473
+    top =600
+    right =558
+    bottom =625
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditDataValue05:CtmEditX1
+    left =473
+    top =625
+    right =558
+    bottom =650
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditDataValue06:CtmEditX1
+    left =473
+    top =650
+    right =558
+    bottom =675
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditDataValue07:CtmEditX1
+    left =205
+    top =685
+    right =290
+    bottom =710
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditDataValue08:CtmEditX1
+    left =205
+    top =710
+    right =290
+    bottom =735
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    maxdb =FALSE
+  end
+  EditDataValue09:CtmEditX1
+    left =205
+    top =735
+    right =290
+    bottom =760
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    maxdb =FALSE
+  end
+  EditDataValue10:CtmEditX1
+    left =473
+    top =685
+    right =558
+    bottom =710
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditDataValue11:CtmEditX1
+    left =473
+    top =710
+    right =558
+    bottom =735
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditDataValue12:CtmEditX1
+    left =473
+    top =735
+    right =558
+    bottom =760
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditDataValue13:CtmEditX1
+    left =205
+    top =770
+    right =290
+    bottom =795
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditDataValue14:CtmEditX1
+    left =205
+    top =795
+    right =290
+    bottom =820
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    maxdb =FALSE
+  end
+  EditDataValue15:CtmEditX1
+    left =205
+    top =820
+    right =290
+    bottom =845
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    maxdb =FALSE
+  end
+  EditDataValue16:CtmEditX1
+    left =473
+    top =770
+    right =558
+    bottom =795
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditDataValue17:CtmEditX1
+    left =473
+    top =795
+    right =558
+    bottom =820
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  EditDataValue18:CtmEditX1
+    left =473
+    top =820
+    right =558
+    bottom =845
+    wtype =36
+    taborder =-3
+    bgc =44505
+    fontsize =2
+    colorcontrol =260
+    destcolor =57182
+    type =18
+    maxchar =10
+    align =33
+    min =-18000
+    max =18000
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =380
+    top =16
+    right =383
+    bottom =86
+    bgc =33808
+    fontsize =2
+  end
+end

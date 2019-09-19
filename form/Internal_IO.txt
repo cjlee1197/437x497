@@ -1,0 +1,213 @@
+ViewInternal_IO:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =777
+  wtype =48
+  titleID =PICKER_IO
+  printname =Robot_IO1.bmp
+  SelectBox10:CtmSelectBox
+    left =22
+    top =66
+    right =272
+    bottom =91
+    wtype =55
+    fgc =0
+    fontsize =1
+  end
+  SelectBox11:CtmSelectBox
+    left =22
+    top =94
+    right =272
+    bottom =119
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =1
+  end
+  SelectBox12:CtmSelectBox
+    left =22
+    top =122
+    right =272
+    bottom =147
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =2
+  end
+  SelectBox13:CtmSelectBox
+    left =22
+    top =150
+    right =272
+    bottom =175
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =3
+  end
+  SelectBox14:CtmSelectBox
+    left =22
+    top =178
+    right =272
+    bottom =203
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =4
+  end
+  SelectBox15:CtmSelectBox
+    left =22
+    top =206
+    right =272
+    bottom =231
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =5
+  end
+  SelectBox16:CtmSelectBox
+    left =22
+    top =234
+    right =272
+    bottom =259
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =6
+  end
+  SelectBox20:CtmSelectBox
+    left =335
+    top =66
+    right =585
+    bottom =91
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =16
+  end
+  SelectBox21:CtmSelectBox
+    left =335
+    top =94
+    right =585
+    bottom =119
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =17
+  end
+  SelectBox22:CtmSelectBox
+    left =335
+    top =122
+    right =585
+    bottom =147
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =18
+  end
+  SelectBox23:CtmSelectBox
+    left =335
+    top =150
+    right =585
+    bottom =175
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =19
+  end
+  SelectBox24:CtmSelectBox
+    left =335
+    top =178
+    right =585
+    bottom =203
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =20
+  end
+  SelectBox25:CtmSelectBox
+    left =335
+    top =206
+    right =585
+    bottom =231
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =21
+  end
+  SelectBox26:CtmSelectBox
+    left =335
+    top =234
+    right =585
+    bottom =259
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =22
+  end
+  Button_IO1:CtmToolButton
+    left =20
+    top =4
+    right =120
+    bottom =54
+    wtype =48
+    taborder =1
+    fontsize =1
+    align =34
+    captionID =VW_PICKER_MACHINE
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
+  end
+  Button_IO2:CtmToolButton
+    left =120
+    top =4
+    right =220
+    bottom =54
+    wtype =48
+    taborder =2
+    fontsize =1
+    align =34
+    captionID =VW_PICKER_PICKER
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Remote_IO.txt
+  end
+  BtnBack:CtmToolButton
+    left =68
+    top =820
+    right =152
+    bottom =877
+    wtype =48
+    taborder =72
+    align =18
+    upbitmap =res_tm640/pic/BtnBackUp.bmp
+    key =72
+    action =255
+    formname =Param.txt
+  end
+  BtnHome:CtmToolButton
+    left =244
+    top =820
+    right =328
+    bottom =877
+    wtype =48
+    taborder =70
+    align =18
+    upbitmap =res_tm640/pic/BtnHomeUp.bmp
+    key =70
+    action =255
+    formname =Param.txt
+  end
+  BtnMenu:CtmToolButton
+    left =420
+    top =820
+    right =504
+    bottom =877
+    wtype =48
+    taborder =71
+    align =18
+    upbitmap =res_tm640/pic/BtnMenuUp.bmp
+    key =71
+    action =255
+    formname =Param.txt
+  end
+end

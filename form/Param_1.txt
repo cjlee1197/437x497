@@ -1,0 +1,568 @@
+ViewParamlimit:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =870
+  titleID =BTN_PICKER_LIMITSET
+  printname =Param_1.bmp
+  LinuxCtmStaticX23:CtmStaticX2
+    left =402
+    top =92
+    right =502
+    bottom =124
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_ZAXIS
+    align =34
+  end
+  edit_DownSpeedX:CtmEditX1
+    left =117
+    top =132
+    right =202
+    bottom =164
+    wtype =33
+    taborder =0
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =100
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS1_PILE_STEP
+  end
+  edit_DownSpeedY:CtmEditX1
+    left =261
+    top =132
+    right =346
+    bottom =164
+    wtype =33
+    taborder =1
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =100
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS2_PILE_STEP
+  end
+  edit_DownSpeedZ:CtmEditX1
+    left =405
+    top =132
+    right =490
+    bottom =164
+    wtype =33
+    taborder =2
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =100
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS3_PILE_STEP
+  end
+  LinuxCtmStaticX216:CtmStaticX2
+    left =110
+    top =92
+    right =210
+    bottom =124
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_XAXIS
+    align =34
+  end
+  LinuxCtmStaticX217:CtmStaticX2
+    left =28
+    top =132
+    right =113
+    bottom =164
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_ACTION_DOWNSPEEDSPEED
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =253
+    top =92
+    right =353
+    bottom =124
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_YAXIS
+    align =34
+  end
+  LinuxCtmStaticX218:CtmStaticX2
+    left =28
+    top =196
+    right =115
+    bottom =228
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_ACTION_DOWNSPEEDPOS
+    align =34
+  end
+  edit_DownSpeedPosX:CtmEditX1
+    left =117
+    top =196
+    right =202
+    bottom =228
+    wtype =33
+    taborder =3
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =1
+    max =1000
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS1_PILE_NUM
+  end
+  edit_DownSpeedPosY:CtmEditX1
+    left =261
+    top =196
+    right =346
+    bottom =228
+    wtype =33
+    taborder =4
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =1
+    max =1000
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS2_PILE_NUM
+  end
+  edit_DownSpeedPosZ:CtmEditX1
+    left =405
+    top =196
+    right =490
+    bottom =228
+    wtype =33
+    taborder =5
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =1
+    max =1000
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS3_PILE_NUM
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =493
+    top =196
+    right =525
+    bottom =228
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_UNIT_PERCENT
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =349
+    top =196
+    right =381
+    bottom =228
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_UNIT_PERCENT
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =205
+    top =196
+    right =237
+    bottom =228
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_UNIT_PERCENT
+  end
+  LinuxCtmStaticX2262:CtmStaticX2
+    left =298
+    top =440
+    right =448
+    bottom =472
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MAXPOSLIMIT
+    align =34
+  end
+  LinuxCtmEditX16:CtmEditX1
+    left =454
+    top =440
+    right =539
+    bottom =472
+    wtype =33
+    taborder =20
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    max =20000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =SYSX_OTHERS_OTHERS_DWORD_RESERVED4
+  end
+  LinuxCtmEditX11:CtmEditX1
+    left =117
+    top =324
+    right =202
+    bottom =356
+    wtype =33
+    taborder =9
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =300000
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS1_MINPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS1_MAXPOSTION
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =28
+    top =260
+    right =113
+    bottom =292
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HYB5_FUNC_MAXSPEED
+    align =34
+  end
+  WINJECTAXISVELOFACTOR:CtmEditX1
+    left =117
+    top =260
+    right =202
+    bottom =292
+    wtype =33
+    taborder =6
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =50000
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS1_MAXSPEED
+  end
+  LinuxCtmStaticX210:CtmStaticX2
+    left =28
+    top =324
+    right =115
+    bottom =356
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_MAXPOSTION
+    align =34
+  end
+  LinuxCtmEditX17:CtmEditX1
+    left =261
+    top =324
+    right =346
+    bottom =356
+    wtype =33
+    taborder =10
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =300000
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS2_MINPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS2_MAXPOSTION
+  end
+  LinuxCtmEditX18:CtmEditX1
+    left =405
+    top =324
+    right =490
+    bottom =356
+    wtype =33
+    taborder =11
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =300000
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS3_MINPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS3_MAXPOSTION
+  end
+  LinuxCtmEditX14:CtmEditX1
+    left =405
+    top =260
+    right =490
+    bottom =292
+    wtype =33
+    taborder =8
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =50000
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS3_MAXSPEED
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =493
+    top =260
+    right =545
+    bottom =292
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_PARA4_MMS
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =349
+    top =260
+    right =401
+    bottom =292
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_PARA4_MMS
+  end
+  LinuxCtmStaticX219:CtmStaticX2
+    left =205
+    top =260
+    right =257
+    bottom =292
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_PARA4_MMS
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =205
+    top =324
+    right =237
+    bottom =356
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX213:CtmStaticX2
+    left =349
+    top =324
+    right =381
+    bottom =356
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX214:CtmStaticX2
+    left =493
+    top =324
+    right =525
+    bottom =356
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmEditX12:CtmEditX1
+    left =261
+    top =260
+    right =346
+    bottom =292
+    wtype =33
+    taborder =7
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =50000
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS2_MAXSPEED
+  end
+  LinuxCtmStaticX215:CtmStaticX2
+    left =493
+    top =132
+    right =545
+    bottom =164
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_PARA4_MMS
+  end
+  LinuxCtmStaticX220:CtmStaticX2
+    left =349
+    top =132
+    right =401
+    bottom =164
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_PARA4_MMS
+  end
+  LinuxCtmStaticX221:CtmStaticX2
+    left =205
+    top =132
+    right =257
+    bottom =164
+    wtype =48
+    fgc =19374
+    fontsize =1
+    textID =VW_PARA4_MMS
+  end
+  LinuxCtmToolButton1:CtmToolButton
+    left =20
+    top =4
+    right =120
+    bottom =54
+    wtype =48
+    taborder =51
+    fgc =53039
+    fontsize =1
+    align =34
+    captionID =BTN_PICKER_LIMITSET1
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
+  end
+  LinuxCtmToolButton2:CtmToolButton
+    left =120
+    top =4
+    right =220
+    bottom =54
+    wtype =48
+    taborder =52
+    fgc =19374
+    fontsize =1
+    align =34
+    captionID =BTN_PICKER_INMOLD1
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =GuideSet.txt
+  end
+  LinuxCtmToolButton3:CtmToolButton
+    left =220
+    top =4
+    right =320
+    bottom =54
+    wtype =48
+    taborder =53
+    fgc =19374
+    fontsize =1
+    align =34
+    captionID =MECH_PARAM
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Zero.txt
+  end
+  LinuxCtmToolButton4:CtmToolButton
+    left =320
+    top =4
+    right =420
+    bottom =54
+    wtype =48
+    taborder =54
+    fgc =19374
+    fontsize =1
+    align =34
+    captionID =AXIS_ZERO
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Func.txt
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =298
+    top =488
+    right =448
+    bottom =520
+    wtype =33
+    fgc =19374
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_SAFEDIST_BUFFER
+    align =34
+  end
+  LinuxCtmEditX13:CtmEditX1
+    left =454
+    top =488
+    right =539
+    bottom =520
+    wtype =33
+    taborder =21
+    fgc =19374
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =60000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_LIMITS_AXIS1_CONTROLPRECISION
+  end
+  LinuxCtmToolButton5:CtmToolButton
+    left =420
+    top =4
+    right =520
+    bottom =54
+    wtype =48
+    taborder =55
+    fgc =19374
+    fontsize =1
+    align =34
+    captionID =BTNX_BACK
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Func.txt
+  end
+end

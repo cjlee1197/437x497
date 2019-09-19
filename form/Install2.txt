@@ -1,0 +1,569 @@
+ViewSetinst:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =452
+  wtype =48
+  titleID =DLG_INSTALL
+  printname =SetInstall.bmp
+  StaticMachineID:CtmStaticX2
+    left =50
+    top =25
+    right =200
+    bottom =55
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_MACHINEID
+    align =1
+  end
+  StaticOUTDATE:CtmStaticX2
+    left =50
+    top =65
+    right =200
+    bottom =95
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_OUTDATE
+    align =1
+  end
+  StaticSELLDATE:CtmStaticX2
+    left =50
+    top =105
+    right =200
+    bottom =135
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_SELLDATE
+    align =1
+  end
+  StaticSTAGES:CtmStaticX2
+    left =50
+    top =145
+    right =200
+    bottom =175
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_STAGES
+    align =1
+  end
+  StaticSTAGENOW:CtmStaticX2
+    left =500
+    top =25
+    right =650
+    bottom =55
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_STAGENOW
+    align =1
+  end
+  StaticSTAGETIMEOUTDAYS:CtmStaticX2
+    left =50
+    top =185
+    right =200
+    bottom =215
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_STAGETIMEOUTDAYS
+    align =1
+  end
+  StaticTIMEOUTHOUR:CtmStaticX2
+    left =500
+    top =65
+    right =650
+    bottom =95
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_TIMEOUTHOUR
+    align =1
+  end
+  StaticNEXT_TIMOUT_DATE:CtmStaticX2
+    left =50
+    top =225
+    right =200
+    bottom =255
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_NEXTTIMEOUTDATE
+    align =1
+  end
+  StaticALARM_DAYS:CtmStaticX2
+    left =50
+    top =265
+    right =200
+    bottom =295
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_ALARMDAYS
+    align =1
+  end
+  StaticDEVISIONTIME:CtmStaticX2
+    left =500
+    top =105
+    right =650
+    bottom =135
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_DEVISIONTIME
+    align =1
+  end
+  StaticNEXT_ALARM_DATE:CtmStaticX2
+    left =50
+    top =305
+    right =200
+    bottom =335
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_NEXTALARMDATE
+    align =1
+  end
+  StaticOPERATION_HOURS:CtmStaticX2
+    left =50
+    top =345
+    right =200
+    bottom =375
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_OPERATIONHOUR
+    align =1
+  end
+  StaticOPERATION_STATE:CtmStaticX2
+    left =50
+    top =384
+    right =200
+    bottom =414
+    wtype =38
+    fgc =0
+    bgc =50712
+    fontsize =1
+    textID =DLG_INSTALL_OPERATIONSTATE
+    align =1
+  end
+  StaticOPERATION_STATEHELP:CtmStaticX2
+    left =250
+    top =384
+    right =420
+    bottom =414
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =VW_INSTALL_OPERATIONSTATEHELP
+    align =1
+  end
+  StaticOUTDATE_SLASH1:CtmStaticX2
+    left =248
+    top =65
+    right =268
+    bottom =95
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =1
+  end
+  StaticOUTDATE_SLASH2:CtmStaticX2
+    left =303
+    top =65
+    right =323
+    bottom =95
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =1
+  end
+  StaticSELLDATE_SLASH1:CtmStaticX2
+    left =248
+    top =105
+    right =268
+    bottom =135
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =1
+  end
+  StaticSELLDATE_SLASH2:CtmStaticX2
+    left =303
+    top =105
+    right =323
+    bottom =135
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =1
+  end
+  StaticNEXT_TIMOUT_DATE_SLASH1:CtmStaticX2
+    left =248
+    top =225
+    right =268
+    bottom =255
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =1
+  end
+  StaticNEXT_TIMOUT_DATE_SLASH2:CtmStaticX2
+    left =303
+    top =225
+    right =323
+    bottom =255
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =1
+  end
+  StaticTIMEOUTHOUR_COLON:CtmStaticX2
+    left =695
+    top =65
+    right =715
+    bottom =95
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =DLG_DATETIME_COLON
+    align =1
+  end
+  StaticNEXT_ALARM_DATE_SLASH1:CtmStaticX2
+    left =248
+    top =305
+    right =268
+    bottom =335
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =1
+  end
+  StaticNEXT_ALARM_DATE_SLASH2:CtmStaticX2
+    left =303
+    top =305
+    right =323
+    bottom =335
+    wtype =48
+    fgc =65535
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =1
+  end
+  editMachineID:CtmEdit
+    left =210
+    top =25
+    right =376
+    bottom =55
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =1
+    maxchar =10
+    align =0
+  end
+  editOutFctyMonth:CtmEditX1
+    left =210
+    top =65
+    right =245
+    bottom =95
+    wtype =35
+    taborder =1
+    bgc =65535
+    fontsize =1
+    maxchar =20
+    align =0
+    min =1
+    max =12
+    dbid0 =OPER_HMI_NULL_NULL_DATEMACHOUTMONTH
+  end
+  editOutFctyDay:CtmEditX1
+    left =265
+    top =65
+    right =300
+    bottom =95
+    wtype =35
+    taborder =2
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    min =1
+    max =31
+    dbid0 =OPER_HMI_NULL_NULL_DATEMACHOUTDAY
+  end
+  editOutFctyYear:CtmEditX1
+    left =317
+    top =65
+    right =377
+    bottom =95
+    wtype =35
+    taborder =3
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    max =2099
+    dbid0 =OPER_HMI_NULL_NULL_DATEMACHOUTYEAR
+  end
+  editUseMonth:CtmEditX1
+    left =210
+    top =105
+    right =245
+    bottom =135
+    wtype =35
+    taborder =4
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    min =1
+    max =12
+    dbid0 =OPER_HMI_NULL_NULL_DATEMACHSELLMONTH
+  end
+  editUseDay:CtmEditX1
+    left =265
+    top =105
+    right =300
+    bottom =135
+    wtype =35
+    taborder =5
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    min =1
+    max =31
+    dbid0 =OPER_HMI_NULL_NULL_DATEMACHSELLDAY
+  end
+  editUseYear:CtmEditX1
+    left =317
+    top =105
+    right =377
+    bottom =135
+    wtype =35
+    taborder =6
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    max =2099
+    dbid0 =OPER_HMI_NULL_NULL_DATEMACHSELLYEAR
+  end
+  editPayStages:CtmEditX1
+    left =210
+    top =145
+    right =278
+    bottom =175
+    wtype =35
+    taborder =7
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    max =12
+    dbid0 =OPER_HMI_NULL_NULL_STAGES
+  end
+  editCurrPayStage:CtmEditX1
+    left =660
+    top =25
+    right =728
+    bottom =55
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =1
+    align =0
+  end
+  editSinTimeOutDay:CtmEditX1
+    left =210
+    top =185
+    right =278
+    bottom =215
+    wtype =35
+    taborder =8
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    max =999
+    dbid0 =OPER_HMI_NULL_NULL_DAYSTIMEOUTPERIOD
+  end
+  editStopHour:CtmEditX1
+    left =660
+    top =65
+    right =695
+    bottom =95
+    wtype =35
+    taborder =9
+    bgc =65535
+    fontsize =1
+    align =0
+    max =23
+    dbid0 =OPER_HMI_NULL_NULL_TIMESTOPHOUR
+  end
+  editStopMinute:CtmEditX1
+    left =705
+    top =65
+    right =740
+    bottom =95
+    wtype =35
+    taborder =10
+    bgc =65535
+    fontsize =1
+    align =0
+    max =59
+    dbid0 =OPER_HMI_NULL_NULL_TIMESTOPMINUTE
+  end
+  editTimeOutMonth:CtmEditX1
+    left =210
+    top =225
+    right =245
+    bottom =255
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =1
+    maxchar =10
+    align =0
+  end
+  editTimeOutDay:CtmEditX1
+    left =265
+    top =225
+    right =300
+    bottom =255
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =1
+    maxchar =10
+    align =0
+  end
+  editTimeOutYear:CtmEditX1
+    left =317
+    top =225
+    right =377
+    bottom =255
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =1
+    maxchar =10
+    align =0
+    max =2099
+  end
+  editAlarmDays:CtmEditX1
+    left =210
+    top =265
+    right =278
+    bottom =295
+    wtype =35
+    taborder =12
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    min =1
+    max =999
+    dbid0 =OPER_HMI_NULL_NULL_DAYSALARMPERIOD
+  end
+  editAlmDevisMinute:CtmEditX1
+    left =660
+    top =105
+    right =728
+    bottom =135
+    wtype =35
+    taborder =11
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    min =1
+    max =999
+    dbid0 =OPER_HMI_NULL_NULL_ALARMINTERVAL
+  end
+  editNextAlmMonth:CtmEditX1
+    left =210
+    top =305
+    right =245
+    bottom =335
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =1
+    maxchar =10
+    align =0
+  end
+  editNextAlmDay:CtmEditX1
+    left =265
+    top =305
+    right =300
+    bottom =335
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =1
+    maxchar =10
+    align =0
+    max =2099
+  end
+  editNextAlmYear:CtmEditX1
+    left =317
+    top =305
+    right =377
+    bottom =335
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =1
+    maxchar =10
+    align =0
+  end
+  editOperationHour:CtmEditX1
+    left =210
+    top =345
+    right =280
+    bottom =375
+    wtype =38
+    taborder =-3
+    bgc =44505
+    fontsize =1
+    maxchar =10
+    align =0
+  end
+  editOperationState:CtmEditX1
+    left =210
+    top =384
+    right =245
+    bottom =414
+    wtype =35
+    taborder =13
+    bgc =65535
+    fontsize =1
+    align =0
+    max =1
+    maxdb =FALSE
+  end
+end

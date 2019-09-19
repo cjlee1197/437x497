@@ -1,0 +1,559 @@
+ViewSyst:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  wtype =48
+  titleID =INDEX_SYS_SET
+  printname =System.bmp
+  StaticSCRSAVER:CtmStaticX2
+    left =84
+    top =98
+    right =328
+    bottom =130
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =DLG_SYSTEM_SCREENSAVER
+    align =34
+  end
+  StaticIDLETIME:CtmStaticX2
+    left =316
+    top =144
+    right =358
+    bottom =184
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_TEMP_MINUTE
+    align =32
+  end
+  StaticDATETIME:CtmStaticX2
+    left =84
+    top =278
+    right =328
+    bottom =310
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =DLG_DATETIME
+    align =34
+  end
+  StaticDATE:CtmStaticX2
+    left =84
+    top =342
+    right =144
+    bottom =374
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =DLG_DATETIME_DATE
+    align =34
+  end
+  StaticTIME:CtmStaticX2
+    left =84
+    top =385
+    right =144
+    bottom =417
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =DLG_DATETIME_TIME
+    align =34
+  end
+  StaticSLASH1:CtmStaticX2
+    left =208
+    top =350
+    right =233
+    bottom =375
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =34
+  end
+  StaticSLASH2:CtmStaticX2
+    left =298
+    top =350
+    right =323
+    bottom =375
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =34
+  end
+  StaticCOLON1:CtmStaticX2
+    left =205
+    top =393
+    right =225
+    bottom =418
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =DLG_DATETIME_COLON
+    align =34
+  end
+  StaticCOLON2:CtmStaticX2
+    left =298
+    top =393
+    right =318
+    bottom =418
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =DLG_DATETIME_COLON
+    align =34
+  end
+  StaticLANGUAGE:CtmStaticX2
+    left =84
+    top =562
+    right =328
+    bottom =594
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =DLG_SYSTEM_LANGUAGE
+    align =34
+  end
+  editIDLETIME:CtmEditX1
+    left =240
+    top =144
+    right =310
+    bottom =176
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =6
+    align =32
+    min =1
+    max =10
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =SYS_HMI_NULL_NULL_SCREENSAVERTIME
+  end
+  editMONTH:CtmEditX1
+    left =147
+    top =342
+    right =207
+    bottom =374
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =6
+    align =32
+    min =1
+    max =12
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  editDAY:CtmEditX1
+    left =237
+    top =342
+    right =297
+    bottom =374
+    wtype =35
+    taborder =7
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =6
+    align =32
+    min =1
+    max =31
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  editYEAR:CtmEditX1
+    left =327
+    top =342
+    right =387
+    bottom =374
+    wtype =35
+    taborder =8
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =6
+    align =32
+    max =99
+    maxdb =FALSE
+  end
+  editHOUR:CtmEditX1
+    left =147
+    top =385
+    right =207
+    bottom =417
+    wtype =35
+    taborder =9
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =6
+    align =32
+    max =23
+    maxdb =FALSE
+  end
+  editMINUTE:CtmEditX1
+    left =237
+    top =385
+    right =297
+    bottom =417
+    wtype =35
+    taborder =10
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =6
+    align =32
+    max =59
+    maxdb =FALSE
+  end
+  editSECOND:CtmEditX1
+    left =327
+    top =385
+    right =387
+    bottom =417
+    wtype =35
+    taborder =11
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =6
+    align =32
+    max =59
+    maxdb =FALSE
+  end
+  SelecteditLANGUAGE:CtmSelectEdit
+    left =18
+    top =765
+    right =168
+    bottom =795
+    wtype =48
+    taborder =12
+    fgc =0
+    bgc =65535
+    fontsize =1
+    visible =FALSE
+    enabled =FALSE
+    bordercolor =33808
+    stype =1
+    maxchar =50
+    promptID =MSG_SYSTEM_MULT_LANGUAGE
+    listnum =4
+    strID0 =DLG_SYSTEM_CE_CHINESE
+    strID1 =DLG_SYSTEM_CE_ENGLISH
+  end
+  CheckBoxIDLETIME:CtmStaticX2
+    left =68
+    top =138
+    right =268
+    bottom =178
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =DLG_SYSTEM_IDLETIME
+  end
+  Btn_BgLigh_Low:CtmToolButton
+    left =61
+    top =196
+    right =125
+    bottom =254
+    wtype =48
+    taborder =13
+    align =18
+    upbitmap =res_tm640/pic/BtnBgLighLow.bmp
+    key =13
+    action =255
+    formname =Param.txt
+  end
+  Btn_BgLigh_High:CtmToolButton
+    left =425
+    top =196
+    right =489
+    bottom =254
+    wtype =48
+    taborder =12
+    align =18
+    upbitmap =res_tm640/pic/BtnBgLighHigh.bmp
+    key =12
+    action =255
+    formname =Param.txt
+  end
+  ImgBgLightBar:CtmImageBox
+    left =125
+    top =210
+    right =425
+    bottom =240
+    type =2
+    imagepath =res_tm640/pic/picker/BgLightBar.bmp
+    keycolor =63519
+  end
+  ImgBgLight:CtmImageBox
+    left =125
+    top =210
+    right =155
+    bottom =240
+    type =2
+    imagepath =res_tm640/pic/picker/BgLight.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =68
+    top =98
+    right =84
+    bottom =130
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =68
+    top =278
+    right =84
+    bottom =310
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =68
+    top =342
+    right =84
+    bottom =374
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =68
+    top =562
+    right =84
+    bottom =594
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =68
+    top =385
+    right =84
+    bottom =417
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  BtnConfirm:CtmToolButton
+    left =203
+    top =745
+    right =339
+    bottom =777
+    wtype =33
+    taborder =5
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    buttontype =0
+    captionID =VW_MOLD_PMD2
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  String_LG2:CtmToolButton
+    left =135
+    top =680
+    right =285
+    bottom =720
+    taborder =114
+    bgc =63422
+    fontsize =1
+  end
+  String_LG1:CtmToolButton
+    left =343
+    top =624
+    right =493
+    bottom =664
+    taborder =115
+    bgc =63422
+    fontsize =1
+  end
+  String_LG3:CtmToolButton
+    left =343
+    top =680
+    right =493
+    bottom =720
+    taborder =116
+    bgc =63422
+    fontsize =1
+  end
+  Choose_LG0:CtmToolButton
+    left =86
+    top =624
+    right =126
+    bottom =664
+    wtype =33
+    taborder =97
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =61
+  end
+  Choose_LG2:CtmToolButton
+    left =86
+    top =680
+    right =126
+    bottom =720
+    wtype =33
+    taborder =98
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =62
+  end
+  Choose_LG1:CtmToolButton
+    left =294
+    top =624
+    right =334
+    bottom =664
+    wtype =33
+    taborder =99
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =63
+  end
+  Choose_LG3:CtmToolButton
+    left =294
+    top =680
+    right =334
+    bottom =720
+    wtype =33
+    taborder =100
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =64
+  end
+  String_LG0:CtmToolButton
+    left =135
+    top =624
+    right =285
+    bottom =664
+    taborder =113
+    bgc =63422
+    fontsize =1
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =84
+    top =442
+    right =328
+    bottom =474
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =DLG_SYSTEM_BEEP
+    align =34
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =68
+    top =442
+    right =84
+    bottom =474
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  Btn_Beep:CtmToolButton
+    left =93
+    top =484
+    right =157
+    bottom =548
+    wtype =48
+    taborder =88
+    align =18
+    upbitmap =res_tm640/pic/Beep_ON.bmp
+    key =88
+    action =255
+    formname =Param.txt
+  end
+  Btn_LG_Next:CtmToolButton
+    left =501
+    top =636
+    right =561
+    bottom =696
+    wtype =48
+    taborder =32
+    align =18
+    upbitmap =res_tm640/pic/LG_Next.bmp
+    key =32
+    action =255
+    formname =Param.txt
+  end
+  Btn_LG_Last:CtmToolButton
+    left =21
+    top =636
+    right =81
+    bottom =696
+    wtype =48
+    taborder =31
+    align =18
+    upbitmap =res_tm640/pic/LG_Last.bmp
+    key =31
+    action =255
+    formname =Param.txt
+  end
+end

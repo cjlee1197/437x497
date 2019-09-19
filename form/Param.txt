@@ -1,0 +1,140 @@
+ViewParam:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =BTN_02_PARA
+  printname =Param.bmp
+  LinuxCtmStaticX22:CtmStaticX2
+    left =268
+    top =144
+    right =388
+    bottom =176
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =OPS_POSNSET
+    align =34
+  end
+  LinuxCtmStaticX224:CtmStaticX2
+    left =86
+    top =181
+    right =266
+    bottom =213
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKERDN_POSN
+    align =34
+  end
+  LinuxCtmEditX114:CtmEditX1
+    left =268
+    top =181
+    right =388
+    bottom =213
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =35
+    precision =2
+    max =10000
+    maxdb =FALSE
+    dbid0 =MACHINE_INTERFACE_MONITOR_RSV16
+  end
+  LinuxCtmStaticX830:CtmStaticX2
+    left =390
+    top =181
+    right =430
+    bottom =221
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =86
+    top =336
+    right =266
+    bottom =368
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_STEPMAXTIME
+    align =34
+  end
+  LinuxCtmEditX12:CtmEditX1
+    left =268
+    top =336
+    right =388
+    bottom =368
+    wtype =35
+    taborder =2
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    precision =2
+    max =60000
+    mindb =FALSE
+    maxdb =FALSE
+    spepre =1
+    dbid0 =MACHINE_CONFIGURATION_STEPTIMEOUT
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =390
+    top =336
+    right =430
+    bottom =376
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_CHARGE_SEC
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =268
+    top =304
+    right =388
+    bottom =336
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_TIMESETTING1
+    align =34
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =70
+    top =181
+    right =86
+    bottom =213
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =70
+    top =336
+    right =86
+    bottom =368
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+end

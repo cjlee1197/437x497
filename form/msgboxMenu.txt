@@ -1,0 +1,746 @@
+ViewMsgBoxMenu:CtmFormView
+  left =10
+  top =250
+  right =590
+  bottom =720
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =580
+    bottom =470
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/MenuImage/MenuBackGround.png
+    keycolor =63519
+  end
+  btnExit:CtmToolButton
+    left =40
+    top =412
+    right =540
+    bottom =452
+    wtype =39
+    taborder =48
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_STR_EXIT
+  end
+  ImageLevel01:CtmImageBox
+    left =10
+    top =50
+    right =570
+    bottom =210
+    wtype =55
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/MenuImage/MenuLevelbk01.png
+    keycolor =63519
+  end
+  button_L1_01:CtmToolButton
+    left =30
+    top =58
+    right =100
+    bottom =122
+    taborder =0
+    fontsize =2
+    align =8
+    space =5
+    captionID =ROBOT_BTN_STATUS
+    upbitmap =res_tm640/MenuImage/ButtonUp.png
+    downbitmap =res_tm640/MenuImage/ButtonUp.png
+    captiontype =1
+    key =15360
+    Image_L1_01:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_01.png
+      keycolor =63519
+    end
+  end
+  button_L1_02:CtmToolButton
+    left =120
+    top =58
+    right =190
+    bottom =122
+    taborder =1
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    captionID =ROBOT_BTN_MANUAL
+    upbitmap =res_tm640/MenuImage/ButtonUp.png
+    downbitmap =res_tm640/MenuImage/ButtonUp.png
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_02:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_02.png
+      keycolor =63519
+    end
+  end
+  button_L1_03:CtmToolButton
+    left =210
+    top =58
+    right =280
+    bottom =122
+    taborder =2
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    captionID =ROBOT_BTN_AUTOMATIC
+    upbitmap =res_tm640/MenuImage/ButtonUp.png
+    downbitmap =res_tm640/MenuImage/ButtonUp.png
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_03:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_03.png
+      keycolor =63519
+    end
+  end
+  button_L1_04:CtmToolButton
+    left =300
+    top =58
+    right =370
+    bottom =122
+    taborder =3
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    captionID =ROBOT_BTN_COORDINATE
+    upbitmap =res_tm640/MenuImage/ButtonUp2.png
+    downbitmap =res_tm640/MenuImage/ButtonUp2.png
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_04:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_04.png
+      keycolor =63519
+    end
+  end
+  button_L1_05:CtmToolButton
+    left =390
+    top =58
+    right =460
+    bottom =122
+    taborder =4
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    captionID =ROBOT_BTN_CODE_EDIT
+    upbitmap =res_tm640/MenuImage/ButtonUp.png
+    downbitmap =res_tm640/MenuImage/ButtonUp.png
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_05:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_05.png
+      keycolor =63519
+    end
+  end
+  button_L1_06:CtmToolButton
+    left =480
+    top =58
+    right =550
+    bottom =122
+    taborder =5
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    captionID =ROBOT_BTN_SYSTEM
+    upbitmap =res_tm640/MenuImage/ButtonUp2.png
+    downbitmap =res_tm640/MenuImage/ButtonUp2.png
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_06:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_06.png
+      keycolor =63519
+    end
+  end
+  button_L1_07:CtmToolButton
+    left =30
+    top =138
+    right =100
+    bottom =202
+    taborder =6
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    captionID =ROBOT_STR_PLC
+    upbitmap =res_tm640/MenuImage/ButtonUp2.png
+    downbitmap =res_tm640/MenuImage/ButtonUp2.png
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_07:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_07.png
+      keycolor =63519
+    end
+  end
+  button_L1_08:CtmToolButton
+    left =120
+    top =138
+    right =190
+    bottom =202
+    taborder =7
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    captionID =ROBOT_VIEW_USE_MANAGE
+    upbitmap =res_tm640/MenuImage/ButtonUp.png
+    downbitmap =res_tm640/MenuImage/ButtonUp.png
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_08:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_08.png
+      keycolor =63519
+    end
+  end
+  button_L1_09:CtmToolButton
+    left =210
+    top =138
+    right =280
+    bottom =202
+    taborder =8
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    captionID =ROBOT_BTN_ALARM
+    upbitmap =res_tm640/MenuImage/ButtonUp.png
+    downbitmap =res_tm640/MenuImage/ButtonUp.png
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_09:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_09.png
+      keycolor =63519
+    end
+  end
+  button_L1_10:CtmToolButton
+    left =300
+    top =138
+    right =370
+    bottom =202
+    taborder =9
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    captionID =ROBOT_BTN_INFORMATION
+    upbitmap =res_tm640/MenuImage/ButtonUp2.png
+    downbitmap =res_tm640/MenuImage/ButtonUp2.png
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_10:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_10.png
+      keycolor =63519
+    end
+  end
+  button_L1_11:CtmToolButton
+    left =390
+    top =138
+    right =460
+    bottom =202
+    wtype =55
+    taborder =10
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    captionID =ROBOT_BTN_PROCESS
+    upbitmap =res_tm640/MenuImage/ButtonUp2.png
+    downbitmap =res_tm640/MenuImage/ButtonUp2.png
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_11:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/MenuImage/Menu_11.png
+      keycolor =63519
+    end
+  end
+  button_L1_12:CtmToolButton
+    left =480
+    top =138
+    right =550
+    bottom =202
+    wtype =55
+    taborder =11
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    wtype =55
+    captiontype =1
+    key =15360
+    group =2
+    Image_L1_12:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      keycolor =63519
+    end
+  end
+  button_L2_01:CtmToolButton
+    left =30
+    top =234
+    right =100
+    bottom =298
+    taborder =16
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L2_01:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L2_02:CtmToolButton
+    left =120
+    top =234
+    right =190
+    bottom =298
+    taborder =17
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L2_02:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L2_03:CtmToolButton
+    left =210
+    top =234
+    right =280
+    bottom =298
+    taborder =18
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L2_03:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L2_04:CtmToolButton
+    left =300
+    top =234
+    right =370
+    bottom =298
+    taborder =19
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L2_04:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L2_05:CtmToolButton
+    left =390
+    top =234
+    right =460
+    bottom =298
+    taborder =20
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L2_05:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L2_06:CtmToolButton
+    left =480
+    top =234
+    right =550
+    bottom =298
+    taborder =21
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L2_06:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L3_01:CtmToolButton
+    left =30
+    top =330
+    right =100
+    bottom =394
+    taborder =32
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L3_01:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L3_02:CtmToolButton
+    left =120
+    top =330
+    right =190
+    bottom =394
+    taborder =33
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L3_02:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L3_03:CtmToolButton
+    left =210
+    top =330
+    right =280
+    bottom =394
+    taborder =34
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L3_03:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L3_04:CtmToolButton
+    left =300
+    top =330
+    right =370
+    bottom =394
+    taborder =35
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L3_04:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L3_05:CtmToolButton
+    left =390
+    top =330
+    right =460
+    bottom =394
+    taborder =36
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L3_05:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  button_L3_06:CtmToolButton
+    left =480
+    top =330
+    right =550
+    bottom =394
+    taborder =37
+    fontsize =2
+    extag =2
+    align =8
+    space =5
+    downbitmap =res_tm640/ButtonUp.bmp
+    captiontype =1
+    key =15360
+    group =2
+    action =255
+    formname =ManualMode.txt
+    Image_L3_06:CtmImageBox
+      left =7
+      top =28
+      right =63
+      bottom =60
+      wtype =55
+      type =2
+      imagepath =res_tm640/ToolbarImage/Left1.png
+      keycolor =63519
+    end
+  end
+  ImageLevel02:CtmImageBox
+    left =10
+    top =226
+    right =570
+    bottom =306
+    wtype =55
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/MenuImage/MenuLevelbk02.png
+    keycolor =63519
+  end
+  ImageLevel03:CtmImageBox
+    left =10
+    top =322
+    right =570
+    bottom =402
+    wtype =55
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/MenuImage/MenuLevelbk03.png
+    keycolor =63519
+  end
+  MenuStatic:CtmStaticX2
+    left =10
+    top =9
+    right =141
+    bottom =45
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =ROBOT_STR_RUN_TIME
+  end
+  ImageBoxNextLine1:CtmImageBox
+    left =10
+    top =213
+    right =570
+    bottom =223
+    wtype =55
+    fontsize =2
+    type =2
+    style =3
+    keycolor =63519
+  end
+  ImageBoxNextLine2:CtmImageBox
+    left =10
+    top =309
+    right =570
+    bottom =319
+    wtype =55
+    fontsize =2
+    type =2
+    style =3
+    keycolor =63519
+  end
+end

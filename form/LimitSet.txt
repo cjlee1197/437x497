@@ -1,0 +1,528 @@
+ViewGuideSet:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =INDEX_LIMIT_SET
+  printname =LimitSet.bmp
+  EditWait_X:CtmEditX1
+    left =148
+    top =614
+    right =221
+    bottom =646
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    max =200000
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS_X1_MINPOSTION
+    maxid =MACHINE_LIMITS_AXIS1_MAXPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS_X1_MAXPOSTION
+  end
+  EditWait_Y:CtmEditX1
+    left =231
+    top =614
+    right =304
+    bottom =646
+    wtype =35
+    taborder =7
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS_Y1_MINPOSTION
+    maxid =SYSX_OTHERS_OTHERS_DWORD_RESERVED4
+    dbid0 =MACHINE_LIMITS_AXIS_Y1_MAXPOSTION
+  end
+  EditWait_Z:CtmEditX1
+    left =314
+    top =614
+    right =387
+    bottom =646
+    wtype =35
+    taborder =8
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    max =200000
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS_Z_MINPOSTION
+    maxid =MACHINE_LIMITS_AXIS3_MAXPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS_Z_MAXPOSTION
+  end
+  EditGetProduct_X:CtmEditX1
+    left =148
+    top =558
+    right =221
+    bottom =590
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    mindb =FALSE
+    maxdb =FALSE
+    maxid =MACHINE_LIMITS_AXIS_X1_MAXPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS_X1_MINPOSTION
+  end
+  EditGetProduct_Y:CtmEditX1
+    left =231
+    top =558
+    right =304
+    bottom =590
+    wtype =35
+    taborder =2
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    mindb =FALSE
+    maxdb =FALSE
+    maxid =MACHINE_LIMITS_AXIS2_MAXPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS_Y1_MINPOSTION
+  end
+  EditGetProduct_Z:CtmEditX1
+    left =314
+    top =558
+    right =387
+    bottom =590
+    wtype =35
+    taborder =3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    mindb =FALSE
+    maxdb =FALSE
+    maxid =MACHINE_LIMITS_AXIS_Z_MAXPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS_Z_MINPOSTION
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =148
+    top =502
+    right =221
+    bottom =534
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_XAXIS
+    align =34
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =231
+    top =502
+    right =304
+    bottom =534
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_YAXIS
+    align =34
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =314
+    top =502
+    right =387
+    bottom =534
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_ZAXIS
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =20
+    top =614
+    right =140
+    bottom =646
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_XAXIS_MAXSAFEDIST
+    align =34
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =20
+    top =558
+    right =140
+    bottom =590
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_XAXIS_MINSAFEDIST
+    align =34
+  end
+  LinuxCtmEditX11:CtmEditX1
+    left =397
+    top =614
+    right =470
+    bottom =646
+    wtype =35
+    taborder =9
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    max =200000
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS_X2_MINPOSTION
+    maxid =MACHINE_LIMITS_AXIS4_MAXPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS_X2_MAXPOSTION
+  end
+  LinuxCtmEditX12:CtmEditX1
+    left =480
+    top =614
+    right =553
+    bottom =646
+    wtype =35
+    taborder =10
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    mindb =FALSE
+    maxdb =FALSE
+    minid =MACHINE_LIMITS_AXIS_Y2_MINPOSTION
+    maxid =MACHINE_LIMITS_AXIS5_MAXPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS_Y2_MAXPOSTION
+  end
+  LinuxCtmEditX13:CtmEditX1
+    left =397
+    top =558
+    right =470
+    bottom =590
+    wtype =35
+    taborder =4
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    mindb =FALSE
+    maxdb =FALSE
+    maxid =MACHINE_LIMITS_AXIS_X2_MAXPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS_X2_MINPOSTION
+  end
+  LinuxCtmEditX14:CtmEditX1
+    left =480
+    top =558
+    right =553
+    bottom =590
+    wtype =35
+    taborder =5
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =32
+    mindb =FALSE
+    maxdb =FALSE
+    maxid =MACHINE_LIMITS_AXIS_Y2_MAXPOSTION
+    dbid0 =MACHINE_LIMITS_AXIS_Y2_MINPOSTION
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =397
+    top =502
+    right =470
+    bottom =534
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_X2AXIS
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =480
+    top =502
+    right =553
+    bottom =534
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_Y2AXIS
+    align =34
+  end
+  LinuxCtmStaticX215:CtmStaticX2
+    left =556
+    top =558
+    right =588
+    bottom =590
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX216:CtmStaticX2
+    left =556
+    top =614
+    right =588
+    bottom =646
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =4
+    top =558
+    right =20
+    bottom =590
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =4
+    top =614
+    right =20
+    bottom =646
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox8:CtmImageBox
+    left =50
+    top =29
+    right =650
+    bottom =479
+    type =2
+    imagepath =res_tm640/pic/picker/LimitSet.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =311
+    top =672
+    right =461
+    bottom =704
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_SAFEDIST_BUFFER
+    align =34
+  end
+  LinuxCtmEditX15:CtmEditX1
+    left =467
+    top =672
+    right =552
+    bottom =704
+    wtype =35
+    taborder =21
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =60000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_LIMITS_AXIS1_CONTROLPRECISION
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =311
+    top =728
+    right =461
+    bottom =760
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =POS_TOLERANCE
+    align =34
+  end
+  LinuxCtmEditX17:CtmEditX1
+    left =467
+    top =728
+    right =552
+    bottom =760
+    wtype =35
+    taborder =22
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =200
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_LIMITS_AXIS2_CONTROLPRECISION
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =556
+    top =672
+    right =588
+    bottom =704
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX213:CtmStaticX2
+    left =556
+    top =728
+    right =588
+    bottom =760
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =295
+    top =672
+    right =311
+    bottom =704
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =295
+    top =728
+    right =311
+    bottom =760
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  Btn_Axis_X1:CtmToolButton
+    left =20
+    top =37
+    right =130
+    bottom =97
+    wtype =48
+    taborder =51
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_XAXIS
+    upbitmap =res_tm640/pic/PileBtnSelect.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =1
+  end
+  Btn_Axis_Y1:CtmToolButton
+    left =20
+    top =101
+    right =130
+    bottom =161
+    wtype =48
+    taborder =52
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_YAXIS
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =2
+    action =255
+    formname =Pile_2.txt
+  end
+  Btn_Axis_Z:CtmToolButton
+    left =20
+    top =165
+    right =130
+    bottom =225
+    wtype =48
+    taborder =53
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_ZAXIS
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =3
+    action =255
+    formname =Pile_3.txt
+  end
+  Btn_Axis_X2:CtmToolButton
+    left =20
+    top =229
+    right =130
+    bottom =289
+    wtype =48
+    taborder =54
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_X2AXIS
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =4
+    action =255
+    formname =Pile_4.txt
+  end
+  Btn_Axis_Y2:CtmToolButton
+    left =20
+    top =293
+    right =130
+    bottom =353
+    wtype =48
+    taborder =55
+    fontsize =1
+    align =34
+    captionID =VW_HAP5_ROBOT_Y2AXIS
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =5
+    action =255
+    formname =Pile_4.txt
+  end
+end

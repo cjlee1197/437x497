@@ -1,0 +1,91 @@
+ViewMsgBoxPause:CtmFormView
+  left =125
+  top =250
+  right =475
+  bottom =540
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =350
+    bottom =290
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_350X290.bmp
+    keycolor =63519
+  end
+  StaticBox:CtmStaticX2
+    left =35
+    top =48
+    right =304
+    bottom =120
+    wtype =48
+    fgc =0
+    fontsize =2
+    textID =PICKER_PAUSE_CONFIRM
+    align =34
+  end
+  BtnOK:CtmToolButton
+    left =59
+    top =153
+    right =159
+    bottom =188
+    wtype =39
+    taborder =1
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_OK
+  end
+  BtnCancle:CtmToolButton
+    left =180
+    top =153
+    right =280
+    bottom =188
+    wtype =39
+    taborder =2
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =ROBOT_BTN_CANCEL
+  end
+  BtnResume:CtmToolButton
+    left =35
+    top =225
+    right =135
+    bottom =260
+    wtype =39
+    taborder =3
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =PICKER_PAUSE_RESUME
+  end
+  BtnHoming:CtmToolButton
+    left =204
+    top =225
+    right =304
+    bottom =260
+    wtype =39
+    taborder =4
+    fgc =65535
+    bgc =1046
+    fontsize =2
+    buttontype =0
+    captionID =PICKER_PAUSE_HOMING
+  end
+  Mask:CtmStaticX2
+    left =24
+    top =144
+    right =320
+    bottom =261
+    wtype =32
+    bgc =40669
+  end
+end

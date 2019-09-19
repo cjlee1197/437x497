@@ -1,0 +1,1211 @@
+ViewDiag_MLC:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =452
+  titleID =ROBOT_STR_PLC_TIME
+  printname =MLC_TIMER.bmp
+  OnCreateA =OnCreate_MLC_Timer
+  BtnPageUp:CtmToolButton
+    left =543
+    top =12
+    right =623
+    bottom =37
+    taborder =1
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ROBOT_BTN_PAGEUP
+    key =26624
+  end
+  BtnPageDown:CtmToolButton
+    left =683
+    top =12
+    right =763
+    bottom =37
+    taborder =2
+    fgc =65535
+    bgc =1046
+    buttontype =1
+    captionID =ROBOT_BTN_PAGEDOWN
+    key =27904
+  end
+  EditStartNo:CtmEditX1
+    left =82
+    top =16
+    right =140
+    bottom =32
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =65500
+    colorcontrol =4
+    destcolor =65400
+    maxchar =3
+    align =0
+    maxdb =FALSE
+  end
+  goto:CtmStaticX2
+    left =22
+    top =10
+    right =80
+    bottom =35
+    wtype =36
+    fgc =0
+    bgc =44568
+    textID =ROBOT_PARAM_NO_GOTO
+    align =34
+  end
+  StaIndex0:CtmStaticX2
+    left =40
+    top =46
+    right =66
+    bottom =66
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static0:CtmStaticX2
+    left =75
+    top =46
+    right =195
+    bottom =66
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex10:CtmStaticX2
+    left =40
+    top =71
+    right =66
+    bottom =91
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static10:CtmStaticX2
+    left =75
+    top =71
+    right =195
+    bottom =91
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex20:CtmStaticX2
+    left =40
+    top =96
+    right =66
+    bottom =116
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static20:CtmStaticX2
+    left =75
+    top =96
+    right =195
+    bottom =116
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex30:CtmStaticX2
+    left =40
+    top =121
+    right =66
+    bottom =141
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static30:CtmStaticX2
+    left =75
+    top =121
+    right =195
+    bottom =141
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex40:CtmStaticX2
+    left =40
+    top =146
+    right =66
+    bottom =166
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static40:CtmStaticX2
+    left =75
+    top =146
+    right =195
+    bottom =166
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex50:CtmStaticX2
+    left =40
+    top =171
+    right =66
+    bottom =191
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static50:CtmStaticX2
+    left =75
+    top =171
+    right =195
+    bottom =191
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex60:CtmStaticX2
+    left =40
+    top =196
+    right =66
+    bottom =216
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static60:CtmStaticX2
+    left =75
+    top =196
+    right =195
+    bottom =216
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex70:CtmStaticX2
+    left =40
+    top =221
+    right =66
+    bottom =241
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static70:CtmStaticX2
+    left =75
+    top =221
+    right =195
+    bottom =241
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex80:CtmStaticX2
+    left =40
+    top =246
+    right =66
+    bottom =266
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static80:CtmStaticX2
+    left =75
+    top =246
+    right =195
+    bottom =266
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex90:CtmStaticX2
+    left =40
+    top =271
+    right =66
+    bottom =291
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static90:CtmStaticX2
+    left =75
+    top =271
+    right =195
+    bottom =291
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexA0:CtmStaticX2
+    left =40
+    top =296
+    right =66
+    bottom =316
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticA0:CtmStaticX2
+    left =75
+    top =296
+    right =195
+    bottom =316
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexB0:CtmStaticX2
+    left =40
+    top =321
+    right =66
+    bottom =341
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticB0:CtmStaticX2
+    left =75
+    top =321
+    right =195
+    bottom =341
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexC0:CtmStaticX2
+    left =40
+    top =346
+    right =66
+    bottom =366
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticC0:CtmStaticX2
+    left =75
+    top =346
+    right =195
+    bottom =366
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexD0:CtmStaticX2
+    left =40
+    top =371
+    right =66
+    bottom =391
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticD0:CtmStaticX2
+    left =75
+    top =371
+    right =195
+    bottom =391
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexE0:CtmStaticX2
+    left =40
+    top =396
+    right =66
+    bottom =416
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticE0:CtmStaticX2
+    left =75
+    top =396
+    right =195
+    bottom =416
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexF0:CtmStaticX2
+    left =40
+    top =421
+    right =66
+    bottom =441
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticF0:CtmStaticX2
+    left =75
+    top =421
+    right =195
+    bottom =441
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex1:CtmStaticX2
+    left =230
+    top =46
+    right =256
+    bottom =66
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static1:CtmStaticX2
+    left =265
+    top =46
+    right =385
+    bottom =66
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex11:CtmStaticX2
+    left =230
+    top =71
+    right =256
+    bottom =91
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static11:CtmStaticX2
+    left =265
+    top =71
+    right =385
+    bottom =91
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex21:CtmStaticX2
+    left =230
+    top =96
+    right =256
+    bottom =116
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static21:CtmStaticX2
+    left =265
+    top =96
+    right =385
+    bottom =116
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex31:CtmStaticX2
+    left =230
+    top =121
+    right =256
+    bottom =141
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static31:CtmStaticX2
+    left =265
+    top =121
+    right =385
+    bottom =141
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex41:CtmStaticX2
+    left =230
+    top =146
+    right =256
+    bottom =166
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static41:CtmStaticX2
+    left =265
+    top =146
+    right =385
+    bottom =166
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex51:CtmStaticX2
+    left =230
+    top =171
+    right =256
+    bottom =191
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static51:CtmStaticX2
+    left =265
+    top =171
+    right =385
+    bottom =191
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex61:CtmStaticX2
+    left =230
+    top =196
+    right =256
+    bottom =216
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static61:CtmStaticX2
+    left =265
+    top =196
+    right =385
+    bottom =216
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex71:CtmStaticX2
+    left =230
+    top =221
+    right =256
+    bottom =241
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static71:CtmStaticX2
+    left =265
+    top =221
+    right =385
+    bottom =241
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex81:CtmStaticX2
+    left =230
+    top =246
+    right =256
+    bottom =266
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static81:CtmStaticX2
+    left =265
+    top =246
+    right =385
+    bottom =266
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex91:CtmStaticX2
+    left =230
+    top =271
+    right =256
+    bottom =291
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static91:CtmStaticX2
+    left =265
+    top =271
+    right =385
+    bottom =291
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexA1:CtmStaticX2
+    left =230
+    top =296
+    right =256
+    bottom =316
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticA1:CtmStaticX2
+    left =265
+    top =296
+    right =385
+    bottom =316
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexB1:CtmStaticX2
+    left =230
+    top =321
+    right =256
+    bottom =341
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticB1:CtmStaticX2
+    left =265
+    top =321
+    right =385
+    bottom =341
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexC1:CtmStaticX2
+    left =230
+    top =346
+    right =256
+    bottom =366
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticC1:CtmStaticX2
+    left =265
+    top =346
+    right =385
+    bottom =366
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexD1:CtmStaticX2
+    left =230
+    top =371
+    right =256
+    bottom =391
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticD1:CtmStaticX2
+    left =265
+    top =371
+    right =385
+    bottom =391
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexE1:CtmStaticX2
+    left =230
+    top =396
+    right =256
+    bottom =416
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticE1:CtmStaticX2
+    left =265
+    top =396
+    right =385
+    bottom =416
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexF1:CtmStaticX2
+    left =230
+    top =421
+    right =256
+    bottom =441
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticF1:CtmStaticX2
+    left =265
+    top =421
+    right =385
+    bottom =441
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex2:CtmStaticX2
+    left =420
+    top =46
+    right =446
+    bottom =66
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static2:CtmStaticX2
+    left =455
+    top =46
+    right =575
+    bottom =66
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex12:CtmStaticX2
+    left =420
+    top =71
+    right =446
+    bottom =91
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static12:CtmStaticX2
+    left =455
+    top =71
+    right =575
+    bottom =91
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex22:CtmStaticX2
+    left =420
+    top =96
+    right =446
+    bottom =116
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static22:CtmStaticX2
+    left =455
+    top =96
+    right =575
+    bottom =116
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex32:CtmStaticX2
+    left =420
+    top =121
+    right =446
+    bottom =141
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static32:CtmStaticX2
+    left =455
+    top =121
+    right =575
+    bottom =141
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex42:CtmStaticX2
+    left =420
+    top =146
+    right =446
+    bottom =166
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static42:CtmStaticX2
+    left =455
+    top =146
+    right =575
+    bottom =166
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex52:CtmStaticX2
+    left =420
+    top =171
+    right =446
+    bottom =191
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static52:CtmStaticX2
+    left =455
+    top =171
+    right =575
+    bottom =191
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex62:CtmStaticX2
+    left =420
+    top =196
+    right =446
+    bottom =216
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static62:CtmStaticX2
+    left =455
+    top =196
+    right =575
+    bottom =216
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex72:CtmStaticX2
+    left =420
+    top =221
+    right =446
+    bottom =241
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static72:CtmStaticX2
+    left =455
+    top =221
+    right =575
+    bottom =241
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex82:CtmStaticX2
+    left =420
+    top =246
+    right =446
+    bottom =266
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static82:CtmStaticX2
+    left =455
+    top =246
+    right =575
+    bottom =266
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex92:CtmStaticX2
+    left =420
+    top =271
+    right =446
+    bottom =291
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static92:CtmStaticX2
+    left =455
+    top =271
+    right =575
+    bottom =291
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexA2:CtmStaticX2
+    left =420
+    top =296
+    right =446
+    bottom =316
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticA2:CtmStaticX2
+    left =455
+    top =296
+    right =575
+    bottom =316
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexB2:CtmStaticX2
+    left =420
+    top =321
+    right =446
+    bottom =341
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticB2:CtmStaticX2
+    left =455
+    top =321
+    right =575
+    bottom =341
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexC2:CtmStaticX2
+    left =420
+    top =346
+    right =446
+    bottom =366
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticC2:CtmStaticX2
+    left =455
+    top =346
+    right =575
+    bottom =366
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexD2:CtmStaticX2
+    left =420
+    top =371
+    right =446
+    bottom =391
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticD2:CtmStaticX2
+    left =455
+    top =371
+    right =575
+    bottom =391
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexE2:CtmStaticX2
+    left =420
+    top =396
+    right =446
+    bottom =416
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticE2:CtmStaticX2
+    left =455
+    top =396
+    right =575
+    bottom =416
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexF2:CtmStaticX2
+    left =420
+    top =421
+    right =446
+    bottom =441
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticF2:CtmStaticX2
+    left =455
+    top =421
+    right =575
+    bottom =441
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex3:CtmStaticX2
+    left =610
+    top =46
+    right =636
+    bottom =66
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static3:CtmStaticX2
+    left =645
+    top =46
+    right =765
+    bottom =66
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex13:CtmStaticX2
+    left =610
+    top =71
+    right =636
+    bottom =91
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static13:CtmStaticX2
+    left =645
+    top =71
+    right =765
+    bottom =91
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex23:CtmStaticX2
+    left =610
+    top =96
+    right =636
+    bottom =116
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static23:CtmStaticX2
+    left =645
+    top =96
+    right =765
+    bottom =116
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex33:CtmStaticX2
+    left =610
+    top =121
+    right =636
+    bottom =141
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static33:CtmStaticX2
+    left =645
+    top =121
+    right =765
+    bottom =141
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex43:CtmStaticX2
+    left =610
+    top =146
+    right =636
+    bottom =166
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static43:CtmStaticX2
+    left =645
+    top =146
+    right =765
+    bottom =166
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex53:CtmStaticX2
+    left =610
+    top =171
+    right =636
+    bottom =191
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static53:CtmStaticX2
+    left =645
+    top =171
+    right =765
+    bottom =191
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex63:CtmStaticX2
+    left =610
+    top =196
+    right =636
+    bottom =216
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static63:CtmStaticX2
+    left =645
+    top =196
+    right =765
+    bottom =216
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex73:CtmStaticX2
+    left =610
+    top =221
+    right =636
+    bottom =241
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static73:CtmStaticX2
+    left =645
+    top =221
+    right =765
+    bottom =241
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndex83:CtmStaticX2
+    left =610
+    top =246
+    right =636
+    bottom =266
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  Static83:CtmStaticX2
+    left =645
+    top =246
+    right =765
+    bottom =266
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndex93:CtmStaticX2
+    left =610
+    top =271
+    right =636
+    bottom =291
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  Static93:CtmStaticX2
+    left =645
+    top =271
+    right =765
+    bottom =291
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexA3:CtmStaticX2
+    left =610
+    top =296
+    right =636
+    bottom =316
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticA3:CtmStaticX2
+    left =645
+    top =296
+    right =765
+    bottom =316
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexB3:CtmStaticX2
+    left =610
+    top =321
+    right =636
+    bottom =341
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticB3:CtmStaticX2
+    left =645
+    top =321
+    right =765
+    bottom =341
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexC3:CtmStaticX2
+    left =610
+    top =346
+    right =636
+    bottom =366
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticC3:CtmStaticX2
+    left =645
+    top =346
+    right =765
+    bottom =366
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexD3:CtmStaticX2
+    left =610
+    top =371
+    right =636
+    bottom =391
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticD3:CtmStaticX2
+    left =645
+    top =371
+    right =765
+    bottom =391
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+  StaIndexE3:CtmStaticX2
+    left =610
+    top =396
+    right =636
+    bottom =416
+    wtype =48
+    fgc =0
+    bgc =55038
+  end
+  StaticE3:CtmStaticX2
+    left =645
+    top =396
+    right =765
+    bottom =416
+    wtype =35
+    fgc =0
+    bgc =55038
+  end
+  StaIndexF3:CtmStaticX2
+    left =610
+    top =421
+    right =636
+    bottom =441
+    wtype =48
+    fgc =0
+    bgc =44572
+  end
+  StaticF3:CtmStaticX2
+    left =645
+    top =421
+    right =765
+    bottom =441
+    wtype =35
+    fgc =0
+    bgc =44572
+  end
+end

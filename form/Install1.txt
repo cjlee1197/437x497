@@ -1,0 +1,121 @@
+ViewInststop:CtmFormView
+  left =0
+  top =0
+  right =799
+  bottom =363
+  wtype =48
+  titleID =DLG_INSTALL
+  printname =InstallStop.bmp
+  StaticMachineID:CtmStaticX2
+    left =170
+    top =130
+    right =292
+    bottom =157
+    wtype =36
+    fgc =0
+    bgc =18143
+    fontsize =1
+    colorcontrol =2
+    textID =DLG_INSTALL_MACHINEID
+    align =1
+  end
+  StaticOutFctyDate:CtmStaticX2
+    left =170
+    top =170
+    right =292
+    bottom =197
+    wtype =36
+    fgc =0
+    bgc =18143
+    fontsize =1
+    colorcontrol =2
+    textID =DLG_INSTALL_OUTDATE
+    align =1
+  end
+  editMachineID:CtmEdit
+    left =300
+    top =130
+    right =375
+    bottom =157
+    wtype =35
+    taborder =0
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+  end
+  editOutFctyMonth:CtmEditX1
+    left =300
+    top =170
+    right =329
+    bottom =196
+    wtype =35
+    taborder =1
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    dbid0 =OPER_HMI_NULL_NULL_DATEMACHOUTMONTH
+  end
+  StaticSLASH1:CtmStaticX2
+    left =335
+    top =172
+    right =345
+    bottom =198
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =1
+  end
+  editOutFctyDay:CtmEditX1
+    left =347
+    top =170
+    right =376
+    bottom =197
+    wtype =35
+    taborder =2
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    dbid0 =OPER_HMI_NULL_NULL_DATEMACHOUTDAY
+  end
+  StaticSLASH2:CtmStaticX2
+    left =380
+    top =172
+    right =390
+    bottom =198
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =DLG_DATETIME_SLASH
+    align =1
+  end
+  editOutFctyYear:CtmEditX1
+    left =393
+    top =170
+    right =449
+    bottom =197
+    wtype =35
+    taborder =3
+    bgc =65535
+    fontsize =1
+    maxchar =10
+    align =0
+    dbid0 =OPER_HMI_NULL_NULL_DATEMACHOUTYEAR
+  end
+  optionConfirm:CtmToolButton
+    left =250
+    top =220
+    right =352
+    bottom =272
+    wtype =36
+    taborder =4
+    bgc =18143
+    fontsize =1
+    buttontype =0
+    captionID =VW_PLAN_OK
+    key =7178
+  end
+end
