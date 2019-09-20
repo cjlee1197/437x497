@@ -236,11 +236,11 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 			::PutCommand("Alarm.txt");
 			break;
 		case 23: // 操作履歷
-//			memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
-//			strcpy(g_szCurrentFormName, "UserLog.txt");
-//			memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
-//			strcpy(g_szLastFormName, "Index.txt");
-//			::PutCommand("UserLog.txt");
+			memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
+			strcpy(g_szCurrentFormName, "UserLog.txt");
+			memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
+			strcpy(g_szLastFormName, "Index.txt");
+			::PutCommand("UserLog.txt");
 			break;	
 		case 24: // 驅動資訊		
 			memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
