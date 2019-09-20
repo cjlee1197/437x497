@@ -1,0 +1,69 @@
+
+#ifndef     D_NB_TMMESSAGE
+#define     D_NB_TMMESSAGE
+
+#include	"tmmsg.h"
+
+#define		MSG_NB_USER_DEFINE					0x20000000		//2010-6-30, 
+#define		MSG_NB_HMI_SHOTCOUNT_CLEAR			MSG_NB_USER_DEFINE + 0x0100
+#define		MSG_NB_HMI_PUMPTEST_BREAKEND		MSG_NB_USER_DEFINE + 0x0101		//2011-1-5, for PumpTest 
+#define		MSG_NB_HMI_LOWBATPOWER				MSG_NB_USER_DEFINE + 0x0102		//fuxy, 2011-1-14, for 
+#define		MSG_NB_HMI_KEYNOCE					MSG_NB_USER_DEFINE + 0x0103		//fuxy, 2011-1-14, for 
+#define   	MSG_NB_HMI_SETMAINTAINTIME  		MSG_NB_USER_DEFINE + 0x0104   //fuxy, 2011-1-21, for HT  維護功能
+#define   	MSG_NB_HMI_SEND_CONFIG      		MSG_NB_USER_DEFINE + 0x0105   //fuxy, 2011-2-22, for iNet, 發送config
+#define		MSG_NB_HMI_SEND_SELVATFUNC			MSG_NB_USER_DEFINE + 0x0106		/*WangHJ2011-12-15 FOR 7PJ 推力座使用與否*/
+#define		MSG_NB_HMI_SEND_LOGININ				MSG_NB_USER_DEFINE + 0x0107		//fuxy, 2012-7-18 
+#define		MSG_NB_HMI_COM1_GETOPSTATE      	MSG_NB_USER_DEFINE + 0x0108		/*ZHBA 2012-10-29 */
+#define		MSG_NB_HMI_COM2_GETOPSTATE			MSG_NB_USER_DEFINE + 0x0109		/*ZHBA 2012-10-29 */ 
+#define		MSG_NB_HMI_ENERGYTOZERO				MSG_NB_USER_DEFINE + 0x010A
+#define		MSG_NB_HMI_PUMPTEST_SAVE			MSG_NB_USER_DEFINE + 0x010B
+#define		MSG_NB_HMI_AMT_WIRE_ERR				MSG_NB_USER_DEFINE + 0x010C  //Dongxl.2013-6-6 9:02:39
+#define		MSG_NB_HMI_SETMAINTAINOVER			MSG_NB_USER_DEFINE + 0x010D		//fuxy, 2011-3-3, for HT  維護功能
+#define		MSG_NB_HMI_AUTOLOGOUT				MSG_NB_USER_DEFINE + 0x010E	
+#define		MSG_NB_HMI_SETMAINTAINOPT			MSG_NB_USER_DEFINE + 0x010F		//2012-12-26, for 維護功能 opt 
+
+#define		MSG_HYB5_SYNC_STATE					MSG_NB_USER_DEFINE + 0x011A
+#define		MSG_HYB5_SYNC_OK			  		MSG_NB_USER_DEFINE + 0x011B
+#define		MSG_HYB5_TEMPAUTOPID_DOING			MSG_NB_USER_DEFINE + 0x011C
+#define		MSG_HYB5_TEMPAUTOPID_COMPLETED	  	MSG_NB_USER_DEFINE + 0x011D
+#define		MSG_HYB5_TEMPMOLDAUTOPID_DOING			MSG_NB_USER_DEFINE + 0x011E
+#define		MSG_HYB5_TEMPMOLDAUTOPID_COMPLETED	  	MSG_NB_USER_DEFINE + 0x011F
+
+#define		MSG_NB_HMI_SEND_MOLDVERSERR			MSG_NB_USER_DEFINE + 0x0120
+#define		MSG_NB_HMI_RECEIVE_SAVEID			MSG_NB_USER_DEFINE + 0x0121
+#define		MSG_NB_HMI_AXIS_EXEC_STATUS			MSG_NB_USER_DEFINE + 0x0122	
+#define		MSG_NB_HMI_SEND_SELVATGEND			MSG_NB_USER_DEFINE + 0x0123
+
+
+//====================================================================
+//	PPH message start  //WangHJ2010-11-29
+//====================================================================
+#define		MSG_NB_PPH_START				    MSG_NB_USER_DEFINE + 0x0001000
+#define		MSG_NB_PPH_ADD_OPNMOLDCOUNT			MSG_NB_PPH_START + 0x0001
+#define		MSG_NB_PPH_DAYINDEX_SEARCH			MSG_NB_PPH_START + 0x0002
+#define		MSG_NB_PPH_COUNT_UPDATE		      	MSG_NB_PPH_START + 0x0003
+#define		MSG_NB_PPH_COUNT_RESET		      	MSG_NB_PPH_START + 0x0004
+#define		MSG_NB_PPH_COUNT_GETLOG         	MSG_NB_PPH_START + 0x0005
+#define		MSG_NB_PPH_DAYINDEX_MAX		      	MSG_NB_PPH_START + 0x0006
+#define		MSG_NB_ELECT_ADD_COUNT			    MSG_NB_PPH_START + 0x0007
+
+//====================================================================
+//	Mucell message start  //JOYCE2011-4-26 
+//====================================================================
+#define		MSG_NB_MUCELL_INJPURGE				MSG_NB_USER_DEFINE + 0x0010000
+#define		MSG_NB_MUCELL_CALIBRAT				MSG_NB_USER_DEFINE + 0x0010001
+
+#define		MSG_NB_J6_FINDZERO    				  MSG_NB_USER_DEFINE + 0x0010002
+#define		MSG_NB_J6_FINDZEROEND  				  MSG_NB_USER_DEFINE + 0x0010003
+#define		MSG_NB_J6_SELFSTUDY    				  MSG_NB_USER_DEFINE + 0x0010004
+
+//====================================================================
+//	J5 message start  // YANGJX 2010-11-15
+//====================================================================
+#define		MSG_NB_J5MACHINE_START				MSG_NB_USER_DEFINE + 0x01000000
+#define		MSG_NB_J5MACHINE_HMIDSPNOTMACH		MSG_NB_J5MACHINE_START + 0x0001
+#define		MSG_NB_J5MACHINE_DRIVERNOTREADY		MSG_NB_J5MACHINE_START + 0x0002
+#define		MSG_NB_J5MACHINE_DRIVEROFFLINE		MSG_NB_J5MACHINE_START + 0x0003
+
+
+#endif

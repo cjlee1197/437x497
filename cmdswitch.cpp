@@ -1,0 +1,107 @@
+/*==========================================================================+
+|  Class    :                                                  				|
+|  Task     :                                                               |
+|---------------------------------------------------------------------------|
+|  Compile  : Gcc V3.2.2                                                    |
+|  Link     : Gcc V3.2.2                                                    |
+|  Call     :                                                               |
+|---------------------------------------------------------------------------|
+|  Author   : James                                                         |
+|  Version  : V1.00                                                         |
+|  Creation : 2010/02/23                                                    |
+|  Remark	:                                            					|
++==========================================================================*/
+
+#include	"cmdswitch.h"
+
+int		g_DSP54CMD[MAX_COMM_COUNT][2] = 
+{
+	{COMM_NULL,								COMM_NULL},						// 	0:  0x0000, 0x0000,
+	{COMM_SENDCONFIG,						COMM_ETH_SENDCONFIG	},			// 	1:  0x3130, 0x9002,
+	{COMM_SENDZEROSET,						COMM_NULL},						//	2:	0x3131	-->COMM_SENDZEROSET
+	{COMM_SENDREQUESTCONFIG,            	COMM_NULL},						//	3:	0x3132	-->COMM_SENDREQUESTCONFIG
+	{COMM_SENDPOWERMATCH2,            		COMM_NULL},						//	4:	0x3135	-->COMM_SENDPOWERMATCH2
+	{COMM_SENDPANEL,             			COMM_ETH_SENDPANEL},			//	5:	0x3200	-->COMM_SENDPANEL
+	{COMM_SENDPANELBREAK,             		COMM_ETH_SENDPANELBREAK},		//	6:	0x32FF	-->COMM_SENDPANELBREAK
+	{COMM_SENDCONTROL,             			COMM_NULL},						//	7:	0x3330	-->COMM_SENDCONTROL
+	{COMM_SENDCONTROLINDEX,             	COMM_ETH_SENDUPDATEDATA},		//	8:	0x3331	-->COMM_SENDCONTROLINDEX
+	{COMM_SENDCONTROLMACHINE,           	COMM_ETH_SENDCONTROLMACHINE},	//	9:	0x3332	-->COMM_SENDCONTROLMACHINE
+	{COMM_SENDCONTROLMOLDSET,           	COMM_ETH_SENDCONTROLMOLDSET},	//	10:	0x3333	-->COMM_SENDCONTROLMOLDSET
+	{COMM_SENDCONTROLMONITOR,          		COMM_ETH_SENDMONILIMIT},		//	11:	0x3334	-->COMM_SENDCONTROLMONITOR
+	{COMM_SENDPOWERMATCH,             		COMM_NULL},						//	12:	0x3335	-->COMM_SENDPOWERMATCH
+	{COMM_SENDCOMMAND,             			COMM_NULL},						//	13:	0x3336	-->COMM_SENDCOMMAND
+	{COMM_SENDCONTROLMACHINEB,             	COMM_ETH_SENDCONTROLMACHINEB},	//	14:	0x3337	-->COMM_SENDCONTROLMACHINEB
+	{COMM_SENDCONTROLMOLDSETB,             	COMM_ETH_SENDCONTROLMOLDSETB},	//	15:	0x3338	-->COMM_SENDCONTROLMOLDSETB
+	{COMM_SENDCONTROLMONITORB,             	COMM_ETH_SENDMONBILIMIT},		//	16:	0x3339	-->COMM_SENDCONTROLMONITORB
+	{COMM_SENDDIAGRM,             			COMM_ETH_SENDDIAGRMRI},			//	17:	0x3430	-->COMM_SENDDIAGRM
+	{COMM_SENDDIAGWM,             			COMM_ETH_SENDDIAGWM},			//	18:	0x3431	-->COMM_SENDDIAGWM
+	{COMM_SENDDIAGSM,             			COMM_NULL},						//	19:	0x3432	-->COMM_SENDDIAGSM
+	{COMM_SENDDIAGRI,             			COMM_ETH_SENDDIAGRMRI},			//	20:	0x3433	-->COMM_SENDDIAGRI
+	{COMM_SENDDIAGWO,             			COMM_ETH_SENDDIAGWO},			//	21:	0x3434	-->COMM_SENDDIAGWO
+	{COMM_SENDDIAGSI,             			COMM_NULL},						//	22:	0x3435	-->COMM_SENDDIAGSI
+	{COMM_SENDASSIGNINPUT,             		COMM_ETH_SENDASSIGNINPUT},		//	23:	0x3436	-->COMM_SENDASSIGNINPUT
+	{COMM_SENDASSIGNOUTPUT,             	COMM_ETH_SENDASSIGNOUTPUT},		//	24:	0x3437	-->COMM_SENDASSIGNOUTPUT
+    {COMM_SENDSTATUS,             			COMM_ETH_SENDSTATUS},			//	25:	0x3530	-->COMM_SENDSTATUS
+    {COMM_SENDR_PROFILE01,             		COMM_NULL},						//	26:  0x3630	-->COMM_SENDR_PROFILE01
+    {COMM_SENDS_PROFILE01,             		COMM_NULL},						//	27:  0x3631	-->COMM_SENDS_PROFILE01
+    {COMM_SENDR_BPROFILE01,             	COMM_NULL},						//	28:  0x3632	-->COMM_SENDR_BPROFILE01
+    {COMM_SENDS_BPROFILE01,             	COMM_NULL},						//	29:  0x3633	-->COMM_SENDS_BPROFILE01
+    {COMM_GETCOLDSTART,             		COMM_ETH_GETCOLDSTART},			//	30:  0x4141	-->COMM_GETCOLDSTART
+    {COMM_GETWARMSTART,             		COMM_ETH_GETWARMSTART},			//	31:  0x4142	-->COMM_GETWARMSTART
+    {COMM_GETCONFIG,             			COMM_ETH_GETCONFIG},			//	32:  0x4241	-->COMM_GETCONFIG
+    {COMM_GETDAOUTPUT,             			COMM_NULL},						//	33:  0x4242	-->COMM_GETDAOUTPUT
+    {COMM_GETDAOUTPUT2,             		COMM_ETH_GETDAOUTPUT},			//	34:  0x4243	-->COMM_GETDAOUTPUT2
+    {COMM_GETOPSTATE,             			COMM_ETH_GETOPSTATE},			//	35:  0x4341	-->COMM_GETOPSTATE
+    {COMM_GETOPSTATUS,             			COMM_ETH_GETOPSTATUS},			//	36:  0x4342	-->COMM_GETOPSTATUS
+    {COMM_GETOPMETER,             			COMM_NULL},						//	37:  0x4343	-->COMM_GETOPMETER
+    {COMM_GETOPMETERZEROAGAIN,             	COMM_NULL},						//	38:  0x4841	-->COMM_GETOPMETERZEROAGAIN
+    {COMM_GETOPTEMPERATURE,             	COMM_NULL},						//	39:  0x4344	-->COMM_GETOPTEMPERATURE
+    {COMM_GETOPSUMMARY,             		COMM_NULL},						//	40:  0x4345	-->COMM_GETOPSUMMARY
+    {COMM_GETCURVEDATA,             		COMM_ETH_GETOPMETER},			//	41:  0x4346	-->COMM_GETCURVEDATA
+    {COMM_GETCOMMAND,             			COMM_GETCOMMAND},				//	42:  0x4346	-->COMM_GETCOMMAND
+    {COMM_GETCONTROLINDEX,             		COMM_NULL},						//	43:  0x4441	-->COMM_GETCONTROLINDEX
+    {COMM_GETPRODUCTION,             		COMM_NULL},						//	44:  0x4541	-->COMM_GETPRODUCTION
+    {COMM_GETMONICURRENT,             		COMM_ETH_GETMONICURRENT},		//	45:  0x4542	-->COMM_GETMONICURRENT
+    {COMM_GETMONILAST,             			COMM_ETH_GETMONILAST},			//	46:  0x4543	-->COMM_GETMONILAST
+    {COMM_GETMONICURRENTB,             		COMM_ETH_GETMONICURRENTB},		//	47:  0x4545	-->COMM_GETMONICURRENTB
+    {COMM_GETMONILASTB,             		COMM_ETH_GETMONILASTB},			//	48:  0x4546	-->COMM_GETMONILASTB
+    {COMM_GETMONIMAXMINB,            	 	COMM_ETH_GETMONIMAXMINB},		//	49:  0x4547	-->COMM_GETMONIMAXMINB
+    {COMM_GETDIAGRM,             			COMM_ETH_GETDIAGRMRI},			//	50:  0x4641	-->COMM_GETDIAGRM
+    {COMM_GETDIAGRI,             			COMM_ETH_GETDIAGRMRI},			//	51:  0x4642	-->COMM_GETDIAGRI
+    {COMM_GETS_PROFILE01_I,             	COMM_NULL},						//	52:  0x4741	-->COMM_GETS_PROFILE01_I
+    {COMM_GETD_PROFILE01_I,             	COMM_NULL},						//	53:  0x4742	-->COMM_GETD_PROFILE01_I
+    {COMM_GETE_PROFILE01_I,             	COMM_NULL},						//	54:  0x4743	-->COMM_GETE_PROFILE01_I
+    {COMM_GETS_PROFILE01_H,             	COMM_NULL},						//	55:  0x4744	-->COMM_GETS_PROFILE01_H
+    {COMM_GETD_PROFILE01_H,             	COMM_NULL},						//	56:  0x4745	-->COMM_GETD_PROFILE01_H
+    {COMM_GETE_PROFILE01_H,             	COMM_NULL},						//	57:  0x4746	-->COMM_GETE_PROFILE01_H
+    {COMM_GETS_BPROFILE01_I,             	COMM_NULL},						//	58:  0x4747	-->COMM_GETS_BPROFILE01_I
+    {COMM_GETD_BPROFILE01_I,             	COMM_NULL},						//	59:  0x4748	-->COMM_GETD_BPROFILE01_I
+    {COMM_GETE_BPROFILE01_I,             	COMM_NULL},						//	60:  0x4749	-->COMM_GETE_BPROFILE01_I
+    {COMM_GETS_BPROFILE01_H,             	COMM_NULL},						//	61:  0x474A	-->COMM_GETS_BPROFILE01_H
+    {COMM_GETD_BPROFILE01_H,             	COMM_NULL},						//	62:  0x474B	-->COMM_GETD_BPROFILE01_H
+    {COMM_GETE_BPROFILE01_H,             	COMM_NULL},						//	63:  0x474C	-->COMM_GETE_BPROFILE01_H
+    {COMM_BPROFILE01_R,						COMM_NULL},						//	64:	0x6000	-->COMM_BPROFILE01_R
+    {COMM_BPROFILE01_S,						COMM_NULL},						//	65:	0x6001	-->COMM_BPROFILE01_S
+    {COMM_GETDAFLAG,						COMM_GETDAFLAG},				//	66:	0x6500	-->COMM_GETDAFLAG
+    {COMM_INIT_MESSAGE,						COMM_INIT_MESSAGE},				//	67:	0x6501	-->COMM_INIT_MESSAGE
+    {COMM_INJECT_TIME,						COMM_INJECT_TIME},				//	68:	0x6502	-->COMM_INJECT_TIME
+    {COMM_GETSTATERX,						COMM_GETSTATERX},				//	69:	0x6503	-->COMM_GETSTATERX
+    {COMM_BGOTCONFIG,						COMM_BGOTCONFIG},				//	70:	0x6504	-->COMM_BGOTCONFIG
+    {COMM_GETSTATE,							COMM_GETSTATE},					//	71:	0x7000	-->COMM_GETSTATE
+	{COMM_ETH_SENDCONNET,					COMM_ETH_SENDCONNET},			//	72: CONNET
+	{COMM_SENDTRANSMITDSP28,				COMM_SENDTRANSMITDSP28},		//  73: 0x3730	-->COMM_SENDTRANSMITDSP28
+	{COMM_SENDTRANSMITCMD,					COMM_SENDTRANSMITCMD},			// 	74: 0x9011	-->COMM_SENDTRANSMITCMD
+	{COMM_SENDTRANSMITBLOCK,				COMM_SENDTRANSMITBLOCK}			//	75: 0x9012	-->COMM_SENDTRANSMITBLOCK
+};
+
+int			GetCmdSwitch(int nCmd)
+{
+	for(int i = 0; i < MAX_COMM_COUNT; i++)
+	{
+		if(g_DSP54CMD[i][0] == nCmd)
+		{
+			return g_DSP54CMD[i][1];
+		}
+	}
+	return g_DSP54CMD[0][0];
+}
