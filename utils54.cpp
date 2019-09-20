@@ -2583,12 +2583,12 @@ void		LCDBackgroundOff()
 
 void		Beep()
 {
-	printf("u54_Beep\n");
+	//printf("u54_Beep\n");
 #ifdef		D_ARM	
 //#ifdef		D_HMI3354
 	#ifdef	D_3354
 		#ifdef	D_437X
-			printf("D_437x\n");
+			//printf("D_437x\n");
 			_Gpio_buzzer(true);
 			usleep(80000);
 			_Gpio_buzzer(false);

@@ -45,7 +45,7 @@ void	_Gpio_OutputWrite(char* io_status)
 
 void	_Gpio_buzzer(bool buzzer_enable)
 {
-	printf("_Gpio_OutputWrite\n");
+	//printf("_Gpio_OutputWrite\n");
 	if (g_pgpio != NULL)
 	{
 		//printf("g_pgpio != NULL\n");
