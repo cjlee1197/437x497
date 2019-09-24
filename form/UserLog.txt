@@ -6,500 +6,659 @@ ViewUserLog:CtmFormView
   wtype =33
   titleID =INDEX_OP_HIS
   printname =UserLog.bmp
-  LinuxCtmStaticX22:CtmStaticX2
-    left =113
-    top =468
-    right =168
-    bottom =500
+  Btn_Clear:CtmToolButton
+    left =28
+    top =61
+    right =96
+    bottom =104
+    wtype =48
+    taborder =7
+    fontsize =1
+    align =34
+    captionID =UserLog_RESET
+    upbitmap =res_tm640/pic/PileBtnSelect.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =1
+  end
+  StaticVW_ALARM_STARTTIME:CtmStaticX2
+    left =36
+    top =112
+    right =86
+    bottom =144
     wtype =33
     fgc =0
     bgc =36256
     fontsize =1
-    textID =VW_HAP5_ROBOT_XAXIS
-    align =34
-  end
-  LinuxCtmStaticX23:CtmStaticX2
-    left =209
-    top =468
-    right =264
-    bottom =500
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    textID =VW_HAP5_ROBOT_YAXIS
-    align =34
-  end
-  LinuxCtmStaticX24:CtmStaticX2
-    left =305
-    top =468
-    right =360
-    bottom =500
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    textID =VW_HAP5_ROBOT_ZAXIS
-    align =34
-  end
-  LinuxCtmStaticX25:CtmStaticX2
-    left =52
-    top =36
-    right =188
-    bottom =68
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    textID =VW_HMI_VERSION
-    align =34
-  end
-  LinuxCtmStaticX26:CtmStaticX2
-    left =188
-    top =140
-    right =288
-    bottom =172
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    textID =EFFECT_PROGRAMMMIVERS
-    align =34
-  end
-  editMMIVersion:CtmEdit
-    left =52
-    top =68
-    right =133
-    bottom =100
-    wtype =33
-    taborder =-3
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    maxchar =7
-    align =34
-  end
-  editMMIDate:CtmEdit
-    left =133
-    top =68
-    right =188
-    bottom =100
-    wtype =33
-    taborder =-3
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    maxchar =4
-    align =34
-  end
-  editKernelVersion:CtmEditX1
-    left =188
-    top =172
-    right =288
-    bottom =204
-    wtype =33
-    taborder =-3
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    maxchar =8
+    textID =UserLog_NO
     align =34
   end
   LinuxCtmStaticX21:CtmStaticX2
     left =92
-    top =268
-    right =192
-    bottom =300
+    top =112
+    right =242
+    bottom =144
     wtype =33
     fgc =0
     bgc =36256
     fontsize =1
-    textID =VW_DSP_VERSION
+    textID =UserLog_ACTION
     align =34
   end
-  BmpAxis_Z:CtmImageBox
-    left =57
-    top =109
-    right =178
-    bottom =249
+  LinuxCtmStaticX22:CtmStaticX2
+    left =244
+    top =112
+    right =344
+    bottom =144
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =UserLog_VALUE_NOW
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =348
+    top =112
+    right =448
+    bottom =144
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =UserLog_VALUE_OLD
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =452
+    top =112
+    right =552
+    bottom =144
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =UserLog_TIME
+    align =34
+  end
+  Str_No0:CtmStaticX2
+    left =36
+    top =150
+    right =86
+    bottom =182
     wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/437x497.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox1:CtmImageBox
-    left =57
-    top =338
-    right =217
-    bottom =424
-    wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/Controller.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox2:CtmImageBox
-    left =129
-    top =586
-    right =164
-    bottom =710
-    wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/Drive.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox3:CtmImageBox
-    left =217
-    top =586
-    right =252
-    bottom =710
-    wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/Drive.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox4:CtmImageBox
-    left =305
-    top =586
-    right =340
-    bottom =710
-    wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/Drive.bmp
-    keycolor =63519
-  end
-  LinuxCtmEditX21:CtmEditX2
-    left =58
-    top =249
-    right =62
-    bottom =338
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =1040
+    fgc =0
+    bgc =55167
     fontsize =1
-    maxchar =8
     align =34
   end
-  LinuxCtmEditX26:CtmEditX2
-    left =80
-    top =424
-    right =85
-    bottom =537
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =1040
-    fontsize =1
-    maxchar =8
-    align =34
-  end
-  LinuxCtmEditX27:CtmEditX2
-    left =80
-    top =537
-    right =533
-    bottom =541
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =1040
-    fontsize =1
-    maxchar =8
-    align =34
-  end
-  LinuxCtmEditX28:CtmEditX2
-    left =144
-    top =537
-    right =149
-    bottom =587
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =1040
-    fontsize =1
-    maxchar =8
-    align =34
-  end
-  LinuxCtmEditX29:CtmEditX2
-    left =320
-    top =537
-    right =325
-    bottom =587
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =1040
-    fontsize =1
-    maxchar =8
-    align =34
-  end
-  LinuxCtmEditX210:CtmEditX2
-    left =232
-    top =537
-    right =237
-    bottom =587
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =1040
-    fontsize =1
-    maxchar =8
-    align =34
-  end
-  LinuxCtmEditX213:CtmEditX2
+  Str_Act0:CtmStaticX2
     left =92
-    top =300
-    right =192
-    bottom =332
-    wtype =33
-    taborder =-3
-    fgc =65535
-    bgc =2470
+    top =150
+    right =242
+    bottom =182
+    wtype =48
+    fgc =0
+    bgc =55167
     fontsize =1
-    maxchar =8
-    align =34
-    dbid0 =MACHINE_CONFSYS_ELECNAMEPLATE_HARDWARE_PN
-  end
-  Str_Controller_Date:CtmStaticX2
-    left =194
-    top =300
-    right =249
-    bottom =332
-    wtype =33
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =35953
     align =34
   end
-  BmpDrive1:CtmImageBox
-    left =88
-    top =470
-    right =113
-    bottom =495
+  Str_Value_Now0:CtmStaticX2
+    left =244
+    top =150
+    right =344
+    bottom =182
     wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/picker/unselected.bmp
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
   end
-  BmpDrive2:CtmImageBox
-    left =184
-    top =470
-    right =209
-    bottom =495
+  Str_Value_Old0:CtmStaticX2
+    left =348
+    top =150
+    right =448
+    bottom =182
     wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/picker/unselected.bmp
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
   end
-  BmpDrive3:CtmImageBox
-    left =280
-    top =470
-    right =305
-    bottom =495
+  Str_Time0:CtmStaticX2
+    left =452
+    top =150
+    right =552
+    bottom =182
     wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/picker/unselected.bmp
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
   end
-  BmpController:CtmImageBox
-    left =68
+  Str_No1:CtmStaticX2
+    left =36
+    top =190
+    right =86
+    bottom =222
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Act1:CtmStaticX2
+    left =92
+    top =190
+    right =242
+    bottom =222
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Now1:CtmStaticX2
+    left =244
+    top =190
+    right =344
+    bottom =222
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Old1:CtmStaticX2
+    left =348
+    top =190
+    right =448
+    bottom =222
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Time1:CtmStaticX2
+    left =452
+    top =190
+    right =552
+    bottom =222
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_No2:CtmStaticX2
+    left =36
+    top =230
+    right =86
+    bottom =262
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Act2:CtmStaticX2
+    left =92
+    top =230
+    right =242
+    bottom =262
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Now2:CtmStaticX2
+    left =244
+    top =230
+    right =344
+    bottom =262
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Old2:CtmStaticX2
+    left =348
+    top =230
+    right =448
+    bottom =262
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Time2:CtmStaticX2
+    left =452
+    top =230
+    right =552
+    bottom =262
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_No3:CtmStaticX2
+    left =36
     top =270
-    right =93
-    bottom =295
+    right =86
+    bottom =302
     wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/picker/unselected.bmp
-  end
-  Str_Drive_Ver1:CtmStaticX2
-    left =114
-    top =500
-    right =169
-    bottom =532
-    wtype =33
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =35953
-    align =34
-  end
-  Str_Drive_Ver2:CtmStaticX2
-    left =210
-    top =500
-    right =265
-    bottom =532
-    wtype =33
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =35953
-    align =34
-  end
-  Str_Drive_Ver3:CtmStaticX2
-    left =306
-    top =500
-    right =361
-    bottom =532
-    wtype =33
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =35953
-    align =34
-  end
-  BmpDrive4:CtmImageBox
-    left =376
-    top =470
-    right =401
-    bottom =495
-    wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/picker/unselected.bmp
-  end
-  LinuxCtmStaticX27:CtmStaticX2
-    left =401
-    top =468
-    right =456
-    bottom =500
-    wtype =33
     fgc =0
-    bgc =36256
+    bgc =55167
     fontsize =1
-    textID =VW_HAP5_ROBOT_X2AXIS
     align =34
   end
-  Str_Drive_Ver4:CtmStaticX2
-    left =402
-    top =500
-    right =457
-    bottom =532
-    wtype =33
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =35953
-    align =34
-  end
-  LinuxCtmEditX22:CtmEditX2
-    left =432
-    top =537
-    right =437
-    bottom =587
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =1040
-    fontsize =1
-    maxchar =8
-    align =34
-  end
-  LinuxCtmImageBox6:CtmImageBox
-    left =417
-    top =586
-    right =452
-    bottom =710
+  Str_Act3:CtmStaticX2
+    left =92
+    top =270
+    right =242
+    bottom =302
     wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/Drive.bmp
-    keycolor =63519
-  end
-  BmpDrive5:CtmImageBox
-    left =480
-    top =470
-    right =505
-    bottom =495
-    wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/picker/unselected.bmp
-  end
-  LinuxCtmStaticX29:CtmStaticX2
-    left =505
-    top =468
-    right =560
-    bottom =500
-    wtype =33
     fgc =0
-    bgc =36256
+    bgc =55167
     fontsize =1
-    textID =VW_HAP5_ROBOT_Y2AXIS
     align =34
   end
-  Str_Drive_Ver5:CtmStaticX2
-    left =506
-    top =500
-    right =561
-    bottom =532
-    wtype =33
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =35953
-    align =34
-  end
-  LinuxCtmEditX23:CtmEditX2
-    left =528
-    top =537
-    right =533
-    bottom =587
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =1040
-    fontsize =1
-    maxchar =8
-    align =34
-  end
-  LinuxCtmImageBox8:CtmImageBox
-    left =513
-    top =586
-    right =548
-    bottom =710
+  Str_Value_Now3:CtmStaticX2
+    left =244
+    top =270
+    right =344
+    bottom =302
     wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/Drive.bmp
-    keycolor =63519
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
   end
-  BtnTest:CtmToolButton
-    left =422
-    top =214
-    right =512
-    bottom =264
-    wtype =39
-    taborder =7
-    fgc =65535
-    bgc =1046
-    fontsize =2
+  Str_Value_Old3:CtmStaticX2
+    left =348
+    top =270
+    right =448
+    bottom =302
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Time3:CtmStaticX2
+    left =452
+    top =270
+    right =552
+    bottom =302
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_No4:CtmStaticX2
+    left =36
+    top =310
+    right =86
+    bottom =342
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Act4:CtmStaticX2
+    left =92
+    top =310
+    right =242
+    bottom =342
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Now4:CtmStaticX2
+    left =244
+    top =310
+    right =344
+    bottom =342
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Old4:CtmStaticX2
+    left =348
+    top =310
+    right =448
+    bottom =342
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Time4:CtmStaticX2
+    left =452
+    top =310
+    right =552
+    bottom =342
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_No5:CtmStaticX2
+    left =36
+    top =350
+    right =86
+    bottom =382
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Act5:CtmStaticX2
+    left =92
+    top =350
+    right =242
+    bottom =382
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Now5:CtmStaticX2
+    left =244
+    top =350
+    right =344
+    bottom =382
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Old5:CtmStaticX2
+    left =348
+    top =350
+    right =448
+    bottom =382
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Time5:CtmStaticX2
+    left =452
+    top =350
+    right =552
+    bottom =382
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_No6:CtmStaticX2
+    left =36
+    top =390
+    right =86
+    bottom =422
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Act6:CtmStaticX2
+    left =92
+    top =390
+    right =242
+    bottom =422
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Now6:CtmStaticX2
+    left =244
+    top =390
+    right =344
+    bottom =422
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Old6:CtmStaticX2
+    left =348
+    top =390
+    right =448
+    bottom =422
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Time6:CtmStaticX2
+    left =452
+    top =390
+    right =552
+    bottom =422
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_No7:CtmStaticX2
+    left =36
+    top =430
+    right =86
+    bottom =462
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Act7:CtmStaticX2
+    left =92
+    top =430
+    right =242
+    bottom =462
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Now7:CtmStaticX2
+    left =244
+    top =430
+    right =344
+    bottom =462
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Old7:CtmStaticX2
+    left =348
+    top =430
+    right =448
+    bottom =462
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Time7:CtmStaticX2
+    left =452
+    top =430
+    right =552
+    bottom =462
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_No8:CtmStaticX2
+    left =36
+    top =470
+    right =86
+    bottom =502
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Act8:CtmStaticX2
+    left =92
+    top =470
+    right =242
+    bottom =502
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Now8:CtmStaticX2
+    left =244
+    top =470
+    right =344
+    bottom =502
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Old8:CtmStaticX2
+    left =348
+    top =470
+    right =448
+    bottom =502
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Time8:CtmStaticX2
+    left =452
+    top =470
+    right =552
+    bottom =502
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_No9:CtmStaticX2
+    left =36
+    top =510
+    right =86
+    bottom =542
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Act9:CtmStaticX2
+    left =92
+    top =510
+    right =242
+    bottom =542
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Now9:CtmStaticX2
+    left =244
+    top =510
+    right =344
+    bottom =542
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Value_Old9:CtmStaticX2
+    left =348
+    top =510
+    right =448
+    bottom =542
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Time9:CtmStaticX2
+    left =452
+    top =510
+    right =552
+    bottom =542
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Btn_PageDown:CtmToolButton
+    left =406
+    top =568
+    right =542
+    bottom =604
+    wtype =36
+    taborder =3
+    bgc =54970
+    fontsize =1
+    rightcontrol =buttonUPTWENTY
+    upcontrol =editTAXISMEDIA
     buttontype =0
-    captionID =ROBOT_STR_EDITAUTH
+    align =34
+    captionID =VW_MOLD_CHECKDOWNTWENTY
   end
-  Test_Mask:CtmStaticX2
-    left =300
-    top =132
-    right =576
-    bottom =373
-    wtype =32
-    bgc =40669
-  end
-  LinuxCtmToolButton1:CtmToolButton
-    left =206
-    top =38
-    right =296
-    bottom =88
-    wtype =39
-    taborder =78
-    fgc =65535
-    bgc =1046
-    fontsize =2
+  Btn_PageUp:CtmToolButton
+    left =47
+    top =568
+    right =183
+    bottom =604
+    wtype =36
+    taborder =2
+    bgc =54970
+    fontsize =1
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
     buttontype =0
-    captionID =ROBOT_STR_EDITAUTH
+    align =34
+    captionID =VW_MOLD_CHECKUPTWENTY
   end
 end

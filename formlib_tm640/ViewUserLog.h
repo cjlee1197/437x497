@@ -29,5 +29,6 @@ extern  "C"	WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl);
 extern	"C"	void  	OnDestroyA(CtmWnd* pwndSender);
 
 float	Conv2Float(DWORD dw);
+void Update_UserLog(); // 更新履歷內容
 
 #endif
