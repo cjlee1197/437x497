@@ -42,7 +42,7 @@
 +===========================================================================*/
 BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
 
-int u_Axis_Num = 1;
+int u_Axis_Num = 0;
 BOOL 				b_Dir[5] ={FALSE};
 BOOL 				b_Double[5] ={FALSE};
 
@@ -67,6 +67,8 @@ int u_EncType = 0; // 編碼器選擇  0-絕對 1-增量
 
 CtmWnd*		pwndBtn_Axis[6] 	={NULL}; // 各軸Btn
 int iBtn_Axis = 0;
+
+CtmWnd*		pwndMask_MechData	= NULL; // 機構參數遮罩
 
 CtmWnd*		pwndMech_Data[6] 	={NULL}; // 各軸 參數
 char* Mech_Data_String[] = // 參數 元件 名稱
@@ -183,7 +185,25 @@ char* dbid0_Mech[6][5] = // 參數數值 db
 	{"MACHINE_INTERFACE_CONTROL_RSV09","MACHINE_INTERFACE_CONTROL_RSV14","MACHINE_FUNCTION_OPTIONS_RSV26","MACHINE_FUNCTION_OPTIONS_RSV16","MACHINE_FUNCTION_OPTIONS_RSV21"}			// Y2軸
 };
 
+CtmWnd*	pwndStrAxisData[6] 	 = {NULL}; // 各軸 參數 文字
+char* 	StrAxisData_String[] = 				 // 參數 文字 名稱
+{
+	"Str_ENC_REZ", 				// 編碼器解析度
+	"Str_Motor_Ratio", 	  // 減速比
+	"Str_Motor_Diameter",	// 每轉距離
+	"Str_Tooth_N",	// 每轉距離
+	"Str_DOUBLE",					// 倍數機構
+	"Str_POS_INV"					// 位置反向
+};
 
+CtmWnd*	pwndStrMechData[3] 	 = {NULL}; // 機構 共同參數 文字
+char* 	StrMechData_String[] = 				 // 共同參數 文字 名稱
+{
+	"Str_MechType", // 機型選擇
+	"Str_Trans", // 傳動方式
+	"Str_EncType", // 編碼器選擇
+
+};
 
 /*---------------------------------------------------------------------------+
 |           View Content - GuideSet                                          |
@@ -211,7 +231,8 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	// 取得指標 編碼器選擇：絕對 增量
 	pwndBtn_EncType_Abs     = pwndSender->FindControlFromName("Btn_EncType_Abs");
 	pwndBtn_EncType_Res	    = pwndSender->FindControlFromName("Btn_EncType_Res");
-
+	
+	pwndMask_MechData 		  = pwndSender->FindControlFromName("Mask_MechData"); // 機構參數遮罩
 
 	for(int i = 0; i < 5; i++) // 取得指標 
 	{
@@ -221,7 +242,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	 
 	iBtn_Axis	 	= GetSpecialControlNum(pwndSender, "Btn_Axis_", "CtmToolButton", pwndBtn_Axis);
 	printf("iBtn_Axis=%d\n",iBtn_Axis);
-	// 取得指標 語言選擇 選擇鈕
+	// 取得指標 機構參數 輸入元件
 	for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
 	{
 		pwndMech_Data[i] = pwndSender->FindControlFromName(Mech_Data_String[i]);// 參數 元件
@@ -230,10 +251,22 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	pwndDOUBLE				= pwndSender->FindControlFromName("Btn_DOUBLE");
 	pwndPOS_INV				= pwndSender->FindControlFromName("Btn_POS_INV");
 	
+	// 取得指標 各軸參數 文字
+	for(int i = 0; i < sizeof(StrAxisData_String)/sizeof(StrAxisData_String[0]); i++ )
+	{
+		pwndStrAxisData[i] = pwndSender->FindControlFromName(StrAxisData_String[i]);// 參數 元件
+	} 	
+	// 取得指標 共同參數 文字
+	for(int i = 0; i < sizeof(StrMechData_String)/sizeof(StrMechData_String[0]); i++ )
+	{
+		pwndStrMechData[i] = pwndSender->FindControlFromName(StrMechData_String[i]);// 參數 元件
+	} 		
+	
 	// Update Data def
 	UpdateData();
 	UpdateBtnData();
 	//============================Update string============================
+	
 	printf("Update string\n");
 	for(int i = 0; i < 5; i++)
 	{
@@ -322,21 +355,36 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	{
 		case 1:
     	u_Axis_Num=1;
+    	ShowMechData(FALSE); // 遮蓋 機構參數
+    	ShowAxisData(TRUE);  // 顯示 各軸參數
 			break;
 		case 2:
     	u_Axis_Num=2;
+    	ShowMechData(FALSE); // 遮蓋 機構參數
+    	ShowAxisData(TRUE);  // 顯示 各軸參數
 			break;	
 		case 3:
 			u_Axis_Num=3;
+			ShowMechData(FALSE); // 遮蓋 機構參數
+			ShowAxisData(TRUE);  // 顯示 各軸參數
 			break;
 		case 4:
 			u_Axis_Num=4;
+			ShowMechData(FALSE); // 遮蓋 機構參數
+			ShowAxisData(TRUE);  // 顯示 各軸參數
 			break;
 		case 5:
 			u_Axis_Num=5;
+			ShowMechData(FALSE); // 遮蓋 機構參數
+			ShowAxisData(TRUE);  // 顯示 各軸參數
 			break;
 		case 46:
 			SendCommand(0xFF32); 
+			break;
+		case 77:
+			u_Axis_Num=0;
+			ShowAxisData(FALSE); // 遮蓋 各軸參數
+			ShowMechData(TRUE);  // 顯示 機構參數
 			break;
 		case 7178:
 			SendCommand(0xFF32); 
@@ -345,15 +393,18 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 			break;
 	}
 
-	if(pwndBtn_Axis[u_Axis_Num-1]) // 選取的軸按鍵
+	if(pwndBtn_Axis[u_Axis_Num]) // 選取的軸按鍵
 	{	
-		pwndBtn_Axis[u_Axis_Num-1]->SetPropValueT("upbitmap","res_tm640/pic/PileBtnSelect.bmp");
-		pwndBtn_Axis[u_Axis_Num-1]->CreateA();
-		pwndBtn_Axis[u_Axis_Num-1]->Update();
+		pwndBtn_Axis[u_Axis_Num]->SetPropValueT("upbitmap","res_tm640/pic/PileBtnSelect.bmp");
+		pwndBtn_Axis[u_Axis_Num]->CreateA();
+		pwndBtn_Axis[u_Axis_Num]->Update();
 	}
 	
-	UpdateData(); // 更新資料 定義
-	UpdateBtnData(); // 更新資料 倍數機構 位置反向
+	if(u_Axis_Num!=0)
+	{
+		UpdateData(); // 更新資料 定義
+		UpdateBtnData(); // 更新資料 倍數機構 位置反向
+	}
 
 	if(pwndSender->Is("CtmFormView")) return ((CtmFormView*)pwndSender)->OnKey1(wKey);
 	else return _NULL_KEY;
@@ -577,6 +628,9 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	{
 		RunOnlyOne=TRUE;
 		((CtmFormView*)pwndSender)->OnLoseFocus(); // 取消光標
+
+		ShowAxisData(FALSE); // 遮蓋 各軸參數
+		ShowMechData(TRUE);  // 顯示 機構參數
 	}
 }
 
@@ -763,4 +817,82 @@ void	UpdateBtnData()
 		if(u_POSINV == 1)
 			((CtmButton*)pwndPOS_INV)->Press(tmBUTTON_DOWN);
 	}
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : ShowE()                         	            				         |
+|  Task     : 顯示遮住元件	     	                                           |
++----------------------------------------------------------------------------+
+|  Parameter: pwnd 元件, enabled TRUE-顯示 FALSE-遮住						             |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	ShowE(CtmWnd* pwnd,BOOL enabled)
+{
+	printf("ShowE\n");
+	if(pwnd!=NULL)
+	{
+		printf("E enable=%d\n",enabled);
+		pwnd->SetPropValueT("enabled",double(enabled));
+		//pwnd->SetPropValueT("visible",double(enabled));
+		if(enabled)
+		{
+			printf("TRUE\n");
+			pwnd->Show();
+		}
+	}
+}
+/*---------------------------------------------------------------------------+
+|  Function : ShowMechData(BOOL enabled)                           		       |
+|  Task     : 顯示機構參數	     	                                           |
++----------------------------------------------------------------------------+
+|  Parameter:             enabled TRUE-顯示 FALSE                            |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	ShowMechData(BOOL enabled) // 顯示機構參數
+{
+	printf("ShowMechData\n");
+	if(pwndMask_MechData!=NULL) // 遮罩
+		pwndMask_MechData->Update();
+		
+	ShowE(pwndBtn_MechType3,enabled); 	// 顯示 3軸Btn
+	ShowE(pwndBtn_MechType5,enabled); 	// 顯示 5軸Btn
+	ShowE(pwndBtn_Gear_D,enabled); 			// 顯示 每轉距離Btn
+	ShowE(pwndBtn_Tooth_M,enabled); 		// 顯示 齒數模數Btn
+	ShowE(pwndBtn_EncType_Abs,enabled); // 顯示 絕對Btn
+	ShowE(pwndBtn_EncType_Res,enabled); // 顯示 增量Btn
+	
+	for(int i = 0; i < sizeof(StrMechData_String)/sizeof(StrMechData_String[0]); i++ )
+	{
+		ShowE(pwndStrMechData[i],enabled); // 顯示 共同參數 文字
+	} 
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : ShowAxisData(BOOL enabled)                           		       |
+|  Task     : 顯示機構參數	     	                                           |
++----------------------------------------------------------------------------+
+|  Parameter:             enabled TRUE-顯示 FALSE                            |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	ShowAxisData(BOOL enabled) // 顯示各軸參數
+{
+	printf("ShowAxisData\n");
+	if(pwndMask_MechData!=NULL) // 遮罩
+		pwndMask_MechData->Update();
+	for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
+	{
+		ShowE(pwndMech_Data[i],enabled); 	 // 顯示 各軸參數 元件
+	} 
+
+	ShowE(pwndDOUBLE,enabled); 	// 顯示 倍數 Btn
+	ShowE(pwndPOS_INV,enabled); // 顯示 反向 Btn
+	
+	for(int i = 0; i < sizeof(StrAxisData_String)/sizeof(StrAxisData_String[0]); i++ )
+	{
+		ShowE(pwndStrAxisData[i],enabled); 	 // 顯示 各軸參數 文字
+	} 	
+	
 }
