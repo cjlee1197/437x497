@@ -899,7 +899,7 @@ void       CreateLEDSet()
 	
 	if(u_pwndDetectBox[4]!=NULL)
 	{
-		if(_TestBit(u_wInputValue, 4))	// ¾÷±ñ¤â«æ°±
+		if(_TestBit(u_wInputValue, 8))	// ¾÷±ñ¤â«æ°±
 		{bSelected = TRUE;	}
 		else 							
 		{bSelected = FALSE;}
@@ -993,7 +993,7 @@ void       CreateDetectLEDSet()
 		 	}	
 		if(u_pwndDetectBox[2] != NULL) // §l½L1
 			{
-	   		if(_TestBit(u_wInputValue, 5))	bSelected = TRUE;	
+	   		if(_TestBit(u_wInputValue, 7))	bSelected = TRUE;	
 		 		else 							bSelected = FALSE;
 		 		u_pwndDetectBox[2]->SetPropValueT("selected", bSelected);
 		 		u_pwndDetectBox[2]->CreateA();
@@ -1001,7 +1001,7 @@ void       CreateDetectLEDSet()
 		 	}	
 		if(u_pwndDetectBox[3] != NULL) // §l½L2
 			{
-	   		if(_TestBit(u_wInputValue, 6))	bSelected = TRUE;	
+	   		if(_TestBit(u_wInputValue, 8))	bSelected = TRUE;	
 		 		else 							bSelected = FALSE;
 		 		u_pwndDetectBox[3]->SetPropValueT("selected", bSelected);
 		 		u_pwndDetectBox[3]->CreateA();

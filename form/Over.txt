@@ -418,7 +418,7 @@ ViewOver_IML:CtmFormView
     fgc =0
     bgc =65535
     fontsize =1
-    textID =PICKER_REMOTE_I_07
+    textID =PICKER_REMOTE_I_05
     group =1
   end
   Detect4:CtmSelectBox
@@ -430,7 +430,7 @@ ViewOver_IML:CtmFormView
     fgc =0
     bgc =65535
     fontsize =1
-    textID =PICKER_REMOTE_I_08
+    textID =PICKER_REMOTE_I_06
     group =1
   end
   Detect5:CtmSelectBox
@@ -442,7 +442,7 @@ ViewOver_IML:CtmFormView
     fgc =0
     bgc =65535
     fontsize =1
-    textID =PICKER_REMOTE_I_24
+    textID =PICKER_INNER_O_04
     group =1
   end
   BtnJump:CtmToolButton
