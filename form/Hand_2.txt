@@ -74,16 +74,6 @@ ViewHand:CtmFormView
     style =3
     imagepath =res_tm640/pic/picker/unselected.bmp
   end
-  BmpVacuum:CtmImageBox
-    left =84
-    top =567
-    right =109
-    bottom =592
-    wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/picker/unselected.bmp
-  end
   Button_Vertical:CtmToolButton
     left =54
     top =406
@@ -208,26 +198,6 @@ ViewHand:CtmFormView
     destcolor =57182
     downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
     key =25
-  end
-  BmpStatic:CtmImageBox
-    left =374
-    top =567
-    right =399
-    bottom =592
-    wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/picker/unselected.bmp
-  end
-  BmpConveyor:CtmImageBox
-    left =374
-    top =444
-    right =399
-    bottom =469
-    wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/picker/unselected.bmp
   end
   BmpBlow1:CtmImageBox
     left =374
@@ -496,9 +466,9 @@ ViewHand:CtmFormView
   end
   OutConveyor:CtmImageBox
     left =374
-    top =412
+    top =428
     right =399
-    bottom =437
+    bottom =453
     wtype =48
     type =2
     style =3
@@ -506,9 +476,9 @@ ViewHand:CtmFormView
   end
   OutVacuum:CtmImageBox
     left =84
-    top =535
+    top =551
     right =109
-    bottom =560
+    bottom =576
     wtype =48
     type =2
     style =3
@@ -516,9 +486,9 @@ ViewHand:CtmFormView
   end
   OutStatic:CtmImageBox
     left =374
-    top =535
+    top =551
     right =399
-    bottom =560
+    bottom =576
     wtype =48
     type =2
     style =3

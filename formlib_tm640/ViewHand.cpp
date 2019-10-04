@@ -254,7 +254,8 @@ CtmWnd*		u_pwndButtonClampClose = NULL;
 CtmWnd*		u_pwndBtnServo 				 = NULL;
 CtmWnd*   u_pwndValveState[16] ={NULL};
 CtmWnd*   u_pwndINIO_State[16] ={NULL};
-CtmWnd*   u_pwndEXIO_State[16] ={NULL};
+CtmWnd*   u_pwndEXIO_State_IN[16] ={NULL};
+CtmWnd*   u_pwndEXIO_State_OUT[16] ={NULL};
 CtmWnd*   u_pwndINIOBtn_State[16] ={NULL};
 CtmWnd*   u_pwndEXIOBtn_State[16] ={NULL};
 
@@ -263,7 +264,9 @@ CtmWnd*		u_pwndBtnManualType0   = NULL;
 CtmWnd*		u_pwndBtnManualType1   = NULL;
 
 long lInOutValue_Old = -1;
-long lExOutValue_Old = -1;
+DWORD lExOutValue_Old = -1;
+DWORD lExInValue_Old = -1;
+
 
 //CtmWnd*		u_pwndBmpEnableoff  = NULL;
 //CtmWnd*		u_pwndBmpEnableon   = NULL;
@@ -371,52 +374,57 @@ char*	u_pszButtonName[] =
 
 char* u_pszImageBoxString_INIO[] =
 {
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+};
+
+char* u_pszImageBoxString_EXIO_OUT[] = // IO指示燈 輸出指令
+{
+	"OutPileVertical",
+	"OutPileHorizontal",
+	"OutClamp1",
+	"OutClamp2",
+	"OutBlow1",
+	"OutBlow2",
+	"OutVacuum", // 7
+	"OutStatic", // 8
+	"", // 9
+	"OutConveyor", // 10
+};
+char* u_pszImageBoxString_EXIO_IN[] = // IO指示燈 限位偵測
+{
 	"BmpPileVertical",
 	"BmpPileHorizontal",
 	"BmpClamp1",
 	"BmpClamp2",
-	"BmpClamp3",
-	"BmpClamp4",
-	"BmpBlow1",	
+	"BmpBlow1",
 	"BmpBlow2",
-	"BmpBlow3",
-	"BmpBlow4",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"BmpVacuum",
-};
-
-char* u_pszImageBoxString_EXIO[] =
-{
-	"BmpStatic",
-	"",
-	"BmpConveyor",
 };
 
 char* u_pszBtnImgString_INIO[] =
 {
 	"",
 	"",
-	"Btn_Clamp1",
-	"Btn_Clamp2",
-	"Btn_Clamp3",
-	"Btn_Clamp4",
-	"Btn_Suck1",	
-	"Btn_Suck2",
-	"Btn_Suck3",
-	"Btn_Suck4",
 	"",
 	"",
 	"",
 	"",
 	"",
-	"Btn_VACUUMON",
+	"",
 };
 char* u_pszBtnImgString_EXIO[] =
 {
+	"",
+	"",
+	"Btn_Clamp1",
+	"Btn_Clamp2",
+	"Btn_Suck1",	
+	"Btn_Suck2",
+	"Btn_VACUUMON",
 	"Btn_STATICON",
 	"",
 	"Btn_CONVEYERON",
@@ -425,12 +433,6 @@ char* BtnImgOn_INIO[] = // 按鈕ON 圖片路徑
 {
 	"",
 	"",
-	"clamp1_on.bmp",
-	"clamp2_on.bmp",
-	"",
-	"",
-	"CupulaOpen1.bmp",	
-	"CupulaOpen2.bmp",
 	"",
 	"",
 	"",
@@ -438,10 +440,17 @@ char* BtnImgOn_INIO[] = // 按鈕ON 圖片路徑
 	"",
 	"",
 	"",
-	"vacuum_on.bmp",
+	"",
 };
 char* BtnImgOn_EXIO[] = // 按鈕OFF 圖片路徑
 {
+	"",
+	"",
+	"clamp1_on.bmp",
+	"clamp2_on.bmp",
+	"CupulaOpen1.bmp",	
+	"CupulaOpen2.bmp",
+	"vacuum_on.bmp",
 	"static_on.bmp",
 	"",
 	"vonveyor_on.bmp",
@@ -450,23 +459,22 @@ char* BtnImgOff_INIO[] =
 {
 	"",
 	"",
-	"clamp1_off.bmp",
-	"clamp2_off.bmp",
-	"",
-	"",
-	"CupulaClose1.bmp",	
-	"CupulaClose2.bmp",
 	"",
 	"",
 	"",
 	"",
 	"",
 	"",
-	"",
-	"vacuum_off.bmp",
 };
 char* BtnImgOff_EXIO[] =
 {
+	"",
+	"",
+	"clamp1_off.bmp",
+	"clamp2_off.bmp",
+	"CupulaClose1.bmp",	
+	"CupulaClose2.bmp",
+	"vacuum_off.bmp",
 	"static_off.bmp",
 	"",
 	"vonveyor_off.bmp",
@@ -572,9 +580,13 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	{
 		u_pwndINIO_State[i] = pwndSender->FindControlFromName(u_pszImageBoxString_INIO[i]);
 	}
-	for(int i = 0; i < sizeof(u_pszImageBoxString_EXIO)/sizeof(u_pszImageBoxString_EXIO[0]); i++ )
+	for(int i = 0; i < sizeof(u_pszImageBoxString_EXIO_IN)/sizeof(u_pszImageBoxString_EXIO_IN[0]); i++ )
 	{
-		u_pwndEXIO_State[i] = pwndSender->FindControlFromName(u_pszImageBoxString_EXIO[i]);
+		u_pwndEXIO_State_IN[i] = pwndSender->FindControlFromName(u_pszImageBoxString_EXIO_IN[i]);
+	}
+	for(int i = 0; i < sizeof(u_pszImageBoxString_EXIO_OUT)/sizeof(u_pszImageBoxString_EXIO_OUT[0]); i++ )
+	{
+		u_pwndEXIO_State_OUT[i] = pwndSender->FindControlFromName(u_pszImageBoxString_EXIO_OUT[i]);
 	}
 	int GetIOBtn =0;
 	for(int i = 0; i < sizeof(u_pszBtnImgString_INIO)/sizeof(u_pszBtnImgString_INIO[0]); i++ )
@@ -891,10 +903,14 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	/*-------------------------------哈鏌IO定義----------------------------------*/
 	
 	/*---------------------------2019ChinaPlas_IO定義------------------------------*/
-	long lInOutValue = 0;
-	long lExOutValue = 0;
+	DWORD lInOutValue = 0;
+	DWORD lExOutValue = 0;
 	lInOutValue   = GetDBValue("MACHINE_INTERFACE_DWINTERNALOUTPUTSTATE").lValue;	
 	lExOutValue   = GetDBValue("MACHINE_INTERFACE_DWEXTERNALOUTPUTSTATE").lValue;	
+			for(int i = 0; i < 15; i++)
+		{
+			printf("%d=%d\n",i,(lExOutValue>>i)&1);
+		}
 	switch(wKey)
 	{
 		case KEY_HORIZONTAL: // 水平
@@ -904,7 +920,7 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 			SendCommand(COMMAND_VERTICAL);
 			break;
 		case KEY_CLAMP1: // 夾1
-			if(_TestBit(lInOutValue, 3-1)) 
+			if(_TestBit(lExOutValue, 3-1)) 
 				{
 					SendCommand(COMMAND_CLAMP1OFF);
 				}
@@ -914,27 +930,27 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				}
 			break;
 		case KEY_CLAMP2: // 夾2
-			if(_TestBit(lInOutValue, 4-1)) SendCommand(COMMAND_CLAMP2OFF);
+			if(_TestBit(lExOutValue, 4-1)) SendCommand(COMMAND_CLAMP2OFF);
 			else SendCommand(COMMAND_CLAMP2ON);		
 			break;
 		case KEY_SUCK1: // 吸1
-			if(_TestBit(lInOutValue, 7-1)) SendCommand(COMMAND_SUCK1OFF);
+			if(_TestBit(lExOutValue, 5-1)) SendCommand(COMMAND_SUCK1OFF);
 			else SendCommand(COMMAND_SUCK1ON);	
 			break;
 		case KEY_SUCK2: // 吸2
-			if(_TestBit(lInOutValue, 8-1)) SendCommand(COMMAND_SUCK2OFF);
+			if(_TestBit(lExOutValue, 6-1)) SendCommand(COMMAND_SUCK2OFF);
 			else SendCommand(COMMAND_SUCK2ON);
 			break;
 		case KEY_STATIC:// 靜電
-			if(_TestBit(lExOutValue, 1-1)) SendCommand(COMMAND_STATICOFF);
+			if(_TestBit(lExOutValue, 8-1)) SendCommand(COMMAND_STATICOFF);
 			else SendCommand(COMMAND_STATICON);
 			break;		
 		case KEY_VACUUM: // 真空
-			if(_TestBit(lInOutValue, 16-1)) SendCommand(COMMAND_VACUUMOFF);
+			if(_TestBit(lExOutValue, 7-1)) SendCommand(COMMAND_VACUUMOFF);
 			else SendCommand(COMMAND_VACUUMON);
 			break;	
 		case KEY_CONVEYER: // 輸送帶
-			if(_TestBit(lExOutValue, 3-1)) SendCommand(COMMAND_CONVEYEROFF);
+			if(_TestBit(lExOutValue, 10-1)) SendCommand(COMMAND_CONVEYEROFF);
 			else SendCommand(COMMAND_CONVEYERON);
 			break;	
 		default:
@@ -1099,9 +1115,8 @@ void	OnUpdateA(CtmWnd* pwndSender)
 //	}	
 	
 	lInOutValue   = GetDBValue("MACHINE_INTERFACE_DWINTERNALOUTPUTSTATE").lValue;	
-	lInInValue 	  = GetDBValue("MACHINE_INTERFACE_DWEXTERNALINPUTSTATE").lValue;	
-	lExInValue 	  = GetDBValue("MACHINE_INTERFACE_DWINTERNALINPUTSTATE").lValue;
-	
+	lInInValue 	  = GetDBValue("MACHINE_INTERFACE_DWINTERNALINPUTSTATE").lValue;	
+
 	if(lInOutValue != lInOutValue_Old)	
 		{
 			for(int i = 0; i < sizeof(u_pszImageBoxString_INIO)/sizeof(u_pszImageBoxString_INIO[0]); i++)
@@ -1120,16 +1135,12 @@ void	OnUpdateA(CtmWnd* pwndSender)
 				else sprintf(pszPath, "%spic/picker/%s", u_szPath, BtnImgOff_INIO[i]);
 				 if(u_pwndINIOBtn_State[i] != NULL)
 				 {
-				 	 printf("Set %s = %s\n",u_pszBtnImgString_INIO[i],pszPath);
+				 	 //printf("Set %s = %s\n",u_pszBtnImgString_INIO[i],pszPath);
 					 u_pwndINIOBtn_State[i]->SetPropValueT("upbitmap", pszPath);
 					 u_pwndINIOBtn_State[i]->CreateA();
 					 u_pwndINIOBtn_State[i]->Update();
 				 }
-			}	
-			printf("lInOutValue=%x\n",lInOutValue);
-			printf("lInInValue=%x\n",lInInValue);
-			printf("lExInValue=%x\n",lExInValue);
-			
+			}				
 			lInOutValue_Old = lInOutValue;
 		}	
 
@@ -1137,14 +1148,14 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	lExOutValue   = GetDBValue("MACHINE_INTERFACE_DWEXTERNALOUTPUTSTATE").lValue;	
 	if(lExOutValue != lExOutValue_Old)	
 		{
-			for(int i = 0; i < sizeof(u_pszImageBoxString_EXIO)/sizeof(u_pszImageBoxString_EXIO[0]); i++)
+			for(int i = 0; i < sizeof(u_pszImageBoxString_EXIO_OUT)/sizeof(u_pszImageBoxString_EXIO_OUT[0]); i++)
 			{
-				if(_TestBit(lExOutValue, i)) sprintf(pszPath,"%spic/picker/selected.bmp", /*"res_PICKER/image/picker/selected.bmp"*/u_szPath);
+				if(_TestBit(lExOutValue, i)) sprintf(pszPath,"%spic/picker/selected_out.bmp", /*"res_PICKER/image/picker/selected.bmp"*/u_szPath);
 				else sprintf(pszPath, "%spic/picker/unselected.bmp", /*"res_PICKER/image/picker/unselected.bmp"*/u_szPath);
-				 if(u_pwndEXIO_State[i] != NULL)
+				 if(u_pwndEXIO_State_OUT[i] != NULL)
 				 {
-					 u_pwndEXIO_State[i]->SetPropValueT("imagepath", pszPath);
-					 u_pwndEXIO_State[i]->Update();
+					 u_pwndEXIO_State_OUT[i]->SetPropValueT("imagepath", pszPath);
+					 u_pwndEXIO_State_OUT[i]->Update();
 				 }
 			}	
 			for(int i = 0; i < sizeof(u_pszBtnImgString_EXIO)/sizeof(u_pszBtnImgString_EXIO[0]); i++)
@@ -1159,12 +1170,25 @@ void	OnUpdateA(CtmWnd* pwndSender)
 					 u_pwndEXIOBtn_State[i]->Update();
 				 }
 			}	
-			printf("lInOutValue=%x\n",lInOutValue);
-			printf("lInInValue=%x\n",lInInValue);
-			printf("lExInValue=%x\n",lExInValue);
 			lExOutValue_Old = lExOutValue;
 		}
-
+		
+	lExInValue 	  = GetDBValue("MACHINE_INTERFACE_DWEXTERNALINPUTSTATE").lValue;
+	if(lExInValue != lExInValue_Old)	
+		{
+			for(int i = 0; i < sizeof(u_pszImageBoxString_EXIO_IN)/sizeof(u_pszImageBoxString_EXIO_IN[0]); i++)
+			{
+				if(_TestBit(lExInValue, i)) sprintf(pszPath,"%spic/picker/selected.bmp", /*"res_PICKER/image/picker/selected.bmp"*/u_szPath);
+				else sprintf(pszPath, "%spic/picker/unselected.bmp", /*"res_PICKER/image/picker/unselected.bmp"*/u_szPath);
+				 if(u_pwndEXIO_State_IN[i] != NULL)
+				 {
+					 u_pwndEXIO_State_IN[i]->SetPropValueT("imagepath", pszPath);
+					 u_pwndEXIO_State_IN[i]->Update();
+				 }
+			}	
+			printf("lExInValue=%d\n",lExInValue);
+			lExInValue_Old = lExInValue;
+		}
 
 }
 
