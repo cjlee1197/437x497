@@ -756,7 +756,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="ROBOT_ALARM_SET_LEVEL">請輸入用戶權限</string>
 	<string name="ROBOT_MSG_INSERT_SUCCESS">新增用戶完成</string>
 	<string name="ROBOT_ALARM_NO_USER">指定用戶不存在</string>
-	<string name="ROBOT_STR_AUTHNOENOUGH">權限不足</string>
+	<string name="ROBOT_STR_AUTHNOENOUGH">Permission Denied</string>
 	<string name="ROBOT_MSG_DEL_SUCCESS">刪除用戶完成</string>
 	<string name="ROBOT_MSG_MODIFY_SUCCESS">修改用戶完成</string>
 	<string name="ROBOT_MSG_INSERT_ERROR">新增用戶失敗，用戶重複或用戶已滿。</string>

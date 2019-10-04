@@ -389,7 +389,8 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		//Exit();
 	}
 	else if(pwndTemp == u_pwndBtnOK) // 確認
-	{
+	{	
+		printf("Btn_OK\n");
 		if(screenflag == NO_ACTION) return;
 		if(screenflag == ADD_USER) // 新增
 		{
