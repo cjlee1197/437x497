@@ -24,8 +24,7 @@ ViewMsgBoxUserLogin:CtmFormView
     bottom =260
     wtype =39
     taborder =4
-    fgc =65535
-    bgc =1046
+    bgc =36256
     fontsize =2
     buttontype =0
     captionID =ROBOT_BTN_CANCEL
@@ -37,8 +36,7 @@ ViewMsgBoxUserLogin:CtmFormView
     bottom =260
     wtype =39
     taborder =3
-    fgc =65535
-    bgc =1046
+    bgc =36256
     fontsize =2
     buttontype =0
     captionID =ROBOT_STR_LOGIN
@@ -61,6 +59,7 @@ ViewMsgBoxUserLogin:CtmFormView
     bottom =125
     wtype =37
     taborder =1
+    bgc =36256
     fontsize =2
     maxchar =15
     listnum =3
@@ -107,8 +106,7 @@ ViewMsgBoxUserLogin:CtmFormView
     bottom =65
     wtype =39
     taborder =0
-    fgc =65535
-    bgc =1046
+    bgc =36256
     fontsize =2
     buttontype =0
     captionID =ROBOT_STR_USER_MANAGER
