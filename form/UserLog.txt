@@ -7,9 +7,9 @@ ViewUserLog:CtmFormView
   titleID =INDEX_OP_HIS
   printname =UserLog.bmp
   Btn_Clear:CtmToolButton
-    left =28
+    left =12
     top =61
-    right =96
+    right =80
     bottom =104
     wtype =48
     taborder =7
@@ -21,9 +21,9 @@ ViewUserLog:CtmFormView
     key =1
   end
   StaticVW_ALARM_STARTTIME:CtmStaticX2
-    left =36
+    left =12
     top =112
-    right =86
+    right =58
     bottom =144
     wtype =33
     fgc =0
@@ -33,9 +33,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   LinuxCtmStaticX21:CtmStaticX2
-    left =92
+    left =60
     top =112
-    right =242
+    right =230
     bottom =144
     wtype =33
     fgc =0
@@ -45,9 +45,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   LinuxCtmStaticX22:CtmStaticX2
-    left =244
+    left =232
     top =112
-    right =344
+    right =312
     bottom =144
     wtype =33
     fgc =0
@@ -57,9 +57,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   LinuxCtmStaticX23:CtmStaticX2
-    left =348
+    left =314
     top =112
-    right =448
+    right =394
     bottom =144
     wtype =33
     fgc =0
@@ -69,9 +69,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   LinuxCtmStaticX24:CtmStaticX2
-    left =452
+    left =493
     top =112
-    right =552
+    right =588
     bottom =144
     wtype =33
     fgc =0
@@ -81,9 +81,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_No0:CtmStaticX2
-    left =36
+    left =12
     top =150
-    right =86
+    right =58
     bottom =182
     wtype =48
     fgc =0
@@ -92,9 +92,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Act0:CtmStaticX2
-    left =92
+    left =60
     top =150
-    right =242
+    right =230
     bottom =182
     wtype =48
     fgc =0
@@ -103,9 +103,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Now0:CtmStaticX2
-    left =244
+    left =232
     top =150
-    right =344
+    right =312
     bottom =182
     wtype =48
     fgc =0
@@ -114,9 +114,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Old0:CtmStaticX2
-    left =348
+    left =314
     top =150
-    right =448
+    right =394
     bottom =182
     wtype =48
     fgc =0
@@ -125,9 +125,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Time0:CtmStaticX2
-    left =452
+    left =493
     top =150
-    right =552
+    right =588
     bottom =182
     wtype =48
     fgc =0
@@ -136,9 +136,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_No1:CtmStaticX2
-    left =36
+    left =12
     top =190
-    right =86
+    right =58
     bottom =222
     wtype =48
     fgc =0
@@ -147,9 +147,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Act1:CtmStaticX2
-    left =92
+    left =60
     top =190
-    right =242
+    right =230
     bottom =222
     wtype =48
     fgc =0
@@ -158,9 +158,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Now1:CtmStaticX2
-    left =244
+    left =232
     top =190
-    right =344
+    right =312
     bottom =222
     wtype =48
     fgc =0
@@ -169,9 +169,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Old1:CtmStaticX2
-    left =348
+    left =314
     top =190
-    right =448
+    right =394
     bottom =222
     wtype =48
     fgc =0
@@ -180,9 +180,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Time1:CtmStaticX2
-    left =452
+    left =493
     top =190
-    right =552
+    right =588
     bottom =222
     wtype =48
     fgc =0
@@ -191,9 +191,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_No2:CtmStaticX2
-    left =36
+    left =12
     top =230
-    right =86
+    right =58
     bottom =262
     wtype =48
     fgc =0
@@ -202,9 +202,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Act2:CtmStaticX2
-    left =92
+    left =60
     top =230
-    right =242
+    right =230
     bottom =262
     wtype =48
     fgc =0
@@ -213,9 +213,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Now2:CtmStaticX2
-    left =244
+    left =232
     top =230
-    right =344
+    right =312
     bottom =262
     wtype =48
     fgc =0
@@ -224,9 +224,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Old2:CtmStaticX2
-    left =348
+    left =314
     top =230
-    right =448
+    right =394
     bottom =262
     wtype =48
     fgc =0
@@ -235,9 +235,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Time2:CtmStaticX2
-    left =452
+    left =493
     top =230
-    right =552
+    right =588
     bottom =262
     wtype =48
     fgc =0
@@ -246,9 +246,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_No3:CtmStaticX2
-    left =36
+    left =12
     top =270
-    right =86
+    right =58
     bottom =302
     wtype =48
     fgc =0
@@ -257,9 +257,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Act3:CtmStaticX2
-    left =92
+    left =60
     top =270
-    right =242
+    right =230
     bottom =302
     wtype =48
     fgc =0
@@ -268,9 +268,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Now3:CtmStaticX2
-    left =244
+    left =232
     top =270
-    right =344
+    right =312
     bottom =302
     wtype =48
     fgc =0
@@ -279,9 +279,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Old3:CtmStaticX2
-    left =348
+    left =314
     top =270
-    right =448
+    right =394
     bottom =302
     wtype =48
     fgc =0
@@ -290,9 +290,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Time3:CtmStaticX2
-    left =452
+    left =493
     top =270
-    right =552
+    right =588
     bottom =302
     wtype =48
     fgc =0
@@ -301,9 +301,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_No4:CtmStaticX2
-    left =36
+    left =12
     top =310
-    right =86
+    right =58
     bottom =342
     wtype =48
     fgc =0
@@ -312,9 +312,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Act4:CtmStaticX2
-    left =92
+    left =60
     top =310
-    right =242
+    right =230
     bottom =342
     wtype =48
     fgc =0
@@ -323,9 +323,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Now4:CtmStaticX2
-    left =244
+    left =232
     top =310
-    right =344
+    right =312
     bottom =342
     wtype =48
     fgc =0
@@ -334,9 +334,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Old4:CtmStaticX2
-    left =348
+    left =314
     top =310
-    right =448
+    right =394
     bottom =342
     wtype =48
     fgc =0
@@ -345,9 +345,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Time4:CtmStaticX2
-    left =452
+    left =493
     top =310
-    right =552
+    right =588
     bottom =342
     wtype =48
     fgc =0
@@ -356,9 +356,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_No5:CtmStaticX2
-    left =36
+    left =12
     top =350
-    right =86
+    right =58
     bottom =382
     wtype =48
     fgc =0
@@ -367,9 +367,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Act5:CtmStaticX2
-    left =92
+    left =60
     top =350
-    right =242
+    right =230
     bottom =382
     wtype =48
     fgc =0
@@ -378,9 +378,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Now5:CtmStaticX2
-    left =244
+    left =232
     top =350
-    right =344
+    right =312
     bottom =382
     wtype =48
     fgc =0
@@ -389,9 +389,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Old5:CtmStaticX2
-    left =348
+    left =314
     top =350
-    right =448
+    right =394
     bottom =382
     wtype =48
     fgc =0
@@ -400,9 +400,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Time5:CtmStaticX2
-    left =452
+    left =493
     top =350
-    right =552
+    right =588
     bottom =382
     wtype =48
     fgc =0
@@ -411,9 +411,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_No6:CtmStaticX2
-    left =36
+    left =12
     top =390
-    right =86
+    right =58
     bottom =422
     wtype =48
     fgc =0
@@ -422,9 +422,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Act6:CtmStaticX2
-    left =92
+    left =60
     top =390
-    right =242
+    right =230
     bottom =422
     wtype =48
     fgc =0
@@ -433,9 +433,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Now6:CtmStaticX2
-    left =244
+    left =232
     top =390
-    right =344
+    right =312
     bottom =422
     wtype =48
     fgc =0
@@ -444,9 +444,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Old6:CtmStaticX2
-    left =348
+    left =314
     top =390
-    right =448
+    right =394
     bottom =422
     wtype =48
     fgc =0
@@ -455,9 +455,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Time6:CtmStaticX2
-    left =452
+    left =493
     top =390
-    right =552
+    right =588
     bottom =422
     wtype =48
     fgc =0
@@ -466,9 +466,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_No7:CtmStaticX2
-    left =36
+    left =12
     top =430
-    right =86
+    right =58
     bottom =462
     wtype =48
     fgc =0
@@ -477,9 +477,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Act7:CtmStaticX2
-    left =92
+    left =60
     top =430
-    right =242
+    right =230
     bottom =462
     wtype =48
     fgc =0
@@ -488,9 +488,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Now7:CtmStaticX2
-    left =244
+    left =232
     top =430
-    right =344
+    right =312
     bottom =462
     wtype =48
     fgc =0
@@ -499,9 +499,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Old7:CtmStaticX2
-    left =348
+    left =314
     top =430
-    right =448
+    right =394
     bottom =462
     wtype =48
     fgc =0
@@ -510,9 +510,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Time7:CtmStaticX2
-    left =452
+    left =493
     top =430
-    right =552
+    right =588
     bottom =462
     wtype =48
     fgc =0
@@ -521,9 +521,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_No8:CtmStaticX2
-    left =36
+    left =12
     top =470
-    right =86
+    right =58
     bottom =502
     wtype =48
     fgc =0
@@ -532,9 +532,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Act8:CtmStaticX2
-    left =92
+    left =60
     top =470
-    right =242
+    right =230
     bottom =502
     wtype =48
     fgc =0
@@ -543,9 +543,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Now8:CtmStaticX2
-    left =244
+    left =232
     top =470
-    right =344
+    right =312
     bottom =502
     wtype =48
     fgc =0
@@ -554,9 +554,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Old8:CtmStaticX2
-    left =348
+    left =314
     top =470
-    right =448
+    right =394
     bottom =502
     wtype =48
     fgc =0
@@ -565,9 +565,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Time8:CtmStaticX2
-    left =452
+    left =493
     top =470
-    right =552
+    right =588
     bottom =502
     wtype =48
     fgc =0
@@ -576,9 +576,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_No9:CtmStaticX2
-    left =36
+    left =12
     top =510
-    right =86
+    right =58
     bottom =542
     wtype =48
     fgc =0
@@ -587,9 +587,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Act9:CtmStaticX2
-    left =92
+    left =60
     top =510
-    right =242
+    right =230
     bottom =542
     wtype =48
     fgc =0
@@ -598,9 +598,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Now9:CtmStaticX2
-    left =244
+    left =232
     top =510
-    right =344
+    right =312
     bottom =542
     wtype =48
     fgc =0
@@ -609,9 +609,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Value_Old9:CtmStaticX2
-    left =348
+    left =314
     top =510
-    right =448
+    right =394
     bottom =542
     wtype =48
     fgc =0
@@ -620,9 +620,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Str_Time9:CtmStaticX2
-    left =452
+    left =493
     top =510
-    right =552
+    right =588
     bottom =542
     wtype =48
     fgc =0
@@ -631,9 +631,9 @@ ViewUserLog:CtmFormView
     align =34
   end
   Btn_PageDown:CtmToolButton
-    left =406
+    left =414
     top =568
-    right =542
+    right =550
     bottom =604
     wtype =36
     taborder =3
@@ -660,5 +660,127 @@ ViewUserLog:CtmFormView
     buttontype =0
     align =34
     captionID =VW_MOLD_CHECKUPTWENTY
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =396
+    top =112
+    right =491
+    bottom =144
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    textID =UserLog_DATE
+    align =34
+  end
+  Str_Date0:CtmStaticX2
+    left =396
+    top =150
+    right =491
+    bottom =182
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Date1:CtmStaticX2
+    left =396
+    top =190
+    right =491
+    bottom =222
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Date2:CtmStaticX2
+    left =396
+    top =230
+    right =491
+    bottom =262
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Date3:CtmStaticX2
+    left =396
+    top =270
+    right =491
+    bottom =302
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Date4:CtmStaticX2
+    left =396
+    top =310
+    right =491
+    bottom =342
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Date5:CtmStaticX2
+    left =396
+    top =350
+    right =491
+    bottom =382
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Date6:CtmStaticX2
+    left =396
+    top =390
+    right =491
+    bottom =422
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Date7:CtmStaticX2
+    left =396
+    top =430
+    right =491
+    bottom =462
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Date8:CtmStaticX2
+    left =396
+    top =470
+    right =491
+    bottom =502
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
+  end
+  Str_Date9:CtmStaticX2
+    left =396
+    top =510
+    right =491
+    bottom =542
+    wtype =48
+    fgc =0
+    bgc =55167
+    fontsize =1
+    align =34
   end
 end
