@@ -82,13 +82,13 @@ char        u_acSelBoxString[ID_MAX_SELECT][STR_MAX_COUNT];
 
 
 DBVIEWVALUE u_dbInputValue;
-WORD        u_wInputValue;
+WORD        u_wInputValue,u_wInputValue_OLD;
 
 DBVIEWVALUE u_dbOutputValue;
 WORD        u_wOutputValue;
 
 DBVIEWVALUE u_dbEX_InputValue;
-WORD        u_wEX_InputValue;
+DWORD        u_wEX_InputValue,u_wEX_InputValue_OLD;
 
 DBVIEWVALUE u_dbEX_OutputValue;
 WORD        u_wEX_OutputValue;
@@ -897,16 +897,16 @@ void       CreateLEDSet()
 		}		
 	}
 	
-	if(u_pwndDetectBox[4]!=NULL)
-	{
-		if(_TestBit(u_wInputValue, 4))	// 機械手急停
-		{bSelected = TRUE;	}
-		else 							
-		{bSelected = FALSE;}
-		u_pwndDetectBox[4]->SetPropValueT("selected",bSelected);
-		u_pwndDetectBox[4]->CreateA();
-		u_pwndDetectBox[4]->Update();
-	}
+//	if(u_pwndDetectBox[4]!=NULL)
+//	{
+//		if(_TestBit(u_wInputValue, 4))	// 機械手急停
+//		{bSelected = TRUE;	}
+//		else 							
+//		{bSelected = FALSE;}
+//		u_pwndDetectBox[4]->SetPropValueT("selected",bSelected);
+//		u_pwndDetectBox[4]->CreateA();
+//		u_pwndDetectBox[4]->Update();
+//	}
 }
 void	CreateStringSet()
 {
@@ -969,45 +969,56 @@ void	CreateStringSet()
 void       CreateDetectLEDSet()
 {
 	BOOL 	bSelected = FALSE;
-	u_dbInputValue = GetDBValue("MACHINE_INTERFACE_DWINTERNALINPUTSTATE");	//cjlee changed 2019/2/19 下午 02:01:33
-	u_wInputValue = static_cast<WORD>(u_dbInputValue.lValue);
-
+	u_dbEX_InputValue = GetDBValue("MACHINE_INTERFACE_DWEXTERNALINPUTSTATE");	//cjlee changed 2019/2/19 下午 02:01:33
+	u_wEX_InputValue = static_cast<DWORD>(u_dbEX_InputValue.lValue);
+	
 	u_dbOutputValue = GetDBValue("MACHINE_INTERFACE_DWINTERNALOUTPUTSTATE");	
-	u_wOutputValue = static_cast<WORD>(u_dbOutputValue.lValue);	
+	u_wOutputValue = static_cast<DWORD>(u_dbOutputValue.lValue);	
 
+	if(u_wEX_InputValue!=u_wEX_InputValue_OLD)
+	{
 		if(u_pwndDetectBox[0] != NULL) // 夾具1
 			{
-	   		if(_TestBit(u_wInputValue, 3))	bSelected = TRUE;	
+				printf("%d=%d\n",1,(u_wEX_InputValue>>2)&1);
+	   		if((u_wEX_InputValue>>2)&1)	bSelected = TRUE;
 		 		else 							bSelected = FALSE;
 		 		u_pwndDetectBox[0]->SetPropValueT("selected", bSelected);
-		 		u_pwndDetectBox[0]->CreateA();
 		 		u_pwndDetectBox[0]->Update();
 		 	}	
 		if(u_pwndDetectBox[1] != NULL) // 夾具2
 			{
-	   		if(_TestBit(u_wInputValue, 4))	bSelected = TRUE;	
+				printf("%d=%d\n",2,(u_wEX_InputValue>>3)&1);
+	   		if((u_wEX_InputValue>>3)&1)	bSelected = TRUE;
 		 		else 							bSelected = FALSE;
 		 		u_pwndDetectBox[1]->SetPropValueT("selected", bSelected);
-		 		u_pwndDetectBox[1]->CreateA();
 		 		u_pwndDetectBox[1]->Update();
 		 	}	
 		if(u_pwndDetectBox[2] != NULL) // 吸盤1
 			{
-	   		if(_TestBit(u_wInputValue, 5))	bSelected = TRUE;	
+				printf("%d=%d\n",3,(u_wEX_InputValue>>4)&1);
+	   		if((u_wEX_InputValue>>4)&1)	bSelected = TRUE;
 		 		else 							bSelected = FALSE;
 		 		u_pwndDetectBox[2]->SetPropValueT("selected", bSelected);
-		 		u_pwndDetectBox[2]->CreateA();
 		 		u_pwndDetectBox[2]->Update();
 		 	}	
 		if(u_pwndDetectBox[3] != NULL) // 吸盤2
 			{
-	   		if(_TestBit(u_wInputValue, 6))	bSelected = TRUE;	
+				printf("%d=%d\n",4,(u_wEX_InputValue>>5)&1);
+	   		if((u_wEX_InputValue>>5)&1)	bSelected = TRUE;
 		 		else 							bSelected = FALSE;
 		 		u_pwndDetectBox[3]->SetPropValueT("selected", bSelected);
-		 		u_pwndDetectBox[3]->CreateA();
 		 		u_pwndDetectBox[3]->Update();
 		 	}	
-
+		if(u_pwndDetectBox[4] != NULL) // 機械手急停
+			{
+				printf("%d=%d\n",5,(u_wEX_InputValue>>7)&1);
+	   		if((u_wEX_InputValue>>7)&1)	bSelected = TRUE;
+		 		else 							bSelected = FALSE;
+		 		u_pwndDetectBox[4]->SetPropValueT("selected", bSelected);
+		 		u_pwndDetectBox[4]->Update();
+		 	}	
+		u_wEX_InputValue_OLD = u_wEX_InputValue;
+	}
 }
 
 void	StepString()
