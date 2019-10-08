@@ -39,8 +39,13 @@ CtmWnd* pwndStr_Value_Now[11] 	={NULL}; // 現有值
 int iStr_Value_Now = 0;
 CtmWnd* pwndStr_Value_Old[11] 	={NULL}; // 原有值
 int iStr_Value_Old = 0;
+CtmWnd* pwndStr_Date[11] 	={NULL}; // 修改日期
+int iStr_Date = 0;
 CtmWnd* pwndStr_Time[11] 	={NULL}; // 修改時間	
 int iStr_Time = 0;
+
+int *a;
+
 /*---------------------------------------------------------------------------+
 |           View Content - statusbar                                         |
 +---------------------------------------------------------------------------*/
@@ -54,6 +59,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	iStr_Act	 		 = GetSpecialControlNum(pwndSender, "Str_Act", "CtmStaticX2", pwndStr_Act);
 	iStr_Value_Now = GetSpecialControlNum(pwndSender, "Str_Value_Now", "CtmStaticX2", pwndStr_Value_Now);
 	iStr_Value_Old = GetSpecialControlNum(pwndSender, "Str_Value_Old", "CtmStaticX2", pwndStr_Value_Old);
+	iStr_Date	 		 = GetSpecialControlNum(pwndSender, "Str_Date", "CtmStaticX2", pwndStr_Date);
 	iStr_Time	 		 = GetSpecialControlNum(pwndSender, "Str_Time", "CtmStaticX2", pwndStr_Time);
 	
 	Update_UserLog(); // 更新履歷內容
@@ -143,6 +149,7 @@ void Update_UserLog() // 更新履歷內容
 {
 	printf("Update_UserLog\n");
 	char  str_Temp[256] = "\0";
+	char  str_Date[256] = "\0";
 	char  str_Time[256] = "\0";
 	char  str_Action[256] = ""; // 描述文字
 	
@@ -189,7 +196,13 @@ void Update_UserLog() // 更新履歷內容
 			pwndStr_Value_Old[i]->Update();
 		}
 		
-		if(pwndStr_Time[i]!=NULL)
+		if(pwndStr_Date[i]!=NULL) // 修改日期
+		{
+			sprintf(str_Date, "%0d/%02d/%02d"	, Log->dateStart.month, Log->dateStart.day, Log->dateStart.year%100);
+			pwndStr_Date[i]->SetPropValueT("text",str_Date);
+			pwndStr_Date[i]->Update();
+		}
+		if(pwndStr_Time[i]!=NULL) // 修改時間
 		{
 			sprintf(str_Time, "%0d:%02d:%02d"	, Log->timeStart.hour, Log->timeStart.minute, Log->timeStart.second);
 			pwndStr_Time[i]->SetPropValueT("text",str_Time);
