@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Modbus:RTU xmlns:Modbus="http://www.techmation.com.cn" channel="5" buadrate="9600" parity="N" databits="8" stopbits="1">
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_INT_RESERVED160" Slave="0x01" Function="0x03"
+		Reg="0x0401" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_BYTE_RESERVED200" Slave="0x01" Function="0x06"
+		Reg="0x0200" Count="2" Attr="0x03">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_INT_RESERVED161" Slave="0x01" Function="0x03"
+		Reg="0x0009" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_INT_RESERVED162" Slave="0x01" Function="0x03"
+		Reg="0x0007" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_INT_RESERVED163" Slave="0x01" Function="0x03"
+		Reg="0x0005" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_BYTE_RESERVED207" Slave="0x01" Function="0x03"
+		Reg="0x0002" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_BYTE_RESERVED208" Slave="0x01" Function="0x03"
+		Reg="0x0000" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_BYTE_RESERVED201" Slave="0x01" Function="0x03"
+		Reg="0x000C" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_INT_RESERVED170" Slave="0x01" Function="0x03"
+		Reg="0x0514" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_INT_RESERVED171" Slave="0x01" Function="0x03"
+		Reg="0x0512" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_INT_RESERVED164" Slave="0x07" Function="0x03"
+		Reg="0xA041" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_BYTE_RESERVED210" Slave="0x07" Function="0x05"
+		Reg="0x0204" Count="2" Attr="0x03">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_BYTE_RESERVED211" Slave="0x07" Function="0x05"
+		Reg="0x0205" Count="2" Attr="0x03">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_BYTE_RESERVED217" Slave="0x07" Function="0x05"
+		Reg="0x0203" Count="2" Attr="0x03">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_BYTE_RESERVED218" Slave="0x07" Function="0x05"
+		Reg="0x0202" Count="2" Attr="0x03">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_INT_RESERVED165" Slave="0x07" Function="0x03"
+		Reg="0x7537" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_BYTE_RESERVED209" Slave="0x07" Function="0x03"
+		Reg="0x7533" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_BYTE_RESERVED219" Slave="0x07" Function="0x03"
+		Reg="0x7530" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_INT_RESERVED166" Slave="0x07" Function="0x03"
+		Reg="0xA15E" Count="2" Attr="0x02">
+	</Modbus:Component>
+	<Modbus:Component  ID="SYSX_OTHERS_OTHERS_INT_RESERVED167" Slave="0x07" Function="0x03"
+		Reg="0xA15C" Count="2" Attr="0x02">
+	</Modbus:Component>
+</Modbus:RTU>
+

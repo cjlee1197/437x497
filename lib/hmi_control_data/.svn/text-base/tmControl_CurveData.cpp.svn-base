@@ -1,0 +1,2627 @@
+/*===========================================================================+
+|  Class    : CtmControl_CurveData	                                         |
+|  Task     : CurveData Service Function	    	                     	 |
+|----------------------------------------------------------------------------|
+|  Compile  : G++(GCC)3.2                                                    |
+|  Link     : G++(GCC)3.2                                                    |
+|  Call     :                                                                |
+|----------------------------------------------------------------------------|
+|  Author   : James		                                                     |
+|  Version  : V1.00                                                          |
+|  Creation : 12/22/2008	                                                 |
+|  Revision : 12/22/2008  				                                     |
++===========================================================================*/
+#include	"tmControl_CurveData.h"
+#include	"../../utils.h"
+#include	"../../tmdebug.h"
+#include	"../../iotable.h"
+
+IMPLEMENT_DYNCREATE(CtmControl_CurveData, CtmControl)
+
+int 				CtmControl_CurveData::m_LastCurvePointIndex[MAX_CURVE_NUM];
+tmOilCurveFileData	CtmControl_CurveData::m_aryLastCurvePoint[MAX_CURVE_NUM][MAX_CURVE_TEMPNUM];
+
+double	lMidRecord = 0;
+/*===========================================================================+
+|           Constants                                                        |
++===========================================================================*/
+
+/*===========================================================================+
+|           Type	                                                         |
++===========================================================================*/
+
+/*===========================================================================+
+|           Global variable                                                  |
++===========================================================================*/
+
+/*===========================================================================+
+|           Function implementation                                          |
++===========================================================================*/	
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_CurveData::CtmControl_CurveData()				         |
+|  Task     :  CtmControl_CurveData構造函數                                    |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+CtmControl_CurveData::CtmControl_CurveData(): CtmControl()
+{
+	
+}
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_CurveData::~CtmControl_CurveData()				             |
+|  Task     :  CtmControl_CurveData析構函數                                      |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+CtmControl_CurveData::~CtmControl_CurveData()
+{
+		
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_CurveData::CreateSelf()				             	 |
+|  Task     :  Initialize Error Service                                      |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+int		CtmControl_CurveData::CreateSelf()
+{
+	InitControl();
+	return 0;	
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_CurveData::FreeSelf()				             	     |
+|  Task     :  Relase Error Service                                          |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+int		CtmControl_CurveData::FreeSelf()
+{
+	return 0;	
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_CurveData::AddControl(void *pParas[])  	     			 |
+|  Task     :  Save Error Record to sram and show promp	                     |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   WORD   pParas[0]        - 		                   			 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_CurveData::AddControl(void *pParas[])
+{
+	
+	return TRUE;
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_CurveData::ModifyControl(void *pParas[])  	     		 |
+|  Task     :  Modify Error Message 					                     |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   WORD   pParas[0]        - 		                  			 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_CurveData::ModifyControl(void *pParas[])
+{
+	return FALSE;	
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_CurveData::FindControl(void *pParas[], void *pFindPara) |
+|  Task     :  Search Error Message 					                     |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   void *   pFindPara      - 			               			 |
+|               void *pParas[]          - 存儲返回的警報訊息                 |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_CurveData::FindControl(void *pParas[], void *pFindPara)
+{
+	
+	return TRUE;
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_CurveData::DeleteControl(void *pDeletePara)             |
+|  Task     :  Clear All Error Message 					                     |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   void *pDeletePara       - 		                   			 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_CurveData::DeleteControl(void *pDeletePara)
+{
+	
+	return TRUE;	
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_CurveData::FixControl(void *pFixPara)		             |
+|  Task     :  Fix Error Message 					                     	 |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   void *pFixPara          -                        			 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_CurveData::FixControl(void *pFixPara)
+{
+	                                                                                                              
+	return TRUE;
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_CurveData::InitControl()					             |
+|  Task     :  Init Error Message 					                     	 |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   			            - 	                     			 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	CtmControl_CurveData::InitControl()
+{
+	memset(m_aryState, 0, sizeof(m_aryState));
+	memset(m_aryIndex, 0, sizeof(m_aryIndex));
+	memset(m_LastCurvePointIndex,0,sizeof(m_LastCurvePointIndex));
+	memset(&m_oilData, 0, sizeof(m_oilData));
+	memset(m_aryPoints, 0, sizeof(m_aryPoints));
+	memset(m_aryLastCurvePoint,0,sizeof(m_aryLastCurvePoint));
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  SetData(int nType, double* dX, double* dY, int nNum)			|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::SetData(int nType, double* dX, double* dY, int nNum)
+{
+	m_aryState[nType] = 1;
+	for (int i = 0; i < nNum; i++)
+	{
+		m_aryPoints[nType][m_aryIndex[nType]].dX = *(dX + i);
+		m_aryPoints[nType][m_aryIndex[nType]].dY = *(dY + i);
+		//printf("dx = %f,dy = %f\n",*dX,*dY);		
+		m_aryIndex[nType]++;
+		if (m_aryIndex[nType] >= MAX_POINT_NUM) m_aryIndex[nType]--;
+	}	
+	return m_aryIndex[nType];
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  SetData(int	nType, DWORD* dX, DWORD* dY, int nNum)			|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::SetData(int	nType, DWORD* dX, DWORD* dY, int nNum)
+{
+	return 0;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  SetData(int	nType, void* pInputData, int nNum)				|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::SetData(int	nType, void* pInputData, int nNum)
+{
+	m_aryState[nType] = 1;
+	for (int i = 0; i < nNum; i++)
+	{
+		if(nType < MAX_CURVE_NUM)
+		{
+			m_aryPoints[nType][m_aryIndex[nType]].dX = ((tmCurveOilPoint*)pInputData + i)->dX;
+			m_aryPoints[nType][m_aryIndex[nType]].dY = ((tmCurveOilPoint*)pInputData + i)->dY;
+			m_aryIndex[nType]++;
+			if (m_aryIndex[nType] >= MAX_POINT_NUM) m_aryIndex[nType]--;
+		}
+	}	
+	return m_aryIndex[nType];
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetMaxPosData()												|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetMaxPosData()
+{
+	long long opposite = 0,absolut = 0;
+	WORD	temp1,temp2;
+	int 	result;
+	opposite = GetDBValue("CONF_CODE_READ_CHL1_MAXPOSITION").lValue/**10*/;//20070815
+	temp1 = (WORD)GetDBValue("CONF_AD1_WRITE_CHL1_PHYSICALLENGTH").lValue;
+	temp2 = (WORD)GetDBValue("CONF_AD1_WRITE_CHL1_LENGTHP1MM").lValue;
+	absolut = (long long )(HEX2BCD(temp1)*10+(temp2/(0x0001))%0x0010);
+	if(opposite < absolut)
+		result = opposite; 
+	else
+		result = absolut; 
+	return result;
+}
+
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetInjectPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetInjectPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW_INJECT_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nInjectMaxPos = 0;
+	Result *= 2;
+	if (Result > 0)
+	{
+		//Sunny<20080320> modify<<<<<射出曲線的X軸最大值應該是儲料的終止位置+射退位置
+		//nInjectMaxPos = GetMaxPosData();// / Power(10, GetDBValue("MSET_SCRW_INJ_STEP1_POSITION").wPrecision);//GetDBValue(sz).lValue/Power(10,GetDBValue(CONF_CODE_READ_CHL1_MAXPOSITION).wPrecision);
+		int chargesegment = GetDBValue("MCONF_SCREW_RECOVERY_NULL_RANK").lValue;
+		sprintf(sz,	"%s%d%s", "MSET_SCRW_RCV_STEP",chargesegment,"_POSITION");
+
+		if(g_pExTable->GetTableValue(0,"D_GZFTVRT"))	//2013-3-14 
+			nInjectMaxPos = GetDBValue("CONF_CODE_READ_CHL1_MAXPOSITION").lValue;
+		else
+			nInjectMaxPos = (GetDBValue(sz).lValue+GetDBValue("MSET_SCRW_DCMP_NULL_POSITIONOFFSET").lValue);
+		//Sunny<20080320> modify>>>>>
+		
+		((tmCurveOilPoint*)pOutData)->dX = nInjectMaxPos;
+		//((tmCurveOilPoint*)pOutData)->dX = 130;
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(g_pExTable->GetTableValue(0,"D_DCMIX"))		//fuxy, 2010-7-7, for  混雙色機  
+			{
+				int	 nIndex;
+				nIndex = g_pDatabase->GetIndex("MSET_MLD_CLOSE_NULL_W04AC");
+				lX = GetDBValue(nIndex +j-1).lValue;
+			}
+			else if(g_pExTable->GetTableValue(0,"D_MIXDC")) //ZHBA 2010-12-17 for 海達 混雙色機
+			{
+				int	 nIndex;
+				nIndex = g_pDatabase->GetIndex("MSET_OTHR_OTHR_NULL_OTHERMACHINE64");
+				lX = GetDBValue(nIndex +j-1).lValue;
+			}
+			else
+			{
+				sprintf(sz,	"%s%d%s", "MSET_SCRW_INJ_STEP", j, "_POSITION");
+				lX = GetDBValue(sz).lValue;
+			}
+			
+			sprintf(sz, "%s%d%s", "MSET_SCRW_INJ_STEP", j, "_PRESSURE");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetInjectSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int 	CtmControl_CurveData::GetInjectSpeed(void* pOutData)	
+{
+	
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW_INJECT_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nInjectMaxPos = 0;
+	Result *= 2;
+	if (Result > 0)
+	{
+		//Sunny<20080320> modify<<<<<射出曲線的X軸最大值應該是儲料的終止位置+射退位置
+		//sprintf(sz,	"%s", "CONF_CODE_READ_CHL1_MAXPOSITION");			//射出的最大位置
+		//nInjectMaxPos = GetDBValue(sz).lValue;// / Power(10,GetDBValue("MSET_SCRW_INJ_STEP1_POSITION").wPrecision); 	
+		int chargesegment = GetDBValue("MCONF_SCREW_RECOVERY_NULL_RANK").lValue;
+		sprintf(sz,	"%s%d%s", "MSET_SCRW_RCV_STEP",chargesegment,"_POSITION");
+		nInjectMaxPos = (GetDBValue(sz).lValue+GetDBValue("MSET_SCRW_DCMP_NULL_POSITIONOFFSET").lValue);
+		//Sunny<20080320> modify>>>>>
+		  
+		((tmCurveOilPoint*)pOutData)->dX = nInjectMaxPos;                       
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(g_pExTable->GetTableValue(0,"D_DCMIX"))		//fuxy, 2010-7-7, for  混雙色機  
+			{
+				int	 nIndex;
+				nIndex = g_pDatabase->GetIndex("MSET_MLD_CLOSE_NULL_W04AC");
+				lX = GetDBValue(nIndex +j-1).lValue;
+			}
+			else if(g_pExTable->GetTableValue(0,"D_MIXDC")) //ZHBA 2010-12-17 for 海達 混雙色機
+			{
+				int	 nIndex;
+				nIndex = g_pDatabase->GetIndex("MSET_OTHR_OTHR_NULL_OTHERMACHINE64");
+				lX = GetDBValue(nIndex +j-1).lValue;
+			}
+			else
+			{
+				sprintf(sz,	"%s%d%s", "MSET_SCRW_INJ_STEP", j, "_POSITION");
+				lX = GetDBValue(sz).lValue;
+			}
+			
+			sprintf(sz, "%s%d%s", "MSET_SCRW_INJ_STEP", j, "_FLOW");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			
+			//	fans add
+			lY = lY * GetDBValue("SYSX_INJECT_INJECT_NULL_MAXFLOW").lValue / (100*Power(10, GetDBValue("MSET_SCRW_INJ_STEP1_FLOW").wPrecision));
+			//lY = lY * CtmConfig::GetInstance()->GetMaxInjectSpeed() / 100;
+			
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetInjectPos(void* pOutData)									|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetInjectPos(void* pOutData)	
+{
+	return 0;	
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetHoldPress(void* pOutData)									|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetHoldPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW_HOLDPRESSURE_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	Result *= 2;
+	if(Result > 0)
+	{
+		((tmCurveOilPoint*)pOutData)->dX = 0;
+		for(int i = 0, j = 1; i < Result; i += 2 ,j++ )		//fuxy, 2009-2-28,  i <= Result
+		{
+			sprintf(sz,	"%s%d%s", "MSET_SCRW_HLDP_STEP",j,"_TIME");
+			lX = GetDBValue(sz).lValue;// / Power(10,GetDBValue(sz).wPrecision);
+			
+			sprintf(sz, "%s%d%s", "MSET_SCRW_HLDP_STEP",j,"_PRESSURE");
+			lY = GetDBValue(sz).lValue;//Power(10,GetDBValue(sz).wPrecision);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+
+			if(g_pExTable->GetTableValue(0,"D_0HTZUY"))
+			{
+				if(lX)
+					lMidRecord = lY;
+				else
+					lY = lMidRecord;
+			}	
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i + 1)->dX = ((tmCurveOilPoint*)pOutData + i)->dX + lX;
+			//printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+			//		i-1,((tmCurveOilPoint*)pOutData + i-1)->dX,i-1,((tmCurveOilPoint*)pOutData + i-1)->dY = lY);
+			//printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+			//		i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetHoldSpeed(void* pOutData)									|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int 	CtmControl_CurveData::GetHoldSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW_HOLDPRESSURE_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	Result *= 2;
+	
+	if(Result > 0)
+	{
+		((tmCurveOilPoint*)pOutData)->dX = 0;
+		for(int i = 0, j = 1; i < Result;i += 2, j++ )	//fuxy, 2009-2-28,  i <= Result
+		{
+			sprintf(sz,	"%s%d%s", "MSET_SCRW_HLDP_STEP",j,"_TIME");
+			lX = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			
+			sprintf(sz, "%s%d%s", "MSET_SCRW_HLDP_STEP",j,"_FLOW");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			//	fans add
+			lY = lY * GetDBValue("SYSX_INJECT_INJECT_NULL_MAXFLOW").lValue / (100*Power(10, GetDBValue("MSET_SCRW_HLDP_STEP1_FLOW").wPrecision));
+			
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i + 1)->dX = ((tmCurveOilPoint*)pOutData + i)->dX +lX;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetChargeBackPres(void* pOutData)							|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int 	CtmControl_CurveData::GetChargeBackPres(void* pOutData)	//Sunny<20070815>
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW_RECOVERY_NULL_RANK").lValue;//2009-6-4  Result = GetDBValue("MCONF_SCREW_INJECT_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nInjectMaxPos = 0;
+	Result *= 2;
+	if (Result > 0)
+	{
+		sprintf(sz,	"%s", "CONF_CODE_READ_CHL1_MAXPOSITION");			//儲料的最大位置
+		nInjectMaxPos = GetDBValue(sz).lValue;// / Power(10,GetDBValue("MSET_SCRW_INJ_STEP1_POSITION").wPrecision); 
+		((tmCurveOilPoint*)pOutData)->dX = 0;//nInjectMaxPos;                       
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			sprintf(sz,	"%s%d%s", "MSET_SCRW_RCV_STEP", j, "_POSITION");
+			lX = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			if((lX == -1)||(lX == 0xFFFF)||(lX == 0xFFFFFFFF)) lX = 0; //JOYCE2009-5-27 ADD	
+			
+			sprintf(sz, "%s%d%s", "MSET_SCRW_RCV_STEP", j, "_BACKPRESSURE");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			if((lY == -1)||(lY == 0xFFFF)||(lY == 0xFFFFFFFF)) lY = 0; //JOYCE2009-5-27 ADD
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetChargeRPM(void* pOutData)									|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int 	CtmControl_CurveData::GetChargeRPM(void* pOutData)	//Sunny<20070815>
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW_RECOVERY_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nInjectMaxPos = 0;
+	Result *= 2;
+	if (Result > 0)
+	{
+		sprintf(sz,	"%s", "CONF_CODE_READ_CHL1_MAXPOSITION");			//射出的最大位置
+		nInjectMaxPos = GetDBValue(sz).lValue;// / Power(10,GetDBValue("MSET_SCRW_INJ_STEP1_POSITION").wPrecision); 
+		//printf("GetInjext speed max position is %lld. precision=%d\n", GetDBValue(sz).lValue, 
+				//GetDBValue("MSET_SCRW_INJ_STEP1_POSITION").wPrecision);  
+		((tmCurveOilPoint*)pOutData)->dX = 0;//nInjectMaxPos;                       
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			sprintf(sz,	"%s%d%s", "MSET_SCRW_RCV_STEP", j, "_POSITION");
+			lX = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			
+			sprintf(sz, "%s%d%s", "MSET_SCRW_RCV_STEP", j, "_FLOW");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			
+			//	fans add
+			lY = lY * GetDBValue("SYSX_INJECT_RECOVERY_NULL_MAXFLOW").lValue / (100*Power(10, GetDBValue("MSET_SCRW_RCV_STEP1_FLOW").wPrecision));
+			//lY = lY * CtmConfig::GetInstance()->GetMaxChargeSpeed() / 100;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetChargePress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetChargePress(void* pOutData)	
+{
+	return 0;
+}
+
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetMaxPosBData()												|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetMaxPosBData()
+{
+	long long opposite = 0,absolut = 0;
+	WORD	temp1,temp2;
+	int 	result;
+ if(g_pExTable->GetTableValue(0,"D_HTSMACH"))//2010-10-22 CHANNEL16
+	 {
+		opposite = GetDBValue("CONF_CODE_READ_CHL16_MAXPOSITION").lValue/**10*/;//20070815
+	  temp1 = (WORD)GetDBValue("CONF_AD1_WRITE_CHL16_PHYSICALLENGTH").lValue;
+	  temp2 = (WORD)GetDBValue("CONF_AD1_WRITE_CHL4_LENGTHP1MM").lValue;
+	 }
+  else
+	 {
+		opposite = GetDBValue("CONF_CODE_READ_CHL7_MAXPOSITION").lValue/**10*/;//20070815
+		temp1 = (WORD)GetDBValue("CONF_AD1_WRITE_CHL7_PHYSICALLENGTH").lValue;
+		temp2 = (WORD)GetDBValue("CONF_AD1_WRITE_CHL2_LENGTHP1MM").lValue;
+	 }
+	absolut = (long long )(HEX2BCD(temp1)*10+(temp2/(0x0001))%0x0010);
+	if(opposite < absolut)
+		result = opposite; 
+	else
+		result = absolut; 
+	return result;
+}
+
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetInjectPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetInjectBPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW2_INJECT_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nInjectMaxPos = 0;
+	Result *= 2;
+	if (Result > 0)
+	{
+		//Sunny<20080320> modify<<<<<射出曲線的X軸最大值應該是儲料的終止位置+射退位置
+		//nInjectMaxPos = GetMaxPosData();// / Power(10, GetDBValue("MSET_SCRW_INJ_STEP1_POSITION").wPrecision);//GetDBValue(sz).lValue/Power(10,GetDBValue(CONF_CODE_READ_CHL1_MAXPOSITION).wPrecision);
+		int chargesegment = 0;
+		  chargesegment = GetDBValue("MCONF_SCREW2_RECOVERY_NULL_RANK").lValue;
+		  
+		if(g_pDatabase->GetDataID("MCONF_SCREW2_RECOVERY_NULL_RANK") == -1)  //for DC
+			chargesegment = GetDBValue("SYS_HMI_NULL_NULL_RESERVED21").lValue;
+		
+		sprintf(sz,	"%s%d%s", "MSETB_SCRW2_RCV_STEP",chargesegment,"_POSITION");
+		nInjectMaxPos = (GetDBValue(sz).lValue+GetDBValue("MSETB_SCRW2_DCMP_NULL_POSITIONOFFSET").lValue);
+		//Sunny<20080320> modify>>>>>
+		((tmCurveOilPoint*)pOutData)->dX = nInjectMaxPos;
+		//((tmCurveOilPoint*)pOutData)->dX = 130;
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(g_pExTable->GetTableValue(0,"D_DCMIX"))		//fuxy, 2010-7-7, for  混雙色機 
+			{
+				int	 nIndex;
+				nIndex = g_pDatabase->GetIndex("MSET_COR_COR_NULL_W058F");
+				lX = GetDBValue(nIndex +j-1).lValue;
+			}
+			else if(g_pExTable->GetTableValue(0,"D_MIXDC")) //ZHBA 2010-12-17 for 海達 混雙色機
+			{
+				int	 nIndex;
+				nIndex = g_pDatabase->GetIndex("MSETB_SCRW2_DCMP_NULL_W13BA");
+				lX = GetDBValue(nIndex +j-1).lValue;
+			}
+			else
+			{
+				sprintf(sz,	"%s%d%s", "MSETB_SCRW2_INJ_STEP", j, "_POSITION");
+				lX = GetDBValue(sz).lValue;
+			}
+			
+			sprintf(sz, "%s%d%s", "MSETB_SCRW2_INJ_STEP", j, "_PRESSURE");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetInjectSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int 	CtmControl_CurveData::GetInjectBSpeed(void* pOutData)	
+{
+	
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW2_INJECT_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nInjectMaxPos = 0;
+	Result *= 2;
+	if (Result > 0)
+	{
+		//Sunny<20080320> modify<<<<<射出曲線的X軸最大值應該是儲料的終止位置+射退位置
+		int chargesegment = 0;
+		  chargesegment = GetDBValue("MCONF_SCREW2_RECOVERY_NULL_RANK").lValue;
+		if(g_pDatabase->GetDataID("MCONF_SCREW2_RECOVERY_NULL_RANK") == -1)
+		  chargesegment = GetDBValue("SYS_HMI_NULL_NULL_RESERVED21").lValue;
+		  
+		sprintf(sz,	"%s%d%s", "MSETB_SCRW2_RCV_STEP",chargesegment,"_POSITION");
+		nInjectMaxPos = (GetDBValue(sz).lValue+GetDBValue("MSETB_SCRW2_DCMP_NULL_POSITIONOFFSET").lValue);
+		//Sunny<20080320> modify>>>>>
+		((tmCurveOilPoint*)pOutData)->dX = nInjectMaxPos;                       
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(g_pExTable->GetTableValue(0,"D_DCMIX"))		//fuxy, 2010-7-7, for  混雙色機 
+			{
+				int	 nIndex;
+				nIndex = g_pDatabase->GetIndex("MSET_COR_COR_NULL_W058F");
+				lX = GetDBValue(nIndex +j-1).lValue;
+			}
+			else if(g_pExTable->GetTableValue(0,"D_MIXDC")) //ZHBA 2010-12-17 for 海達 混雙色機
+			{
+				int	 nIndex;
+				nIndex = g_pDatabase->GetIndex("MSETB_SCRW2_DCMP_NULL_W13BA");
+				lX = GetDBValue(nIndex +j-1).lValue;
+			}
+			else
+			{
+				sprintf(sz,	"%s%d%s", "MSETB_SCRW2_INJ_STEP", j, "_POSITION");
+				lX = GetDBValue(sz).lValue;
+			}
+			
+			sprintf(sz, "%s%d%s", "MSETB_SCRW2_INJ_STEP", j, "_FLOW");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			
+			//	fans add
+			lY = lY * GetDBValue("SYSX_INJECT2_INJECT_NULL_MAXFLOW").lValue / (100*Power(10, GetDBValue("MSETB_SCRW2_INJ_STEP1_FLOW").wPrecision));
+			if(g_pDatabase->GetDataID("SYSX_INJECT2_INJECT_NULL_MAXFLOW") == -1)
+				lY = lY * GetDBValue("SYSX_INJECT_INJECT_NULL_MAXFLOW").lValue / (100*Power(10, GetDBValue("MSETB_SCRW2_INJ_STEP1_FLOW").wPrecision));
+			//lY = lY * CtmConfig::GetInstance()->GetMaxInjectSpeed() / 100;
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetInjectPos(void* pOutData)									|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetInjectBPos(void* pOutData)	
+{
+	return 0;	
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetHoldPress(void* pOutData)									|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetHoldBPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW2_HOLDPRESSURE_NULL_RANK").lValue;
+	
+	if(g_pDatabase->GetDataID("MCONF_SCREW2_HOLDPRESSURE_NULL_RANK") == -1) //for DC
+		Result = GetDBValue("MCONF_OTHERS_OTHERS_NULL_RESERVED10").lValue;
+		
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	Result *= 2;
+	if(Result > 0)
+	{
+		((tmCurveOilPoint*)pOutData)->dX = 0;
+		for(int i = 0, j = 1; i < Result; i += 2 ,j++ )		//fuxy, 2009-2-28,  i <= Result
+		{
+			sprintf(sz,	"%s%d%s", "MSETB_SCRW2_HLDP_STEP",j,"_TIME");
+			lX = GetDBValue(sz).lValue;	// Power(10,GetDBValue(sz).wPrecision);
+			
+			sprintf(sz, "%s%d%s", "MSETB_SCRW2_HLDP_STEP",j,"_PRESSURE");
+			lY = GetDBValue(sz).lValue;	// Power(10,GetDBValue(sz).wPrecision);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i + 1)->dX = ((tmCurveOilPoint*)pOutData + i)->dX + lX;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetHoldSpeed(void* pOutData)									|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int 	CtmControl_CurveData::GetHoldBSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW2_HOLDPRESSURE_NULL_RANK").lValue;
+	
+	if(g_pDatabase->GetDataID("MCONF_SCREW2_HOLDPRESSURE_NULL_RANK") == -1)  //f0r DC
+	   Result = GetDBValue("MCONF_OTHERS_OTHERS_NULL_RESERVED10").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	Result *= 2;
+	
+	if(Result > 0)
+	{
+		((tmCurveOilPoint*)pOutData)->dX = 0;
+		for(int i = 0, j = 1; i < Result;i += 2, j++ )	//fuxy, 2009-2-28,  i <= Result
+		{
+			sprintf(sz,	"%s%d%s", "MSETB_SCRW2_HLDP_STEP",j,"_TIME");
+			lX = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			
+			sprintf(sz, "%s%d%s", "MSETB_SCRW2_HLDP_STEP",j,"_FLOW");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			//	fans add
+			lY = lY * GetDBValue("SYSX_INJECT2_INJECT_NULL_MAXFLOW").lValue / (100*Power(10, GetDBValue("MSETB_SCRW2_HLDP_STEP1_FLOW").wPrecision));
+			
+			if(g_pDatabase->GetDataID("SYSX_INJECT2_INJECT_NULL_MAXFLOW") == -1)
+				lY = lY * GetDBValue("SYSX_INJECT_INJECT_NULL_MAXFLOW").lValue / (100*Power(10, GetDBValue("MSETB_SCRW2_HLDP_STEP1_FLOW").wPrecision));//for DC
+			
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i + 1)->dX = ((tmCurveOilPoint*)pOutData + i)->dX +lX;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetChargeBackPres(void* pOutData)							|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int 	CtmControl_CurveData::GetChargeBBackPres(void* pOutData)	//Sunny<20070815>
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW2_RECOVERY_NULL_RANK").lValue;
+	
+	if(g_pDatabase->GetDataID("MCONF_SCREW2_RECOVERY_NULL_RANK") == -1)//for DC
+		Result = GetDBValue("SYS_HMI_NULL_NULL_RESERVED21").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nInjectMaxPos = 0;
+	Result *= 2;
+	if (Result > 0)
+	{
+		sprintf(sz,	"%s", "CONF_CODE_READ_CHL7_MAXPOSITION");			//儲料的最大位置
+		nInjectMaxPos = GetDBValue(sz).lValue;		//Power(10,GetDBValue("MSET_SCRW_INJ_STEP1_POSITION").wPrecision); 
+		((tmCurveOilPoint*)pOutData)->dX = 0;	//nInjectMaxPos;                       
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			sprintf(sz,	"%s%d%s", "MSETB_SCRW2_RCV_STEP", j, "_POSITION");
+			lX = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			
+			sprintf(sz, "%s%d%s", "MSETB_SCRW2_RCV_STEP", j, "_BACKPRESSURE");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetChargeRPM(void* pOutData)									|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int 	CtmControl_CurveData::GetChargeBRPM(void* pOutData)	//Sunny<20070815>
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW2_RECOVERY_NULL_RANK").lValue;
+	
+	if(g_pDatabase->GetDataID("MCONF_SCREW2_RECOVERY_NULL_RANK") == -1)//for DC
+		Result = GetDBValue("SYS_HMI_NULL_NULL_RESERVED21").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nInjectMaxPos = 0;
+	Result *= 2;
+	if (Result > 0)
+	{
+		sprintf(sz,	"%s", "CONF_CODE_READ_CHL7_MAXPOSITION");			//射出的最大位置
+		nInjectMaxPos = GetDBValue(sz).lValue;		//Power(10,GetDBValue("MSET_SCRW_INJ_STEP1_POSITION").wPrecision); 
+		((tmCurveOilPoint*)pOutData)->dX = 0;	//nInjectMaxPos;                       
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			sprintf(sz,	"%s%d%s", "MSETB_SCRW2_RCV_STEP", j, "_POSITION");
+			lX = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			
+			sprintf(sz, "%s%d%s", "MSETB_SCRW2_RCV_STEP", j, "_FLOW");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			//	fans add
+			lY = lY * GetDBValue("SYSX_INJECT2_RECOVERY_NULL_MAXFLOW").lValue / (100*Power(10, GetDBValue("MSETB_SCRW2_RCV_STEP1_FLOW").wPrecision));
+			
+			if(g_pDatabase->GetDataID("SYSX_INJECT2_RECOVERY_NULL_MAXFLOW") == -1) //for DC
+				lY = lY * GetDBValue("SYSX_INJECT_RECOVERY_NULL_MAXFLOW").lValue / (100*Power(10, GetDBValue("MSETB_SCRW2_RCV_STEP1_FLOW").wPrecision));
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetChargePress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetChargeBPress(void* pOutData)	
+{
+	return 0;
+}
+/*--------------------------------------------------------------------------+
+|  Function :  GetClmpClosePress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetClmpClosePress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_MOLD_CLOSE_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos =GetDBValue("MSET_MLD_OPEN_STEP5_POSITION").lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==Result/2-1)
+			{
+				lX = GetDBValue("MSET_MLD_CLOSE_PROTECT_POSITION").lValue;
+			}
+			else
+			{
+				sprintf(sz,	"%s%d%s", "MSET_MLD_CLOSE_STEP", j, "_POSITION");
+				lX = GetDBValue(sz).lValue;
+			}
+			
+			if(j==Result/2)
+				lY = GetDBValue("MSET_MLD_CLOSE_CLAMPUP_PRESSURE").lValue;
+			else if(j==Result/2-1)
+				lY = GetDBValue("MSET_MLD_CLOSE_PROTECT_PRESSURE").lValue;
+			else
+			{	
+				sprintf(sz, "%s%d%s", "MSET_MLD_CLOSE_STEP", j, "_PRESSURE");
+				lY = GetDBValue(sz).lValue;
+			}
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+			//printf("%d:[%d]:X=%d Y=%d\n",i,j,lX,lY);
+			
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i+1,((tmCurveOilPoint*)pOutData + i+1)->dX,i+1,((tmCurveOilPoint*)pOutData + i+1)->dY = lY);
+			
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetClmpCloseSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetClmpCloseSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_MOLD_CLOSE_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos =GetDBValue("MSET_MLD_OPEN_STEP5_POSITION").lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==Result/2-1)
+			{
+				lX = GetDBValue("MSET_MLD_CLOSE_PROTECT_POSITION").lValue;
+			}
+			else
+			{
+				sprintf(sz,	"%s%d%s", "MSET_MLD_CLOSE_STEP", j, "_POSITION");
+				lX = GetDBValue(sz).lValue;
+			}
+			
+			if(j==Result/2)
+				lY = GetDBValue("MSET_MLD_CLOSE_CLAMPUP_FLOW").lValue;
+			else if(j==Result/2-1)
+				lY = GetDBValue("MSET_MLD_CLOSE_PROTECT_FLOW").lValue;
+			else
+			{	
+				sprintf(sz, "%s%d%s", "MSET_MLD_CLOSE_STEP", j, "_FLOW");
+				lY = GetDBValue(sz).lValue;
+			}
+			
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+			
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetClmpOpenPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetClmpOpenPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_MOLD_OPEN_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos =GetDBValue("MSET_MLD_OPEN_STEP5_POSITION").lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+				sprintf(sz,	"%s%d%s", "MSET_MLD_OPEN_STEP", j, "_POSITION");
+				lX = GetDBValue(sz).lValue;
+			
+			sprintf(sz, "%s%d%s", "MSET_MLD_OPEN_STEP", j, "_PRESSURE");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			printf("[%d]:lY=%f\n",j,lY);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			else ((tmCurveOilPoint*)pOutData + i)->dX =0;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i+1,((tmCurveOilPoint*)pOutData + i+1)->dX,i+1,((tmCurveOilPoint*)pOutData + i+1)->dY = lY);
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetClmpOpenSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetClmpOpenSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_MOLD_OPEN_NULL_RANK").lValue;
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos =GetDBValue("MSET_MLD_OPEN_STEP5_POSITION").lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			sprintf(sz,	"%s%d%s", "MSET_MLD_OPEN_STEP", j, "_POSITION");
+			lX = GetDBValue(sz).lValue;
+			
+			sprintf(sz, "%s%d%s", "MSET_MLD_OPEN_STEP", j, "_FLOW");
+			lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			else 
+				((tmCurveOilPoint*)pOutData + i)->dX =0;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetChargPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetChargPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW_RECOVERY_NULL_RANK").lValue;
+	Result++; //加上射退壓力速度
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		sprintf(sz,	"%s%d%s", "MSET_SCRW_RCV_STEP",Result/2-1,"_POSITION");
+		nMaxPos = (GetDBValue(sz).lValue+GetDBValue("MSET_SCRW_DCMP_NULL_POSITIONOFFSET").lValue);
+		//printf("nMaxPos:%d \n",nMaxPos);
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==Result/2)
+			{
+				lX = nMaxPos;
+				lY = GetDBValue("MSET_SCRW_DCMP_NULL_PRESSURE").lValue;
+			}
+			else
+			{
+				sprintf(sz,	"%s%d%s", "MSET_SCRW_RCV_STEP", j, "_POSITION");
+				lX = GetDBValue(sz).lValue;
+				
+				sprintf(sz, "%s%d%s", "MSET_SCRW_RCV_STEP", j, "_PRESSURE");
+				lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			}
+			//printf("[%d]:lX:%f lY=%f\n",j,lX,lY);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			else
+				((tmCurveOilPoint*)pOutData + i)->dX =0;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetChargSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetChargSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = GetDBValue("MCONF_SCREW_RECOVERY_NULL_RANK").lValue;
+	Result++; //加上射退壓力速度
+	char	sz[128];
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		sprintf(sz,	"%s%d%s", "MSET_SCRW_RCV_STEP",Result/2-1,"_POSITION");
+		nMaxPos = (GetDBValue(sz).lValue+GetDBValue("MSET_SCRW_DCMP_NULL_POSITIONOFFSET").lValue);
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==Result/2)
+			{
+				lX = nMaxPos;
+				lY = GetDBValue("MSET_SCRW_DCMP_NULL_FLOW").lValue;
+			}
+			else
+			{
+				sprintf(sz,	"%s%d%s", "MSET_SCRW_RCV_STEP", j, "_POSITION");
+				lX = GetDBValue(sz).lValue;
+				
+				sprintf(sz, "%s%d%s", "MSET_SCRW_RCV_STEP", j, "_FLOW");
+				lY = GetDBValue(sz).lValue;///Power(10,GetDBValue(sz).wPrecision);
+			}
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			else 
+				((tmCurveOilPoint*)pOutData + i)->dX =0;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i+1,((tmCurveOilPoint*)pOutData + i+1)->dX,i+1,((tmCurveOilPoint*)pOutData + i+1)->dY = lY);
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetNozlInPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetNozlInPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSET_IJU_FWD_NULL_POSITION").lValue;
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MSET_IJU_FWD_SLOW_POSITION").lValue;
+				lY = GetDBValue("MSET_IJU_FWD_NULL_PRESSURE").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSET_IJU_FWD_NULL_POSITION").lValue;
+				lY = GetDBValue("MSET_IJU_FWD_SLOW_PRESSURE").lValue;
+			}
+			//printf("[%d]:lX:%f lY=%f\n",j,lX,lY);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			else
+				((tmCurveOilPoint*)pOutData + i)->dX =0;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetNozlInSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetNozlInSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSET_IJU_FWD_NULL_POSITION").lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MSET_IJU_FWD_SLOW_POSITION").lValue;
+				lY = GetDBValue("MSET_IJU_FWD_NULL_FLOW").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSET_IJU_FWD_NULL_POSITION").lValue;
+				lY = GetDBValue("MSET_IJU_FWD_SLOW_FLOW").lValue;
+			}
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			else 
+				((tmCurveOilPoint*)pOutData + i)->dX =0;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i+1,((tmCurveOilPoint*)pOutData + i+1)->dX,i+1,((tmCurveOilPoint*)pOutData + i+1)->dY = lY);
+		}
+	}
+	return Result;
+}
+
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetNozlOutPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetNozlOutPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSET_IJU_FWD_NULL_POSITION").lValue;
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MACH_IJU_BWD_SLOW_POSITION").lValue;
+				lY = GetDBValue("MSET_IJU_BWD_NULL_PRESSURE").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSET_IJU_BWD_NULL_POSITION").lValue;
+				lY = GetDBValue("MACH_IJU_BWD_SLOW_PRESSURE").lValue;
+			}
+			//printf("[%d]:lX:%f lY=%f\n",j,lX,lY);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetNozlOutSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetNozlOutSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSET_IJU_FWD_NULL_POSITION").lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MACH_IJU_BWD_SLOW_POSITION").lValue;
+				lY = GetDBValue("MSET_IJU_BWD_NULL_FLOW").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSET_IJU_BWD_NULL_POSITION").lValue;
+				lY = GetDBValue("MACH_IJU_BWD_SLOW_FLOW").lValue;
+			}
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i+1,((tmCurveOilPoint*)pOutData + i+1)->dX,i+1,((tmCurveOilPoint*)pOutData + i+1)->dY = lY);
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetEjetLeftInPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetEjetLeftInPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSET_EJT_FWD_NULL_POSITION").lValue;
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MSET_EJT_FWD_STEP1_POSITION").lValue;
+				lY = GetDBValue("MSET_EJT_FWD_STEP1_PRESSURE").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSET_EJT_FWD_NULL_POSITION").lValue;
+				lY = GetDBValue("MSET_EJT_FWD_NULL_PRESSURE").lValue;
+			}
+			//printf("[%d]:lX:%f lY=%f\n",j,lX,lY);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			else
+				((tmCurveOilPoint*)pOutData + i)->dX =0;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetEjetLeftInSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetEjetLeftInSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSET_EJT_FWD_NULL_POSITION").lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MSET_EJT_FWD_STEP1_POSITION").lValue;
+				lY = GetDBValue("MSET_EJT_FWD_STEP1_FLOW").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSET_EJT_FWD_NULL_POSITION").lValue;
+				lY = GetDBValue("MSET_EJT_FWD_NULL_FLOW").lValue;
+			}
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			else 
+				((tmCurveOilPoint*)pOutData + i)->dX =0;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i+1,((tmCurveOilPoint*)pOutData + i+1)->dX,i+1,((tmCurveOilPoint*)pOutData + i+1)->dY = lY);
+		}
+	}
+	return Result;
+}
+
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetEjetLeftOutPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetEjetLeftOutPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSET_EJT_FWD_NULL_POSITION").lValue;
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MSET_EJT_BWD_STEP1_POSITION").lValue;
+				lY = GetDBValue("MSET_EJT_BWD_NULL_VIBRATEPRESSURE").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSET_EJT_BWD_NULL_POSITION").lValue;
+				lY = GetDBValue("MSET_EJT_BWD_NULL_PRESSURE").lValue;
+			}
+			//printf("[%d]:lX:%f lY=%f\n",j,lX,lY);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetEjetLeftOutSpeed(void* pOutData)							|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetEjetLeftOutSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSET_EJT_FWD_NULL_POSITION").lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MSET_EJT_BWD_STEP1_POSITION").lValue;
+				lY = GetDBValue("MSET_EJT_BWD_NULL_VIBRATEFLOW").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSET_EJT_BWD_NULL_POSITION").lValue;
+				lY = GetDBValue("MSET_EJT_BWD_NULL_FLOW").lValue;
+			}
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i+1,((tmCurveOilPoint*)pOutData + i+1)->dX,i+1,((tmCurveOilPoint*)pOutData + i+1)->dY = lY);
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetEjetRhtInPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetEjetRhtInPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139A").lValue;
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W1397").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W1395").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139A").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W1398").lValue;
+			}
+			//printf("[%d]:lX:%f lY=%f\n",j,lX,lY);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			else
+				((tmCurveOilPoint*)pOutData + i)->dX =0;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetEjetRhtInSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetEjetRhtInSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139A").lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W1397").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W1396").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139A").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W1399").lValue;
+			}
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			else 
+				((tmCurveOilPoint*)pOutData + i)->dX =0;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i+1,((tmCurveOilPoint*)pOutData + i+1)->dX,i+1,((tmCurveOilPoint*)pOutData + i+1)->dY = lY);
+		}
+	}
+	return Result;
+}
+
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetEjetRhtOutPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetEjetRhtOutPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139A").lValue;
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139D").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139B").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A0").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139E").lValue;
+			}
+			//printf("[%d]:lX:%f lY=%f\n",j,lX,lY);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetEjetRhtOutSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetEjetRhtOutSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 2;
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139A").lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139D").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139C").lValue;
+			}
+			else
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A0").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W139F").lValue;
+			}
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+//			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+//					i+1,((tmCurveOilPoint*)pOutData + i+1)->dX,i+1,((tmCurveOilPoint*)pOutData + i+1)->dY = lY);
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetRotaryInPress(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetRotaryInPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 4;
+	
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	
+	char szMaxPosition[64] = {0};
+	char szMaxPosition2[64] = {0};
+	if(g_pExTable->GetTableValue(0,"D_CHCHFY")||g_pExTable->GetTableValue(0,"D_7AKFY"))
+	{
+		sprintf(szMaxPosition,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	11);
+   		sprintf(szMaxPosition2,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	12);
+	}
+	if(g_pExTable->GetTableValue(0,"D_NANTONG"))
+	{
+		sprintf(szMaxPosition,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	7);
+   		sprintf(szMaxPosition2,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	8);
+	}
+	
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue(szMaxPosition).lValue+GetDBValue(szMaxPosition2).lValue;
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = nMaxPos-GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A9").lValue;
+				lY = GetDBValue("MSET_OTHR_OTHR_NULL_MOLDSPECIAL21DATA").lValue;
+			}
+			else if(j==2)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13AC").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13AA").lValue;
+			}
+			else if(j==3)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13AD").lValue;
+				lY = GetDBValue("MSET_OTHR_OTHR_NULL_MOLDSPECIAL23DATA").lValue;
+			}
+			else if(j==4)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13B0").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13AE").lValue;
+			}
+			//printf("[%d]:lX:%f lY=%f\n",j,lX,lY);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetRotaryInSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetRotaryInSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 4;
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	char szMaxPosition[64] = {0};
+	char szMaxPosition2[64] = {0};
+	if(g_pExTable->GetTableValue(0,"D_CHCHFY")||g_pExTable->GetTableValue(0,"D_7AKFY"))
+	{
+		sprintf(szMaxPosition,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	11);
+   		sprintf(szMaxPosition2,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	12);
+	}
+	if(g_pExTable->GetTableValue(0,"D_NANTONG"))
+	{
+		sprintf(szMaxPosition,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	7);
+   		sprintf(szMaxPosition2,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	8);
+	}
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue(szMaxPosition).lValue+GetDBValue(szMaxPosition2).lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = nMaxPos-GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A9").lValue;
+				lY = GetDBValue("MSET_OTHR_OTHR_NULL_MOLDSPECIAL22DATA").lValue;
+			}
+			else if(j==2)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13AC").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13AB").lValue;
+			}
+			else if(j==3)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13AD").lValue;
+				lY = GetDBValue("MSET_OTHR_OTHR_NULL_MOLDSPECIAL24DATA").lValue;
+			}
+			else if(j==4)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13B0").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13AF").lValue;
+			}
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+					i,((tmCurveOilPoint*)pOutData + i)->dX,i,((tmCurveOilPoint*)pOutData + i)->dY = lY);
+			printf("press Xpiont %d is %f, Ypiont %d is %f\n",
+					i+1,((tmCurveOilPoint*)pOutData + i+1)->dX,i+1,((tmCurveOilPoint*)pOutData + i+1)->dY = lY);
+		}
+	}
+	return Result;
+}
+
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetRotaryOutPress(void* pOutData)							|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetRotaryOutPress(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 4;
+	
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	char szMaxPosition[64] = {0};
+	char szMaxPosition2[64] = {0};
+	if(g_pExTable->GetTableValue(0,"D_CHCHFY")||g_pExTable->GetTableValue(0,"D_7AKFY"))
+	{
+		sprintf(szMaxPosition,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	11);
+   		sprintf(szMaxPosition2,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	12);
+	}
+	if(g_pExTable->GetTableValue(0,"D_NANTONG"))
+	{
+		sprintf(szMaxPosition,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	7);
+   		sprintf(szMaxPosition2,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	8);
+	}
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue(szMaxPosition).lValue+GetDBValue(szMaxPosition2).lValue;
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = nMaxPos-GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A1").lValue;
+				lY = GetDBValue("MSET_ROTA_ROTA_NULL_PRESSURE").lValue;
+			}
+			else if(j==2)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A4").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A2").lValue;
+			}
+			else if(j==3)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A5").lValue;
+				lY = GetDBValue("MSET_ROTA_ROTA_SLOW_PRESSURE").lValue;
+			}
+			else if(j==4)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A8").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A6").lValue;
+			}
+			//printf("[%d]:lX:%f lY=%f\n",j,lX,lY);
+			if(g_pExTable->GetTableValue(0,"D_PRES1"))   /*ZHBA 2013-12-10 */
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetRotaryOutSpeed(void* pOutData)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+
+int		CtmControl_CurveData::GetRotaryOutSpeed(void* pOutData)	
+{
+	int	Result = 0;
+	Result = 4;
+	double	lX = 0, lY = 0;
+	int 	nMaxPos = 0;
+	Result *= 2;
+	char szMaxPosition[64] = {0};
+	char szMaxPosition2[64] = {0};
+	if(g_pExTable->GetTableValue(0,"D_CHCHFY")||g_pExTable->GetTableValue(0,"D_7AKFY"))
+	{
+		sprintf(szMaxPosition,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	11);
+   		sprintf(szMaxPosition2,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	12);
+	}
+	if(g_pExTable->GetTableValue(0,"D_NANTONG"))
+	{
+		sprintf(szMaxPosition,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	7);
+   		sprintf(szMaxPosition2,	"CONF_CODE_READ_CHL%d_MAXPOSITION",	8);
+	}
+	if (Result > 0)
+	{
+		nMaxPos = GetDBValue(szMaxPosition).lValue+GetDBValue(szMaxPosition2).lValue;
+		
+		((tmCurveOilPoint*)pOutData)->dX = nMaxPos;
+		
+		for (int i = 0, j = 1; i < Result; i += 2,j++ )
+		{
+			if(j==1)
+			{
+				lX = nMaxPos-GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A1").lValue;
+				lY = GetDBValue("MSET_ROTA_ROTA_NULL_FLOW").lValue;
+			}
+			else if(j==2)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A4").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A3").lValue;
+			}
+			else if(j==3)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A5").lValue;
+				lY = GetDBValue("MSET_ROTA_ROTA_SLOW_FLOW").lValue;
+			}
+			else if(j==4)
+			{
+				lX = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A8").lValue;
+				lY = GetDBValue("MSETB_SCRW2_DCMP_NULL_W13A7").lValue;
+			}
+			if(g_pExTable->GetTableValue(0,"D_AUSTONE"))   
+			lY =lY/10;
+			
+			if(i != 0)
+				((tmCurveOilPoint*)pOutData + i)->dX = ((tmCurveOilPoint*)pOutData + i-1)->dX;
+			((tmCurveOilPoint*)pOutData + i+1)->dX = lX;
+			((tmCurveOilPoint*)pOutData + i)->dY = lY;
+			((tmCurveOilPoint*)pOutData + i + 1)->dY = lY;
+		}
+	}
+	return Result;
+}
+/*--------------------------------------------------------------------------+
+|  Function :  GetData(int nType, void* pOutData)							|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetData(int nType, void* pOutData,int TempDataIndex)
+{
+	int Result = 0;
+	tmOilCurveFileData LastTimeData;
+	switch (nType)
+	{
+		case CURVE_OIL_DATA_INJECT_REALPRESS:           	//	inject pressure  
+		case CURVE_OIL_DATA_INJECT_REALSPEED:               //	inject speed     
+		case CURVE_OIL_DATA_INJECT_REALPOS:                 //	inject postion   
+		case CURVE_OIL_DATA_HOLD_REALPRESS:					//	hold press 
+		case CURVE_OIL_DATA_HOLD_REALSPEED:                 //	hold speed 
+		case CURVE_OIL_DATA_CHARRG_REALPRESS:				//	charge pressure
+		case CURVE_OIL_DATA_CHARGE_REALBACKPRES:			//  charge backpres real  //Sunny<20070815>
+		case CURVE_OIL_DATA_CHARGE_REALRPM:				 	//  charge RPM real			
+		
+		case CURVE_OIL_DATA_INJECTB_REALPRESS:           	//	injectB pressure  
+		case CURVE_OIL_DATA_INJECTB_REALSPEED:              //	injectB speed     
+		case CURVE_OIL_DATA_INJECTB_REALPOS:                //	injectB postion   
+		case CURVE_OIL_DATA_HOLDB_REALPRESS:				//	holdB press 
+		case CURVE_OIL_DATA_HOLDB_REALSPEED:                //	holdB speed 
+		case CURVE_OIL_DATA_CHARRGB_REALPRESS:				//	chargeB pressure
+		case CURVE_OIL_DATA_CHARGEB_REALBACKPRES:			//  chargeB backpres real  //Sunny<20070815>
+		case CURVE_OIL_DATA_CHARGEB_REALRPM:				//  chargeB RPM real			
+		case CURVE_OIL_DATA_INJECT_DXPOS:					//  inject pos real  //James ad 2009/9/18 01:48下午
+		case CURVE_OIL_DATA_HOLD_DXPOS:						//  hold pos real	//czz add 2009/10/27 07:10下午
+		case CURVE_OIL_DATA_INJECTB_DXPOS:					//  inject pos real  //James ad 2009/9/18 01:48下午
+		case CURVE_OIL_DATA_HOLDB_DXPOS:						//  hold pos real	//czz add 2009/10/27 07:10下午
+			Result = m_aryIndex[nType];
+			memcpy(pOutData, m_aryPoints[nType], m_aryIndex[nType] * sizeof(m_aryPoints[nType][0]));
+			break;
+		case CURVE_OIL_DATA_INJECT_SETPRESS	:				//	inject pressure setting
+			Result = GetInjectPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_INJECTB_SETPRESS	:			//	injectB pressure setting
+			Result = GetInjectBPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_INJECT_SETSPEED	:				//	inject	speed settting 
+			Result = GetInjectSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_INJECTB_SETSPEED	:			//	injectB	speed settting 
+			Result = GetInjectBSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_INJECT_SETPOS	:				//	inject pos seeting     
+			Result = GetInjectPos(pOutData);
+			break;
+		case CURVE_OIL_DATA_INJECTB_SETPOS	:				//	injectB pos seeting     
+			Result = GetInjectBPos(pOutData);
+			break;
+		case CURVE_OIL_DATA_HOLD_SETPRESS	:				//	hold press	setting    
+			Result = GetHoldPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_HOLDB_SETPRESS	:				//	holdB press	setting    
+			Result = GetHoldBPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_HOLD_SETSPEED	:				//  hold speed  setting    
+			Result = GetHoldSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_HOLDB_SETSPEED	:				//  holdB speed  setting    
+			Result = GetHoldBSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_CHARGE_SETPRESS	:				//	charge press setting   			
+			Result = GetChargePress(pOutData);
+			break;
+		case CURVE_OIL_DATA_CHARGEB_SETPRESS	:			//	chargeB press setting   			
+			Result = GetChargeBPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_CHARGE_SETBACKPRES:				//  charge backpres setting//Sunny<20070815>
+			Result = GetChargeBackPres(pOutData);
+			break;
+		case CURVE_OIL_DATA_CHARGEB_SETBACKPRES:			//  chargeB backpres setting//Sunny<20070815>
+			Result = GetChargeBBackPres(pOutData);
+			break;
+		case CURVE_OIL_DATA_CHARGE_SETRPM:				    //  charge RPM setting
+			Result = GetChargeRPM(pOutData);
+			break;
+		case CURVE_OIL_DATA_CHARGEB_SETRPM:				    //  chargeB RPM setting
+			Result = GetChargeBRPM(pOutData);
+			break;			
+		case CURVE_OIL_DATA_LASTTIME_INJECT_REALPRESS:		//get last time data yangpeng 2007/4/16 04:36下午
+		case CURVE_OIL_DATA_LASTTIME_INJECT_REALSPEED:
+		case CURVE_OIL_DATA_LASTTIME_INJECT_REALPOS:	
+		case CURVE_OIL_DATA_LASTTIME_HOLD_REALPRESS:	
+		case CURVE_OIL_DATA_LASTTIME_HOLD_REALSPEED:
+		case CURVE_OIL_DATA_LASTTIME_HOLD_REALPOS:		//2013-3-14 
+		case CURVE_OIL_DATA_LASTTIME_CHARRG_REALPRESS:
+			
+		case CURVE_OIL_DATA_LASTTIME_INJECTB_REALPRESS:		//get lastB time data yangpeng 2007/4/16 04:36下午
+		case CURVE_OIL_DATA_LASTTIME_INJECTB_REALSPEED:
+		case CURVE_OIL_DATA_LASTTIME_INJECTB_REALPOS:	
+		case CURVE_OIL_DATA_LASTTIME_HOLDB_REALPRESS:	
+		case CURVE_OIL_DATA_LASTTIME_HOLDB_REALSPEED:
+		case CURVE_OIL_DATA_LASTTIME_CHARRGB_REALPRESS:
+			Result = m_pCurveFile->GetInstance()->ReadRecord(ID_CURVEDATA_SRAMFILE, (nType + 1)*MAX_CURVE_NUM, &LastTimeData);
+			if(LastTimeData.nID == nType && Result != 0)
+			{	
+				Result = LastTimeData.nCount;
+				memcpy(pOutData, LastTimeData.Points,Result*sizeof(CURVEPOINT));
+			}
+			break;
+		case CURVE_OIL_DATA_INJECT_TEMPORARILY_REALPRESS:	//get last five data yangpeng 2007/4/16 04:36下午
+		case CURVE_OIL_DATA_INJECT_TEMPORARILY_REALSPEED:	
+		case CURVE_OIL_DATA_INJECT_TEMPORARILY_REALPOS:	    
+		case CURVE_OIL_DATA_HOLD_TEMPORARILY_REALPRESS:	    
+		case CURVE_OIL_DATA_HOLD_TEMPORARILY_REALSPEED:	    
+		case CURVE_OIL_DATA_CHARRG_TEMPRARILY_REALPRESS:
+		case CURVE_OIL_DATA_INJECT_TEMPORARILY_DXPOS:		//  inject  pos temporarily data
+		case CURVE_OIL_DATA_HOLD_TEMPORARILY_DXPOS:
+			
+		case CURVE_OIL_DATA_INJECTB_TEMPORARILY_REALPRESS:	//get lastB five data yangpeng 2007/4/16 04:36下午
+		case CURVE_OIL_DATA_INJECTB_TEMPORARILY_REALSPEED:	
+		case CURVE_OIL_DATA_INJECTB_TEMPORARILY_REALPOS:	    
+		case CURVE_OIL_DATA_HOLDB_TEMPORARILY_REALPRESS:	    
+		case CURVE_OIL_DATA_HOLDB_TEMPORARILY_REALSPEED:	    
+		case CURVE_OIL_DATA_CHARRGB_TEMPRARILY_REALPRESS:
+		case CURVE_OIL_DATA_INJECTB_TEMPORARILY_DXPOS:
+		    if(TempDataIndex <= MAX_CURVE_TEMPNUM)
+			{
+				Result = m_aryLastCurvePoint[nType - TEMPORARILY_TO_NEW][TempDataIndex].nCount;
+				memcpy(pOutData,m_aryLastCurvePoint[nType - TEMPORARILY_TO_NEW][TempDataIndex].Points,
+						Result * sizeof(CURVEPOINT));
+			}
+			else Result = 0;
+			break;
+		case CURVE_OIL_DATA_CLMPCLOSE_SETPRESS:			//	clmpclose pressure setting
+			Result = GetClmpClosePress(pOutData);
+			break;
+		case CURVE_OIL_DATA_CLMPCLOSE_SETSPEED:			//	clmpclose	speed settting 
+			Result = GetClmpCloseSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_CLMPOPEN_SETPRESS:			//	clmpclose pressure setting
+			Result = GetClmpOpenPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_CLMPOPEN_SETSPEED:			//	clmpclose	speed settting 
+			Result = GetClmpOpenSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_CHARGESUCK_SETPRESS:			//	charge	pressure settting 
+			Result = GetChargPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_CHARGESUCK_SETSPEED:			//	charge	speed settting 
+			Result = GetChargSpeed(pOutData);
+			break;		
+		case CURVE_OIL_DATA_NOZLIN_SETPRESS:			//	nozlin pressure setting
+			Result = GetNozlInPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_NOZLIN_SETSPEED:			//	nozlin	speed settting 
+			Result = GetNozlInSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_NOZLOUT_SETPRESS:			//	nozlout pressure setting
+			Result = GetNozlOutPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_NOZLOUT_SETSPEED:			//	nozlout	speed settting 
+			Result = GetNozlOutSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_EJETLEFTFWD_SETPRESS:			//	leftejetfwd pressure setting
+			Result = GetEjetLeftInPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_EJETLEFTFWD_SETSPEED:			//	leftejetfwd	speed settting 
+			Result = GetEjetLeftInSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_EJETLEFTBWD_SETPRESS:			//	leftejetbwd pressure setting
+			Result = GetEjetLeftOutPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_EJETLEFTBWD_SETSPEED:			//	leftejetbwd	speed settting 
+			Result = GetEjetLeftOutSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_EJETRHTFWD_SETPRESS:			//	rightejetfwd pressure setting
+			Result = GetEjetRhtInPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_EJETRHTFWD_SETSPEED:			//	rightejetfwd	speed settting 
+			Result = GetEjetRhtInSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_EJETRHTBWD_SETPRESS:			//	rightejetbwd pressure setting
+			Result = GetEjetRhtOutPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_EJETRHTBWD_SETSPEED:			//	rightejetbwd	speed settting 
+			Result = GetEjetRhtOutSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_ROTFWD_SETPRESS:				//	rotfwd pressure setting
+			Result = GetRotaryInPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_ROTFWD_SETSPEED:				//	rotfwd	speed settting 
+			Result = GetRotaryInSpeed(pOutData);
+			break;
+		case CURVE_OIL_DATA_ROTBWD_SETPRESS:				//	rotbwd pressure setting
+			Result = GetRotaryOutPress(pOutData);
+			break;
+		case CURVE_OIL_DATA_ROTBWD_SETSPEED:				//	rotbwd	speed settting 
+			Result = GetRotaryOutSpeed(pOutData);
+			break;
+	}
+	return Result;
+	
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  SetComplete(int nType)										|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+void	CtmControl_CurveData::SetComplete(int nType)
+{
+	//yangpeng 2007/4/13 01:53下午 ,每種曲線多加了一條存儲,即為當前模和上一模的曲線
+	
+	int nTemp = m_aryIndex[nType];
+    m_aryIndex[nType] = 0;
+	tmOilCurveFileData LastTimeData;
+	int	ReadState = 0;
+	//將當前模數的曲線存入為上一模
+	ReadState = m_pCurveFile->GetInstance()->ReadRecord(ID_CURVEDATA_SRAMFILE, nType + 1, &LastTimeData);
+	if(ReadState != 0)
+		m_pCurveFile->GetInstance()->WriteRecord(ID_CURVEDATA_SRAMFILE, (nType + 1)+NEW_TO_LASTTIME, &LastTimeData);
+    
+	m_oilData.nID = nType;		//	nType equal nID in oil, now.
+	m_oilData.nCount = nTemp;	//m_aryIndex[nType];
+	memcpy(m_oilData.Points, m_aryPoints[nType], m_oilData.nCount * sizeof(m_aryPoints[nType][0]));
+	
+	//將當前模數的曲線存入到臨時的buffer
+	if(m_LastCurvePointIndex[nType] >= MAX_CURVE_TEMPNUM)
+		m_LastCurvePointIndex[nType] = 0; 
+	m_aryLastCurvePoint[nType][m_LastCurvePointIndex[nType]].nID = nType;
+	m_aryLastCurvePoint[nType][m_LastCurvePointIndex[nType]].nCount = nTemp;
+	memcpy(m_aryLastCurvePoint[nType][m_LastCurvePointIndex[nType]].Points, m_aryPoints[nType], 
+											nTemp * sizeof(m_aryPoints[nType][0]));
+	m_LastCurvePointIndex[nType]++;
+	
+	m_pCurveFile->GetInstance()->WriteRecord(ID_CURVEDATA_SRAMFILE, nType + 1, &m_oilData);
+	
+}
+
+/*--------------------------------------------------------------------------+
+|  Function :  SetState(int nType, int nState)								|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::SetState(int nType, int nState)
+{
+	m_aryState[nType] = nState;
+	return m_aryIndex[nType];
+}
+
+
+/*--------------------------------------------------------------------------+
+|  Function :  GetState(int nType)											|	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+int		CtmControl_CurveData::GetState(int nType)	
+{
+	return m_aryState[nType];
+}										
+/*--------------------------------------------------------------------------+
+|  Function :   ClearBuffer()											    |	
+|  Task     :                                                               |
++---------------------------------------------------------------------------+
+|  Call     :                                                               |
+|                                                                           |
+|  Parameter:                           -                                   |
+|                                                                           |
+|  Return   :                           -                                   |
++--------------------------------------------------------------------------*/
+void    CtmControl_CurveData::ClearBuffer(int nType)
+{
+    if(nType >= 0 )
+	{
+		memset(&m_LastCurvePointIndex[nType],0,sizeof(int));
+ 		memset(m_aryLastCurvePoint[nType],0,sizeof(tmOilCurveFileData)*MAX_CURVE_TEMPNUM);
+ 		memset(m_aryPoints[nType],0,sizeof(tmCurveOilPoint)*MAX_POINT_NUM);
+ 		m_aryIndex[nType] = 0;
+	}
+	else
+	{
+		memset(m_LastCurvePointIndex,0,sizeof(int)*MAX_CURVE_NUM);
+ 		memset(m_aryLastCurvePoint,0,sizeof(tmOilCurveFileData)*MAX_CURVE_NUM*MAX_CURVE_TEMPNUM);
+ 		memset(m_aryPoints,0,sizeof(tmCurveOilPoint)*MAX_CURVE_NUM*MAX_POINT_NUM);	
+ 		memset(m_aryIndex,0,sizeof(m_aryIndex));
+	}
+}
+
+
+#ifndef	D_BEOBJECT_CTMCONTRL_CURVEDATA
+CObject*	CreateInstance(char* Name)
+{
+	CObject*	pResult = Create(Name);
+	if (pResult != NULL)
+	{
+		(static_cast<CtmPackClass*>(pResult))->CreateSelf();
+	}
+	return pResult;
+}
+
+void	ReleaseInstance(CObject* pInstance)
+{
+	if (pInstance != NULL)
+		(static_cast<CtmPackClass*>(pInstance))->FreeSelf();
+	delete pInstance;
+	pInstance = NULL;
+}
+
+#endif

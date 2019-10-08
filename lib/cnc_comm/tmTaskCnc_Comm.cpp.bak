@@ -1,0 +1,446 @@
+/*===========================================================================+
+|  Class 	: TaskCnc_Comm                    				 	 		 	 |
+|  Task     : TaskCnc_Comm Utilities Cpp File	                 	 		 |
+|----------------------------------------------------------------------------|
+|  Compile  : G++(GCC) V3.2                                                  |
+|  Link     : G++(GCC) V3.2                                                  |
+|  Call     :                                                                |
+|----------------------------------------------------------------------------|
+|  Author   : Sunny  	                                                     |
+|  Version  : V1.00                                                          |
+|  Creation : 05/10/2012                                                     |
+|  Revision :                                                                |
++===========================================================================*/
+#include	"../../package.h"
+#include	"../../timer.h"
+#include	"../../main.h"
+#include	"../../tmdebug.h"
+#include	"../../init.h"
+#include	"../../utils.h"
+#include	"../../commonaction.h"
+#include	"../../ethnet.h"
+#include	"../libComm.h"
+#include	"../../libCNCComm.h"
+#include	"tmTaskCnc_Comm.h"
+
+IMPLEMENT_DYNCREATE(CtmTaskCnc_Comm, CTaskHost)
+typedef void *(* PRSRUN)(void *);
+
+long	CNT_INT_CHECK_ONLNE_TIME = 3000;
+
+char*	g_Dsp28RealID[] =
+{
+	"STATE_OTHR_OTHR_NULL_OPERSTEP1",
+	"STATE_OTHR_OTHR_NULL_OPERSTEP2"
+};
+
+CtmTaskCnc_Comm*	CtmTaskCnc_Comm::m_pSelf = NULL;
+WORD			CtmTaskCnc_Comm::m_wSourceIPPort[] = {192,168,0,125,2310};
+WORD			CtmTaskCnc_Comm::m_wDesIPPort[] = {192,168,0,26,2310};
+NC_Ethernet *eth_data;
+pthread_mutexattr_t attr;
+
+Update_File_Name *g_Rx_UpdateFile=NULL;
+Update_File_Name *g_Tx_UpdateFile=NULL;
+
+NC_Ethernet	Last_Send_Ethernet_Date;
+
+CtmTaskCnc_Comm::CtmTaskCnc_Comm(): CTaskHost()
+{
+	//printf("CtmTaskCnc_Comm::CtmTaskCnc_Comm(): CTaskHost()\n");
+	m_pSelf				= this;
+	m_nConnecting		= 1;
+	m_nConnectStatus	= 2;
+	
+	m_nMaxElements		= 50;
+	m_nMaxLen			= 1460;
+	//m_lCheckQuickTimer	= CNT_INT_CHECK_ONLNE_TIME;
+	m_lOnLineTime		= CNT_INT_CHECK_ONLNE_TIME;
+	m_lActualRealCycTime	= 50;
+	
+	//AddCounter(&m_lCheckQuickTimer, m_idMe);
+	AddCounter(&m_lOnLineTime, 		m_idMe);
+	AddCounter(&m_lActualRealCycTime, m_idMe);
+	
+	pthread_mutexattr_init(&attr);
+  pthread_mutexattr_settype(&attr,PTHREAD_MUTEX_ERRORCHECK_NP);
+  pthread_mutex_init(&m_pSelf->m_mutex, &attr);
+		
+	memset(m_RxBuffer, 0, sizeof(m_RxBuffer));
+	memset(m_TxBuffer, 0, sizeof(m_TxBuffer));
+	
+	RegisterMessage(MSG_DSP28, m_idMe);
+}
+
+CtmTaskCnc_Comm::~CtmTaskCnc_Comm()
+{
+	//DeleteCounter(&m_lCheckQuickTimer, m_idMe);
+	DeleteCounter(&m_lOnLineTime, m_idMe);
+	DeleteCounter(&m_lActualRealCycTime, m_idMe);
+	
+	UnRegisterAllMessage(MSG_DSP28);
+}
+
+//	execute it atfer the contructor
+int		CtmTaskCnc_Comm::CreateSelf()
+{
+	CTaskHost::CreateSelf();
+	m_pData				= new BYTE[m_nMaxLen];
+	
+	m_bDiagFlag			= FALSE;
+	m_nDiagReqNum		= 0;
+	m_lActualDataCount	= 0;
+	m_lActualReqCycTime	= 0;
+	memset(m_lActualDataID, 0, sizeof(m_lActualDataID));
+	
+	//m_pHostProtocol	= static_cast<CtmHostProtocol*>(g_pPackage->CreateClassInstance("HostCNCProtocol"));
+	pthread_attr_init(&m_ThreadAttr);
+	pthread_attr_setdetachstate(&m_ThreadAttr, PTHREAD_CREATE_DETACHED);
+	pthread_create(&m_OpenThreadID, NULL, (PRSRUN)_Open, NULL);
+	
+	if(pthread_create(&m_UpdateFileThreadID, NULL,(PRSRUN)pthread_ethernet_file, NULL) != 0)
+		perror("CEthernet::Open Ethernet_RxRun:");
+
+	return 0;
+}
+
+//	execute it before the destructor
+int		CtmTaskCnc_Comm::FreeSelf()
+{
+	//	destroy m_pHostProtocol
+	//g_pPackage->ReleaseClassInstance("HostCNCProtocol", m_pHostProtocol);
+	
+	if (m_nDeviceID	!= -1) 
+		DelDevice(m_nDeviceID);
+	delete []m_pData;
+	return CTaskHost::FreeSelf();
+}
+
+
+void	CtmTaskCnc_Comm::_Open(void *pData)
+{	
+	pthread_detach(pthread_self());	
+	if(pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL) != 0)
+	{
+		
+	}
+	
+	printf("1=%d, 2=%d, 3=%d, 4=%d, 5=%d \n", m_wSourceIPPort[0], m_wSourceIPPort[1],
+				m_wSourceIPPort[2], m_wSourceIPPort[3], m_wSourceIPPort[4]);
+	//	init the socket
+	m_pSelf->m_nConnecting				= 1;
+	m_pSelf->m_ethernet.srcAddr 		= m_wSourceIPPort[0] | m_wSourceIPPort[1] << 8 | 
+										m_wSourceIPPort[2] << 16 | m_wSourceIPPort[3] << 24;	//	source ip
+	m_pSelf->m_ethernet.dstAddr 		= m_wDesIPPort[0] | m_wDesIPPort[1] << 8 | 		
+										m_wDesIPPort[2] << 16 | m_wDesIPPort[3] << 24;			//	dest ip 
+	m_pSelf->m_ethernet.wsrcPort		= m_wSourceIPPort[4];									//	source port
+	m_pSelf->m_ethernet.wdstPort		= m_wDesIPPort[4];										//	dest port
+	m_pSelf->m_ethernet.nDomain 		= AF_INET;
+	m_pSelf->m_ethernet.nType   		= SOCK_STREAM;
+	m_pSelf->m_ethernet.wRxBufferSize 	= sizeof(m_pSelf->m_RxBuffer);
+	m_pSelf->m_ethernet.fpRxBuffer	 	= m_pSelf->m_RxBuffer;
+	m_pSelf->m_ethernet.wTxBufferSize 	= sizeof(m_pSelf->m_TxBuffer);
+	m_pSelf->m_ethernet.fpTxBuffer	 	= m_pSelf->m_TxBuffer;
+	
+	if (m_pSelf->m_nDeviceID	!= -1) 
+		DelDevice(m_pSelf->m_nDeviceID);
+		
+	m_pSelf->m_nDeviceID	= -1;
+	
+	//printf("111.m_pSelf->m_nDeviceID=%d \n", m_pSelf->m_nDeviceID);
+	//	set the Rev Function
+	while (TRUE)
+	{
+		//printf("222.m_pSelf->m_nDeviceID=%d \n", m_pSelf->m_nDeviceID);
+		if (m_pSelf->m_nDeviceID == -1)
+		{
+			m_pSelf->m_ethernet.NetFunc		= (NETFUNC)ResValueFunc;
+			//printf("333.m_pSelf->m_nDeviceID=%d \n", m_pSelf->m_nDeviceID);
+			m_pSelf->m_nDeviceID			= AddDevice("CEthernet", &m_pSelf->m_ethernet);
+			
+			//printf("444.m_pSelf->m_nDeviceID=%d \n", m_pSelf->m_nDeviceID);
+			if(m_pSelf->m_nDeviceID != -1 )	break;
+			else					usleep(CNT_INT_CHECK_ONLNE_TIME * 1000);
+		}
+	}
+		
+	
+	/*NC_Ethernet Send_Ethernet_Data;
+	memset(&Send_Ethernet_Data,0,sizeof(Send_Ethernet_Data));
+	Send_Ethernet_Data.type=INI_DATACOMM;
+	Send_Ethernet_Data.s_arr=0;
+	Send_Ethernet_Data.len=5;
+	SendData(m_pSelf->m_nDeviceID,(char *)&Send_Ethernet_Data,sizeof(Send_Ethernet_Data));*/
+	Ethernet_Break=0;	
+		
+	//WriteValue(101,0,0,NULL);
+	int	nTime 	= 0;
+	int	nNum 	= 0;
+	while (m_pSelf->m_nConnectStatus != 0)
+	{
+		//	7 is LineStatus,	
+		nTime = CNT_INT_CHECK_ONLNE_TIME;
+//		m_pSelf->ReqValues(CONST_REQ_LINESTATUS, 1, &nTime, NULL);
+	
+		//	1 is Actual value
+		nTime = 50;	//	the unit is ms, 
+//		m_pSelf->ReqValues(CONST_REQ_ACTUAL, sizeof(g_Dsp28RealID) / sizeof(g_Dsp28RealID[0]), g_Dsp28RealID, &nTime);	
+		//printf("Send \n");
+		usleep(500 * 1000);
+		
+	}
+	m_pSelf->m_nConnecting	= 0;
+}
+
+void	CtmTaskCnc_Comm::pthread_ethernet_file()
+{
+	char Filename[50];
+	Update_File_Name	*temp = NULL;
+	static int timer=0;
+	while(1)
+	{
+		if(g_Tx_UpdateFile==NULL)
+		{
+			usleep(50*1000);
+			//printf("pthread_ethernet_file\n");
+			continue;
+		}
+		strcpy(Filename,g_Tx_UpdateFile->filename);
+		printf("g_Tx_UpdateFile->filename = %s\n",g_Tx_UpdateFile->filename);
+		Etnernet_File(Filename);
+		while(g_Rx_UpdateFile==g_Tx_UpdateFile)
+		{
+			timer++;
+			usleep(50);
+			if(timer>5000) 
+			{
+				free(g_Rx_UpdateFile);
+				g_Rx_UpdateFile = g_Tx_UpdateFile = NULL;
+				printf("pthread_ethernet_file return\n");
+				return;
+			}
+		}
+		timer=0;
+		temp = g_Tx_UpdateFile;
+		g_Tx_UpdateFile = g_Tx_UpdateFile->next;
+		free(temp);
+	}
+}
+
+
+void	CtmTaskCnc_Comm::ResValueFunc(char *pData, int nLength)
+{
+	static int sum_recv=0;
+//	printf("ResValueFunc nLength=%d , title = %d\n", nLength,*(WORD*)pData);
+	//eth_data = (NC_Ethernet*)pData;
+	//int iLength=0;
+	switch(*(WORD*)pData)
+	{
+		/*case HMI2NC_UPDATE:
+		case HMI2NC_GETDATE:
+		case HMI2NC_FILE:
+		case HMI2NC_CONFIRM_FILE:
+		case HMI2NC_TEACHPOINT:
+		case HMI2NC_RE_PEOG_END:
+		case HMI2NC_INI_OK:
+			;
+		break;*/
+		case NC2HMI_UPDATE:
+			if(g_pRxCNCData!=NULL)
+			{
+				sum_recv++;
+				char* recv_date = pData;
+				recv_date += sizeof(WORD)+sizeof(long);
+				long s_arr = *(long*)recv_date;
+				recv_date += sizeof(long);
+				WORD len = *(WORD*)recv_date;
+				recv_date += sizeof(WORD);
+				//printf("recv_date = %d\n",*(long*)recv_date);
+				printf("NO.%d NC2HMI_UPDATE s_arr=%d len=%d\n",sum_recv,s_arr,len);
+				memcpy((char*)&g_pRxCNCData->s_mlc_i_bit[0]+s_arr,(char*)recv_date,len);
+				//printf("g_pRxCNCData->CNC_machine = %d  %d  %d \n",g_pRxCNCData->CNC_machine.x,g_pRxCNCData->CNC_machine.y,g_pRxCNCData->CNC_machine.z);
+				//printf("222.NC2HMI_UPDATE s_arr=%d len=%d\n",s_arr,len);
+			}
+		break;
+		case NC2HMI_FILE_DEMAND:
+		{
+			sum_recv++;
+			char* recv_date = pData;
+			recv_date += sizeof(WORD);
+			long filename_len = *(long*)recv_date;
+			recv_date += sizeof(long);
+			char filename[filename_len];
+			memcpy(filename,recv_date,filename_len);
+			printf("NO.%d NC2HMI_FILE_DEMAND filelen=%d , filename=%s\n",sum_recv,filename_len,filename);
+			
+			Update_File_Name *temp=(Update_File_Name*)malloc(sizeof(Update_File_Name));
+			memset(temp,0,sizeof(Update_File_Name));
+			strcpy(temp->filename,filename);
+			temp->next=NULL;
+			if(g_Rx_UpdateFile == NULL)	
+			{
+				g_Rx_UpdateFile=g_Tx_UpdateFile=temp;
+			}
+			else 
+			{
+				g_Rx_UpdateFile->next = temp;
+				g_Rx_UpdateFile = temp;
+			}
+		}
+		break;
+		case NC2HMI_RESET:
+			sum_recv++;
+			printf("NO.%d NC2HMI_RESET s_arr=%d len=%d\n",sum_recv);
+			_PutKeyTail(_F10);
+		break;
+	}
+	printf("\n");
+}
+
+int	CtmTaskCnc_Comm::WriteValue(int type ,int s_arr ,int len ,void* data)
+{
+	if(m_nDeviceID<0) return 0;
+	pthread_mutex_lock(&m_pSelf->m_mutex);
+	int sum_len=0;
+	//NC_Ethernet Send_Ethernet_Data;
+	long memory_size;
+	if(data != NULL)
+		memory_size = sizeof(WORD)+sizeof(long)+sizeof(WORD)+len;
+	else
+		memory_size = sizeof(WORD);
+		
+	char* ptr = (char*)malloc(memory_size);
+	char* send_ptr=ptr;
+	memset(ptr,0,memory_size);
+	
+	*(WORD*)send_ptr=type;
+	
+	if(data != NULL)
+	{
+		*(WORD*)send_ptr=type;
+		send_ptr += sizeof(WORD);
+		
+		*(long*)send_ptr=s_arr;
+		send_ptr += sizeof(long);
+		
+		*(WORD*)send_ptr=len;
+		send_ptr += sizeof(WORD);
+		
+		memcpy(send_ptr,data,len);
+	}
+	else 
+		*(WORD*)send_ptr=type;
+	printf("WriteValue len = %d  len2 = %d\n",memory_size,len);
+	if(SendData(m_nDeviceID,ptr,memory_size)!=DEVICE_SUCCESS)
+	{
+			printf("send error\n");
+	}
+	
+	
+	/*
+	while(len>0)
+	{
+		if(len>ETHERNET_MAX_LEN)
+		{
+			Send_Ethernet_Data.len=ETHERNET_MAX_LEN;
+			len-=ETHERNET_MAX_LEN;
+		}
+		else
+		{
+			Send_Ethernet_Data.len=len;
+			len=0;
+		}
+		if(data!=NULL)
+			memcpy(&Send_Ethernet_Data.data,(char*)data+loop*ETHERNET_MAX_LEN,Send_Ethernet_Data.len);
+		
+		loop++;
+		//printf("send_len = %d\n",send_len);
+	}*/
+	//printf("type = %d len = %d memory_size = %d\n",type,len,memory_size);
+	pthread_mutex_unlock(&m_pSelf->m_mutex);  
+	return 1;
+}
+
+int	CtmTaskCnc_Comm::WriteValue(int len ,void* data)
+{
+	if(m_nDeviceID<0) return 0;
+	pthread_mutex_lock(&m_pSelf->m_mutex);
+	
+	printf("WriteValue(int len ,void* data) len = %d\n",len);
+	if(SendData(m_nDeviceID,(char*)data,len)!=DEVICE_SUCCESS)
+	{
+		printf("send error\n");
+	}
+	//printf("len = %d\n",len);
+	pthread_mutex_unlock(&m_pSelf->m_mutex);  
+	return 1;
+}
+
+/*int	CtmTaskCnc_Comm::WriteValue2()
+{
+	
+}*/
+/*!	\fn int	CtmTaskCnc_Comm::RestartNet(BOOL bFlag)
+ *	\brief	重新啟動網絡		
+ *	\return 連線狀態
+ */
+BOOL	CtmTaskCnc_Comm::RestartNet(BOOL bFlag)
+{
+	if(bFlag)
+	{
+		pthread_cancel(m_OpenThreadID);
+		pthread_create(&m_OpenThreadID, NULL, (PRSRUN)_Open, NULL);
+	}
+	else
+	{
+		;	
+	}
+}
+
+
+void	CtmTaskCnc_Comm::Run()
+{
+	//判斷連線狀態： 如果5S沒有收到dsp28的及時數據，說明是斷線，就需要重新鏈接
+	m_nConnectStatus = GetOnLineStatus();
+	
+	if(m_lActualRealCycTime <=0 && m_lActualReqCycTime >=50 )
+	{
+//		m_pSelf->ReqValues(CONST_RES_ACTUAL, m_lActualDataCount, (int*)m_lActualDataID);	
+		m_lActualRealCycTime = m_lActualReqCycTime;	
+	}
+	
+	if (m_lOnLineTime <= 0)
+	{
+		if (0 == m_nConnectStatus)	//	僅在連線的狀態下，才會發送LinkStatus
+		{
+			int	nTime = CNT_INT_CHECK_ONLNE_TIME;
+//			ReqValues(CONST_REQ_LINESTATUS, 1, &nTime, NULL);			//發送連線是否正常數據包
+		}
+		m_lOnLineTime = CNT_INT_CHECK_ONLNE_TIME;
+	}
+}
+		
+
+#ifndef	D_BEOBJECT_CtmTaskCnc_Comm
+CObject*	CreateInstance(char* Name)
+{
+	if (g_ptaskCncComm == NULL)
+	{
+		CObject*	pResult = Create(Name);
+		if (pResult != NULL)
+			(static_cast<CTaskHost*>(pResult))->CreateSelf();
+		g_ptaskCncComm = static_cast<CTaskHost*>(pResult);
+	}
+	return g_ptaskCncComm;
+	
+	
+}
+
+void	ReleaseInstance(CObject* pInstance)
+{
+	if (pInstance != NULL)
+		(static_cast<CTaskHost*>(pInstance))->FreeSelf();
+	delete pInstance;
+	pInstance = NULL;
+}
+#endif

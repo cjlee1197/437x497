@@ -1,0 +1,1429 @@
+/*===========================================================================+
+|  Class    : CtmControl_Quality	                                         |
+|  Task     : Quality Service Function	    	                     		 |
+|----------------------------------------------------------------------------|
+|  Compile  : G++(GCC)3.2                                                    |
+|  Link     : G++(GCC)3.2                                                    |
+|  Call     :                                                                |
+|----------------------------------------------------------------------------|
+|  Author   : James		                                                     |
+|  Version  : V1.00                                                          |
+|  Creation : 05/11/2008	                                                 |
+|  Revision : 05/11/2008  				                                     |
++===========================================================================*/
+#include	"tmControl_Quality.h"
+#include	"../../utils.h"
+#include	"../../tmdebug.h"
+#include	"../../iotable.h"
+#include	"../../filerecord.h"
+
+IMPLEMENT_DYNCREATE(CtmControl_Quality, CtmControl)
+
+/*===========================================================================+
+|           Constants                                                        |
++===========================================================================*/
+//	CtmOilQuality start
+char*	CtmControl_Quality::m_pszLastID[] =
+{
+	"MONI_OTHR_OTHR_NULL_CYCLELASTTIME"				,	//	循環計時上一模值          
+	"MONI_SCRW_INJ_NULL_LASTTIME"					,	//	射出計時上一模值          
+	"MONI_SCRW_CUSHION_NULL_LASTTIME"				,	//	保壓轉換時間上一模值      
+	"MONI_SCRW_RCV_NULL_LASTTIME"					,	//	儲料計時上一模值          
+	"MONI_MLD_CLOSE_NULL_LASTTIME"					,	//	關模計時上一模值          
+	"MONI_MLD_CLOSE_PROTECT_LASTTIME"				,	//	關模低壓計時上一模值      
+	"MONI_MLD_CLOSE_CLAMPUP_LASTTIME"				,	//	關模高壓計時上一模值      
+	"MONI_MLD_OPEN_NULL_LASTTIME"					,	//	開模計時上一模值          
+	"MONI_MLD_OPEN_NULL_LASTPOSITION"				,	//	開模位置上一模值          
+	"MONI_SCRW_INJ_START_LASTPOSITION"				,	//	射出起始位置上一模值      
+	"MONI_SCRW_CUSHION_NULL_LASTPOSITION"			,	//	保壓轉換位置上一模值      
+	"MONI_SCRW_INJ_END_LAST2POSITION"				,	//	射出終點位置上一模值      
+	"MONI_SCRW_INJ_END_LASTPOSITION"				,	//	射出監控上一模值          
+	"MONI_SCRW_INJ_HIGHPRESSURE_LASTPOSITION",//  射出尖峰位置上一模值  //JOYCE20141016
+	"MONI_SCRW_CUSHION_NULL_LASTPRESSURE"			,	//	保壓轉換壓力上一模值      
+	"MONI_SCRW_RCV_NULL_LASTRPM"					,	//	儲料RPM上一模值           
+	"MONI_SCRW_DCMP_NULL_LASTTIME"					,	//	射退計時上一模值          
+	"MONI_EJT_EJT_NULL_LASTTIME"					,	//	脫模計時上一模值          
+	//"MONI_MLD_CLOSE_CLAMPUP_LASTPRESSURE"			,	//	關模高壓力上一模值             
+	"MONI_EJT_FWD_NULL_LASTTIME"					,	//	脫模進計時上一模值        
+	"MONI_EJT_BWD_NULL_LASTTIME"					,	//	脫模退計時上一模值
+	"MONI_SCRW_INJ_NULL_LASTHIGHPRESSURE"			,	//	射出尖峰壓力上一模值      
+	"MONI_SCRW_RCV_NULL_LASTHIGHPRESSURE"			,	//	儲料尖峰壓力上一模值         
+	"MONI_OTHR_OTHR_NULL_W0A57"						,	//  關模低壓二上一模值
+	"MONI_OTHR_OTHR_NULL_W0A58"						,	
+	"MONI_OTHR_OTHR_NULL_W0A59"						,
+	"MONI_OTHR_OTHR_NULL_W0A5A"						,
+	"MONI_OTHR_OTHR_NULL_W0A5B"						,
+	"MONI_OTHR_OTHR_NULL_W0A5C"						,
+	"MONI_OTHR_OTHR_NULL_W0A5D"						,
+	"MONI_OTHR_OTHR_NULL_W0A5E"						,
+	"MONI_OTHR_OTHR_NULL_W0A5F"						,
+	"MONI_OTHR_OTHR_NULL_W0A60"						,
+	//"MONI_CORA_IN_NULL_LASTTIME"					,	//	中子A進計時上一模值       
+	//"MONI_CORA_OUT_NULL_LASTTIME"					,	//	中子A退計時上一模值       
+	//"MONI_CORB_IN_NULL_LASTTIME"					,	//	中子B進計時上一模值       
+	//"MONI_CORB_OUT_NULL_LASTTIME"					,	//	中子B退計時上一模值       
+	//"MONI_CORC_IN_NULL_LASTTIME"					,	//	中子C進計時上一模值       
+	//"MONI_CORC_OUT_NULL_LASTTIME"					,	//	中子C退計時上一模值       
+	//"MONI_CORD_IN_NULL_LASTTIME"					,	//	中子D進計時上一模值       
+	//"MONI_CORD_OUT_NULL_LASTTIME"					,	//	中子D退計時上一模值       
+	//"MONI_CORE_IN_NULL_LASTTIME"					,	//	中子E進計時上一模值       
+	//"MONI_CORE_OUT_NULL_LASTTIME"					,	//	中子E退計時上一模值       
+	//"MONI_CORF_IN_NULL_LASTTIME"					,	//	中子F進計時上一模值       
+	//"MONI_CORF_OUT_NULL_LASTTIME"               	    //  中子F退計時上一模值  
+};    
+                                      	
+char*	CtmControl_Quality::m_pszReferID[] =
+{
+	"MONI_OTHR_OTHR_NULL_CYCLEREFERVALUETIME"				,	//	循環計時參考值          
+	"MONI_SCRW_INJ_NULL_REFERVALUETIME"					,	//	射出計時參考值          
+	"MONI_SCRW_CUSHION_NULL_REFERVALUETIME"				,	//	保壓轉換時間參考值      
+	"MONI_SCRW_RCV_NULL_REFERVALUETIME"					,	//	儲料計時參考值          
+	"MONI_MLD_CLOSE_NULL_REFERVALUETIME"					,	//	關模計時參考值          
+	"MONI_MLD_CLOSE_PROTECT_REFERVALUETIME"				,	//	關模低壓計時參考值      
+	"MONI_MLD_CLOSE_CLAMPUP_REFERVALUETIME"				,	//	關模高壓計時參考值      
+	"MONI_MLD_OPEN_NULL_REFERVALUETIME"					,	//	開模計時參考值          
+	"MONI_MLD_OPEN_NULL_REFERVALUEPOSITION"				,	//	開模位置參考值          
+	"MONI_SCRW_INJ_NULL_REFERVALUEPOSITION"				,	//	射出起始位置參考值      
+	"MONI_SCRW_CUSHION_NULL_REFERVALUEPOSITION"			,	//	保壓轉換位置參考值      
+	"MONI_SCRW_INJ_END_REFERVALUE2POSITION"				,	//	射出終點位置參考值      
+	"MONI_SCRW_INJ_END_REFERVALUEPOSITION"				,	//	射出監控參考值          
+	"MONI_SCRW_INJ_PEAK_REFERVALUEPOSITION",//  射出尖峰位置參考值  //JOYCE20141016
+	"MONI_SCRW_CUSHION_NULL_REFERVALUEPRESSURE"			,	//	保壓轉換壓力參考值      
+	"MONI_SCRW_RCV_NULL_REFERVALUERPM"					,	//	儲料RPM參考值           
+	"MONI_SCRW_DCMP_NULL_REFERVALUETIME"					,	//	射退計時參考值          
+	"MONI_EJT_EJT_NULL_REFERVALUETIME"					,	//	脫模計時參考值          
+	"MONI_EJT_FWD_NULL_REFERVALUETIME"					,	//	脫模進計時參考值        
+	"MONI_EJT_BWD_NULL_REFERVALUETIME"					,	//	脫模退計時參考值
+	"MONI_SCRW_INJ_NULL_REFERVALUEHIGHPRESSURE"			,	//	射出尖峰壓力參考值      
+	"MONI_SCRW_RCV_NULL_REFERVALUEHIGHPRESSURE"			,	//	儲料尖峰壓力參考值         
+	"MONI_CORF_OUT_NULL_REFERVALUE1"				,	//  關模低壓二壓力參考值
+	"MONI_CORF_OUT_NULL_REFERVALUE2"				,
+	"MONI_CORF_OUT_NULL_REFERVALUE3"				,
+	"MONI_CORF_OUT_NULL_REFERVALUE4"				,
+	"MONI_CORF_OUT_NULL_REFERVALUE5"				,
+	"MONI_CORF_OUT_NULL_REFERVALUE6"				,
+	"MONI_CORF_OUT_NULL_REFERVALUE7"				,
+	"MONI_CORF_OUT_NULL_REFERVALUE8"				,
+	"MONI_CORF_OUT_NULL_REFERVALUE9"				,
+	"MONI_CORF_OUT_NULL_REFERVALUE10"				,
+	//"MONI_CORA_IN_NULL_REFERVALUETIME"					,	//	中子A進計時參考值       
+	//"MONI_CORA_OUT_NULL_REFERVALUETIME"					,	//	中子A退計時參考值       
+	//"MONI_CORB_IN_NULL_REFERVALUETIME"					,	//	中子B進計時參考值       
+	//"MONI_CORB_OUT_NULL_REFERVALUETIME"					,	//	中子B退計時參考值       
+	//"MONI_CORC_IN_NULL_REFERVALUETIME"					,	//	中子C進計時參考值       
+	//"MONI_CORC_OUT_NULL_REFERVALUETIME"					,	//	中子C退計時參考值       
+	//"MONI_CORD_IN_NULL_REFERVALUETIME"					,	//	中子D進計時參考值       
+	//"MONI_CORD_OUT_NULL_REFERVALUETIME"					,	//	中子D退計時參考值       
+	//"MONI_CORE_IN_NULL_REFERVALUETIME"					,	//	中子E進計時參考值       
+	//"MONI_CORE_OUT_NULL_REFERVALUETIME"					,	//	中子E退計時參考值       
+	//"MONI_CORF_IN_NULL_REFERVALUETIME"					,	//	中子F進計時參考值       
+	//"MONI_CORF_OUT_NULL_REFERVALUETIME"               	    //  中子F退計時參考值  
+};
+
+char*	CtmControl_Quality::m_pszLimitUpID[] =              	
+{                                               	
+	"MONI_ALARM_ON_NULL_MAXCYCLETIME"				,	//	循環計時上限值             
+	"MONI_ALARM_ON_NULL_MAXINJECTTIME"				,   //	射出計時上限值             
+	"MONI_ALARM_ON_NULL_MAXCUSHIONTIME"				,   //	保壓轉換時間上限值         
+	"MONI_ALARM_ON_NULL_MAXRECOVERYTIME"			,   //	儲料計時上限值             
+	"MONI_ALARM_ON_NULL_MAXCLOSETIME"				,   //	關模計時上限值             
+	"MONI_ALARM_ON_NULL_MAXPROTECTTIME"				,   //	關模低壓計時上限值         
+	"MONI_ALARM_ON_NULL_MAXCLAMPUPTIME"				,   //	關模高壓計時上限值         
+	"MONI_ALARM_ON_NULL_MAXOPENTIME"				,   //	開模計時上限值             
+	"MONI_ALARM_ON_NULL_MAXOPENPOSITION"			,   //	開模位置上限值             
+	"MONI_ALARM_ON_NULL_MAXSTARTINJECTPOSITION"		,   //	射出起始位置上限值         
+	"MONI_ALARM_ON_NULL_MAXCUSHIONPOSITION"			,   //	保壓轉換位置上限值         
+	"MONI_ALARM_ON_NULL_MAXINJECTEND2POSITION"		,   //	射出終點位置上限值         
+	"MONI_ALARM_ON_NULL_MAXINJECTENDPOSITION"		,   //	射出監控上限值             
+	"MONI_SCRW_INJ_HIGHPRESSURE_MAXPOSITION",       //	射出尖峰位置上限值    //joyce 20141016
+	"MONI_ALARM_ON_NULL_MAXCUSHIONPRESSURE"			,   //	保壓轉換壓力上限值         
+	"MONI_ALARM_ON_NULL_MAXRECOVERYRPM"				,   //	儲料RPM上限值              
+	"MONI_ALARM_ON_NULL_MAXDECOMPTIME"				,   //	射退計時上限值             
+	"MONI_ALARM_ON_NULL_MAXEJECTTIME"				,   //	脫模計時上限值             
+	//"MONI_ALARM_ON_NULL_MAXCLAMPUPPRESSURE"		,   //	關模高壓力上限值  
+	"MONI_ALARM_ON_NULL_MAXEJECTFWDTIME"			,   //	脫模進計時上限值           
+	"MONI_ALARM_ON_NULL_MAXEJECTBWDTIME"			,   //	脫模退計時上限值 
+	"MONI_ALARM_ON_NULL_MAXINJECTHIGHPRESSURE"		,   //	射出尖峰壓力上限值         
+	"MONI_ALARM_ON_NULL_MAXRECOVERYHIGHPRESSURE"	,   //	儲料尖峰壓力上限值           
+	"MONI_ALARM_ON_NULL_W0A87"						,   //  關模低壓二壓力上限值
+	"MONI_ALARM_ON_NULL_W0A88"						,
+	"MONI_ALARM_ON_NULL_W0A89"						,
+	"MONI_ALARM_ON_NULL_W0A8A"						,
+	"MONI_ALARM_ON_NULL_W0A8B"						,
+	"MONI_ALARM_ON_NULL_W0A8C"						,
+	"MONI_ALARM_ON_NULL_W0A8D"						,
+	"MONI_ALARM_ON_NULL_W0A8E"						,
+	"MONI_ALARM_ON_NULL_W0A8F"						,
+	"MONI_ALARM_ON_NULL_W0A90"						,
+	//"MONI_ALARM_ON_NULL_MAXCOREAINTIME"			,   //	中子A進計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCOREAOUTTIME"			,   //	中子A退計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCOREBINTIME"			,   //	中子B進計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCOREBOUTTIME"			,   //	中子B退計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCORECINTIME"			,   //	中子C進計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCORECOUTTIME"			,   //	中子C退計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCOREDINTIME"			,   //	中子D進計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCOREDOUTTIME"			,   //	中子D退計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCOREEINTIME"			,   //	中子E進計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCOREEOUTTIME"			,   //	中子E退計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCOREFINTIME"			,   //	中子F進計時上限值          
+	//"MONI_ALARM_ON_NULL_MAXCOREFOUTTIME"        	    //	中子F退計時上限值   
+};
+                                             	
+char*	CtmControl_Quality::m_pszLimitLowerID[] =           	
+{                                               	
+	"MONI_ALARM_ON_NULL_MINCYCLETIME"				,	//	循環計時下限值             
+	"MONI_ALARM_ON_NULL_MININJECTTIME"				,   //	射出計時下限值             
+	"MONI_ALARM_ON_NULL_MINCUSHIONTIME"				,   //	保壓轉換時間下限值         
+	"MONI_ALARM_ON_NULL_MINRECOVERYTIME"			,   //	儲料計時下限值             
+	"MONI_ALARM_ON_NULL_MINCLOSETIME"				,   //	關模計時下限值             
+	"MONI_ALARM_ON_NULL_MINPROTECTTIME"				,   //	關模低壓計時下限值         
+	"MONI_ALARM_ON_NULL_MINCLAMPUPTIME"				,   //	關模高壓計時下限值         
+	"MONI_ALARM_ON_NULL_MINOPENTIME"				,   //	開模計時下限值             
+	"MONI_ALARM_ON_NULL_MINOPENPOSITION"			,   //	開模位置下限值             
+	"MONI_ALARM_ON_NULL_MINSTARTINJECTPOSITION"		,   //	射出起始位置下限值         
+	"MONI_ALARM_ON_NULL_MINCUSHIONPOSITION"			,   //	保壓轉換位置下限值         
+	"MONI_ALARM_ON_NULL_MININJECTEND2POSITION"		,   //	射出終點位置下限值         
+	"MONI_ALARM_ON_NULL_MININJECTENDPOSITION"		,   //	射出監控下限值             
+	"MONI_SCRW_INJ_HIGHPRESSURE_MINPOSITION",       //	射出尖峰位置下限值  //joyce20141016
+	"MONI_ALARM_ON_NULL_MINCUSHIONPRESSURE"			,   //	保壓轉換壓力下限值         
+	"MONI_ALARM_ON_NULL_MINRECOVERYRPM"				,   //	儲料RPM下限值              
+	"MONI_ALARM_ON_NULL_MINDECOMPTIME"				,   //	射退計時下限值             
+	"MONI_ALARM_ON_NULL_MINEJECTTIME"				,   //	脫模計時下限值             
+	//"MONI_ALARM_ON_NULL_MINCLAMPUPPRESSURE"		,   //	關模高壓力下限值 
+	"MONI_ALARM_ON_NULL_MINEJECTFWDTIME"			,   //	脫模進計時下限值           
+	"MONI_ALARM_ON_NULL_MINEJECTBWDTIME"			,   //	脫模退計時下限值          
+	"MONI_ALARM_ON_NULL_MININJECTHIGHPRESSURE"		,   //	射出尖峰壓力下限值         
+	"MONI_ALARM_ON_NULL_MINRECOVERYHIGHPRESSURE"	,   //	儲料尖峰壓力下限值 
+	"MONI_ALARM_ON_NULL_W0AB7"						,	//  關模低壓二壓力下限值
+	"MONI_ALARM_ON_NULL_W0AB8"						,
+	"MONI_ALARM_ON_NULL_W0AB9"						,
+	"MONI_ALARM_ON_NULL_W0ABA"						,
+	"MONI_ALARM_ON_NULL_W0ABB"						,
+	"MONI_ALARM_ON_NULL_W0ABC"						,
+	"MONI_ALARM_ON_NULL_W0ABD"						,
+	"MONI_ALARM_ON_NULL_W0ABE"						,
+	"MONI_ALARM_ON_NULL_W0ABF"						,
+	"MONI_ALARM_ON_NULL_W0AC0"						,
+	//"MONI_ALARM_ON_NULL_MINCOREAINTIME"			,   //	中子A進計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCOREAOUTTIME"			,   //	中子A退計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCOREBINTIME"			,   //	中子B進計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCOREBOUTTIME"			,   //	中子B退計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCORECINTIME"			,   //	中子C進計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCORECOUTTIME"			,   //	中子C退計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCOREDINTIME"			,   //	中子D進計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCOREDOUTTIME"			,   //	中子D退計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCOREEINTIME"			,   //	中子E進計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCOREEOUTTIME"			,   //	中子E退計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCOREFINTIME"			,   //	中子F進計時下限值          
+	//"MONI_ALARM_ON_NULL_MINCOREFOUTTIME"			    //  中子F退計時下限值 
+};
+
+char*	CtmControl_Quality::m_pszPctID[] =
+{
+	"MONI_OTHR_OTHR_NULL_CYCLEDELTAPERCENTTIME"		,	//	循環計時誤差百分比          
+	"MONI_SCRW_INJ_NULL_DELTAPERCENTTIME"			,   //	射出計時誤差百分比          
+	"MONI_SCRW_CUSHION_NULL_DELTAPERCENTTIME"		,   //	保壓轉換時間誤差百分比      
+	"MONI_SCRW_RCV_NULL_DELTAPERCENTTIME"			,   //	儲料計時誤差百分比          
+	"MONI_MLD_CLOSE_NULL_DELTAPERCENTTIME"			,   //	關模計時誤差百分比          
+	"MONI_MLD_CLOSE_PROTECT_DELTAPERCENTTIME"		,   //	關模低壓計時誤差百分比      
+	"MONI_MLD_CLOSE_CLAMPUP_DELTAPERCENTTIME"		,   //	關模高壓計時誤差百分比      
+	"MONI_MLD_OPEN_NULL_DELTAPERCENTTIME"			,   //	開模計時誤差百分比          
+	"MONI_MLD_OPEN_NULL_DELTAPERCENTPOSITION"		,   //	開模位置誤差百分比          
+	"MONI_SCRW_INJ_NULL_DELTAPERCENTPOSITION"		,   //	射出起始位置誤差百分比      
+	"MONI_SCRW_CUSHION_NULL_DELTAPERCENTPOSITION"	,   //	保壓轉換位置誤差百分比      
+	"MONI_SCRW_INJ_END_DELTAPERCENT2POSITION"		,   //	射出終點位置誤差百分比      
+	"MONI_SCRW_INJ_END_DELTAPERCENTPOSITION"		,   //	射出監控誤差百分比          
+	"MONI_SCRW_INJ_PEAK_DELTAPERCENTPOSITION",      //	射出尖峰位置誤差百分比    //joyce20141016
+	"MONI_SCRW_CUSHION_NULL_DELTAPERCENTPRESSURE"	,   //	保壓轉換壓力誤差百分比      
+	"MONI_SCRW_RCV_NULL_DELTAPERCENTRPM"			,   //	儲料RPM誤差百分比           
+	"MONI_SCRW_DCMP_NULL_DELTAPERCENTTIME"			,   //	射退計時誤差百分比          
+	"MONI_EJT_EJT_NULL_DELTAPERCENTTIME"			,   //	脫模計時誤差百分比          
+	//"MONI_MLD_CLOSE_CLAMPUP_DELTAPERCENTPRESSURE"	,   //	關模高壓力誤差百分比              
+	"MONI_EJT_FWD_NULL_DELTAPERCENTTIME"			,   //	脫模進計時誤差百分比        
+	"MONI_EJT_BWD_NULL_DELTAPERCENTTIME"			,   //	脫模退計時誤差百分比       
+	"MONI_SCRW_INJ_NULL_DELTAPERCENTHIGHPRESSURE"	,   //	射出尖峰壓力誤差百分比      
+	"MONI_SCRW_RCV_NULL_DELTAPERCENTHIGHPRESSURE"	,   //	儲料尖峰壓力誤差百分比 
+	"MONI_CORF_OUT_NULL_DELTAPERCENT1"				,	//  關模低壓二壓力誤差百分比
+	"MONI_CORF_OUT_NULL_DELTAPERCENT2"				,
+	"MONI_CORF_OUT_NULL_DELTAPERCENT3"				,
+	"MONI_CORF_OUT_NULL_DELTAPERCENT4"				,
+	"MONI_CORF_OUT_NULL_DELTAPERCENT5"				,
+	"MONI_CORF_OUT_NULL_DELTAPERCENT6"				,
+	"MONI_CORF_OUT_NULL_DELTAPERCENT7"				,
+	"MONI_CORF_OUT_NULL_DELTAPERCENT8"				,
+	"MONI_CORF_OUT_NULL_DELTAPERCENT9"				,
+	"MONI_CORF_OUT_NULL_DELTAPERCENT10"				,
+	//"MONI_CORA_IN_NULL_DELTAPERCENTTIME"			,   //	中子A進計時誤差百分比       
+	//"MONI_CORA_OUT_NULL_DELTAPERCENTTIME"			,   //	中子A退計時誤差百分比       
+	//"MONI_CORB_IN_NULL_DELTAPERCENTTIME"			,   //	中子B進計時誤差百分比       
+	//"MONI_CORB_OUT_NULL_DELTAPERCENTTIME"			,   //	中子B退計時誤差百分比       
+	//"MONI_CORC_IN_NULL_DELTAPERCENTTIME"			,   //	中子C進計時誤差百分比       
+	//"MONI_CORC_OUT_NULL_DELTAPERCENTTIME"			,   //	中子C退計時誤差百分比       
+	//"MONI_CORD_IN_NULL_DELTAPERCENTTIME"			,   //	中子D進計時誤差百分比       
+	//"MONI_CORD_OUT_NULL_DELTAPERCENTTIME"			,   //	中子D退計時誤差百分比       
+	//"MONI_CORE_IN_NULL_DELTAPERCENTTIME"			,   //	中子E進計時誤差百分比       
+	//"MONI_CORE_OUT_NULL_DELTAPERCENTTIME"			,   //	中子E退計時誤差百分比       
+	//"MONI_CORF_IN_NULL_DELTAPERCENTTIME"			,   //	中子F進計時誤差百分比       
+	//"MONI_CORF_OUT_NULL_DELTAPERCENTTIME"               //	中子F退計時誤差百分比  
+};
+
+char*	CtmControl_Quality::m_pszDeltaID[] =
+{     
+	"MONI_OTHR_OTHR_NULL_CYCLEDELTAVALUETIME"		,	//	循環計時誤差量          
+	"MONI_SCRW_INJ_NULL_DELTAVALUETIME"				,   //	射出計時誤差量          
+	"MONI_SCRW_CUSHION_NULL_DELTAVALUETIME"			,   //	保壓轉換時間誤差量      
+	"MONI_SCRW_RCV_NULL_DELTAVALUETIME"				,   //	儲料計時誤差量          
+	"MONI_MLD_CLOSE_NULL_DELTAVALUETIME"			,   //	關模計時誤差量          
+	"MONI_MLD_CLOSE_PROTECT_DELTAVALUETIME"			,   //	關模低壓計時誤差量      
+	"MONI_MLD_CLOSE_CLAMPUP_DELTAVALUETIME"			,   //	關模高壓計時誤差量      
+	"MONI_MLD_OPEN_NULL_DELTAVALUETIME"				,   //	開模計時誤差量          
+	"MONI_MLD_OPEN_NULL_DELTAVALUEPOSITION"			,   //	開模位置誤差量          
+	"MONI_SCRW_INJ_NULL_DELTAVALUEPOSITION"			,   //	射出起始位置誤差量      
+	"MONI_SCRW_CUSHION_NULL_DELTAVALUEPOSITION"		,   //	保壓轉換位置誤差量      
+	"MONI_SCRW_INJ_END_DELTAVALUE2POSITION"			,   //	射出終點位置誤差量      
+	"MONI_SCRW_INJ_END_DELTAVALUEPOSITION"			,   //	射出監控誤差量          
+	"MONI_SCRW_INJ_PEAK_DELTAVALUEPOSITION",        //	射出尖峰位置誤差量  
+	"MONI_SCRW_CUSHION_NULL_DELTAVALUEPRESSURE"	    ,   //	保壓轉換壓力誤差量      
+	"MONI_SCRW_RCV_NULL_DELTAVALUERPM"				,   //	儲料RPM誤差量           
+	"MONI_SCRW_DCMP_NULL_DELTAVALUETIME"			,   //	射退計時誤差量          
+	"MONI_EJT_EJT_NULL_DELTAVALUETIME"				,   //	脫模計時誤差量          
+	//"MONI_MLD_CLOSE_CLAMPUP_DELTAVALUEPRESSURE"	,   //	關模高壓力誤差量 
+	"MONI_EJT_FWD_NULL_DELTAVALUETIME"				,   //	脫模進計時誤差量        
+	"MONI_EJT_BWD_NULL_DELTAVALUETIME"				,   //	脫模退計時誤差量
+	"MONI_SCRW_INJ_NULL_DELTAVALUEHIGHPRESSURE"		,   //	射出尖峰壓力誤差量      
+	"MONI_SCRW_RCV_NULL_DELTAVALUEHIGHPRESSURE"		,   //	儲料尖峰壓力誤差量        
+	"MONI_CORF_OUT_NULL_DELTAVALUE1"				,	//	關模低壓二壓力誤差量
+	"MONI_CORF_OUT_NULL_DELTAVALUE2"				,
+	"MONI_CORF_OUT_NULL_DELTAVALUE3"				,
+	"MONI_CORF_OUT_NULL_DELTAVALUE4"				,
+	"MONI_CORF_OUT_NULL_DELTAVALUE5"				,
+	"MONI_CORF_OUT_NULL_DELTAVALUE6"				,
+	"MONI_CORF_OUT_NULL_DELTAVALUE7"				,
+	"MONI_CORF_OUT_NULL_DELTAVALUE8"				,
+	"MONI_CORF_OUT_NULL_DELTAVALUE9"				,
+	"MONI_CORF_OUT_NULL_DELTAVALUE10"				,
+	//"MONI_CORA_IN_NULL_DELTAVALUETIME"			,   //	中子A進計時誤差量       
+	//"MONI_CORA_OUT_NULL_DELTAVALUETIME"			,   //	中子A退計時誤差量       
+	//"MONI_CORB_IN_NULL_DELTAVALUETIME"			,   //	中子B進計時誤差量       
+	//"MONI_CORB_OUT_NULL_DELTAVALUETIME"			,   //	中子B退計時誤差量       
+	//"MONI_CORC_IN_NULL_DELTAVALUETIME"			,   //	中子C進計時誤差量       
+	//"MONI_CORC_OUT_NULL_DELTAVALUETIME"			,   //	中子C退計時誤差量       
+	//"MONI_CORD_IN_NULL_DELTAVALUETIME"			,   //	中子D進計時誤差量       
+	//"MONI_CORD_OUT_NULL_DELTAVALUETIME"			,   //	中子D退計時誤差量       
+	//"MONI_CORE_IN_NULL_DELTAVALUETIME"			,   //	中子E進計時誤差量       
+	//"MONI_CORE_OUT_NULL_DELTAVALUETIME"			,   //	中子E退計時誤差量       
+	//"MONI_CORF_IN_NULL_DELTAVALUETIME"			,   //	中子F進計時誤差量       
+	//"MONI_CORF_OUT_NULL_DELTAVALUETIME"			    //	中子F退計時誤差量 
+};
+
+//group B
+char*	CtmControl_Quality::m_pszLastIDB[] =
+{
+	"MONIB_SCRW2_INJ_NULL_LASTTIME"					,	//	射出計時上一模值          
+	"MONIB_SCRW2_CUSHION_NULL_LASTTIME"				,	//	保壓轉換時間上一模值      
+	"MONIB_SCRW2_RCV_NULL_LASTTIME"					,	//	儲料計時上一模值          
+	"MONIB_SCRW2_CUSHION_NULL_LASTPRESSURE"			,	//	保壓轉換壓力上一模值      
+	"MONIB_SCRW2_INJ_NULL_LASTPOSITION"				,	//	射出起始位置上一模值      
+	"MONIB_SCRW2_CUSHION_NULL_LASTPOSITION"			,	//	保壓轉換位置上一模值      
+	"MONIB_SCRW2_INJ_END_LAST2POSITION"				,	//	射出終點位置上一模值      
+	"MONIB_SCRW2_INJ_END_LASTPOSITION"				,	//	射出監控上一模值          
+	"MONIB_SCRW2_RCV_NULL_LASTCOUNTER"				,	//	儲料RPM上一模值           
+	"MONIB_SCRW2_DCMP_NULL_LASTTIME"				,	//	射退計時上一模值          
+	"MONIB_EJT2_EJT_NULL_LASTTIME"					,	//	脫模計時上一模值          
+	"MONIB_EJT2_FWD_NULL_LASTTIME"					,	//	脫模進計時上一模值        
+	"MONIB_EJT2_BWD_NULL_LASTTIME"					,	//	脫模退計時上一模值
+	"MONIB_SCRW2_INJ_NULL_LASTHIGHPRESSURE"			,	//	射出尖峰壓力上一模值      
+	"MONIB_SCRW2_RCV_NULL_LASTHIGHPRESSURE"			,	//	儲料尖峰壓力上一模值         
+	"MONIB_SCRW2_OTHR_NULL_W142A"					,	//  關模低壓二上一模值
+	"MONIB_SCRW2_OTHR_NULL_W142B"					,	
+	"MONIB_SCRW2_OTHR_NULL_W142C"					,
+	"MONIB_SCRW2_OTHR_NULL_W142D"					,
+	"MONIB_SCRW2_OTHR_NULL_W142E"					,
+	"MONIB_SCRW2_OTHR_NULL_W142F"					,
+};    
+
+char*	CtmControl_Quality::m_pszReferIDB[] =
+{
+	"MONIB_SCRW2_INJ_NULL_REFERVALUETIME"					,	//	射出計時參考值          
+	"MONIB_SCRW2_CUSHION_NULL_REFERVALUETIME"				,	//	保壓轉換時間參考值      
+	"MONIB_SCRW2_RCV_NULL_REFERVALUETIME"					,	//	儲料計時參考值          
+	"MONIB_SCRW2_CUSHION_NULL_REFERVALUEPRESSURE"			,	//	保壓轉換壓力參考值      
+	"MONIB_SCRW2_INJ_NULL_REFERVALUEPOSITION"				,	//	射出起始位置參考值      
+	"MONIB_SCRW2_CUSHION_NULL_REFERVALUEPOSITION"			,	//	保壓轉換位置參考值      
+	"MONIB_SCRW2_INJ_END_REFERVALUE2POSITION"				,	//	射出終點位置參考值      
+	"MONIB_SCRW2_INJ_END_REFERVALUEPOSITION"				,	//	射出監控參考值          
+	"MONIB_SCRW2_RCV_NULL_REFERVALUECOUNTER"				,	//	儲料RPM參考值           
+	"MONIB_SCRW2_DCMP_NULL_REFERVALUETIME"				,	//	射退計時參考值          
+	"MONIB_EJT2_EJT_NULL_REFERVALUETIME"					,	//	脫模計時參考值          
+	"MONIB_EJT2_FWD_NULL_REFERVALUETIME"					,	//	脫模進計時參考值        
+	"MONIB_EJT2_BWD_NULL_REFERVALUETIME"					,	//	脫模退計時參考值
+	"MONIB_SCRW2_INJ_NULL_REFERVALUEHIGHPRESSURE"			,	//	射出尖峰壓力參考值      
+	"MONIB_SCRW2_RCV_NULL_REFERVALUEHIGHPRESSURE"			,	//	儲料尖峰壓力參考值         
+	"MONIB_SCRW2_OTHR_NULL_REFERVALUE1"					,	//  關模低壓二參考值
+	"MONIB_SCRW2_OTHR_NULL_REFERVALUE2"					,	
+	"MONIB_SCRW2_OTHR_NULL_REFERVALUE3"					,
+	"MONIB_SCRW2_OTHR_NULL_REFERVALUE4"					,
+	"MONIB_SCRW2_OTHR_NULL_REFERVALUE5"					,
+	"MONIB_SCRW2_OTHR_NULL_REFERVALUE6"					,
+};    
+
+char*	CtmControl_Quality::m_pszLimitUpIDB[] =              	
+{                                               	
+	"MONIB_ALARM_ON_NULL_MAXINJECT2TIME"			,   //	射出計時上限值             
+	"MONIB_ALARM_ON_NULL_MAXCUSHION2TIME"			,   //	保壓轉換時間上限值         
+	"MONIB_ALARM_ON_NULL_MAXRECOVERY2TIME"			,   //	儲料計時上限值             
+	"MONIB_ALARM_ON_NULL_MAXCUSHION2PRESSURE"		,   //	保壓轉換壓力上限值         
+	"MONIB_ALARM_ON_NULL_MAXSTARTINJECT2POSITION"	,   //	射出起始位置上限值         
+	"MONIB_ALARM_ON_NULL_MAXCUSHION2POSITION"		,   //	保壓轉換位置上限值         
+	"MONIB_ALARM_ON_NULL_MAXINJECT2END2POSITION"	,   //	射出終點位置上限值         
+	"MONIB_ALARM_ON_NULL_MAXINJECT2ENDPOSITION"		,   //	射出監控上限值             
+	"MONIB_ALARM_ON_NULL_MAXRECOVERY2RPM"			,   //	儲料RPM上限值              
+	"MONIB_ALARM_ON_NULL_MAXDECOMP2TIME"			,   //	射退計時上限值             
+	"MONIB_ALARM_ON_NULL_MAXEJT2TIME"				,   //	脫模計時上限值             
+	"MONIB_ALARM_ON_NULL_MAXEJT2FWDTIME"			,   //	脫模進計時上限值           
+	"MONIB_ALARM_ON_NULL_MAXEJT2BWDTIME"			,   //	脫模退計時上限值 
+	"MONIB_ALARM_ON_NULL_MAXINJECT2HIGHPRESSURE"	,   //	射出尖峰壓力上限值         
+	"MONIB_ALARM_ON_NULL_MAXRECOVERY2HIGHPRESSURE"	,   //	儲料尖峰壓力上限值           
+	"MONIB_ALARM_ON_NULL_W1442"						,   //  關模低壓二壓力上限值
+	"MONIB_ALARM_ON_NULL_W1443"						,
+	"MONIB_ALARM_ON_NULL_W1444"						,
+	"MONIB_ALARM_ON_NULL_W1445"						,
+	"MONIB_ALARM_ON_NULL_W1446"						,
+	"MONIB_ALARM_ON_NULL_W1447"						,
+};
+                                             	
+char*	CtmControl_Quality::m_pszLimitLowerIDB[] =           	
+{                                               	
+	"MONIB_ALARM_ON_NULL_MININJECT2TIME"			,   //	射出計時下限值             
+	"MONIB_ALARM_ON_NULL_MINCUSHION2TIME"			,   //	保壓轉換時間下限值         
+	"MONIB_ALARM_ON_NULL_MINRECOVERY2TIME"			,   //	儲料計時下限值             
+	"MONIB_ALARM_ON_NULL_MINCUSHION2PRESSURE"			,   //	保壓轉換壓力下限值         
+	"MONIB_ALARM_ON_NULL_MINSTARTINJECT2POSITION"		,   //	射出起始位置下限值         
+	"MONIB_ALARM_ON_NULL_MINCUSHION2POSITION"			,   //	保壓轉換位置下限值         
+	"MONIB_ALARM_ON_NULL_MININJECT2END2POSITION"		,   //	射出終點位置下限值         
+	"MONIB_ALARM_ON_NULL_MININJECT2ENDPOSITION"		,   //	射出監控下限值             
+	"MONIB_ALARM_ON_NULL_MINRECOVERY2RPM"				,   //	儲料RPM下限值              
+	"MONIB_ALARM_ON_NULL_MINDECOMP2TIME"				,   //	射退計時下限值             
+	"MONIB_ALARM_ON_NULL_MINEJT2TIME"				,   //	脫模計時下限值             
+	"MONIB_ALARM_ON_NULL_MINEJT2FWDTIME"			,   //	脫模進計時下限值           
+	"MONIB_ALARM_ON_NULL_MINEJT2BWDTIME"			,   //	脫模退計時下限值          
+	"MONIB_ALARM_ON_NULL_MININJECT2HIGHPRESSURE"		,   //	射出尖峰壓力下限值         
+	"MONIB_ALARM_ON_NULL_MINRECOVERY2HIGHPRESSURE"	,   //	儲料尖峰壓力下限值 
+	"MONIB_ALARM_ON_NULL_W145A"						,	//  關模低壓二壓力下限值
+	"MONIB_ALARM_ON_NULL_W145B"						,
+	"MONIB_ALARM_ON_NULL_W145C"						,
+	"MONIB_ALARM_ON_NULL_W145D"						,
+	"MONIB_ALARM_ON_NULL_W145E"						,
+	"MONIB_ALARM_ON_NULL_W145F"						,
+};
+
+char*	CtmControl_Quality::m_pszPctIDB[] =
+{
+	"MONIB_SCRW2_INJ_NULL_DELTAPERCENTTIME"			,   //	射出計時誤差百分比          
+	"MONIB_SCRW2_CUSHION_NULL_DELTAPERCENTTIME"		,   //	保壓轉換時間誤差百分比      
+	"MONIB_SCRW2_RCV_NULL_DELTAPERCENTTIME"			,   //	儲料計時誤差百分比          
+	"MONIB_SCRW2_CUSHION_NULL_DELTAPERCENTPRESSURE"	,   //	保壓轉換壓力誤差百分比      
+	"MONIB_SCRW2_INJ_NULL_DELTAPERCENTPOSITION"		,   //	射出起始位置誤差百分比      
+	"MONIB_SCRW2_CUSHION_NULL_DELTAPERCENTPOSITION"	,   //	保壓轉換位置誤差百分比      
+	"MONIB_SCRW2_INJ_END_DELTAPERCENT2POSITION"		,   //	射出終點位置誤差百分比      
+	"MONIB_SCRW2_INJ_END_DELTAPERCENTPOSITION"		,   //	射出監控誤差百分比          
+	"MONIB_SCRW2_RCV_NULL_DELTAPERCENTCOUNTER"		,   //	儲料RPM誤差百分比           
+	"MONIB_SCRW2_DCMP_NULL_DELTAPERCENTTIME"		,   //	射退計時誤差百分比          
+	"MONIB_EJT2_EJT_NULL_DELTAPERCENTTIME"			,   //	脫模計時誤差百分比          
+	"MONIB_EJT2_FWD_NULL_DELTAPERCENTTIME"			,   //	脫模進計時誤差百分比        
+	"MONIB_EJT2_BWD_NULL_DELTAPERCENTTIME"			,   //	脫模退計時誤差百分比       
+	"MONIB_SCRW2_INJ_NULL_DELTAPERCENTHIGHPRESSURE"	,   //	射出尖峰壓力誤差百分比      
+	"MONIB_SCRW2_RCV_NULL_DELTAPERCENTHIGHPRESSURE"	,   //	儲料尖峰壓力誤差百分比 
+	"MONIB_SCRW2_OTHR_NULL_DELTAPERCENT1"				,
+	"MONIB_SCRW2_OTHR_NULL_DELTAPERCENT2"				,
+	"MONIB_SCRW2_OTHR_NULL_DELTAPERCENT3"				,
+	"MONIB_SCRW2_OTHR_NULL_DELTAPERCENT4"				,
+	"MONIB_SCRW2_OTHR_NULL_DELTAPERCENT5"				,
+	"MONIB_SCRW2_OTHR_NULL_DELTAPERCENT6"				,
+};
+
+char*	CtmControl_Quality::m_pszDeltaIDB[] =
+{     
+	"MONIB_SCRW2_INJ_NULL_DELTAVALUETIME"			,   //	射出計時誤差量          
+	"MONIB_SCRW2_CUSHION_NULL_DELTAVALUETIME"		,   //	保壓轉換時間誤差量      
+	"MONIB_SCRW2_RCV_NULL_DELTAVALUETIME"			,   //	儲料計時誤差量          
+	"MONIB_SCRW2_CUSHION_NULL_DELTAVALUEPRESSURE"	,   //	保壓轉換壓力誤差量      
+	"MONIB_SCRW2_INJ_NULL_DELTAVALUEPOSITION"		,   //	射出起始位置誤差量      
+	"MONIB_SCRW2_CUSHION_NULL_DELTAVALUEPOSITION"	,   //	保壓轉換位置誤差量      
+	"MONIB_SCRW2_INJ_END_DELTAVALUE2POSITION"		,   //	射出終點位置誤差量      
+	"MONIB_SCRW2_INJ_END_DELTAVALUEPOSITION"		,   //	射出監控誤差量          
+	"MONIB_SCRW2_RCV_NULL_DELTAVALUECOUNTER"		,   //	儲料RPM誤差量           
+	"MONIB_SCRW2_DCMP_NULL_DELTAVALUETIME"			,   //	射退計時誤差量          
+	"MONIB_EJT2_EJT_NULL_DELTAVALUETIME"			,   //	脫模計時誤差量          
+	"MONIB_EJT2_FWD_NULL_DELTAVALUETIME"			,   //	脫模進計時誤差量        
+	"MONIB_EJT2_BWD_NULL_DELTAVALUETIME"			,   //	脫模退計時誤差量
+	"MONIB_SCRW2_INJ_NULL_DELTAVALUEHIGHPRESSURE"	,   //	射出尖峰壓力誤差量      
+	"MONIB_SCRW2_RCV_NULL_DELTAVALUEHIGHPRESSURE"	,   //	儲料尖峰壓力誤差量        
+	"MONIB_SCRW2_OTHR_NULL_DELTAVALUE1"				,
+	"MONIB_SCRW2_OTHR_NULL_DELTAVALUE2"				,
+	"MONIB_SCRW2_OTHR_NULL_DELTAVALUE3"				,
+	"MONIB_SCRW2_OTHR_NULL_DELTAVALUE4"				,
+	"MONIB_SCRW2_OTHR_NULL_DELTAVALUE5"				,
+	"MONIB_SCRW2_OTHR_NULL_DELTAVALUE6"				,
+};
+
+/*===========================================================================+
+|           Type	                                                         |
++===========================================================================*/
+
+/*===========================================================================+
+|           Global variable                                                  |
++===========================================================================*/
+
+/*===========================================================================+
+|           Function implementation                                          |
++===========================================================================*/	
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_Quality::CtmControl_Quality()				         |
+|  Task     :  CtmControl_Quality構造函數                                    |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+CtmControl_Quality::CtmControl_Quality(): CtmControl()
+{
+	
+}
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_Quality::~CtmControl_Quality()				             |
+|  Task     :  CtmControl_Quality析構函數                                      |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+CtmControl_Quality::~CtmControl_Quality()
+{
+		
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_Quality::CreateSelf()				             	 |
+|  Task     :  Initialize Error Service                                      |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+int		CtmControl_Quality::CreateSelf()
+{
+	InitControl();
+	return 0;	
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_Quality::FreeSelf()				             	     |
+|  Task     :  Relase Error Service                                          |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+int		CtmControl_Quality::FreeSelf()
+{
+	return 0;	
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_Quality::AddControl(void *pParas[])  	     			 |
+|  Task     :  Save Error Record to sram and show promp	                     |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   WORD   pParas[0]        - 		                   			 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_Quality::AddControl(void *pParas[])
+{
+	
+	return TRUE;
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_Quality::ModifyControl(void *pParas[])  	     		 |
+|  Task     :  Modify Error Message 					                     |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   WORD   pParas[0]        - 		                  			 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_Quality::ModifyControl(void *pParas[])
+{
+	return FALSE;	
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_Quality::FindControl(void *pParas[], void *pFindPara) |
+|  Task     :  Search Error Message 					                     |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   void *   pFindPara      - 			               			 |
+|               void *pParas[]          - 存儲返回的警報訊息                 |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_Quality::FindControl(void *pParas[], void *pFindPara)
+{
+	
+	return TRUE;
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_Quality::DeleteControl(void *pDeletePara)             |
+|  Task     :  Clear All Error Message 					                     |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   void *pDeletePara       - 		                   			 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_Quality::DeleteControl(void *pDeletePara)
+{
+	
+	return TRUE;	
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_Quality::FixControl(void *pFixPara)		             |
+|  Task     :  Fix Error Message 					                     	 |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   void *pFixPara          -                        			 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_Quality::FixControl(void *pFixPara)
+{
+	                                                                                                              
+	return TRUE;
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : CtmControl_Quality::InitControl()					             |
+|  Task     :  Init Error Message 					                     	 |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:   			            - 	                     			 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	CtmControl_Quality::InitControl()
+{
+	bDCFlag  = CtmConfig::GetInstance()->GetMachineType() & MACHINE_TYPE_OIL_DC;	
+	memset(&m_tmMoni2, 0, sizeof(m_tmMoni2));
+	memset(&m_Moni2Standard, 0, sizeof(m_Moni2Standard));
+	
+	m_nMoniCount = -1;
+	m_nState = -1;
+}
+/*---------------------------------------------------------------------------+
+|  Function :CtmControl_Quality::GetMoniCount(int nDataType)		         |
+|  Task     :獲得監測筆數總數                                      			 |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+int			CtmControl_Quality::GetMoniCount(int nDataType)											 
+{
+	int Result = 0;
+	switch(nDataType)
+	{
+		case -1:
+		case MONI_DATATYPE_FILEREAL_ID:
+			m_nMoniCount = g_ptmControlServer->MoniControl()->GetMoniLogCount();//m_nMoniCount = GetMoniLogCount();
+			Result = m_nMoniCount;
+			break;
+		default:
+			Result = 1;
+			break;
+	}
+	
+	return Result;
+}
+/*---------------------------------------------------------------------------+
+|  Function :CtmControl_Quality::SetData(int nDataType, int nFunctionType)	 |
+|  Task     :設置品質監測相關函數的接口                                      |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+double		CtmControl_Quality::SetData(int nDataType, int nFunctionType)
+{
+	int nReferOpt  = GetDBValue("SYSX_OTHERS_OTHERS_BYTE_RESERVED13").lValue; /*0=自動取樣1=用戶設定2=自動取樣+用戶設定*/
+	int nReferFlag = GetDBValue("SYSX_OTHERS_OTHERS_BYTE_RESERVED14").lValue; /*FLAG,MONI LastValue-->ReferValue*/
+	if((nReferFlag == 1) && ((nReferOpt == 0) || (nReferOpt == 2)))  /*自動監測由不用變成使用*/
+	{
+    SetDBValue("SYSX_OTHERS_OTHERS_BYTE_RESERVED14", 0, FALSE);
+		SetMoniLastToRefer();
+	}	
+
+	switch(nDataType)
+	{
+		case MONI_DATATYPE_LIMITUP_ID:
+			SetLimitUp();
+			break;
+		case MONI_DATATYPE_LIMITLOWER_ID:
+			SetLimitLower();
+			break;
+
+		case 12:		//fuxy, 2009-1-12 ,add, B組監測的上限;
+			SetLimitUpB();
+			break;
+		case 13:	//fuxy, B組監測的下限
+			SetLimitLowerB();
+			break;
+	}
+	return 0;
+}
+/*---------------------------------------------------------------------------+
+|  Function :CtmControl_Quality::Clear()                                	 |
+|  Task     :清除監測數據                                                    |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	  CtmControl_Quality::Clear()
+{
+	g_ptmControlServer->MoniControl()->ClearMoniLog();//ClearMoniLog();
+}
+
+/*---------------------------------------------------------------------------+
+|  Function :CtmControl_Quality::GetFileReal(int nIndex)                     |
+|  Task     :讀取監測數據                                                    |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	CtmControl_Quality::GetFileReal(int nIndex)
+{
+	memset(&m_tmMoni2, 0, sizeof(m_tmMoni2));
+	//m_tmMoni2 = GetMoniLog(nIndex)->OilMoni2;
+	m_tmMoni2 = ((tmDB_MONI2*)(g_ptmControlServer->MoniControl()->GetMoniLog(nIndex)))->OilMoni2;
+//	printf("file shotcount=%d\n", m_tmMoni2.dwShotCount);
+	m_nState = MONI_DATATYPE_FILEREAL_ID;
+}
+
+/*---------------------------------------------------------------------------+
+|  Function :CtmControl_Quality::GetSum()                                    |
+|  Task     :獲得監測數據的總數                                              |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+tmOIL_MONI2EX	CtmControl_Quality::GetSum()
+{
+	memset(&m_tmMoni2, 0, sizeof(m_tmMoni2));
+	int i;
+	for (i = 0; i < m_nMoniCount; i++)	
+	{
+		m_tmMoni2 = m_tmMoni2 + ((tmDB_MONI2*)(g_ptmControlServer->MoniControl()->GetMoniLog(i + 1)))->OilMoni2;
+	}
+	//printf("number is %d \n",i);
+	m_nState = MONI_DATATYPE_SUM_ID;	
+	return m_tmMoni2;
+}
+
+
+tmOIL_MONI2EX	CtmControl_Quality::GetSqrSum()
+{
+	tmOIL_MONI2EX	Temp;
+	
+	memset(&m_tmMoni2, 0, sizeof(m_tmMoni2));
+	memset(&Temp, 0, sizeof(Temp));
+	
+	for (int i = 0; i < GetMoniCount(); i++)
+	{
+		Temp = ((tmDB_MONI2*)(g_ptmControlServer->MoniControl()->GetMoniLog(i + 1)))->OilMoni2;//Temp = GetMoniLog(i + 1)->OilMoni2;
+//		printf("temp is %d \n",Temp.adPosi_InjectStart);
+		m_tmMoni2 = m_tmMoni2 + Temp * Temp;
+//		printf("the sumsqr is %d,\n",m_tmMoni2.adPosi_InjectStart);
+	}
+	m_nState = MONI_DATATYPE_SQRSUM_ID;	
+	return m_tmMoni2;
+}
+
+
+tmOIL_MONI2EX	CtmControl_Quality::GetStandardAvg()
+{
+	m_tmMoni2 = (GetSqrSum() * m_nMoniCount - GetSum() * GetSum()) / (m_nMoniCount * m_nMoniCount);
+	m_tmMoni2.OilSqrt();
+	
+	//printf("the m_tmMoni2 is %d , m_nMoniCount is %d\n",m_tmMoni2.adPosi_InjectStart,m_nMoniCount);
+	m_nState = MONI_DATATYPE_STANDARDAVG_ID;
+	m_Moni2Standard = m_tmMoni2;
+	return m_tmMoni2;
+}
+
+void	CtmControl_Quality::GetSig()
+{
+    GetStandardAvg();
+	m_nState = MONI_DATATYPE_SIG_ID;
+}
+
+
+void	CtmControl_Quality::GetAvg()
+{
+	GetSum();
+	m_tmMoni2 = m_tmMoni2 / m_nMoniCount;
+}
+
+void	CtmControl_Quality::GetLimitUp()
+{
+    m_tmMoni2.tmlCycle               =   (_TIMEL )GetDBValue(m_pszLimitUpID[0]).lValue  & 0x7FFFFFFF; /*JOYCE2016-2-15 過濾掉最高位bit31或bit15*/
+    m_tmMoni2.tmlInject              =   (_TIMEL )GetDBValue(m_pszLimitUpID[1]).lValue  & 0x7FFFFFFF;
+    m_tmMoni2.tmlTurnToHold          =   (_TIMEL )GetDBValue(m_pszLimitUpID[2]).lValue  & 0x7FFFFFFF;
+    m_tmMoni2.tmlCharge              =   (_TIMEL )GetDBValue(m_pszLimitUpID[3]).lValue  & 0x7FFFFFFF;
+    m_tmMoni2.adPosi_InjectStart     =   (LONG   )GetDBValue(m_pszLimitUpID[9]).lValue  & 0x7FFFFFFF;
+    m_tmMoni2.adPosi_TurnToHold      =   (LONG   )GetDBValue(m_pszLimitUpID[10]).lValue & 0x7FFFFFFF;
+    m_tmMoni2.adPosi_InjectEnd       =   (LONG   )GetDBValue(m_pszLimitUpID[11]).lValue & 0x7FFFFFFF;
+    m_tmMoni2.adPosi_InjectCushion   =   (LONG   )GetDBValue(m_pszLimitUpID[12]).lValue & 0x7FFFFFFF;
+    m_tmMoni2.adPosi_InjectPeak  	   =   (LONG   )GetDBValue(m_pszLimitUpID[13]).lValue & 0x7FFFFFFF;
+    m_tmMoni2.daPres_TurnToHold      =   (WORD   )GetDBValue(m_pszLimitUpID[14]).lValue & 0x7FFF;
+    m_tmMoni2.cnChargeRPM            =   (_AD    )GetDBValue(m_pszLimitUpID[15]).lValue & 0x7FFF;
+    m_tmMoni2.tmSuckBack             =   (_COUNT )GetDBValue(m_pszLimitUpID[16]).lValue & 0x7FFF;
+    m_tmMoni2.tmEject                =   (_TIMER )GetDBValue(m_pszLimitUpID[17]).lValue & 0x7FFF;
+    m_tmMoni2.tmEjectAdvance         =   (_TIMER )GetDBValue(m_pszLimitUpID[18]).lValue & 0x7FFF;
+    m_tmMoni2.tmEjectReturn          =   (_TIMER )GetDBValue(m_pszLimitUpID[19]).lValue & 0x7FFF;
+    m_tmMoni2.daPres_InjectPeak      =   (_DA    )GetDBValue(m_pszLimitUpID[20]).lValue & 0x7FFF;
+    m_tmMoni2.daPres_ChargePeak      =   (_DA    )GetDBValue(m_pszLimitUpID[21]).lValue & 0x7FFF;
+    
+    if(bDCFlag)/*JOYCE2016-2-3 add 品質曲線中B組的上限*/
+    {	
+	    m_tmMoni2.tmlInjectB             =   (_TIMEL )GetDBValue(m_pszLimitUpIDB[0]).lValue  & 0x7FFFFFFF;
+    	m_tmMoni2.tmlTurnToHoldB         =   (_TIMEL )GetDBValue(m_pszLimitUpIDB[1]).lValue  & 0x7FFFFFFF;
+	    m_tmMoni2.tmlChargeB             =   (_TIMEL )GetDBValue(m_pszLimitUpIDB[2]).lValue  & 0x7FFFFFFF;
+    	m_tmMoni2.daPres_TurnToHoldB     =   (WORD   )GetDBValue(m_pszLimitUpIDB[3]).lValue  & 0x7FFF;
+	    m_tmMoni2.adPosi_InjectStartB    =   (LONG   )GetDBValue(m_pszLimitUpIDB[4]).lValue  & 0x7FFFFFFF;
+	    m_tmMoni2.adPosi_TurnToHoldB     =   (LONG   )GetDBValue(m_pszLimitUpIDB[5]).lValue  & 0x7FFFFFFF;
+   	  m_tmMoni2.adPosi_InjectHoldEndB  =   (LONG   )GetDBValue(m_pszLimitUpIDB[6]).lValue  & 0x7FFFFFFF;
+	    m_tmMoni2.adPosi_InjectCushionB  =   (LONG   )GetDBValue(m_pszLimitUpIDB[7]).lValue  & 0x7FFFFFFF;
+	    m_tmMoni2.daPres_InjectMiddleB   =   (_DA    )GetDBValue(m_pszLimitUpIDB[13]).lValue & 0x7FFF;
+	    m_tmMoni2.daPres_ChargeMiddleB   =   (_DA    )GetDBValue(m_pszLimitUpIDB[14]).lValue & 0x7FFF;  
+    }                                    
+}
+
+void	CtmControl_Quality::GetLimitLower()
+{   
+    m_tmMoni2.tmlCycle               =   (_TIMEL )GetDBValue(m_pszLimitLowerID[0]).lValue  & 0x7FFFFFFF; /*JOYCE2016-2-15 過濾掉最高位bit31*/
+    m_tmMoni2.tmlInject              =   (_TIMEL )GetDBValue(m_pszLimitLowerID[1]).lValue  & 0x7FFFFFFF; 
+    m_tmMoni2.tmlTurnToHold          =   (_TIMEL )GetDBValue(m_pszLimitLowerID[2]).lValue  & 0x7FFFFFFF; 
+    m_tmMoni2.tmlCharge              =   (_TIMEL )GetDBValue(m_pszLimitLowerID[3]).lValue  & 0x7FFFFFFF; 
+    m_tmMoni2.adPosi_InjectStart     =   (LONG   )GetDBValue(m_pszLimitLowerID[9]).lValue  & 0x7FFFFFFF; 
+    m_tmMoni2.adPosi_TurnToHold      =   (LONG   )GetDBValue(m_pszLimitLowerID[10]).lValue & 0x7FFFFFFF;
+    m_tmMoni2.adPosi_InjectEnd       =   (LONG   )GetDBValue(m_pszLimitLowerID[11]).lValue & 0x7FFFFFFF;
+    m_tmMoni2.adPosi_InjectCushion   =   (LONG   )GetDBValue(m_pszLimitLowerID[12]).lValue & 0x7FFFFFFF;
+    m_tmMoni2.adPosi_InjectPeak  	   =   (LONG   )GetDBValue(m_pszLimitLowerID[13]).lValue & 0x7FFFFFFF;
+    m_tmMoni2.daPres_TurnToHold      =   (WORD 	 )GetDBValue(m_pszLimitLowerID[14]).lValue & 0x7FFF;
+    m_tmMoni2.cnChargeRPM            =   (_AD    )GetDBValue(m_pszLimitLowerID[15]).lValue & 0x7FFF; 
+    m_tmMoni2.tmSuckBack             =   (_COUNT )GetDBValue(m_pszLimitLowerID[16]).lValue & 0x7FFF;
+    m_tmMoni2.tmEject                =   (_TIMER )GetDBValue(m_pszLimitLowerID[17]).lValue & 0x7FFF;
+    m_tmMoni2.tmEjectAdvance         =   (_TIMER )GetDBValue(m_pszLimitLowerID[18]).lValue & 0x7FFF;
+    m_tmMoni2.tmEjectReturn          =   (_TIMER )GetDBValue(m_pszLimitLowerID[19]).lValue & 0x7FFF;
+    m_tmMoni2.daPres_InjectPeak      =   (_TIMER )GetDBValue(m_pszLimitLowerID[20]).lValue & 0x7FFF;
+    m_tmMoni2.daPres_ChargePeak      =   (_DA    )GetDBValue(m_pszLimitLowerID[21]).lValue & 0x7FFF;
+    
+    if(bDCFlag)/*JOYCE2016-2-3 add 品質曲線中B組的下限*/
+    {	
+	    m_tmMoni2.tmlInjectB             =   (_TIMEL )GetDBValue(m_pszLimitLowerIDB[0]).lValue  & 0x7FFFFFFF; 
+    	m_tmMoni2.tmlTurnToHoldB         =   (_TIMEL )GetDBValue(m_pszLimitLowerIDB[1]).lValue  & 0x7FFFFFFF; 
+	    m_tmMoni2.tmlChargeB             =   (_TIMEL )GetDBValue(m_pszLimitLowerIDB[2]).lValue  & 0x7FFFFFFF; 
+    	m_tmMoni2.daPres_TurnToHoldB     =   (WORD   )GetDBValue(m_pszLimitLowerIDB[3]).lValue  & 0x7FFF;              
+	    m_tmMoni2.adPosi_InjectStartB    =   (LONG   )GetDBValue(m_pszLimitLowerIDB[4]).lValue  & 0x7FFFFFFF; 
+	    m_tmMoni2.adPosi_TurnToHoldB     =   (LONG   )GetDBValue(m_pszLimitLowerIDB[5]).lValue  & 0x7FFFFFFF; 
+   	  m_tmMoni2.adPosi_InjectHoldEndB  =   (LONG   )GetDBValue(m_pszLimitLowerIDB[6]).lValue  & 0x7FFFFFFF; 
+	    m_tmMoni2.adPosi_InjectCushionB  =   (LONG   )GetDBValue(m_pszLimitLowerIDB[7]).lValue  & 0x7FFFFFFF; 
+	    m_tmMoni2.daPres_InjectMiddleB   =   (_DA    )GetDBValue(m_pszLimitLowerIDB[13]).lValue & 0x7FFF;
+	    m_tmMoni2.daPres_ChargeMiddleB   =   (_DA    )GetDBValue(m_pszLimitLowerIDB[14]).lValue & 0x7FFF;  
+    }                                    
+}   
+    
+    
+void	CtmControl_Quality::GetAvgLimitUp()
+{   
+    GetStandardAvg();
+	GetAvg();
+	m_tmMoni2 = m_tmMoni2 + m_Moni2Standard;
+}   
+    
+void	CtmControl_Quality::GetAvgLimitLower()
+{   
+    GetStandardAvg();
+	GetAvg();
+	m_tmMoni2 = m_tmMoni2 - m_Moni2Standard;
+}   
+    
+void	CtmControl_Quality::GetReal()	
+{   
+	//	todo
+}
+
+void*	CtmControl_Quality::GetMachineDataType(int nDataType, int nIndex)
+{
+	tmOIL_MONI2EX*	pMoni2 = NULL;
+	switch(nDataType)
+	{
+		case MONI_DATATYPE_REAL_ID:					//0	real value
+			GetReal();
+			pMoni2 = &m_tmMoni2;
+			break;
+		case MONI_DATATYPE_LIMITUP_ID:			//1	LimitUP
+			GetLimitUp();
+			pMoni2 = &m_tmMoni2;
+			break;
+		case MONI_DATATYPE_LIMITLOWER_ID:		//2	limit lower
+			GetLimitLower();
+			pMoni2 = &m_tmMoni2;
+			break;
+		case MONI_DATATYPE_FILEREAL_ID:			//3	文件中的實際值
+			GetFileReal(nIndex);
+			pMoni2 = &m_tmMoni2;
+			break;
+		case MONI_DATATYPE_STANDARDAVG_ID:	//4	標準差
+			GetStandardAvg();
+			pMoni2 = &m_tmMoni2;
+			break;			
+		case MONI_DATATYPE_SIG_ID:					//5	sig
+			GetSig();
+			pMoni2 = &m_tmMoni2;
+			break;			
+		case MONI_DATATYPE_AVG_ID:					//6	平均值
+			GetAvg();
+			pMoni2 = &m_tmMoni2;
+			break;
+		case MONI_DATATYPE_AVGLIMITUP_ID:		//7	平均值的上限(平均值加上標準差)
+			//GetStandardAvg();
+			GetAvgLimitUp();
+			pMoni2 = &m_tmMoni2;
+			break;
+		case MONI_DATATYPE_AVGLIMITLOWER_ID://8	平均值的下限(平均值減去標準差)
+			GetAvgLimitLower();
+			pMoni2 = &m_tmMoni2;
+			break;			
+		case MONI_DATATYPE_SUM_ID:					//9	sum
+			GetSum();
+			pMoni2 = &m_tmMoni2;
+			break;
+		case MONI_DATATYPE_SQRSUM_ID:				//10	平方和
+			GetSqrSum();
+			pMoni2 = &m_tmMoni2;
+			break;
+	}
+	
+	return pMoni2;
+}
+
+void	CtmControl_Quality::GetDataBasicFunction(int nFunctionType, void* pMachineDataType, 																		 double* pSingleOutData)
+{
+	GetDataOil(nFunctionType, (tmOIL_MONI2EX*)pMachineDataType, pSingleOutData);
+}
+
+void	CtmControl_Quality::GetDataOil(int nType, tmOIL_MONI2EX*	pMoni2, double* pData)
+{
+	switch(nType)
+	{
+		case MONI_OIL_SHOTCOUNT_ID:								//0	開模序號
+			*pData = pMoni2->dwShotCount;
+			//cout<<"=======[0]"<<*pData<<endl;     			
+			break;                            			
+		case MONI_OIL_CYCLE_ID:										//1	循環計時值
+			*pData = pMoni2->tmlCycle;
+			//cout<<"=======[1]"<<*pData<<endl;          			
+			break;                            			
+		case MONI_OIL_INJECT_ID:									//2	射出計時值 
+			*pData = pMoni2->tmlInject;
+			//cout<<"=======[2]"<<*pData<<endl;         			
+			break;                            			
+		case MONI_OIL_TURNTOHOLD_ID:							//3	保壓轉換時間實際值 
+			*pData = pMoni2->tmlTurnToHold;
+			break;                            			
+		case MONI_OIL_CHARGE_ID:									//4	儲料計時值 
+			*pData = pMoni2->tmlCharge;  
+			//cout<<"=======[4]"<<*pData<<endl;      		                   
+			break;                            		
+		case MONI_OIL_PRES_TURNTOHOLD_ID:					//5	保壓轉換壓力值 
+			*pData = pMoni2->daPres_TurnToHold; 		                         
+			break;                              		
+		case MONI_OIL_POSI_INJECTSTART_ID:				//6	射出起點
+			*pData = pMoni2->adPosi_InjectStart;
+			//cout<<"=======[6]"<<*pData<<endl;		  
+			break;                              		
+		case MONI_OIL_POSI_TURNTOHOLD_ID:					//7	保壓起點 
+			*pData = pMoni2->adPosi_TurnToHold;
+			//cout<<"=======[7]"<<*pData<<endl;   	
+			break;                                	
+		case MONI_OIL_POSI_INJECTEND_ID:					//8	射出終點
+			*pData = pMoni2->adPosi_InjectEnd;    	
+			break;                                	
+		case MONI_OIL_POSI_INJECTCUSHION_ID:			//9	射出監控位置
+			*pData = pMoni2->adPosi_InjectCushion;
+			//cout<<"=======[9]"<<*pData<<endl;	
+			break;                                	
+		case MONI_OIL_CHARGERPM_ID:								//10儲料RPM 值
+			*pData = pMoni2->cnChargeRPM;     			
+			break;                            			
+		case MONI_OIL_SUCKBACK_ID:								//11射退計時值
+			*pData = pMoni2->tmSuckBack;      			
+			break;                            			
+		case MONI_OIL_EJECT_ID:										//12脫模計時值
+			*pData = pMoni2->tmEject;         			
+			break;                            			
+		case MONI_OIL_EJECTADVANCE_ID:						//13脫進計時值  
+			*pData = pMoni2->tmEjectAdvance;  		
+			break;                            		
+		case MONI_OIL_EJECTRETURN_ID:							//14脫退計時值  
+			*pData = pMoni2->tmEjectReturn;       	
+			break;                                	
+		case MONI_OIL_PRES_INJECTPEAK_ID:					//15射出尖峰壓力 
+			*pData = pMoni2->daPres_InjectPeak;   	
+			break;                                	
+		case MONI_OIL_PRES_CHARGEPEAK_ID:					//16儲料尖峰壓力  
+			*pData = pMoni2->daPres_ChargePeak;   	
+			break;                                	
+		case MONI_OIL_INJECTB_ID:									//17B組射出計時值
+			*pData = pMoni2->tmlInjectB;      			
+			break;                            			
+		case MONI_OIL_CHARGEB_ID:									//18B組儲料計時值
+			*pData = pMoni2->tmlChargeB;      			
+			break;                            			
+		case MONI_OIL_POSI_INJECTSTARTB_ID:				//19B組射出起點
+			*pData = pMoni2->adPosi_InjectStartB; 	
+			break;                                	
+		case MONI_OIL_POSI_TURNTOHOLDB_ID:				//20B組保壓起點
+			*pData = pMoni2->adPosi_TurnToHoldB;  	
+			break;                                	
+		case MONI_OIL_POSI_INJECTCUSHIONB_ID:			//21B組射出終點
+			*pData = pMoni2->adPosi_InjectCushionB; 
+			break;
+		case MONI_OIL_PRES_INJECTERB_ID:					//22射出壓力值
+			*pData = pMoni2->daPres_InjecterB;    	
+			break;                                	
+		case MONI_OIL_PRES_CHARGEBACKB_ID:				//23儲料背壓值
+			*pData = pMoni2->daPres_ChargeBackB;  	
+			break;                                	
+		case MONI_OIL_TIME_TAKE_ID:								//24取件時間		  //Sunny<20070809>
+			*pData = pMoni2->tmTake;
+			//cout<<"=======[24]"<<*pData<<endl;               	
+			break;                                	
+		case MONI_OIL_POSI_OPENMOLDEND_ID:				//25開模終點		  //Sunny<20080804>
+			*pData = pMoni2->adPosi_OpenMoldEnd;  	
+			break;                     
+		case MONI_OIL_TURNTOHOLDB_ID:							//26B組保壓轉換時間實際值
+			*pData = pMoni2->tmlTurnToHoldB;        /*JOYCE2016-2-4 B組保壓轉換時間、壓力的錯位問題修正*/
+			break; 
+		case MONI_OIL_PRES_TURNTOHOLDB_ID:				//27B組保壓轉換壓力實際值
+			*pData = pMoni2->daPres_TurnToHoldB;
+			break; 
+		case MONI_OIL_POSI_INJECTENDB_ID:					//28B組射出終點 
+			*pData = pMoni2->adPosi_InjectHoldEndB;      	
+			break; 
+		case MONI_OIL_PRES_INJECTPEAKB_ID:				//29B組射出尖峰壓力
+			*pData = pMoni2->daPres_InjectMiddleB;      	
+			break; 
+		case MONI_OIL_PRES_CHARGEPEAKB_ID:				//30B組儲料尖峰壓力
+			*pData = pMoni2->daPres_ChargeMiddleB;      	
+			break; 	           	
+		case MONI_OIL_INJMAXSPEED_ID:							//31最大射出速率 
+			*pData = pMoni2->InjectMaxSpeed;      	
+			break;                                	
+		case MONI_OIL_INJMAXSPEEDB_ID:						//32B組最大射出速率
+			*pData = pMoni2->InjectMaxSpeedB;
+			break;
+		case MONI_OIL_MUCELL_AVERAGEPERCENT_ID:		//33	average percent (MUCELL) //JOYCE2010-12-16 <<<
+			*pData = pMoni2->MuCellAveragePercent;
+			break;
+		case MONI_OIL_MUCELL_MAXPERCENT_ID:		//34	max percent (MUCELL)
+			*pData = pMoni2->MuCellMaxPercent;
+			break;
+		case MONI_OIL_MUCELL_MINPERCENT_ID:		//35	min percent (MUCELL)
+			*pData = pMoni2->MuCellMinPercent;
+			break;
+		case MONI_OIL_MUCELL_SETNPERCENT_ID:		//36	set percent (MUCELL)
+			*pData = pMoni2->MuCellSetPercent;
+			break;
+//		case MONI_OIL_MUCELL_SHOTWEIGHT_ID:		//37	shot weight (MUCELL)
+//			*pData = pMoni2->MuCellShotWeight;
+//			break;
+//		case MONI_OIL_MUCELL_BACKPRESS_ID:		//38	back press (MUCELL)
+//			*pData = pMoni2->MuCellBackPress;
+//			break;
+    	case MONI_OIL_RESERVED0_ID:
+			*pData = pMoni2->wReservedMG[0]; 
+			break;
+    	case MONI_OIL_RESERVED1_ID:
+			*pData = pMoni2->wReservedMG[1]; 
+			break;
+    	case MONI_OIL_RESERVED2_ID:
+			*pData = pMoni2->wReservedMG[2]; 
+			break;
+    	case MONI_OIL_RESERVED3_ID:  
+			*pData = pMoni2->wReservedMG[3]; 
+			break;
+		case MONI_OIL_RESERVED4_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[4]; 
+			break;
+		case MONI_OIL_RESERVED5_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[5]; 
+			break;
+		case MONI_OIL_RESERVED6_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[6]; 
+			break;
+		case MONI_OIL_RESERVED7_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[7]; 
+			break;
+		case MONI_OIL_RESERVED8_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[8]; 
+			break;
+		case MONI_OIL_RESERVED9_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[9]; 
+			break;
+		case MONI_OIL_RESERVED10_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[10]; 
+			break;
+		case MONI_OIL_RESERVED11_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[11]; 
+			break;
+		case MONI_OIL_RESERVED12_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[12]; 
+			break;
+		case MONI_OIL_RESERVED13_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[13]; 
+			break;
+		case MONI_OIL_RESERVED14_ID:    //2012-8-3  
+			*pData = pMoni2->wReservedMG[14]; 
+			break;
+	}
+}
+
+void	CtmControl_Quality::SetLimit()
+{
+	long Value = 0;
+	long Pct 	= 0;	//	percent;
+	//long Last 	= 0;	//	last
+	long Delta 	= 0;	//	delta
+	long Refer  = 0;
+	for (int i = 0; i < sizeof(m_pszLimitUpID) / sizeof(char*); i++)
+	{
+		Pct = GetDBValue(m_pszPctID[i]).lValue;
+		Delta = GetDBValue(m_pszDeltaID[i]).lValue;
+		//Last = GetDBValue(m_pszLastID[i]).lValue;
+		Refer = GetDBValue(m_pszReferID[i]).lValue;
+
+		Value = (long)(Refer * (1 + (double)Pct / 100.0) + Delta);
+		SetDBValue(m_pszLimitUpID[i], Value);
+		
+		Value = (long)(Refer * (1 - (double)Pct / 100.0) - Delta);
+		if (Value < 0) Value = 0;
+		SetDBValue(m_pszLimitLowerID[i], Value);
+	}
+}
+
+void	CtmControl_Quality::SetLimitUp()
+{
+	DWORD Value = 0;
+	long Pct 	= 0;	//	percent;
+	//long Last 	= 0;	//	last
+	long Delta 	= 0;	//	delta
+	long Refer  = 0;
+	long lTemp  = 0;
+	//WORD		wDSPLIBDaysCode=GetDBValue("CONF_CODE_WRITE_NULL_DATA16").lValue;
+	//WORD		wDSPLIBYearCode=GetDBValue("CONF_CODE_WRITE_NULL_MCHINEDATA1").lValue;
+
+	for (int i = 0; i < sizeof(m_pszLimitUpID) / sizeof(char*); i++)
+	{
+		Pct = GetDBValue(m_pszPctID[i]).lValue;
+		Delta = GetDBValue(m_pszDeltaID[i]).lValue;
+		//Last = GetDBValue(m_pszLastID[i]).lValue;
+		Refer = GetDBValue(m_pszReferID[i]).lValue;
+		
+		Value = DWORD(Refer * (1 + (double)Pct / 100.0) + Delta);
+
+/*		if(!(CtmConfig::GetInstance()->GetMachineType() & MACHINE_TYPE_OIL_DC) 
+			&& ((wDSPLIBDaysCode >= 0x3305)&&(wDSPLIBYearCode==0x2013)||(wDSPLIBYearCode >= 0x2014)))joyce20130314 監測增加新功能*/
+//		{
+			if((i == 1) ||(i == 2) || (i == 3) || (i == 9) ||(i == 11) || (i == 12) || (i == 0) || (i == 10) || (i == 8))//long
+				lTemp = (GetDBValue(m_pszLimitUpID[i]).lValue & 0x80000000) | Value;
+			else	
+				lTemp = (GetDBValue(m_pszLimitUpID[i]).lValue & 0x8000) | Value;
+			
+			SetDBValue(m_pszLimitUpID[i], lTemp,FALSE);
+//		}
+//		else	
+//		SetDBValue(m_pszLimitUpID[i], Value,FALSE);
+		//wangli2014-12-2 10:07:30 因為在RS232 SendControlMonitor有批量傳值處理，所以此處不需傳主機，而且會造成開模終點的上限沒有轉成推力座位置
+		
+	}
+}
+
+void	CtmControl_Quality::SetLimitUpB()	//fuxy,2009-1-12
+{
+	DWORD Value = 0;
+	long Pct 	= 0;	//	percent;
+	//long Last 	= 0;	//	last
+	long Delta 	= 0;	//	delta
+	long Refer  = 0;
+	long lTemp  = 0;
+	for (int i = 0; i < sizeof(m_pszLimitUpIDB) / sizeof(char*); i++)
+	{
+		Pct = GetDBValue(m_pszPctIDB[i]).lValue;
+		Delta = GetDBValue(m_pszDeltaIDB[i]).lValue;
+		//Last = GetDBValue(m_pszLastIDB[i]).lValue;
+		Refer = GetDBValue(m_pszReferIDB[i]).lValue;
+		
+		Value = DWORD(Refer * (1 + (double)Pct / 100.0) + Delta);
+		
+		if((i == 0) ||(i == 1) || (i == 2) || (i == 4) ||(i == 5) || (i == 6) || (i == 7))//long
+			lTemp = (GetDBValue(m_pszLimitUpIDB[i]).lValue & 0x80000000) | Value;
+		else	
+			lTemp = (GetDBValue(m_pszLimitUpIDB[i]).lValue & 0x8000) | Value;
+		
+		SetDBValue(m_pszLimitUpIDB[i], lTemp,FALSE);
+		//wangli2014-12-2 10:07:30 因為在RS232 SendControlMonitorB有批量傳值處理，所以此處不需傳主機
+		
+	}
+}
+
+void	CtmControl_Quality::SetLimitLower()
+{
+	long Value = 0;
+	long Pct 	= 0;	//	percent;
+	//long Last 	= 0;	//	last
+	long Delta 	= 0;	//	delta
+	long Refer  = 0;
+	long lTemp  = 0;
+	//WORD		wDSPLIBDaysCode=GetDBValue("CONF_CODE_WRITE_NULL_DATA16").lValue;
+	//WORD		wDSPLIBYearCode=GetDBValue("CONF_CODE_WRITE_NULL_MCHINEDATA1").lValue;
+
+	for (int i = 0; i < sizeof(m_pszLimitUpID) / sizeof(char*); i++)
+	{
+		Pct = GetDBValue(m_pszPctID[i]).lValue;
+		Delta = GetDBValue(m_pszDeltaID[i]).lValue;
+		//Last = GetDBValue(m_pszLastID[i]).lValue;
+		Refer = GetDBValue(m_pszReferID[i]).lValue;
+
+		Value = (long)(Refer * (1 - (double)Pct / 100.0) - Delta);
+		if (Value < 0) Value = 0;
+
+//		if(!(CtmConfig::GetInstance()->GetMachineType() & MACHINE_TYPE_OIL_DC)
+//			/*&& ((wDSPLIBDaysCode >= 0x3305)&&(wDSPLIBYearCode==0x2013)||(wDSPLIBYearCode >= 0x2014))*/)/*joyce20130314 監測增加新功能*/
+//		{
+			if((i == 1) ||(i == 2) || (i == 3) || (i == 9) ||(i == 11) || (i == 12) || (i == 0) || (i == 10) || (i == 8))//long
+				lTemp = (GetDBValue(m_pszLimitLowerID[i]).lValue & 0x80000000) | Value;
+			else	
+				lTemp = (GetDBValue(m_pszLimitLowerID[i]).lValue & 0x8000) | Value;
+			SetDBValue(m_pszLimitLowerID[i], lTemp,FALSE);
+//		}
+//		else	
+//		SetDBValue(m_pszLimitLowerID[i], Value,FALSE);
+		//wangli2014-12-2 10:07:30 因為在RS232 SendControlMonitor有批量傳值處理，所以此處不需傳主機，而且會造成開模終點的下限沒有轉成推力座位置
+	}
+}
+
+void	CtmControl_Quality::SetLimitLowerB()		//fuxy,2009-1-12
+{
+	long Value = 0;
+	long Pct 	= 0;	//	percent;
+	//long Last 	= 0;	//	last
+	long Delta 	= 0;	//	delta
+	long Refer  = 0;
+	long lTemp  = 0;
+	for (int i = 0; i < sizeof(m_pszLimitUpIDB) / sizeof(char*); i++)
+	{
+		Pct		= GetDBValue(m_pszPctIDB[i]).lValue;
+		Delta = GetDBValue(m_pszDeltaIDB[i]).lValue;
+		//Last	= GetDBValue(m_pszLastIDB[i]).lValue;
+		Refer = GetDBValue(m_pszReferIDB[i]).lValue;
+
+		Value = (long)(Refer * (1 - (double)Pct / 100.0) - Delta);
+		if (Value < 0) Value = 0;
+	
+		if((i == 0) ||(i == 1) || (i == 2) || (i == 4) ||(i == 5) || (i == 6) || (i == 7))//long
+			lTemp = (GetDBValue(m_pszLimitLowerIDB[i]).lValue & 0x80000000) | Value;
+		else	
+			lTemp = (GetDBValue(m_pszLimitLowerIDB[i]).lValue & 0x8000) | Value;	
+	
+		SetDBValue(m_pszLimitLowerIDB[i], lTemp,FALSE);
+		//wangli2014-12-2 10:07:30 因為在RS232 SendControlMonitorB有批量傳值處理，所以此處不需傳主機
+	}
+}
+
+
+void	CtmControl_Quality::SetMoniLastToRefer()
+{
+	long Last 	= 0;
+	for (int i = 0; i < sizeof(m_pszReferID) / sizeof(char*); i++)
+	{
+		Last = GetDBValue(m_pszLastID[i]).lValue;
+
+		SetDBValue(m_pszReferID[i], Last);
+	}
+
+	if(CtmConfig::GetInstance()->GetMachineType() & MACHINE_TYPE_OIL_DC) 
+	{
+		for (int i = 0; i < sizeof(m_pszReferIDB) / sizeof(char*); i++)
+		{
+			Last = GetDBValue(m_pszLastIDB[i]).lValue;
+	
+			SetDBValue(m_pszReferIDB[i], Last);
+		}
+	}
+}/*---------------------------------------------------------------------------+
+|  Function :CtmQualityControl::GetDataCurve(int nDataType, int nFunctionType, void* pData)|
+|  Task     :獲得曲線Data                                                    |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+int		CtmControl_Quality::GetDataCurve(int nDataType, int nFunctionType, void* pData)
+{
+	int i = 0;
+	double  dYValue;
+	BOOL    bFlag = FALSE;
+	CtmOilQuality	u_Quality;
+	int	nResult = u_Quality.GetMoniCount();
+	for (i = 0; i < nResult; i++)
+	{
+		((tmMoniCurve*)pData + i)->dX = i + 1;
+		if (MONI_DATATYPE_FILEREAL_ID == nDataType)
+		{
+		    ((tmMoniCurve*)pData + i)->dY = u_Quality.GetDataS(nDataType, nFunctionType, i + 1);
+	    }
+	    else
+	    {
+	        if (!bFlag)
+	            dYValue = u_Quality.GetDataS(nDataType, nFunctionType, i + 1);
+	        ((tmMoniCurve*)pData + i)->dY = dYValue;
+	        bFlag = TRUE;
+	    }
+	}
+	return i;
+}
+
+/*---------------------------------------------------------------------------+
+|  Function :CtmQualityControl::SaveAs(tmStorageType StorageType)            |
+|  Task     :將監測數據保存到指定的媒介                                      |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_Quality::SaveAs(tmStorageType StorageType)
+{
+	BOOL	bResult = FALSE;
+	tmDB_MONI2*	pMoni2 = new tmDB_MONI2[GetMoniCount(-1) + 1];
+	memset(pMoni2,0,sizeof(tmDB_MONI2)*(GetMoniCount(-1) + 1));
+	//pMoni2[0] = *GetMoniIndex();
+	//pMoni2 = GetMoniIndex();
+	//ReInit
+	//bResult = CtmSarmRecordFileControl::GetInstance()->WriteRecord(ID_MONI_SRAMFILE, 0, pMoni2, StorageType);
+	for (int i = 0; i <= GetMoniCount(-1); i++)
+	{
+		if(CtmConfig::GetInstance()->GetRecordType() == 1)
+			bResult = CManageFile::GetInstance()->ReadRecord(FILE_RECORD_MONI, i, &pMoni2[i], sizeof(pMoni2[i]));
+		else
+			bResult = CtmSarmRecordFileControl::GetInstance()->ReadRecord(ID_MONI_SRAMFILE, i, &pMoni2[i]);
+		//pMoni2[i] = *GetMoniLog(i);		James mark 2008/2/22 02:52下午
+	}
+	bResult = CtmSarmRecordFileControl::GetInstance()->WriteRecord(ID_MONI_SRAMFILE, 0, pMoni2, sizeof(tmDB_MONI2)*(GetMoniCount(-1) + 1),StorageType);	
+	delete []pMoni2;
+	return bResult;
+}
+
+/*---------------------------------------------------------------------------+
+|  Function :CtmQualityControl::ReadAs(tmStorageType StorageTypeSrc, tmStorageType StorageTypeDst)|
+|  Task     :將監測數據從一個地方拷貝到另外一個地方                          |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+BOOL	CtmControl_Quality::ReadAs(tmStorageType StorageTypeSrc, tmStorageType StorageTypeDst)
+{
+	BOOL	bResult = FALSE;
+	tmDB_MONI2* ptmDB_MONI2 = new tmDB_MONI2[CtmConfig::GetInstance()->GetMoniMaxNum() + 1];
+	memset(ptmDB_MONI2,0,sizeof(tmDB_MONI2)*(CtmConfig::GetInstance()->GetMoniMaxNum() + 1));
+	
+#ifdef	D_ARM	
+	if(CtmConfig::GetInstance()->GetRecordType() == 1)
+		CManageFile::GetInstance()->ReadRecord(FILE_RECORD_MONI, 0, &ptmDB_MONI2[0], StorageTypeSrc);
+	else	
+		CtmSarmRecordFileControl::GetInstance()->ReadRecord(ID_MONI_SRAMFILE, 0, &ptmDB_MONI2[0], StorageTypeSrc);
+			
+	for(int i = 1; i <= ptmDB_MONI2->nCount; i++)
+	{
+	    if(CtmConfig::GetInstance()->GetRecordType() == 1)
+	    	bResult = CManageFile::GetInstance()->ReadRecord(FILE_RECORD_MONI, i, (ptmDB_MONI2+i), StorageTypeSrc);
+	    else	
+	    	bResult = CtmSarmRecordFileControl::GetInstance()->ReadRecord(ID_MONI_SRAMFILE, i, (ptmDB_MONI2+i), StorageTypeSrc);
+	}
+	bResult = CtmSarmRecordFileControl::GetInstance()->WriteRecord(ID_MONI_SRAMFILE, 0, ptmDB_MONI2, sizeof(tmDB_MONI2)*(ptmDB_MONI2->nCount+1), StorageTypeDst);
+#else
+	bResult = CtmSarmRecordFileControl::GetInstance()->WriteRecord(ID_MONI_SRAMFILE, 0, ptmDB_MONI2, sizeof(tmDB_MONI2)*(ptmDB_MONI2->nCount+1), StorageTypeDst);
+#endif
+	delete []ptmDB_MONI2;
+	
+	return bResult;
+}
+
+
+#ifndef	D_BEOBJECT_CTMCONTROL_QUALITY
+CObject*	CreateInstance(char* Name)
+{
+	CObject*	pResult = Create(Name);
+	if (pResult != NULL)
+	{
+		(static_cast<CtmPackClass*>(pResult))->CreateSelf();
+	}
+	return pResult;
+}
+
+void	ReleaseInstance(CObject* pInstance)
+{
+	if (pInstance != NULL)
+		(static_cast<CtmPackClass*>(pInstance))->FreeSelf();
+	delete pInstance;
+	pInstance = NULL;
+}
+
+#endif
