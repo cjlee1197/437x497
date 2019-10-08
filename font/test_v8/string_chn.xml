@@ -1090,6 +1090,7 @@
 	<string name="UserLog_TIME">修改時間</string>
 	<string name="UserLog_DATE">修改日期</string>
 	<string name="UserLog_RESET">重置</string>
+	<string name="UserLog_ACT9599">查看驅動器</string>
 	<string name="UserLog_ACT9603">機型選擇</string>
 	<string name="UserLog_ACT9630">整體速度</string>
 	<string name="UserLog_ACT9647"></string>
@@ -1125,6 +1126,7 @@
 	<string name="UserLog_ACT9714">堆疊4 Y軸堆疊間距</string>
 	<string name="UserLog_ACT9715">堆疊4 Z軸堆疊個數</string>
 	<string name="UserLog_ACT9716">堆疊4 Z軸堆疊間距</string>
+	<string name="UserLog_ACT9726">切換手動頁</string>
 	<string name="UserLog_ACT9729">X1傳動方式</string>
 	<string name="UserLog_ACT9730">Y1傳動方式</string>
 	<string name="UserLog_ACT9731">Z傳動方式</string>

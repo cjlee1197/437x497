@@ -1037,6 +1037,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="UserLog_TIME">Chg Time</string>
 	<string name="UserLog_DATE">Chg Date</string>
 	<string name="UserLog_RESET">RESET</string>
+	<string name="UserLog_ACT9599">Drive Info</string>
 	<string name="UserLog_ACT9603">Mech Type</string>
 	<string name="UserLog_ACT9630">Auto Spd</string>
 	<string name="UserLog_ACT9647"></string>
@@ -1072,6 +1073,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="UserLog_ACT9714">STK4 Y STK Dis</string>
 	<string name="UserLog_ACT9715">STK4 Z STK Num</string>
 	<string name="UserLog_ACT9716">STK4 Z STK Dis</string>
+	<string name="UserLog_ACT9726">Move to MANUAL</string>
 	<string name="UserLog_ACT9729">X1 TXR Type</string>
 	<string name="UserLog_ACT9730">Y1 TXR Type</string>
 	<string name="UserLog_ACT9731">Z TXR Type</string>
