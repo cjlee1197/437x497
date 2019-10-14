@@ -463,7 +463,7 @@
 	<string name="PICKER_REMOTE_I_18"></string>
 	<string name="PICKER_REMOTE_I_19"></string>
 	<string name="PICKER_REMOTE_I_20">主臂前後 +限位(X1)</string>
-	<string name="PICKER_REMOTE_I_21">主臂上下 +限位(Y1)</string>
+	<string name="PICKER_REMOTE_I_21">主臂上下 -限位(Y1)</string>
 	<string name="PICKER_REMOTE_I_22">橫行軸   +限位(Z)</string>
 	<string name="PICKER_REMOTE_I_23">橫行軸   -限位(Z)</string>
 	<string name="PICKER_REMOTE_I_24">副臂上下 -限位(Y2)</string>
