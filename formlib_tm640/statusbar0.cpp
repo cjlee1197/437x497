@@ -692,8 +692,9 @@ void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
 					pwndEditPostionX->SetPropValueT("fgc",0xFFFF);
 					pwndEditPostionY->SetPropValueT("fgc",0xFFFF);
 					pwndEditPostionZ->SetPropValueT("fgc",0xFFFF);
-					pwndEditPostionX2->SetPropValueT("fgc",0xFFFF);
-					pwndEditPostionY2->SetPropValueT("fgc",0xFFFF);
+					FGC FgcTemp = ( u_PickerType==MechType5 ? 0xFFFF : 0x09A6 );
+					pwndEditPostionX2->SetPropValueT("fgc",FgcTemp);
+					pwndEditPostionY2->SetPropValueT("fgc",FgcTemp);
 				}
 				else
 				{
