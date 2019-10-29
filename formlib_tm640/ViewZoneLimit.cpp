@@ -93,6 +93,10 @@ int max_ZoneLimit[]
 {
 	20000,60000,200,
 };
+int min_ZoneLimit[]
+{
+	0,0,0,
+};
 
 char* minid_ZoneLimit[6][3] = // 把计 minid db
 {
@@ -445,10 +449,12 @@ void	UpdateData()
 				if(i==2)
 					pwndData_ZoneLimit[i]->SetPropValueT("minid",minid_ZoneLimit[u_Axis_Num][i]);
 			}
-			else
+			else // 
 			{
 				pwndData_ZoneLimit[i]->SetPropValueT("maxid",maxid_ZoneLimit[u_Axis_Num][i]);
-				pwndData_ZoneLimit[i]->SetPropValueT("max",max_ZoneLimit[i]);
+				pwndData_ZoneLimit[i]->SetPropValueT("max",max_ZoneLimit[i]); // 程
+				pwndData_ZoneLimit[i]->SetPropValueT("minid",maxid_ZoneLimit[u_Axis_Num][i]);
+				pwndData_ZoneLimit[i]->SetPropValueT("min",min_ZoneLimit[i]); // 程
 			}
 			pwndData_ZoneLimit[i]->CreateA();
 			pwndData_ZoneLimit[i]->Update();
