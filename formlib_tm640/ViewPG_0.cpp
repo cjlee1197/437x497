@@ -97,7 +97,7 @@ CtmWnd*		pwndLoadingMask	= NULL; // 下載進度條遮罩
 CtmWnd*		pwndLoadingMask2	= NULL; // 下載進度條遮罩2
 
 CtmWnd* pwndBtnFollow = NULL; // 跟隨Btn
-bool	b_Follow = FALSE;
+bool	b_Follow = TRUE;
 
 CtmWnd* u_pwndSingle = NULL;
 
