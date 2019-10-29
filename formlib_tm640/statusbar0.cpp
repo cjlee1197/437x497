@@ -20,6 +20,10 @@
 /*===========================================================================+
 |           Constant                                                         |
 +===========================================================================*/
+#define		MechType3				0	 // 三軸
+#define		MechType5				1  // 五軸
+#define 	MechWord 				0x0000FFFF // Low Word
+
 #define 		CNT_INT_DEMO_TIMER 		2000;//1000; 50
 #define 		GPIO_LED_DEFINE  		0x07;//1000; 50
 #define 		GPIO_BIT_AUTO 0x01
@@ -90,6 +94,10 @@ const			int	CNT_INT_UPDATE_DATE_TIMER = 1000;	//Delay time.
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
+DWORD dw_MechType = 0; //紀錄 pMechTypeDB 的數值
+int u_PickerType = 0,u_PickerType_old=-1; // 機型選擇 0-三軸 1-五軸
+char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
+
 char* pWhichAxisDB	 = "MACHINE_PROFILE_NUM7_EQUIPMENT2_ACTION_TYPE"; // 偵測哪一軸 DB
 
 WORD			u_wError		= FALSE;					// control.cpp
@@ -340,6 +348,8 @@ CtmWnd*			pwndEditPostionY2 = NULL;
 CtmWnd*			pwndBmpState = NULL; // 機器手姿態 cjlee add 2019/5/11 下午 08:38:11
 CtmWnd*			pwndPickerSpeed = NULL;// 機器手速度
 CtmWnd*			pwndImg_Speed = NULL; // 機器手速度圖 cjlee add 2019/5/9 下午 09:21:24
+CtmWnd*			pwndBmpAxis_X2 = NULL; // 機器手 X2軸 cjlee add 2019/10/29 上午 11:41:25
+CtmWnd*			pwndBmpAxis_Y2 = NULL; // 機器手 Y2軸 cjlee add 2019/10/29 上午 11:41:25
 
 CtmWnd*			pwndEditOPNCNT    = NULL;
 CtmWnd*			pwndEditTOTALT    = NULL;
@@ -410,7 +420,8 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	pwndEditPostionZ = pwndSender->FindControlFromName("EditZposition");
 	pwndEditPostionX2= pwndSender->FindControlFromName("EditX2position");
 	pwndEditPostionY2= pwndSender->FindControlFromName("EditY2position");
-
+	pwndBmpAxis_X2	 = pwndSender->FindControlFromName("BmpAxis_X2");
+	pwndBmpAxis_Y2	 = pwndSender->FindControlFromName("BmpAxis_Y2");
 	
 	pwndEditOPNCNT  	= pwndSender->FindControlFromName("editOPENCOUNT");
   pwndEditTOTALT   	= pwndSender->FindControlFromName("editCYCLETIME");
@@ -1210,7 +1221,28 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		ChangeImage(pwndBmpUSB, NULL , NO_FLASH, 0);	
 }/*-------------------------------------存儲----------------------------------------*/
 	
-	
+{/*-------------------------------------軸座標----------------------------------------*/
+	dw_MechType  = (GetDBValue(pMechTypeDB).lValue);
+	u_PickerType = dw_MechType & MechWord;
+	if(u_PickerType_old != u_PickerType)
+	{
+		if(u_PickerType==MechType5)
+		{
+			ChangeImage(pwndBmpAxis_X2, "res_tm640/pic/Axis_X2.bmp", NO_FLASH, 0);
+			ChangeImage(pwndBmpAxis_Y2, "res_tm640/pic/Axis_Y2.bmp", NO_FLASH, 0);
+			pwndEditPostionX2->SetPropValueT("fgc",0xFFFF);
+			pwndEditPostionY2->SetPropValueT("fgc",0xFFFF);
+		}
+		else if(u_PickerType==MechType3)
+		{
+			ChangeImage(pwndBmpAxis_X2, NULL , NO_FLASH, 0);	
+			ChangeImage(pwndBmpAxis_Y2, NULL , NO_FLASH, 0);
+			pwndEditPostionX2->SetPropValueT("fgc",0x09A6);
+			pwndEditPostionY2->SetPropValueT("fgc",0x09A6);
+		}
+		u_PickerType_old = u_PickerType;
+	}
+}/*-------------------------------------軸座標----------------------------------------*/
 	
 	//-------------工作/工具座標顯示---------------//
 	/*
