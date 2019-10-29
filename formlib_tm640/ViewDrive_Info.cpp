@@ -21,6 +21,8 @@
 #define		REQ_READMOTOR    				2   
 #define		MechType3				0	 // 三軸
 #define		MechType5				1  // 五軸
+#define		EncType_Abs			0x00000000  // 絕對
+#define		EncType_Res		  0x00010000  // 增量
 #define		EncWord 				0xFFFF0000 // High Word
 #define		MechWord 				0x0000FFFF // Low Word
 /*===========================================================================+
@@ -115,7 +117,8 @@ char* u_pszStrID_Y2[] =
 | EX: 絕對/五軸 0x0000 0001;  0x0001 0000 增量/三軸 |
 +--------------------------------------------------*/
 DWORD dw_MechType = 0; //紀錄 pMechTypeDB 的數值
-int u_PickerType = 0; // 機型選擇 0-三軸 1-五軸
+int u_PickerType 	= 0; // 機型選擇 0-三軸 1-五軸
+int u_EncType 		= 0; // 編碼器選擇  0-絕對 1-增量
 char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
 char* u_pszImgDriveInfo[] = 
 {
@@ -140,6 +143,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	// 讀取設定 機型選擇 三五軸
 	dw_MechType 	 = (GetDBValue(pMechTypeDB).lValue);
 	u_PickerType = dw_MechType & MechWord;
+	u_EncType		 = dw_MechType & EncWord;
 	
 	// 各軸示意圖
 	char szImgPath[256];
@@ -220,11 +224,20 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		char  str_temp[256] = "\0";
 		if(i>=2)
 		{
-			f_value = Conv2Float(dw);
-			if(f_value >= 65535)
-				sprintf(str_temp ,"NULL");
-			else
-				sprintf(str_temp ,"%.02f",f_value);
+			if(u_EncType==EncType_Abs) // 絕對型 ENC for AUSTONE
+			{
+				f_value = Conv2Float(dw);
+				if(f_value >= 65535)
+					sprintf(str_temp ,"NULL");
+				else
+					sprintf(str_temp ,"%.02f",f_value);
+			}
+			else if(u_EncType==EncType_Res) // 增量式 for HDT
+			{
+				if(i==6) // 母線電壓
+					dw = dw/1000;
+				sprintf(str_temp ,"%d",dw);
+			}
 		}
 		else
 		{
