@@ -30,8 +30,8 @@
 #define     STR_MAX_COUNT       256
 #define			tmTIME_DEMO					1200
 #define			IO_CHANGE						5
-#define     PB_MAXNUM						7
-#define     PC_MAXNUM						7
+#define     PB_MAXNUM						8
+#define     PC_MAXNUM						8
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -131,11 +131,11 @@ void	CreateStringSet()
       pwDst   = (WORD *)(u_acSelBoxString[i]);
       if(i < PB_MAXNUM)   //PB
      	{
-     	 sprintf(szTemp, "DI-%02d", i+26);
+     	 sprintf(szTemp, "DI-%02d", i+25);
    	  }
    	  else                //PC
    	  {
-   	  	sprintf(szTemp, "DO-%02d", i+26-PB_MAXNUM);
+   	  	sprintf(szTemp, "DO-%02d", i+25-PB_MAXNUM);
    	  }
       
       int		j = 0;

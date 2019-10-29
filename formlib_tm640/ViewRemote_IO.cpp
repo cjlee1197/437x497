@@ -30,8 +30,8 @@
 #define     STR_MAX_COUNT       256
 #define			tmTIME_DEMO					1200
 #define			IO_CHANGE							5
-#define     PB_MAXNUM						25
-#define     PC_MAXNUM						25
+#define     PB_MAXNUM						24
+#define     PC_MAXNUM						24
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/

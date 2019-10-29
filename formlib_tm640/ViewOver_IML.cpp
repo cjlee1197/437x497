@@ -866,8 +866,10 @@ void		SetEditValue(CtmWnd* pwnd)
 void       CreateLEDSet()
 {
 	BOOL 	bSelected = FALSE;
-	u_dbEX_InputValue = GetDBValue("MACHINE_INTERFACE_DWEXTERNALINPUTSTATE");	//cjlee changed 2019/2/19 下午 02:01:33
-	u_wEX_InputValue = static_cast<WORD>(u_dbEX_InputValue.lValue);
+//	u_dbEX_InputValue = GetDBValue("MACHINE_INTERFACE_DWEXTERNALINPUTSTATE");	//cjlee changed 2019/2/19 下午 02:01:33
+//	u_wEX_InputValue = static_cast<WORD>(u_dbEX_InputValue.lValue);
+	u_dbEX_InputValue = GetDBValue("MACHINE_INTERFACE_DWINTERNALINPUTSTATE");	//cjlee changed 2019/10/29 上午 09:03:42
+	u_wEX_InputValue = static_cast<DWORD>(u_dbEX_InputValue.lValue);
 
 	u_dbEX_OutputValue = GetDBValue("MACHINE_INTERFACE_DWEXTERNALOUTPUTSTATE");	//cjlee changed 2019/2/19 下午 02:01:33
 	u_wEX_OutputValue = static_cast<WORD>(u_dbEX_OutputValue.lValue);	
@@ -878,7 +880,9 @@ void       CreateLEDSet()
 		{
 			if(i < PB_MAXNUM)     // PB
 			{
-	   			if(_TestBit(u_wEX_InputValue, i+10))	bSelected = TRUE;	//cjlee changed 2019/2/19 下午 02:01:33
+//	   		if(_TestBit(u_wEX_InputValue, i+10))	bSelected = TRUE;	//cjlee changed 2019/2/19 下午 02:01:33
+//		 		else 							bSelected = FALSE;
+	   		if( (u_wEX_InputValue>>(i+1))&1 ) bSelected = TRUE;
 		 		else 							bSelected = FALSE;
 		 		u_pwndSelectBox[i]->SetPropValueT("selected", bSelected);
 		 		u_pwndSelectBox[i]->CreateA();
