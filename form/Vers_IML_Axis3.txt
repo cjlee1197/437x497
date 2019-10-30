@@ -43,7 +43,7 @@ ViewVers:CtmFormView
     textID =VW_DSP_VERSION
     align =34
   end
-  BmpAxis_Z:CtmImageBox
+  Img_TP:CtmImageBox
     left =57
     top =109
     right =178
@@ -54,7 +54,7 @@ ViewVers:CtmFormView
     imagepath =res_tm640/pic/437x497.bmp
     keycolor =63519
   end
-  LinuxCtmImageBox1:CtmImageBox
+  Img_Controller:CtmImageBox
     left =57
     top =338
     right =217
@@ -150,7 +150,7 @@ ViewVers:CtmFormView
     textID =VW_HAP5_ROBOT_ZAXIS
     align =34
   end
-  LinuxCtmImageBox2:CtmImageBox
+  Img_Drive_1:CtmImageBox
     left =209
     top =586
     right =244
@@ -161,7 +161,7 @@ ViewVers:CtmFormView
     imagepath =res_tm640/pic/Drive.bmp
     keycolor =63519
   end
-  LinuxCtmImageBox3:CtmImageBox
+  Img_Drive_2:CtmImageBox
     left =313
     top =586
     right =348
@@ -172,7 +172,7 @@ ViewVers:CtmFormView
     imagepath =res_tm640/pic/Drive.bmp
     keycolor =63519
   end
-  LinuxCtmImageBox4:CtmImageBox
+  Img_Drive_3:CtmImageBox
     left =417
     top =586
     right =452

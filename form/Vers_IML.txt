@@ -79,7 +79,7 @@ ViewVers:CtmFormView
     textID =VW_DSP_VERSION
     align =34
   end
-  BmpAxis_Z:CtmImageBox
+  Img_TP:CtmImageBox
     left =57
     top =109
     right =178
@@ -90,7 +90,7 @@ ViewVers:CtmFormView
     imagepath =res_tm640/pic/437x497.bmp
     keycolor =63519
   end
-  LinuxCtmImageBox1:CtmImageBox
+  Img_Controller:CtmImageBox
     left =57
     top =338
     right =217
@@ -101,33 +101,33 @@ ViewVers:CtmFormView
     imagepath =res_tm640/pic/Controller.bmp
     keycolor =63519
   end
-  LinuxCtmImageBox2:CtmImageBox
+  Img_Drive_1:CtmImageBox
     left =129
     top =586
     right =164
-    bottom =710
+    bottom =719
     wtype =48
     type =2
     style =3
     imagepath =res_tm640/pic/Drive.bmp
     keycolor =63519
   end
-  LinuxCtmImageBox3:CtmImageBox
+  Img_Drive_2:CtmImageBox
     left =217
     top =586
     right =252
-    bottom =710
+    bottom =719
     wtype =48
     type =2
     style =3
     imagepath =res_tm640/pic/Drive.bmp
     keycolor =63519
   end
-  LinuxCtmImageBox4:CtmImageBox
+  Img_Drive_3:CtmImageBox
     left =305
     top =586
     right =340
-    bottom =710
+    bottom =719
     wtype =48
     type =2
     style =3
@@ -361,11 +361,11 @@ ViewVers:CtmFormView
     maxchar =8
     align =34
   end
-  LinuxCtmImageBox6:CtmImageBox
+  Img_Drive_4:CtmImageBox
     left =417
     top =586
     right =452
-    bottom =710
+    bottom =719
     wtype =48
     type =2
     style =3
@@ -419,11 +419,11 @@ ViewVers:CtmFormView
     maxchar =8
     align =34
   end
-  LinuxCtmImageBox8:CtmImageBox
+  Img_Drive_5:CtmImageBox
     left =513
     top =586
     right =548
-    bottom =710
+    bottom =719
     wtype =48
     type =2
     style =3

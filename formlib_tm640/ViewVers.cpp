@@ -27,6 +27,11 @@
 /*===========================================================================+
 |           Constant                                                         |
 +===========================================================================*/
+#define		EncType_Abs			0x00000000  // 絕對
+#define		EncType_Res		  0x00010000  // 增量
+#define		EncWord 				0xFFFF0000 // High Word
+#define		DriveImgPath_Austone	"res_tm640/pic/Drive_Austone.bmp"
+#define		DriveImgPath_HDT			"res_tm640/pic/Drive_HDT.bmp"
 
 const		int MAXCONTROLS =8;
 
@@ -43,6 +48,14 @@ const		int MAXCONTROLS =8;
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
+/*--------------------------------------------------+
+| dw_MechType 機型選擇  														|
+|	Low WORD 0-三軸 1-五軸 	High WORD 0-絕對 1-增量		|
+| EX: 絕對/五軸 0x0000 0001;  0x0001 0000 增量/三軸 |
++--------------------------------------------------*/
+DWORD dw_MechType = 0; //紀錄 pMechTypeDB 的數值
+int u_EncType 		= 0; // 編碼器選擇  0-絕對 1-增量
+char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
 
 //short   	FlowStep;
 //BOOL    	SendFlag = FALSE;
@@ -80,8 +93,10 @@ CtmWnd*	  pwndeditKernelVersion   = NULL;
 CtmWnd*	  pwndeditM3KeyboardVersion   = NULL;
 
 CtmWnd*	  pwndStr_Controller_Date   = NULL; //cjlee 2019/5/12 下午 09:48:37
-CtmWnd*   pwndStr_Drive_Ver[5]		= {NULL};
+CtmWnd*   pwndStr_Drive_Ver[5]		= {NULL}; // 驅動器版本
 int iDrive_Ver_Count=0;
+CtmWnd*   pwndImg_Drive[5]		= {NULL}; // 驅動器圖片
+int iDrive_Img_Count=0;
 CtmWnd*   u_pwnd_State[5] ={NULL};
 long lStateValue = 0;
 long lStateValue_Old = -1;
@@ -192,11 +207,15 @@ WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
 
 BOOL	OnCreateA(CtmWnd* pwndSender)
 {
+	// 讀取設定 機型選擇 三五軸
+	dw_MechType 	 = (GetDBValue(pMechTypeDB).lValue);
+	u_EncType		 = dw_MechType & EncWord;
 	
 	//printf("MACHINE_INTERFACE_Ver ID=%d\n",g_pDatabase->GetIndex("MACHINE_CONFSYS_ELECNAMEPLATE_SOFTWARE_PN"));
 	//printf("MACHINE_INTERFACE_POSNOW_X1 ID=%d\n",g_pDatabase->GetIndex("MACHINE_CONFSYS_ELECNAMEPLATE_SOFTWARE_VN"));
 	pwndStr_Controller_Date = pwndSender->FindControlFromName("Str_Controller_Date");
   iDrive_Ver_Count = GetSpecialControlNum(pwndSender, "Str_Drive_Ver", "CtmStaticX2", pwndStr_Drive_Ver);
+  iDrive_Img_Count = GetSpecialControlNum(pwndSender, "Img_Drive_", "CtmImageBox", pwndImg_Drive);
 	for(int i = 0; i < sizeof(u_pszImageBoxString)/sizeof(u_pszImageBoxString[0]); i++ )
 	{
 		u_pwnd_State[i] = pwndSender->FindControlFromName(u_pszImageBoxString[i]);
@@ -541,6 +560,25 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 		SetVisible(pwndEditN2C28Vers, FALSE,0);	
 		SetVisible(pwndEditN2C28Date, FALSE,0);	
 	}	
+	
+	// 驅動器圖片
+	for(int i=0;i<iDrive_Img_Count;i++)
+	{
+		if(pwndImg_Drive[i]!=NULL)
+		{
+			if(u_EncType==EncType_Abs) // 絕對型 ENC for AUSTONE
+			{
+				pwndImg_Drive[i]->SetPropValueT("imagepath",DriveImgPath_Austone);
+			}
+			else if(u_EncType==EncType_Res) // 增量式 for HDT
+			{
+				pwndImg_Drive[i]->SetPropValueT("imagepath",DriveImgPath_HDT);
+			}
+			pwndImg_Drive[i]->CreateA();
+			pwndImg_Drive[i]->Update();
+		}
+	}
+	
     return TRUE;
 }
 
@@ -697,19 +735,27 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			pwndStr_Controller_Date->Update();
 		}
 
-		
+		// 驅動器版本號
 		for(int i=0;i<iDrive_Ver_Count;i++)
 		{
 			//SetDBValue(Drive_Ver_DB[i], 825770807); //測試用
 			dw_dbvalue = GetDBValue(Drive_Ver_DB[i]).lValue;
 			if(pwndStr_Drive_Ver[i]!=NULL)
 			{
-				pwndStr_Drive_Ver[i]->SetPropValueT("text",DW2Str_ASCII(dw_dbvalue));
+				if(u_EncType==EncType_Abs) // 絕對型 ENC for AUSTONE
+				{
+					pwndStr_Drive_Ver[i]->SetPropValueT("text",DW2Str_ASCII(dw_dbvalue));
+				}
+				else if(u_EncType==EncType_Res) // 增量式 for HDT
+				{
+					char  str_temp[256] = "\0";
+					sprintf(str_temp ,"%d",dw_dbvalue);
+					pwndStr_Drive_Ver[i]->SetPropValueT("text",str_temp);
+				}
 				pwndStr_Drive_Ver[i]->Update();
 			}
 		}
 		
-	
 	char  pszPath[256] = "\0";
 	lStateValue   = GetDBValue("MACHINE_INTERFACE_CMDMONITO").lValue;	
 	if(lStateValue != lStateValue_Old)	// 驅動器 通訊燈號
