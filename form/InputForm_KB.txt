@@ -2,17 +2,16 @@ ViewInputForm:CtmFormView
   left =0
   top =150
   right =599
-  bottom =445
+  bottom =540
   wtype =34850
-  viewtype =2
   bgc =11189
   imageLoginBG1:CtmImageBox
     left =0
     top =0
     right =599
-    bottom =294
+    bottom =390
     wtype =55
-    imagepath =res_ht800/touch_bmp/login_BG1.bmp
+    imagepath =res_ht800/touch_bmp/login_BG10.bmp
     keycolor =0
   end
   imageLoginBG2:CtmImageBox
@@ -27,37 +26,37 @@ ViewInputForm:CtmFormView
     keycolor =0
   end
   imageLoginBG3:CtmImageBox
-    left =5
-    top =92
-    right =595
-    bottom =282
+    left =0
+    top =80
+    right =599
+    bottom =350
     wtype =55
     type =2
     style =3
-    imagepath =res_ht800/touch_bmp/login_BG3.bmp
+    imagepath =res_ht800/touch_bmp/login_BG30.bmp
     keycolor =0
   end
   inputValue:CtmEdit
     left =198
-    top =51
+    top =43
     right =398
-    bottom =81
+    bottom =73
     wtype =48
     taborder =-1
     fgc =65535
-    fontsize =2
+    fontsize =1
     maxchar =15
     align =2
   end
   btnNum1:CtmToolButton
-    left =10
-    top =98
-    right =61
-    bottom =138
+    left =0
+    top =85
+    right =58
+    bottom =143
     wtype =39
     taborder =-1
     bgc =46681
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_NUM_1
     keycolor =63519
@@ -76,417 +75,417 @@ ViewInputForm:CtmFormView
     key =42496
   end
   btnNum2:CtmToolButton
-    left =62
-    top =98
-    right =113
-    bottom =138
+    left =60
+    top =85
+    right =118
+    bottom =143
     wtype =39
     taborder =-1
     bgc =46681
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_NUM_2
     keycolor =63519
     key =50
   end
   btnNum3:CtmToolButton
-    left =114
-    top =98
-    right =165
-    bottom =138
+    left =120
+    top =85
+    right =178
+    bottom =143
     wtype =39
     taborder =-1
     bgc =46681
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_NUM_3
     keycolor =63519
     key =51
   end
   btnNum4:CtmToolButton
-    left =166
-    top =98
-    right =217
-    bottom =138
+    left =180
+    top =85
+    right =238
+    bottom =143
     wtype =39
     taborder =-1
     bgc =46681
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_NUM_4
     keycolor =63519
     key =52
   end
   btnNum5:CtmToolButton
-    left =218
-    top =98
-    right =269
-    bottom =138
+    left =240
+    top =85
+    right =298
+    bottom =143
     wtype =39
     taborder =-1
     bgc =46681
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_NUM_5
     keycolor =63519
     key =53
   end
   btnNum6:CtmToolButton
-    left =270
-    top =98
-    right =321
-    bottom =138
+    left =300
+    top =85
+    right =358
+    bottom =143
     wtype =39
     taborder =-1
     bgc =46681
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_NUM_6
     keycolor =63519
     key =54
   end
   btnNum7:CtmToolButton
-    left =322
-    top =98
-    right =373
-    bottom =138
+    left =360
+    top =85
+    right =418
+    bottom =143
     wtype =39
     taborder =-1
     bgc =46681
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_NUM_7
     keycolor =63519
     key =55
   end
   btnNum8:CtmToolButton
-    left =374
-    top =98
-    right =425
-    bottom =138
+    left =420
+    top =85
+    right =478
+    bottom =143
     wtype =39
     taborder =-1
     bgc =46681
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_NUM_8
     keycolor =63519
     key =56
   end
   btnNum9:CtmToolButton
-    left =426
-    top =98
-    right =477
-    bottom =138
+    left =480
+    top =85
+    right =538
+    bottom =143
     wtype =39
     taborder =-1
     bgc =46681
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_NUM_9
     keycolor =63519
     key =57
   end
   btnNum0:CtmToolButton
-    left =478
-    top =98
-    right =529
-    bottom =138
+    left =540
+    top =85
+    right =598
+    bottom =143
     wtype =39
     taborder =-1
     bgc =46681
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_NUM_0
     keycolor =63519
     key =48
   end
   btnBackspace:CtmToolButton
-    left =531
-    top =98
-    right =590
-    bottom =138
+    left =512
+    top =267
+    right =598
+    bottom =325
     wtype =39
     taborder =-1
     fgc =65535
     bgc =33808
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_STR_BACKSPACE
     keycolor =63519
     key =3592
   end
   btnCharQ:CtmToolButton
-    left =18
-    top =146
-    right =69
-    bottom =186
+    left =0
+    top =147
+    right =58
+    bottom =205
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_Q
     keycolor =63519
     key =81
   end
   btnCharW:CtmToolButton
-    left =70
-    top =146
-    right =121
-    bottom =186
+    left =60
+    top =147
+    right =118
+    bottom =205
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_W
     keycolor =63519
     key =87
   end
   btnCharE:CtmToolButton
-    left =122
-    top =146
-    right =173
-    bottom =186
+    left =120
+    top =147
+    right =178
+    bottom =205
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_E
     keycolor =63519
     key =69
   end
   btnCharR:CtmToolButton
-    left =174
-    top =146
-    right =225
-    bottom =186
+    left =180
+    top =147
+    right =238
+    bottom =205
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_R
     keycolor =63519
     key =82
   end
   btnCharT:CtmToolButton
-    left =226
-    top =146
-    right =277
-    bottom =186
+    left =240
+    top =147
+    right =298
+    bottom =205
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_T
     keycolor =63519
     key =84
   end
   btnCharY:CtmToolButton
-    left =278
-    top =146
-    right =329
-    bottom =186
+    left =300
+    top =147
+    right =358
+    bottom =205
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_Y
     keycolor =63519
     key =89
   end
   btnCharU:CtmToolButton
-    left =330
-    top =146
-    right =381
-    bottom =186
+    left =360
+    top =147
+    right =418
+    bottom =205
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_U
     keycolor =63519
     key =85
   end
   btnCharI:CtmToolButton
-    left =382
-    top =146
-    right =433
-    bottom =186
+    left =420
+    top =147
+    right =478
+    bottom =205
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_I
     keycolor =63519
     key =73
   end
   btnCharO:CtmToolButton
-    left =434
-    top =146
-    right =485
-    bottom =186
+    left =480
+    top =147
+    right =538
+    bottom =205
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_O
     keycolor =63519
     key =79
   end
   btnCharP:CtmToolButton
-    left =486
-    top =146
-    right =537
-    bottom =186
+    left =540
+    top =147
+    right =598
+    bottom =205
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_P
     keycolor =63519
     key =80
   end
   btnCharA:CtmToolButton
-    left =29
-    top =190
-    right =80
-    bottom =230
+    left =30
+    top =207
+    right =88
+    bottom =265
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_A
     keycolor =63519
     key =65
   end
   btnCharS:CtmToolButton
-    left =81
-    top =190
-    right =132
-    bottom =230
+    left =90
+    top =207
+    right =148
+    bottom =265
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_S
     keycolor =63519
     key =83
   end
   btnCharD:CtmToolButton
-    left =133
-    top =190
-    right =184
-    bottom =230
+    left =150
+    top =207
+    right =208
+    bottom =265
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_D
     keycolor =63519
     key =68
   end
   btnCharF:CtmToolButton
-    left =185
-    top =190
-    right =236
-    bottom =230
+    left =210
+    top =207
+    right =268
+    bottom =265
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_F
     keycolor =63519
     key =70
   end
   btnCharG:CtmToolButton
-    left =237
-    top =190
-    right =288
-    bottom =230
+    left =270
+    top =207
+    right =328
+    bottom =265
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_G
     keycolor =63519
     key =71
   end
   btnCharH:CtmToolButton
-    left =289
-    top =190
-    right =340
-    bottom =230
+    left =330
+    top =207
+    right =388
+    bottom =265
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_H
     keycolor =63519
     key =72
   end
   btnCharJ:CtmToolButton
-    left =341
-    top =190
-    right =392
-    bottom =230
+    left =390
+    top =207
+    right =448
+    bottom =265
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_J
     keycolor =63519
     key =74
   end
   btnCharK:CtmToolButton
-    left =393
-    top =190
-    right =444
-    bottom =230
+    left =450
+    top =207
+    right =508
+    bottom =265
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_K
     keycolor =63519
     key =75
   end
   btnCharL:CtmToolButton
-    left =445
-    top =190
-    right =496
-    bottom =230
+    left =510
+    top =207
+    right =568
+    bottom =265
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_L
     keycolor =63519
     key =76
   end
   btnSemicolon:CtmToolButton
-    left =517
-    top =190
-    right =568
-    bottom =230
+    left =493
+    top =330
+    right =544
+    bottom =375
     wtype =39
     taborder =0
     bgc =50712
@@ -495,136 +494,136 @@ ViewInputForm:CtmFormView
     key =59
   end
   btnCharZ:CtmToolButton
-    left =42
-    top =234
-    right =93
-    bottom =274
+    left =90
+    top =267
+    right =148
+    bottom =325
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_Z
     keycolor =63519
     key =90
   end
   btnCharX:CtmToolButton
-    left =94
-    top =234
-    right =145
-    bottom =274
+    left =150
+    top =267
+    right =208
+    bottom =325
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_X
     keycolor =63519
     key =88
   end
   btnCharC:CtmToolButton
-    left =146
-    top =234
-    right =197
-    bottom =274
+    left =210
+    top =267
+    right =268
+    bottom =325
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_C
     keycolor =63519
     key =67
   end
   btnCharV:CtmToolButton
-    left =198
-    top =234
-    right =249
-    bottom =274
+    left =270
+    top =267
+    right =328
+    bottom =325
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_V
     keycolor =63519
     key =86
   end
   btnCharB:CtmToolButton
-    left =250
-    top =234
-    right =301
-    bottom =274
+    left =330
+    top =267
+    right =388
+    bottom =325
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_B
     keycolor =63519
     key =66
   end
   btnCharN:CtmToolButton
-    left =302
-    top =234
-    right =353
-    bottom =274
+    left =390
+    top =267
+    right =448
+    bottom =325
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_N
     keycolor =63519
     key =78
   end
   btnCharM:CtmToolButton
-    left =354
-    top =234
-    right =405
-    bottom =274
+    left =450
+    top =267
+    right =508
+    bottom =325
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_LETTER_M
     keycolor =63519
     key =77
   end
   btnComma:CtmToolButton
-    left =458
-    top =234
-    right =509
-    bottom =274
+    left =90
+    top =327
+    right =148
+    bottom =385
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_OPERATION_MINUS
     keycolor =63519
     key =45
   end
   btnDot:CtmToolButton
-    left =406
-    top =234
-    right =457
-    bottom =274
+    left =30
+    top =327
+    right =88
+    bottom =385
     wtype =39
     taborder =-1
     bgc =50712
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_STR_POINT
     keycolor =63519
     key =46
   end
   btnSlash:CtmToolButton
-    left =510
-    top =234
-    right =561
-    bottom =274
+    left =210
+    top =327
+    right =448
+    bottom =385
     wtype =39
     taborder =-1
     bgc =50712
@@ -634,15 +633,15 @@ ViewInputForm:CtmFormView
     key =95
   end
   btnEnter:CtmToolButton
-    left =497
-    top =190
-    right =590
-    bottom =230
+    left =450
+    top =327
+    right =598
+    bottom =385
     wtype =39
     taborder =-1
     fgc =65535
     bgc =33808
-    fontsize =2
+    fontsize =1
     buttontype =1
     captionID =ROBOT_STR_ENTER
     keycolor =63519
