@@ -169,7 +169,7 @@ ViewOver_IML:CtmFormView
   SelectBox20:CtmSelectBox
     left =251
     top =571
-    right =361
+    right =387
     bottom =603
     wtype =55
     fgc =0
@@ -181,7 +181,7 @@ ViewOver_IML:CtmFormView
   SelectBox21:CtmSelectBox
     left =251
     top =609
-    right =361
+    right =387
     bottom =641
     wtype =55
     fgc =0
@@ -193,7 +193,7 @@ ViewOver_IML:CtmFormView
   SelectBox22:CtmSelectBox
     left =251
     top =647
-    right =361
+    right =387
     bottom =679
     wtype =55
     fgc =0
