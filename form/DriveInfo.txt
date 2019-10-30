@@ -258,7 +258,7 @@ ViewDrive_Info:CtmFormView
   LinuxCtmStaticX215:CtmStaticX2
     left =324
     top =396
-    right =444
+    right =484
     bottom =428
     wtype =33
     fgc =0
@@ -293,7 +293,7 @@ ViewDrive_Info:CtmFormView
     align =34
   end
   STR_LAST_ALARM:CtmStaticX2
-    left =446
+    left =486
     top =396
     right =546
     bottom =428

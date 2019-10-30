@@ -236,12 +236,14 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			{
 				if(i==6) // 母線電壓
 					dw = dw/1000;
-				sprintf(str_temp ,"%d",dw);
+				sprintf(str_temp ,"%d",dw);						
 			}
 		}
 		else
 		{
 			sprintf(str_temp ,"%d",dw);
+			if(u_EncType==EncType_Res && (i==1)) // 增量式 for HDT // 最近一次警報
+				sprintf(str_temp ,"%x",dw);		
 		}
 		
 		if(pwndDriveInfoSTR[i]!=NULL) // Update String
