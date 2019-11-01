@@ -268,7 +268,7 @@ ViewHand:CtmFormView
     bgc =36256
     fontsize =1
     bordercolor =35953
-    textID =PICKER_REMOTE_O_19
+    textID =PICKER_REMOTE_O_10
     align =34
   end
   LinuxCtmStaticX24:CtmStaticX2
@@ -281,7 +281,7 @@ ViewHand:CtmFormView
     bgc =36256
     fontsize =1
     bordercolor =35953
-    textID =PICKER_REMOTE_O_16
+    textID =PICKER_REMOTE_O_07
     align =34
   end
   LinuxCtmStaticX25:CtmStaticX2

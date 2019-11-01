@@ -1,0 +1,689 @@
+ViewHand:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =PICKER_HAND
+  printname =Hand.bmp
+  BmpClamp2:CtmImageBox
+    left =92
+    top =495
+    right =117
+    bottom =520
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpClamp1:CtmImageBox
+    left =92
+    top =398
+    right =117
+    bottom =423
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  Button_Horizontal:CtmToolButton
+    left =201
+    top =582
+    right =311
+    bottom =650
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Clamp_Horizontal.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =17
+  end
+  Btn_VACUUMON:CtmToolButton
+    left =118
+    top =705
+    right =228
+    bottom =773
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =23
+  end
+  BmpPileHorizontal:CtmImageBox
+    left =175
+    top =620
+    right =200
+    bottom =645
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpPileVertical:CtmImageBox
+    left =36
+    top =620
+    right =61
+    bottom =645
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  Button_Vertical:CtmToolButton
+    left =62
+    top =582
+    right =172
+    bottom =650
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Clamp_Vertical.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =18
+  end
+  Btn_Clamp1:CtmToolButton
+    left =118
+    top =360
+    right =228
+    bottom =428
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =1
+  end
+  Btn_Suck2:CtmToolButton
+    left =407
+    top =457
+    right =517
+    bottom =525
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =11
+  end
+  Btn_Suck1:CtmToolButton
+    left =407
+    top =360
+    right =517
+    bottom =428
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =9
+  end
+  Btn_Clamp2:CtmToolButton
+    left =118
+    top =457
+    right =228
+    bottom =525
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =3
+  end
+  Btn_STATICON:CtmToolButton
+    left =407
+    top =705
+    right =517
+    bottom =773
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =21
+  end
+  Btn_CONVEYERON:CtmToolButton
+    left =407
+    top =582
+    right =517
+    bottom =650
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =25
+  end
+  BmpBlow1:CtmImageBox
+    left =382
+    top =398
+    right =407
+    bottom =423
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpBlow2:CtmImageBox
+    left =382
+    top =495
+    right =407
+    bottom =520
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  LinuxCtmStaticX20:CtmStaticX2
+    left =103
+    top =316
+    right =233
+    bottom =348
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_CHUCKING
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =383
+    top =316
+    right =513
+    bottom =348
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_SUCKER
+    align =34
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =103
+    top =539
+    right =233
+    bottom =571
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_POSTURE
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =383
+    top =539
+    right =513
+    bottom =571
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_REMOTE_O_10
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =103
+    top =662
+    right =233
+    bottom =694
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_REMOTE_O_07
+    align =34
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =383
+    top =662
+    right =513
+    bottom =694
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_HITELEC
+    align =34
+  end
+  LinuxCtmImageBox13:CtmImageBox
+    left =87
+    top =316
+    right =103
+    bottom =348
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =367
+    top =316
+    right =383
+    bottom =348
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =367
+    top =540
+    right =383
+    bottom =572
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =87
+    top =539
+    right =103
+    bottom =571
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox7:CtmImageBox
+    left =87
+    top =662
+    right =103
+    bottom =694
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox8:CtmImageBox
+    left =367
+    top =662
+    right =383
+    bottom =694
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  OutClamp1:CtmImageBox
+    left =92
+    top =366
+    right =117
+    bottom =391
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutClamp2:CtmImageBox
+    left =92
+    top =463
+    right =117
+    bottom =488
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutBlow1:CtmImageBox
+    left =382
+    top =366
+    right =407
+    bottom =391
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutBlow2:CtmImageBox
+    left =382
+    top =463
+    right =407
+    bottom =488
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutPileVertical:CtmImageBox
+    left =36
+    top =588
+    right =61
+    bottom =613
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutConveyor:CtmImageBox
+    left =382
+    top =604
+    right =407
+    bottom =629
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutVacuum:CtmImageBox
+    left =92
+    top =727
+    right =117
+    bottom =752
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutStatic:CtmImageBox
+    left =382
+    top =727
+    right =407
+    bottom =752
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  OutPileHorizontal:CtmImageBox
+    left =175
+    top =588
+    right =200
+    bottom =613
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BtnServo:CtmToolButton
+    left =107
+    top =78
+    right =217
+    bottom =146
+    wtype =33
+    taborder =100
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    LinuxCtmImageBox2:CtmImageBox
+      left =29
+      top =8
+      right =81
+      bottom =60
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/servo.bmp
+      keycolor =63519
+    end
+  end
+  BmpServo:CtmImageBox
+    left =76
+    top =100
+    right =101
+    bottom =125
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =96
+    top =36
+    right =216
+    bottom =68
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =O_SDR_067
+    align =34
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =80
+    top =36
+    right =96
+    bottom =68
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  CtmStaticXSetS1Unit:CtmStaticX2
+    left =100
+    top =218
+    right =130
+    bottom =244
+    wtype =48
+    fgc =0
+    bgc =42652
+    fontsize =1
+    colorcontrol =4
+    colorchange =20
+    destcolor =28057
+    bordercolor =65535
+    textID =VW_UNIT_PERCENT
+    textID1 =DLG_SYSTEM_PERCENT
+  end
+  EditSet_PreDistance:CtmEditX1
+    left =164
+    top =210
+    right =234
+    bottom =250
+    wtype =35
+    taborder =82
+    fgc =0
+    bgc =65535
+    fontsize =1
+    extag =1
+    bordercolor =33808
+    maxchar =10
+    align =34
+    min =1
+    max =1000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS1_MINPOSITION
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =237
+    top =218
+    right =280
+    bottom =242
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  Button_Back:CtmToolButton
+    left =310
+    top =194
+    right =420
+    bottom =262
+    wtype =33
+    taborder =71
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =30
+    LinuxCtmImageBox4:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/X_Back.bmp
+      keycolor =63519
+    end
+  end
+  Button_FWD:CtmToolButton
+    left =445
+    top =194
+    right =555
+    bottom =262
+    wtype =33
+    taborder =66
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =77
+    LinuxCtmImageBox9:CtmImageBox
+      left =25
+      top =10
+      right =85
+      bottom =58
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/X_FWD.bmp
+      keycolor =63519
+    end
+  end
+  StaticEdit_ForwardSpeed:CtmStaticX2
+    left =36
+    top =156
+    right =146
+    bottom =188
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_FORWARDSPEED
+    align =34
+  end
+  StaticEdit_PointDistance:CtmStaticX2
+    left =172
+    top =156
+    right =282
+    bottom =188
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_POINTDISTANCE
+    align =34
+  end
+  LinuxCtmImageBox14:CtmImageBox
+    left =20
+    top =156
+    right =36
+    bottom =188
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox15:CtmImageBox
+    left =156
+    top =156
+    right =172
+    bottom =188
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  Btn_AxisNum:CtmToolButton
+    left =376
+    top =78
+    right =486
+    bottom =146
+    wtype =48
+    taborder =0
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =VW_HAP5_ROBOT_XAXIS
+    upbitmap =res_tm640/pic/picker/Hand_BtnUp.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =7
+  end
+  EditSet_FWDSpeed:CtmEditX1
+    left =26
+    top =207
+    right =96
+    bottom =247
+    wtype =35
+    taborder =81
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    min =1
+    max =10
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_MANUAL_AXIS1_FWD_PERCENTAGEOFSPEED
+  end
+end
