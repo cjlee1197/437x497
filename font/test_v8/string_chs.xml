@@ -663,6 +663,7 @@
 	<string name="AXIS_ZERO">归零</string>
 	<string name="POS_NOW">现在位置</string>
 	<string name="POS_ZERO">归零位置</string>
+	<string name="ZERO_OFFSET_DLY">偏移延时</string>
 	<string name="PICKER_NULL"></string>
 	<string name="POS_TOLERANCE">到位提前裕度</string>
 	<string name="TYPE_3AXIS">3轴</string>
@@ -895,6 +896,7 @@
 	<string name="PICKER_M3_ALARM3010">产品未脱落成功</string>
 	<string name="PICKER_M3_ALARM3011">产品未 吸/夹 成功</string>
 	<string name="PICKER_M3_ALARM3012">电机未使能成功</string>
+	<string name="PICKER_M3_ALARM3013">检测未通过</string>
 	<string name="PICKER_M3_ALARM3100">没有在主程序编辑子程序返回的卷标</string>
 	<string name="PICKER_M3_ALARM3210">X轴堆栈位置超出上限</string>
 	<string name="PICKER_M3_ALARM3211">X轴堆栈位置超出下限</string>
@@ -919,6 +921,12 @@
 	<string name="PICKER_M3_ALARM4002">没有跳转命令，请检查教导</string>
 	<string name="PICKER_M3_ALARM4003">堆栈不在Z轴横出之前，请检查教导</string>
 	<string name="PICKER_M3_ALARM4004">没有ENDIF命令，请检查教导</string>
+	<string name="PICKER_M3_ALARM4005">教导数据错误，合并了单独指令</string>
+	<string name="PICKER_M3_ALARM4006">教导数据错误，合并了一个以上的X1</string>
+	<string name="PICKER_M3_ALARM4007">教导数据错误，合并了一个以上的Y1</string>
+	<string name="PICKER_M3_ALARM4008">教导数据错误，合并了一个以上的Z</string>
+	<string name="PICKER_M3_ALARM4009">教导数据错误，合并了一个以上的X2</string>
+	<string name="PICKER_M3_ALARM4010">教导数据错误，合并了一个以上的Y2</string>
 	<string name="PICKER_M3_ALARM4200">位置设定异常，请检查区域设定</string>
 	<string name="PICKER_M3_ALARM4210">开模随动位置设定异常</string>
 	<string name="PICKER_M3_ALARM4211">没有等待开模完成命令，无法启用开模随动</string>
@@ -949,6 +957,7 @@
 	<string name="PICKER_M3_ALARM5025">请在手动下操作</string>
 	<string name="PICKER_M3_ALARM5026">气源压力过低</string>
 	<string name="PICKER_M3_ALARM5027">与面板通讯断线</string>
+	<string name="PICKER_M3_ALARM5028">无开模完成讯号，无法进行单循环</string>
 	<string name="VW_ENERGY_TOTAL_NUM">总产量</string>
 	<string name="VW_ENERGY_TOTAL_GPROC">总良品</string>
 	<string name="VW_ENERGY_TOTAL_BPROC">总不良品</string>

@@ -1,0 +1,269 @@
+ViewZero:CtmFormView
+  left =0
+  top =0
+  right =599
+  bottom =829
+  titleID =BTN_PICKER_ZERO
+  printname =Zero_Axis3.bmp
+  Encoder_X1:CtmEditX1
+    left =134
+    top =139
+    right =274
+    bottom =171
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_INTERFACE_POSNOW_X1
+  end
+  Encoder_Y1:CtmEditX1
+    left =278
+    top =139
+    right =418
+    bottom =171
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_INTERFACE_POSNOW_Y1
+  end
+  LinuxCtmStaticX216:CtmStaticX2
+    left =22
+    top =140
+    right =122
+    bottom =172
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =POS_NOW
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =22
+    top =268
+    right =122
+    bottom =300
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =POS_ZERO
+    align =34
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =22
+    top =196
+    right =122
+    bottom =228
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =ZERO_OFFSET_DLY
+    align =34
+  end
+  LinuxCtmStaticX23:CtmStaticX2
+    left =134
+    top =92
+    right =274
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_XAXIS
+    align =34
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =278
+    top =92
+    right =418
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_YAXIS
+    align =34
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =422
+    top =92
+    right =562
+    bottom =124
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_HAP5_ROBOT_ZAXIS
+    align =34
+  end
+  ZeroPos_X1:CtmEditX1
+    left =134
+    top =267
+    right =274
+    bottom =299
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV27
+  end
+  ZeroPos_Y1:CtmEditX1
+    left =278
+    top =267
+    right =418
+    bottom =299
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV28
+  end
+  Encoder_Z:CtmEditX1
+    left =422
+    top =139
+    right =562
+    bottom =171
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_INTERFACE_POSNOW_Z
+  end
+  ZeroPos_Z:CtmEditX1
+    left =422
+    top =267
+    right =562
+    bottom =299
+    wtype =32
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =7347
+    maxchar =16
+    align =36
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV29
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =6
+    top =140
+    right =22
+    bottom =172
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox7:CtmImageBox
+    left =6
+    top =196
+    right =22
+    bottom =228
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox8:CtmImageBox
+    left =6
+    top =268
+    right =22
+    bottom =300
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  Dly_X1:CtmEditX1
+    left =134
+    top =199
+    right =274
+    bottom =231
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =9999
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS1_PILE_STEP
+  end
+  Dly_Y1:CtmEditX1
+    left =278
+    top =199
+    right =418
+    bottom =231
+    wtype =35
+    taborder =2
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =9999
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS1_PILE_NUM
+  end
+  Dly_Z:CtmEditX1
+    left =422
+    top =199
+    right =562
+    bottom =231
+    wtype =35
+    taborder =3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =9999
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_AXIS1_PILE_DISTANCE
+  end
+end

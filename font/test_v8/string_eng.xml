@@ -635,6 +635,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="SPEED_SPEED_KP">SPD KP</string>
 	<string name="AXIS_HOMING">Homing</string>
 	<string name="AXIS_ZERO">Zero</string>
+	<string name="ZERO_OFFSET_DLY">Zero Dly</string>
 	<string name="POS_NOW">Curr Pos</string>
 	<string name="POS_ZERO">Zero Pos</string>
 	<string name="PICKER_NULL"></string>
@@ -856,6 +857,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="PICKER_M3_ALARM3010">EJ-RET Fail</string>
 	<string name="PICKER_M3_ALARM3011">Suck/Grip Fail</string>
 	<string name="PICKER_M3_ALARM3012">Servo On Fail</string>
+	<string name="PICKER_M3_ALARM3013">Check Fail</string>
 	<string name="PICKER_M3_ALARM3100">No SubProgram back-Label in MainProgram</string>
 	<string name="PICKER_M3_ALARM3210">X Axis stack over limit</string>
 	<string name="PICKER_M3_ALARM3211">X Axis stack over limit</string>
@@ -869,6 +871,12 @@ Please delete unnecessary user then add again!</string>
 	<string name="PICKER_M3_ALARM4002">No GOTO cmd, check teach data please.</string>
 	<string name="PICKER_M3_ALARM4003">STK must before Z Axis MoveOut, Check teach data please.</string>
 	<string name="PICKER_M3_ALARM4004">No ENDIF cmd, check teach data please.</string>
+	<string name="PICKER_M3_ALARM4005">Teach err, action cant be sync</string>
+	<string name="PICKER_M3_ALARM4006">Teach err, cant sync action X1</string>
+	<string name="PICKER_M3_ALARM4007">Teach err, cant sync action Y1</string>
+	<string name="PICKER_M3_ALARM4008">Teach err, cant sync action Z</string>
+	<string name="PICKER_M3_ALARM4009">Teach err, cant sync action X2</string>
+	<string name="PICKER_M3_ALARM4010">Teach err, cant sync action Y2</string>
 	<string name="PICKER_M3_ALARM4200">Position Set Err, check zone set please.</string>
 	<string name="PICKER_M3_ALARM4210">Follow Open Position Set Err.</string>
 	<string name="PICKER_M3_ALARM4211">No "Wait Opend" cmd, cant enable FLW Open.</string>
@@ -899,6 +907,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="PICKER_M3_ALARM5025">Please switch to Manual Mode</string>
 	<string name="PICKER_M3_ALARM5026">Air pressure is too low</string>
 	<string name="PICKER_M3_ALARM5027">Lose connection with HMI</string>
+	<string name="PICKER_M3_ALARM5028">No mold opening signal, cant start SGL loop</string>
 	<string name="VW_ENERGY_TOTAL_NUM">Tot Num</string>
 	<string name="VW_ENERGY_TOTAL_GPROC">Tot Good</string>
 	<string name="VW_ENERGY_TOTAL_BPROC">Tot Fail</string>

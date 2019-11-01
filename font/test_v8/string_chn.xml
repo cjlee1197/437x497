@@ -664,6 +664,7 @@
 	<string name="AXIS_ZERO">歸零</string>
 	<string name="POS_NOW">現在位置</string>
 	<string name="POS_ZERO">歸零位置</string>
+	<string name="ZERO_OFFSET_DLY">偏移延時</string>
 	<string name="PICKER_NULL"></string>
 	<string name="POS_TOLERANCE">到位提前裕度</string>
 	<string name="TYPE_3AXIS">3軸</string>
@@ -896,6 +897,7 @@
 	<string name="PICKER_M3_ALARM3010">產品未脫落成功</string>
 	<string name="PICKER_M3_ALARM3011">產品未 吸/夾 成功</string>
 	<string name="PICKER_M3_ALARM3012">電機未使能成功</string>
+	<string name="PICKER_M3_ALARM3013">檢測未通過</string>
 	<string name="PICKER_M3_ALARM3100">沒有在主程式編輯副程式返回的標籤</string>
 	<string name="PICKER_M3_ALARM3210">X軸堆疊位置超出上限</string>
 	<string name="PICKER_M3_ALARM3211">X軸堆疊位置超出下限</string>
@@ -920,6 +922,12 @@
 	<string name="PICKER_M3_ALARM4002">沒有跳轉命令，請檢查教導</string>
 	<string name="PICKER_M3_ALARM4003">堆疊不在Z軸橫出之前，請檢查教導</string>
 	<string name="PICKER_M3_ALARM4004">沒有ENDIF命令，請檢查教導</string>
+	<string name="PICKER_M3_ALARM4005">教導資料錯誤，合併了單獨指令</string>
+	<string name="PICKER_M3_ALARM4006">教導資料錯誤，合併了一個以上的X1</string>
+	<string name="PICKER_M3_ALARM4007">教導資料錯誤，合併了一個以上的Y1</string>
+	<string name="PICKER_M3_ALARM4008">教導資料錯誤，合併了一個以上的Z</string>
+	<string name="PICKER_M3_ALARM4009">教導資料錯誤，合併了一個以上的X2</string>
+	<string name="PICKER_M3_ALARM4010">教導資料錯誤，合併了一個以上的Y2</string>
 	<string name="PICKER_M3_ALARM4200">位置設定異常，請檢查區域設定</string>
 	<string name="PICKER_M3_ALARM4210">開模隨動位置設定異常</string>
 	<string name="PICKER_M3_ALARM4211">沒有等待開模完成命令，無法啟用開模隨動</string>
@@ -950,6 +958,7 @@
 	<string name="PICKER_M3_ALARM5025">請在手動下操作</string>
 	<string name="PICKER_M3_ALARM5026">氣源壓力過低</string>
 	<string name="PICKER_M3_ALARM5027">與面板通訊斷線</string>
+	<string name="PICKER_M3_ALARM5028">無開模完成訊號，無法進行單循環</string>
 	<string name="VW_ENERGY_TOTAL_NUM">總產量</string>
 	<string name="VW_ENERGY_TOTAL_GPROC">總良品</string>
 	<string name="VW_ENERGY_TOTAL_BPROC">總不良品</string>
