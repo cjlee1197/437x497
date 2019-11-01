@@ -22,6 +22,11 @@
 /*===========================================================================+
 |           Constant                                                         |
 +===========================================================================*/
+#define		MechType3				0	 // 三軸
+#define		MechType5				1  // 五軸
+#define		EncWord 				0xFFFF0000 // High Word
+#define		MechWord 				0x0000FFFF // Low Word
+
 #define		ON					1
 #define		OFF					0
 
@@ -240,6 +245,21 @@
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
+BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
+/*--------------------------------------------------+
+| dw_MechType 機型選擇  														|
+|	Low WORD 0-三軸 1-五軸 	High WORD 0-絕對 1-增量		|
+| EX: 絕對/五軸 0x0000 0001;  0x0001 0000 增量/三軸 |
++--------------------------------------------------*/
+DWORD dw_MechType = 0; //紀錄 pMechTypeDB 的數值
+int u_PickerType 	= 0; // 機型選擇 0-三軸 1-五軸
+char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
+int iAxisNum 			= 1; // 選擇軸號
+int Num_of_Axis[]={3,5};
+
+CtmWnd*		pwndBtn_AxisNum       = NULL; // 軸選擇 Btn
+CtmWnd*		pwndEditSet_FWDSpeed	= NULL; // 前進速度
+CtmWnd*		pwndEditSet_PreDistance = NULL; // 點動距離
 CtmWnd*		pwndButton_para       = NULL;
 CtmWnd*		pwndButton_out     		= NULL; 
 
@@ -292,6 +312,26 @@ WORD        u_wInputValue;
 DBVIEWVALUE u_dbOutputValue;
 WORD        u_wOutputValue;
 
+char*	Str_Axis[] =
+{
+	"VW_PICKER_NULL",
+	"VW_HAP5_ROBOT_XAXIS",
+	"VW_HAP5_ROBOT_YAXIS",
+	"VW_HAP5_ROBOT_ZAXIS",
+	"VW_HAP5_ROBOT_X2AXIS",
+	"VW_HAP5_ROBOT_Y2AXIS",
+	"VW_HAP5_ROBOT_CAXIS",
+};
+char* dbParam[6][3] = // 參數 前進速度 點動距離 db
+{
+	{NULL,NULL,NULL},
+	{NULL,"MACHINE_CONFIGURATION_MANUAL_AXIS1_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS1_MINPOSITION"},				// X1軸
+	{NULL,"MACHINE_CONFIGURATION_MANUAL_AXIS2_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS2_MINPOSITION"},			// Y1軸
+	{NULL,"MACHINE_CONFIGURATION_MANUAL_AXIS3_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS3_MINPOSITION"},				// Z軸
+	{NULL,"MACHINE_CONFIGURATION_MANUAL_AXIS4_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS4_MINPOSITION"},				// X2軸
+	{NULL,"MACHINE_CONFIGURATION_MANUAL_AXIS5_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS5_MINPOSITION"}				// Y2軸
+};
+
 /*int 	u_nCommand[] = { COMMAND_X_FWD, 		COMMAND_X_BACK, 		COMMAND_X_HOME,
                     	 COMMAND_Y_FWD, 		COMMAND_Y_BACK, 		COMMAND_Y_HOME,
 	                     COMMAND_Z_FWD, 		COMMAND_Z_BACK, 		COMMAND_Z_HOME,
@@ -313,17 +353,27 @@ char*	u_pszAxisSpeedID[] =
 	 NULL
 };
 
+//char* u_pszRealSpeedID[] =
+//{
+//	"AXIS1_PROFILE_JOGFWD_FVELOCITY",
+//	"AXIS1_PROFILE_JOGBWD_FVELOCITY",
+//	"AXIS2_PROFILE_JOGFWD_FVELOCITY",
+//	"AXIS2_PROFILE_JOGBWD_FVELOCITY",
+//	"AXIS3_PROFILE_JOGFWD_FVELOCITY",
+//	"AXIS3_PROFILE_JOGBWD_FVELOCITY",
+//	"AXIS4_PROFILE_JOGFWD_FVELOCITY",
+//	"AXIS4_PROFILE_JOGBWD_FVELOCITY",
+//	"AXIS5_PROFILE_JOGFWD_FVELOCITY",
+//	"AXIS5_PROFILE_JOGBWD_FVELOCITY",
+//	 NULL
+//};
 char* u_pszRealSpeedID[] =
 {
-	"AXIS1_PROFILE_JOGFWD_FVELOCITY",
+	NULL,
 	"AXIS1_PROFILE_JOGBWD_FVELOCITY",
-	"AXIS2_PROFILE_JOGFWD_FVELOCITY",
 	"AXIS2_PROFILE_JOGBWD_FVELOCITY",
-	"AXIS3_PROFILE_JOGFWD_FVELOCITY",
 	"AXIS3_PROFILE_JOGBWD_FVELOCITY",
-	"AXIS4_PROFILE_JOGFWD_FVELOCITY",
 	"AXIS4_PROFILE_JOGBWD_FVELOCITY",
-	"AXIS5_PROFILE_JOGFWD_FVELOCITY",
 	"AXIS5_PROFILE_JOGBWD_FVELOCITY",
 	 NULL
 };
@@ -530,6 +580,14 @@ long	Btn_fgc[] =
 +---------------------------------------------------------------------------*/
 BOOL	OnCreateA(CtmWnd* pwndSender)
 {
+	// 取得 機構設定 3 or 5軸
+	dw_MechType = (GetDBValue(pMechTypeDB).lValue); // 讀取設定 機型選擇 三五軸
+	u_PickerType = dw_MechType & MechWord;
+	
+	pwndBtn_AxisNum  = pwndSender->FindControlFromName("Btn_AxisNum"); 
+	pwndEditSet_FWDSpeed  		= pwndSender->FindControlFromName("EditSet_FWDSpeed");
+	pwndEditSet_PreDistance  	= pwndSender->FindControlFromName("EditSet_PreDistance");
+
 	pwndButton_para  = pwndSender->FindControlFromName("Button_para");  
 	pwndButton_out   = pwndSender->FindControlFromName("Button_out"); 
 	
@@ -667,7 +725,6 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	SetDBValue("MACHINE_FUNCTION_OPTIONS_RSV04", 3);//進入手動畫面送3 離開送0 主機判斷
 				
 	u_nMANUAL_TYPE = GetDBValue("MACHINE_CONFIGURATION_MANUAL_TYPE").lValue;
-
 	return TRUE;
 }
 
@@ -689,6 +746,7 @@ WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
 	if(pWnd == NULL) return wIDControl;
 
 	SetSpeedToDB(pWnd);	
+	pWnd->OnLoseFocus(); // 取消光標
 	
 	return wIDControl;
 } 
@@ -706,6 +764,8 @@ WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
 WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 {
   //printf("key = %d\n", wKey);
+	printf("OnKeyA\n");
+	((CtmFormView*)pwndSender)->OnLoseFocus(); // 取消光標
 	switch(wKey)
 	{
   	case 70: // Home
@@ -717,9 +777,30 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		case 72: // Back
 			::PutCommand("Index.txt");
 			break;
+		case 7:
+			iAxisNum++;
+			printf("Num_of_Axis=%d\n",Num_of_Axis[u_PickerType]);
+			if(iAxisNum>Num_of_Axis[u_PickerType])
+				iAxisNum=1;			
+			pwndBtn_AxisNum->SetPropValueT("captionID",Str_Axis[iAxisNum]);
+			pwndBtn_AxisNum->CreateA();
+			pwndBtn_AxisNum	->Update();
+			
+			if(pwndEditSet_FWDSpeed!=NULL) // 前進速度
+			{
+				pwndEditSet_FWDSpeed->SetPropValueT("dbid0",dbParam[iAxisNum][1]);
+				pwndEditSet_FWDSpeed->CreateA();
+				pwndEditSet_FWDSpeed->Update();
+			}	
+			if(pwndEditSet_PreDistance!=NULL) // 點動距離
+			{
+				pwndEditSet_PreDistance->SetPropValueT("dbid0",dbParam[iAxisNum][2]);
+				pwndEditSet_PreDistance->CreateA();
+				pwndEditSet_PreDistance->Update();
+			}	
+			break;
 	}
-  
-  
+	  
   // 3354_IO定義
   /*
 	switch(wKey)
@@ -977,42 +1058,80 @@ WORD	SetSpeedToDB(CtmWnd* pWnd)
 	WORD	wSpeedPercent = 0;
 	long	lSpeedValue = 0;
 
-	for(int i = 0; i < SPEEDMAXNUM; i++)
+//	for(int i = 0; i < SPEEDMAXNUM; i++)
+//	{
+//		if(pWnd == u_pwndHandSpeed[i])
+//		{
+//			u_pwndHandSpeed[i]->GetPropValueT("value", &wSpeedPercent, sizeof(WORD));
+//			if(i < 2)
+//			{
+//			 	lSpeedValue = u_lAxisSpeed[AXIS_X_SPEED]*wSpeedPercent/100;
+//			 
+//			  printf("u_lAxisSpeed[X] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_X_SPEED],wSpeedPercent,lSpeedValue);
+//		  	}
+//		  else if(i >= 2 && i <= 3)
+//		  {
+//		  	lSpeedValue = u_lAxisSpeed[AXIS_Y_SPEED]*wSpeedPercent/100;
+//		  	
+//        printf("u_lAxisSpeed[Y] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Y_SPEED],wSpeedPercent,lSpeedValue);
+//		  }
+//		  else if(i > 3 && i <= 5)
+//		  {
+//		  	lSpeedValue = u_lAxisSpeed[AXIS_Z_SPEED]*wSpeedPercent/100;
+//        printf("u_lAxisSpeed[Z] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Z_SPEED],wSpeedPercent,lSpeedValue);
+//		  }
+//		  else if(i > 5 && i <= 7)
+//		  {
+//		  	lSpeedValue = u_lAxisSpeed[AXIS_X2_SPEED]*wSpeedPercent/100;
+//        printf("u_lAxisSpeed[X2] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_X2_SPEED],wSpeedPercent,lSpeedValue);
+//		  }
+//		  else if(i > 7 && i <= 9)
+//		  {
+//		  	lSpeedValue = u_lAxisSpeed[AXIS_Y2_SPEED]*wSpeedPercent/100;
+//        printf("u_lAxisSpeed[Y2] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Y2_SPEED],wSpeedPercent,lSpeedValue);
+//		  }
+//		  SetDBValue(u_pszRealSpeedID[i],lSpeedValue,TRUE);
+//		 // printf(" Set lSpeedValue = %d!\n", lSpeedValue);
+//		}
+//	}
+	
+	if( (pWnd == pwndEditSet_FWDSpeed) )
 	{
-		if(pWnd == u_pwndHandSpeed[i])
+		pwndEditSet_FWDSpeed->GetPropValueT("value", &wSpeedPercent, sizeof(WORD));
+		if(iAxisNum==1)
 		{
-			u_pwndHandSpeed[i]->GetPropValueT("value", &wSpeedPercent, sizeof(WORD));
-			if(i < 2)
-			{
-			 	lSpeedValue = u_lAxisSpeed[AXIS_X_SPEED]*wSpeedPercent/100;
-			 
-			  printf("u_lAxisSpeed[X] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_X_SPEED],wSpeedPercent,lSpeedValue);
-		  	}
-		  else if(i >= 2 && i <= 3)
-		  {
-		  	lSpeedValue = u_lAxisSpeed[AXIS_Y_SPEED]*wSpeedPercent/100;
-		  	
-        printf("u_lAxisSpeed[Y] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Y_SPEED],wSpeedPercent,lSpeedValue);
-		  }
-		  else if(i > 3 && i <= 5)
-		  {
-		  	lSpeedValue = u_lAxisSpeed[AXIS_Z_SPEED]*wSpeedPercent/100;
-        printf("u_lAxisSpeed[Z] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Z_SPEED],wSpeedPercent,lSpeedValue);
-		  }
-		  else if(i > 5 && i <= 7)
-		  {
-		  	lSpeedValue = u_lAxisSpeed[AXIS_X2_SPEED]*wSpeedPercent/100;
-        printf("u_lAxisSpeed[X2] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_X2_SPEED],wSpeedPercent,lSpeedValue);
-		  }
-		  else if(i > 7 && i <= 9)
-		  {
-		  	lSpeedValue = u_lAxisSpeed[AXIS_Y2_SPEED]*wSpeedPercent/100;
-        printf("u_lAxisSpeed[Y2] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Y2_SPEED],wSpeedPercent,lSpeedValue);
-		  }
-		  SetDBValue(u_pszRealSpeedID[i],lSpeedValue,TRUE);
-		 // printf(" Set lSpeedValue = %d!\n", lSpeedValue);
-		}
+		 	lSpeedValue = u_lAxisSpeed[AXIS_X_SPEED]*wSpeedPercent/100;
+		 
+		  printf("u_lAxisSpeed[X] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_X_SPEED],wSpeedPercent,lSpeedValue);
+	  	}
+	  else if(iAxisNum==2)
+	  {
+	  	lSpeedValue = u_lAxisSpeed[AXIS_Y_SPEED]*wSpeedPercent/100;
+	  	
+      printf("u_lAxisSpeed[Y] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Y_SPEED],wSpeedPercent,lSpeedValue);
+	  }
+	  else if(iAxisNum==3)
+	  {
+	  	lSpeedValue = u_lAxisSpeed[AXIS_Z_SPEED]*wSpeedPercent/100;
+      printf("u_lAxisSpeed[Z] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Z_SPEED],wSpeedPercent,lSpeedValue);
+	  }
+	  else if(iAxisNum==4)
+	  {
+	  	lSpeedValue = u_lAxisSpeed[AXIS_X2_SPEED]*wSpeedPercent/100;
+      printf("u_lAxisSpeed[X2] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_X2_SPEED],wSpeedPercent,lSpeedValue);
+	  }
+	  else if(iAxisNum==5)
+	  {
+	  	lSpeedValue = u_lAxisSpeed[AXIS_Y2_SPEED]*wSpeedPercent/100;
+      printf("u_lAxisSpeed[Y2] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Y2_SPEED],wSpeedPercent,lSpeedValue);
+	  }
+	  SetDBValue(u_pszRealSpeedID[iAxisNum],lSpeedValue,TRUE);
+	 // printf(" Set lSpeedValue = %d!\n", lSpeedValue);
+
 	}
+ 
+
+	
 	return TRUE;
 }
 
@@ -1058,6 +1177,12 @@ void	OnDestroyA(CtmWnd* pwndSender)
 +---------------------------------------------------------------------------*/
 void	OnUpdateA(CtmWnd* pwndSender)
 {
+	if(!RunOnlyOne)
+	{
+		RunOnlyOne=TRUE;
+		((CtmFormView*)pwndSender)->OnLoseFocus(); // 取消光標
+	}
+	
 	//long lTempValue = 0;
 	long lInOutValue = 0;
 	long lExOutValue = 0;
@@ -1285,7 +1410,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 	if(pwnd ==pwndButton_out)
 	{
 		::PutCommand("Hand_2.txt");
-	}
+	}	
 	
 //	if(pwnd == u_pwndButtonEnableOff)
 //	{
@@ -1308,6 +1433,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 			return wIDControl;
  	  	}
   	}
+	
   return wIDControl;	
 }
 /*---------------------------------------------------------------------------+
