@@ -66,7 +66,8 @@
 | EX: 絕對/五軸 0x0000 0001;  0x0001 0000 增量/三軸 |
 +--------------------------------------------------*/
 DWORD dw_MechType = 0; //紀錄 pMechTypeDB 的數值
-int u_PickerType = 0; // 機型選擇 0-三軸 1-五軸
+int u_PickerType 	= 0; // 機型選擇 0-三軸 1-五軸
+int u_EncType 		= 0; // 編碼器選擇  0-絕對 1-增量
 char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
 
 extern	int         g_nDemo;		
@@ -777,7 +778,10 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		}
 	if(pwnd == pwndBtnRight) // 彈跳視窗 右開
 		{
-			::PutCommand("Over3.txt");
+			if(u_PickerType==MechType5)
+				::PutCommand("Over3.txt");
+			else if(u_PickerType==MechType3)
+				::PutCommand("Over3_Axis3.txt");
 		}
 	else if(pwnd == pwndBtnLeft) // 彈跳視窗 左關
 		{
