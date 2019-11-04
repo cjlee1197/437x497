@@ -722,7 +722,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	}
 	if(u_wPickerOPSatus == STATE_SINGLESTEP || u_wPickerOPSatus == STATE_FULLAUTO)
     {
-        wStep = (WORD)GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue;
+        wStep = (WORD)GetDBValue("MACHINE_INTERFACE_PART1_WSTEPNUMBER").lValue;
         int StepNumMin = 1+No1;
         int StepNumMax = 10+No1;
         if(wStep >0 && wStep < StepNumMin)
@@ -876,7 +876,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
     	{
     	    if(u_wPickerOPSatus == STATE_SINGLESTEP)
     	    {
-    	    		wSingle_Step = (WORD)GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue;
+    	    		wSingle_Step = (WORD)GetDBValue("MACHINE_INTERFACE_PART1_WSTEPNUMBER").lValue;
     	        if(g_ptaskpicker != NULL && wSingle_Step != wSingle_StepOld)
     	        {
     	        		printf("Now step=%d\n",wSingle_Step);
@@ -900,7 +900,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
     	{
     	    if(u_wPickerOPSatus == STATE_SINGLESTEP)
     	    {
-    	    		//wSingle_Step = (WORD)GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue;
+    	    		//wSingle_Step = (WORD)GetDBValue("MACHINE_INTERFACE_PART1_WSTEPNUMBER").lValue;
     	        if(g_ptaskpicker != NULL )//&& wSingle_Step != wSingle_StepOld)
     	        {
   	        		//printf("Now step=%d\n",wSingle_Step);
