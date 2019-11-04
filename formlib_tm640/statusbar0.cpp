@@ -707,7 +707,8 @@ void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
 					if(u_nMANUAL_TYPE != MANUAL_STOP_MODE) // 安全按鈕有按下
 						SendCommand(KeyCommand);
 					else // 請按安全開關
-						 //MsgBox(g_MultiLanguage["PICKER_SAFEEYNOTPRESS"], tmFT_CODE_TECH);		
+						 //MsgBox(g_MultiLanguage["PICKER_SAFEEYNOTPRESS"], tmFT_CODE_TECH);
+						 KeyCommand=0x1234; // 無意義命令		
 						 MsgBoxCall("msgboxConfirm.txt","PICKER_SAFEEYNOTPRESS");				
 				}
 				/*-----------------------------------運動命令--------------------------------------*/
