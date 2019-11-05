@@ -698,7 +698,7 @@
 	<string name="TEACH_QTEACH_WAITP">等待点</string>
 	<string name="TEACH_QTEACH_READYDOWNP">准备下降点</string>
 	<string name="TEACH_QTEACH_PICKDOWNP">取出侧下降点</string>
-	<string name="TEACH_QTEACH_PICKP">取出测取件点</string>
+	<string name="TEACH_QTEACH_PICKP">取出侧取件点</string>
 	<string name="TEACH_QTEACH_MOVEOUTP">取出侧横出点</string>
 	<string name="TEACH_QTEACH_PLACEDOWNP">置物侧下降点</string>
 	<string name="TEACH_QTEACH_PLACEP">置物侧放置点</string>
