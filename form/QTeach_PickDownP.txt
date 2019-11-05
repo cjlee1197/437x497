@@ -52,9 +52,9 @@ ViewQTeach:CtmFormView
   end
   LinuxCtmStaticX23:CtmStaticX2
     left =87
-    top =411
-    right =142
-    bottom =451
+    top =395
+    right =187
+    bottom =435
     wtype =33
     fgc =0
     bgc =36256
@@ -64,10 +64,10 @@ ViewQTeach:CtmFormView
     align =34
   end
   LinuxCtmStaticX216:CtmStaticX2
-    left =221
-    top =411
-    right =321
-    bottom =451
+    left =317
+    top =395
+    right =417
+    bottom =435
     wtype =33
     fgc =0
     bgc =36256
@@ -78,9 +78,9 @@ ViewQTeach:CtmFormView
   end
   QTeach_Speed_Z:CtmEditX1
     left =87
-    top =460
-    right =142
-    bottom =500
+    top =444
+    right =187
+    bottom =494
     wtype =35
     taborder =0
     fgc =0
@@ -97,9 +97,9 @@ ViewQTeach:CtmFormView
   end
   QTeach_Speed_X1:CtmEditX1
     left =87
-    top =524
-    right =142
-    bottom =564
+    top =518
+    right =187
+    bottom =568
     wtype =35
     taborder =1
     fgc =0
@@ -116,13 +116,13 @@ ViewQTeach:CtmFormView
   end
   QTeach_Speed_Y1:CtmEditX1
     left =87
-    top =588
-    right =142
-    bottom =628
+    top =592
+    right =187
+    bottom =642
     wtype =35
     taborder =2
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =0
     maxchar =10
@@ -134,9 +134,9 @@ ViewQTeach:CtmFormView
   end
   QTeach_Speed_X2:CtmEditX1
     left =87
-    top =652
-    right =142
-    bottom =692
+    top =666
+    right =187
+    bottom =716
     wtype =35
     taborder =3
     fgc =0
@@ -153,13 +153,13 @@ ViewQTeach:CtmFormView
   end
   QTeach_Speed_Y2:CtmEditX1
     left =87
-    top =716
-    right =142
-    bottom =756
+    top =740
+    right =187
+    bottom =790
     wtype =35
     taborder =4
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =0
     maxchar =10
@@ -170,10 +170,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM48_EQUIPMENT2_ACTION_PARAMETER10
   end
   QTeach_Pos_Z:CtmEditX1
-    left =221
-    top =460
-    right =321
-    bottom =500
+    left =317
+    top =444
+    right =417
+    bottom =494
     wtype =35
     taborder =5
     fgc =0
@@ -190,10 +190,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM48_EQUIPMENT2_ACTION_PARAMETER3
   end
   QTeach_Pos_X1:CtmEditX1
-    left =221
-    top =524
-    right =321
-    bottom =564
+    left =317
+    top =518
+    right =417
+    bottom =568
     wtype =35
     taborder =6
     fgc =0
@@ -211,14 +211,14 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM48_EQUIPMENT2_ACTION_PARAMETER1
   end
   QTeach_Pos_Y1:CtmEditX1
-    left =221
-    top =588
-    right =321
-    bottom =628
+    left =317
+    top =592
+    right =417
+    bottom =642
     wtype =35
     taborder =7
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =0
     maxchar =10
@@ -230,10 +230,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM48_EQUIPMENT2_ACTION_PARAMETER2
   end
   QTeach_Pos_X2:CtmEditX1
-    left =221
-    top =652
-    right =321
-    bottom =692
+    left =317
+    top =666
+    right =417
+    bottom =716
     wtype =35
     taborder =8
     fgc =0
@@ -251,14 +251,14 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM48_EQUIPMENT2_ACTION_PARAMETER4
   end
   QTeach_Pos_Y2:CtmEditX1
-    left =221
-    top =716
-    right =321
-    bottom =756
+    left =317
+    top =740
+    right =417
+    bottom =790
     wtype =35
     taborder =9
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =0
     maxchar =10
@@ -271,10 +271,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM48_EQUIPMENT2_ACTION_PARAMETER5
   end
   LinuxCtmStaticX21:CtmStaticX2
-    left =151
-    top =411
-    right =216
-    bottom =451
+    left =199
+    top =395
+    right =299
+    bottom =435
     wtype =33
     fgc =0
     bgc =36256
@@ -284,10 +284,10 @@ ViewQTeach:CtmFormView
     align =34
   end
   QTeach_DT_Z:CtmEditX1
-    left =151
-    top =460
-    right =216
-    bottom =500
+    left =199
+    top =444
+    right =299
+    bottom =494
     wtype =35
     taborder =10
     fgc =0
@@ -305,10 +305,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM41_EQUIPMENT2_ACTION_PARAMETER3
   end
   QTeach_DT_X1:CtmEditX1
-    left =151
-    top =524
-    right =216
-    bottom =564
+    left =199
+    top =518
+    right =299
+    bottom =568
     wtype =35
     taborder =11
     fgc =0
@@ -326,14 +326,14 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM41_EQUIPMENT2_ACTION_PARAMETER1
   end
   QTeach_DT_Y1:CtmEditX1
-    left =151
-    top =588
-    right =216
-    bottom =628
+    left =199
+    top =592
+    right =299
+    bottom =642
     wtype =35
     taborder =12
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =0
     maxchar =10
@@ -346,10 +346,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM41_EQUIPMENT2_ACTION_PARAMETER2
   end
   QTeach_DT_X2:CtmEditX1
-    left =151
-    top =652
-    right =216
-    bottom =692
+    left =199
+    top =666
+    right =299
+    bottom =716
     wtype =35
     taborder =13
     fgc =0
@@ -367,14 +367,14 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM41_EQUIPMENT2_ACTION_PARAMETER4
   end
   QTeach_DT_Y2:CtmEditX1
-    left =151
-    top =716
-    right =216
-    bottom =756
+    left =199
+    top =740
+    right =299
+    bottom =790
     wtype =35
     taborder =14
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =0
     maxchar =10
@@ -386,69 +386,20 @@ ViewQTeach:CtmFormView
     maxdb =FALSE
     dbid1 =MACHINE_PROFILE_NUM41_EQUIPMENT2_ACTION_PARAMETER5
   end
-  Btn_PosHV:CtmToolButton
-    left =478
-    top =334
-    right =588
-    bottom =402
-    wtype =33
-    taborder =0
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/Clamp_Vertical.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =18
-  end
   LinuxCtmImageBox4:CtmImageBox
-    left =24
-    top =104
-    right =474
-    bottom =374
+    left =16
+    top =128
+    right =316
+    bottom =327
     type =2
     imagepath =res_tm640/pic/picker/QTeach_PickDownP.bmp
     keycolor =63519
   end
-  Str_NowMoveAxis:CtmStaticX2
-    left =494
-    top =142
-    right =574
-    bottom =174
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TEACH_QTEACH_NOW_MOVE
-    align =34
-  end
-  Img_NowMoveAxis:CtmImageBox
-    left =496
-    top =178
-    right =571
-    bottom =238
-    type =2
-    keycolor =63519
-  end
-  LinuxCtmStaticX24:CtmStaticX2
-    left =503
-    top =288
-    right =563
-    bottom =328
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TEACH_POS_HV
-    align =34
-  end
   Btn_GetPos_Y2:CtmToolButton
     left =8
-    top =708
+    top =740
     right =79
-    bottom =763
+    bottom =795
     wtype =48
     taborder =100
     bgc =54970
@@ -461,9 +412,9 @@ ViewQTeach:CtmFormView
   end
   Btn_GetPos_X2:CtmToolButton
     left =8
-    top =644
+    top =666
     right =79
-    bottom =699
+    bottom =721
     wtype =48
     taborder =99
     bgc =54970
@@ -476,9 +427,9 @@ ViewQTeach:CtmFormView
   end
   Str_GetPos:CtmStaticX2
     left =7
-    top =411
+    top =395
     right =79
-    bottom =451
+    bottom =435
     wtype =48
     fgc =0
     bgc =36256
@@ -489,9 +440,9 @@ ViewQTeach:CtmFormView
   end
   Btn_GetPos_Z:CtmToolButton
     left =8
-    top =452
+    top =444
     right =79
-    bottom =507
+    bottom =499
     wtype =48
     taborder =98
     bgc =54970
@@ -504,9 +455,9 @@ ViewQTeach:CtmFormView
   end
   Btn_GetPos_X1:CtmToolButton
     left =8
-    top =516
+    top =518
     right =79
-    bottom =571
+    bottom =573
     wtype =48
     taborder =96
     bgc =54970
@@ -519,9 +470,9 @@ ViewQTeach:CtmFormView
   end
   Btn_GetPos_Y1:CtmToolButton
     left =8
-    top =580
+    top =592
     right =79
-    bottom =635
+    bottom =647
     wtype =48
     taborder =97
     bgc =54970
@@ -533,23 +484,23 @@ ViewQTeach:CtmFormView
     downbitmap =res_tm640/pic/PGBtnDown.bmp
   end
   SLVL_Logo:CtmImageBox
-    left =336
-    top =528
-    right =536
-    bottom =678
+    left =333
+    top =136
+    right =483
+    bottom =286
     type =2
     imagepath =res_tm640/pic/picker/QTeach_Pick_SLVL.bmp
     keycolor =63519
   end
   Pick_SLVL:CtmEditX1
-    left =469
-    top =748
-    right =569
-    bottom =788
+    left =485
+    top =212
+    right =585
+    bottom =252
     wtype =35
     taborder =66
-    fgc =1055
-    bgc =65535
+    fgc =0
+    bgc =57279
     fontsize =1
     bordercolor =0
     maxchar =10
@@ -561,10 +512,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM3_EQUIPMENT2_ACTION_PARAMETER1
   end
   Pick_Dis:CtmEditX1
-    left =469
-    top =692
-    right =569
-    bottom =732
+    left =485
+    top =164
+    right =585
+    bottom =204
     wtype =35
     taborder =55
     fgc =0
@@ -578,10 +529,10 @@ ViewQTeach:CtmFormView
     max =999999
   end
   Check_SLVL:CtmToolButton
-    left =334
-    top =476
-    right =374
-    bottom =516
+    left =430
+    top =395
+    right =470
+    bottom =435
     wtype =33
     taborder =49
     bgc =54970
@@ -593,106 +544,98 @@ ViewQTeach:CtmFormView
     key =31
   end
   Btn_SLVL:CtmToolButton
-    left =375
-    top =476
-    right =485
-    bottom =516
+    left =471
+    top =395
+    right =581
+    bottom =435
     wtype =48
     taborder =50
     bgc =65535
     fontsize =1
     captionID =TEACH_QTEACH_SLVL_USED
   end
-  Mask_SLVL:CtmStaticX2
-    left =328
-    top =520
-    right =576
-    bottom =792
-    wtype =32
-    bgc =63422
-  end
   Img_PosHint_Z:CtmImageBox
-    left =221
-    top =501
-    right =241
-    bottom =521
+    left =317
+    top =494
+    right =337
+    bottom =514
     type =2
     imagepath =res_tm640/pic/picker/PosHint.bmp
     keycolor =63519
   end
   Mask_PosHint_Z:CtmStaticX2
-    left =221
-    top =500
-    right =321
-    bottom =522
+    left =317
+    top =494
+    right =417
+    bottom =516
     wtype =32
     bgc =63422
   end
   Img_PosHint_X1:CtmImageBox
-    left =221
-    top =565
-    right =241
-    bottom =585
+    left =317
+    top =568
+    right =337
+    bottom =588
     type =2
     imagepath =res_tm640/pic/picker/PosHint.bmp
     keycolor =63519
   end
   Mask_PosHint_X1:CtmStaticX2
-    left =221
-    top =564
-    right =321
-    bottom =586
+    left =317
+    top =568
+    right =417
+    bottom =590
     wtype =32
     bgc =63422
   end
   Img_PosHint_Y1:CtmImageBox
-    left =221
-    top =629
-    right =241
-    bottom =649
+    left =317
+    top =642
+    right =337
+    bottom =662
     type =2
     imagepath =res_tm640/pic/picker/PosHint.bmp
     keycolor =63519
   end
   Mask_PosHint_Y1:CtmStaticX2
-    left =221
-    top =628
-    right =321
-    bottom =650
+    left =317
+    top =642
+    right =417
+    bottom =664
     wtype =32
     bgc =63422
   end
   Img_PosHint_X2:CtmImageBox
-    left =221
-    top =693
-    right =241
-    bottom =713
+    left =317
+    top =716
+    right =337
+    bottom =736
     type =2
     imagepath =res_tm640/pic/picker/PosHint.bmp
     keycolor =63519
   end
   Mask_PosHint_X2:CtmStaticX2
-    left =221
-    top =692
-    right =321
-    bottom =714
+    left =317
+    top =716
+    right =417
+    bottom =738
     wtype =32
     bgc =63422
   end
   Img_PosHint_Y2:CtmImageBox
-    left =221
-    top =757
-    right =241
-    bottom =777
+    left =317
+    top =790
+    right =337
+    bottom =810
     type =2
     imagepath =res_tm640/pic/picker/PosHint.bmp
     keycolor =63519
   end
   Mask_PosHint_Y2:CtmStaticX2
-    left =221
-    top =756
-    right =321
-    bottom =778
+    left =317
+    top =790
+    right =417
+    bottom =812
     wtype =32
     bgc =63422
   end

@@ -5,379 +5,19 @@ ViewMech_Axis:CtmFormView
   bottom =829
   titleID =MECH_PARAM
   printname =Mech_Param.bmp
-  edit_ENC_REZ:CtmEditX1
-    left =333
-    top =116
-    right =433
-    bottom =148
-    wtype =35
-    taborder =0
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    maxchar =10
-    align =36
-    max =99999
-    maxdb =FALSE
-    dbid0 =MACHINE_INTERFACE_CONTROL_RSV05
-  end
-  LinuxCtmStaticX22:CtmStaticX2
-    left =196
-    top =116
-    right =326
-    bottom =148
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =MOTOR_ENC_REZ
-  end
-  edit_Tooth_Num:CtmEditX1
-    left =333
-    top =161
-    right =433
-    bottom =193
-    wtype =35
-    taborder =3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =1055
-    maxchar =10
-    align =36
-    max =99999
-    maxdb =FALSE
-    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV12
-  end
-  LinuxCtmStaticX25:CtmStaticX2
-    left =196
-    top =180
-    right =326
-    bottom =212
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =MECH_TOOTHM_NUM
-  end
-  edit_Motor_Ratio:CtmEditX1
-    left =333
-    top =244
-    right =433
-    bottom =276
-    wtype =35
-    taborder =1
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =64512
-    maxchar =10
-    align =36
-    max =9999
-    maxdb =FALSE
-    dbid0 =MACHINE_INTERFACE_CONTROL_RSV10
-  end
-  LinuxCtmStaticX27:CtmStaticX2
-    left =196
-    top =244
-    right =326
-    bottom =276
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =MOTOR_RATIO
-  end
-  LinuxCtmStaticX29:CtmStaticX2
-    left =196
-    top =308
-    right =326
-    bottom =340
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =MECH_DOUB_MECH
-  end
-  LinuxCtmStaticX26:CtmStaticX2
-    left =196
-    top =372
-    right =326
-    bottom =404
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =MECH_POS_INV
-  end
-  Btn_POS_INV:CtmToolButton
-    left =333
-    top =372
-    right =433
-    bottom =404
-    wtype =33
-    taborder =6
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    destcolor =57182
-    buttontype =0
-  end
-  Btn_DOUBLE:CtmToolButton
-    left =333
-    top =308
-    right =433
-    bottom =340
-    wtype =33
-    taborder =5
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    destcolor =57182
-    buttontype =0
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
-  end
-  LinuxCtmImageBox1:CtmImageBox
-    left =180
-    top =116
-    right =196
-    bottom =148
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox2:CtmImageBox
-    left =180
-    top =180
-    right =196
-    bottom =212
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox3:CtmImageBox
-    left =180
-    top =244
-    right =196
-    bottom =276
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox4:CtmImageBox
-    left =180
-    top =308
-    right =196
-    bottom =340
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox5:CtmImageBox
-    left =180
-    top =372
-    right =196
-    bottom =404
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox8:CtmImageBox
-    left =53
-    top =440
-    right =553
-    bottom =820
-    type =2
-    imagepath =res_tm640/pic/picker/Mech_Tooth.bmp
-    keycolor =63519
-  end
-  edit_M_Num:CtmEditX1
-    left =333
-    top =199
-    right =433
-    bottom =231
-    wtype =35
-    taborder =4
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =1055
-    maxchar =10
-    align =36
-    max =99999
-    maxdb =FALSE
-    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV17
-  end
-  LinuxCtmStaticX221:CtmStaticX2
-    left =440
-    top =116
-    right =500
-    bottom =140
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =UNIT_PULS_REV
-  end
-  LinuxCtmStaticX24:CtmStaticX2
-    left =440
-    top =161
-    right =500
-    bottom =185
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =MECH_TOOTH_NUM
-  end
-  Btn_MechType3:CtmToolButton
-    left =109
-    top =28
-    right =176
-    bottom =60
-    wtype =33
-    taborder =64
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    destcolor =57182
-    buttontype =0
-    captionID =MECH_MECHTYPE3
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
-  end
-  Btn_MechType5:CtmToolButton
-    left =186
-    top =28
-    right =253
-    bottom =60
-    wtype =33
-    taborder =65
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    destcolor =57182
-    buttontype =0
-    captionID =MECH_MECHTYPE5
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
-  end
-  LinuxCtmStaticX211:CtmStaticX2
+  Btn_Axis_ALL:CtmToolButton
     left =20
-    top =28
-    right =100
-    bottom =60
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =MECH_MECHTYPE
-  end
-  LinuxCtmImageBox6:CtmImageBox
-    left =4
-    top =28
-    right =20
-    bottom =60
+    top =29
+    right =130
+    bottom =89
     wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  Btn_Gear_D:CtmToolButton
-    left =381
-    top =28
-    right =469
-    bottom =60
-    wtype =33
-    taborder =25
-    bgc =54970
+    taborder =48
     fontsize =1
-    downcontrol =editNEWNAME
-    destcolor =57182
-    buttontype =0
-    captionID =MECH_GEAR_D
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
-  end
-  Btn_Tooth_M:CtmToolButton
-    left =482
-    top =28
-    right =570
-    bottom =60
-    wtype =33
-    taborder =26
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    destcolor =57182
-    buttontype =0
-    captionID =MECH_TOOTHM_NUM
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
-  end
-  LinuxCtmStaticX212:CtmStaticX2
-    left =292
-    top =28
-    right =372
-    bottom =60
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TRANS_TYPE
-  end
-  LinuxCtmImageBox7:CtmImageBox
-    left =276
-    top =28
-    right =292
-    bottom =60
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmStaticX213:CtmStaticX2
-    left =440
-    top =199
-    right =500
-    bottom =223
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =MECH_M_NUM
+    align =34
+    captionID =ZONELIMIT_PARAM
+    upbitmap =res_tm640/pic/PileBtnSelect.bmp
+    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    key =77
   end
   Btn_Axis_X1:CtmToolButton
     left =20
@@ -389,7 +29,7 @@ ViewMech_Axis:CtmFormView
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_XAXIS
-    upbitmap =res_tm640/pic/PileBtnSelect.bmp
+    upbitmap =res_tm640/pic/PileBtnUp.bmp
     downbitmap =res_tm640/pic/PileBtnDown.bmp
     key =1
   end
@@ -457,11 +97,156 @@ ViewMech_Axis:CtmFormView
     action =255
     formname =Pile_4.txt
   end
+  LinuxCtmImageBox8:CtmImageBox
+    left =141
+    top =32
+    right =591
+    bottom =412
+    type =2
+    imagepath =res_tm640/pic/picker/Mech.bmp
+    keycolor =63519
+  end
+  edit_Motor_Ratio:CtmEditX1
+    left =301
+    top =604
+    right =421
+    bottom =654
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    max =9999
+    maxdb =FALSE
+    dbid0 =MACHINE_INTERFACE_CONTROL_RSV10
+  end
+  Btn_POS_INV:CtmToolButton
+    left =301
+    top =764
+    right =421
+    bottom =814
+    wtype =33
+    taborder =6
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+  end
+  Btn_DOUBLE:CtmToolButton
+    left =301
+    top =708
+    right =421
+    bottom =758
+    wtype =33
+    taborder =5
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  edit_ENC_REZ:CtmEditX1
+    left =301
+    top =412
+    right =421
+    bottom =462
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =99999
+    maxdb =FALSE
+    dbid0 =MACHINE_INTERFACE_CONTROL_RSV05
+  end
+  LinuxCtmStaticX221:CtmStaticX2
+    left =408
+    top =412
+    right =468
+    bottom =436
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =UNIT_PULS_REV
+  end
+  Btn_MechType3:CtmToolButton
+    left =301
+    top =460
+    right =421
+    bottom =510
+    wtype =33
+    taborder =64
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =MECH_MECHTYPE3
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  Btn_MechType5:CtmToolButton
+    left =426
+    top =460
+    right =546
+    bottom =510
+    wtype =33
+    taborder =65
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =MECH_MECHTYPE5
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  Btn_Gear_D:CtmToolButton
+    left =301
+    top =556
+    right =421
+    bottom =606
+    wtype =33
+    taborder =25
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =MECH_GEAR_D
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  Btn_Tooth_M:CtmToolButton
+    left =426
+    top =556
+    right =546
+    bottom =606
+    wtype =33
+    taborder =26
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =MECH_TOOTHM_NUM
+    upbitmap =res_tm640/pic/ButtonDown.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
   Btn_EncType_Abs:CtmToolButton
-    left =381
-    top =68
-    right =469
-    bottom =100
+    left =301
+    top =652
+    right =421
+    bottom =702
     wtype =33
     taborder =32
     bgc =54970
@@ -474,10 +259,10 @@ ViewMech_Axis:CtmFormView
     downbitmap =res_tm640/pic/ButtonDown.bmp
   end
   Btn_EncType_Res:CtmToolButton
-    left =482
-    top =68
-    right =570
-    bottom =100
+    left =426
+    top =652
+    right =546
+    bottom =702
     wtype =33
     taborder =33
     bgc =54970
@@ -489,23 +274,24 @@ ViewMech_Axis:CtmFormView
     upbitmap =res_tm640/pic/ButtonDown.bmp
     downbitmap =res_tm640/pic/ButtonDown.bmp
   end
-  LinuxCtmStaticX21:CtmStaticX2
-    left =292
-    top =68
-    right =372
-    bottom =100
+  Str_ENC_REZ:CtmStaticX2
+    left =140
+    top =412
+    right =290
+    bottom =462
     wtype =33
     fgc =0
     bgc =36256
     fontsize =1
     bordercolor =35953
-    textID =MECH_ENCTYPE
+    textID =MOTOR_ENC_REZ
+    align =34
   end
-  LinuxCtmImageBox9:CtmImageBox
-    left =276
-    top =68
-    right =292
-    bottom =100
+  LinuxCtmImageBox1:CtmImageBox
+    left =124
+    top =420
+    right =140
+    bottom =452
     wtype =48
     fgc =0
     fontsize =2
@@ -513,5 +299,229 @@ ViewMech_Axis:CtmFormView
     style =3
     imagepath =res_tm640/pic/ListMark.bmp
     keycolor =63519
+  end
+  Str_Motor_Ratio:CtmStaticX2
+    left =140
+    top =604
+    right =290
+    bottom =654
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =MOTOR_RATIO
+    align =34
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =124
+    top =612
+    right =140
+    bottom =644
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  Str_DOUBLE:CtmStaticX2
+    left =140
+    top =708
+    right =290
+    bottom =758
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =MECH_DOUB_MECH
+    align =34
+  end
+  Str_POS_INV:CtmStaticX2
+    left =140
+    top =764
+    right =290
+    bottom =814
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =MECH_POS_INV
+    align =34
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =124
+    top =716
+    right =140
+    bottom =748
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =124
+    top =772
+    right =140
+    bottom =804
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  Str_MechType:CtmStaticX2
+    left =140
+    top =460
+    right =290
+    bottom =510
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =MECH_MECHTYPE
+    align =34
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =124
+    top =468
+    right =140
+    bottom =500
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  Str_Trans:CtmStaticX2
+    left =140
+    top =556
+    right =290
+    bottom =606
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TRANS_TYPE
+    align =34
+  end
+  LinuxCtmImageBox7:CtmImageBox
+    left =124
+    top =564
+    right =140
+    bottom =596
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox9:CtmImageBox
+    left =124
+    top =660
+    right =140
+    bottom =692
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  Str_EncType:CtmStaticX2
+    left =140
+    top =652
+    right =290
+    bottom =702
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =MECH_ENCTYPE
+    align =34
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =124
+    top =516
+    right =140
+    bottom =548
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  Str_Tooth_N:CtmStaticX2
+    left =140
+    top =510
+    right =290
+    bottom =560
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =MECH_TOOTHM_NUM
+    align =34
+  end
+  edit_Tooth_Num:CtmEditX1
+    left =301
+    top =510
+    right =421
+    bottom =560
+    wtype =35
+    taborder =3
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    max =99999
+    maxdb =FALSE
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV12
+  end
+  edit_M_Num:CtmEditX1
+    left =426
+    top =510
+    right =546
+    bottom =560
+    wtype =35
+    taborder =4
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    max =99999
+    maxdb =FALSE
+    dbid0 =MACHINE_FUNCTION_OPTIONS_RSV17
+  end
+  Mask_MechData:CtmStaticX2
+    left =120
+    top =408
+    right =560
+    bottom =829
+    wtype =32
+    bgc =63422
   end
 end

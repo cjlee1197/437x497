@@ -78,21 +78,10 @@ mainform:CtmMainFrame
       keycolor =63519
     end
     BmpPickerMode:CtmImageBox
-      left =39
-      top =42
-      right =69
-      bottom =72
-      wtype =48
-      type =2
-      style =3
-      imagepath =res_tm640/pic/picker/Hand.bmp
-      keycolor =63519
-    end
-    BmpMoveMode:CtmImageBox
-      left =39
-      top =72
-      right =69
-      bottom =87
+      left =3
+      top =43
+      right =33
+      bottom =73
       wtype =48
       type =2
       style =3
@@ -101,9 +90,9 @@ mainform:CtmMainFrame
     end
     BmpPICKER:CtmImageBox
       left =72
-      top =45
+      top =43
       right =112
-      bottom =75
+      bottom =73
       wtype =48
       type =2
       style =3
@@ -125,9 +114,9 @@ mainform:CtmMainFrame
     end
     BmpPickerEnable:CtmImageBox
       left =112
-      top =45
+      top =43
       right =152
-      bottom =75
+      bottom =73
       wtype =48
       type =2
       style =3
@@ -135,10 +124,10 @@ mainform:CtmMainFrame
       keycolor =63519
     end
     SaveScreenBtn:CtmToolButton
-      left =0
-      top =6
-      right =34
-      bottom =40
+      left =184
+      top =46
+      right =218
+      bottom =80
       wtype =48
       taborder =100
       fontsize =2
@@ -146,9 +135,9 @@ mainform:CtmMainFrame
     end
     UserLoginBtn:CtmToolButton
       left =3
-      top =52
+      top =5
       right =35
-      bottom =84
+      bottom =37
       wtype =48
       taborder =101
       fontsize =2
@@ -328,6 +317,17 @@ mainform:CtmMainFrame
       style =3
       keycolor =63519
     end
+    BmpMoveMode:CtmImageBox
+      left =39
+      top =56
+      right =69
+      bottom =71
+      wtype =48
+      type =2
+      style =3
+      imagepath =res_tm640/pic/picker/Hand.bmp
+      keycolor =63519
+    end
   end
   maintoolbar:CtmToolBar
     left =0
@@ -344,23 +344,21 @@ mainform:CtmMainFrame
     bottom =40
     wtype =48
     fgc =65535
-    fontsize =1
   end
   StaticTitle2:CtmStaticX2
-    left =162
-    top =56
-    right =192
+    left =40
+    top =73
+    right =176
     bottom =90
     wtype =48
     fgc =65535
-    fontsize =1
     align =34
   end
   StrUserID:CtmStaticX2
-    left =3
-    top =52
-    right =35
-    bottom =86
+    left =0
+    top =5
+    right =32
+    bottom =39
     wtype =48
     fgc =65535
     fontsize =1

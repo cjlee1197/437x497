@@ -634,7 +634,7 @@ ViewUserLog:CtmFormView
     left =414
     top =568
     right =550
-    bottom =604
+    bottom =618
     wtype =36
     taborder =3
     bgc =54970
@@ -649,7 +649,7 @@ ViewUserLog:CtmFormView
     left =47
     top =568
     right =183
-    bottom =604
+    bottom =618
     wtype =36
     taborder =2
     bgc =54970

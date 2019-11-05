@@ -96,6 +96,9 @@
 #define		Color_White		0xFFFF
 #define		Color_Red			0xF800
 #define		Color_Yellow 	0xFF80
+#define		Color_Blue 		0xDFBF
+
+#define		Hint_Pos	317
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -395,20 +398,20 @@ char* Clamp_ImgPath[] = // 治具顯示圖片
 	"",	// 0
 	"",	// 1
 	"",	// 2
-	"res_tm640/pic/picker/clamp1_off.bmp", // 3
-	"res_tm640/pic/picker/clamp2_off.bmp", //4
-	"res_tm640/pic/picker/CupulaClose1.bmp",	// 5
-	"res_tm640/pic/picker/CupulaClose2.bmp",	// 6
+	"res_tm640/pic/picker/Qteach_clamp1_off.bmp", // 3
+	"res_tm640/pic/picker/Qteach_clamp2_off.bmp", //4
+	"res_tm640/pic/picker/Qteach_CupulaClose1.bmp",	// 5
+	"res_tm640/pic/picker/Qteach_CupulaClose2.bmp",	// 6
 	"", // 7
 	"",	// 8
 	"", // 9
 	"",	// 10
 	"",	// 11
 	"",	// 12
-	"res_tm640/pic/picker/clamp1_on.bmp",	// 13
-	"res_tm640/pic/picker/clamp2_on.bmp",	// 14
-	"res_tm640/pic/picker/CupulaOpen1.bmp",	// 15
-	"res_tm640/pic/picker/CupulaOpen2.bmp",	// 16
+	"res_tm640/pic/picker/Qteach_clamp1_on.bmp",	// 13
+	"res_tm640/pic/picker/Qteach_clamp2_on.bmp",	// 14
+	"res_tm640/pic/picker/Qteach_CupulaOpen1.bmp",	// 15
+	"res_tm640/pic/picker/Qteach_CupulaOpen2.bmp",	// 16
 	"", // 17
 	"",	// 18
 	"", // 19
@@ -3501,7 +3504,7 @@ void	UpdateTeach_Pos()
 			if(b_PosSet_OK[i]==OK)
 			{
 				u_All_PosSet_OK++;
-				pwndQTeach_Pos[i]->SetPropValueT("bgc",Color_White); // 白色
+				pwndQTeach_Pos[i]->SetPropValueT("bgc",Color_Blue); // 白色
 			}
 			else
 			{
@@ -3531,7 +3534,7 @@ void	UpdateTeach_Speed()
 			if(b_SpdSet_OK[i]==OK)
 			{
 				u_All_SpdSet_OK++;
-				pwndQTeach_Speed[i]->SetPropValueT("bgc",Color_White); // 白色
+				pwndQTeach_Speed[i]->SetPropValueT("bgc",Color_Blue); // 白色
 			}
 			else
 			{
@@ -3902,22 +3905,22 @@ void	Update_PosHint(int Axis)
 		if(AxisPosNow[Axis]>Max_value) // 現在位置超過最大值
 		{
 			pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_NO.bmp");
-			pwndImg_PosHint[Axis]->SetPropValueT("left",221+(80)); // 標示 顯示位置
-			pwndImg_PosHint[Axis]->SetPropValueT("right",221+(80)+20); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("left",Hint_Pos+(80)); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("right",Hint_Pos+(80)+20); // 標示 顯示位置
 		}
 		else if(AxisPosNow[Axis]<Min_value) // 現在位置 小於最小值
 		{
 			pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_NO.bmp");
-			pwndImg_PosHint[Axis]->SetPropValueT("left",221); // 標示 顯示位置
-			pwndImg_PosHint[Axis]->SetPropValueT("right",221+20); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("left",Hint_Pos); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("right",Hint_Pos+20); // 標示 顯示位置
 		}
 		else // 合理的位置
 		{
 			if((Max_value-Min_value)!=0)
 			{
 				pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_OK.bmp");
-				pwndImg_PosHint[Axis]->SetPropValueT("left",221+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))); // 標示 顯示位置
-				pwndImg_PosHint[Axis]->SetPropValueT("right",221+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))+20); // 標示 顯示位置
+				pwndImg_PosHint[Axis]->SetPropValueT("left",Hint_Pos+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))); // 標示 顯示位置
+				pwndImg_PosHint[Axis]->SetPropValueT("right",Hint_Pos+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))+20); // 標示 顯示位置
 			}
 		}
 		pwndImg_PosHint[Axis]->CreateA();

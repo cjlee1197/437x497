@@ -7,13 +7,13 @@ ViewPile:CtmFormView
   printname =OnlineProgram0.bmp
   EditParam1_1:CtmEditX1
     left =149
-    top =572
-    right =249
-    bottom =612
+    top =580
+    right =269
+    bottom =630
     wtype =35
     taborder =4
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =2470
     maxchar =10
@@ -26,13 +26,13 @@ ViewPile:CtmFormView
   end
   EditParam1_2:CtmEditX1
     left =410
-    top =572
-    right =510
-    bottom =612
+    top =580
+    right =530
+    bottom =630
     wtype =35
     taborder =5
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =2470
     maxchar =10
@@ -45,13 +45,13 @@ ViewPile:CtmFormView
   end
   EditParam1_3:CtmEditX1
     left =278
-    top =572
-    right =378
-    bottom =612
+    top =580
+    right =398
+    bottom =630
     wtype =35
     taborder =6
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =2470
     maxchar =10
@@ -64,13 +64,13 @@ ViewPile:CtmFormView
   end
   LinuxCtmEditX11:CtmEditX1
     left =149
-    top =640
-    right =249
-    bottom =680
+    top =648
+    right =269
+    bottom =698
     wtype =35
     taborder =7
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =2470
     maxchar =10
@@ -83,13 +83,13 @@ ViewPile:CtmFormView
   end
   LinuxCtmEditX12:CtmEditX1
     left =410
-    top =640
-    right =510
-    bottom =680
+    top =648
+    right =530
+    bottom =698
     wtype =35
     taborder =8
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =2470
     maxchar =10
@@ -102,13 +102,13 @@ ViewPile:CtmFormView
   end
   LinuxCtmEditX13:CtmEditX1
     left =278
-    top =640
-    right =378
-    bottom =680
+    top =648
+    right =398
+    bottom =698
     wtype =35
     taborder =9
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =2470
     maxchar =10
@@ -182,9 +182,9 @@ ViewPile:CtmFormView
   end
   Btn_Pile1_Dir_X:CtmToolButton
     left =149
-    top =504
-    right =249
-    bottom =544
+    top =512
+    right =269
+    bottom =562
     taborder =1
     bgc =54970
     fontsize =1
@@ -206,9 +206,9 @@ ViewPile:CtmFormView
   end
   LinuxCtmStaticX216:CtmStaticX2
     left =149
-    top =460
-    right =249
-    bottom =492
+    top =452
+    right =269
+    bottom =502
     wtype =33
     fgc =0
     bgc =36256
@@ -219,9 +219,9 @@ ViewPile:CtmFormView
   end
   LinuxCtmStaticX21:CtmStaticX2
     left =410
-    top =460
-    right =510
-    bottom =492
+    top =452
+    right =530
+    bottom =502
     wtype =33
     fgc =0
     bgc =36256
@@ -232,9 +232,9 @@ ViewPile:CtmFormView
   end
   LinuxCtmStaticX25:CtmStaticX2
     left =278
-    top =460
-    right =378
-    bottom =492
+    top =452
+    right =398
+    bottom =502
     wtype =33
     fgc =0
     bgc =36256
@@ -243,89 +243,11 @@ ViewPile:CtmFormView
     textID =PICKER_PILE_AXIS2
     align =34
   end
-  LinuxCtmImageBox1:CtmImageBox
-    left =20
-    top =508
-    right =36
-    bottom =540
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmStaticX26:CtmStaticX2
-    left =36
-    top =508
-    right =128
-    bottom =540
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_PILE_DIRECTION
-    align =34
-  end
-  LinuxCtmImageBox3:CtmImageBox
-    left =20
-    top =572
-    right =36
-    bottom =604
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmStaticX27:CtmStaticX2
-    left =36
-    top =572
-    right =128
-    bottom =604
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_PROD_BADCOUNT
-    align =34
-  end
-  LinuxCtmImageBox4:CtmImageBox
-    left =20
-    top =644
-    right =36
-    bottom =676
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmStaticX28:CtmStaticX2
-    left =36
-    top =644
-    right =128
-    bottom =676
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_PILEDISTANCE
-    align =34
-  end
   Btn_Pile1_Dir_Y:CtmToolButton
     left =410
-    top =504
-    right =510
-    bottom =544
+    top =512
+    right =530
+    bottom =562
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
@@ -336,9 +258,9 @@ ViewPile:CtmFormView
   end
   Btn_Pile1_Dir_Z:CtmToolButton
     left =278
-    top =504
-    right =378
-    bottom =544
+    top =512
+    right =398
+    bottom =562
     taborder =3
     bgc =54970
     fontsize =1
@@ -351,7 +273,7 @@ ViewPile:CtmFormView
     left =216
     top =392
     right =416
-    bottom =432
+    bottom =442
     taborder =0
     bgc =54970
     fontsize =1
@@ -363,7 +285,7 @@ ViewPile:CtmFormView
     left =36
     top =396
     right =128
-    bottom =428
+    bottom =446
     wtype =33
     fgc =0
     bgc =36256
@@ -374,9 +296,9 @@ ViewPile:CtmFormView
   end
   LinuxCtmImageBox5:CtmImageBox
     left =20
-    top =396
+    top =404
     right =36
-    bottom =428
+    bottom =436
     wtype =48
     fgc =0
     fontsize =2
@@ -450,5 +372,83 @@ ViewPile:CtmFormView
     bottom =80
     wtype =32
     bgc =63422
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =20
+    top =516
+    right =36
+    bottom =548
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =36
+    top =512
+    right =128
+    bottom =562
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PILE_DIRECTION
+    align =34
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =20
+    top =580
+    right =36
+    bottom =612
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =36
+    top =580
+    right =128
+    bottom =630
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PROD_BADCOUNT
+    align =34
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =20
+    top =652
+    right =36
+    bottom =684
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =36
+    top =648
+    right =128
+    bottom =698
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_PILEDISTANCE
+    align =34
   end
 end

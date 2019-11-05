@@ -93,7 +93,7 @@ ViewMldS:CtmFormView
     left =39
     top =632
     right =175
-    bottom =668
+    bottom =682
     wtype =36
     taborder =2
     bgc =54970
@@ -109,7 +109,7 @@ ViewMldS:CtmFormView
     left =398
     top =632
     right =534
-    bottom =668
+    bottom =682
     wtype =36
     taborder =3
     bgc =54970
@@ -122,9 +122,9 @@ ViewMldS:CtmFormView
   end
   editNEWNAME:CtmEdit
     left =120
-    top =706
+    top =690
     right =291
-    bottom =738
+    bottom =740
     wtype =35
     taborder =6
     fgc =0
@@ -578,9 +578,9 @@ ViewMldS:CtmFormView
   end
   editCONFIRM:CtmSelectEdit
     left =446
-    top =742
+    top =758
     right =582
-    bottom =774
+    bottom =790
     wtype =55
     taborder =10
     fgc =0
@@ -599,9 +599,9 @@ ViewMldS:CtmFormView
   end
   editSOURCEMAX:CtmEditX1
     left =155
-    top =100
+    top =124
     right =291
-    bottom =132
+    bottom =174
     wtype =33
     taborder =-3
     fgc =65535
@@ -612,9 +612,9 @@ ViewMldS:CtmFormView
   end
   editSOURCEREMAIN:CtmEditX1
     left =446
-    top =100
+    top =124
     right =582
-    bottom =132
+    bottom =174
     wtype =33
     taborder =-3
     fgc =65535
@@ -625,9 +625,9 @@ ViewMldS:CtmFormView
   end
   StaticDESTIMEDIA:CtmStaticX2
     left =30
-    top =65
+    top =73
     right =150
-    bottom =97
+    bottom =105
     wtype =33
     fgc =0
     bgc =36256
@@ -638,9 +638,9 @@ ViewMldS:CtmFormView
   end
   StaticSOURCEMAX:CtmStaticX2
     left =30
-    top =100
+    top =132
     right =150
-    bottom =132
+    bottom =164
     wtype =33
     fgc =0
     bgc =36256
@@ -651,9 +651,9 @@ ViewMldS:CtmFormView
   end
   StaticCHECKBRIGHTMODE:CtmStaticX2
     left =322
-    top =65
+    top =73
     right =442
-    bottom =97
+    bottom =105
     wtype =33
     fgc =0
     bgc =36256
@@ -664,9 +664,9 @@ ViewMldS:CtmFormView
   end
   StaticSOURCEREMAIN:CtmStaticX2
     left =322
-    top =100
+    top =132
     right =442
-    bottom =132
+    bottom =164
     wtype =33
     fgc =0
     bgc =36256
@@ -677,9 +677,9 @@ ViewMldS:CtmFormView
   end
   LinuxCtmStaticX23:CtmStaticX2
     left =32
-    top =707
+    top =699
     right =118
-    bottom =739
+    bottom =731
     wtype =33
     fgc =0
     bgc =36256
@@ -690,9 +690,9 @@ ViewMldS:CtmFormView
   end
   StaticSAVEMODE:CtmStaticX2
     left =32
-    top =742
+    top =758
     right =152
-    bottom =774
+    bottom =790
     wtype =33
     fgc =0
     bgc =36256
@@ -705,7 +705,7 @@ ViewMldS:CtmFormView
     left =445
     top =65
     right =581
-    bottom =97
+    bottom =115
     wtype =33
     taborder =15
     bgc =54970
@@ -721,7 +721,7 @@ ViewMldS:CtmFormView
     left =155
     top =65
     right =291
-    bottom =97
+    bottom =115
     wtype =33
     taborder =16
     bgc =54970
@@ -735,9 +735,9 @@ ViewMldS:CtmFormView
   end
   BtnSaveType:CtmToolButton
     left =155
-    top =742
+    top =750
     right =291
-    bottom =774
+    bottom =800
     wtype =33
     taborder =17
     bgc =54970
@@ -751,9 +751,9 @@ ViewMldS:CtmFormView
   end
   BtnConfirm:CtmToolButton
     left =299
-    top =742
+    top =750
     right =435
-    bottom =774
+    bottom =800
     wtype =33
     taborder =18
     bgc =54970
@@ -768,9 +768,9 @@ ViewMldS:CtmFormView
   end
   LinuxCtmImageBox6:CtmImageBox
     left =14
-    top =65
+    top =73
     right =30
-    bottom =97
+    bottom =105
     wtype =48
     fgc =0
     fontsize =2
@@ -781,9 +781,9 @@ ViewMldS:CtmFormView
   end
   LinuxCtmImageBox1:CtmImageBox
     left =14
-    top =100
+    top =132
     right =30
-    bottom =132
+    bottom =164
     wtype =48
     fgc =0
     fontsize =2
@@ -794,9 +794,9 @@ ViewMldS:CtmFormView
   end
   LinuxCtmImageBox2:CtmImageBox
     left =306
-    top =65
+    top =73
     right =322
-    bottom =97
+    bottom =105
     wtype =48
     fgc =0
     fontsize =2
@@ -807,9 +807,9 @@ ViewMldS:CtmFormView
   end
   LinuxCtmImageBox3:CtmImageBox
     left =306
-    top =100
+    top =132
     right =322
-    bottom =132
+    bottom =164
     wtype =48
     fgc =0
     fontsize =2
@@ -820,9 +820,9 @@ ViewMldS:CtmFormView
   end
   LinuxCtmImageBox4:CtmImageBox
     left =16
-    top =742
+    top =758
     right =32
-    bottom =774
+    bottom =790
     wtype =48
     fgc =0
     fontsize =2
@@ -833,9 +833,9 @@ ViewMldS:CtmFormView
   end
   LinuxCtmImageBox5:CtmImageBox
     left =16
-    top =707
+    top =699
     right =32
-    bottom =739
+    bottom =731
     wtype =48
     fgc =0
     fontsize =2

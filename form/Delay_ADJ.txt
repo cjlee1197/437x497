@@ -6,14 +6,14 @@ ViewDelay_ADJ:CtmFormView
   titleID =INDEX_DELAY_ADJ
   printname =DELAY_ADJ.bmp
   MARM_FWD_DT:CtmEditX1
-    left =293
+    left =269
     top =204
-    right =381
-    bottom =236
+    right =389
+    bottom =254
     wtype =35
     taborder =0
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =10
@@ -24,26 +24,27 @@ ViewDelay_ADJ:CtmFormView
     maxdb =FALSE
   end
   LinuxCtmStaticX22:CtmStaticX2
-    left =188
+    left =124
     top =204
-    right =288
-    bottom =236
+    right =259
+    bottom =254
     wtype =33
     fgc =0
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =DELAY_ADJ_MARM_FWD_DT
+    align =34
   end
   MARM_BWD_DT:CtmEditX1
-    left =293
+    left =269
     top =260
-    right =381
-    bottom =292
+    right =389
+    bottom =310
     wtype =35
     taborder =1
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =1055
     maxchar =10
@@ -54,21 +55,22 @@ ViewDelay_ADJ:CtmFormView
     maxdb =FALSE
   end
   LinuxCtmStaticX25:CtmStaticX2
-    left =188
+    left =124
     top =260
-    right =288
-    bottom =292
+    right =259
+    bottom =310
     wtype =33
     fgc =0
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =DELAY_ADJ_MARM_BWD_DT
+    align =34
   end
   LinuxCtmStaticX216:CtmStaticX2
-    left =293
+    left =269
     top =156
-    right =381
+    right =389
     bottom =188
     wtype =33
     fgc =0
@@ -79,10 +81,10 @@ ViewDelay_ADJ:CtmFormView
     align =34
   end
   LinuxCtmImageBox1:CtmImageBox
-    left =172
-    top =204
-    right =188
-    bottom =236
+    left =108
+    top =212
+    right =124
+    bottom =244
     wtype =48
     fgc =0
     fontsize =2
@@ -92,10 +94,10 @@ ViewDelay_ADJ:CtmFormView
     keycolor =63519
   end
   LinuxCtmImageBox2:CtmImageBox
-    left =172
-    top =260
-    right =188
-    bottom =292
+    left =108
+    top =268
+    right =124
+    bottom =300
     wtype =48
     fgc =0
     fontsize =2
@@ -105,9 +107,9 @@ ViewDelay_ADJ:CtmFormView
     keycolor =63519
   end
   LinuxCtmStaticX29:CtmStaticX2
-    left =382
+    left =390
     top =204
-    right =414
+    right =422
     bottom =236
     wtype =48
     fgc =0
@@ -115,9 +117,9 @@ ViewDelay_ADJ:CtmFormView
     textID =VW_CHARGE_SEC
   end
   LinuxCtmStaticX21:CtmStaticX2
-    left =382
+    left =390
     top =260
-    right =414
+    right =422
     bottom =292
     wtype =48
     fgc =0
@@ -125,14 +127,14 @@ ViewDelay_ADJ:CtmFormView
     textID =VW_CHARGE_SEC
   end
   PICK_DT:CtmEditX1
-    left =293
+    left =269
     top =316
-    right =381
-    bottom =348
+    right =389
+    bottom =366
     wtype =35
     taborder =0
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =10
@@ -143,26 +145,27 @@ ViewDelay_ADJ:CtmFormView
     maxdb =FALSE
   end
   LinuxCtmStaticX23:CtmStaticX2
-    left =188
+    left =124
     top =316
-    right =288
-    bottom =348
+    right =259
+    bottom =366
     wtype =33
     fgc =0
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =DELAY_ADJ_PICK_DT
+    align =34
   end
   EJET_DT:CtmEditX1
-    left =293
+    left =269
     top =372
-    right =381
-    bottom =404
+    right =389
+    bottom =422
     wtype =35
     taborder =1
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =1055
     maxchar =10
@@ -173,22 +176,23 @@ ViewDelay_ADJ:CtmFormView
     maxdb =FALSE
   end
   LinuxCtmStaticX24:CtmStaticX2
-    left =188
+    left =124
     top =372
-    right =288
-    bottom =404
+    right =259
+    bottom =422
     wtype =33
     fgc =0
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =DELAY_ADJ_EJET_DT
+    align =34
   end
   LinuxCtmImageBox3:CtmImageBox
-    left =172
-    top =316
-    right =188
-    bottom =348
+    left =108
+    top =324
+    right =124
+    bottom =356
     wtype =48
     fgc =0
     fontsize =2
@@ -198,10 +202,10 @@ ViewDelay_ADJ:CtmFormView
     keycolor =63519
   end
   LinuxCtmImageBox4:CtmImageBox
-    left =172
-    top =372
-    right =188
-    bottom =404
+    left =108
+    top =380
+    right =124
+    bottom =412
     wtype =48
     fgc =0
     fontsize =2
@@ -211,9 +215,9 @@ ViewDelay_ADJ:CtmFormView
     keycolor =63519
   end
   LinuxCtmStaticX26:CtmStaticX2
-    left =382
+    left =390
     top =316
-    right =414
+    right =422
     bottom =348
     wtype =48
     fgc =0
@@ -221,9 +225,9 @@ ViewDelay_ADJ:CtmFormView
     textID =VW_CHARGE_SEC
   end
   LinuxCtmStaticX27:CtmStaticX2
-    left =382
+    left =390
     top =372
-    right =414
+    right =422
     bottom =404
     wtype =48
     fgc =0

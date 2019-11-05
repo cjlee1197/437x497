@@ -14,331 +14,6 @@ ViewSpeedSet:CtmFormView
     imagepath =res_tm640/pic/picker/SpeedSet.bmp
     keycolor =63519
   end
-  edit_MaxSpeed:CtmEditX1
-    left =285
-    top =228
-    right =385
-    bottom =260
-    wtype =35
-    taborder =0
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =63488
-    maxchar =10
-    align =36
-    max =6000
-    maxdb =FALSE
-    dbid0 =MACHINE_INTERFACE_MAXSPEED_X1
-  end
-  LinuxCtmStaticX22:CtmStaticX2
-    left =180
-    top =228
-    right =272
-    bottom =260
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =SPEED_MAX
-    align =34
-  end
-  edit_ACC_T:CtmEditX1
-    left =125
-    top =460
-    right =225
-    bottom =492
-    wtype =35
-    taborder =5
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =1055
-    maxchar =10
-    align =36
-    min =10
-    max =1000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid0 =MACHINE_INTERFACE_SPEED_ACCT_X1
-  end
-  LinuxCtmStaticX25:CtmStaticX2
-    left =20
-    top =460
-    right =112
-    bottom =492
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =SPEED_ACC_T
-    align =34
-  end
-  edit_DCC_T:CtmEditX1
-    left =461
-    top =460
-    right =561
-    bottom =492
-    wtype =35
-    taborder =15
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =64512
-    maxchar =10
-    align =36
-    min =10
-    max =1000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid0 =MACHINE_INTERFACE_SPEED_DCCT_X1
-  end
-  LinuxCtmStaticX27:CtmStaticX2
-    left =356
-    top =460
-    right =448
-    bottom =492
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =SPEED_DCC_T
-    align =34
-  end
-  LinuxCtmStaticX221:CtmStaticX2
-    left =229
-    top =460
-    right =269
-    bottom =484
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =VW_AUSTONE_UNIT_MS
-  end
-  LinuxCtmStaticX24:CtmStaticX2
-    left =559
-    top =460
-    right =599
-    bottom =484
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =VW_AUSTONE_UNIT_MS
-  end
-  edit_ACC_Ratio:CtmEditX1
-    left =141
-    top =492
-    right =225
-    bottom =524
-    wtype =35
-    taborder =10
-    fgc =0
-    bgc =36702
-    fontsize =1
-    bordercolor =1055
-    maxchar =10
-    align =36
-    min =1
-    max =100
-    mindb =FALSE
-    maxdb =FALSE
-    dbid0 =MACHINE_INTERFACE_CONTROL_RESV1
-  end
-  LinuxCtmStaticX29:CtmStaticX2
-    left =234
-    top =491
-    right =258
-    bottom =521
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =DLG_SYSTEM_PERCENT
-  end
-  edit_DCC_Ratio:CtmEditX1
-    left =477
-    top =492
-    right =561
-    bottom =524
-    wtype =35
-    taborder =20
-    fgc =0
-    bgc =61234
-    fontsize =1
-    bordercolor =64512
-    maxchar =10
-    align =36
-    min =1
-    max =100
-    mindb =FALSE
-    maxdb =FALSE
-    dbid0 =MACHINE_INTERFACE_CONTROL_RESV6
-  end
-  LinuxCtmStaticX211:CtmStaticX2
-    left =388
-    top =228
-    right =428
-    bottom =252
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =SPEED_MAX_UNIT
-  end
-  LinuxCtmStaticX212:CtmStaticX2
-    left =28
-    top =492
-    right =112
-    bottom =524
-    wtype =33
-    fgc =0
-    bgc =44915
-    fontsize =1
-    bordercolor =35953
-    textID =SPEED_RATIO
-    align =34
-  end
-  LinuxCtmStaticX213:CtmStaticX2
-    left =364
-    top =492
-    right =448
-    bottom =524
-    wtype =33
-    fgc =0
-    bgc =44915
-    fontsize =1
-    bordercolor =35953
-    textID =SPEED_RATIO
-    align =34
-  end
-  LinuxCtmStaticX214:CtmStaticX2
-    left =84
-    top =612
-    right =176
-    bottom =644
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =SPEED_POS_KP
-    align =34
-  end
-  edit_POS_KP:CtmEditX1
-    left =189
-    top =612
-    right =289
-    bottom =644
-    wtype =35
-    taborder =25
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =32768
-    maxchar =10
-    align =36
-    precision =3
-    max =40000
-    maxdb =FALSE
-    dbid0 =MACHINE_INTERFACE_SPEED_POS_KP_X1
-  end
-  LinuxCtmStaticX215:CtmStaticX2
-    left =324
-    top =612
-    right =416
-    bottom =644
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =SPEED_SPEED_KP
-    align =34
-  end
-  edit_SPD_KP:CtmEditX1
-    left =429
-    top =612
-    right =529
-    bottom =644
-    wtype =35
-    taborder =30
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =33288
-    maxchar =10
-    align =36
-    precision =3
-    max =20000
-    maxdb =FALSE
-    dbid0 =MACHINE_INTERFACE_SPEED_SPEED_KP_X1
-  end
-  LinuxCtmImageBox1:CtmImageBox
-    left =164
-    top =228
-    right =180
-    bottom =260
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox2:CtmImageBox
-    left =4
-    top =460
-    right =20
-    bottom =492
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox3:CtmImageBox
-    left =340
-    top =460
-    right =356
-    bottom =492
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox4:CtmImageBox
-    left =308
-    top =612
-    right =324
-    bottom =644
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox5:CtmImageBox
-    left =68
-    top =612
-    right =84
-    bottom =644
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
   Btn_Axis_X1:CtmToolButton
     left =121
     top =37
@@ -384,5 +59,366 @@ ViewSpeedSet:CtmFormView
     key =3
     action =255
     formname =Pile_3.txt
+  end
+  edit_MaxSpeed:CtmEditX1
+    left =285
+    top =220
+    right =385
+    bottom =270
+    wtype =35
+    taborder =0
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =63488
+    maxchar =10
+    align =36
+    max =6000
+    maxdb =FALSE
+    dbid0 =MACHINE_INTERFACE_MAXSPEED_X1
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =180
+    top =220
+    right =272
+    bottom =270
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =SPEED_MAX
+    align =34
+  end
+  edit_ACC_T:CtmEditX1
+    left =125
+    top =460
+    right =225
+    bottom =510
+    wtype =35
+    taborder =5
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    min =10
+    max =1000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_INTERFACE_SPEED_ACCT_X1
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =20
+    top =460
+    right =112
+    bottom =510
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =SPEED_ACC_T
+    align =34
+  end
+  edit_DCC_T:CtmEditX1
+    left =461
+    top =460
+    right =561
+    bottom =510
+    wtype =35
+    taborder =15
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    min =10
+    max =1000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_INTERFACE_SPEED_DCCT_X1
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =356
+    top =460
+    right =448
+    bottom =510
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =SPEED_DCC_T
+    align =34
+  end
+  LinuxCtmStaticX221:CtmStaticX2
+    left =229
+    top =476
+    right =269
+    bottom =500
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_AUSTONE_UNIT_MS
+  end
+  LinuxCtmStaticX24:CtmStaticX2
+    left =559
+    top =476
+    right =599
+    bottom =500
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_AUSTONE_UNIT_MS
+  end
+  edit_ACC_Ratio:CtmEditX1
+    left =125
+    top =526
+    right =225
+    bottom =576
+    wtype =35
+    taborder =10
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =1055
+    maxchar =10
+    align =36
+    min =1
+    max =100
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_INTERFACE_CONTROL_RESV1
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =226
+    top =539
+    right =250
+    bottom =569
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =DLG_SYSTEM_PERCENT
+  end
+  edit_DCC_Ratio:CtmEditX1
+    left =461
+    top =526
+    right =561
+    bottom =576
+    wtype =35
+    taborder =20
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =64512
+    maxchar =10
+    align =36
+    min =1
+    max =100
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_INTERFACE_CONTROL_RESV6
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =562
+    top =539
+    right =586
+    bottom =569
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =DLG_SYSTEM_PERCENT
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =388
+    top =228
+    right =428
+    bottom =252
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =SPEED_MAX_UNIT
+  end
+  LinuxCtmStaticX212:CtmStaticX2
+    left =20
+    top =526
+    right =112
+    bottom =576
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =SPEED_RATIO
+    align =34
+  end
+  LinuxCtmStaticX213:CtmStaticX2
+    left =356
+    top =526
+    right =448
+    bottom =576
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =SPEED_RATIO
+    align =34
+  end
+  LinuxCtmStaticX214:CtmStaticX2
+    left =180
+    top =636
+    right =272
+    bottom =686
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =SPEED_POS_KP
+    align =34
+  end
+  edit_POS_KP:CtmEditX1
+    left =285
+    top =636
+    right =385
+    bottom =686
+    wtype =35
+    taborder =25
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =32768
+    maxchar =10
+    align =36
+    precision =3
+    max =40000
+    maxdb =FALSE
+    dbid0 =MACHINE_INTERFACE_SPEED_POS_KP_X1
+  end
+  LinuxCtmStaticX215:CtmStaticX2
+    left =180
+    top =700
+    right =272
+    bottom =750
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =SPEED_SPEED_KP
+    align =34
+  end
+  edit_SPD_KP:CtmEditX1
+    left =285
+    top =700
+    right =385
+    bottom =750
+    wtype =35
+    taborder =30
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =33288
+    maxchar =10
+    align =36
+    precision =3
+    max =20000
+    maxdb =FALSE
+    dbid0 =MACHINE_INTERFACE_SPEED_SPEED_KP_X1
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =164
+    top =228
+    right =180
+    bottom =260
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =4
+    top =470
+    right =20
+    bottom =502
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =340
+    top =470
+    right =356
+    bottom =502
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =164
+    top =708
+    right =180
+    bottom =740
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =164
+    top =644
+    right =180
+    bottom =676
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox6:CtmImageBox
+    left =340
+    top =534
+    right =356
+    bottom =566
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox7:CtmImageBox
+    left =4
+    top =534
+    right =20
+    bottom =566
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
   end
 end

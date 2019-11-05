@@ -50,7 +50,7 @@ ViewPile:CtmFormView
     action =255
     formname =Pile_3.txt
   end
-  LinuxCtmToolButton4:CtmToolButton
+  Pile_4:CtmToolButton
     left =20
     top =288
     right =130
@@ -77,313 +77,17 @@ ViewPile:CtmFormView
     imagepath =res_tm640/pic/PileX_P.bmp
     keycolor =63519
   end
-  EditParam1_1:CtmEditX1
-    left =149
-    top =572
-    right =249
-    bottom =612
-    wtype =35
-    taborder =4
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =36
-    min =1
-    max =10000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid0 =MACHINE_FUNCTION_XAXIS_PILE_CNT2
-  end
-  EditParam1_2:CtmEditX1
-    left =410
-    top =572
-    right =510
-    bottom =612
-    wtype =35
-    taborder =5
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =36
-    min =1
-    max =10000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid0 =MACHINE_FUNCTION_YAXIS_PILE_CNT2
-  end
-  EditParam1_3:CtmEditX1
-    left =278
-    top =572
-    right =378
-    bottom =612
-    wtype =35
-    taborder =6
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =36
-    min =1
-    max =10000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid0 =MACHINE_FUNCTION_ZAXIS_PILE_CNT2
-  end
-  LinuxCtmEditX11:CtmEditX1
-    left =149
-    top =640
-    right =249
-    bottom =680
-    wtype =35
-    taborder =7
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =36
-    precision =2
-    max =60000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid0 =MACHINE_FUNCTION_XAXIS_PILE_DIS2 
-  end
-  LinuxCtmEditX12:CtmEditX1
-    left =410
-    top =640
-    right =510
-    bottom =680
-    wtype =35
-    taborder =8
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =36
-    precision =2
-    max =60000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid0 =MACHINE_FUNCTION_YAXIS_PILE_DIS2
-  end
-  LinuxCtmEditX13:CtmEditX1
-    left =278
-    top =640
-    right =378
-    bottom =680
-    wtype =35
-    taborder =9
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =36
-    precision =2
-    max =60000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid0 =MACHINE_FUNCTION_ZAXIS_PILE_DIS2 
-  end
-  Btn_Pile2_Dir_X:CtmToolButton
-    left =149
-    top =504
-    right =249
-    bottom =544
-    taborder =1
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    destcolor =57182
-    buttontype =0
-    captionID =VW_ROTATELOC_ANGELREVERSED_OPT1
-  end
-  LinuxCtmStaticX216:CtmStaticX2
-    left =149
-    top =460
-    right =249
-    bottom =492
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_PILE_AXIS1
-    align =34
-  end
-  LinuxCtmStaticX21:CtmStaticX2
-    left =410
-    top =460
-    right =510
-    bottom =492
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_PILE_AXIS3
-    align =34
-  end
-  LinuxCtmStaticX25:CtmStaticX2
-    left =278
-    top =460
-    right =378
-    bottom =492
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_PILE_AXIS2
-    align =34
-  end
-  LinuxCtmImageBox1:CtmImageBox
-    left =20
-    top =508
-    right =36
-    bottom =540
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmStaticX26:CtmStaticX2
-    left =36
-    top =508
-    right =128
-    bottom =540
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_PILE_DIRECTION
-    align =34
-  end
-  LinuxCtmImageBox3:CtmImageBox
-    left =20
-    top =572
-    right =36
-    bottom =604
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmStaticX27:CtmStaticX2
-    left =36
-    top =572
-    right =128
-    bottom =604
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_PROD_BADCOUNT
-    align =34
-  end
-  LinuxCtmImageBox4:CtmImageBox
-    left =20
-    top =644
-    right =36
-    bottom =676
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmStaticX28:CtmStaticX2
-    left =36
-    top =644
-    right =128
-    bottom =676
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_PILEDISTANCE
-    align =34
-  end
-  Btn_Pile2_Dir_Y:CtmToolButton
-    left =410
-    top =504
-    right =510
-    bottom =544
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    enabled =FALSE
-    destcolor =57182
-    buttontype =0
-    captionID =VW_ROTATELOC_ANGELREVERSED_OPT1
-  end
-  Btn_Pile2_Dir_Z:CtmToolButton
-    left =278
-    top =504
-    right =378
-    bottom =544
-    taborder =3
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    destcolor =57182
-    buttontype =0
-    captionID =VW_ROTATELOC_ANGELREVERSED_OPT1
-  end
   Btn_Pile2_Order:CtmToolButton
     left =216
     top =392
     right =416
-    bottom =432
+    bottom =442
     taborder =0
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
     buttontype =0
-  end
-  LinuxCtmStaticX22:CtmStaticX2
-    left =36
-    top =396
-    right =128
-    bottom =428
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_PILE_ORDER
-    align =34
-  end
-  LinuxCtmImageBox5:CtmImageBox
-    left =20
-    top =396
-    right =36
-    bottom =428
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
   end
   LinuxCtmStaticX23:CtmStaticX2
     left =279
@@ -450,5 +154,301 @@ ViewPile:CtmFormView
     bottom =80
     wtype =32
     bgc =63422
+  end
+  EditParam1_1:CtmEditX1
+    left =149
+    top =580
+    right =269
+    bottom =630
+    wtype =35
+    taborder =4
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =36
+    min =1
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_FUNCTION_XAXIS_PILE_CNT2
+  end
+  EditParam1_2:CtmEditX1
+    left =410
+    top =580
+    right =530
+    bottom =630
+    wtype =35
+    taborder =5
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =36
+    min =1
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_FUNCTION_YAXIS_PILE_CNT2
+  end
+  EditParam1_3:CtmEditX1
+    left =278
+    top =580
+    right =398
+    bottom =630
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =36
+    min =1
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_FUNCTION_ZAXIS_PILE_CNT2
+  end
+  LinuxCtmEditX11:CtmEditX1
+    left =149
+    top =648
+    right =269
+    bottom =698
+    wtype =35
+    taborder =7
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =36
+    precision =2
+    max =60000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_FUNCTION_XAXIS_PILE_DIS2
+  end
+  LinuxCtmEditX12:CtmEditX1
+    left =410
+    top =648
+    right =530
+    bottom =698
+    wtype =35
+    taborder =8
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =36
+    precision =2
+    max =60000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_FUNCTION_YAXIS_PILE_DIS2
+  end
+  LinuxCtmEditX13:CtmEditX1
+    left =278
+    top =648
+    right =398
+    bottom =698
+    wtype =35
+    taborder =9
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =36
+    precision =2
+    max =60000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_FUNCTION_ZAXIS_PILE_DIS2
+  end
+  Btn_Pile1_Dir_X:CtmToolButton
+    left =149
+    top =512
+    right =269
+    bottom =562
+    taborder =1
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =VW_ROTATELOC_ANGELREVERSED_OPT1
+  end
+  LinuxCtmStaticX216:CtmStaticX2
+    left =149
+    top =452
+    right =269
+    bottom =502
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_PILE_AXIS1
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =410
+    top =452
+    right =530
+    bottom =502
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_PILE_AXIS3
+    align =34
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =278
+    top =452
+    right =398
+    bottom =502
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_PILE_AXIS2
+    align =34
+  end
+  Btn_Pile1_Dir_Y:CtmToolButton
+    left =410
+    top =512
+    right =530
+    bottom =562
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    enabled =FALSE
+    destcolor =57182
+    buttontype =0
+    captionID =VW_ROTATELOC_ANGELREVERSED_OPT1
+  end
+  Btn_Pile1_Dir_Z:CtmToolButton
+    left =278
+    top =512
+    right =398
+    bottom =562
+    taborder =3
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    destcolor =57182
+    buttontype =0
+    captionID =VW_ROTATELOC_ANGELREVERSED_OPT1
+  end
+  LinuxCtmImageBox1:CtmImageBox
+    left =20
+    top =516
+    right =36
+    bottom =548
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =36
+    top =512
+    right =128
+    bottom =562
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PILE_DIRECTION
+    align =34
+  end
+  LinuxCtmImageBox3:CtmImageBox
+    left =20
+    top =580
+    right =36
+    bottom =612
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =36
+    top =580
+    right =128
+    bottom =630
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PROD_BADCOUNT
+    align =34
+  end
+  LinuxCtmImageBox4:CtmImageBox
+    left =20
+    top =652
+    right =36
+    bottom =684
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX28:CtmStaticX2
+    left =36
+    top =648
+    right =128
+    bottom =698
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_PILEDISTANCE
+    align =34
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =36
+    top =396
+    right =128
+    bottom =446
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_PILE_ORDER
+    align =34
+  end
+  LinuxCtmImageBox5:CtmImageBox
+    left =20
+    top =404
+    right =36
+    bottom =436
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
   end
 end

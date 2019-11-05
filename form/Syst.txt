@@ -19,10 +19,10 @@ ViewSyst:CtmFormView
     align =34
   end
   StaticIDLETIME:CtmStaticX2
-    left =316
-    top =144
-    right =358
-    bottom =184
+    left =356
+    top =136
+    right =398
+    bottom =176
     wtype =48
     fgc =0
     fontsize =1
@@ -43,9 +43,9 @@ ViewSyst:CtmFormView
   end
   StaticDATE:CtmStaticX2
     left =84
-    top =342
+    top =318
     right =144
-    bottom =374
+    bottom =368
     wtype =33
     fgc =0
     bgc =36256
@@ -55,9 +55,9 @@ ViewSyst:CtmFormView
   end
   StaticTIME:CtmStaticX2
     left =84
-    top =385
+    top =377
     right =144
-    bottom =417
+    bottom =427
     wtype =33
     fgc =0
     bgc =36256
@@ -66,10 +66,10 @@ ViewSyst:CtmFormView
     align =34
   end
   StaticSLASH1:CtmStaticX2
-    left =208
-    top =350
-    right =233
-    bottom =375
+    left =216
+    top =334
+    right =241
+    bottom =359
     wtype =48
     fgc =0
     fontsize =1
@@ -77,10 +77,10 @@ ViewSyst:CtmFormView
     align =34
   end
   StaticSLASH2:CtmStaticX2
-    left =298
-    top =350
-    right =323
-    bottom =375
+    left =306
+    top =334
+    right =331
+    bottom =359
     wtype =48
     fgc =0
     fontsize =1
@@ -88,9 +88,9 @@ ViewSyst:CtmFormView
     align =34
   end
   StaticCOLON1:CtmStaticX2
-    left =205
+    left =213
     top =393
-    right =225
+    right =233
     bottom =418
     wtype =48
     fgc =0
@@ -99,9 +99,9 @@ ViewSyst:CtmFormView
     align =34
   end
   StaticCOLON2:CtmStaticX2
-    left =298
+    left =306
     top =393
-    right =318
+    right =326
     bottom =418
     wtype =48
     fgc =0
@@ -122,14 +122,14 @@ ViewSyst:CtmFormView
     align =34
   end
   editIDLETIME:CtmEditX1
-    left =240
-    top =144
-    right =310
-    bottom =176
+    left =232
+    top =136
+    right =352
+    bottom =186
     wtype =35
     taborder =0
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =6
@@ -142,13 +142,13 @@ ViewSyst:CtmFormView
   end
   editMONTH:CtmEditX1
     left =147
-    top =342
+    top =318
     right =207
-    bottom =374
+    bottom =368
     wtype =35
     taborder =6
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =6
@@ -159,14 +159,14 @@ ViewSyst:CtmFormView
     maxdb =FALSE
   end
   editDAY:CtmEditX1
-    left =237
-    top =342
-    right =297
-    bottom =374
+    left =253
+    top =318
+    right =313
+    bottom =368
     wtype =35
     taborder =7
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =6
@@ -177,14 +177,14 @@ ViewSyst:CtmFormView
     maxdb =FALSE
   end
   editYEAR:CtmEditX1
-    left =327
-    top =342
-    right =387
-    bottom =374
+    left =343
+    top =318
+    right =403
+    bottom =368
     wtype =35
     taborder =8
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =6
@@ -194,13 +194,13 @@ ViewSyst:CtmFormView
   end
   editHOUR:CtmEditX1
     left =147
-    top =385
+    top =377
     right =207
-    bottom =417
+    bottom =427
     wtype =35
     taborder =9
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =6
@@ -209,14 +209,14 @@ ViewSyst:CtmFormView
     maxdb =FALSE
   end
   editMINUTE:CtmEditX1
-    left =237
-    top =385
-    right =297
-    bottom =417
+    left =253
+    top =377
+    right =313
+    bottom =427
     wtype =35
     taborder =10
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =6
@@ -225,14 +225,14 @@ ViewSyst:CtmFormView
     maxdb =FALSE
   end
   editSECOND:CtmEditX1
-    left =327
-    top =385
-    right =387
-    bottom =417
+    left =343
+    top =377
+    right =403
+    bottom =427
     wtype =35
     taborder =11
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =6
@@ -263,7 +263,7 @@ ViewSyst:CtmFormView
   CheckBoxIDLETIME:CtmStaticX2
     left =68
     top =138
-    right =268
+    right =224
     bottom =178
     wtype =48
     fgc =0
@@ -342,9 +342,9 @@ ViewSyst:CtmFormView
   end
   LinuxCtmImageBox2:CtmImageBox
     left =68
-    top =342
+    top =326
     right =84
-    bottom =374
+    bottom =358
     wtype =48
     fgc =0
     fontsize =2
@@ -380,10 +380,10 @@ ViewSyst:CtmFormView
     keycolor =63519
   end
   BtnConfirm:CtmToolButton
-    left =203
-    top =745
-    right =339
-    bottom =777
+    left =219
+    top =729
+    right =355
+    bottom =779
     wtype =33
     taborder =5
     bgc =54970

@@ -20,7 +20,7 @@ ViewParam:CtmFormView
     left =86
     top =181
     right =266
-    bottom =213
+    bottom =231
     wtype =33
     fgc =0
     bgc =36256
@@ -33,11 +33,11 @@ ViewParam:CtmFormView
     left =268
     top =181
     right =388
-    bottom =213
+    bottom =231
     wtype =35
     taborder =1
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =10
@@ -61,7 +61,7 @@ ViewParam:CtmFormView
     left =86
     top =336
     right =266
-    bottom =368
+    bottom =386
     wtype =33
     fgc =0
     bgc =36256
@@ -74,11 +74,11 @@ ViewParam:CtmFormView
     left =268
     top =336
     right =388
-    bottom =368
+    bottom =386
     wtype =35
     taborder =2
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =10
@@ -113,9 +113,9 @@ ViewParam:CtmFormView
   end
   LinuxCtmImageBox1:CtmImageBox
     left =70
-    top =181
+    top =189
     right =86
-    bottom =213
+    bottom =221
     wtype =48
     fgc =0
     fontsize =2
@@ -126,9 +126,9 @@ ViewParam:CtmFormView
   end
   LinuxCtmImageBox2:CtmImageBox
     left =70
-    top =336
+    top =344
     right =86
-    bottom =368
+    bottom =376
     wtype =48
     fgc =0
     fontsize =2

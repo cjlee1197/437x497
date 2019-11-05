@@ -2,15 +2,15 @@ ViewProd:CtmFormView
   left =0
   top =0
   right =599
-  bottom =777
+  bottom =829
   wtype =48
-  titleID =BTNX_03_PMD1
+  titleID =INDEX_OP_MANAGE
   printname =Product.bmp
   StaticOTHER_COUNTPERUNIT:CtmStaticX2
     left =104
     top =122
     right =264
-    bottom =154
+    bottom =172
     wtype =33
     fgc =0
     bgc =36256
@@ -21,9 +21,9 @@ ViewProd:CtmFormView
   end
   StaticOTHERCOUNTPERUNIT_0UNIT:CtmStaticX2
     left =439
-    top =122
+    top =130
     right =499
-    bottom =154
+    bottom =162
     wtype =48
     fgc =0
     fontsize =1
@@ -31,9 +31,9 @@ ViewProd:CtmFormView
   end
   StaticOTHERSHOTCNTREAL_0UNIT:CtmStaticX2
     left =439
-    top =170
+    top =186
     right =499
-    bottom =202
+    bottom =218
     wtype =48
     fgc =0
     fontsize =1
@@ -41,9 +41,9 @@ ViewProd:CtmFormView
   end
   StaticOTHERPACKREAL_0UNIT:CtmStaticX2
     left =439
-    top =218
+    top =242
     right =499
-    bottom =250
+    bottom =274
     wtype =48
     fgc =0
     fontsize =1
@@ -53,11 +53,11 @@ ViewProd:CtmFormView
     left =274
     top =122
     right =434
-    bottom =154
+    bottom =172
     wtype =35
     taborder =0
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     maxchar =10
     align =32
@@ -68,9 +68,9 @@ ViewProd:CtmFormView
   end
   LinuxCtmStaticX22:CtmStaticX2
     left =104
-    top =218
+    top =234
     right =264
-    bottom =250
+    bottom =284
     wtype =33
     fgc =0
     bgc =36256
@@ -81,9 +81,9 @@ ViewProd:CtmFormView
   end
   LinuxCtmStaticX23:CtmStaticX2
     left =104
-    top =170
+    top =178
     right =264
-    bottom =202
+    bottom =228
     wtype =33
     fgc =0
     bgc =36256
@@ -94,9 +94,9 @@ ViewProd:CtmFormView
   end
   LinuxCtmStaticX27:CtmStaticX2
     left =104
-    top =314
+    top =346
     right =264
-    bottom =346
+    bottom =396
     wtype =33
     fgc =0
     bgc =36256
@@ -107,9 +107,9 @@ ViewProd:CtmFormView
   end
   TotalGoodCount:CtmEditX1
     left =274
-    top =218
+    top =234
     right =434
-    bottom =250
+    bottom =284
     wtype =33
     taborder =-3
     fgc =65535
@@ -121,9 +121,9 @@ ViewProd:CtmFormView
   end
   TotalCount:CtmEditX1
     left =274
-    top =170
+    top =178
     right =434
-    bottom =202
+    bottom =228
     wtype =33
     taborder =-3
     fgc =65535
@@ -136,9 +136,9 @@ ViewProd:CtmFormView
   end
   TotalSampleCount:CtmEditX1
     left =274
-    top =314
+    top =346
     right =434
-    bottom =346
+    bottom =396
     wtype =33
     taborder =-3
     fgc =65535
@@ -151,9 +151,9 @@ ViewProd:CtmFormView
   end
   LinuxCtmStaticX28:CtmStaticX2
     left =104
-    top =266
+    top =290
     right =264
-    bottom =298
+    bottom =340
     wtype =33
     fgc =0
     bgc =36256
@@ -164,9 +164,9 @@ ViewProd:CtmFormView
   end
   TotalbadCount:CtmEditX1
     left =274
-    top =266
+    top =290
     right =434
-    bottom =298
+    bottom =340
     wtype =33
     taborder =-3
     fgc =65535
@@ -179,9 +179,9 @@ ViewProd:CtmFormView
   end
   LinuxCtmStaticX21:CtmStaticX2
     left =439
-    top =266
+    top =298
     right =499
-    bottom =298
+    bottom =330
     wtype =48
     fgc =0
     fontsize =1
@@ -189,58 +189,19 @@ ViewProd:CtmFormView
   end
   LinuxCtmStaticX24:CtmStaticX2
     left =439
-    top =314
+    top =354
     right =499
-    bottom =346
+    bottom =386
     wtype =48
     fgc =0
     fontsize =1
     textID =VW_OVER_CNT
   end
-  BtnBack:CtmToolButton
-    left =68
-    top =820
-    right =152
-    bottom =877
-    wtype =48
-    taborder =72
-    align =18
-    upbitmap =res_tm640/pic/BtnBackUp.bmp
-    key =72
-    action =255
-    formname =Param.txt
-  end
-  BtnHome:CtmToolButton
-    left =244
-    top =820
-    right =328
-    bottom =877
-    wtype =48
-    taborder =70
-    align =18
-    upbitmap =res_tm640/pic/BtnHomeUp.bmp
-    key =70
-    action =255
-    formname =Param.txt
-  end
-  BtnMenu:CtmToolButton
-    left =420
-    top =820
-    right =504
-    bottom =877
-    wtype =48
-    taborder =71
-    align =18
-    upbitmap =res_tm640/pic/BtnMenuUp.bmp
-    key =71
-    action =255
-    formname =Param.txt
-  end
   LinuxCtmImageBox1:CtmImageBox
     left =88
-    top =122
+    top =130
     right =104
-    bottom =154
+    bottom =162
     wtype =48
     fgc =0
     fontsize =2
@@ -251,9 +212,9 @@ ViewProd:CtmFormView
   end
   LinuxCtmImageBox2:CtmImageBox
     left =88
-    top =170
+    top =186
     right =104
-    bottom =202
+    bottom =218
     wtype =48
     fgc =0
     fontsize =2
@@ -264,9 +225,9 @@ ViewProd:CtmFormView
   end
   LinuxCtmImageBox3:CtmImageBox
     left =88
-    top =218
+    top =242
     right =104
-    bottom =250
+    bottom =274
     wtype =48
     fgc =0
     fontsize =2
@@ -277,9 +238,9 @@ ViewProd:CtmFormView
   end
   LinuxCtmImageBox4:CtmImageBox
     left =88
-    top =266
+    top =298
     right =104
-    bottom =298
+    bottom =330
     wtype =48
     fgc =0
     fontsize =2
@@ -290,9 +251,9 @@ ViewProd:CtmFormView
   end
   LinuxCtmImageBox5:CtmImageBox
     left =88
-    top =314
+    top =354
     right =104
-    bottom =346
+    bottom =386
     wtype =48
     fgc =0
     fontsize =2

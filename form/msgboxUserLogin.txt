@@ -21,7 +21,7 @@ ViewMsgBoxUserLogin:CtmFormView
     left =228
     top =265
     right =328
-    bottom =300
+    bottom =315
     wtype =39
     taborder =4
     bgc =36256
@@ -33,7 +33,7 @@ ViewMsgBoxUserLogin:CtmFormView
     left =59
     top =265
     right =159
-    bottom =300
+    bottom =315
     wtype =39
     taborder =3
     bgc =36256
@@ -45,7 +45,7 @@ ViewMsgBoxUserLogin:CtmFormView
     left =75
     top =114
     right =145
-    bottom =148
+    bottom =164
     wtype =48
     fgc =0
     fontsize =2
@@ -56,7 +56,7 @@ ViewMsgBoxUserLogin:CtmFormView
     left =185
     top =114
     right =320
-    bottom =149
+    bottom =164
     wtype =37
     taborder =1
     bgc =36256
@@ -68,7 +68,7 @@ ViewMsgBoxUserLogin:CtmFormView
     left =75
     top =174
     right =145
-    bottom =208
+    bottom =224
     wtype =48
     fgc =0
     fontsize =2
@@ -79,7 +79,7 @@ ViewMsgBoxUserLogin:CtmFormView
     left =43
     top =46
     right =147
-    bottom =80
+    bottom =96
     wtype =48
     fgc =0
     fontsize =2
@@ -90,7 +90,7 @@ ViewMsgBoxUserLogin:CtmFormView
     left =185
     top =174
     right =320
-    bottom =209
+    bottom =224
     wtype =35
     taborder =2
     bgc =65535
@@ -103,7 +103,7 @@ ViewMsgBoxUserLogin:CtmFormView
     left =231
     top =46
     right =331
-    bottom =81
+    bottom =96
     wtype =39
     taborder =0
     bgc =36256

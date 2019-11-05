@@ -6,17 +6,6 @@ ViewOver_IML:CtmFormView
   wtype =48
   titleID =VW_PAT_OVERVIEW
   printname =Over.bmp
-  Img_Over_Picker:CtmImageBox
-    left =141
-    top =38
-    right =591
-    bottom =435
-    wtype =48
-    type =2
-    style =3
-    imagepath =res_tm640/pic/picker/picker.bmp
-    keycolor =63519
-  end
   LinuxCtmStaticX28:CtmStaticX2
     left =17
     top =11
@@ -80,128 +69,6 @@ ViewOver_IML:CtmFormView
     fontsize =1
     textID =VW_AUSTONE_S
   end
-  LinuxCtmStaticX25:CtmStaticX2
-    left =483
-    top =485
-    right =577
-    bottom =517
-    wtype =32
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_KEY_ENTER
-  end
-  LinuxCtmStaticX23:CtmStaticX2
-    left =483
-    top =637
-    right =577
-    bottom =669
-    wtype =32
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_CHARGE_BACKPRSVALVE_HELP_OUT
-  end
-  LinuxCtmImageBox3:CtmImageBox
-    left =467
-    top =485
-    right =483
-    bottom =517
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox4:CtmImageBox
-    left =467
-    top =637
-    right =483
-    bottom =669
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  SelectBox11:CtmSelectBox
-    left =467
-    top =523
-    right =577
-    bottom =555
-    wtype =55
-    fgc =0
-    bgc =65535
-    fontsize =1
-    textID =PCIKER_INNER_I_02
-    group =1
-  end
-  SelectBox12:CtmSelectBox
-    left =467
-    top =561
-    right =577
-    bottom =593
-    wtype =55
-    fgc =0
-    bgc =65535
-    fontsize =1
-    textID =PCIKER_INNER_I_03
-    group =2
-  end
-  SelectBox13:CtmSelectBox
-    left =467
-    top =599
-    right =577
-    bottom =631
-    wtype =55
-    fgc =0
-    bgc =65535
-    fontsize =1
-    textID =PCIKER_INNER_I_04
-    group =3
-  end
-  SelectBox20:CtmSelectBox
-    left =467
-    top =675
-    right =577
-    bottom =707
-    wtype =55
-    fgc =0
-    bgc =65535
-    fontsize =1
-    textID =PICKER_INNER_O_02
-    group =16
-  end
-  SelectBox21:CtmSelectBox
-    left =467
-    top =713
-    right =577
-    bottom =745
-    wtype =55
-    fgc =0
-    bgc =65535
-    fontsize =1
-    textID =PICKER_INNER_O_03
-    group =17
-  end
-  SelectBox22:CtmSelectBox
-    left =467
-    top =751
-    right =577
-    bottom =783
-    wtype =55
-    fgc =0
-    bgc =65535
-    fontsize =1
-    textID =PICKER_INNER_O_04
-    group =18
-  end
   LinuxCtmStaticX24:CtmStaticX2
     left =194
     top =49
@@ -211,79 +78,6 @@ ViewOver_IML:CtmFormView
     fgc =0
     fontsize =1
     textID =VW_AUSTONE_S
-  end
-  OPENCLOSEMOLDPOSITION:CtmEditX1
-    left =17
-    top =315
-    right =105
-    bottom =347
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =36256
-    maxchar =14
-    align =36
-    precision =1
-    spepre =1
-    dbid0 =MACHINE_COMMUNICATION_IMM_OPENCLOSEMOLDPOSITION
-  end
-  EJECTPOSITION:CtmEditX1
-    left =17
-    top =385
-    right =105
-    bottom =417
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =36256
-    maxchar =14
-    align =36
-    precision =1
-    spepre =1
-  end
-  LinuxCtmStaticX27:CtmStaticX2
-    left =17
-    top =283
-    right =102
-    bottom =315
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =PICKER_OPENCLOSEMOLDPOSITION
-  end
-  LinuxCtmStaticX29:CtmStaticX2
-    left =17
-    top =353
-    right =102
-    bottom =385
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =PICKER_EJECTPOSITION
-  end
-  LinuxCtmStaticX210:CtmStaticX2
-    left =106
-    top =283
-    right =138
-    bottom =315
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =VW_UNIT_MM
-  end
-  LinuxCtmStaticX211:CtmStaticX2
-    left =106
-    top =353
-    right =138
-    bottom =385
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =VW_UNIT_MM
   end
   LinuxCtmStaticX212:CtmStaticX2
     left =17
@@ -360,11 +154,95 @@ ViewOver_IML:CtmFormView
     fontsize =1
     textID =VW_ENERGY_TOTAL_BPROC
   end
+  OPENCLOSEMOLDPOSITION:CtmEditX1
+    left =121
+    top =259
+    right =209
+    bottom =291
+    wtype =39
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =36256
+    maxchar =14
+    align =36
+    precision =1
+    spepre =1
+    dbid0 =MACHINE_COMMUNICATION_IMM_OPENCLOSEMOLDPOSITION
+  end
+  EJECTPOSITION:CtmEditX1
+    left =337
+    top =257
+    right =425
+    bottom =289
+    wtype =39
+    taborder =-3
+    fgc =65535
+    bgc =2470
+    fontsize =1
+    bordercolor =36256
+    maxchar =14
+    align =36
+    precision =1
+    spepre =1
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =121
+    top =227
+    right =206
+    bottom =259
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =PICKER_OPENCLOSEMOLDPOSITION
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =337
+    top =225
+    right =422
+    bottom =257
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =PICKER_EJECTPOSITION
+  end
+  LinuxCtmStaticX210:CtmStaticX2
+    left =210
+    top =227
+    right =242
+    bottom =259
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =426
+    top =225
+    right =458
+    bottom =257
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  Img_Over_Picker:CtmImageBox
+    left =288
+    top =14
+    right =517
+    bottom =216
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/picker.bmp
+    keycolor =63519
+  end
   LinuxCtmImageBox6:CtmImageBox
-    left =58
-    top =485
-    right =74
-    bottom =517
+    left =42
+    top =341
+    right =58
+    bottom =373
     wtype =48
     fgc =0
     fontsize =2
@@ -374,10 +252,10 @@ ViewOver_IML:CtmFormView
     keycolor =63519
   end
   LinuxCtmStaticX22:CtmStaticX2
-    left =74
-    top =485
-    right =194
-    bottom =517
+    left =58
+    top =341
+    right =178
+    bottom =373
     wtype =33
     fgc =0
     bgc =36256
@@ -387,13 +265,13 @@ ViewOver_IML:CtmFormView
   end
   PickP_ADJ_Z:CtmEditX1
     left =58
-    top =531
-    right =136
-    bottom =563
+    top =379
+    right =178
+    bottom =429
     wtype =35
     taborder =0
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =10
@@ -407,13 +285,13 @@ ViewOver_IML:CtmFormView
   end
   PickP_ADJ_X1:CtmEditX1
     left =58
-    top =600
-    right =136
-    bottom =632
+    top =507
+    right =178
+    bottom =557
     wtype =35
     taborder =1
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =10
@@ -427,13 +305,13 @@ ViewOver_IML:CtmFormView
   end
   PickP_ADJ_Y1:CtmEditX1
     left =58
-    top =669
-    right =136
-    bottom =701
+    top =635
+    right =178
+    bottom =685
     wtype =35
     taborder =2
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =10
@@ -446,10 +324,10 @@ ViewOver_IML:CtmFormView
     dbid1 =MACHINE_COMMUNICATION_IMM_PICKCOMPENSATEPOSITION_Y1
   end
   LinuxCtmImageBox7:CtmImageBox
-    left =244
-    top =485
-    right =260
-    bottom =517
+    left =304
+    top =341
+    right =320
+    bottom =373
     wtype =48
     fgc =0
     fontsize =2
@@ -459,10 +337,10 @@ ViewOver_IML:CtmFormView
     keycolor =63519
   end
   LinuxCtmStaticX214:CtmStaticX2
-    left =260
-    top =485
-    right =380
-    bottom =517
+    left =320
+    top =341
+    right =440
+    bottom =373
     wtype =33
     fgc =0
     bgc =36256
@@ -471,14 +349,14 @@ ViewOver_IML:CtmFormView
     textID =PICKER_GROUP_8_ADJ
   end
   PlaceP_ADJ_Z:CtmEditX1
-    left =248
-    top =531
-    right =326
-    bottom =563
+    left =320
+    top =379
+    right =440
+    bottom =429
     wtype =35
     taborder =10
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =64512
     maxchar =10
@@ -491,14 +369,14 @@ ViewOver_IML:CtmFormView
     dbid1 =MACHINE_COMMUNICATION_IMM_PLACECOMPENSATEPOSITION_Z
   end
   PlaceP_ADJ_X1:CtmEditX1
-    left =248
-    top =600
-    right =326
-    bottom =632
+    left =320
+    top =507
+    right =440
+    bottom =557
     wtype =35
     taborder =11
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =64512
     maxchar =10
@@ -511,14 +389,14 @@ ViewOver_IML:CtmFormView
     dbid1 =MACHINE_COMMUNICATION_IMM_PLACECOMPENSATEPOSITION_X1
   end
   PlaceP_ADJ_Y1:CtmEditX1
-    left =248
-    top =669
-    right =326
-    bottom =701
+    left =320
+    top =635
+    right =440
+    bottom =685
     wtype =35
     taborder =12
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =64512
     maxchar =10
@@ -532,9 +410,9 @@ ViewOver_IML:CtmFormView
   end
   BmpAxis_Z:CtmImageBox
     left =8
-    top =531
+    top =387
     right =48
-    bottom =563
+    bottom =419
     wtype =48
     type =2
     style =3
@@ -543,9 +421,9 @@ ViewOver_IML:CtmFormView
   end
   BmpAxis_X:CtmImageBox
     left =8
-    top =600
+    top =520
     right =48
-    bottom =632
+    bottom =552
     wtype =48
     type =2
     style =3
@@ -554,9 +432,9 @@ ViewOver_IML:CtmFormView
   end
   BmpAxis_Y:CtmImageBox
     left =8
-    top =669
+    top =645
     right =48
-    bottom =701
+    bottom =677
     wtype =48
     type =2
     style =3
@@ -564,10 +442,10 @@ ViewOver_IML:CtmFormView
     keycolor =63519
   end
   EditYposition:CtmEditX1
-    left =334
-    top =531
-    right =422
-    bottom =563
+    left =446
+    top =379
+    right =566
+    bottom =429
     wtype =32
     taborder =-3
     fgc =65535
@@ -580,10 +458,10 @@ ViewOver_IML:CtmFormView
     dbid0 =AUSTON3_PARAMETER_MOTION_PROFILE_TARGET_POSITION8
   end
   LinuxCtmEditX110:CtmEditX1
-    left =144
-    top =531
-    right =232
-    bottom =563
+    left =184
+    top =379
+    right =304
+    bottom =429
     wtype =32
     taborder =-3
     fgc =65535
@@ -596,10 +474,10 @@ ViewOver_IML:CtmFormView
     dbid0 =AUSTON3_PARAMETER_MOTION_PROFILE_TARGET_POSITION3
   end
   LinuxCtmEditX111:CtmEditX1
-    left =144
-    top =600
-    right =232
-    bottom =632
+    left =184
+    top =507
+    right =304
+    bottom =557
     wtype =32
     taborder =-3
     fgc =65535
@@ -612,10 +490,10 @@ ViewOver_IML:CtmFormView
     dbid0 =AUSTON3_PARAMETER_MOTION_PROFILE_TARGET_POSITION1
   end
   LinuxCtmEditX112:CtmEditX1
-    left =334
-    top =600
-    right =422
-    bottom =632
+    left =446
+    top =507
+    right =566
+    bottom =557
     wtype =32
     taborder =-3
     fgc =65535
@@ -628,10 +506,10 @@ ViewOver_IML:CtmFormView
     dbid0 =AUSTON3_PARAMETER_MOTION_PROFILE_TARGET_POSITION6
   end
   LinuxCtmEditX113:CtmEditX1
-    left =144
-    top =669
-    right =232
-    bottom =701
+    left =184
+    top =635
+    right =304
+    bottom =685
     wtype =32
     taborder =-3
     fgc =65535
@@ -644,10 +522,10 @@ ViewOver_IML:CtmFormView
     dbid0 =AUSTON3_PARAMETER_MOTION_PROFILE_TARGET_POSITION2
   end
   LinuxCtmEditX115:CtmEditX1
-    left =334
-    top =669
-    right =422
-    bottom =701
+    left =446
+    top =635
+    right =566
+    bottom =685
     wtype =32
     taborder =-3
     fgc =65535
@@ -660,30 +538,30 @@ ViewOver_IML:CtmFormView
     dbid0 =AUSTON3_PARAMETER_MOTION_PROFILE_TARGET_POSITION7
   end
   LinuxCtmStaticX215:CtmStaticX2
-    left =390
-    top =485
-    right =422
-    bottom =517
+    left =446
+    top =341
+    right =478
+    bottom =373
     wtype =48
     fgc =0
     fontsize =1
     textID =VW_UNIT_MM
   end
   LinuxCtmStaticX216:CtmStaticX2
-    left =200
-    top =485
-    right =232
-    bottom =517
+    left =184
+    top =341
+    right =216
+    bottom =373
     wtype =48
     fgc =0
     fontsize =1
     textID =VW_UNIT_MM
   end
   BtnLeft:CtmToolButton
-    left =428
-    top =567
-    right =458
-    bottom =667
+    left =400
+    top =768
+    right =582
+    bottom =819
     wtype =48
     taborder =89
     fgc =36256

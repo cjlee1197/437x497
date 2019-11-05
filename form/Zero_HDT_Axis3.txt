@@ -9,7 +9,7 @@ ViewZero:CtmFormView
     left =134
     top =139
     right =274
-    bottom =171
+    bottom =189
     wtype =32
     taborder =-3
     fgc =65535
@@ -24,7 +24,7 @@ ViewZero:CtmFormView
     left =278
     top =139
     right =418
-    bottom =171
+    bottom =189
     wtype =32
     taborder =-3
     fgc =65535
@@ -37,9 +37,9 @@ ViewZero:CtmFormView
   end
   LinuxCtmStaticX216:CtmStaticX2
     left =22
-    top =140
+    top =139
     right =122
-    bottom =172
+    bottom =189
     wtype =33
     fgc =0
     bgc =36256
@@ -50,9 +50,9 @@ ViewZero:CtmFormView
   end
   LinuxCtmStaticX21:CtmStaticX2
     left =22
-    top =268
+    top =275
     right =122
-    bottom =300
+    bottom =325
     wtype =33
     fgc =0
     bgc =36256
@@ -63,9 +63,9 @@ ViewZero:CtmFormView
   end
   LinuxCtmStaticX22:CtmStaticX2
     left =22
-    top =196
+    top =207
     right =122
-    bottom =228
+    bottom =257
     wtype =33
     fgc =0
     bgc =36256
@@ -115,9 +115,9 @@ ViewZero:CtmFormView
   end
   ZeroPos_X1:CtmEditX1
     left =134
-    top =267
+    top =275
     right =274
-    bottom =299
+    bottom =325
     wtype =32
     taborder =-3
     fgc =65535
@@ -130,9 +130,9 @@ ViewZero:CtmFormView
   end
   ZeroPos_Y1:CtmEditX1
     left =278
-    top =267
+    top =275
     right =418
-    bottom =299
+    bottom =325
     wtype =32
     taborder =-3
     fgc =65535
@@ -147,7 +147,7 @@ ViewZero:CtmFormView
     left =422
     top =139
     right =562
-    bottom =171
+    bottom =189
     wtype =32
     taborder =-3
     fgc =65535
@@ -160,9 +160,9 @@ ViewZero:CtmFormView
   end
   ZeroPos_Z:CtmEditX1
     left =422
-    top =267
+    top =275
     right =562
-    bottom =299
+    bottom =325
     wtype =32
     taborder =-3
     fgc =65535
@@ -175,9 +175,9 @@ ViewZero:CtmFormView
   end
   LinuxCtmImageBox6:CtmImageBox
     left =6
-    top =140
+    top =147
     right =22
-    bottom =172
+    bottom =179
     wtype =48
     fgc =0
     fontsize =2
@@ -188,9 +188,9 @@ ViewZero:CtmFormView
   end
   LinuxCtmImageBox7:CtmImageBox
     left =6
-    top =196
+    top =215
     right =22
-    bottom =228
+    bottom =247
     wtype =48
     fgc =0
     fontsize =2
@@ -201,9 +201,9 @@ ViewZero:CtmFormView
   end
   LinuxCtmImageBox8:CtmImageBox
     left =6
-    top =268
+    top =283
     right =22
-    bottom =300
+    bottom =315
     wtype =48
     fgc =0
     fontsize =2
@@ -214,13 +214,13 @@ ViewZero:CtmFormView
   end
   Dly_X1:CtmEditX1
     left =134
-    top =199
+    top =207
     right =274
-    bottom =231
+    bottom =257
     wtype =35
     taborder =1
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =10
@@ -228,17 +228,17 @@ ViewZero:CtmFormView
     max =9999
     mindb =FALSE
     maxdb =FALSE
-    dbid0 =MACHINE_CONFIGURATION_AXIS1_PILE_STEP
+    dbid0 =MACHINE_CONFIGURATION_ZERO_OFFSET_DLY_X1
   end
   Dly_Y1:CtmEditX1
     left =278
-    top =199
+    top =207
     right =418
-    bottom =231
+    bottom =257
     wtype =35
     taborder =2
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =10
@@ -246,17 +246,17 @@ ViewZero:CtmFormView
     max =9999
     mindb =FALSE
     maxdb =FALSE
-    dbid0 =MACHINE_CONFIGURATION_AXIS1_PILE_NUM
+    dbid0 =MACHINE_CONFIGURATION_ZERO_OFFSET_DLY_Y1
   end
   Dly_Z:CtmEditX1
     left =422
-    top =199
+    top =207
     right =562
-    bottom =231
+    bottom =257
     wtype =35
     taborder =3
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =33808
     maxchar =10
@@ -264,6 +264,6 @@ ViewZero:CtmFormView
     max =9999
     mindb =FALSE
     maxdb =FALSE
-    dbid0 =MACHINE_CONFIGURATION_AXIS1_PILE_DISTANCE
+    dbid0 =MACHINE_CONFIGURATION_ZERO_OFFSET_DLY_Z
   end
 end

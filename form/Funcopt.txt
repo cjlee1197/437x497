@@ -3,7 +3,7 @@ ViewFuncopt:CtmFormView
   top =0
   right =599
   bottom =829
-  titleID =EFFECT_CONTROLOPTION
+  titleID =INDEX_MODE_SLC
   printname =Param.bmp
   LinuxCtmStaticX21:CtmStaticX2
     left =30
@@ -46,9 +46,9 @@ ViewFuncopt:CtmFormView
   end
   MovePostType0:CtmToolButton
     left =205
-    top =192
-    right =305
-    bottom =224
+    top =184
+    right =325
+    bottom =234
     taborder =1
     bgc =54970
     fontsize =1
@@ -59,9 +59,9 @@ ViewFuncopt:CtmFormView
   end
   MovePostType1:CtmToolButton
     left =333
-    top =192
-    right =433
-    bottom =224
+    top =184
+    right =453
+    bottom =234
     taborder =2
     bgc =54970
     fontsize =1
@@ -74,9 +74,9 @@ ViewFuncopt:CtmFormView
   end
   MovePostType2:CtmToolButton
     left =461
-    top =192
-    right =561
-    bottom =224
+    top =184
+    right =581
+    bottom =234
     taborder =3
     bgc =54970
     fontsize =1
@@ -89,9 +89,9 @@ ViewFuncopt:CtmFormView
   end
   MoldPostType0:CtmToolButton
     left =205
-    top =259
-    right =305
-    bottom =291
+    top =251
+    right =325
+    bottom =301
     taborder =4
     bgc =54970
     fontsize =1
@@ -102,9 +102,9 @@ ViewFuncopt:CtmFormView
   end
   MoldPostType1:CtmToolButton
     left =333
-    top =259
-    right =433
-    bottom =291
+    top =251
+    right =453
+    bottom =301
     taborder =5
     bgc =54970
     fontsize =1
@@ -117,9 +117,9 @@ ViewFuncopt:CtmFormView
   end
   MoldPostType2:CtmToolButton
     left =461
-    top =259
-    right =561
-    bottom =291
+    top =251
+    right =581
+    bottom =301
     taborder =6
     bgc =54970
     fontsize =1
@@ -132,9 +132,9 @@ ViewFuncopt:CtmFormView
   end
   MachineZero:CtmToolButton
     left =205
-    top =326
-    right =305
-    bottom =358
+    top =318
+    right =325
+    bottom =368
     taborder =7
     bgc =54970
     fontsize =1
@@ -145,9 +145,9 @@ ViewFuncopt:CtmFormView
   end
   MachineNext:CtmToolButton
     left =333
-    top =326
-    right =433
-    bottom =358
+    top =318
+    right =453
+    bottom =368
     taborder =8
     bgc =54970
     fontsize =1

@@ -646,6 +646,8 @@ void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
 				{
 					SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED43", 8);// cjlee 2019/4/6 下午 05:56:23
 					KeyCommand = (N == 2) ? COMMAND_C_FWD : COMMAND_C_BACK;
+					if(u_nMANUAL_TYPE == MANUAL_STOP_MODE)
+						KeyCommand = 0x1234;
 				}
 				else if(keycode == 0x87 || keycode == 0x97)	//X2軸
 				{
@@ -707,9 +709,16 @@ void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
 					if(u_nMANUAL_TYPE != MANUAL_STOP_MODE) // 安全按鈕有按下
 						SendCommand(KeyCommand);
 					else // 請按安全開關
+						{
 						 //MsgBox(g_MultiLanguage["PICKER_SAFEEYNOTPRESS"], tmFT_CODE_TECH);
-						 KeyCommand=0x1234; // 無意義命令		
-						 MsgBoxCall("msgboxConfirm.txt","PICKER_SAFEEYNOTPRESS");				
+						 MsgBoxCall("msgboxConfirm.txt","PICKER_SAFEEYNOTPRESS");			
+						 pwndEditPostionX->SetPropValueT("fgc",0xFFFF);
+							pwndEditPostionY->SetPropValueT("fgc",0xFFFF);
+							pwndEditPostionZ->SetPropValueT("fgc",0xFFFF);
+							FGC FgcTemp = ( u_PickerType==MechType5 ? 0xFFFF : 0x09A6 );
+							pwndEditPostionX2->SetPropValueT("fgc",FgcTemp);
+							pwndEditPostionY2->SetPropValueT("fgc",FgcTemp);
+						}	
 				}
 				/*-----------------------------------運動命令--------------------------------------*/
 			}/*-------------------------------軸動作----------------------------------*/

@@ -51,19 +51,305 @@ ViewQTeach:CtmFormView
     key =8
   end
   LinuxCtmImageBox4:CtmImageBox
-    left =24
-    top =104
-    right =474
-    bottom =374
+    left =16
+    top =128
+    right =316
+    bottom =327
     type =2
     imagepath =res_tm640/pic/picker/QTeach_PlaceP.bmp
     keycolor =63519
   end
+  Str_Suck:CtmStaticX2
+    left =343
+    top =232
+    right =403
+    bottom =272
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_SUCKER
+    align =34
+  end
+  Btn_Suck1:CtmToolButton
+    left =334
+    top =272
+    right =414
+    bottom =322
+    wtype =33
+    taborder =33
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/CupulaClose1.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =19
+  end
+  Btn_Suck2:CtmToolButton
+    left =334
+    top =329
+    right =414
+    bottom =379
+    wtype =33
+    taborder =34
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/CupulaClose2.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =20
+  end
+  Str_Clamp:CtmStaticX2
+    left =343
+    top =80
+    right =403
+    bottom =120
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_PICKER_CHUCKING
+    align =34
+  end
+  Btn_Clamp1:CtmToolButton
+    left =334
+    top =120
+    right =414
+    bottom =170
+    wtype =33
+    taborder =35
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/clamp1_off.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =21
+  end
+  Btn_Clamp2:CtmToolButton
+    left =334
+    top =177
+    right =414
+    bottom =227
+    wtype =33
+    taborder =36
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/clamp2_off.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =22
+  end
+  Str_Clamp_Detect1:CtmStaticX2
+    left =423
+    top =80
+    right =483
+    bottom =120
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH_DETECT
+    align =34
+  end
+  Detect_Clamp1:CtmToolButton
+    left =430
+    top =128
+    right =470
+    bottom =168
+    wtype =33
+    taborder =67
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =37
+  end
+  Detect_Clamp2:CtmToolButton
+    left =430
+    top =184
+    right =470
+    bottom =224
+    wtype =33
+    taborder =68
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =38
+  end
+  Detect_Suck1:CtmToolButton
+    left =430
+    top =280
+    right =470
+    bottom =320
+    wtype =33
+    taborder =65
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =35
+  end
+  Detect_Suck2:CtmToolButton
+    left =430
+    top =336
+    right =470
+    bottom =376
+    wtype =33
+    taborder =66
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =36
+  end
+  Str_Clamp_DT1:CtmStaticX2
+    left =503
+    top =80
+    right =563
+    bottom =120
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_DELAY
+    align =34
+  end
+  QTeach_DT_Clamp1:CtmEditX1
+    left =487
+    top =120
+    right =587
+    bottom =170
+    wtype =35
+    taborder =43
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =0
+    maxchar =10
+    align =36
+    precision =2
+    value =10
+    max =5000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER5
+  end
+  QTeach_DT_Clamp2:CtmEditX1
+    left =487
+    top =177
+    right =587
+    bottom =227
+    wtype =35
+    taborder =44
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =0
+    maxchar =10
+    align =36
+    precision =2
+    value =10
+    max =5000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER6
+  end
+  QTeach_DT_Suck1:CtmEditX1
+    left =487
+    top =272
+    right =587
+    bottom =322
+    wtype =35
+    taborder =41
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =0
+    maxchar =10
+    align =36
+    precision =2
+    value =10
+    max =5000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER7
+  end
+  QTeach_DT_Suck2:CtmEditX1
+    left =487
+    top =329
+    right =587
+    bottom =379
+    wtype =35
+    taborder =42
+    fgc =0
+    bgc =57279
+    fontsize =1
+    bordercolor =0
+    maxchar =10
+    align =36
+    precision =2
+    value =10
+    max =5000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER8
+  end
+  Str_Clamp_Detect2:CtmStaticX2
+    left =423
+    top =232
+    right =483
+    bottom =272
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH_DETECT
+    align =34
+  end
+  Str_Clamp_DT2:CtmStaticX2
+    left =503
+    top =232
+    right =563
+    bottom =272
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_DELAY
+    align =34
+  end
+  Clamp_Mask:CtmStaticX2
+    left =326
+    top =76
+    right =592
+    bottom =384
+    wtype =32
+    bgc =63422
+  end
   LinuxCtmStaticX23:CtmStaticX2
     left =87
-    top =411
-    right =142
-    bottom =451
+    top =395
+    right =187
+    bottom =435
     wtype =33
     fgc =0
     bgc =36256
@@ -73,10 +359,10 @@ ViewQTeach:CtmFormView
     align =34
   end
   LinuxCtmStaticX216:CtmStaticX2
-    left =221
-    top =411
-    right =321
-    bottom =451
+    left =317
+    top =395
+    right =417
+    bottom =435
     wtype =33
     fgc =0
     bgc =36256
@@ -87,9 +373,9 @@ ViewQTeach:CtmFormView
   end
   QTeach_Speed_Z:CtmEditX1
     left =87
-    top =460
-    right =142
-    bottom =500
+    top =444
+    right =187
+    bottom =494
     wtype =35
     taborder =0
     fgc =0
@@ -106,9 +392,9 @@ ViewQTeach:CtmFormView
   end
   QTeach_Speed_X1:CtmEditX1
     left =87
-    top =524
-    right =142
-    bottom =564
+    top =518
+    right =187
+    bottom =568
     wtype =35
     taborder =1
     fgc =0
@@ -125,13 +411,13 @@ ViewQTeach:CtmFormView
   end
   QTeach_Speed_Y1:CtmEditX1
     left =87
-    top =588
-    right =142
-    bottom =628
+    top =592
+    right =187
+    bottom =642
     wtype =35
     taborder =2
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =0
     maxchar =10
@@ -142,10 +428,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM44_EQUIPMENT2_ACTION_PARAMETER7
   end
   QTeach_Pos_Z:CtmEditX1
-    left =221
-    top =460
-    right =321
-    bottom =500
+    left =317
+    top =444
+    right =417
+    bottom =494
     wtype =35
     taborder =5
     fgc =0
@@ -163,10 +449,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM45_EQUIPMENT2_ACTION_PARAMETER3
   end
   QTeach_Pos_X1:CtmEditX1
-    left =221
-    top =524
-    right =321
-    bottom =564
+    left =317
+    top =518
+    right =417
+    bottom =568
     wtype =35
     taborder =6
     fgc =0
@@ -184,14 +470,14 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM45_EQUIPMENT2_ACTION_PARAMETER1
   end
   QTeach_Pos_Y1:CtmEditX1
-    left =221
-    top =588
-    right =321
-    bottom =628
+    left =317
+    top =592
+    right =417
+    bottom =642
     wtype =35
     taborder =7
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =0
     maxchar =10
@@ -204,10 +490,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM44_EQUIPMENT2_ACTION_PARAMETER2
   end
   LinuxCtmStaticX25:CtmStaticX2
-    left =151
-    top =411
-    right =216
-    bottom =451
+    left =199
+    top =395
+    right =299
+    bottom =435
     wtype =33
     fgc =0
     bgc =36256
@@ -217,10 +503,10 @@ ViewQTeach:CtmFormView
     align =34
   end
   QTeach_DT_Z:CtmEditX1
-    left =151
-    top =460
-    right =216
-    bottom =500
+    left =199
+    top =444
+    right =299
+    bottom =494
     wtype =35
     taborder =10
     fgc =0
@@ -238,10 +524,10 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM37_EQUIPMENT2_ACTION_PARAMETER3
   end
   QTeach_DT_X1:CtmEditX1
-    left =151
-    top =524
-    right =216
-    bottom =564
+    left =199
+    top =518
+    right =299
+    bottom =568
     wtype =35
     taborder =11
     fgc =0
@@ -259,14 +545,14 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM37_EQUIPMENT2_ACTION_PARAMETER1
   end
   QTeach_DT_Y1:CtmEditX1
-    left =151
-    top =588
-    right =216
-    bottom =628
+    left =199
+    top =592
+    right =299
+    bottom =642
     wtype =35
     taborder =12
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     bordercolor =0
     maxchar =10
@@ -278,346 +564,11 @@ ViewQTeach:CtmFormView
     maxdb =FALSE
     dbid1 =MACHINE_PROFILE_NUM37_EQUIPMENT2_ACTION_PARAMETER2
   end
-  Btn_PosHV:CtmToolButton
-    left =478
-    top =334
-    right =588
-    bottom =402
-    wtype =33
-    taborder =0
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/Clamp_Vertical.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =18
-  end
-  LinuxCtmStaticX24:CtmStaticX2
-    left =503
-    top =288
-    right =563
-    bottom =328
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TEACH_POS_HV
-    align =34
-  end
-  Img_NowMoveAxis:CtmImageBox
-    left =496
-    top =178
-    right =571
-    bottom =238
-    type =2
-    keycolor =63519
-  end
-  Str_NowMoveAxis:CtmStaticX2
-    left =494
-    top =142
-    right =574
-    bottom =174
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TEACH_QTEACH_NOW_MOVE
-    align =34
-  end
-  Str_Suck:CtmStaticX2
-    left =367
-    top =616
-    right =427
-    bottom =656
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_PICKER_SUCKER
-    align =34
-  end
-  Btn_Suck1:CtmToolButton
-    left =342
-    top =664
-    right =452
-    bottom =732
-    wtype =33
-    taborder =33
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/CupulaClose1.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =19
-  end
-  Btn_Suck2:CtmToolButton
-    left =342
-    top =745
-    right =452
-    bottom =813
-    wtype =33
-    taborder =34
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/CupulaClose2.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =20
-  end
-  Str_Clamp:CtmStaticX2
-    left =367
-    top =416
-    right =427
-    bottom =456
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_PICKER_CHUCKING
-    align =34
-  end
-  Btn_Clamp1:CtmToolButton
-    left =342
-    top =464
-    right =452
-    bottom =532
-    wtype =33
-    taborder =35
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/clamp1_off.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =21
-  end
-  Btn_Clamp2:CtmToolButton
-    left =342
-    top =545
-    right =452
-    bottom =613
-    wtype =33
-    taborder =36
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/clamp2_off.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =22
-  end
-  Str_Clamp_Detect1:CtmStaticX2
-    left =455
-    top =416
-    right =515
-    bottom =456
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TEACH_QTEACH_DETECT
-    align =34
-  end
-  Detect_Clamp1:CtmToolButton
-    left =462
-    top =480
-    right =502
-    bottom =520
-    wtype =33
-    taborder =67
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/Check_No.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =37
-  end
-  Detect_Clamp2:CtmToolButton
-    left =462
-    top =560
-    right =502
-    bottom =600
-    wtype =33
-    taborder =68
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/Check_No.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =38
-  end
-  Detect_Suck1:CtmToolButton
-    left =462
-    top =672
-    right =502
-    bottom =712
-    wtype =33
-    taborder =65
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/Check_No.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =35
-  end
-  Detect_Suck2:CtmToolButton
-    left =462
-    top =752
-    right =502
-    bottom =792
-    wtype =33
-    taborder =66
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/Check_No.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =36
-  end
-  Str_Clamp_DT1:CtmStaticX2
-    left =519
-    top =416
-    right =579
-    bottom =456
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TEACH_DELAY
-    align =34
-  end
-  QTeach_DT_Clamp1:CtmEditX1
-    left =511
-    top =480
-    right =576
-    bottom =520
-    wtype =35
-    taborder =43
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =0
-    maxchar =10
-    align =36
-    precision =2
-    value =10
-    max =5000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid1 =MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER5
-  end
-  QTeach_DT_Clamp2:CtmEditX1
-    left =511
-    top =560
-    right =576
-    bottom =600
-    wtype =35
-    taborder =44
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =0
-    maxchar =10
-    align =36
-    precision =2
-    value =10
-    max =5000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid1 =MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER6
-  end
-  QTeach_DT_Suck1:CtmEditX1
-    left =511
-    top =672
-    right =576
-    bottom =712
-    wtype =35
-    taborder =41
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =0
-    maxchar =10
-    align =36
-    precision =2
-    value =10
-    max =5000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid1 =MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER7
-  end
-  QTeach_DT_Suck2:CtmEditX1
-    left =511
-    top =752
-    right =576
-    bottom =792
-    wtype =35
-    taborder =42
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =0
-    maxchar =10
-    align =36
-    precision =2
-    value =10
-    max =5000
-    mindb =FALSE
-    maxdb =FALSE
-    dbid1 =MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER8
-  end
-  Str_Clamp_Detect2:CtmStaticX2
-    left =455
-    top =616
-    right =515
-    bottom =656
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TEACH_QTEACH_DETECT
-    align =34
-  end
-  Str_Clamp_DT2:CtmStaticX2
-    left =519
-    top =616
-    right =579
-    bottom =656
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TEACH_DELAY
-    align =34
-  end
-  Clamp_Mask:CtmStaticX2
-    left =336
-    top =412
-    right =587
-    bottom =816
-    wtype =32
-    bgc =63422
-  end
   Str_GetPos:CtmStaticX2
     left =7
-    top =411
+    top =395
     right =79
-    bottom =451
+    bottom =435
     wtype =48
     fgc =0
     bgc =36256
@@ -628,15 +579,14 @@ ViewQTeach:CtmFormView
   end
   Btn_GetPos_Z:CtmToolButton
     left =8
-    top =452
+    top =444
     right =79
-    bottom =507
+    bottom =499
     wtype =48
     taborder =98
     bgc =54970
     titleID =VW_PLAN_ESC
     fontsize =1
-    enabled =FALSE
     destcolor =57182
     align =34
     upbitmap =res_tm640/pic/picker/GetPos_Axis_Z.bmp
@@ -644,15 +594,14 @@ ViewQTeach:CtmFormView
   end
   Btn_GetPos_X1:CtmToolButton
     left =8
-    top =516
+    top =518
     right =79
-    bottom =571
+    bottom =573
     wtype =48
     taborder =96
     bgc =54970
     titleID =VW_PLAN_ESC
     fontsize =1
-    enabled =FALSE
     destcolor =57182
     align =34
     upbitmap =res_tm640/pic/picker/GetPos_Axis_X1.bmp
@@ -660,9 +609,9 @@ ViewQTeach:CtmFormView
   end
   Btn_GetPos_Y1:CtmToolButton
     left =8
-    top =580
+    top =592
     right =79
-    bottom =635
+    bottom =647
     wtype =48
     taborder =97
     bgc =54970
@@ -673,55 +622,76 @@ ViewQTeach:CtmFormView
     upbitmap =res_tm640/pic/picker/GetPos_Axis_Y1.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
   end
-  Img_PosHint_X1:CtmImageBox
-    left =221
-    top =565
-    right =241
-    bottom =585
-    type =2
-    imagepath =res_tm640/pic/picker/PosHint.bmp
-    keycolor =63519
-  end
-  Mask_PosHint_X1:CtmStaticX2
-    left =221
-    top =564
-    right =321
-    bottom =586
-    wtype =32
-    bgc =63422
-  end
   Img_PosHint_Z:CtmImageBox
-    left =221
-    top =501
-    right =241
-    bottom =521
+    left =317
+    top =494
+    right =337
+    bottom =514
     type =2
     imagepath =res_tm640/pic/picker/PosHint.bmp
     keycolor =63519
   end
   Mask_PosHint_Z:CtmStaticX2
-    left =221
-    top =500
-    right =321
-    bottom =522
+    left =317
+    top =494
+    right =417
+    bottom =516
+    wtype =32
+    bgc =63422
+  end
+  Img_PosHint_X1:CtmImageBox
+    left =317
+    top =568
+    right =337
+    bottom =588
+    type =2
+    imagepath =res_tm640/pic/picker/PosHint.bmp
+    keycolor =63519
+  end
+  Mask_PosHint_X1:CtmStaticX2
+    left =317
+    top =568
+    right =417
+    bottom =590
     wtype =32
     bgc =63422
   end
   Img_PosHint_Y1:CtmImageBox
-    left =221
-    top =629
-    right =241
-    bottom =649
+    left =317
+    top =642
+    right =337
+    bottom =662
     type =2
     imagepath =res_tm640/pic/picker/PosHint.bmp
     keycolor =63519
   end
   Mask_PosHint_Y1:CtmStaticX2
-    left =221
-    top =628
-    right =321
-    bottom =650
+    left =317
+    top =642
+    right =417
+    bottom =664
     wtype =32
     bgc =63422
+  end
+  Str_NowMoveAxis:CtmStaticX2
+    left =462
+    top =680
+    right =542
+    bottom =712
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =TEACH_QTEACH_NOW_MOVE
+    align =34
+  end
+  Img_NowMoveAxis:CtmImageBox
+    left =464
+    top =710
+    right =539
+    bottom =770
+    type =2
+    keycolor =63519
   end
 end
