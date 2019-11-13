@@ -156,9 +156,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmImageBox6:CtmImageBox
     left =42
-    top =341
+    top =309
     right =58
-    bottom =373
+    bottom =341
     wtype =48
     fgc =0
     fontsize =2
@@ -169,9 +169,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmStaticX22:CtmStaticX2
     left =58
-    top =341
+    top =309
     right =178
-    bottom =373
+    bottom =341
     wtype =33
     fgc =0
     bgc =36256
@@ -181,9 +181,9 @@ ViewOver_IML:CtmFormView
   end
   PickP_ADJ_Z:CtmEditX1
     left =58
-    top =379
+    top =347
     right =178
-    bottom =429
+    bottom =397
     wtype =35
     taborder =0
     fgc =0
@@ -201,9 +201,9 @@ ViewOver_IML:CtmFormView
   end
   PickP_ADJ_X1:CtmEditX1
     left =58
-    top =459
+    top =427
     right =178
-    bottom =509
+    bottom =477
     wtype =35
     taborder =1
     fgc =0
@@ -221,9 +221,9 @@ ViewOver_IML:CtmFormView
   end
   PickP_ADJ_Y1:CtmEditX1
     left =58
-    top =539
+    top =507
     right =178
-    bottom =589
+    bottom =557
     wtype =35
     taborder =2
     fgc =0
@@ -241,9 +241,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmImageBox7:CtmImageBox
     left =304
-    top =341
+    top =309
     right =320
-    bottom =373
+    bottom =341
     wtype =48
     fgc =0
     fontsize =2
@@ -254,9 +254,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmStaticX214:CtmStaticX2
     left =320
-    top =341
+    top =309
     right =440
-    bottom =373
+    bottom =341
     wtype =33
     fgc =0
     bgc =36256
@@ -266,9 +266,9 @@ ViewOver_IML:CtmFormView
   end
   PlaceP_ADJ_Z:CtmEditX1
     left =320
-    top =379
+    top =347
     right =440
-    bottom =429
+    bottom =397
     wtype =35
     taborder =10
     fgc =0
@@ -286,9 +286,9 @@ ViewOver_IML:CtmFormView
   end
   PlaceP_ADJ_X1:CtmEditX1
     left =320
-    top =459
+    top =427
     right =440
-    bottom =509
+    bottom =477
     wtype =35
     taborder =11
     fgc =0
@@ -306,9 +306,9 @@ ViewOver_IML:CtmFormView
   end
   PlaceP_ADJ_Y1:CtmEditX1
     left =320
-    top =539
+    top =507
     right =440
-    bottom =589
+    bottom =557
     wtype =35
     taborder =12
     fgc =0
@@ -326,9 +326,9 @@ ViewOver_IML:CtmFormView
   end
   PickP_ADJ_X2:CtmEditX1
     left =58
-    top =619
+    top =587
     right =178
-    bottom =669
+    bottom =637
     wtype =35
     taborder =3
     fgc =0
@@ -346,9 +346,9 @@ ViewOver_IML:CtmFormView
   end
   PickP_ADJ_Y2:CtmEditX1
     left =58
-    top =699
+    top =667
     right =178
-    bottom =749
+    bottom =717
     wtype =35
     taborder =4
     fgc =0
@@ -366,9 +366,9 @@ ViewOver_IML:CtmFormView
   end
   PlaceP_ADJ_X2:CtmEditX1
     left =320
-    top =619
+    top =587
     right =440
-    bottom =669
+    bottom =637
     wtype =35
     taborder =13
     fgc =0
@@ -386,9 +386,9 @@ ViewOver_IML:CtmFormView
   end
   PlaceP_ADJ_Y2:CtmEditX1
     left =320
-    top =699
+    top =667
     right =440
-    bottom =749
+    bottom =717
     wtype =35
     taborder =14
     fgc =0
@@ -406,9 +406,9 @@ ViewOver_IML:CtmFormView
   end
   BmpAxis_Z:CtmImageBox
     left =8
-    top =387
+    top =355
     right =48
-    bottom =419
+    bottom =387
     wtype =48
     type =2
     style =3
@@ -417,9 +417,9 @@ ViewOver_IML:CtmFormView
   end
   BmpAxis_X:CtmImageBox
     left =8
-    top =472
+    top =440
     right =48
-    bottom =504
+    bottom =472
     wtype =48
     type =2
     style =3
@@ -428,9 +428,9 @@ ViewOver_IML:CtmFormView
   end
   BmpAxis_X2:CtmImageBox
     left =8
-    top =634
+    top =602
     right =48
-    bottom =666
+    bottom =634
     wtype =48
     type =2
     style =3
@@ -439,9 +439,9 @@ ViewOver_IML:CtmFormView
   end
   BmpAxis_Y:CtmImageBox
     left =8
-    top =549
+    top =517
     right =48
-    bottom =581
+    bottom =549
     wtype =48
     type =2
     style =3
@@ -450,9 +450,9 @@ ViewOver_IML:CtmFormView
   end
   BmpAxis_Y2:CtmImageBox
     left =8
-    top =711
+    top =679
     right =48
-    bottom =743
+    bottom =711
     wtype =48
     type =2
     style =3
@@ -461,9 +461,9 @@ ViewOver_IML:CtmFormView
   end
   EditYposition:CtmEditX1
     left =446
-    top =379
+    top =347
     right =566
-    bottom =429
+    bottom =397
     wtype =32
     taborder =-3
     fgc =65535
@@ -477,9 +477,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmEditX110:CtmEditX1
     left =184
-    top =379
+    top =347
     right =304
-    bottom =429
+    bottom =397
     wtype =32
     taborder =-3
     fgc =65535
@@ -493,9 +493,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmEditX111:CtmEditX1
     left =184
-    top =459
+    top =427
     right =304
-    bottom =509
+    bottom =477
     wtype =32
     taborder =-3
     fgc =65535
@@ -509,9 +509,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmEditX112:CtmEditX1
     left =446
-    top =459
+    top =427
     right =566
-    bottom =509
+    bottom =477
     wtype =32
     taborder =-3
     fgc =65535
@@ -525,9 +525,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmEditX113:CtmEditX1
     left =184
-    top =539
+    top =507
     right =304
-    bottom =589
+    bottom =557
     wtype =32
     taborder =-3
     fgc =65535
@@ -541,9 +541,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmEditX114:CtmEditX1
     left =184
-    top =619
+    top =587
     right =304
-    bottom =669
+    bottom =637
     wtype =32
     taborder =-3
     fgc =65535
@@ -557,9 +557,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmEditX115:CtmEditX1
     left =446
-    top =539
+    top =507
     right =566
-    bottom =589
+    bottom =557
     wtype =32
     taborder =-3
     fgc =65535
@@ -573,9 +573,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmEditX119:CtmEditX1
     left =446
-    top =619
+    top =587
     right =566
-    bottom =669
+    bottom =637
     wtype =32
     taborder =-3
     fgc =65535
@@ -589,9 +589,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmEditX120:CtmEditX1
     left =184
-    top =699
+    top =667
     right =304
-    bottom =749
+    bottom =717
     wtype =32
     taborder =-3
     fgc =65535
@@ -605,9 +605,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmEditX121:CtmEditX1
     left =446
-    top =699
+    top =667
     right =566
-    bottom =749
+    bottom =717
     wtype =32
     taborder =-3
     fgc =65535
@@ -621,9 +621,9 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmStaticX215:CtmStaticX2
     left =446
-    top =341
+    top =309
     right =478
-    bottom =373
+    bottom =341
     wtype =48
     fgc =0
     fontsize =1
@@ -631,19 +631,19 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmStaticX216:CtmStaticX2
     left =184
-    top =341
+    top =309
     right =216
-    bottom =373
+    bottom =341
     wtype =48
     fgc =0
     fontsize =1
     textID =VW_UNIT_MM
   end
   BtnLeft:CtmToolButton
-    left =400
-    top =768
-    right =582
-    bottom =819
+    left =549
+    top =728
+    right =599
+    bottom =828
     wtype =48
     taborder =89
     fgc =36256

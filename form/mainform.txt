@@ -318,10 +318,10 @@ mainform:CtmMainFrame
       keycolor =63519
     end
     BmpMoveMode:CtmImageBox
-      left =39
-      top =56
-      right =69
-      bottom =71
+      left =36
+      top =48
+      right =66
+      bottom =63
       wtype =48
       type =2
       style =3

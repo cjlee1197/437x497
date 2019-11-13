@@ -238,31 +238,6 @@ ViewOver_IML:CtmFormView
     imagepath =res_tm640/pic/picker/picker.bmp
     keycolor =63519
   end
-  LinuxCtmImageBox6:CtmImageBox
-    left =42
-    top =341
-    right =58
-    bottom =373
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmStaticX22:CtmStaticX2
-    left =58
-    top =341
-    right =178
-    bottom =373
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_GROUP_5_ADJ
-  end
   PickP_ADJ_Z:CtmEditX1
     left =58
     top =379
@@ -322,31 +297,6 @@ ViewOver_IML:CtmFormView
     mindb =FALSE
     maxdb =FALSE
     dbid1 =MACHINE_COMMUNICATION_IMM_PICKCOMPENSATEPOSITION_Y1
-  end
-  LinuxCtmImageBox7:CtmImageBox
-    left =304
-    top =341
-    right =320
-    bottom =373
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmStaticX214:CtmStaticX2
-    left =320
-    top =341
-    right =440
-    bottom =373
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_GROUP_8_ADJ
   end
   PlaceP_ADJ_Z:CtmEditX1
     left =320
@@ -537,11 +487,61 @@ ViewOver_IML:CtmFormView
     precision =2
     dbid0 =AUSTON3_PARAMETER_MOTION_PROFILE_TARGET_POSITION7
   end
+  LinuxCtmImageBox6:CtmImageBox
+    left =42
+    top =309
+    right =58
+    bottom =341
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX22:CtmStaticX2
+    left =58
+    top =309
+    right =178
+    bottom =341
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_GROUP_5_ADJ
+  end
+  LinuxCtmImageBox7:CtmImageBox
+    left =304
+    top =309
+    right =320
+    bottom =341
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/ListMark.bmp
+    keycolor =63519
+  end
+  LinuxCtmStaticX214:CtmStaticX2
+    left =320
+    top =309
+    right =440
+    bottom =341
+    wtype =33
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_GROUP_8_ADJ
+  end
   LinuxCtmStaticX215:CtmStaticX2
     left =446
-    top =341
+    top =309
     right =478
-    bottom =373
+    bottom =341
     wtype =48
     fgc =0
     fontsize =1
@@ -549,19 +549,19 @@ ViewOver_IML:CtmFormView
   end
   LinuxCtmStaticX216:CtmStaticX2
     left =184
-    top =341
+    top =309
     right =216
-    bottom =373
+    bottom =341
     wtype =48
     fgc =0
     fontsize =1
     textID =VW_UNIT_MM
   end
   BtnLeft:CtmToolButton
-    left =400
-    top =768
-    right =582
-    bottom =819
+    left =549
+    top =728
+    right =599
+    bottom =828
     wtype =48
     taborder =89
     fgc =36256
