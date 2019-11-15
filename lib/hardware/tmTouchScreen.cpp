@@ -1881,7 +1881,8 @@ void	USB_MouseFunc4(void* pdata)
 		int ret;
 		//usleep(10); 
 		ret = read(tsrun->tshandle, &u_PMTouch, sizeof(u_PMTouch));
-		if((u_PMTouch.wCode == 53 || u_PMTouch.wCode == 54 ) && u_PMTouch.dwValue==0) u_PMTouch.dwValue+=10;
+		// √‰Ωt∞æ≤æ
+		if((u_PMTouch.wCode == 53 || u_PMTouch.wCode == 54 ) && u_PMTouch.dwValue<10) u_PMTouch.dwValue=10;
 		if(u_PMTouch.wCode == 54 && u_PMTouch.dwValue > 590) u_PMTouch.dwValue =590;
 		if(u_PMTouch.wCode == 53 && u_PMTouch.dwValue >1014) u_PMTouch.dwValue =1014;
 		//printf("wtype=%d code=%d value=%d \n", u_PMTouch.wType, u_PMTouch.wCode, u_PMTouch.dwValue);
