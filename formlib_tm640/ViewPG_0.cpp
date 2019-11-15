@@ -1536,7 +1536,14 @@ void	Clean()								//清薄埃""笆
 }
 
 void	Download()							//更戈诀
-{
+{					
+//	clock_t start,finish;
+//	double duration;
+//	start = clock();
+//					finish = clock();
+//					duration = (double)(finish - start);
+//					printf( "%f seconds\n", duration );
+	
 	printf("Download\n");
 	char 	pDataID[256];
 	int value =0;
@@ -1579,9 +1586,9 @@ void	Download()							//更戈诀
 				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1);
 				value1 = GetDBValue(pDataID).lValue;
 				memset(pDataID, 0 ,sizeof(pDataID));
-				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1);
+				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i+1);
 				value2 = GetDBValue(pDataID).lValue;
-				if(value1==2 && value2==2)
+				if(value1==2 && value2==2) // 单 // 秨家ЧΘ
 					Check_MoldOpen = TRUE;
 			}
 			if(!Check_MoldOpen) // ゼ絪糶浪代 单秨家ЧΘ
@@ -1595,37 +1602,38 @@ void	Download()							//更戈诀
 						
 						printf("Send cmd\n");
 						char 	ptempDataID[256];
-						for(int i =0;i<Num*CONTROLTYPENUM;i++)
-						{
-							if((i%13)<8) // 把计6ぃ癳
-							{
-								memset(ptempDataID, 0 ,sizeof(ptempDataID));
-								sprintf(ptempDataID,u_pszDBString[i]);
-								printf("%s=%d\n",u_pszDBString[i],GetDBValue(ptempDataID));
-								g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString[i]);
-							}
-							
-							if(pwndLoadingStr!=NULL && pwndLoadingBar!=NULL)//陪ボ更秈
-							{
-								pwndLoadingBar->SetPropValueT("right",152+u_loading*4);
-								pwndLoadingBar->CreateA();
-								pwndLoadingBar->Update();
-								u_loading = 1+((100*i)/(Num*CONTROLTYPENUM));
-								sprintf(str_loading ,"%d",u_loading);
-								if(u_loading>50)
-									{
-										pwndLoadingStr->SetPropValueT("bgc",0x09A6);
-										pwndLoadingStr->SetPropValueT("fgc",0xFFFF);
-										pwndLoadingStr->CreateA();
-									}
-								pwndLoadingStr->SetPropValueT("text",str_loading);
-								pwndLoadingStr->Update();
-							}
-						}
-						//g_ptaskpicker->WriteValue(CONST_REQ_WRITE, Num*CONTROLTYPENUM ,u_pszDBString);
+//						for(int i =0;i<Num*CONTROLTYPENUM;i++)
+//						{
+//							if((i%13)<8) // 把计6ぃ癳
+//							{
+//								memset(ptempDataID, 0 ,sizeof(ptempDataID));
+//								sprintf(ptempDataID,u_pszDBString[i]);
+//								printf("%s=%d\n",u_pszDBString[i],GetDBValue(ptempDataID));
+//								g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString[i]);
+//							}
+//							
+//							if(pwndLoadingStr!=NULL && pwndLoadingBar!=NULL)//陪ボ更秈
+//							{
+//								pwndLoadingBar->SetPropValueT("right",152+u_loading*4);
+//								pwndLoadingBar->CreateA();
+//								pwndLoadingBar->Update();
+//								u_loading = 1+((100*i)/(Num*CONTROLTYPENUM));
+//								sprintf(str_loading ,"%d",u_loading);
+//								if(u_loading>50)
+//									{
+//										pwndLoadingStr->SetPropValueT("bgc",0x09A6);
+//										pwndLoadingStr->SetPropValueT("fgc",0xFFFF);
+//										pwndLoadingStr->CreateA();
+//									}
+//								pwndLoadingStr->SetPropValueT("text",str_loading);
+//								pwndLoadingStr->Update();
+//							}
+//						}
+						g_ptaskpicker->WriteValue(CONST_REQ_WRITE, Num*CONTROLTYPENUM ,u_pszDBString);
 						
 						SetDBValue("MACHINE_PROFILE_STEPNUM", Num, TRUE);
 					}
+					MsgBoxCall("msgboxConfirm.txt","PICKER_DATADOWNLOADFINISH"); // 更ЧΘ
 				}
 			}
 			else
@@ -1636,36 +1644,83 @@ void	Download()							//更戈诀
 					
 					printf("Send cmd\n");
 					char 	ptempDataID[256];
-					for(int i =0;i<Num*CONTROLTYPENUM;i++)
-					{
-						if((i%13)<8) // 把计6ぃ癳
-						{
-							memset(ptempDataID, 0 ,sizeof(ptempDataID));
-							sprintf(ptempDataID,u_pszDBString[i]);
-							printf("%s=%d\n",u_pszDBString[i],GetDBValue(ptempDataID));
-							g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString[i]);
-						}
-						
-						if(pwndLoadingStr!=NULL && pwndLoadingBar!=NULL)//陪ボ更秈
-						{
-							pwndLoadingBar->SetPropValueT("right",152+u_loading*4);
-							pwndLoadingBar->CreateA();
-							pwndLoadingBar->Update();
-							u_loading = 1+((100*i)/(Num*CONTROLTYPENUM));
-							sprintf(str_loading ,"%d",u_loading);
-							if(u_loading>50)
-								{
-									pwndLoadingStr->SetPropValueT("bgc",0x09A6);
-									pwndLoadingStr->SetPropValueT("fgc",0xFFFF);
-									pwndLoadingStr->CreateA();
-								}
-							pwndLoadingStr->SetPropValueT("text",str_loading);
-							pwndLoadingStr->Update();
-						}
-					}
-					//g_ptaskpicker->WriteValue(CONST_REQ_WRITE, Num*CONTROLTYPENUM ,u_pszDBString);
+//					for(int i =0;i<Num*CONTROLTYPENUM;i++)
+//					{
+////						if((i%13)<8) // 把计6ぃ癳
+////						{
+////							memset(ptempDataID, 0 ,sizeof(ptempDataID));
+////							sprintf(ptempDataID,u_pszDBString[i]);
+////							printf("%s=%d\n",u_pszDBString[i],GetDBValue(ptempDataID));
+////							g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString[i]);
+////						}
+//						
+//						if(pwndLoadingStr!=NULL && pwndLoadingBar!=NULL)//陪ボ更秈
+//						{
+//							pwndLoadingBar->SetPropValueT("right",152+u_loading*4);
+//							pwndLoadingBar->CreateA();
+//							pwndLoadingBar->Update();
+//							u_loading = 1+((100*i)/(Num*CONTROLTYPENUM));
+//							sprintf(str_loading ,"%d",u_loading);
+//							if(u_loading>50)
+//								{
+//									pwndLoadingStr->SetPropValueT("bgc",0x09A6);
+//									pwndLoadingStr->SetPropValueT("fgc",0xFFFF);
+//									pwndLoadingStr->CreateA();
+//								}
+//							pwndLoadingStr->SetPropValueT("text",str_loading);
+//							pwndLoadingStr->Update();
+//						}
+//					}
 					
+					g_ptaskpicker->WriteValue(CONST_REQ_WRITE, Num*CONTROLTYPENUM ,u_pszDBString);
+//					{
+//						char temp[25];
+//						int value =123;
+//						for(int i = 1; i <= MAXSTEP; i++ )
+//				    {       
+//				    	memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_STEP", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", i);
+//			        SetDBValue(temp, value, TRUE);
+//				      memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_NUM", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER4", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER5", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER9", i);
+//			        SetDBValue(temp, value, TRUE);
+//			        memset(temp, 0 ,sizeof(temp));
+//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER10", i);
+//			        SetDBValue(temp, value, TRUE);    
+//				    }
+//				    g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 100*CONTROLTYPENUM ,u_pszDBString);
+//					}
 					SetDBValue("MACHINE_PROFILE_STEPNUM", Num, TRUE);
+					MsgBoxCall("msgboxConfirm.txt","PICKER_DATADOWNLOADFINISH"); // 更ЧΘ
 				}
 			}
 			pwndButtonDownload->SetPropValueT("taborder", 0xFFFFFFFF); // "更"龄秆玛
