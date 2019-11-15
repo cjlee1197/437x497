@@ -35,6 +35,10 @@
 #define		EncWord 				0xFFFF0000 // High Word
 #define		MechWord 				0x0000FFFF // Low Word
 
+#define   MANAGE					5 // 管理
+#define   MACHINE					7 // 機械
+#define   ENGINEER				10 // 工程
+
 #define		CONST_REQ_COMMAND				6
 
 #define		ENABLE							-1
@@ -128,7 +132,7 @@ CtmWnd*			pwndEditPostionY2 = NULL;
 
 CtmWnd*			pwndEJECTPOSITION = NULL;
 
-
+CtmWnd*			pwndButtonStartEdit = NULL; //開始編輯
 CtmWnd*			pwndBtnJump = NULL; //彈跳視窗
 CtmWnd*			pwndBtnClose = NULL;
 BOOL b_BtnJump = FALSE;
@@ -422,7 +426,10 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	// 脫模位置
 	pwndEJECTPOSITION= pwndSender->FindControlFromName("EJECTPOSITION");
 	
-	//彈跳視窗
+	// 開始編輯
+	pwndButtonStartEdit = pwndSender->FindControlFromName("ButtonStartEdit");
+	
+	// 彈跳視窗
 	pwndBtnJump = pwndSender->FindControlFromName("BtnJump");
 	pwndBtnClose = pwndSender->FindControlFromName("BtnClose");
 	pwndBtnRight = pwndSender->FindControlFromName("BtnRight");
@@ -699,7 +706,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	if(pwndBtnJump != NULL) // 上彈 Btn
 		{
 			u_BtnjumpCount++;
-			if(u_BtnjumpCount>=5) // 跳動週期
+			if(u_BtnjumpCount>=3) // 跳動週期
 				{
 					//printf("Jump!\n");
 					u_BtnjumpCount=0;
@@ -712,7 +719,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	if(pwndBtnClose != NULL) // 下收 Btn
 		{
 			u_BtnjumpCount++;
-			if(u_BtnjumpCount>=3) // 跳動週期
+			if(u_BtnjumpCount>=5) // 跳動週期
 				{
 					//printf("Jump!\n");
 					u_BtnjumpCount=0;
@@ -723,7 +730,6 @@ void	OnUpdateA(CtmWnd* pwndSender)
 				}
 		}	
 }	/*-----------------------------------彈跳視窗鍵----------------------------------*/
-
 	// check get_time & cyc_time update value // cjlee add 2019/1/24 下午 01:02:50
 	/*
 	WORD wGetTime =GetDBValue("MACHINE_INTERFACE_MONITOR_TAKE_TIME").lValue;
@@ -787,6 +793,21 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		{
 			::PutCommand("Over.txt");
 		}
+		
+	else if(pwnd == pwndButtonStartEdit) // 開始編輯
+		{
+			if(g_iPrivilege>=MANAGE)
+			{
+				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
+				strcpy(g_szCurrentFormName, "PG_0.txt");
+				memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
+				strcpy(g_szLastFormName, "Over.txt");
+				::PutCommand("PG_0.txt");
+			}
+			else
+				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
+		}
+
 
 
   return wIDControl;	
