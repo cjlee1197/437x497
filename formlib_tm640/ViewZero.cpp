@@ -64,6 +64,9 @@ CtmWnd*			pwndBtnZero_Z = NULL;
 CtmWnd*			pwndBtnZero_X2 = NULL;
 CtmWnd*			pwndBtnZero_Y2 = NULL;
 
+CtmWnd*			pwndDly[5]	= {NULL}; // Âk¹s offset delay
+int iCountDly = 0;
+
 char* u_pszStrID[] = 
 {
 	"MACHINE_INTERFACE_POSNOW_X1",
@@ -77,6 +80,16 @@ char* u_pszStrID[] =
 	"MACHINE_FUNCTION_OPTIONS_RSV30",
 	"MACHINE_FUNCTION_OPTIONS_RSV31",
 	NULL,
+};
+
+
+char* dbid0_Dly[] = // Âk¹s offset delay
+{
+	"MACHINE_CONFIGURATION_ZERO_OFFSET_DLY_X1",
+	"MACHINE_CONFIGURATION_ZERO_OFFSET_DLY_Y1",
+	"MACHINE_CONFIGURATION_ZERO_OFFSET_DLY_Z",
+	"MACHINE_CONFIGURATION_ZERO_OFFSET_DLY_X2",
+	"MACHINE_CONFIGURATION_ZERO_OFFSET_DLY_Y2",
 };
 /*---------------------------------------------------------------------------+
 |           View Content - GuideSet                                          |
@@ -130,6 +143,9 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	pwndBtnZero_X2 = pwndSender->FindControlFromName("BtnZero_X2"); 
 	pwndBtnZero_Y2 = pwndSender->FindControlFromName("BtnZero_Y2"); 
 	
+	iCountDly	 	= GetSpecialControlNum(pwndSender, "Dly_", "CtmEditX1", pwndDly);
+	printf("iCountDly=%d\n",iCountDly);
+	
 	return TRUE;
 }
 
@@ -180,6 +196,20 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		default:
 			break;
 	}
+	
+	long l_DT;
+	
+	for(int i=0;i<iCountDly;i++)
+	{
+		if(pwndDly!=NULL)
+		{
+			pwndDly[i]->GetPropValueT("value", &l_DT,sizeof(l_DT));
+			SetDBValue(dbid0_Dly[i],l_DT); // ¼Æ­È¼g¤JDB
+  		printf("Set %s =%d\n",dbid0_Dly[i],l_DT);
+  		//g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&dbid0_Dly[i]);
+		}
+	}
+	
 	if(pwndSender->Is("CtmFormView")) return ((CtmFormView*)pwndSender)->OnKey1(wKey);
 	else return _NULL_KEY;
 }
