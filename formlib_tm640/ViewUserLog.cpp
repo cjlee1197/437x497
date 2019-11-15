@@ -90,6 +90,7 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	switch(wKey)
 	{
 		case 1: // Clear
+			printf("Clear\n");
     	g_ptmControlServer->Oper_Log()->ClearOperLog();
     	Update_UserLog(); // 更新履歷內容
 			break;
@@ -165,48 +166,87 @@ void Update_UserLog() // 更新履歷內容
 		printf("dNewValue=%d\n",Log->dNewValue);
 		printf("dOldValue=%d\n",Log->dOldValue);
 		printf("%02d:%02d:%02d\n"	, Log->timeStart.hour, Log->timeStart.minute, Log->timeStart.second);
-		
-		if(pwndStr_No[i]!=NULL) // 序號
+		if( (iPage*10+i+1) < LogCount) // 需小於總紀錄數目
 		{
-			sprintf(str_Temp, "%4d", iPage*10+i+1);
-			pwndStr_No[i]->SetPropValueT("text",str_Temp);
-			pwndStr_No[i]->Update();
+			if(pwndStr_No[i]!=NULL) // 序號
+			{
+				sprintf(str_Temp, "%4d", iPage*10+i+1);
+				pwndStr_No[i]->SetPropValueT("text",str_Temp);
+				pwndStr_No[i]->Update();
+			}
+			
+			if(pwndStr_Act[i]!=NULL) // 描述
+			{
+				if(Log->wDBIndex!=0)
+					sprintf(str_Action, "%s%d", STR_ACTION, Log->wDBIndex);
+				else
+					sprintf(str_Action,"");
+				pwndStr_Act[i]->SetPropValueT("text",str_Action);
+				pwndStr_Act[i]->Update();
+			}
+			
+			if(pwndStr_Value_Now[i]!=NULL) // 現有值
+			{
+				sprintf(str_Temp, "%4d", Log->dNewValue);
+				pwndStr_Value_Now[i]->SetPropValueT("text",str_Temp);
+				pwndStr_Value_Now[i]->Update();
+			}
+			if(pwndStr_Value_Old[i]!=NULL) // 原有值
+			{
+				sprintf(str_Temp, "%4d", Log->dOldValue);
+				pwndStr_Value_Old[i]->SetPropValueT("text",str_Temp);
+				pwndStr_Value_Old[i]->Update();
+			}
+			
+			if(pwndStr_Date[i]!=NULL) // 修改日期
+			{
+				sprintf(str_Date, "%0d/%02d/%02d"	, Log->dateStart.month, Log->dateStart.day, Log->dateStart.year%100);
+				pwndStr_Date[i]->SetPropValueT("text",str_Date);
+				pwndStr_Date[i]->Update();
+			}
+			if(pwndStr_Time[i]!=NULL) // 修改時間
+			{
+				sprintf(str_Time, "%0d:%02d:%02d"	, Log->timeStart.hour, Log->timeStart.minute, Log->timeStart.second);
+				pwndStr_Time[i]->SetPropValueT("text",str_Time);
+				pwndStr_Time[i]->Update();
+			}
 		}
-		
-		if(pwndStr_Act[i]!=NULL) // 描述
+		else
 		{
-			if(Log->wDBIndex!=0)
-				sprintf(str_Action, "%s%d", STR_ACTION, Log->wDBIndex);
-			else
-				sprintf(str_Action,"");
-			pwndStr_Act[i]->SetPropValueT("text",str_Action);
-			pwndStr_Act[i]->Update();
-		}
-		
-		if(pwndStr_Value_Now[i]!=NULL) // 現有值
-		{
-			sprintf(str_Temp, "%4d", Log->dNewValue);
-			pwndStr_Value_Now[i]->SetPropValueT("text",str_Temp);
-			pwndStr_Value_Now[i]->Update();
-		}
-		if(pwndStr_Value_Old[i]!=NULL) // 原有值
-		{
-			sprintf(str_Temp, "%4d", Log->dOldValue);
-			pwndStr_Value_Old[i]->SetPropValueT("text",str_Temp);
-			pwndStr_Value_Old[i]->Update();
-		}
-		
-		if(pwndStr_Date[i]!=NULL) // 修改日期
-		{
-			sprintf(str_Date, "%0d/%02d/%02d"	, Log->dateStart.month, Log->dateStart.day, Log->dateStart.year%100);
-			pwndStr_Date[i]->SetPropValueT("text",str_Date);
-			pwndStr_Date[i]->Update();
-		}
-		if(pwndStr_Time[i]!=NULL) // 修改時間
-		{
-			sprintf(str_Time, "%0d:%02d:%02d"	, Log->timeStart.hour, Log->timeStart.minute, Log->timeStart.second);
-			pwndStr_Time[i]->SetPropValueT("text",str_Time);
-			pwndStr_Time[i]->Update();
+			sprintf(str_Temp,"");
+			if(pwndStr_No[i]!=NULL) // 序號
+			{
+				pwndStr_No[i]->SetPropValueT("text",str_Temp);
+				pwndStr_No[i]->Update();
+			}
+			
+			if(pwndStr_Act[i]!=NULL) // 描述
+			{
+				pwndStr_Act[i]->SetPropValueT("text",str_Temp);
+				pwndStr_Act[i]->Update();
+			}
+			
+			if(pwndStr_Value_Now[i]!=NULL) // 現有值
+			{
+				pwndStr_Value_Now[i]->SetPropValueT("text",str_Temp);
+				pwndStr_Value_Now[i]->Update();
+			}
+			if(pwndStr_Value_Old[i]!=NULL) // 原有值
+			{
+				pwndStr_Value_Old[i]->SetPropValueT("text",str_Temp);
+				pwndStr_Value_Old[i]->Update();
+			}
+			
+			if(pwndStr_Date[i]!=NULL) // 修改日期
+			{
+				pwndStr_Date[i]->SetPropValueT("text",str_Temp);
+				pwndStr_Date[i]->Update();
+			}
+			if(pwndStr_Time[i]!=NULL) // 修改時間
+			{
+				pwndStr_Time[i]->SetPropValueT("text",str_Temp);
+				pwndStr_Time[i]->Update();
+			}
 		}
 	}
 }
