@@ -41,6 +41,23 @@
 #define		MODE_MANUAL					0xF300
 #define		MODE_SINGLESTEP			0xF400
 #define		MODE_AUTO						0xF500
+
+#define		LGreen					0x8627 // 青綠
+#define		White						0xFFFF // 白
+#define		Gray						0xFFDF // 灰
+#define		Yellow					0xFFE0 // 黃
+
+// 動作類型
+#define		Action_Axis				1  // 軸動作
+#define		Action_Wait				2  // 等待
+#define		Action_Permit			3  // 允許
+
+#define		Action_Valve			4	 // 閥門
+#define		Action_Tag				5  // 標籤
+#define		Action_Goto				6  // 跳轉
+#define		Action_Detect			8  // 檢測
+#define		Action_Pile				12 // 堆疊
+#define		Action_Sub				13 // 副程式
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -103,13 +120,13 @@ CtmWnd* u_pwndSingle = NULL;
 
 long	NoColor[] =
 {
-	0x8627,
-	0xFFFF,//0xFFDF,
+	LGreen, // 青綠
+	White,	// 白
 };
 long	BgColor[] =
 {
-	0x8627,
-	0xFFFF,//0xFFDF,
+	LGreen, // 青綠
+	White,	// 白
 };
 char* Img_Select[] = // 選取 圖片
 {
@@ -122,6 +139,7 @@ char* Str_Follow[] = // 追隨 文字
 	"PICKER_FOLLOW",
 };
 
+int		iNum_Page	= 10; // 每頁動作行數
 /*---------------------------------------------------------------------------+
 |  Function : OnCreateA()                     	     	                       |
 |  Task     :   						     	                                           |
@@ -770,6 +788,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
         else if(wStep >0 && wStep != wStepOld) // 執行步驟變化
         {
         	printf("wStep=%d\n",wStep);
+        	int temp;
         	for(int i =0; i < iCheckBoxAct; i++)
 					{
 						int StepNum = i+1+No1;
@@ -784,11 +803,16 @@ void	OnUpdateA(CtmWnd* pwndSender)
 								}
 								else
 								{
-									pwndStaticAct[k]->SetPropValueT("bgc",BgColor[1]);
-								}
+									memset(pNoDataID, 0 ,sizeof(pNoDataID));
+									sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
+									memset(pStaticNo, 0 ,sizeof(pStaticNo));
+									temp = GetDBValue(pNoDataID).lValue;		
+									if(No>EditedStepNum)temp=StandbyStepNum; // 未編輯的動作	
+									pwndStaticAct[k]->SetPropValueT("bgc",BgColor[((temp)%2)]);
+								}								
 							}
 							((CtmFormView*)pwndSender)->Goto(pwndStaticAct[i]->GetTabOrder());
-							pwndStaticAct[i]->SetPropValueT("bgc",36256);
+							pwndStaticAct[i]->SetPropValueT("bgc",Yellow);
 							pwndStaticAct[i]->CreateA();
 							pwndStaticAct[i]->Show();
 							pwndStaticAct[i]->Update();
@@ -816,10 +840,17 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	int         nCMDLastStep    = 0xFF26;
 	int         nCMDSingleCycle = 0xFF25;
 	char 	pDataID[256];
-	int		ActionType = 0, ACTIONNUM = 0;
+	int		ActionType = 0, ACTIONNUM = 0; // 動作類型 編號
+	int		ActionType_Pre = 0; // 前一步動作類型
 	memset(pDataID, 0 ,sizeof(pDataID));
 	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",SelectNo);
 	ActionType =GetDBValue(pDataID).lValue;
+	if(SelectNo>1)
+	{
+		memset(pDataID, 0 ,sizeof(pDataID));
+		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",SelectNo-1);
+		ActionType_Pre = GetDBValue(pDataID).lValue;
+	}
 	memset(pDataID, 0 ,sizeof(pDataID));
 	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM", SelectNo); 
 	ACTIONNUM =GetDBValue(pDataID).lValue;
@@ -967,9 +998,10 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
     	}
     else if(wKey == 0x000C) // 合併
     	{
-				if(SelectNo > 5)
+				if(SelectNo > 0) // (SelectNo > 5)
 				{
-					if(ActionType != 5)
+					//if(ActionType != 5)
+					if( ((ActionType==Action_Axis)||(ActionType==Action_Permit)) && ((ActionType_Pre==Action_Axis)||(ActionType_Pre==Action_Permit))) // 所選動作及合併動作，皆須是軸動作或是允許動作
 					{
 						Sync(SelectNo);
 						UpdateText();
@@ -983,7 +1015,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
     	}
     else if(wKey == 0x000D) // 分解
     	{
-    		if(SelectNo > 6)
+    		if(SelectNo > 0) //(SelectNo > 6)
 				{
 					if(ActionType != 5)
 					{
@@ -1135,25 +1167,25 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
  		}
 	}
 	
-	for(int i =0; i < iCheckBoxAct; i++)			//絞ヶ齬詢謠珆尨ㄛ甜鳳��絞ヶ齬唗瘍
+	for(int i =0; i < iCheckBoxAct; i++)
 	{
-		if(pwndCheckBoxAct[i] != NULL && pwnd == pwndCheckBoxAct[i])
+		if(pwndCheckBoxAct[i] != NULL && pwnd == pwndCheckBoxAct[i]) // 按下選擇 動作
 		{			
-			for(int k =0; k < iCheckBoxAct; k++)		//詢謠珆尨
-			{
-				No = k+1+No1;
-				if( No<(StandbyStepNum+1) )
-				{
-					pwndStaticAct[k]->SetPropValueT("bgc",50712);
-				}
-				else
-				{
-					pwndStaticAct[k]->SetPropValueT("bgc",BgColor[1]);
-				}
-				pwndStaticAct[k]->Update();
-			}
+//			for(int k =0; k < iCheckBoxAct; k++) //
+//			{
+//				No = k+1+No1;
+//				if( No<(StandbyStepNum+1) )
+//				{
+//					pwndStaticAct[k]->SetPropValueT("bgc",50712);
+//				}
+//				else
+//				{
+//					pwndStaticAct[k]->SetPropValueT("bgc",BgColor[1]);
+//				}
+//				pwndStaticAct[k]->Update();
+//			}
 			((CtmFormView*)pwndSender)->Goto(pwndStaticAct[i]->GetTabOrder());
-			pwndStaticAct[i]->SetPropValueT("bgc",36256);
+			//pwndStaticAct[i]->SetPropValueT("bgc",36256);
 			
 			if(pwndEditNo[i] != NULL)					//鳳��唗瘍
 			{
@@ -1165,7 +1197,8 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 			//pwndCheckBoxAct[i]->Update();
 		}
 	}
-	//UpdateText();
+
+	UpdateText();
 	
 	if(pwnd == NULL)	return wIDControl;
 	return TRUE;
@@ -1203,7 +1236,7 @@ void    OnDestroyA(CtmWnd* pwndSender)
 }
 void	PageDown(CtmWnd* pwndSender)		//狟珨珜
 {
-	int		iPageturn	=10;
+	int iPageturn = iNum_Page;
 	int		SelectNoHelp =0;
 	SelectNoHelp = SelectNo-No1;
 	for (int i = 0; i < iEditNo; i++)
@@ -1218,7 +1251,12 @@ void	PageDown(CtmWnd* pwndSender)		//狟珨珜
 		sprintf(pNo,"%d",No);
 		pwndEditNo[i]->SetPropValueT("text",pNo);
 		pwndEditNo[i]->Update();
-		//printf("No=%d,",No);
+		printf("No=%d\n",No);
+		if(pwndEditNo[i] != NULL)
+		{
+			pwndStaticAct[i]->SetPropValueT("bgc",BgColor[1]);
+			pwndStaticAct[i]->Update();
+		}
 		if( No<(StandbyStepNum+1) )
 		{
 			if(pwndEditNo[i] != NULL)
@@ -1234,11 +1272,6 @@ void	PageDown(CtmWnd* pwndSender)		//狟珨珜
 		}
 		else
 		{
-			if(pwndEditNo[i] != NULL)
-			{
-				pwndStaticAct[i]->SetPropValueT("bgc",BgColor[1]);
-				pwndStaticAct[i]->Update();
-			}
 			if(pwndStaticEditNo[i] != NULL)
 			{
 				memset(pNoDataID, 0 ,sizeof(pNoDataID));
@@ -1268,7 +1301,7 @@ void	PageDown(CtmWnd* pwndSender)		//狟珨珜
 
 void	PageUp(CtmWnd* pwndSender)			//奻珨珜
 {
-	int		iPageturn	=10;
+	int iPageturn = iNum_Page;
 	int		SelectNoHelp =0;
 	SelectNoHelp = SelectNo-No1;
 	for (int i = 0; i < iEditNo; i++)
@@ -1283,6 +1316,14 @@ void	PageUp(CtmWnd* pwndSender)			//奻珨珜
 		sprintf(pNo,"%d",No);
 		pwndEditNo[i]->SetPropValueT("text",pNo);
 		pwndEditNo[i]->Update();
+		printf("No=%d\n",No);
+		if(pwndEditNo[i] != NULL)
+		{
+			pwndStaticAct[i]->SetPropValueT("bgc",BgColor[1]);
+			pwndStaticAct[i]->Update();
+			//pwndCheckBoxAct[i]->SetPropValueT("bgc",0xFFDF);
+			//pwndCheckBoxAct[i]->Update();
+		}	
 		if( No<(StandbyStepNum+1) )
 		{
 			if(pwndEditNo[i] != NULL)
@@ -1298,13 +1339,6 @@ void	PageUp(CtmWnd* pwndSender)			//奻珨珜
 		}
 		else
 		{
-			if(pwndEditNo[i] != NULL)
-			{
-				pwndStaticAct[i]->SetPropValueT("bgc",BgColor[1]);
-				pwndStaticAct[i]->Update();
-				//pwndCheckBoxAct[i]->SetPropValueT("bgc",0xFFDF);
-				//pwndCheckBoxAct[i]->Update();
-			}
 			if(pwndStaticEditNo[i] != NULL)
 			{
 				memset(pNoDataID, 0 ,sizeof(pNoDataID));
@@ -1865,6 +1899,7 @@ void	UpdateText()						//更新顯示字串
 	char* str_12;
 	
 	// ↑ 字串合併顯示 cjlee add 
+	RegionUpdateStop_APP = TRUE; //停止元件獨立刷新，記錄未刷新範圍
 	for(int i=0;i<iCheckBoxAct;i++)
 	{
 		memset(str,0,sizeof(str));
@@ -2203,23 +2238,43 @@ void	UpdateText()						//更新顯示字串
 			//pwndCheckBoxAct[i]->Update();
 			//pwndCheckBoxAct[i]->UpdateAll();
 		}
-		if(pwndStaticAct[i] != NULL)
-		{
-			RegionUpdateStop_APP = TRUE; //停止元件獨立刷新，記錄未刷新範圍
-			
+		int temp;
+		if(pwndStaticAct[i] != NULL) // 動作列表
+		{		
 			pwndStaticAct[i]->SetPropValueT("text",str);
-			//pwndStaticAct[i]->CreateA();
+			
+			No = i+1+No1;
+			memset(pNoDataID, 0 ,sizeof(pNoDataID));
+			sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
+			memset(pStaticNo, 0 ,sizeof(pStaticNo));
+			temp = GetDBValue(pNoDataID).lValue;			
+			if(No>EditedStepNum)temp=StandbyStepNum; // 未編輯的動作			
+			pwndStaticAct[i]->SetPropValueT("bgc",NoColor[((temp)%2)]); // 動作背景顏色
 			pwndStaticAct[i]->Show();
-			//pwndStaticAct[i]->Update();
-			//pwndStaticAct[i]->UpdateAll();
-			
-			ChangePos(1);  //將未刷新的部分一次刷新
-			
-
+		}
+		if( No<(StandbyStepNum+1) ) // 設置等待點 序號
+		{
+			if(pwndEditNo[i] != NULL)
+			{
+				pwndStaticAct[i]->SetPropValueT("bgc",50712);
+				pwndStaticAct[i]->Show();
+			}
+			if(pwndStaticEditNo[i] != NULL)
+			{
+				pwndStaticEditNo[i]->SetPropValueT("text","WAIT");
+				pwndStaticEditNo[i]->Show();
+			}
+		}
+		if(pwndStaticAct[i] != NULL) // 動作列表 目前選擇動作
+		{
+			if((i+1)==SelectNo-No1)
+				pwndStaticAct[i]->SetPropValueT("bgc",Yellow);
+			pwndStaticAct[i]->Show();
 		}
 		//pwndCheckBoxAct[i]->Update();
 		// ↑ 字串合併顯示 cjlee add 
-	}
+	}	
+	ChangePos(1);  //將未刷新的部分一次刷新
 }
 
 void	Sync(int SelectNo) // 合併動作
@@ -2280,17 +2335,21 @@ void	UnSync(int SelectNo) // 分解動作
 			UpdateNo();
 		}
 }
-void	UpdateNo()
+void	UpdateNo() // 刷新序號顯示
 {
 	int value=0;
-	for (int i = 0; i < iEditNo; i++)	//獲參序號
+	for (int i = 0; i < iEditNo; i++)	//獲取序號
 	{
 		No = i+1+No1;
+		memset(pNoDataID, 0 ,sizeof(pNoDataID));
+		sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
+		memset(pStaticNo, 0 ,sizeof(pStaticNo));
+		value = GetDBValue(pNoDataID).lValue;
 		if( No<(StandbyStepNum+1) )
 		{
 			if(pwndStaticEditNo[i] != NULL)
 			{
-				pwndStaticEditNo[i]->SetPropValueT("bgc",NoColor[1]);
+				pwndStaticEditNo[i]->SetPropValueT("bgc",NoColor[(value)%2]);
 				pwndStaticEditNo[i]->SetPropValueT("text","WAIT");
 				pwndStaticEditNo[i]->Update();
 			}
@@ -2299,10 +2358,6 @@ void	UpdateNo()
 		{
 			if(pwndStaticEditNo[i] != NULL)
 			{
-				memset(pNoDataID, 0 ,sizeof(pNoDataID));
-				sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
-				memset(pStaticNo, 0 ,sizeof(pStaticNo));
-				value = GetDBValue(pNoDataID).lValue;
 				//printf("Get %s=%d\n",pNoDataID,value);
 				if(No>EditedStepNum)value=StandbyStepNum; // 未編輯的動作
 				sprintf(pStaticNo,"%d",value-StandbyStepNum);				
