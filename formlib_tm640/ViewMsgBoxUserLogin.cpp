@@ -136,7 +136,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 			char UserID[7];	// 顯示當前使用者
 			memset(UserID,0,sizeof(UserID));
 			GetDBString(DataID_UserId[((CtmSelectEdit*)u_pwndSelectEditUserId)->GetIndex()],UserID, sizeof(UserID));
-			//g_pMainFrame->SetUserID(UserID);
+			g_pMainFrame->SetUserID(UserID);
 			printf("UserID=%s\n",UserID);
 
 //			if(logincheck) // 登入正確離開

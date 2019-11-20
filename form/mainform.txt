@@ -338,7 +338,7 @@ mainform:CtmMainFrame
     maintool =toolbar_01.txt
   end
   StaticTitle:CtmStaticX2
-    left =34
+    left =48
     top =6
     right =134
     bottom =40
@@ -354,10 +354,10 @@ mainform:CtmMainFrame
     fgc =65535
     align =34
   end
-  StrUserID:CtmStaticX2
-    left =0
+  StrUserNum:CtmStaticX2
+    left =24
     top =5
-    right =32
+    right =56
     bottom =39
     wtype =48
     fgc =65535

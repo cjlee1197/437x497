@@ -616,6 +616,8 @@ void    CtmMainFrame::SetUserID(char* pszUserID)
 	printf("SetUserID\n");
 	CtmWnd* pwndUserID = NULL;
 	pwndUserID = FindControlFromName("StrUserID");
+	CtmWnd* pwndUserNum = NULL;
+	pwndUserNum = FindControlFromName("StrUserNum");
 	if(pwndUserID != NULL)
 	{
 		printf("pwndUserID exist\n");
@@ -645,6 +647,13 @@ void    CtmMainFrame::SetUserID(char* pszUserID)
 			pwndUserID->SetPropValueT("text", szTile);
 			pwndUserID->Update();						
 		}	
+	}
+	if(pwndUserNum != NULL)
+	{
+		char UserNum[8];
+		sprintf(UserNum, "%d",g_iPrivilege);
+		pwndUserNum->SetPropValueT("text", UserNum);
+		pwndUserNum->Update();	
 	}
 }
 
