@@ -194,8 +194,8 @@
 	<string name="VW_MOLD_CHANGENAME">請更換模具代碼.</string>
 	<string name="VW_MOLD_CHECK">排序方式</string>
 	<string name="VW_MOLD_CHECKBRIGHT">查詢換頁</string>
-	<string name="VW_MOLD_CHECKDOWNTWENTY">▼下一頁</string>
-	<string name="VW_MOLD_CHECKUPTWENTY">▲上一頁</string>
+	<string name="VW_MOLD_CHECKDOWNTWENTY">▼</string>
+	<string name="VW_MOLD_CHECKUPTWENTY">▲</string>
 	<string name="VW_MOLD_CONFIRMHELP">確  認</string>
 	<string name="VW_MOLD_CURRENTMOLD">當前模具</string>
 	<string name="VW_MOLD_DATE">日期</string>
