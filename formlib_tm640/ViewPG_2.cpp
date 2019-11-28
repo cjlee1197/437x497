@@ -1218,28 +1218,23 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 	if(pwnd == NULL)	return wIDControl;
 	if(pwnd == pwndButtonNext)
 	{
-		printf("Cancel\n");
 		if(SelectNo <= StandbyStepNum)
 		{
 			//pwnd->SetPropValueT("formname","PG_0.txt");
-			//::PutCommand("PG_0.txt");
-			Exit();
+			::PutCommand("PG_0.txt");
 		}
 		else
 		{
 			//pwnd->SetPropValueT("formname","PG_1.txt");
-			//::PutCommand("PG_1.txt");
-			Exit();
+			::PutCommand("PG_1.txt");
 		}
 	}
 	else if(pwnd == pwndButtonSAVE)
 	{
-		printf("Save\n");
 		Save();
 		//pwnd->SetPropValueT("formname","PG_0.txt");
 		g_Hint_Download = 1; // ´£¿ô¤U¸ü
-		//::PutCommand("PG_0.txt");
-		Exit();
+		::PutCommand("PG_0.txt");
 	}
 	return TRUE;
 }
