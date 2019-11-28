@@ -778,7 +778,7 @@ ViewPG_0:CtmFormView
     destcolor =57182
     align =34
     upbitmap =res_tm640/pic/PGBtn_Edit.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    downbitmap =res_tm640/pic/PGBtn_Edit.bmp
   end
   buttonDOWNTWENTY:CtmToolButton
     left =461

@@ -51,7 +51,6 @@
 #define		Action_Axis				1  // 軸動作
 #define		Action_Wait				2  // 等待
 #define		Action_Permit			3  // 允許
-
 #define		Action_Valve			4	 // 閥門
 #define		Action_Tag				5  // 標籤
 #define		Action_Goto				6  // 跳轉
@@ -789,6 +788,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
         {
         	printf("wStep=%d\n",wStep);
         	int temp;
+        	UpdateText(); // 刷新文字
         	for(int i =0; i < iCheckBoxAct; i++)
 					{
 						int StepNum = i+1+No1;
@@ -818,7 +818,6 @@ void	OnUpdateA(CtmWnd* pwndSender)
 							pwndStaticAct[i]->Update();
 						}
 					}
-					UpdateText(); // 刷新文字
         	wStepOld = wStep;
         }
     }
@@ -998,7 +997,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
     	}
     else if(wKey == 0x000C) // 合併
     	{
-				if(SelectNo > 0) // (SelectNo > 5)
+				if(SelectNo > 5) // (SelectNo > 5)
 				{
 					//if(ActionType != 5)
 					if( ((ActionType==Action_Axis)||(ActionType==Action_Permit)) && ((ActionType_Pre==Action_Axis)||(ActionType_Pre==Action_Permit))) // 所選動作及合併動作，皆須是軸動作或是允許動作
@@ -1006,18 +1005,18 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 						Sync(SelectNo);
 						UpdateText();
 					}
-					else if(ACTIONNUM != 1)
-					{
-						Sync(SelectNo);
-						UpdateText();
-					}
+//					else if(ACTIONNUM != 1)
+//					{
+//						Sync(SelectNo);
+//						UpdateText();
+//					}
 				}
     	}
     else if(wKey == 0x000D) // 分解
     	{
-    		if(SelectNo > 0) //(SelectNo > 6)
+    		if(SelectNo > StandbyStepNum) //(SelectNo > 6)
 				{
-					if(ActionType != 5)
+					if(ActionType != StandbyStepNum)
 					{
 						UnSync(SelectNo);
 						UpdateText();
@@ -2265,11 +2264,14 @@ void	UpdateText()						//更新顯示字串
 				pwndStaticEditNo[i]->Show();
 			}
 		}
-		if(pwndStaticAct[i] != NULL) // 動作列表 目前選擇動作
+		if( (u_wPickerOPSatus != STATE_FULLAUTO) || (!b_Follow) ) // 自動下限制 || 不跟隨
 		{
-			if((i+1)==SelectNo-No1)
-				pwndStaticAct[i]->SetPropValueT("bgc",Yellow);
-			pwndStaticAct[i]->Show();
+			if(pwndStaticAct[i] != NULL) // 動作列表 目前選擇動作
+			{
+				if((i+1)==SelectNo-No1)
+					pwndStaticAct[i]->SetPropValueT("bgc",Yellow);
+				pwndStaticAct[i]->Show();
+			}
 		}
 		//pwndCheckBoxAct[i]->Update();
 		// ↑ 字串合併顯示 cjlee add 
