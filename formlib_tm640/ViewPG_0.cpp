@@ -57,6 +57,11 @@
 #define		Action_Detect			8  // 檢測
 #define		Action_Pile				12 // 堆疊
 #define		Action_Sub				13 // 副程式
+
+// 動作列表顯示攔
+#define Bar_Heigh 90
+#define Bar_Position 127
+#define Bar_Step 55
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -112,6 +117,9 @@ CtmWnd*		pwndLoadingBar	= NULL; // 下載進度條
 CtmWnd*		pwndLoadingMask	= NULL; // 下載進度條遮罩
 CtmWnd*		pwndLoadingMask2	= NULL; // 下載進度條遮罩2
 
+CtmWnd*		pwndImgBarPlace	= NULL; // 動作列表 位置顯示
+CtmWnd*		pwndImgBarMask	= NULL; // 動作列表 位置顯示 遮罩
+
 CtmWnd* pwndBtnFollow = NULL; // 跟隨Btn
 bool	b_Follow = TRUE;
 
@@ -138,7 +146,7 @@ char* Str_Follow[] = // 追隨 文字
 	"PICKER_FOLLOW",
 };
 
-int		iNum_Page	= 10; // 每頁動作行數
+int		iNum_Page	= 15; // 每頁動作行數
 /*---------------------------------------------------------------------------+
 |  Function : OnCreateA()                     	     	                       |
 |  Task     :   						     	                                           |
@@ -196,6 +204,9 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 		pwndLoadingMask 		= pwndSender->FindControlFromName("LoadingMask");
 		pwndLoadingMask2 		= pwndSender->FindControlFromName("LoadingMask2");
 		pwndButtonDownload  = pwndSender->FindControlFromName("ButtonDownload");
+		
+		pwndImgBarPlace  		= pwndSender->FindControlFromName("ImgBarPlace");
+		pwndImgBarMask	  	= pwndSender->FindControlFromName("ImgBarMask");
 	}
 	
 	int nStep = 0;
@@ -451,19 +462,31 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 					sprintf(pDataID5,"PICKER_LABEL_%d",ACTIONNUM);
 				}
 				break;
-			case 8:		//
-				if(wActPara5)
+			case 8:		//檢測
+				if(wActPara5) // 延時
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
+					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4"); // 延時
 					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
+					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8"); // 秒
 				}
-				sprintf(pDataID4,"VW_PUMP_TEST");
-				sprintf(pDataID5,"PICKER_REMOTE_I_0%d",ACTIONNUM);
-				if(wActPara1)
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_5");
+				if(wActPara2) // 檢測模式:區域
+					{
+						sprintf(pDataID5,"PICKER_PER"); // 持續
+						if(wActPara1) // 開始結束
+							sprintf(pDataID4,"PICKER_STRT"); // 開始
+						else
+							sprintf(pDataID4,"PICKER_STOP"); // 結束
+					}
+				else // 檢測模式:單點
+					{
+						sprintf(pDataID5,"PICKER_SGL"); // 單點
+					}
+				sprintf(pDataID6,"VW_PUMP_TEST"); // 檢測
+				sprintf(pDataID7,"PICKER_REMOTE_I_0%d",ACTIONNUM); // 檢測點
+				if(wActPara1) // On/Off
+					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_5"); // 打開
 				else
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_6");
+					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_6"); // 關閉
 				break;
 			case 12:	//
 				if(wActPara5)
@@ -751,6 +774,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	UpdateText();
 	UpdateNo();
 	Update_Download_Hint();
+	UpdatePageBar(No1/15);
 	
 	return TRUE;
 }
@@ -1089,77 +1113,66 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 				{
 					switch(ActionType)
 					{
-						case 1:		//粣雄釬 軸動作
+						case 1:		// 軸動作
 							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
-							//pwnd->SetPropValueT("formname","PG_2_AXISACT.txt");
-							::PutCommand("PG_2_AXISACT.txt");
+							MsgBoxCall("EditWindow_AxisAct.txt");
 							usleep(100*1000);
 						break;
-						case 2:		//脹渾 等待
+						case 2:		// 等待
 							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
-							//pwnd->SetPropValueT("formname","PG_2_WAIT.txt");
-							::PutCommand("PG_2_WAIT.txt");
+							MsgBoxCall("EditWindow_Wait.txt");
 							usleep(100*1000);
 						break;
-						case 3:		//埰勍 允許
+						case 3:		// 允許
 							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
-							//pwnd->SetPropValueT("formname","PG_2_PERMIT.txt");
-							::PutCommand("PG_2_PERMIT.txt");
+							MsgBoxCall("EditWindow_Permit.txt");
 							usleep(100*1000);
 						break;
-						case 4:		//概藷 閥門
+						case 4:		// 閥門
 							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
-							//pwnd->SetPropValueT("formname","PG_2_VALVE.txt");
-							::PutCommand("PG_2_VALVE.txt");
+							MsgBoxCall("EditWindow_Valve.txt");
 							usleep(100*1000);
 						break;
-						case 5:		//梓ワ標籤
+						case 5:		// 標籤
 							if(ACTIONNUM != 1)
 							{
 								SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
-								//pwnd->SetPropValueT("formname","PG_2_LABEL.txt");
-								::PutCommand("PG_2_LABEL.txt");
-							usleep(100*1000);
+								MsgBoxCall("EditWindow_Tag.txt");
+								usleep(100*1000);
 							}
 						break;
-						case 6:		//泐蛌 趟轉
+						case 6:		// 趟轉
 							if(ACTIONNUM != 1)
 							{
 								SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
-								//pwnd->SetPropValueT("formname","PG_2_LABEL.txt");
-								::PutCommand("PG_2_LABEL.txt");
-							usleep(100*1000);
+								MsgBoxCall("EditWindow_Goto.txt");
+								usleep(100*1000);
 							}
 						break;
-						case 8:		//潰聆 檢測
+						case 8:		// 檢測
 							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
-							//pwnd->SetPropValueT("formname","PG_2_TEST.txt");
-							::PutCommand("PG_2_TEST.txt");
+							MsgBoxCall("EditWindow_Detect.txt");
 							usleep(100*1000);
 						break;
-						case 12:	//剽詁 堆疊
+						case 12:	// 堆疊
 							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
-							//pwnd->SetPropValueT("formname","PG_2_PILE.txt");
-							::PutCommand("PG_2_PILE.txt");
+							MsgBoxCall("EditWindow_Pile.txt");
 							usleep(100*1000);
 						break;
-						case 13:	//赽最唗 子程序
+						case 13:	// 副程式
 							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
-							//pwnd->SetPropValueT("formname","PG_2_SUBTECH.txt");
-							::PutCommand("PG_2_SUBTECH.txt");
+							MsgBoxCall("EditWindow_Sub.txt");
 							usleep(100*1000);
 						break;
 						default:
-							pwnd->SetPropValueT("formname","PG_1.txt");
-							::PutCommand("PG_1.txt");
+							MsgBoxCall("EditWindow_ActSelect.txt");
 							usleep(100*1000);
 						break;
 					}
 				}
 				else
 				{
-					//pwnd->SetPropValueT("formname","PG_1.txt");
-					::PutCommand("PG_1.txt");
+					MsgBoxCall("EditWindow_ActSelect.txt");
 					usleep(100*1000);
 				}
 			}
@@ -1233,14 +1246,14 @@ void    OnDestroyA(CtmWnd* pwndSender)
     }
     
 }
-void	PageDown(CtmWnd* pwndSender)		//狟珨珜
+void	PageDown(CtmWnd* pwndSender)		// 下一頁
 {
 	int iPageturn = iNum_Page;
 	int		SelectNoHelp =0;
 	SelectNoHelp = SelectNo-No1;
 	for (int i = 0; i < iEditNo; i++)
 	{
-		if(No1 + iPageturn +10> 100)
+		if(No1 + iPageturn + iPageturn> 100)
 		{
 			No1 = 90;
 			iPageturn =0;
@@ -1290,15 +1303,14 @@ void	PageDown(CtmWnd* pwndSender)		//狟珨珜
 			pwndStaticAct[0]->SetPropValueT("bgc",36256);
 			//pwndCheckBoxAct[0]->SetPropValueT("bgc",36256);
 		}
-	}
+	}	
 	No1 = No1 +iPageturn;
 	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED39", No1);
-	
+	UpdatePageBar(int(No1/iNum_Page));
 	//((CtmFormView*)pwndSender)->Goto(pwndButtonPageDown->GetTabOrder());
 }
 
-
-void	PageUp(CtmWnd* pwndSender)			//奻珨珜
+void	PageUp(CtmWnd* pwndSender)			// 上一頁
 {
 	int iPageturn = iNum_Page;
 	int		SelectNoHelp =0;
@@ -1359,10 +1371,21 @@ void	PageUp(CtmWnd* pwndSender)			//奻珨珜
 			pwndStaticAct[0]->SetPropValueT("bgc",36256);
 			//pwndCheckBoxAct[0]->SetPropValueT("bgc",36256);
 		}
-	}
+	}	
 	No1 = No1 -iPageturn;
 	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED39", No1);
-	
+	UpdatePageBar(int(No1/iNum_Page));
+}
+
+void UpdatePageBar(int iPage) // 更新 動作列表位置顯示列
+{
+	printf("UpdatePageBar =%d\n",iPage);
+	pwndImgBarMask->CreateA();
+	pwndImgBarMask->Show();
+	pwndImgBarPlace->SetPropValueT("top",(Bar_Position+iPage*Bar_Step));
+	pwndImgBarPlace->SetPropValueT("bottom",(Bar_Position+(iPage*Bar_Step)+Bar_Heigh));
+	pwndImgBarPlace->CreateA();
+	pwndImgBarPlace->Show();
 }
 
 void	Insert(int SelectNo)				//脣��
@@ -2075,19 +2098,31 @@ void	UpdateText()						//更新顯示字串
 					sprintf(pDataID5,"PICKER_LABEL_%d",ACTIONNUM);
 				}
 				break;
-			case 8:		//
-				if(wActPara5)
+			case 8:		//檢測
+				if(wActPara5) // 延時
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
+					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4"); // 延時
 					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
+					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8"); // 秒
 				}
-				sprintf(pDataID4,"VW_PUMP_TEST");
-				sprintf(pDataID5,"PICKER_REMOTE_I_0%d",ACTIONNUM);
-				if(wActPara1)
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_5");
+				if(wActPara2) // 檢測模式:區域
+					{
+						sprintf(pDataID5,"PICKER_PER"); // 持續
+						if(wActPara1) // 開始結束
+							sprintf(pDataID4,"PICKER_STRT"); // 開始
+						else
+							sprintf(pDataID4,"PICKER_STOP"); // 結束
+					}
+				else // 檢測模式:單點
+					{
+						sprintf(pDataID5,"PICKER_SGL"); // 單點
+					}
+				sprintf(pDataID6,"VW_PUMP_TEST"); // 檢測
+				sprintf(pDataID7,"PICKER_REMOTE_I_0%d",ACTIONNUM); // 檢測點
+				if(wActPara1) // On/Off
+					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_5"); // 打開
 				else
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_6");
+					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_6"); // 關閉
 				break;
 			case 12:	//
 				if(wActPara5)
