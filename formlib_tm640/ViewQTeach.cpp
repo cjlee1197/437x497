@@ -66,20 +66,20 @@
 #define		Wait_PullBack		7  // 頂退完成
 
 // 允許
-#define		Permit_MoldSafe				1  // 模區安全
-#define		Permit_MoldClose			2  // 允許關模
-#define		Permit_PushOut				3  // 允許頂出
-#define		Permit_PickerESTOP		4  // 機械手急停
-#define		Permit_MoldOpen				5  // 允許開模
-#define		Permit_PullBack				6  // 允許頂退
+#define		Permit_MoldSafe				2  // 模區安全
+#define		Permit_MoldClose			3  // 允許關模
+#define		Permit_PushOut				4  // 允許頂出
+#define		Permit_PickerESTOP		5  // 機械手急停
+#define		Permit_MoldOpen				6  // 允許開模
+#define		Permit_PullBack				7  // 允許頂退
 
 // 閥門
 #define		Valve_AxisC_V				1  // 主臂垂直
 #define		Valve_AxisC_H				2  // 主臂水平
 #define		Valve_Clamp1				3  // 夾1
 #define		Valve_Clamp2				4  // 夾2
-#define		Valve_Suck1					5  // 吸1
-#define		Valve_Suck2					6  // 吸2
+#define		Valve_Suck1					7  // 吸1
+#define		Valve_Suck2					8  // 吸2
 #define		Valve_Choose1				71 // 選擇1
 #define		Valve_Choose2				72 // 選擇2	
 #define		Valve_Choose3				73 // 選擇3
@@ -96,9 +96,6 @@
 #define		Color_White		0xFFFF
 #define		Color_Red			0xF800
 #define		Color_Yellow 	0xFF80
-#define		Color_Blue 		0xDFBF
-
-#define		Hint_Pos	317
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -346,10 +343,10 @@ char* u_pszClamp_SelectString[] = // 治具對應號碼
 	"",
 	"Select_Clamp1", // 3
 	"Select_Clamp2", // 4
-	"Select_Suck1", // 5
-	"Select_Suck2", // 6
-	"", // 7
-	"", // 8
+	"",
+	"",
+	"Select_Suck1", // 7
+	"Select_Suck2", // 8
 	"",
 	"",
 };
@@ -360,10 +357,10 @@ char* u_pszCheckBoxString[] = // 確認 治具選擇
 	"",
 	"Check_Clamp1",
 	"Check_Clamp2",
+	"",
+	"",
 	"Check_Suck1",
 	"Check_Suck2",
-	"",
-	"",
 };
 
 char* u_pszDetect_SelectString[] = // 治具檢測對應號碼
@@ -373,10 +370,10 @@ char* u_pszDetect_SelectString[] = // 治具檢測對應號碼
 	"",
 	"DetectSelect_Clamp1", // 3
 	"DetectSelect_Clamp2", // 4
-	"DetectSelect_Suck1", // 5
-	"DetectSelect_Suck2", // 6
-	"", // 7
-	"", // 8
+	"",
+	"",
+	"DetectSelect_Suck1", // 7
+	"DetectSelect_Suck2", // 8
 	"",
 	"",
 };
@@ -398,22 +395,22 @@ char* Clamp_ImgPath[] = // 治具顯示圖片
 	"",	// 0
 	"",	// 1
 	"",	// 2
-	"res_tm640/pic/picker/Qteach_clamp1_off.bmp", // 3
-	"res_tm640/pic/picker/Qteach_clamp2_off.bmp", //4
-	"res_tm640/pic/picker/Qteach_CupulaClose1.bmp",	// 5
-	"res_tm640/pic/picker/Qteach_CupulaClose2.bmp",	// 6
-	"", // 7
-	"",	// 8
+	"res_tm640/pic/picker/clamp1_off.bmp", // 3
+	"res_tm640/pic/picker/clamp2_off.bmp", //4
+	"",	// 5
+	"",	// 6
+	"res_tm640/pic/picker/CupulaClose1.bmp", // 7
+	"res_tm640/pic/picker/CupulaClose2.bmp",	// 8
 	"", // 9
 	"",	// 10
 	"",	// 11
 	"",	// 12
-	"res_tm640/pic/picker/Qteach_clamp1_on.bmp",	// 13
-	"res_tm640/pic/picker/Qteach_clamp2_on.bmp",	// 14
-	"res_tm640/pic/picker/Qteach_CupulaOpen1.bmp",	// 15
-	"res_tm640/pic/picker/Qteach_CupulaOpen2.bmp",	// 16
-	"", // 17
-	"",	// 18
+	"res_tm640/pic/picker/clamp1_on.bmp",	// 13
+	"res_tm640/pic/picker/clamp2_on.bmp",	// 14
+	"",	// 15
+	"",	// 16
+	"res_tm640/pic/picker/CupulaOpen1.bmp", // 17
+	"res_tm640/pic/picker/CupulaOpen2.bmp",	// 18
 	"", // 19
 	"",	// 20
 	"",	// 21
@@ -434,20 +431,20 @@ char* Clamp_Hint_ImgPath[] = // 治具提示顯示圖片
 	"",	// 2
 	"res_tm640/pic/picker/Hintclamp1_off.bmp", // 3
 	"res_tm640/pic/picker/Hintclamp2_off.bmp", //4
-	"res_tm640/pic/picker/HintCupulaClose1.bmp",	// 5
-	"res_tm640/pic/picker/HintCupulaClose2.bmp",	// 6
-	"", // 7
-	"",	// 8
+	"",	// 5
+	"",	// 6
+	"res_tm640/pic/picker/HintCupulaClose1.bmp", // 7
+	"res_tm640/pic/picker/HintCupulaClose2.bmp",	// 8
 	"", // 9
 	"",	// 10
 	"",	// 11
 	"",	// 12
 	"res_tm640/pic/picker/Hintclamp1_on.bmp",	// 13
 	"res_tm640/pic/picker/Hintclamp2_on.bmp",	// 14
-	"res_tm640/pic/picker/HintCupulaOpen1.bmp",	// 15
-	"res_tm640/pic/picker/HintCupulaOpen2.bmp",	// 16
-	"", // 17
-	"",	// 18
+	"",	// 15
+	"",	// 16
+	"res_tm640/pic/picker/HintCupulaOpen1.bmp", // 17
+	"res_tm640/pic/picker/HintCupulaOpen2.bmp",	// 18
 	"", // 19
 	"",	// 20
 	"",	// 21
@@ -470,10 +467,10 @@ char* u_pszBtn_Clamp_String[] =
 	"",
 	"Btn_Clamp1", // 3
 	"Btn_Clamp2", // 4
-	"Btn_Suck1", // 5
-	"Btn_Suck2", // 6
-	"", // 7
-	"", // 8
+	"",
+	"",
+	"Btn_Suck1", // 7
+	"Btn_Suck2", // 8
 };
 char* P6_Clamp_onoff_DBString[] = // P6取件點 治具狀態 DB名稱
 {
@@ -482,10 +479,10 @@ char* P6_Clamp_onoff_DBString[] = // P6取件點 治具狀態 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM48_EQUIPMENT2_ACTION_TYPE", // 3 夾具1
 	"MACHINE_PROFILE_NUM48_EQUIPMENT2_ACTION_NUM", // 4 夾具2
-	"MACHINE_PROFILE_NUM49_EQUIPMENT2_ACTION_TYPE", // 5 吸盤1
-	"MACHINE_PROFILE_NUM49_EQUIPMENT2_ACTION_NUM", // 6 吸盤2
-	"", // 7 
-	"", // 8
+	"",
+	"",
+	"MACHINE_PROFILE_NUM49_EQUIPMENT2_ACTION_TYPE", // 7 吸盤1
+	"MACHINE_PROFILE_NUM49_EQUIPMENT2_ACTION_NUM", // 8 吸盤2
 };
 char* P9_Clamp_onoff_DBString[] = // P9放置點 治具狀態 DB名稱
 {
@@ -494,10 +491,10 @@ char* P9_Clamp_onoff_DBString[] = // P9放置點 治具狀態 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM46_EQUIPMENT2_ACTION_TYPE", // 3 夾具1
 	"MACHINE_PROFILE_NUM46_EQUIPMENT2_ACTION_NUM", // 4 夾具2
-	"MACHINE_PROFILE_NUM47_EQUIPMENT2_ACTION_TYPE", // 5 吸盤1
-	"MACHINE_PROFILE_NUM47_EQUIPMENT2_ACTION_NUM", // 6 吸盤2
 	"",
 	"",
+	"MACHINE_PROFILE_NUM47_EQUIPMENT2_ACTION_TYPE", // 7 吸盤1
+	"MACHINE_PROFILE_NUM47_EQUIPMENT2_ACTION_NUM", // 8 吸盤2
 };
 
 
@@ -509,10 +506,10 @@ char* u_pszDetectBoxString[] = // 確認 治具檢測選擇
 	"",
 	"Detect_Clamp1",
 	"Detect_Clamp2",
+	"",
+	"",
 	"Detect_Suck1",
 	"Detect_Suck2",
-	"",
-	"",
 };
 
 char* P6_Clamp_detect_DBString[] = // P6取件點 治具檢測狀態 DB名稱
@@ -522,10 +519,10 @@ char* P6_Clamp_detect_DBString[] = // P6取件點 治具檢測狀態 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM44_EQUIPMENT2_ACTION_TYPE", // 3 夾具1
 	"MACHINE_PROFILE_NUM44_EQUIPMENT2_ACTION_NUM", // 4 夾具2
-	"MACHINE_PROFILE_NUM45_EQUIPMENT2_ACTION_TYPE", // 5 吸盤1
-	"MACHINE_PROFILE_NUM45_EQUIPMENT2_ACTION_NUM", // 6 吸盤2
 	"",
 	"",
+	"MACHINE_PROFILE_NUM45_EQUIPMENT2_ACTION_TYPE", // 7 吸盤1
+	"MACHINE_PROFILE_NUM45_EQUIPMENT2_ACTION_NUM", // 8 吸盤2
 };
 char* P9_Clamp_detect_DBString[] = // P9放置點 治具檢測狀態 DB名稱
 {
@@ -534,10 +531,10 @@ char* P9_Clamp_detect_DBString[] = // P9放置點 治具檢測狀態 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM42_EQUIPMENT2_ACTION_TYPE", // 3 夾具1
 	"MACHINE_PROFILE_NUM42_EQUIPMENT2_ACTION_NUM", // 4 夾具2
-	"MACHINE_PROFILE_NUM43_EQUIPMENT2_ACTION_TYPE", // 5 吸盤1
-	"MACHINE_PROFILE_NUM43_EQUIPMENT2_ACTION_NUM", // 6 吸盤2
 	"",
 	"",
+	"MACHINE_PROFILE_NUM43_EQUIPMENT2_ACTION_TYPE", // 7 吸盤1
+	"MACHINE_PROFILE_NUM43_EQUIPMENT2_ACTION_NUM", // 8 吸盤2
 };
 
 CtmWnd*   pwndQTeach_Clamp_DT[10] ={NULL}; // 快速教導 治具延時 數值輸入
@@ -548,10 +545,10 @@ char* u_pszQTeach_Clamp_DTString[] =
 	"",
 	"QTeach_DT_Clamp1", // 3
 	"QTeach_DT_Clamp2", // 4
-	"QTeach_DT_Suck1", // 5
-	"QTeach_DT_Suck2", // 6
 	"",
 	"",
+	"QTeach_DT_Suck1", // 7
+	"QTeach_DT_Suck2", // 8
 };
 long l_Clamp_Delaytime[10] = {0};
 char* P6_Clamp_DT_DBString[] = // P6取件點 治具延時 DB名稱
@@ -561,10 +558,10 @@ char* P6_Clamp_DT_DBString[] = // P6取件點 治具延時 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER1", // 3 夾具1
 	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER2", // 4 夾具2
-	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER3", // 5 吸盤1
-	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER4", // 6 吸盤2
 	"",
 	"",
+	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER3", // 7 吸盤1
+	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER4", // 8 吸盤2
 };
 char* P9_Clamp_DT_DBString[] = // P9取件點 治具延時 DB名稱
 {
@@ -573,10 +570,10 @@ char* P9_Clamp_DT_DBString[] = // P9取件點 治具延時 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER5", // 3 夾具1
 	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER6", // 4 夾具2
-	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER7", // 5 吸盤1
-	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER8", // 6 吸盤2
 	"",
 	"",
+	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER7", // 7 吸盤1
+	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER8", // 8 吸盤2
 };
 
 /*=================================副臂 設定=================================*/
@@ -3504,7 +3501,7 @@ void	UpdateTeach_Pos()
 			if(b_PosSet_OK[i]==OK)
 			{
 				u_All_PosSet_OK++;
-				pwndQTeach_Pos[i]->SetPropValueT("bgc",Color_Blue); // 白色
+				pwndQTeach_Pos[i]->SetPropValueT("bgc",Color_White); // 白色
 			}
 			else
 			{
@@ -3534,7 +3531,7 @@ void	UpdateTeach_Speed()
 			if(b_SpdSet_OK[i]==OK)
 			{
 				u_All_SpdSet_OK++;
-				pwndQTeach_Speed[i]->SetPropValueT("bgc",Color_Blue); // 白色
+				pwndQTeach_Speed[i]->SetPropValueT("bgc",Color_White); // 白色
 			}
 			else
 			{
@@ -3905,22 +3902,22 @@ void	Update_PosHint(int Axis)
 		if(AxisPosNow[Axis]>Max_value) // 現在位置超過最大值
 		{
 			pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_NO.bmp");
-			pwndImg_PosHint[Axis]->SetPropValueT("left",Hint_Pos+(80)); // 標示 顯示位置
-			pwndImg_PosHint[Axis]->SetPropValueT("right",Hint_Pos+(80)+20); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("left",221+(80)); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("right",221+(80)+20); // 標示 顯示位置
 		}
 		else if(AxisPosNow[Axis]<Min_value) // 現在位置 小於最小值
 		{
 			pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_NO.bmp");
-			pwndImg_PosHint[Axis]->SetPropValueT("left",Hint_Pos); // 標示 顯示位置
-			pwndImg_PosHint[Axis]->SetPropValueT("right",Hint_Pos+20); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("left",221); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("right",221+20); // 標示 顯示位置
 		}
 		else // 合理的位置
 		{
 			if((Max_value-Min_value)!=0)
 			{
 				pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_OK.bmp");
-				pwndImg_PosHint[Axis]->SetPropValueT("left",Hint_Pos+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))); // 標示 顯示位置
-				pwndImg_PosHint[Axis]->SetPropValueT("right",Hint_Pos+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))+20); // 標示 顯示位置
+				pwndImg_PosHint[Axis]->SetPropValueT("left",221+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))); // 標示 顯示位置
+				pwndImg_PosHint[Axis]->SetPropValueT("right",221+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))+20); // 標示 顯示位置
 			}
 		}
 		pwndImg_PosHint[Axis]->CreateA();
