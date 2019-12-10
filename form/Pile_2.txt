@@ -269,7 +269,7 @@ ViewPile:CtmFormView
     maxdb =FALSE
     dbid0 =MACHINE_FUNCTION_ZAXIS_PILE_DIS2
   end
-  Btn_Pile1_Dir_X:CtmToolButton
+  Btn_Pile2_Dir_X:CtmToolButton
     left =149
     top =512
     right =269
@@ -321,7 +321,7 @@ ViewPile:CtmFormView
     textID =PICKER_PILE_AXIS2
     align =34
   end
-  Btn_Pile1_Dir_Y:CtmToolButton
+  Btn_Pile2_Dir_Y:CtmToolButton
     left =410
     top =512
     right =530
@@ -334,7 +334,7 @@ ViewPile:CtmFormView
     buttontype =0
     captionID =VW_ROTATELOC_ANGELREVERSED_OPT1
   end
-  Btn_Pile1_Dir_Z:CtmToolButton
+  Btn_Pile2_Dir_Z:CtmToolButton
     left =278
     top =512
     right =398

@@ -2,7 +2,7 @@ ViewInternal_IO:CtmFormView
   left =0
   top =0
   right =599
-  bottom =777
+  bottom =829
   wtype =48
   titleID =PICKER_IO
   printname =Robot_IO1.bmp
@@ -70,6 +70,42 @@ ViewInternal_IO:CtmFormView
     top =234
     right =272
     bottom =259
+    wtype =55
+    fgc =0
+    fontsize =1
+    group =6
+  end
+  Button_IO1:CtmToolButton
+    left =20
+    top =4
+    right =120
+    bottom =54
+    wtype =48
+    taborder =1
+    fontsize =1
+    align =34
+    captionID =VW_PICKER_MACHINE
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
+  end
+  Button_IO2:CtmToolButton
+    left =120
+    top =4
+    right =220
+    bottom =54
+    wtype =48
+    taborder =2
+    fontsize =1
+    align =34
+    captionID =VW_PICKER_PICKER
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Remote_IO.txt
+  end
+  SelectBox17:CtmSelectBox
+    left =22
+    top =262
+    right =272
+    bottom =287
     wtype =55
     fgc =0
     fontsize =1
@@ -145,69 +181,14 @@ ViewInternal_IO:CtmFormView
     fontsize =1
     group =22
   end
-  Button_IO1:CtmToolButton
-    left =20
-    top =4
-    right =120
-    bottom =54
-    wtype =48
-    taborder =1
+  SelectBox27:CtmSelectBox
+    left =335
+    top =262
+    right =585
+    bottom =287
+    wtype =55
+    fgc =0
     fontsize =1
-    align =34
-    captionID =VW_PICKER_MACHINE
-    upbitmap =res_tm640/pic/ButtonDown1.bmp
-  end
-  Button_IO2:CtmToolButton
-    left =120
-    top =4
-    right =220
-    bottom =54
-    wtype =48
-    taborder =2
-    fontsize =1
-    align =34
-    captionID =VW_PICKER_PICKER
-    upbitmap =res_tm640/pic/ButtonUp1.bmp
-    action =255
-    formname =Remote_IO.txt
-  end
-  BtnBack:CtmToolButton
-    left =68
-    top =820
-    right =152
-    bottom =877
-    wtype =48
-    taborder =72
-    align =18
-    upbitmap =res_tm640/pic/BtnBackUp.bmp
-    key =72
-    action =255
-    formname =Param.txt
-  end
-  BtnHome:CtmToolButton
-    left =244
-    top =820
-    right =328
-    bottom =877
-    wtype =48
-    taborder =70
-    align =18
-    upbitmap =res_tm640/pic/BtnHomeUp.bmp
-    key =70
-    action =255
-    formname =Param.txt
-  end
-  BtnMenu:CtmToolButton
-    left =420
-    top =820
-    right =504
-    bottom =877
-    wtype =48
-    taborder =71
-    align =18
-    upbitmap =res_tm640/pic/BtnMenuUp.bmp
-    key =71
-    action =255
-    formname =Param.txt
+    group =22
   end
 end

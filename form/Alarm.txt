@@ -2,7 +2,7 @@ ViewAlarm:CtmFormView
   left =0
   top =0
   right =599
-  bottom =777
+  bottom =829
   wtype =48
   titleID =VW_ALARM
   printname =Alarm.bmp
@@ -796,44 +796,5 @@ ViewAlarm:CtmFormView
     listnum =2
     strID0 =VW_OTHER_NOUSE
     strID1 =VW_INJECT_RESET
-  end
-  BtnBack:CtmToolButton
-    left =68
-    top =820
-    right =152
-    bottom =877
-    wtype =48
-    taborder =72
-    align =18
-    upbitmap =res_tm640/pic/BtnBackUp.bmp
-    key =72
-    action =255
-    formname =Param.txt
-  end
-  BtnHome:CtmToolButton
-    left =244
-    top =820
-    right =328
-    bottom =877
-    wtype =48
-    taborder =70
-    align =18
-    upbitmap =res_tm640/pic/BtnHomeUp.bmp
-    key =70
-    action =255
-    formname =Param.txt
-  end
-  BtnMenu:CtmToolButton
-    left =420
-    top =820
-    right =504
-    bottom =877
-    wtype =48
-    taborder =71
-    align =18
-    upbitmap =res_tm640/pic/BtnMenuUp.bmp
-    key =71
-    action =255
-    formname =Param.txt
   end
 end

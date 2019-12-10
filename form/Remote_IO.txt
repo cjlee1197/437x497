@@ -271,16 +271,6 @@ ViewRemote_IO:CtmFormView
     fontsize =1
     group =23
   end
-  SelectBox118:CtmSelectBox
-    left =22
-    top =738
-    right =327
-    bottom =763
-    wtype =55
-    fgc =0
-    fontsize =1
-    group =24
-  end
   SelectBox200:CtmSelectBox
     left =335
     top =66
@@ -520,15 +510,5 @@ ViewRemote_IO:CtmFormView
     fgc =0
     fontsize =1
     group =48
-  end
-  SelectBox218:CtmSelectBox
-    left =335
-    top =738
-    right =585
-    bottom =763
-    wtype =55
-    fgc =0
-    fontsize =1
-    group =31
   end
 end

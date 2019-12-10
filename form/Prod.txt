@@ -7,22 +7,21 @@ ViewProd:CtmFormView
   titleID =INDEX_OP_MANAGE
   printname =Product.bmp
   StaticOTHER_COUNTPERUNIT:CtmStaticX2
-    left =104
-    top =122
-    right =264
-    bottom =172
-    wtype =33
-    fgc =0
+    left =120
+    top =130
+    right =255
+    bottom =162
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =VW_OTHER_COUNTPERUNIT
-    align =34
   end
   StaticOTHERCOUNTPERUNIT_0UNIT:CtmStaticX2
-    left =439
+    left =423
     top =130
-    right =499
+    right =483
     bottom =162
     wtype =48
     fgc =0
@@ -30,9 +29,9 @@ ViewProd:CtmFormView
     textID =VW_OVER_CNT
   end
   StaticOTHERSHOTCNTREAL_0UNIT:CtmStaticX2
-    left =439
+    left =423
     top =186
-    right =499
+    right =483
     bottom =218
     wtype =48
     fgc =0
@@ -40,9 +39,9 @@ ViewProd:CtmFormView
     textID =VW_OVER_CNT
   end
   StaticOTHERPACKREAL_0UNIT:CtmStaticX2
-    left =439
+    left =423
     top =242
-    right =499
+    right =483
     bottom =274
     wtype =48
     fgc =0
@@ -50,9 +49,9 @@ ViewProd:CtmFormView
     textID =VW_OVER_CNT
   end
   editCOUNTPERUNIT:CtmEditX1
-    left =274
+    left =258
     top =122
-    right =434
+    right =418
     bottom =172
     wtype =35
     taborder =0
@@ -67,48 +66,45 @@ ViewProd:CtmFormView
     dbid0 =SYSX_OTHERS_OTHERS_INT_RESERVED2
   end
   LinuxCtmStaticX22:CtmStaticX2
-    left =104
-    top =234
-    right =264
-    bottom =284
-    wtype =33
-    fgc =0
+    left =120
+    top =242
+    right =255
+    bottom =274
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =VW_ENERGY_TOTAL_GPROC
-    align =34
   end
   LinuxCtmStaticX23:CtmStaticX2
-    left =104
-    top =178
-    right =264
-    bottom =228
-    wtype =33
-    fgc =0
+    left =120
+    top =186
+    right =255
+    bottom =218
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =VW_ENERGY_TOTAL_NUM
-    align =34
   end
   LinuxCtmStaticX27:CtmStaticX2
-    left =104
-    top =346
-    right =264
-    bottom =396
-    wtype =33
-    fgc =0
+    left =120
+    top =354
+    right =255
+    bottom =386
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =PICKER_SAMPLECOUNT
-    align =34
   end
   TotalGoodCount:CtmEditX1
-    left =274
+    left =258
     top =234
-    right =434
+    right =418
     bottom =284
     wtype =33
     taborder =-3
@@ -120,9 +116,9 @@ ViewProd:CtmFormView
     align =32
   end
   TotalCount:CtmEditX1
-    left =274
+    left =258
     top =178
-    right =434
+    right =418
     bottom =228
     wtype =33
     taborder =-3
@@ -135,9 +131,9 @@ ViewProd:CtmFormView
     dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED6
   end
   TotalSampleCount:CtmEditX1
-    left =274
+    left =258
     top =346
-    right =434
+    right =418
     bottom =396
     wtype =33
     taborder =-3
@@ -150,22 +146,21 @@ ViewProd:CtmFormView
     dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED7
   end
   LinuxCtmStaticX28:CtmStaticX2
-    left =104
-    top =290
-    right =264
-    bottom =340
-    wtype =33
-    fgc =0
+    left =120
+    top =298
+    right =255
+    bottom =330
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =VW_ENERGY_TOTAL_BPROC
-    align =34
   end
   TotalbadCount:CtmEditX1
-    left =274
+    left =258
     top =290
-    right =434
+    right =418
     bottom =340
     wtype =33
     taborder =-3
@@ -178,9 +173,9 @@ ViewProd:CtmFormView
     dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED8
   end
   LinuxCtmStaticX21:CtmStaticX2
-    left =439
+    left =423
     top =298
-    right =499
+    right =483
     bottom =330
     wtype =48
     fgc =0
@@ -188,78 +183,70 @@ ViewProd:CtmFormView
     textID =VW_OVER_CNT
   end
   LinuxCtmStaticX24:CtmStaticX2
-    left =439
+    left =423
     top =354
-    right =499
+    right =483
     bottom =386
     wtype =48
     fgc =0
     fontsize =1
     textID =VW_OVER_CNT
   end
-  LinuxCtmImageBox1:CtmImageBox
-    left =88
-    top =130
-    right =104
-    bottom =162
+  BtnSave:CtmToolButton
+    left =226
+    top =528
+    right =336
+    bottom =588
     wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
+    taborder =65354
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =PICKER_PROD_RESET
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+    key =65354
   end
-  LinuxCtmImageBox2:CtmImageBox
-    left =88
-    top =186
-    right =104
-    bottom =218
+  LinuxCtmStaticX25:CtmStaticX2
+    left =120
+    top =410
+    right =255
+    bottom =442
     wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
+    fgc =647
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_PROD_CONV_TIME
   end
-  LinuxCtmImageBox3:CtmImageBox
-    left =88
-    top =242
-    right =104
-    bottom =274
-    wtype =48
+  LinuxCtmEditX11:CtmEditX1
+    left =258
+    top =402
+    right =418
+    bottom =452
+    wtype =35
+    taborder =10
     fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
+    bgc =57279
+    fontsize =1
+    maxchar =10
+    align =32
+    precision =1
+    max =10000
+    mindb =FALSE
+    maxdb =FALSE
+    dbid0 =MACHINE_CONFIGURATION_CAROUSELOPERATIONTIME
   end
-  LinuxCtmImageBox4:CtmImageBox
-    left =88
-    top =298
-    right =104
-    bottom =330
+  LinuxCtmStaticX26:CtmStaticX2
+    left =423
+    top =410
+    right =483
+    bottom =442
     wtype =48
     fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox5:CtmImageBox
-    left =88
-    top =354
-    right =104
-    bottom =386
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
+    fontsize =1
+    textID =VW_CHARGE_SEC
   end
 end

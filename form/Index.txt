@@ -5,38 +5,25 @@ ViewIndex:CtmFormView
   bottom =829
   titleID =INDEX_MENUI
   printname =Index.bmp
-  BGBlock:CtmEdit
-    left =0
-    top =236
-    right =599
-    bottom =246
-    wtype =32
-    taborder =-3
-    fgc =19374
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    maxchar =10
-    align =34
-  end
   LinuxCtmToolButton1:CtmToolButton
-    left =12
+    left =28
     top =40
-    right =147
-    bottom =132
+    right =136
+    bottom =123
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
     align =16
+    upbitmap =res_tm640/pic/Button.bmp
     key =1
     action =255
     formname =Param.txt
     LinuxCtmImageBox5:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -44,21 +31,22 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton7:CtmToolButton
-    left =300
+    left =316
     top =40
-    right =435
-    bottom =132
+    right =424
+    bottom =123
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
     align =16
+    upbitmap =res_tm640/pic/Button.bmp
     key =3
     LinuxCtmImageBox4:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -66,23 +54,24 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton8:CtmToolButton
-    left =156
+    left =172
     top =40
-    right =291
-    bottom =132
+    right =280
+    bottom =123
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
     align =16
+    upbitmap =res_tm640/pic/Button.bmp
     key =2
     action =255
     formname =Pile_1.txt
     LinuxCtmImageBox8:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -103,22 +92,23 @@ ViewIndex:CtmFormView
     align =34
   end
   LinuxCtmToolButton2:CtmToolButton
-    left =12
+    left =28
     top =140
-    right =147
-    bottom =232
+    right =136
+    bottom =223
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =4
     action =255
     formname =Param.txt
     LinuxCtmImageBox1:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -126,21 +116,22 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton6:CtmToolButton
-    left =444
+    left =460
     top =386
-    right =579
-    bottom =478
+    right =568
+    bottom =469
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
     align =16
+    upbitmap =res_tm640/pic/Button.bmp
     key =7
     LinuxCtmImageBox7:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -160,20 +151,6 @@ ViewIndex:CtmFormView
     imagepath =res_tm640/pic/Mech.bmp
     keycolor =63519
   end
-  LinuxCtmEdit1:CtmEdit
-    left =0
-    top =482
-    right =599
-    bottom =492
-    wtype =32
-    taborder =-3
-    fgc =19374
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    maxchar =10
-    align =34
-  end
   LinuxCtmStaticX22:CtmStaticX2
     left =28
     top =250
@@ -188,22 +165,23 @@ ViewIndex:CtmFormView
     align =34
   end
   LinuxCtmToolButton5:CtmToolButton
-    left =12
+    left =28
     top =286
-    right =147
-    bottom =378
+    right =136
+    bottom =369
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =11
     action =255
     formname =Param.txt
     LinuxCtmImageBox6:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -211,22 +189,23 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton17:CtmToolButton
-    left =12
+    left =28
     top =386
-    right =147
-    bottom =478
+    right =136
+    bottom =469
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =12
     action =255
     formname =Pile_1.txt
     LinuxCtmImageBox17:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -234,20 +213,21 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton18:CtmToolButton
-    left =156
+    left =172
     top =386
-    right =291
-    bottom =478
+    right =280
+    bottom =469
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =13
     LinuxCtmImageBox18:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -255,20 +235,21 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton20:CtmToolButton
-    left =300
+    left =316
     top =386
-    right =435
-    bottom =478
+    right =424
+    bottom =469
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =14
     LinuxCtmImageBox20:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -315,20 +296,21 @@ ViewIndex:CtmFormView
     keycolor =63519
   end
   LinuxCtmToolButton12:CtmToolButton
-    left =12
+    left =28
     top =532
-    right =147
-    bottom =624
+    right =136
+    bottom =615
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =22
     LinuxCtmImageBox12:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -336,41 +318,28 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton10:CtmToolButton
-    left =156
+    left =172
     top =532
-    right =291
-    bottom =624
+    right =280
+    bottom =615
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =23
     action =255
     formname =Param.txt
     LinuxCtmImageBox10:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
       imagepath =res_tm640/pic/Index_History.bmp
     end
-  end
-  LinuxCtmEdit3:CtmEdit
-    left =0
-    top =630
-    right =599
-    bottom =640
-    wtype =32
-    taborder =-3
-    fgc =19374
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    maxchar =10
-    align =34
   end
   LinuxCtmStaticX24:CtmStaticX2
     left =28
@@ -386,22 +355,23 @@ ViewIndex:CtmFormView
     align =34
   end
   LinuxCtmToolButton13:CtmToolButton
-    left =12
+    left =28
     top =682
-    right =147
-    bottom =774
+    right =136
+    bottom =765
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =31
     action =255
     formname =Param.txt
     LinuxCtmImageBox13:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -409,20 +379,21 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton14:CtmToolButton
-    left =300
+    left =316
     top =682
-    right =435
-    bottom =774
+    right =424
+    bottom =765
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =33
     LinuxCtmImageBox14:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -430,22 +401,23 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton15:CtmToolButton
-    left =156
+    left =172
     top =682
-    right =291
-    bottom =774
+    right =280
+    bottom =765
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =32
     action =255
     formname =Pile_1.txt
     LinuxCtmImageBox15:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -453,22 +425,23 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton16:CtmToolButton
-    left =444
+    left =460
     top =682
-    right =579
-    bottom =774
+    right =568
+    bottom =765
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =34
     action =255
     formname =Param.txt
     LinuxCtmImageBox16:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -541,22 +514,23 @@ ViewIndex:CtmFormView
     keycolor =63519
   end
   LinuxCtmToolButton9:CtmToolButton
-    left =156
+    left =172
     top =286
-    right =291
-    bottom =378
+    right =280
+    bottom =369
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =15
     action =255
     formname =Param.txt
     LinuxCtmImageBox25:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -564,22 +538,23 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton11:CtmToolButton
-    left =300
+    left =316
     top =286
-    right =435
-    bottom =378
+    right =424
+    bottom =369
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =16
     action =255
     formname =Param.txt
     LinuxCtmImageBox26:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -588,9 +563,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX21:CtmStaticX2
     left =12
-    top =100
+    top =92
     right =147
-    bottom =132
+    bottom =122
     wtype =48
     fgc =0
     bgc =36256
@@ -601,9 +576,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX25:CtmStaticX2
     left =156
-    top =100
+    top =92
     right =291
-    bottom =132
+    bottom =124
     wtype =48
     fgc =0
     bgc =36256
@@ -614,9 +589,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX26:CtmStaticX2
     left =300
-    top =100
+    top =92
     right =435
-    bottom =132
+    bottom =124
     wtype =48
     fgc =0
     bgc =36256
@@ -627,9 +602,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX27:CtmStaticX2
     left =444
-    top =446
+    top =438
     right =579
-    bottom =478
+    bottom =470
     wtype =48
     fgc =0
     bgc =36256
@@ -640,9 +615,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX28:CtmStaticX2
     left =12
-    top =200
+    top =192
     right =147
-    bottom =232
+    bottom =224
     wtype =48
     fgc =0
     bgc =36256
@@ -653,9 +628,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX211:CtmStaticX2
     left =12
-    top =346
+    top =338
     right =147
-    bottom =378
+    bottom =370
     wtype =48
     fgc =0
     bgc =36256
@@ -666,9 +641,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX213:CtmStaticX2
     left =156
-    top =346
+    top =338
     right =291
-    bottom =378
+    bottom =370
     wtype =48
     fgc =0
     bgc =36256
@@ -679,9 +654,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX214:CtmStaticX2
     left =300
-    top =346
+    top =338
     right =435
-    bottom =378
+    bottom =370
     wtype =48
     fgc =0
     bgc =36256
@@ -692,9 +667,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX215:CtmStaticX2
     left =12
-    top =446
+    top =438
     right =147
-    bottom =478
+    bottom =470
     wtype =48
     fgc =0
     bgc =36256
@@ -705,9 +680,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX216:CtmStaticX2
     left =156
-    top =446
+    top =438
     right =291
-    bottom =478
+    bottom =470
     wtype =48
     fgc =0
     bgc =36256
@@ -718,9 +693,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX217:CtmStaticX2
     left =300
-    top =446
+    top =438
     right =435
-    bottom =478
+    bottom =470
     wtype =48
     fgc =0
     bgc =36256
@@ -731,9 +706,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX218:CtmStaticX2
     left =12
-    top =592
+    top =584
     right =147
-    bottom =624
+    bottom =616
     wtype =48
     fgc =0
     bgc =36256
@@ -744,9 +719,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX219:CtmStaticX2
     left =156
-    top =592
+    top =584
     right =291
-    bottom =624
+    bottom =616
     wtype =48
     fgc =0
     bgc =36256
@@ -757,9 +732,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX221:CtmStaticX2
     left =12
-    top =742
+    top =734
     right =147
-    bottom =774
+    bottom =766
     wtype =48
     fgc =0
     bgc =36256
@@ -770,9 +745,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX222:CtmStaticX2
     left =156
-    top =742
+    top =734
     right =291
-    bottom =774
+    bottom =766
     wtype =48
     fgc =0
     bgc =36256
@@ -783,9 +758,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX223:CtmStaticX2
     left =300
-    top =742
+    top =734
     right =435
-    bottom =774
+    bottom =766
     wtype =48
     fgc =0
     bgc =36256
@@ -796,9 +771,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX224:CtmStaticX2
     left =444
-    top =742
+    top =734
     right =579
-    bottom =774
+    bottom =766
     wtype =48
     fgc =0
     bgc =36256
@@ -808,21 +783,22 @@ ViewIndex:CtmFormView
     align =34
   end
   LinuxCtmToolButton4:CtmToolButton
-    left =444
+    left =460
     top =286
-    right =579
-    bottom =378
+    right =568
+    bottom =369
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
     align =16
+    upbitmap =res_tm640/pic/Button.bmp
     key =17
     LinuxCtmImageBox3:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -831,9 +807,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX210:CtmStaticX2
     left =444
-    top =346
+    top =338
     right =579
-    bottom =378
+    bottom =370
     wtype =48
     fgc =0
     bgc =36256
@@ -843,22 +819,23 @@ ViewIndex:CtmFormView
     align =34
   end
   LinuxCtmToolButton19:CtmToolButton
-    left =300
+    left =316
     top =532
-    right =435
-    bottom =624
+    right =424
+    bottom =615
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
+    upbitmap =res_tm640/pic/Button.bmp
     key =24
     action =255
     formname =Param.txt
     LinuxCtmImageBox27:CtmImageBox
-      left =35
-      top =0
-      right =95
-      bottom =60
+      left =29
+      top =3
+      right =79
+      bottom =53
       wtype =48
       type =2
       style =3
@@ -867,9 +844,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmStaticX220:CtmStaticX2
     left =300
-    top =592
+    top =584
     right =435
-    bottom =624
+    bottom =616
     wtype =48
     fgc =0
     bgc =36256
@@ -877,5 +854,44 @@ ViewIndex:CtmFormView
     bordercolor =35953
     textID =INDEX_DRIVE_INFO
     align =34
+  end
+  LinuxCtmImageBox2:CtmImageBox
+    left =-2
+    top =236
+    right =598
+    bottom =246
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/BGBlock.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox28:CtmImageBox
+    left =-2
+    top =482
+    right =598
+    bottom =492
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/BGBlock.bmp
+    keycolor =63519
+  end
+  LinuxCtmImageBox29:CtmImageBox
+    left =-2
+    top =630
+    right =598
+    bottom =640
+    wtype =48
+    fgc =0
+    fontsize =2
+    type =2
+    style =3
+    imagepath =res_tm640/pic/BGBlock.bmp
+    keycolor =63519
   end
 end

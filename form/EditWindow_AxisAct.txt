@@ -19,9 +19,9 @@ ViewEditWindow:CtmFormView
   end
   EditACTIONPARA5:CtmEditX1
     left =264
-    top =356
+    top =212
     right =374
-    bottom =396
+    bottom =252
     wtype =35
     taborder =4
     fgc =0
@@ -33,20 +33,19 @@ ViewEditWindow:CtmFormView
     precision =2
     max =5000
     maxdb =FALSE
-    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER5
   end
   StaticACTIONPARA5:CtmStaticX2
     left =208
-    top =356
+    top =212
     right =258
-    bottom =396
+    bottom =252
     wtype =48
     fgc =0
     fontsize =1
     textID =PICKER_DELATTIME
     align =36
   end
-  EditACTIONPARA3:CtmEditX1
+  EditEnd1:CtmEditX1
     left =88
     top =356
     right =198
@@ -62,9 +61,8 @@ ViewEditWindow:CtmFormView
     precision =2
     max =99999
     maxdb =FALSE
-    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER3
   end
-  StaticACTIONPARA3:CtmStaticX2
+  StaticEnd1:CtmStaticX2
     left =32
     top =356
     right =82
@@ -72,14 +70,14 @@ ViewEditWindow:CtmFormView
     wtype =48
     fgc =0
     fontsize =1
-    textID =VW_PICKER_ADVANCE
+    textID =PICKER_ADV_DIST
     align =36
   end
   LinuxCtmStaticX211:CtmStaticX2
     left =205
-    top =244
+    top =164
     right =315
-    bottom =276
+    bottom =196
     wtype =48
     fgc =0
     bgc =36256
@@ -90,9 +88,9 @@ ViewEditWindow:CtmFormView
   end
   Button_GetPosi:CtmToolButton
     left =205
-    top =184
+    top =104
     right =315
-    bottom =244
+    bottom =164
     wtype =48
     taborder =22
     bgc =54970
@@ -101,14 +99,14 @@ ViewEditWindow:CtmFormView
     destcolor =57182
     align =34
     upbitmap =res_tm640/pic/PGBtn_GetPos.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
     key =4
   end
   EditACTIONPARA1:CtmEditX1
     left =88
-    top =196
+    top =116
     right =198
-    bottom =236
+    bottom =156
     wtype =35
     taborder =1
     fgc =0
@@ -124,9 +122,9 @@ ViewEditWindow:CtmFormView
   end
   StaticACTIONPARA1:CtmStaticX2
     left =32
-    top =196
+    top =116
     right =82
-    bottom =236
+    bottom =156
     wtype =48
     fgc =0
     fontsize =1
@@ -156,14 +154,14 @@ ViewEditWindow:CtmFormView
     fontsize =1
     destcolor =57182
     align =34
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   LinuxCtmStaticX22:CtmStaticX2
-    left =32
-    top =124
-    right =82
-    bottom =164
+    left =208
+    top =44
+    right =258
+    bottom =84
     wtype =48
     fgc =0
     fontsize =1
@@ -171,10 +169,10 @@ ViewEditWindow:CtmFormView
     align =36
   end
   SelectGroupNum:CtmToolButton
-    left =88
-    top =104
-    right =198
-    bottom =164
+    left =264
+    top =24
+    right =374
+    bottom =84
     wtype =48
     taborder =51
     bgc =54970
@@ -182,14 +180,14 @@ ViewEditWindow:CtmFormView
     fontsize =1
     destcolor =57182
     align =34
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   EditACTIONPARA2:CtmEditX1
     left =88
-    top =284
+    top =212
     right =198
-    bottom =324
+    bottom =252
     wtype =35
     taborder =2
     fgc =0
@@ -206,9 +204,9 @@ ViewEditWindow:CtmFormView
   end
   StaticACTIONPARA2:CtmStaticX2
     left =32
-    top =284
+    top =212
     right =82
-    bottom =324
+    bottom =252
     wtype =48
     fgc =0
     fontsize =1
@@ -246,5 +244,59 @@ ViewEditWindow:CtmFormView
     captionID =VW_PLAN_ESC
     upbitmap =res_tm640/pic/EditBtnUp.bmp
     downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  END_MODE:CtmToolButton
+    left =88
+    top =272
+    right =198
+    bottom =332
+    wtype =48
+    taborder =136
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =32
+    top =284
+    right =82
+    bottom =324
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =PICKER_MODE
+    align =36
+  end
+  StaticEnd2:CtmStaticX2
+    left =208
+    top =356
+    right =258
+    bottom =396
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =PICKER_END_DIST
+    align =36
+  end
+  EditEnd2:CtmEditX1
+    left =264
+    top =356
+    right =374
+    bottom =396
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    max =99999
+    maxdb =FALSE
   end
 end

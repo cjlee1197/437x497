@@ -19,9 +19,9 @@ ViewPG_1:CtmFormView
   end
   ButtonAct1:CtmToolButton
     left =16
-    top =80
+    top =40
     right =126
-    bottom =140
+    bottom =100
     wtype =48
     taborder =-1
     bgc =54970
@@ -36,9 +36,9 @@ ViewPG_1:CtmFormView
   end
   ButtonAct5:CtmToolButton
     left =145
-    top =80
+    top =248
     right =255
-    bottom =140
+    bottom =308
     wtype =48
     taborder =-1
     bgc =54970
@@ -53,9 +53,9 @@ ViewPG_1:CtmFormView
   end
   ButtonAct6:CtmToolButton
     left =274
-    top =80
+    top =248
     right =384
-    bottom =140
+    bottom =308
     wtype =48
     taborder =-1
     bgc =54970
@@ -69,10 +69,10 @@ ViewPG_1:CtmFormView
     key =6
   end
   ButtonAct2:CtmToolButton
-    left =16
-    top =184
-    right =126
-    bottom =244
+    left =272
+    top =40
+    right =382
+    bottom =100
     wtype =48
     taborder =-1
     bgc =54970
@@ -87,9 +87,9 @@ ViewPG_1:CtmFormView
   end
   ButtonAct4:CtmToolButton
     left =145
-    top =184
+    top =144
     right =255
-    bottom =244
+    bottom =204
     wtype =48
     taborder =-1
     bgc =54970
@@ -103,10 +103,10 @@ ViewPG_1:CtmFormView
     key =4
   end
   ButtonAct8:CtmToolButton
-    left =274
-    top =184
-    right =384
-    bottom =244
+    left =18
+    top =248
+    right =128
+    bottom =308
     wtype =48
     taborder =-1
     bgc =54970
@@ -121,9 +121,9 @@ ViewPG_1:CtmFormView
   end
   ButtonAct3:CtmToolButton
     left =16
-    top =296
+    top =144
     right =126
-    bottom =356
+    bottom =204
     wtype =48
     taborder =-1
     bgc =54970
@@ -137,10 +137,10 @@ ViewPG_1:CtmFormView
     key =3
   end
   ButtonAct7:CtmToolButton
-    left =145
-    top =296
-    right =255
-    bottom =356
+    left =273
+    top =144
+    right =383
+    bottom =204
     wtype =48
     taborder =-1
     bgc =54970
@@ -154,10 +154,10 @@ ViewPG_1:CtmFormView
     key =8
   end
   ButtonAct9:CtmToolButton
-    left =274
-    top =296
-    right =384
-    bottom =356
+    left =18
+    top =352
+    right =128
+    bottom =412
     wtype =48
     taborder =-1
     bgc =54970
@@ -172,9 +172,9 @@ ViewPG_1:CtmFormView
   end
   LinuxCtmStaticX211:CtmStaticX2
     left =16
-    top =140
+    top =100
     right =126
-    bottom =172
+    bottom =132
     wtype =48
     fgc =0
     bgc =36256
@@ -185,9 +185,9 @@ ViewPG_1:CtmFormView
   end
   LinuxCtmStaticX22:CtmStaticX2
     left =145
-    top =140
+    top =308
     right =255
-    bottom =172
+    bottom =340
     wtype =48
     fgc =0
     bgc =36256
@@ -198,9 +198,9 @@ ViewPG_1:CtmFormView
   end
   LinuxCtmStaticX23:CtmStaticX2
     left =274
-    top =140
+    top =308
     right =384
-    bottom =172
+    bottom =340
     wtype =48
     fgc =0
     bgc =36256
@@ -210,10 +210,10 @@ ViewPG_1:CtmFormView
     align =34
   end
   LinuxCtmStaticX24:CtmStaticX2
-    left =16
-    top =244
-    right =126
-    bottom =276
+    left =272
+    top =100
+    right =382
+    bottom =132
     wtype =48
     fgc =0
     bgc =36256
@@ -224,9 +224,9 @@ ViewPG_1:CtmFormView
   end
   LinuxCtmStaticX25:CtmStaticX2
     left =145
-    top =244
+    top =204
     right =255
-    bottom =276
+    bottom =236
     wtype =48
     fgc =0
     bgc =36256
@@ -236,10 +236,10 @@ ViewPG_1:CtmFormView
     align =34
   end
   LinuxCtmStaticX26:CtmStaticX2
-    left =274
-    top =244
-    right =384
-    bottom =276
+    left =18
+    top =308
+    right =128
+    bottom =340
     wtype =48
     fgc =0
     bgc =36256
@@ -250,9 +250,9 @@ ViewPG_1:CtmFormView
   end
   LinuxCtmStaticX27:CtmStaticX2
     left =16
-    top =356
+    top =204
     right =126
-    bottom =388
+    bottom =236
     wtype =48
     fgc =0
     bgc =36256
@@ -262,10 +262,10 @@ ViewPG_1:CtmFormView
     align =34
   end
   LinuxCtmStaticX28:CtmStaticX2
-    left =145
-    top =356
-    right =255
-    bottom =388
+    left =273
+    top =204
+    right =383
+    bottom =236
     wtype =48
     fgc =0
     bgc =36256
@@ -275,10 +275,10 @@ ViewPG_1:CtmFormView
     align =34
   end
   LinuxCtmStaticX29:CtmStaticX2
-    left =274
-    top =356
-    right =384
-    bottom =388
+    left =18
+    top =412
+    right =128
+    bottom =444
     wtype =48
     fgc =0
     bgc =36256
@@ -302,5 +302,35 @@ ViewPG_1:CtmFormView
     captionID =VW_PLAN_ESC
     upbitmap =res_tm640/pic/EditBtnUp.bmp
     downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  ButtonAct10:CtmToolButton
+    left =144
+    top =40
+    right =254
+    bottom =100
+    wtype =48
+    taborder =-1
+    bgc =54970
+    fontsize =1
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    upbitmap =res_tm640/pic/PGBtn_P2P.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    key =16
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =144
+    top =100
+    right =254
+    bottom =132
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_P2P
+    align =34
   end
 end

@@ -4,6 +4,7 @@ ViewInputForm:CtmFormView
   right =338
   bottom =500
   wtype =34855
+  viewtype =2
   imageBG1:CtmImageBox
     left =0
     top =0

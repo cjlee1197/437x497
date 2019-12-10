@@ -6,6 +6,17 @@ ViewMldR:CtmFormView
   wtype =48
   titleID =PICKER_BTN_MOLD
   printname =MoldRead.bmp
+  Img_Over_Picker:CtmImageBox
+    left =0
+    top =0
+    right =599
+    bottom =1024
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/TagPage_BG.bmp
+    keycolor =63519
+  end
   StaticSOURCE:CtmStaticX2
     left =39
     top =179
@@ -53,9 +64,9 @@ ViewMldR:CtmFormView
   end
   buttonUPTWENTY:CtmToolButton
     left =39
-    top =632
-    right =175
-    bottom =682
+    top =624
+    right =139
+    bottom =674
     wtype =36
     taborder =2
     bgc =54970
@@ -68,10 +79,10 @@ ViewMldR:CtmFormView
     captionID =VW_MOLD_CHECKUPTWENTY
   end
   buttonDOWNTWENTY:CtmToolButton
-    left =398
-    top =632
+    left =434
+    top =624
     right =534
-    bottom =682
+    bottom =674
     wtype =36
     taborder =3
     bgc =54970
@@ -582,11 +593,115 @@ ViewMldR:CtmFormView
     strID0 =VW_MOLD_DATE
     strID1 =VW_MOLD_NAME
   end
+  editSOURCEMAX:CtmEditX1
+    left =147
+    top =132
+    right =257
+    bottom =170
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =33808
+    fontsize =1
+    maxchar =10
+    align =32
+  end
+  editSOURCEREMAIN:CtmEditX1
+    left =438
+    top =132
+    right =548
+    bottom =170
+    wtype =33
+    taborder =-3
+    fgc =65535
+    bgc =33808
+    fontsize =1
+    maxchar =10
+    align =32
+  end
+  StaticSOURCEMEDIA:CtmStaticX2
+    left =30
+    top =73
+    right =150
+    bottom =105
+    wtype =48
+    fgc =647
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MOLD_SOURCE
+  end
+  LinuxCtmStaticX25:CtmStaticX2
+    left =30
+    top =132
+    right =150
+    bottom =164
+    wtype =48
+    fgc =647
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MOLD_MAXIMUM
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =322
+    top =73
+    right =442
+    bottom =105
+    wtype =48
+    fgc =647
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MOLD_CHECK
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =322
+    top =132
+    right =442
+    bottom =164
+    wtype =48
+    fgc =647
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =VW_MOLD_REMAIN
+  end
+  BtnSourceMedia:CtmToolButton
+    left =147
+    top =72
+    right =257
+    bottom =110
+    wtype =48
+    taborder =16
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/ButtonDown_Mld.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
+  BtnSortType:CtmToolButton
+    left =437
+    top =72
+    right =547
+    bottom =110
+    wtype =48
+    taborder =15
+    bgc =54970
+    fontsize =1
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/ButtonDown_Mld.bmp
+    downbitmap =res_tm640/pic/ButtonDown.bmp
+  end
   editCONFIRM:CtmSelectEdit
-    left =446
-    top =714
-    right =582
-    bottom =746
+    left =454
+    top =797
+    right =590
+    bottom =829
     wtype =55
     taborder =8
     fgc =0
@@ -603,10 +718,10 @@ ViewMldR:CtmFormView
     strID1 =VW_PLAN_OK
   end
   editREADMOLDNO:CtmEditX1
-    left =155
-    top =706
-    right =291
-    bottom =756
+    left =163
+    top =696
+    right =299
+    bottom =734
     wtype =35
     taborder =99
     fgc =0
@@ -621,209 +736,32 @@ ViewMldR:CtmFormView
     mindb =FALSE
     maxdb =FALSE
   end
-  editSOURCEMAX:CtmEditX1
-    left =155
-    top =124
-    right =291
-    bottom =174
-    wtype =33
-    taborder =-3
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    maxchar =10
-    align =32
-  end
-  editSOURCEREMAIN:CtmEditX1
-    left =446
-    top =124
-    right =582
-    bottom =174
-    wtype =33
-    taborder =-3
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    maxchar =10
-    align =32
-  end
-  StaticSOURCEMEDIA:CtmStaticX2
-    left =30
-    top =73
-    right =150
-    bottom =105
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_MOLD_SOURCE
-    align =34
-  end
-  LinuxCtmStaticX25:CtmStaticX2
-    left =30
-    top =132
-    right =150
-    bottom =164
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_MOLD_MAXIMUM
-    align =34
-  end
-  LinuxCtmStaticX21:CtmStaticX2
-    left =322
-    top =73
-    right =442
-    bottom =105
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_MOLD_CHECK
-    align =34
-  end
-  LinuxCtmStaticX26:CtmStaticX2
-    left =322
-    top =132
-    right =442
-    bottom =164
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_MOLD_REMAIN
-    align =34
-  end
   StaticDLG_MOLD_READMOLD:CtmStaticX2
-    left =32
-    top =713
-    right =152
-    bottom =745
-    wtype =33
-    fgc =0
+    left =40
+    top =699
+    right =160
+    bottom =731
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =PICKER_FILE_LOADFILE
-    align =34
-  end
-  BtnSourceMedia:CtmToolButton
-    left =155
-    top =65
-    right =291
-    bottom =115
-    wtype =33
-    taborder =16
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    buttontype =0
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
-  end
-  BtnSortType:CtmToolButton
-    left =445
-    top =65
-    right =581
-    bottom =115
-    wtype =33
-    taborder =15
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    buttontype =0
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
   end
   BtnConfirm:CtmToolButton
-    left =299
-    top =705
-    right =435
-    bottom =755
-    wtype =33
+    left =307
+    top =694
+    right =417
+    bottom =732
+    wtype =48
     taborder =18
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     colorcontrol =4
     destcolor =57182
-    buttontype =0
     captionID =VW_MOLD_PMD2
-    upbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/ButtonDown_Confirm.bmp
     downbitmap =res_tm640/pic/ButtonDown.bmp
-  end
-  LinuxCtmImageBox6:CtmImageBox
-    left =14
-    top =73
-    right =30
-    bottom =105
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox1:CtmImageBox
-    left =14
-    top =132
-    right =30
-    bottom =164
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox2:CtmImageBox
-    left =306
-    top =73
-    right =322
-    bottom =105
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox3:CtmImageBox
-    left =306
-    top =132
-    right =322
-    bottom =164
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox4:CtmImageBox
-    left =16
-    top =713
-    right =32
-    bottom =745
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
   end
 end

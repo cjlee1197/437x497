@@ -266,7 +266,7 @@ ViewOver_IML:CtmFormView
     left =0
     top =304
     right =599
-    bottom =720
+    bottom =309
     wtype =33
     taborder =-3
     fgc =19374

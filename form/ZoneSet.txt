@@ -269,7 +269,7 @@ ViewGuideSet:CtmFormView
     left =20
     top =630
     right =170
-    bottom =662
+    bottom =670
     taborder =16
     bgc =54970
     fontsize =1
