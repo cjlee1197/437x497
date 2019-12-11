@@ -1,0 +1,215 @@
+ViewSUB_EditWindow:CtmFormView
+  left =100
+  top =463
+  right =500
+  bottom =963
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =400
+    bottom =500
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_400x500.bmp
+    keycolor =63519
+  end
+  StaticACTIONPARA0:CtmStaticX2
+    left =32
+    top =44
+    right =82
+    bottom =84
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =PICKER_VALVE
+    align =36
+  end
+  BtnValve:CtmToolButton
+    left =206
+    top =44
+    right =281
+    bottom =84
+    wtype =33
+    taborder =103
+    bgc =65503
+    bordercolor =57182
+    align =34
+    upbitmap =res_tm640/pic/ButtonMore.bmp
+    downbitmap =res_tm640/pic/ButtonMoreDown.bmp
+    key =7
+  end
+  SelectEditNUM:CtmSelectEdit
+    left =88
+    top =44
+    right =198
+    bottom =84
+    wtype =33
+    taborder =-1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    dbid1 =MACHINE_PROFILE_NUM1_ACTION_NUM
+    maxchar =40
+    listnum =7
+    strID0 =VW_PICKER_NULL
+    strID1 =PICKER_REMOTE_O_01
+    strID2 =PICKER_REMOTE_O_02
+    strID3 =PICKER_REMOTE_O_03
+    strID4 =PICKER_REMOTE_O_04
+    strID5 =PICKER_REMOTE_O_05
+    strID6 =PICKER_REMOTE_O_06
+    strID7 =PICKER_REMOTE_O_07
+    strID8 =PICKER_REMOTE_O_08
+    strID9 =PICKER_REMOTE_O_09
+    strID10 =PICKER_REMOTE_O_10
+    strID11 =PICKER_REMOTE_O_11
+    strID12 =PICKER_REMOTE_O_12
+    strID13 =PICKER_REMOTE_O_13
+    strID14 =PICKER_REMOTE_O_14
+    strID15 =PICKER_REMOTE_O_15
+    strID16 =PICKER_REMOTE_O_16
+  end
+  StaticACTIONPARA1:CtmStaticX2
+    left =32
+    top =112
+    right =82
+    bottom =152
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =MOTION_ONOFF
+    align =36
+  end
+  StaticACTIONPARA2:CtmStaticX2
+    left =32
+    top =252
+    right =82
+    bottom =292
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_PUMP_TEST
+    align =36
+  end
+  BtnSave:CtmToolButton
+    left =82
+    top =416
+    right =192
+    bottom =476
+    wtype =48
+    taborder =21
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =VW_MACH_SAVE
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  BtnCancel:CtmToolButton
+    left =210
+    top =416
+    right =320
+    bottom =476
+    wtype =48
+    taborder =20
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =VW_PLAN_ESC
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  StaticACTIONPARA5:CtmStaticX2
+    left =32
+    top =180
+    right =82
+    bottom =220
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =PICKER_DELATTIME
+    align =36
+  end
+  EditACTIONPARA5:CtmEditX1
+    left =88
+    top =180
+    right =208
+    bottom =220
+    wtype =33
+    taborder =4
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    max =5000
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER5
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =32
+    top =324
+    right =82
+    bottom =364
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =PICKER_TIMEOUT
+    align =36
+  end
+  EditACTIONPARA6:CtmEditX1
+    left =88
+    top =324
+    right =208
+    bottom =364
+    wtype =33
+    taborder =6
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =60000
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER6
+  end
+  ON_OFF:CtmToolButton
+    left =88
+    top =104
+    right =198
+    bottom =164
+    wtype =48
+    taborder =17
+    bgc =54970
+    fontsize =1
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  ValveCheck:CtmToolButton
+    left =88
+    top =240
+    right =198
+    bottom =300
+    wtype =48
+    taborder =34
+    bgc =54970
+    fontsize =1
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+end

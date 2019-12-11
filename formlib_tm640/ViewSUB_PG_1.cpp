@@ -126,62 +126,53 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	{
 		case 1:		//轴动作
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED52", wKey);
-			::PutCommand("SUB_PG_2_AXISACT.txt");
+			MsgBoxCall("EditWindow_SUB_AxisAct.txt");
+			Exit();
 		break;
 		case 2:		//等待
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED52", wKey);
-			::PutCommand("SUB_PG_2_WAIT.txt");
+			MsgBoxCall("EditWindow_SUB_Wait.txt");
+			Exit();
 		break;
 		case 3:		//允许
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED52", wKey);
-			::PutCommand("SUB_PG_2_PERMIT.txt");
+			MsgBoxCall("EditWindow_SUB_Permit.txt");
+			Exit();
 		break;
 		case 4:		//阀门
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED52", wKey);
-			::PutCommand("SUB_PG_2_VALVE.txt");
+			MsgBoxCall("EditWindow_SUB_Valve.txt");
+			Exit();
 		break;
 		case 5:		//标签
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED52", wKey);
-			::PutCommand("SUB_PG_2_LABEL.txt");
+			MsgBoxCall("EditWindow_SUB_Tag.txt");
+			Exit();
 		break;
 		case 6:		//跳转
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED52", wKey);
-			::PutCommand("SUB_PG_2_GOTO.txt");
+			MsgBoxCall("EditWindow_SUB_Goto.txt");
+			Exit();
 		break;
 		case 8:		//检测
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED52", wKey);
-			::PutCommand("SUB_PG_2_TEST.txt");
+			MsgBoxCall("EditWindow_SUB_Detect.txt");
+			Exit();
 		break;
 		case 12:	//堆叠
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED52", wKey);
-			::PutCommand("SUB_PG_2_PILE.txt");
+			MsgBoxCall("EditWindow_SUB_Pile.txt");
+			Exit();
 		break;
 		case 13:	//子程序
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED52", wKey);
-			::PutCommand("SUB_PG_2_SUBTECH.txt");
+			MsgBoxCall("EditWindow_SUB_Sub.txt");
+			Exit();
 		break;
-		case 14:		//叁消
-			switch(u_SubGroup)
-			{
-				case 1:
-					::PutCommand("SUB_PG_0_1.txt");
-				break;
-				case 2:
-					::PutCommand("SUB_PG_0_2.txt");
-				break;
-				case 3:
-					::PutCommand("SUB_PG_0_3.txt");
-				break;
-				case 4:
-					::PutCommand("SUB_PG_0_4.txt");
-				break;
-				case 5:
-					::PutCommand("SUB_PG_0_5.txt");
-				break;
-				default:
-					::PutCommand("SUB_PG_0_1.txt");
-				break;
-			}	
+		case 0x10:	// P2P
+			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED52", wKey);
+			MsgBoxCall("EditWindow_SUB_P2P.txt");
+			Exit();
 		break;
 		default:
 		break;
@@ -197,27 +188,7 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 	if(pwnd == pwndButtonReturn)
 		{
 			printf("Return\n");
-			switch(u_SubGroup)
-			{
-				case 1:
-					::PutCommand("SUB_PG_0_1.txt");
-				break;
-				case 2:
-					::PutCommand("SUB_PG_0_2.txt");
-				break;
-				case 3:
-					::PutCommand("SUB_PG_0_3.txt");
-				break;
-				case 4:
-					::PutCommand("SUB_PG_0_4.txt");
-				break;
-				case 5:
-					::PutCommand("SUB_PG_0_5.txt");
-				break;
-				default:
-					::PutCommand("SUB_PG_0_1.txt");
-				break;
-			}	
+			Exit();
 		}
 		
 	if(pwnd == NULL)	return wIDControl;

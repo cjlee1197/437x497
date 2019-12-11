@@ -1,0 +1,261 @@
+ViewEditWindow:CtmFormView
+  left =100
+  top =463
+  right =500
+  bottom =963
+  wtype =34871
+  bgc =65535
+  extag =10000
+  ImageBackGround:CtmImageBox
+    left =0
+    top =0
+    right =400
+    bottom =500
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_400x500.bmp
+    keycolor =63519
+  end
+  EditACTIONPARA5:CtmEditX1
+    left =264
+    top =356
+    right =374
+    bottom =396
+    wtype =35
+    taborder =5
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    max =5000
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER5
+  end
+  StaticACTIONPARA5:CtmStaticX2
+    left =208
+    top =356
+    right =258
+    bottom =396
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =PICKER_DELATTIME
+    align =36
+  end
+  PerAdv:CtmEditX1
+    left =88
+    top =292
+    right =198
+    bottom =332
+    wtype =35
+    taborder =3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =99999
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER3
+  end
+  StaticACTIONPARA3:CtmStaticX2
+    left =32
+    top =292
+    right =82
+    bottom =332
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_PICKER_ADVANCE
+    align =36
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =221
+    top =84
+    right =331
+    bottom =116
+    wtype =48
+    fgc =0
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_WRITEINTO
+    align =34
+  end
+  Button_GetPosi:CtmToolButton
+    left =221
+    top =24
+    right =331
+    bottom =84
+    wtype =48
+    taborder =22
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/PGBtn_GetPos.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    key =4
+  end
+  EditPos_X:CtmEditX1
+    left =88
+    top =28
+    right =198
+    bottom =68
+    wtype =35
+    taborder =1
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    mindb =FALSE
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER1
+  end
+  StaticACTIONPARA1:CtmStaticX2
+    left =32
+    top =28
+    right =82
+    bottom =68
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_EJECT_RCUT_POSN
+    align =36
+  end
+  EditACTIONPARA2:CtmEditX1
+    left =88
+    top =236
+    right =198
+    bottom =276
+    wtype =35
+    taborder =2
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    value =80
+    min =1
+    max =100
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  StaticACTIONPARA2:CtmStaticX2
+    left =32
+    top =236
+    right =82
+    bottom =276
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_EJECT_RCUT_SPED
+    align =36
+  end
+  BtnSave:CtmToolButton
+    left =82
+    top =416
+    right =192
+    bottom =476
+    wtype =48
+    taborder =21
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =VW_MACH_SAVE
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  BtnCancel:CtmToolButton
+    left =210
+    top =416
+    right =320
+    bottom =476
+    wtype =48
+    taborder =20
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =VW_PLAN_ESC
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  EditPos_Y:CtmEditX1
+    left =88
+    top =92
+    right =198
+    bottom =132
+    wtype =35
+    taborder =7
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    mindb =FALSE
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER7
+  end
+  EditPos_Z:CtmEditX1
+    left =88
+    top =148
+    right =198
+    bottom =188
+    wtype =35
+    taborder =8
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    precision =2
+    mindb =FALSE
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER8
+  end
+  PerEnd:CtmEditX1
+    left =88
+    top =348
+    right =198
+    bottom =388
+    wtype =35
+    taborder =6
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =33808
+    maxchar =10
+    align =36
+    max =99999
+    maxdb =FALSE
+    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER3
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =32
+    top =348
+    right =82
+    bottom =388
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =PICKER_END_DIST
+    align =36
+  end
+end
