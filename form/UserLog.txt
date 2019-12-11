@@ -25,8 +25,8 @@ ViewUserLog:CtmFormView
     top =112
     right =58
     bottom =144
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =UserLog_NO
@@ -37,8 +37,8 @@ ViewUserLog:CtmFormView
     top =112
     right =230
     bottom =144
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =UserLog_ACTION
@@ -49,8 +49,8 @@ ViewUserLog:CtmFormView
     top =112
     right =312
     bottom =144
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =UserLog_VALUE_NOW
@@ -61,8 +61,8 @@ ViewUserLog:CtmFormView
     top =112
     right =394
     bottom =144
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =UserLog_VALUE_OLD
@@ -73,8 +73,8 @@ ViewUserLog:CtmFormView
     top =112
     right =588
     bottom =144
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =UserLog_TIME
@@ -666,8 +666,8 @@ ViewUserLog:CtmFormView
     top =112
     right =491
     bottom =144
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =UserLog_DATE

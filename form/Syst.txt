@@ -11,8 +11,8 @@ ViewSyst:CtmFormView
     top =98
     right =328
     bottom =130
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =DLG_SYSTEM_SCREENSAVER
@@ -34,8 +34,8 @@ ViewSyst:CtmFormView
     top =278
     right =328
     bottom =310
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =DLG_DATETIME
@@ -46,8 +46,8 @@ ViewSyst:CtmFormView
     top =318
     right =144
     bottom =368
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =DLG_DATETIME_DATE
@@ -58,8 +58,8 @@ ViewSyst:CtmFormView
     top =377
     right =144
     bottom =427
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =DLG_DATETIME_TIME
@@ -114,8 +114,8 @@ ViewSyst:CtmFormView
     top =562
     right =328
     bottom =594
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =DLG_SYSTEM_LANGUAGE
@@ -314,71 +314,6 @@ ViewSyst:CtmFormView
     imagepath =res_tm640/pic/picker/BgLight.bmp
     keycolor =63519
   end
-  LinuxCtmImageBox6:CtmImageBox
-    left =68
-    top =98
-    right =84
-    bottom =130
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox1:CtmImageBox
-    left =68
-    top =278
-    right =84
-    bottom =310
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox2:CtmImageBox
-    left =68
-    top =326
-    right =84
-    bottom =358
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox3:CtmImageBox
-    left =68
-    top =562
-    right =84
-    bottom =594
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox4:CtmImageBox
-    left =68
-    top =385
-    right =84
-    bottom =417
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
   BtnConfirm:CtmToolButton
     left =219
     top =729
@@ -402,7 +337,7 @@ ViewSyst:CtmFormView
     right =285
     bottom =720
     taborder =114
-    bgc =63422
+    bgc =59196
     fontsize =1
   end
   String_LG1:CtmToolButton
@@ -411,7 +346,7 @@ ViewSyst:CtmFormView
     right =493
     bottom =664
     taborder =115
-    bgc =63422
+    bgc =59196
     fontsize =1
   end
   String_LG3:CtmToolButton
@@ -420,7 +355,7 @@ ViewSyst:CtmFormView
     right =493
     bottom =720
     taborder =116
-    bgc =63422
+    bgc =59196
     fontsize =1
   end
   Choose_LG0:CtmToolButton
@@ -489,7 +424,7 @@ ViewSyst:CtmFormView
     right =285
     bottom =664
     taborder =113
-    bgc =63422
+    bgc =59196
     fontsize =1
   end
   LinuxCtmStaticX21:CtmStaticX2
@@ -497,25 +432,12 @@ ViewSyst:CtmFormView
     top =442
     right =328
     bottom =474
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =DLG_SYSTEM_BEEP
     align =34
-  end
-  LinuxCtmImageBox5:CtmImageBox
-    left =68
-    top =442
-    right =84
-    bottom =474
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
   end
   Btn_Beep:CtmToolButton
     left =93

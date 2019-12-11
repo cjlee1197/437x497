@@ -28,8 +28,8 @@ ViewAlarm:CtmFormView
     top =69
     right =480
     bottom =101
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_ALARM_TOTALCOUNT
@@ -40,8 +40,8 @@ ViewAlarm:CtmFormView
     top =69
     right =184
     bottom =101
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_ALARM_STARTNO
@@ -52,8 +52,8 @@ ViewAlarm:CtmFormView
     top =104
     right =184
     bottom =136
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_ALARM_RESET
@@ -64,8 +64,8 @@ ViewAlarm:CtmFormView
     top =144
     right =56
     bottom =176
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_ALARM_NO
@@ -76,8 +76,8 @@ ViewAlarm:CtmFormView
     top =144
     right =102
     bottom =176
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_ALARM_CODE
@@ -88,8 +88,8 @@ ViewAlarm:CtmFormView
     top =144
     right =344
     bottom =176
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_ALARM_DESCRIPTION
@@ -100,8 +100,8 @@ ViewAlarm:CtmFormView
     top =144
     right =488
     bottom =176
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_ALARM_STARTTIME
@@ -112,8 +112,8 @@ ViewAlarm:CtmFormView
     top =144
     right =587
     bottom =176
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_ALARM_RESETTIME
@@ -756,7 +756,7 @@ ViewAlarm:CtmFormView
     wtype =33
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     maxchar =10
     align =32

@@ -6,6 +6,17 @@ ViewMldD:CtmFormView
   wtype =48
   titleID =PICKER_BTN_MOLD
   printname =MoldDelete.bmp
+  Img_Over_Picker:CtmImageBox
+    left =-2
+    top =0
+    right =597
+    bottom =1024
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/TagPage_BG.bmp
+    keycolor =63519
+  end
   Button_Save:CtmToolButton
     left =20
     top =4
@@ -86,26 +97,6 @@ ViewMldD:CtmFormView
     listnum =2
     strID0 =VW_MOLD_DATE
     strID1 =VW_MOLD_NAME
-  end
-  editCONFIRM:CtmSelectEdit
-    left =446
-    top =786
-    right =582
-    bottom =818
-    wtype =55
-    taborder =8
-    fgc =0
-    bgc =65535
-    fontsize =1
-    upcontrol =editREADMOLDNO
-    downcontrol =editREADMOLDNO
-    visible =FALSE
-    bordercolor =33808
-    maxchar =20
-    promptID =MSG_SYSTEM_CHECKBOX
-    listnum =2
-    strID0 =VW_PLAN_ESC
-    strID1 =VW_PLAN_OK
   end
   StaticSOURCE:CtmStaticX2
     left =39
@@ -572,25 +563,6 @@ ViewMldD:CtmFormView
     maxchar =10
     align =32
   end
-  editDELETEMOLDNO:CtmEditX1
-    left =163
-    top =696
-    right =299
-    bottom =734
-    wtype =35
-    taborder =99
-    fgc =0
-    bgc =65535
-    fontsize =1
-    rightcontrol =editSOURCEMEDIA
-    upcontrol =editCONFIRM
-    downcontrol =editCONFIRM
-    bordercolor =33808
-    maxchar =20
-    align =32
-    mindb =FALSE
-    maxdb =FALSE
-  end
   LinuxCtmEditX11:CtmEditX1
     left =147
     top =132
@@ -665,18 +637,6 @@ ViewMldD:CtmFormView
     bordercolor =35953
     textID =VW_MOLD_REMAIN
   end
-  StaticVM_MOLD_DELETEMOLD:CtmStaticX2
-    left =40
-    top =699
-    right =160
-    bottom =731
-    wtype =48
-    fgc =647
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_FILE_DELFILE
-  end
   buttonSOURCEUPTWENTY:CtmToolButton
     left =39
     top =624
@@ -711,8 +671,8 @@ ViewMldD:CtmFormView
   BtnSourceMedia:CtmToolButton
     left =147
     top =72
-    right =257
-    bottom =110
+    right =259
+    bottom =119
     wtype =48
     taborder =16
     bgc =54970
@@ -726,8 +686,8 @@ ViewMldD:CtmFormView
   BtnSortType:CtmToolButton
     left =437
     top =72
-    right =547
-    bottom =110
+    right =549
+    bottom =119
     wtype =48
     taborder =15
     bgc =54970
@@ -738,11 +698,62 @@ ViewMldD:CtmFormView
     upbitmap =res_tm640/pic/ButtonDown_Mld.bmp
     downbitmap =res_tm640/pic/ButtonDown.bmp
   end
+  editCONFIRM:CtmSelectEdit
+    left =446
+    top =786
+    right =582
+    bottom =818
+    wtype =55
+    taborder =8
+    fgc =0
+    bgc =65535
+    fontsize =1
+    upcontrol =editREADMOLDNO
+    downcontrol =editREADMOLDNO
+    visible =FALSE
+    bordercolor =33808
+    maxchar =20
+    promptID =MSG_SYSTEM_CHECKBOX
+    listnum =2
+    strID0 =VW_PLAN_ESC
+    strID1 =VW_PLAN_OK
+  end
+  editDELETEMOLDNO:CtmEditX1
+    left =163
+    top =696
+    right =299
+    bottom =734
+    wtype =35
+    taborder =99
+    fgc =0
+    bgc =65535
+    fontsize =1
+    rightcontrol =editSOURCEMEDIA
+    upcontrol =editCONFIRM
+    downcontrol =editCONFIRM
+    bordercolor =33808
+    maxchar =20
+    align =32
+    mindb =FALSE
+    maxdb =FALSE
+  end
+  StaticVM_MOLD_DELETEMOLD:CtmStaticX2
+    left =40
+    top =699
+    right =160
+    bottom =731
+    wtype =48
+    fgc =647
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_FILE_DELFILE
+  end
   BtnConfirm:CtmToolButton
     left =307
     top =694
-    right =417
-    bottom =732
+    right =419
+    bottom =741
     wtype =48
     taborder =18
     bgc =54970

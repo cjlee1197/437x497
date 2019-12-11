@@ -28,8 +28,8 @@ ViewDelay_ADJ:CtmFormView
     top =204
     right =259
     bottom =254
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -59,52 +59,13 @@ ViewDelay_ADJ:CtmFormView
     top =260
     right =259
     bottom =310
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =DELAY_ADJ_MARM_BWD_DT
     align =34
-  end
-  LinuxCtmStaticX216:CtmStaticX2
-    left =269
-    top =156
-    right =389
-    bottom =188
-    wtype =33
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_INJPRO_SECOND
-    align =34
-  end
-  LinuxCtmImageBox1:CtmImageBox
-    left =108
-    top =212
-    right =124
-    bottom =244
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox2:CtmImageBox
-    left =108
-    top =268
-    right =124
-    bottom =300
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
   end
   LinuxCtmStaticX29:CtmStaticX2
     left =390
@@ -149,8 +110,8 @@ ViewDelay_ADJ:CtmFormView
     top =316
     right =259
     bottom =366
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -180,39 +141,13 @@ ViewDelay_ADJ:CtmFormView
     top =372
     right =259
     bottom =422
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =DELAY_ADJ_EJET_DT
     align =34
-  end
-  LinuxCtmImageBox3:CtmImageBox
-    left =108
-    top =324
-    right =124
-    bottom =356
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox4:CtmImageBox
-    left =108
-    top =380
-    right =124
-    bottom =412
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
   end
   LinuxCtmStaticX26:CtmStaticX2
     left =390

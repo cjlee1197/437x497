@@ -99,7 +99,7 @@ ViewEditWindow:CtmFormView
     destcolor =57182
     align =34
     upbitmap =res_tm640/pic/PGBtn_GetPos.bmp
-    downbitmap =res_tm640/pic/EditBtnDown.bmp
+    downbitmap =res_tm640/pic/EditBtnUp.bmp
     key =4
   end
   EditACTIONPARA1:CtmEditX1

@@ -7,9 +7,9 @@ ViewMldS:CtmFormView
   titleID =PICKER_BTN_MOLD
   printname =MoldSave.bmp
   Img_Over_Picker:CtmImageBox
-    left =0
+    left =-2
     top =0
-    right =599
+    right =597
     bottom =1024
     wtype =48
     type =2
@@ -647,8 +647,8 @@ ViewMldS:CtmFormView
   BtnSortType:CtmToolButton
     left =438
     top =72
-    right =548
-    bottom =110
+    right =550
+    bottom =119
     wtype =48
     taborder =15
     bgc =54970
@@ -662,8 +662,8 @@ ViewMldS:CtmFormView
   BtnDestMedia:CtmToolButton
     left =147
     top =72
-    right =257
-    bottom =110
+    right =259
+    bottom =119
     wtype =48
     taborder =16
     bgc =54970
@@ -748,8 +748,8 @@ ViewMldS:CtmFormView
   BtnSaveType:CtmToolButton
     left =307
     top =694
-    right =417
-    bottom =732
+    right =419
+    bottom =741
     wtype =48
     taborder =17
     bgc =54970
@@ -763,8 +763,8 @@ ViewMldS:CtmFormView
   BtnConfirm:CtmToolButton
     left =424
     top =694
-    right =534
-    bottom =732
+    right =536
+    bottom =741
     wtype =48
     taborder =18
     bgc =54970

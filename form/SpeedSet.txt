@@ -8,29 +8,27 @@ ViewSpeedSet:CtmFormView
   Btn_Axis_X1:CtmToolButton
     left =9
     top =37
-    right =119
-    bottom =97
+    right =109
+    bottom =87
     wtype =48
     taborder =51
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_XAXIS
-    upbitmap =res_tm640/pic/PileBtnSelect.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
     key =1
   end
   Btn_Axis_Y1:CtmToolButton
     left =127
     top =37
-    right =237
-    bottom =97
+    right =227
+    bottom =87
     wtype =48
     taborder =52
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_YAXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
     key =2
     action =255
     formname =Pile_2.txt
@@ -38,15 +36,14 @@ ViewSpeedSet:CtmFormView
   Btn_Axis_Z:CtmToolButton
     left =245
     top =37
-    right =355
-    bottom =97
+    right =345
+    bottom =87
     wtype =48
     taborder =53
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_ZAXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
     key =3
     action =255
     formname =Pile_3.txt
@@ -54,15 +51,14 @@ ViewSpeedSet:CtmFormView
   Btn_Axis_X2:CtmToolButton
     left =363
     top =37
-    right =473
-    bottom =97
+    right =463
+    bottom =87
     wtype =48
     taborder =54
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_X2AXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
     key =4
     action =255
     formname =Pile_4.txt
@@ -70,15 +66,14 @@ ViewSpeedSet:CtmFormView
   Btn_Axis_Y2:CtmToolButton
     left =481
     top =37
-    right =591
-    bottom =97
+    right =581
+    bottom =87
     wtype =48
     taborder =55
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_Y2AXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
     key =5
     action =255
     formname =Pile_4.txt

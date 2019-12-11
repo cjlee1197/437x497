@@ -13,7 +13,7 @@ ViewZero:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =7347
     maxchar =16
@@ -28,7 +28,7 @@ ViewZero:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =7347
     maxchar =16
@@ -40,8 +40,8 @@ ViewZero:CtmFormView
     top =139
     right =122
     bottom =189
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -53,8 +53,8 @@ ViewZero:CtmFormView
     top =275
     right =122
     bottom =325
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -66,8 +66,8 @@ ViewZero:CtmFormView
     top =207
     right =122
     bottom =257
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -79,8 +79,8 @@ ViewZero:CtmFormView
     top =92
     right =274
     bottom =124
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -92,8 +92,8 @@ ViewZero:CtmFormView
     top =92
     right =418
     bottom =124
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -105,8 +105,8 @@ ViewZero:CtmFormView
     top =92
     right =562
     bottom =124
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -121,7 +121,7 @@ ViewZero:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =7347
     maxchar =16
@@ -136,7 +136,7 @@ ViewZero:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =7347
     maxchar =16
@@ -151,7 +151,7 @@ ViewZero:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =7347
     maxchar =16
@@ -166,51 +166,12 @@ ViewZero:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =7347
     maxchar =16
     align =36
     dbid0 =MACHINE_FUNCTION_OPTIONS_RSV29
-  end
-  LinuxCtmImageBox6:CtmImageBox
-    left =6
-    top =147
-    right =22
-    bottom =179
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox7:CtmImageBox
-    left =6
-    top =215
-    right =22
-    bottom =247
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox8:CtmImageBox
-    left =6
-    top =283
-    right =22
-    bottom =315
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
   end
   Dly_X1:CtmEditX1
     left =134

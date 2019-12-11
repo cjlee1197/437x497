@@ -6,31 +6,16 @@ ViewRemote_IO:CtmFormView
   wtype =48
   titleID =PICKER_IO
   printname =Robot_IO2.bmp
-  Button_IO1:CtmToolButton
-    left =20
-    top =4
-    right =120
-    bottom =54
+  Img_Over_Picker:CtmImageBox
+    left =-2
+    top =0
+    right =597
+    bottom =1024
     wtype =48
-    taborder =4
-    fontsize =1
-    align =34
-    captionID =VW_PICKER_MACHINE
-    upbitmap =res_tm640/pic/ButtonUp1.bmp
-    action =255
-    formname =Internal_IO.txt
-  end
-  Button_IO2:CtmToolButton
-    left =120
-    top =4
-    right =220
-    bottom =54
-    wtype =48
-    taborder =5
-    fontsize =1
-    align =34
-    captionID =VW_PICKER_PICKER
-    upbitmap =res_tm640/pic/ButtonDown1.bmp
+    type =2
+    style =3
+    imagepath =res_tm640/pic/TagPage_BG.bmp
+    keycolor =63519
   end
   SelectBox100:CtmSelectBox
     left =22
@@ -510,5 +495,31 @@ ViewRemote_IO:CtmFormView
     fgc =0
     fontsize =1
     group =48
+  end
+  Button_IO1:CtmToolButton
+    left =20
+    top =4
+    right =120
+    bottom =54
+    wtype =48
+    taborder =4
+    fontsize =1
+    align =34
+    captionID =VW_PICKER_MACHINE
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    action =255
+    formname =Internal_IO.txt
+  end
+  Button_IO2:CtmToolButton
+    left =120
+    top =4
+    right =220
+    bottom =54
+    wtype =48
+    taborder =5
+    fontsize =1
+    align =34
+    captionID =VW_PICKER_PICKER
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
   end
 end

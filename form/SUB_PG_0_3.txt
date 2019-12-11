@@ -5,24 +5,11 @@ ViewSUB_PG_0:CtmFormView
   bottom =829
   titleID =SUB_PG_PROD_TEST
   printname =Sub_OnlineProgram0.bmp
-  StaticSOURCE:CtmStaticX2
-    left =9
-    top =67
-    right =60
-    bottom =101
-    wtype =33
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    textID =VW_ALARM_NO
-    align =34
-  end
   ButtonInsert:CtmToolButton
     left =21
-    top =714
+    top =730
     right =131
-    bottom =774
+    bottom =790
     wtype =48
     taborder =-1
     bgc =54970
@@ -46,9 +33,9 @@ ViewSUB_PG_0:CtmFormView
   end
   ButtonDelete:CtmToolButton
     left =168
-    top =714
+    top =730
     right =278
-    bottom =774
+    bottom =790
     wtype =48
     taborder =-1
     bgc =54970
@@ -70,573 +57,11 @@ ViewSUB_PG_0:CtmFormView
       imagepath =res_tm640/pic/PGBtn_Delete.bmp
     end
   end
-  LinuxCtmStaticX21:CtmStaticX2
-    left =60
-    top =67
-    right =585
-    bottom =100
-    wtype =33
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    textID =VW_INJECT_ACTIVE
-    align =34
-  end
-  StaticNo1:CtmEdit
-    left =9
-    top =101
-    right =60
-    bottom =141
-    wtype =33
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =34
-  end
-  StaticNo2:CtmEdit
-    left =9
-    top =141
-    right =60
-    bottom =181
-    wtype =33
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =34
-  end
-  StaticNo3:CtmEdit
-    left =9
-    top =181
-    right =60
-    bottom =221
-    wtype =33
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =34
-  end
-  StaticNo4:CtmEdit
-    left =9
-    top =221
-    right =60
-    bottom =261
-    wtype =33
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =34
-  end
-  StaticNo5:CtmEdit
-    left =9
-    top =261
-    right =60
-    bottom =301
-    wtype =33
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =34
-  end
-  StaticNo6:CtmEdit
-    left =9
-    top =301
-    right =60
-    bottom =341
-    wtype =33
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =34
-  end
-  StaticNo7:CtmEdit
-    left =9
-    top =341
-    right =60
-    bottom =381
-    wtype =33
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =34
-  end
-  StaticNo8:CtmEdit
-    left =9
-    top =381
-    right =60
-    bottom =421
-    wtype =33
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =34
-  end
-  StaticNo9:CtmEdit
-    left =9
-    top =421
-    right =60
-    bottom =461
-    wtype =33
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =34
-  end
-  StaticNo10:CtmEdit
-    left =9
-    top =461
-    right =60
-    bottom =501
-    wtype =33
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    maxchar =10
-    align =34
-  end
-  StaticAct1:CtmStaticX2
-    left =60
-    top =101
-    right =585
-    bottom =141
-    wtype =37
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    align =34
-  end
-  StaticAct2:CtmStaticX2
-    left =60
-    top =141
-    right =585
-    bottom =181
-    wtype =37
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    align =34
-  end
-  StaticAct3:CtmStaticX2
-    left =60
-    top =181
-    right =585
-    bottom =221
-    wtype =37
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    align =34
-  end
-  StaticAct4:CtmStaticX2
-    left =60
-    top =221
-    right =585
-    bottom =261
-    wtype =37
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    align =34
-  end
-  StaticAct5:CtmStaticX2
-    left =60
-    top =261
-    right =585
-    bottom =301
-    wtype =37
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    align =34
-  end
-  StaticAct6:CtmStaticX2
-    left =60
-    top =301
-    right =585
-    bottom =341
-    wtype =37
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    align =34
-  end
-  StaticAct7:CtmStaticX2
-    left =60
-    top =341
-    right =585
-    bottom =381
-    wtype =37
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    align =34
-  end
-  StaticAct8:CtmStaticX2
-    left =60
-    top =381
-    right =585
-    bottom =421
-    wtype =37
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    align =34
-  end
-  StaticAct9:CtmStaticX2
-    left =60
-    top =421
-    right =585
-    bottom =461
-    wtype =37
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    align =34
-  end
-  StaticAct10:CtmStaticX2
-    left =60
-    top =461
-    right =585
-    bottom =501
-    wtype =37
-    taborder =-3
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =2470
-    align =34
-  end
-  ToolButtonBoxAct1:CtmToolButton
-    left =60
-    top =101
-    right =585
-    bottom =141
-    wtype =48
-    taborder =0
-    bgc =65535
-    fontsize =1
-  end
-  ToolButtonBoxAct2:CtmToolButton
-    left =60
-    top =141
-    right =585
-    bottom =181
-    wtype =48
-    taborder =1
-    bgc =65535
-    fontsize =1
-  end
-  ToolButtonBoxAct3:CtmToolButton
-    left =60
-    top =181
-    right =585
-    bottom =221
-    wtype =48
-    taborder =2
-    bgc =65535
-    fontsize =1
-  end
-  ToolButtonBoxAct4:CtmToolButton
-    left =60
-    top =221
-    right =585
-    bottom =261
-    wtype =48
-    taborder =3
-    bgc =65535
-    fontsize =1
-  end
-  ToolButtonBoxAct5:CtmToolButton
-    left =60
-    top =261
-    right =585
-    bottom =301
-    wtype =48
-    taborder =4
-    bgc =65535
-    fontsize =1
-  end
-  ToolButtonBoxAct6:CtmToolButton
-    left =60
-    top =301
-    right =585
-    bottom =341
-    wtype =48
-    taborder =5
-    bgc =65535
-    fontsize =1
-  end
-  ToolButtonBoxAct7:CtmToolButton
-    left =60
-    top =341
-    right =585
-    bottom =381
-    wtype =48
-    taborder =6
-    bgc =65535
-    fontsize =1
-    space =0
-  end
-  ToolButtonBoxAct8:CtmToolButton
-    left =60
-    top =381
-    right =585
-    bottom =421
-    wtype =48
-    taborder =7
-    bgc =65535
-    fontsize =1
-    space =0
-  end
-  ToolButtonBoxAct9:CtmToolButton
-    left =60
-    top =421
-    right =585
-    bottom =461
-    wtype =48
-    taborder =8
-    bgc =65535
-    fontsize =1
-    space =0
-  end
-  ToolButtonBoxAct10:CtmToolButton
-    left =60
-    top =461
-    right =585
-    bottom =501
-    wtype =48
-    taborder =9
-    bgc =65535
-    fontsize =1
-    space =0
-  end
-  LinuxCtmToolButton2:CtmToolButton
-    left =21
-    top =522
-    right =131
-    bottom =582
-    wtype =48
-    taborder =-1
-    bgc =54970
-    fontsize =1
-    destcolor =57182
-    align =34
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
-    key =14
-    LinuxCtmImageBox8:CtmImageBox
-      left =0
-      top =0
-      right =110
-      bottom =60
-      wtype =48
-      type =2
-      style =3
-      imagepath =res_tm640/pic/PGBtn_SingleRun.bmp
-    end
-  end
-  EditNo1:CtmEdit
-    left =-1
-    top =117
-    right =9
-    bottom =150
-    wtype =48
-    taborder =-3
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    visible =FALSE
-    bordercolor =53039
-    maxchar =10
-    align =34
-  end
-  EditNo2:CtmEdit
-    left =-1
-    top =150
-    right =9
-    bottom =183
-    wtype =48
-    taborder =-3
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    visible =FALSE
-    bordercolor =53039
-    maxchar =10
-    align =34
-  end
-  EditNo3:CtmEdit
-    left =-1
-    top =183
-    right =9
-    bottom =216
-    wtype =48
-    taborder =-3
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    visible =FALSE
-    bordercolor =53039
-    maxchar =10
-    align =34
-  end
-  EditNo4:CtmEdit
-    left =-1
-    top =216
-    right =9
-    bottom =249
-    wtype =48
-    taborder =-3
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    visible =FALSE
-    bordercolor =53039
-    maxchar =10
-    align =34
-  end
-  EditNo5:CtmEdit
-    left =-1
-    top =249
-    right =9
-    bottom =282
-    wtype =48
-    taborder =-3
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    visible =FALSE
-    bordercolor =53039
-    maxchar =10
-    align =34
-  end
-  EditNo6:CtmEdit
-    left =-1
-    top =282
-    right =9
-    bottom =315
-    wtype =48
-    taborder =-3
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    visible =FALSE
-    bordercolor =53039
-    maxchar =10
-    align =34
-  end
-  EditNo7:CtmEdit
-    left =-1
-    top =315
-    right =9
-    bottom =348
-    wtype =48
-    taborder =-3
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    visible =FALSE
-    bordercolor =53039
-    maxchar =10
-    align =34
-  end
-  EditNo8:CtmEdit
-    left =-1
-    top =348
-    right =9
-    bottom =381
-    wtype =48
-    taborder =-3
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    visible =FALSE
-    bordercolor =53039
-    maxchar =10
-    align =34
-  end
-  EditNo9:CtmEdit
-    left =-1
-    top =381
-    right =9
-    bottom =414
-    wtype =48
-    taborder =-3
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    visible =FALSE
-    bordercolor =53039
-    maxchar =10
-    align =34
-  end
-  EditNo10:CtmEdit
-    left =-1
-    top =414
-    right =9
-    bottom =447
-    wtype =48
-    taborder =-3
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    visible =FALSE
-    bordercolor =53039
-    maxchar =10
-    align =34
-  end
   ButtonSync:CtmToolButton
     left =317
-    top =714
+    top =730
     right =427
-    bottom =774
+    bottom =790
     wtype =48
     taborder =-1
     bgc =54970
@@ -660,9 +85,9 @@ ViewSUB_PG_0:CtmFormView
   end
   ButtonUnSync:CtmToolButton
     left =464
-    top =714
+    top =730
     right =574
-    bottom =774
+    bottom =790
     wtype =48
     taborder =-1
     bgc =54970
@@ -686,9 +111,9 @@ ViewSUB_PG_0:CtmFormView
   end
   LinuxCtmStaticX24:CtmStaticX2
     left =21
-    top =774
+    top =790
     right =131
-    bottom =806
+    bottom =822
     wtype =48
     fgc =0
     bgc =36256
@@ -699,9 +124,9 @@ ViewSUB_PG_0:CtmFormView
   end
   LinuxCtmStaticX25:CtmStaticX2
     left =168
-    top =774
+    top =790
     right =278
-    bottom =806
+    bottom =822
     wtype =48
     fgc =0
     bgc =36256
@@ -712,9 +137,9 @@ ViewSUB_PG_0:CtmFormView
   end
   LinuxCtmStaticX26:CtmStaticX2
     left =317
-    top =774
+    top =790
     right =427
-    bottom =806
+    bottom =822
     wtype =48
     fgc =0
     bgc =36256
@@ -725,9 +150,9 @@ ViewSUB_PG_0:CtmFormView
   end
   LinuxCtmStaticX27:CtmStaticX2
     left =464
-    top =774
+    top =790
     right =574
-    bottom =806
+    bottom =822
     wtype =48
     fgc =0
     bgc =36256
@@ -736,24 +161,11 @@ ViewSUB_PG_0:CtmFormView
     textID =PICKER_UNSYNC
     align =34
   end
-  LinuxCtmStaticX28:CtmStaticX2
-    left =21
-    top =582
-    right =131
-    bottom =614
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_SINGLE_START
-    align =34
-  end
   ButtonDownload:CtmToolButton
-    left =21
-    top =616
-    right =131
-    bottom =676
+    left =464
+    top =640
+    right =574
+    bottom =700
     wtype =48
     taborder =-1
     bgc =54970
@@ -766,10 +178,10 @@ ViewSUB_PG_0:CtmFormView
     key =4
   end
   ButtonStartEdit:CtmToolButton
-    left =173
-    top =520
-    right =283
-    bottom =580
+    left =168
+    top =640
+    right =278
+    bottom =700
     wtype =48
     taborder =20
     bgc =54970
@@ -778,48 +190,13 @@ ViewSUB_PG_0:CtmFormView
     destcolor =57182
     align =34
     upbitmap =res_tm640/pic/PGBtn_Edit.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
-  end
-  buttonDOWNTWENTY:CtmToolButton
-    left =461
-    top =584
-    right =571
-    bottom =644
-    wtype =48
-    taborder =-1
-    bgc =54970
-    fontsize =1
-    rightcontrol =buttonUPTWENTY
-    upcontrol =editTAXISMEDIA
-    align =34
-    captionID =VW_MOLD_CHECKDOWNTWENTY
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
-    key =11
-  end
-  buttonUPTWENTY:CtmToolButton
-    left =461
-    top =520
-    right =571
-    bottom =580
-    wtype =48
-    taborder =-1
-    bgc =54970
-    fontsize =1
-    leftcontrol =buttonDOWNTWENTY
-    upcontrol =editTAXISMEDIA
-    downcontrol =editNEWNAME
-    align =34
-    captionID =VW_MOLD_CHECKUPTWENTY
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
-    key =10
+    downbitmap =res_tm640/pic/PGBtn_Edit.bmp
   end
   ButtonClear:CtmToolButton
-    left =320
-    top =520
-    right =430
-    bottom =580
+    left =317
+    top =640
+    right =427
+    bottom =700
     wtype =48
     taborder =-1
     bgc =54970
@@ -840,35 +217,11 @@ ViewSUB_PG_0:CtmFormView
       imagepath =res_tm640/pic/PGBtn_Clean.bmp
     end
   end
-  LoadingBar:CtmStaticX2
-    left =152
-    top =652
-    right =180
-    bottom =684
-    wtype =33
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =35953
-    align =34
-  end
-  LoadingMask:CtmStaticX2
-    left =152
-    top =652
-    right =336
-    bottom =684
-    wtype =39
-    fgc =65535
-    bgc =63422
-    fontsize =1
-    bordercolor =35953
-    align =34
-  end
   LinuxCtmStaticX211:CtmStaticX2
-    left =21
-    top =676
-    right =131
-    bottom =708
+    left =464
+    top =700
+    right =574
+    bottom =732
     wtype =48
     fgc =0
     bgc =36256
@@ -878,10 +231,10 @@ ViewSUB_PG_0:CtmFormView
     align =34
   end
   LinuxCtmStaticX22:CtmStaticX2
-    left =173
-    top =580
-    right =283
-    bottom =612
+    left =168
+    top =700
+    right =278
+    bottom =732
     wtype =48
     fgc =0
     bgc =36256
@@ -891,41 +244,16 @@ ViewSUB_PG_0:CtmFormView
     align =34
   end
   LinuxCtmStaticX23:CtmStaticX2
-    left =320
-    top =580
-    right =430
-    bottom =612
+    left =317
+    top =700
+    right =427
+    bottom =732
     wtype =48
     fgc =0
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =VW_PARA_CLEARDATA
-    align =34
-  end
-  LoadingStr:CtmStaticX2
-    left =336
-    top =652
-    right =368
-    bottom =684
-    wtype =39
-    fgc =0
-    bgc =63422
-    fontsize =1
-    bordercolor =35953
-    text =100
-    align =34
-  end
-  LoadingMask2:CtmStaticX2
-    left =368
-    top =652
-    right =552
-    bottom =684
-    wtype =39
-    fgc =65535
-    bgc =63422
-    fontsize =1
-    bordercolor =35953
     align =34
   end
   Btn_ProdBad:CtmToolButton
@@ -938,8 +266,8 @@ ViewSUB_PG_0:CtmFormView
     fontsize =1
     align =34
     captionID =SUB_PG_PROD_BAD
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
     key =51
   end
   Btn_ProdSample:CtmToolButton
@@ -952,8 +280,8 @@ ViewSUB_PG_0:CtmFormView
     fontsize =1
     align =34
     captionID =SUB_PG_PROD_SAMPLE
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
     key =52
     action =255
     formname =Pile_2.txt
@@ -968,8 +296,8 @@ ViewSUB_PG_0:CtmFormView
     fontsize =1
     align =34
     captionID =SUB_PG_PROD_TEST
-    upbitmap =res_tm640/pic/PileBtnSelect.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/EditBtnDown.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
     key =53
     action =255
     formname =Pile_3.txt
@@ -984,8 +312,8 @@ ViewSUB_PG_0:CtmFormView
     fontsize =1
     align =34
     captionID =SUB_PG_PROD_RES1
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
     key =54
     action =255
     formname =Pile_4.txt
@@ -1000,8 +328,607 @@ ViewSUB_PG_0:CtmFormView
     fontsize =1
     align =34
     captionID =SUB_PG_PROD_RES2
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
     key =55
+  end
+  StaticSOURCE:CtmStaticX2
+    left =9
+    top =123
+    right =60
+    bottom =157
+    wtype =33
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    textID =VW_ALARM_NO
+    align =34
+  end
+  LinuxCtmStaticX21:CtmStaticX2
+    left =60
+    top =123
+    right =555
+    bottom =156
+    wtype =33
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    textID =VW_INJECT_ACTIVE
+    align =34
+  end
+  StaticNo1:CtmEdit
+    left =9
+    top =157
+    right =60
+    bottom =197
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =34
+  end
+  StaticNo2:CtmEdit
+    left =9
+    top =197
+    right =60
+    bottom =237
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =34
+  end
+  StaticNo3:CtmEdit
+    left =9
+    top =237
+    right =60
+    bottom =277
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =34
+  end
+  StaticNo4:CtmEdit
+    left =9
+    top =277
+    right =60
+    bottom =317
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =34
+  end
+  StaticNo5:CtmEdit
+    left =9
+    top =317
+    right =60
+    bottom =357
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =34
+  end
+  StaticNo6:CtmEdit
+    left =9
+    top =357
+    right =60
+    bottom =397
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =34
+  end
+  StaticNo7:CtmEdit
+    left =9
+    top =397
+    right =60
+    bottom =437
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =34
+  end
+  StaticNo8:CtmEdit
+    left =9
+    top =437
+    right =60
+    bottom =477
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =34
+  end
+  StaticNo9:CtmEdit
+    left =9
+    top =477
+    right =60
+    bottom =517
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =34
+  end
+  StaticNo10:CtmEdit
+    left =9
+    top =517
+    right =60
+    bottom =557
+    wtype =33
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    maxchar =10
+    align =34
+  end
+  StaticAct1:CtmStaticX2
+    left =60
+    top =157
+    right =555
+    bottom =197
+    wtype =37
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    align =34
+  end
+  StaticAct2:CtmStaticX2
+    left =60
+    top =197
+    right =555
+    bottom =237
+    wtype =37
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    align =34
+  end
+  StaticAct3:CtmStaticX2
+    left =60
+    top =237
+    right =555
+    bottom =277
+    wtype =37
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    align =34
+  end
+  StaticAct4:CtmStaticX2
+    left =60
+    top =277
+    right =555
+    bottom =317
+    wtype =37
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    align =34
+  end
+  StaticAct5:CtmStaticX2
+    left =60
+    top =317
+    right =555
+    bottom =357
+    wtype =37
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    align =34
+  end
+  StaticAct6:CtmStaticX2
+    left =60
+    top =357
+    right =555
+    bottom =397
+    wtype =37
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    align =34
+  end
+  StaticAct7:CtmStaticX2
+    left =60
+    top =397
+    right =555
+    bottom =437
+    wtype =37
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    align =34
+  end
+  StaticAct8:CtmStaticX2
+    left =60
+    top =437
+    right =555
+    bottom =477
+    wtype =37
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    align =34
+  end
+  StaticAct9:CtmStaticX2
+    left =60
+    top =477
+    right =555
+    bottom =517
+    wtype =37
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    align =34
+  end
+  StaticAct10:CtmStaticX2
+    left =60
+    top =517
+    right =555
+    bottom =557
+    wtype =37
+    taborder =-3
+    fgc =0
+    bgc =65535
+    fontsize =1
+    bordercolor =2470
+    align =34
+  end
+  ToolButtonBoxAct1:CtmToolButton
+    left =60
+    top =157
+    right =555
+    bottom =197
+    wtype =48
+    taborder =0
+    bgc =65535
+    fontsize =1
+  end
+  ToolButtonBoxAct2:CtmToolButton
+    left =60
+    top =197
+    right =555
+    bottom =237
+    wtype =48
+    taborder =1
+    bgc =65535
+    fontsize =1
+  end
+  ToolButtonBoxAct3:CtmToolButton
+    left =60
+    top =237
+    right =555
+    bottom =277
+    wtype =48
+    taborder =2
+    bgc =65535
+    fontsize =1
+  end
+  ToolButtonBoxAct4:CtmToolButton
+    left =60
+    top =277
+    right =555
+    bottom =317
+    wtype =48
+    taborder =3
+    bgc =65535
+    fontsize =1
+  end
+  ToolButtonBoxAct5:CtmToolButton
+    left =60
+    top =317
+    right =555
+    bottom =357
+    wtype =48
+    taborder =4
+    bgc =65535
+    fontsize =1
+  end
+  ToolButtonBoxAct6:CtmToolButton
+    left =60
+    top =357
+    right =555
+    bottom =397
+    wtype =48
+    taborder =5
+    bgc =65535
+    fontsize =1
+  end
+  ToolButtonBoxAct7:CtmToolButton
+    left =60
+    top =397
+    right =555
+    bottom =437
+    wtype =48
+    taborder =6
+    bgc =65535
+    fontsize =1
+    space =0
+  end
+  ToolButtonBoxAct8:CtmToolButton
+    left =60
+    top =437
+    right =555
+    bottom =477
+    wtype =48
+    taborder =7
+    bgc =65535
+    fontsize =1
+    space =0
+  end
+  ToolButtonBoxAct9:CtmToolButton
+    left =60
+    top =477
+    right =555
+    bottom =517
+    wtype =48
+    taborder =8
+    bgc =65535
+    fontsize =1
+    space =0
+  end
+  ToolButtonBoxAct10:CtmToolButton
+    left =60
+    top =517
+    right =555
+    bottom =557
+    wtype =48
+    taborder =9
+    bgc =65535
+    fontsize =1
+    space =0
+  end
+  EditNo1:CtmEdit
+    left =-1
+    top =173
+    right =9
+    bottom =206
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo2:CtmEdit
+    left =-1
+    top =206
+    right =9
+    bottom =239
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo3:CtmEdit
+    left =-1
+    top =239
+    right =9
+    bottom =272
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo4:CtmEdit
+    left =-1
+    top =272
+    right =9
+    bottom =305
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo5:CtmEdit
+    left =-1
+    top =305
+    right =9
+    bottom =338
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo6:CtmEdit
+    left =-1
+    top =338
+    right =9
+    bottom =371
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo7:CtmEdit
+    left =-1
+    top =371
+    right =9
+    bottom =404
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo8:CtmEdit
+    left =-1
+    top =404
+    right =9
+    bottom =437
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo9:CtmEdit
+    left =-1
+    top =437
+    right =9
+    bottom =470
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  EditNo10:CtmEdit
+    left =-1
+    top =470
+    right =9
+    bottom =503
+    wtype =48
+    taborder =-3
+    fgc =19374
+    bgc =65503
+    fontsize =1
+    visible =FALSE
+    bordercolor =53039
+    maxchar =10
+    align =34
+  end
+  buttonUPTWENTY:CtmToolButton
+    left =557
+    top =67
+    right =597
+    bottom =157
+    taborder =-1
+    bgc =54970
+    fontsize =1
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    buttontype =1
+    align =34
+    captionID =VW_MOLD_CHECKUPTWENTY
+    key =10
+  end
+  buttonDOWNTWENTY:CtmToolButton
+    left =557
+    top =532
+    right =597
+    bottom =622
+    taborder =-1
+    bgc =54970
+    fontsize =1
+    rightcontrol =buttonUPTWENTY
+    upcontrol =editTAXISMEDIA
+    buttontype =1
+    align =34
+    captionID =VW_MOLD_CHECKDOWNTWENTY
+    key =11
+  end
+  ImgBarMask:CtmImageBox
+    left =557
+    top =160
+    right =597
+    bottom =530
+    type =2
+    imagepath =res_tm640/pic/picker/BarMask.bmp
+    keycolor =63519
+  end
+  ImgBarPlace:CtmImageBox
+    left =557
+    top =160
+    right =597
+    bottom =250
+    type =2
+    imagepath =res_tm640/pic/picker/BarPlace.bmp
+    keycolor =63519
   end
 end

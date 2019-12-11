@@ -11,8 +11,8 @@ ViewVers:CtmFormView
     top =468
     right =168
     bottom =500
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_HAP5_ROBOT_XAXIS
@@ -23,8 +23,8 @@ ViewVers:CtmFormView
     top =468
     right =264
     bottom =500
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_HAP5_ROBOT_YAXIS
@@ -35,8 +35,8 @@ ViewVers:CtmFormView
     top =468
     right =360
     bottom =500
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_HAP5_ROBOT_ZAXIS
@@ -47,8 +47,8 @@ ViewVers:CtmFormView
     top =44
     right =168
     bottom =76
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =EFFECT_PROGRAMMMIVERS
@@ -62,7 +62,7 @@ ViewVers:CtmFormView
     wtype =33
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     maxchar =8
     align =34
@@ -72,8 +72,8 @@ ViewVers:CtmFormView
     top =268
     right =192
     bottom =300
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_DSP_VERSION
@@ -220,7 +220,7 @@ ViewVers:CtmFormView
     wtype =33
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     maxchar =8
     align =34
@@ -233,7 +233,7 @@ ViewVers:CtmFormView
     bottom =332
     wtype =33
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =35953
     align =34
@@ -285,7 +285,7 @@ ViewVers:CtmFormView
     bottom =532
     wtype =33
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =35953
     align =34
@@ -297,7 +297,7 @@ ViewVers:CtmFormView
     bottom =532
     wtype =33
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =35953
     align =34
@@ -309,7 +309,7 @@ ViewVers:CtmFormView
     bottom =532
     wtype =33
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =35953
     align =34
@@ -329,8 +329,8 @@ ViewVers:CtmFormView
     top =468
     right =456
     bottom =500
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_HAP5_ROBOT_X2AXIS
@@ -343,7 +343,7 @@ ViewVers:CtmFormView
     bottom =532
     wtype =33
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =35953
     align =34
@@ -387,8 +387,8 @@ ViewVers:CtmFormView
     top =468
     right =560
     bottom =500
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     textID =VW_HAP5_ROBOT_Y2AXIS
@@ -401,7 +401,7 @@ ViewVers:CtmFormView
     bottom =532
     wtype =33
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =35953
     align =34

@@ -14,78 +14,39 @@ ViewZoneLimit:CtmFormView
     imagepath =res_tm640/pic/picker/LimitSet.bmp
     keycolor =63519
   end
-  LinuxCtmImageBox1:CtmImageBox
-    left =44
-    top =503
-    right =60
-    bottom =535
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
   ZoneLimit_Str1:CtmStaticX2
     left =60
     top =495
     right =310
     bottom =545
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =ZONELIMIT_Zone
     align =34
   end
-  LinuxCtmImageBox2:CtmImageBox
-    left =44
-    top =566
-    right =60
-    bottom =598
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
   ZoneLimit_Str2:CtmStaticX2
     left =60
     top =558
     right =310
     bottom =608
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =ZONELIMIT_X_MIN
     align =34
   end
-  LinuxCtmImageBox5:CtmImageBox
-    left =44
-    top =629
-    right =60
-    bottom =661
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
   ZoneLimit_Str3:CtmStaticX2
     left =60
     top =621
     right =310
     bottom =671
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -273,6 +234,7 @@ ViewZoneLimit:CtmFormView
     right =266
     bottom =736
     taborder =16
+    fgc =647
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
@@ -317,6 +279,6 @@ ViewZoneLimit:CtmFormView
     right =496
     bottom =792
     wtype =32
-    bgc =63422
+    bgc =59196
   end
 end

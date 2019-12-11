@@ -209,8 +209,8 @@ ViewPile:CtmFormView
     top =452
     right =269
     bottom =502
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -222,8 +222,8 @@ ViewPile:CtmFormView
     top =452
     right =530
     bottom =502
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -235,8 +235,8 @@ ViewPile:CtmFormView
     top =452
     right =398
     bottom =502
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -286,26 +286,13 @@ ViewPile:CtmFormView
     top =396
     right =128
     bottom =446
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =PICKER_PILE_ORDER
     align =34
-  end
-  LinuxCtmImageBox5:CtmImageBox
-    left =20
-    top =404
-    right =36
-    bottom =436
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
   end
   LinuxCtmStaticX23:CtmStaticX2
     left =279
@@ -371,80 +358,41 @@ ViewPile:CtmFormView
     right =552
     bottom =80
     wtype =32
-    bgc =63422
-  end
-  LinuxCtmImageBox1:CtmImageBox
-    left =20
-    top =516
-    right =36
-    bottom =548
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
+    bgc =59196
   end
   LinuxCtmStaticX26:CtmStaticX2
     left =36
     top =512
     right =128
     bottom =562
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =VW_PILE_DIRECTION
     align =34
   end
-  LinuxCtmImageBox3:CtmImageBox
-    left =20
-    top =580
-    right =36
-    bottom =612
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
   LinuxCtmStaticX27:CtmStaticX2
     left =36
     top =580
     right =128
     bottom =630
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =VW_PROD_BADCOUNT
     align =34
   end
-  LinuxCtmImageBox4:CtmImageBox
-    left =20
-    top =652
-    right =36
-    bottom =684
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
   LinuxCtmStaticX28:CtmStaticX2
     left =36
     top =648
     right =128
     bottom =698
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953

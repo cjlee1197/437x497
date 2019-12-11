@@ -12,7 +12,7 @@ ViewOver_IML:CtmFormView
     right =102
     bottom =43
     wtype =48
-    fgc =0
+    fgc =647
     fontsize =1
     textID =VM_CLAMP_TAKETIME
   end
@@ -24,7 +24,7 @@ ViewOver_IML:CtmFormView
     wtype =39
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =36256
     maxchar =14
@@ -38,7 +38,7 @@ ViewOver_IML:CtmFormView
     right =102
     bottom =81
     wtype =48
-    fgc =0
+    fgc =647
     fontsize =1
     textID =PICKER_CYCLETIME
   end
@@ -50,7 +50,7 @@ ViewOver_IML:CtmFormView
     wtype =39
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =36256
     maxchar =14
@@ -85,7 +85,7 @@ ViewOver_IML:CtmFormView
     right =102
     bottom =119
     wtype =48
-    fgc =0
+    fgc =647
     fontsize =1
     textID =VW_ENERGY_TOTAL_NUM
   end
@@ -97,7 +97,7 @@ ViewOver_IML:CtmFormView
     wtype =33
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =53039
     maxchar =14
@@ -112,7 +112,7 @@ ViewOver_IML:CtmFormView
     wtype =33
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =53039
     maxchar =14
@@ -126,7 +126,7 @@ ViewOver_IML:CtmFormView
     wtype =33
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =53039
     maxchar =14
@@ -140,7 +140,7 @@ ViewOver_IML:CtmFormView
     right =102
     bottom =157
     wtype =48
-    fgc =0
+    fgc =647
     fontsize =1
     textID =VW_ENERGY_TOTAL_GPROC
   end
@@ -150,82 +150,9 @@ ViewOver_IML:CtmFormView
     right =102
     bottom =195
     wtype =48
-    fgc =0
+    fgc =647
     fontsize =1
     textID =VW_ENERGY_TOTAL_BPROC
-  end
-  OPENCLOSEMOLDPOSITION:CtmEditX1
-    left =121
-    top =259
-    right =209
-    bottom =291
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =36256
-    maxchar =14
-    align =36
-    precision =1
-    spepre =1
-    dbid0 =MACHINE_COMMUNICATION_IMM_OPENCLOSEMOLDPOSITION
-  end
-  EJECTPOSITION:CtmEditX1
-    left =337
-    top =257
-    right =425
-    bottom =289
-    wtype =39
-    taborder =-3
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =36256
-    maxchar =14
-    align =36
-    precision =1
-    spepre =1
-  end
-  LinuxCtmStaticX27:CtmStaticX2
-    left =121
-    top =227
-    right =206
-    bottom =259
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =PICKER_OPENCLOSEMOLDPOSITION
-  end
-  LinuxCtmStaticX29:CtmStaticX2
-    left =337
-    top =225
-    right =422
-    bottom =257
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =PICKER_EJECTPOSITION
-  end
-  LinuxCtmStaticX210:CtmStaticX2
-    left =210
-    top =227
-    right =242
-    bottom =259
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =VW_UNIT_MM
-  end
-  LinuxCtmStaticX211:CtmStaticX2
-    left =426
-    top =225
-    right =458
-    bottom =257
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =VW_UNIT_MM
   end
   Img_Over_Picker:CtmImageBox
     left =288
@@ -399,7 +326,7 @@ ViewOver_IML:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =36256
     maxchar =10
@@ -415,7 +342,7 @@ ViewOver_IML:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =36256
     maxchar =10
@@ -431,7 +358,7 @@ ViewOver_IML:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =36256
     maxchar =10
@@ -447,7 +374,7 @@ ViewOver_IML:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =36256
     maxchar =10
@@ -463,7 +390,7 @@ ViewOver_IML:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =36256
     maxchar =10
@@ -479,7 +406,7 @@ ViewOver_IML:CtmFormView
     wtype =32
     taborder =-3
     fgc =65535
-    bgc =2470
+    bgc =33808
     fontsize =1
     bordercolor =36256
     maxchar =10
@@ -487,51 +414,25 @@ ViewOver_IML:CtmFormView
     precision =2
     dbid0 =AUSTON3_PARAMETER_MOTION_PROFILE_TARGET_POSITION7
   end
-  LinuxCtmImageBox6:CtmImageBox
-    left =42
-    top =309
-    right =58
-    bottom =341
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
   LinuxCtmStaticX22:CtmStaticX2
     left =58
     top =309
     right =178
     bottom =341
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =PICKER_GROUP_5_ADJ
-  end
-  LinuxCtmImageBox7:CtmImageBox
-    left =304
-    top =309
-    right =320
-    bottom =341
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
   end
   LinuxCtmStaticX214:CtmStaticX2
     left =320
     top =309
     right =440
     bottom =341
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -568,5 +469,78 @@ ViewOver_IML:CtmFormView
     fontsize =1
     align =34
     upbitmap =res_tm640/pic/BtnLeft.bmp
+  end
+  OPENCLOSEMOLDPOSITION:CtmEditX1
+    left =145
+    top =235
+    right =233
+    bottom =267
+    wtype =39
+    taborder =-3
+    fgc =65535
+    bgc =33808
+    fontsize =1
+    bordercolor =36256
+    maxchar =14
+    align =36
+    precision =1
+    spepre =1
+    dbid0 =MACHINE_COMMUNICATION_IMM_OPENCLOSEMOLDPOSITION
+  end
+  EJECTPOSITION:CtmEditX1
+    left =369
+    top =235
+    right =457
+    bottom =267
+    wtype =39
+    taborder =-3
+    fgc =65535
+    bgc =33808
+    fontsize =1
+    bordercolor =36256
+    maxchar =14
+    align =36
+    precision =1
+    spepre =1
+  end
+  LinuxCtmStaticX27:CtmStaticX2
+    left =57
+    top =237
+    right =142
+    bottom =269
+    wtype =48
+    fgc =647
+    fontsize =1
+    textID =PICKER_OPENCLOSEMOLDPOSITION
+  end
+  LinuxCtmStaticX29:CtmStaticX2
+    left =289
+    top =237
+    right =374
+    bottom =269
+    wtype =48
+    fgc =647
+    fontsize =1
+    textID =PICKER_EJECTPOSITION
+  end
+  LinuxCtmStaticX210:CtmStaticX2
+    left =234
+    top =235
+    right =266
+    bottom =267
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
+  end
+  LinuxCtmStaticX211:CtmStaticX2
+    left =458
+    top =235
+    right =490
+    bottom =267
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =VW_UNIT_MM
   end
 end

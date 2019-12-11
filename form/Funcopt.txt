@@ -10,8 +10,8 @@ ViewFuncopt:CtmFormView
     top =192
     right =190
     bottom =224
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -23,8 +23,8 @@ ViewFuncopt:CtmFormView
     top =259
     right =190
     bottom =291
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -36,8 +36,8 @@ ViewFuncopt:CtmFormView
     top =326
     right =190
     bottom =358
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -47,154 +47,121 @@ ViewFuncopt:CtmFormView
   MovePostType0:CtmToolButton
     left =205
     top =184
-    right =325
-    bottom =234
+    right =315
+    bottom =244
+    wtype =48
     taborder =1
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =VW_CLAMP_NOUSE
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   MovePostType1:CtmToolButton
     left =333
     top =184
-    right =453
-    bottom =234
+    right =443
+    bottom =244
+    wtype =48
     taborder =2
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =PICKER_VERTICAL
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   MovePostType2:CtmToolButton
     left =461
     top =184
-    right =581
-    bottom =234
+    right =571
+    bottom =244
+    wtype =48
     taborder =3
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =PICKER_HORIZONTAL
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   MoldPostType0:CtmToolButton
     left =205
     top =251
-    right =325
-    bottom =301
+    right =315
+    bottom =311
+    wtype =48
     taborder =4
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =VW_CLAMP_NOUSE
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   MoldPostType1:CtmToolButton
     left =333
     top =251
-    right =453
-    bottom =301
+    right =443
+    bottom =311
+    wtype =48
     taborder =5
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =PICKER_VERTICAL
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   MoldPostType2:CtmToolButton
     left =461
     top =251
-    right =581
-    bottom =301
+    right =571
+    bottom =311
+    wtype =48
     taborder =6
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =PICKER_HORIZONTAL
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   MachineZero:CtmToolButton
     left =205
     top =318
-    right =325
-    bottom =368
+    right =315
+    bottom =378
+    wtype =48
     taborder =7
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =PICKER_MACHINE_ZERO
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   MachineNext:CtmToolButton
     left =333
     top =318
-    right =453
-    bottom =368
+    right =443
+    bottom =378
+    wtype =48
     taborder =8
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =PICKER_MACHINE_NEXT
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
-  end
-  LinuxCtmImageBox1:CtmImageBox
-    left =14
-    top =192
-    right =30
-    bottom =224
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox2:CtmImageBox
-    left =14
-    top =259
-    right =30
-    bottom =291
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox3:CtmImageBox
-    left =14
-    top =326
-    right =30
-    bottom =358
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
 end

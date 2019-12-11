@@ -6,6 +6,17 @@ ViewInternal_IO:CtmFormView
   wtype =48
   titleID =PICKER_IO
   printname =Robot_IO1.bmp
+  Img_Over_Picker:CtmImageBox
+    left =-2
+    top =0
+    right =597
+    bottom =1024
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/TagPage_BG.bmp
+    keycolor =63519
+  end
   SelectBox10:CtmSelectBox
     left =22
     top =66

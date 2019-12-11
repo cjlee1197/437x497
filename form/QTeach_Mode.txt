@@ -143,7 +143,7 @@ ViewQTeach:CtmFormView
     bottom =296
     wtype =32
     fgc =0
-    bgc =63422
+    bgc =59196
     fontsize =1
     bordercolor =35953
     textID =TEACH_QTEACH_SELECT
@@ -316,7 +316,7 @@ ViewQTeach:CtmFormView
     right =284
     bottom =516
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Check_SubSync:CtmToolButton
     left =310
@@ -425,11 +425,11 @@ ViewQTeach:CtmFormView
   end
   Mask_SubArm:CtmStaticX2
     left =92
-    top =144
+    top =152
     right =512
-    bottom =200
+    bottom =208
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Choose_Pile1:CtmToolButton
     left =54
@@ -493,11 +493,11 @@ ViewQTeach:CtmFormView
   end
   Mask_Pile:CtmStaticX2
     left =52
-    top =664
+    top =672
     right =464
-    bottom =776
+    bottom =784
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Detect_Mask2:CtmStaticX2
     left =484
@@ -505,7 +505,7 @@ ViewQTeach:CtmFormView
     right =548
     bottom =516
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Check_Move:CtmToolButton
     left =54
