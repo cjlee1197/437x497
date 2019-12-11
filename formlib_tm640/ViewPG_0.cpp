@@ -42,10 +42,11 @@
 #define		MODE_SINGLESTEP			0xF400
 #define		MODE_AUTO						0xF500
 
-#define		LGreen					0x8627 // 青綠
+#define		LGreen					0xCF90 //0xD796 // 0x8627 // 青綠
 #define		White						0xFFFF // 白
-#define		Gray						0xFFDF // 灰
+#define		Gray						0xD6BA // 0xFFDF //0xF79E // 灰
 #define		Yellow					0xFFE0 // 黃
+#define		LBlue						0xD73D // 淺藍
 
 // 動作類型
 #define		Action_Axis				1  // 軸動作
@@ -127,12 +128,14 @@ CtmWnd* u_pwndSingle = NULL;
 
 long	NoColor[] =
 {
-	LGreen, // 青綠
+	//LGreen, // 青綠
+	LBlue,
 	White,	// 白
 };
 long	BgColor[] =
 {
-	LGreen, // 青綠
+	//LGreen, // 青綠
+	LBlue,
 	White,	// 白
 };
 char* Img_Select[] = // 選取 圖片
@@ -584,7 +587,9 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 		else
 			str_8 = g_MultiLanguage[index_8];
 		if (index_9<0)
-			index_9 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
+			str_9 = pDataID9;
+		else
+			str_9 = g_MultiLanguage[index_9];
 		if (index_10<0)
 			index_10 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
 		if (index_11<0)
@@ -603,7 +608,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 		//str_6 = g_MultiLanguage[index_6];
 		str_7 = g_MultiLanguage[index_7];
 		//str_8 = g_MultiLanguage[index_8];
-		str_9 = g_MultiLanguage[index_9];
+		//str_9 = g_MultiLanguage[index_9];
 		str_10 = g_MultiLanguage[index_10];
 		//str_11 = g_MultiLanguage[index_11];
 		str_12 = g_MultiLanguage[index_12];
@@ -795,7 +800,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
     {
         wStep = (WORD)GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue; // 執行步驟
         int StepNumMin = 1+No1;
-        int StepNumMax = 10+No1;
+        int StepNumMax = iNum_Page+No1;
         if(wStep >0 && wStep < StepNumMin)
         {
         	PageUp(pwndSender);
@@ -836,10 +841,14 @@ void	OnUpdateA(CtmWnd* pwndSender)
 								}								
 							}
 							((CtmFormView*)pwndSender)->Goto(pwndStaticAct[i]->GetTabOrder());
-							pwndStaticAct[i]->SetPropValueT("bgc",Yellow);
+							pwndStaticAct[i]->SetPropValueT("bgc",LGreen);
 							pwndStaticAct[i]->CreateA();
 							pwndStaticAct[i]->Show();
 							pwndStaticAct[i]->Update();
+							pwndStaticEditNo[i]->SetPropValueT("bgc",LGreen);
+							pwndStaticEditNo[i]->CreateA();
+							pwndStaticEditNo[i]->Show();
+							pwndStaticEditNo[i]->Update();
 						}
 					}
         	wStepOld = wStep;
@@ -1021,7 +1030,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
     	}
     else if(wKey == 0x000C) // 合併
     	{
-				if(SelectNo > 5) // (SelectNo > 5)
+				if(SelectNo > StandbyStepNum) // (SelectNo > 5)
 				{
 					//if(ActionType != 5)
 					if( ((ActionType==Action_Axis)||(ActionType==Action_Permit)) && ((ActionType_Pre==Action_Axis)||(ActionType_Pre==Action_Permit))) // 所選動作及合併動作，皆須是軸動作或是允許動作
@@ -1091,7 +1100,7 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 {
 	CtmWnd*     pwnd = pwndSender->FindControlFromTab(wIDControl);
 
-	if(u_wPickerOPSatus != STATE_FULLAUTO) // 自動下限制
+	//if(u_wPickerOPSatus != STATE_FULLAUTO) // 自動下限制  //cjlee changed 自動下編輯2019/12/3 下午 05:11:53
 	{
 		if(pwnd == pwndButtonStartEdit) // 開始編輯
  		{
@@ -1162,6 +1171,11 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 						case 13:	// 副程式
 							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
 							MsgBoxCall("EditWindow_Sub.txt");
+							usleep(100*1000);
+						break;
+						case 0x10:	// P2P
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
+							MsgBoxCall("EditWindow_P2P.txt");
 							usleep(100*1000);
 						break;
 						default:
@@ -1611,21 +1625,21 @@ void	Download()							//下載資料至主機
 	printf("MaxDBNum=%d\n",MaxDBNum);
 	
 	pwndButtonDownload->SetPropValueT("taborder", -2); // "下載"按鍵上鎖
-	pwndLoadingBar->SetPropValueT("right",24); // 重置進度條
-	pwndLoadingBar->CreateA();
-	pwndLoadingBar->Update();
-	pwndLoadingMask->Update();
-	pwndLoadingMask2->Update();
-	pwndLoadingStr->SetPropValueT("bgc",0xF7BE); // 進度值
-	pwndLoadingStr->SetPropValueT("fgc",0x0001);
-	pwndLoadingStr->Update();
+//	pwndLoadingBar->SetPropValueT("right",24); // 重置進度條
+//	pwndLoadingBar->CreateA();
+//	pwndLoadingBar->Update();
+//	pwndLoadingMask->Update();
+//	pwndLoadingMask2->Update();
+//	pwndLoadingStr->SetPropValueT("bgc",0xF7BE); // 進度值
+//	pwndLoadingStr->SetPropValueT("fgc",0x0001);
+//	pwndLoadingStr->Update();
 	
 	for(int i =0;i<MaxDBNum;i++)
 	{
 		memset(pDataID, 0 ,sizeof(pDataID));
 		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1);
 		value = GetDBValue(pDataID).lValue;
-		//printf("%s=%d\n",pDataID,value);
+		printf("%s=%d\n",pDataID,value);
 		if(value !=0) // ACTION_TYPE 有值
 		{
 			//memset(pDataID, 0 ,sizeof(pDataID));
@@ -1883,7 +1897,7 @@ void	GetPosTag()							//紀錄 位置標籤 參數4 提供首頁位置補正用
 
 void	UpdateText()						//更新顯示字串
 {
-	//printf("UpdateText\n");
+	printf("UpdateText\n");
 	char 	pDataID[256];
 	char 	pDataID2[256];
 	char 	pDataID3[256];
@@ -1901,8 +1915,12 @@ void	UpdateText()						//更新顯示字串
 	char  szActPara2[256];
 	char  szActPara3[256];
 	char  szActPara5[256];
+	char  szActPara6[256];
+	char  szActPara7[256];
+	char  szActPara8[256];
+	
 	int	ACTIONTYPE =0,ACTIONNUM =0;
-	DWORD   wActPara1=0,wActPara2=0,wActPara3=0,wActPara5=0;
+	DWORD   wActPara1=0,wActPara2=0,wActPara3=0,wActPara5=0,wActPara6=0,wActPara7=0,wActPara8=0;
 	// ↓ 字串合併顯示 cjlee add 	
 	int index_1,index_2,index_3,index_4,index_5,index_6,index_7,index_8,index_9,index_10,index_11,index_12;
 	char	str[1024]; // 顯示字串用
@@ -1933,12 +1951,18 @@ void	UpdateText()						//更新顯示字串
 		sprintf(szActPara2,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2", i+1+No1); 
 		sprintf(szActPara3,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3", i+1+No1); 
 		sprintf(szActPara5,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER5", i+1+No1); 
+		sprintf(szActPara6,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6", i+1+No1); 
+		sprintf(szActPara7,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7", i+1+No1); 
+		sprintf(szActPara8,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8", i+1+No1); 
 		ACTIONTYPE =GetDBValue(pDataID).lValue;
 		ACTIONNUM =GetDBValue(pDataID2).lValue;
 		wActPara1  = GetDBValue(szActPara1).lValue;
 		wActPara2  = GetDBValue(szActPara2).lValue;
 		wActPara3  = GetDBValue(szActPara3).lValue;
 		wActPara5  = GetDBValue(szActPara5).lValue;
+		wActPara6  = GetDBValue(szActPara6).lValue;
+		wActPara7  = GetDBValue(szActPara7).lValue;
+		wActPara8  = GetDBValue(szActPara8).lValue;
 		//printf("LINE%d, ACTIONTYPE:%d, ACTIONNUM:%d, Para1:%d, Para2:%d, Para3:%d, Para5:%d\n",i+1+No1,ACTIONTYPE,ACTIONNUM,wActPara1,wActPara2,wActPara3,wActPara5);
 		memset(pDataID, 0 ,sizeof(pDataID));
 		memset(pDataID2, 0 ,sizeof(pDataID2));
@@ -1996,9 +2020,13 @@ void	UpdateText()						//更新顯示字串
 					sprintf(pDataID7,"PICKER_DESCRIBE_AXIS_2"); // "的速度移動到"
 					sprintf(pDataID8,"%3d.%02d",wActPara1/100,wActPara1%100);
 					sprintf(pDataID9,"PICKER_DESCRIBE_AXIS_3");
-					if(wActPara3)
+					
+					if(wActPara3) // 
 					{
-						sprintf(pDataID10,"PICKER_DESCRIBE_AXIS_7");
+						if(wActPara8) // 1-兩段變速 0-提前完成
+							sprintf(pDataID10,"PICKER_CHG_DIST"); // "變速"
+						else
+							sprintf(pDataID10,"PICKER_DESCRIBE_AXIS_7"); // "提前"
 						sprintf(pDataID11,"%3d.%02d",wActPara3/100,wActPara3%100);
 						sprintf(pDataID12,"VW_CHARGE_MM");
 					}
@@ -2029,7 +2057,8 @@ void	UpdateText()						//更新顯示字串
 				else
 					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_6");
 				break;
-			case 3:		//
+			case 3:		// 允許
+				// 行數make 出問題 cjlee 2019/12/9 下午 05:09:34
 				if(wActPara5)
 				{
 					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
@@ -2108,7 +2137,7 @@ void	UpdateText()						//更新顯示字串
 				if(wActPara2) // 檢測模式:區域
 					{
 						sprintf(pDataID5,"PICKER_PER"); // 持續
-						if(wActPara1) // 開始結束
+						if(wActPara3) // 開始結束
 							sprintf(pDataID4,"PICKER_STRT"); // 開始
 						else
 							sprintf(pDataID4,"PICKER_STOP"); // 結束
@@ -2124,7 +2153,7 @@ void	UpdateText()						//更新顯示字串
 				else
 					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_6"); // 關閉
 				break;
-			case 12:	//
+			case 12:	//堆疊
 				if(wActPara5)
 				{
 					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
@@ -2141,7 +2170,7 @@ void	UpdateText()						//更新顯示字串
 				else
 					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_6");
 				break;
-			case 13:	//
+			case 13:	//副程式
 				if(wActPara5)
 				{
 					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
@@ -2178,6 +2207,25 @@ void	UpdateText()						//更新顯示字串
 					sprintf(pDataID6,"ACTIONPOINT_END");
 				sprintf(pDataID7,"PICKER_SUBTECH_2");
 				sprintf(pDataID8,"%2d",wActPara2);
+				break;
+			case 0x10: // P2P
+				if(wActPara5) // 延時
+				{
+					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4"); // "延時"
+					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10); // 
+					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8"); // "秒"
+				}
+				sprintf(pDataID4,"PICKER_P2P"); // "點到點"
+				if(wActPara2) //速度
+				{
+					sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_1"); // "S"
+					sprintf(pDataID6,"%3d",wActPara2);
+				}
+				sprintf(pDataID7,"PICKER_DESCRIBE_AXIS_2"); // "的速度移動到"
+				sprintf(pDataID8,"%3d.%02d",wActPara1/100,wActPara1%100); // "X"
+				sprintf(pDataID9,"%3d.%02d",wActPara7/100,wActPara1%100); // "Y"
+				sprintf(pDataID11,"%3d.%02d",wActPara8/100,wActPara1%100); // "Z"
+				
 				break;
 			default: 
 				break;	
@@ -2220,7 +2268,9 @@ void	UpdateText()						//更新顯示字串
 		else
 			str_8 = g_MultiLanguage[index_8];
 		if (index_9<0)
-			index_9 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
+			str_9 = pDataID9;
+		else
+			str_9 = g_MultiLanguage[index_9];
 		if (index_10<0)
 			index_10 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
 		if (index_11<0)
@@ -2239,7 +2289,7 @@ void	UpdateText()						//更新顯示字串
 		//str_6 = g_MultiLanguage[index_6];
 		str_7 = g_MultiLanguage[index_7];
 		//str_8 = g_MultiLanguage[index_8];
-		str_9 = g_MultiLanguage[index_9];
+		//str_9 = g_MultiLanguage[index_9];
 		str_10 = g_MultiLanguage[index_10];
 		//str_11 = g_MultiLanguage[index_11];
 		str_12 = g_MultiLanguage[index_12];
@@ -2285,6 +2335,8 @@ void	UpdateText()						//更新顯示字串
 			if(No>EditedStepNum)temp=StandbyStepNum; // 未編輯的動作			
 			pwndStaticAct[i]->SetPropValueT("bgc",NoColor[((temp)%2)]); // 動作背景顏色
 			pwndStaticAct[i]->Show();
+			pwndStaticEditNo[i]->SetPropValueT("bgc",NoColor[((temp)%2)]); // 動作背景顏色
+			pwndStaticEditNo[i]->Show();
 		}
 		if( No<(StandbyStepNum+1) ) // 設置等待點 序號
 		{
@@ -2304,8 +2356,12 @@ void	UpdateText()						//更新顯示字串
 			if(pwndStaticAct[i] != NULL) // 動作列表 目前選擇動作
 			{
 				if((i+1)==SelectNo-No1)
-					pwndStaticAct[i]->SetPropValueT("bgc",Yellow);
+				{
+					pwndStaticAct[i]->SetPropValueT("bgc",LGreen);
+					pwndStaticEditNo[i]->SetPropValueT("bgc",LGreen);
+				}
 				pwndStaticAct[i]->Show();
+				pwndStaticEditNo[i]->Show();
 			}
 		}
 		//pwndCheckBoxAct[i]->Update();
@@ -2374,6 +2430,7 @@ void	UnSync(int SelectNo) // 分解動作
 }
 void	UpdateNo() // 刷新序號顯示
 {
+	printf("UpdateNo\n");
 	int value=0;
 	for (int i = 0; i < iEditNo; i++)	//獲取序號
 	{
@@ -2382,6 +2439,7 @@ void	UpdateNo() // 刷新序號顯示
 		sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
 		memset(pStaticNo, 0 ,sizeof(pStaticNo));
 		value = GetDBValue(pNoDataID).lValue;
+		printf("MACHINE_PROFILE_NUM%d_ACTION_STEP=%d\n",No,value);
 		if( No<(StandbyStepNum+1) )
 		{
 			if(pwndStaticEditNo[i] != NULL)

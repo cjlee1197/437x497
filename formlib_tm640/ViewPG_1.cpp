@@ -164,44 +164,55 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 {
 	switch(wKey)
 	{
-		case 1:		//Öá¶¯×÷
+		case 1:		// ¶b°Ê§@
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
-			::PutCommand("PG_2_AXISACT.txt");
+			MsgBoxCall("EditWindow_AxisAct.txt");
+			Exit();
 		break;
-		case 2:		//µÈ´ý
+		case 2:		// µ¥«Ý
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
-			::PutCommand("PG_2_WAIT.txt");
+			MsgBoxCall("EditWindow_Wait.txt");
+			Exit();
 		break;
-		case 3:		//ÔÊÐí
+		case 3:		// ¤¹³\
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
-			::PutCommand("PG_2_PERMIT.txt");
+			MsgBoxCall("EditWindow_Permit.txt");
+			Exit();
 		break;
-		case 4:		//·§ÃÅ
+		case 4:		// »Öªù
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
-			::PutCommand("PG_2_VALVE.txt");
+			MsgBoxCall("EditWindow_Valve.txt");
+			Exit();
 		break;
-		case 5:		//±êÇ©
+		case 5:		// ¼ÐÅÒ
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
-			::PutCommand("PG_2_LABEL.txt");
+			MsgBoxCall("EditWindow_Tag.txt");
+			Exit();
 		break;
-		case 6:		//Ìø×ª
+		case 6:		// ¸õÂà
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
-			::PutCommand("PG_2_GOTO.txt");
+			MsgBoxCall("EditWindow_Goto.txt");
+			Exit();
 		break;
-		case 8:		//¼ì²â
+		case 8:		// ÀË´ú
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
-			::PutCommand("PG_2_TEST.txt");
+			MsgBoxCall("EditWindow_Detect.txt");
+			Exit();
 		break;
-		case 12:	//¶Ñµþ
+		case 12:	// °ïÅ|
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
-			::PutCommand("PG_2_PILE.txt");
+			MsgBoxCall("EditWindow_Pile.txt");
+			Exit();
 		break;
-		case 13:	//×Ó³ÌÐò
+		case 13:	// °Æµ{¦¡
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
-			::PutCommand("PG_2_SUBTECH.txt");
+			MsgBoxCall("EditWindow_Sub.txt");
+			Exit();
 		break;
-		case 14:		//ÈþÏû
-			::PutCommand("PG_0.txt");
+		case 0x10:	// P2P
+			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			MsgBoxCall("EditWindow_P2P.txt");
+			Exit();
 		break;
 		default:
 		break;
@@ -217,7 +228,7 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 	if(pwnd == pwndButtonReturn)
 		{
 			printf("Return\n");
-			::PutCommand("PG_0.txt");
+			Exit();
 		}
 		
 	if(pwnd == NULL)	return wIDControl;

@@ -32,6 +32,7 @@ extern  "C"	WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey);
 
 void	PageDown(CtmWnd* pwndSender);
 void	PageNext(CtmWnd* pwndSender);
+void	UpdatePageBar(int iPage);
 void	PageUp(CtmWnd* pwndSender);
 void	GetPickerDB(int SelectNo);
 void	SetPickerDB(int SelectNo);
@@ -42,6 +43,7 @@ void	Search(int SearchNo);
 void	Sync(int SelectNo);
 void	UnSync(int SelectNo);
 void	UpdateNo();
+void	UpdatePlace();
 void	Clear();
 void	Clean();
 void	Download();

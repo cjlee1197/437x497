@@ -37,6 +37,9 @@
 #define		Action_Detect			8  // 檢測
 #define		Action_Pile				12 // 堆疊
 #define		Action_Sub				13 // 副程式
+
+#define     CONST_REQ_WRITE         3
+#define     STATE_FULLAUTO          4 
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -50,6 +53,8 @@ int u_PickerType = 0; // 機型選擇 0-三軸 1-五軸
 char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
 
 BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
+BOOL				AutoMode					= FALSE; // 自動模式下
+WORD        u_wPickerOPSatus    = 0;
 
 CtmWnd*		pwndimageBackGround1	= NULL;
 CtmWnd*		pwndStaticTITLE2	= NULL;
@@ -60,6 +65,16 @@ CtmWnd*		pwndSTRT_STOP				= NULL;
 CtmWnd*		pwndON_OFF					= NULL;
 CtmWnd*		pwndValveCheck			= NULL;
 CtmWnd*		pwndOPEN_MODE				= NULL;
+CtmWnd*		pwndEND_MODE				= NULL; // 軸動作 結束模式
+CtmWnd*		pwndEditEnd1				= NULL; // 軸動作 結束模式 輸入1
+CtmWnd*		pwndEditEnd2				= NULL; // 軸動作 結束模式 輸入2
+CtmWnd*		pwndStaticEnd1			= NULL; // 軸動作 結束模式 文字1
+CtmWnd*		pwndStaticEnd2			= NULL; // 軸動作 結束模式 文字2
+CtmWnd*		pwndEditPos_X				= NULL; // 軸動作 點到點 X座標
+CtmWnd*		pwndEditPos_Y				= NULL; // 軸動作 點到點 Y座標
+CtmWnd*		pwndEditPos_Z				= NULL; // 軸動作 點到點 Z座標
+CtmWnd*		pwndPerAdv					= NULL; // 軸動作 點到點 提前百分比
+CtmWnd*		pwndPerEnd					= NULL; // 軸動作 點到點 末段百分比
 CtmWnd*		pwndEditACTIONPARA1	= NULL;
 CtmWnd*		pwndEditACTIONPARA2	= NULL;
 CtmWnd*		pwndEditACTIONPARA3	= NULL;
@@ -86,7 +101,8 @@ int			iNumButtonAct =0;
 int			SelectNo	=0;
 long		ActionType  =0;
 int			EditNUM=0,GroupNUM=0,ACTIONPARA1=0,ACTIONPARA2=0,ACTIONPARA3=0,ACTIONPARA5=0,ACTIONPARA6=0;
-int			iDetectMode=0,iSTRTSTOP=0,iON_OFF=0,iValveCheck=0,iOpenMode=0;
+int			ACTIONPARA7=0,ACTIONPARA8=0,ACTIONPARA67=0;
+int			iDetectMode=0,iSTRTSTOP=0,iON_OFF=0,iValveCheck=0,iOpenMode=0,iEndMode=0;
 int		AxisXOld =0,AxisYOld =0,AxisZOld =0,AxisX2Old =0,AxisY2Old =0,AxisCOld=0,iSelectIndexOld=0xFFFF,AxisXNew =0,AxisYNew =0,AxisX2New =0,AxisY2New =0,AxisZNew =0,AxisCNew =0,iSelectIndex=0xFFFF;
 
 int     iEditNo=0,iCheckBoxAct=0,iEditACTION=0,iSelectEditACTION=0,iStaticACTION=0,iStaticEditNo;
@@ -174,6 +190,11 @@ char*	Str_Detect[] =
 	"PICKER_SGL_DETC", // 區域檢測
 	"PICKER_PER_DETC", // 單點撿測
 };
+char*	Img_Btn[] =
+{
+	"res_tm640/pic/EditBtnDown.bmp", // 灰按鈕
+	"res_tm640/pic/EditBtnUp.bmp", // 亮按鈕
+};
 
 char*	Str_STRTSTOP[] =
 {
@@ -197,6 +218,21 @@ char*	Str_OpenMode[] =
 	"PICKER_STANDARD", 	// 標準
 	"PICKER_OPNFOLLOW", // 開模追隨
 	"PICKER_OPNMIDDWN", // 中途下降
+};
+char*	Str_EndMode[] =
+{
+	"PICKER_ADV_END", // 不檢測
+	"PICKER_SEC_SPD", // 檢測
+};
+char*	Str_StaticEnd1[] =
+{
+	"PICKER_ADV_DIST", // 提前
+	"PICKER_CHG_DIST", // 變速
+};
+char*	Str_StaticEnd2[] =
+{
+	"PICKER_END_DIST", // 末段
+	"PICKER_SPD_SEC", // 二段
 };
 /*---------------------------------------------------------------------------+
 |  Function : OnCreateA()                     	     	                       |
@@ -308,6 +344,16 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	pwndON_OFF					= pwndSender->FindControlFromName("ON_OFF");
 	pwndValveCheck			= pwndSender->FindControlFromName("ValveCheck");
 	pwndOPEN_MODE				= pwndSender->FindControlFromName("OPEN_MODE");
+	pwndEND_MODE				= pwndSender->FindControlFromName("END_MODE");
+	pwndEditEnd1				= pwndSender->FindControlFromName("EditEnd1");
+	pwndEditEnd2				= pwndSender->FindControlFromName("EditEnd2");
+	pwndStaticEnd1			= pwndSender->FindControlFromName("StaticEnd1");
+	pwndStaticEnd2			= pwndSender->FindControlFromName("StaticEnd2");
+	pwndEditPos_X				= pwndSender->FindControlFromName("EditPos_X");
+	pwndEditPos_Y				= pwndSender->FindControlFromName("EditPos_Y");
+	pwndEditPos_Z				= pwndSender->FindControlFromName("EditPos_Z");
+	pwndPerAdv					= pwndSender->FindControlFromName("PerAdv");
+	pwndPerEnd					= pwndSender->FindControlFromName("PerEnd");
 	pwndEditACTIONPARA1	= pwndSender->FindControlFromName("EditACTIONPARA1");
 	pwndEditACTIONPARA2	= pwndSender->FindControlFromName("EditACTIONPARA2");
 	pwndEditACTIONPARA3	= pwndSender->FindControlFromName("EditACTIONPARA3");
@@ -364,7 +410,10 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	{
 		RunOnlyOne=TRUE;
 		((CtmFormView*)pwndSender)->OnLoseFocus(); // 取消光標
-			
+		
+		u_wPickerOPSatus = GetDBValue("MACHINE_INTERFACE_WOPERATINGSTATE").lValue; // 機械手狀態
+		if(u_wPickerOPSatus == STATE_FULLAUTO) 
+			AutoMode=TRUE;
 		SelectNo		=GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED40").lValue;		//祭紬 步驟
 		ActionType = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41").lValue;			//濬倰 類型
 		printf("SelectNo%d ActionType=%d\n",SelectNo,ActionType);
@@ -668,6 +717,105 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			pwndOPEN_MODE	->Update();
 		}
 		
+		if(pwndEND_MODE != NULL && pwndStaticEnd1!=NULL && pwndStaticEnd2!=NULL) // 停止 模式 0提前完成 1兩段變速
+		{
+			memset(pDataID, 0 ,sizeof(pDataID));
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8",SelectNo);
+			iEndMode = GetDBValue(pDataID).lValue;
+
+			memset(pDataID, 0 ,sizeof(pDataID));
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3",SelectNo);
+			ACTIONPARA3 = GetDBValue(pDataID).lValue;
+			pwndEditEnd1->SetPropValueT("value",ACTIONPARA3);
+				
+			if(iEndMode == 1) // 兩段變速 
+			{
+				pwndEND_MODE->SetPropValueT("captionID",Str_EndMode[iEndMode]);
+				pwndStaticEnd1->SetPropValueT("textID",Str_StaticEnd1[iEndMode]);
+				pwndStaticEnd2->SetPropValueT("textID",Str_StaticEnd2[iEndMode]);
+				memset(pDataID, 0 ,sizeof(pDataID));
+				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7",SelectNo);
+				ACTIONPARA7 = GetDBValue(pDataID).lValue;
+				pwndEditEnd2->SetPropValueT("value",ACTIONPARA7);
+				printf("Set pwndEditEnd2 =%s\n",pDataID);
+				pwndEditEnd2->SetPropValueT("precision",(double)0);
+			}
+			else // 提前完成
+			{
+				pwndEND_MODE->SetPropValueT("captionID",Str_EndMode[0]);
+				pwndStaticEnd1->SetPropValueT("textID",Str_StaticEnd1[0]);
+				pwndStaticEnd2->SetPropValueT("textID",Str_StaticEnd2[0]);
+				memset(pDataID, 0 ,sizeof(pDataID));
+				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6",SelectNo);
+				ACTIONPARA6 = GetDBValue(pDataID).lValue;
+				pwndEditEnd2->SetPropValueT("value",ACTIONPARA6);
+				printf("Set pwndEditEnd2 =%s\n",pDataID);
+				pwndEditEnd2->SetPropValueT("precision",(double)2);
+			}
+			pwndEND_MODE->CreateA();
+			pwndEND_MODE->Update();
+			pwndStaticEnd1->CreateA();
+			pwndStaticEnd1->Update();
+			pwndStaticEnd2->CreateA();
+			pwndStaticEnd2->Update();
+			pwndEditEnd1->CreateA();
+			pwndEditEnd1->Update();
+			pwndEditEnd2->CreateA();
+			pwndEditEnd2->Update();
+		}
+		
+		if(pwndEditPos_X != NULL) // 軸動作 點到點 X座標 PARA1
+		{
+			memset(pDataID, 0 ,sizeof(pDataID));
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1",SelectNo);
+			ACTIONPARA1 = GetDBValue(pDataID).lValue;
+			pwndEditPos_X->SetPropValueT("value",ACTIONPARA1);
+			printf("Set pwndEditPos_X =%s\n",pDataID);
+			pwndEditPos_X->SetPropValueT("maxid","MACHINE_LIMITS_AXIS1_MAXPOSTION");
+			pwndEditPos_X	->CreateA();
+			pwndEditPos_X	->Update();
+		}
+		if(pwndEditPos_Y != NULL) // 軸動作 點到點 Y座標 PARA7
+		{
+			memset(pDataID, 0 ,sizeof(pDataID));
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7",SelectNo);
+			ACTIONPARA7 = GetDBValue(pDataID).lValue;
+			pwndEditPos_Y->SetPropValueT("value",ACTIONPARA7);
+			printf("Set pwndEditPos_Y =%s\n",pDataID);
+			pwndEditPos_Y->SetPropValueT("maxid","MACHINE_LIMITS_AXIS2_MAXPOSTION");
+			pwndEditPos_Y	->CreateA();
+			pwndEditPos_Y	->Update();
+		}
+		if(pwndEditPos_Z != NULL) // 軸動作 點到點 Z座標 PARA8
+		{
+			memset(pDataID, 0 ,sizeof(pDataID));
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8",SelectNo);
+			ACTIONPARA8 = GetDBValue(pDataID).lValue;
+			pwndEditPos_Z->SetPropValueT("value",ACTIONPARA8);
+			printf("Set pwndEditPos_Z =%s\n",pDataID);
+			pwndEditPos_Z->SetPropValueT("maxid","MACHINE_LIMITS_AXIS3_MAXPOSTION");
+			pwndEditPos_Z	->CreateA();
+			pwndEditPos_Z	->Update();
+		}
+		if(pwndPerAdv != NULL) // 軸動作 點到點 提前百分比 PARA3
+		{
+			memset(pDataID, 0 ,sizeof(pDataID));
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3",SelectNo);
+			ACTIONPARA3 = GetDBValue(pDataID).lValue;
+			pwndPerAdv->SetPropValueT("value",ACTIONPARA3);
+			pwndPerAdv->CreateA();
+			pwndPerAdv->Update();
+		}
+		if(pwndPerEnd != NULL) // 軸動作 點到點 末段百分比 PARA6
+		{
+			memset(pDataID, 0 ,sizeof(pDataID));
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6",SelectNo);
+			ACTIONPARA6 = GetDBValue(pDataID).lValue;
+			pwndPerEnd->SetPropValueT("value",ACTIONPARA6);
+			pwndPerEnd->CreateA();
+			pwndPerEnd->Update();
+		}
+				
 		if(pwndEditACTIONPARA1 != NULL) // 參數1
 		{
 			memset(pDataID, 0 ,sizeof(pDataID));
@@ -767,6 +915,15 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			}
 		}
 		
+		if(AutoMode) // 自動模式下 鎖住
+			{
+				if(pwndSelectEditNUM != NULL)			// 編號
+					SetEnabled(pwndSelectEditNUM, 0);
+				if(pwndSelectGroupNum != NULL)			// 群組
+					SetEnabled(pwndSelectGroupNum, 0);
+				if(pwndEND_MODE!=NULL) // 模式
+					SetEnabled(pwndEND_MODE, 0);
+			}
 	}
 	
 	iSelectIndex = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46").lValue;
@@ -1353,6 +1510,19 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				pwndEditACTIONPARA1->Update();
 			}
 		}
+		
+		if(pwndEditPos_X!=NULL && pwndEditPos_Y!=NULL && pwndEditPos_Z!=NULL ) // P2P 三軸座標
+		{
+			AXISACTPos =GetDBValue("MACHINE_INTERFACE_CONTROL_XAXISPOSITION").lValue;	
+			pwndEditPos_X->SetPropValueT("value",AXISACTPos);
+			AXISACTPos =GetDBValue("MACHINE_INTERFACE_CONTROL_YAXISPOSITION").lValue;	
+			pwndEditPos_Y->SetPropValueT("value",AXISACTPos);
+			AXISACTPos =GetDBValue("MACHINE_INTERFACE_CONTROL_ZAXISPOSITION").lValue;	
+			pwndEditPos_Z->SetPropValueT("value",AXISACTPos);
+			pwndEditPos_X->Update();
+			pwndEditPos_Y->Update();
+			pwndEditPos_Z->Update();
+		}			
 		return _NULL_KEY;
 	}
 
@@ -1679,9 +1849,16 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		pwndDetectMode->CreateA();
 		pwndDetectMode->Update();
 		if(iDetectMode)
+		{
 			SetEnabled(pwndSTRT_STOP, 1);
+		}
 		else
+		{
 			SetEnabled(pwndSTRT_STOP, 0);
+		}
+		pwndSTRT_STOP->SetPropValueT("upbitmap",Img_Btn[iDetectMode]);
+		pwndSTRT_STOP->CreateA();
+		pwndSTRT_STOP->Update();
 	}
 	else if(pwnd == pwndSTRT_STOP) // 檢測：開始/停止
 	{
@@ -1721,7 +1898,45 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		pwndOPEN_MODE->CreateA();
 		pwndOPEN_MODE->Update();
 	}
-	
+	else if(pwnd == pwndEND_MODE)
+	{
+		iEndMode++;
+		if(iEndMode>1)
+			iEndMode=0;
+		pwndEND_MODE->SetPropValueT("captionID",Str_EndMode[iEndMode]);	
+		pwndEND_MODE->CreateA();
+		pwndEND_MODE->Update();
+		pwndStaticEnd1->SetPropValueT("textID",Str_StaticEnd1[iEndMode]);
+		pwndStaticEnd1->CreateA();
+		pwndStaticEnd1->Update();
+		pwndStaticEnd2->SetPropValueT("textID",Str_StaticEnd2[iEndMode]);
+		pwndStaticEnd2->CreateA();
+		pwndStaticEnd2->Update();
+		((CtmFormView*)pwndEditEnd1)->OnLoseFocus(); // 取消光標
+		((CtmFormView*)pwndEditEnd2)->OnLoseFocus(); // 取消光標
+		
+		char 	pDataID[256];
+		if(iEndMode)
+		{
+			memset(pDataID, 0 ,sizeof(pDataID));
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7",SelectNo);
+			ACTIONPARA7 = GetDBValue(pDataID).lValue;
+			pwndEditEnd2->SetPropValueT("value",ACTIONPARA7);
+			pwndEditEnd2->SetPropValueT("max",100);
+			pwndEditEnd2->SetPropValueT("precision",(double)0);
+		}
+		else
+		{
+			memset(pDataID, 0 ,sizeof(pDataID));
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6",SelectNo);
+			ACTIONPARA6 = GetDBValue(pDataID).lValue;
+			pwndEditEnd2->SetPropValueT("value",ACTIONPARA6);
+			pwndEditEnd2->SetPropValueT("max",99999);
+			pwndEditEnd2->SetPropValueT("precision",(double)2);
+		}
+		pwndEditEnd2->CreateA();
+		pwndEditEnd2->Update();
+	}
 	
 	else if(pwnd == pwndBtnSave) // 儲存
 	{
@@ -1825,6 +2040,7 @@ void	Save()
 	{
 		memset(pDataID, 0 ,sizeof(pDataID));
 		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1",SelectNo);
+		printf("Save %s=%d",pDataID,iON_OFF);
 		SetDBValue(pDataID, iON_OFF);
 	}
 	if(pwndValveCheck != NULL) // 閥門 檢測
@@ -1838,6 +2054,72 @@ void	Save()
 		memset(pDataID, 0 ,sizeof(pDataID));
 		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2",SelectNo);
 		SetDBValue(pDataID, iOpenMode);
+	}
+	if(pwndEND_MODE != NULL) // 結束 模式
+	{
+		memset(pDataID, 0 ,sizeof(pDataID));
+		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8",SelectNo);
+		printf("Set %s=%d\n",pDataID,iEndMode);
+		SetDBValue(pDataID, iEndMode);
+	}
+	if(pwndEditEnd1 != NULL) // 提前距離 變速距離
+	{
+		memset(pDataID, 0 ,sizeof(pDataID));
+		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3",SelectNo);
+		pwndEditEnd1->GetPropValueT("value", &ACTIONPARA3,sizeof(ACTIONPARA3));
+		printf("Set %s=%d\n",pDataID,ACTIONPARA3);
+		SetDBValue(pDataID,ACTIONPARA3);
+	}
+	if(pwndEditEnd2 != NULL) // 末段距離P6 / 二段速度P7
+	{
+		memset(pDataID, 0 ,sizeof(pDataID));
+		if(iEndMode)
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7",SelectNo);
+		else
+			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6",SelectNo);
+		pwndEditEnd2->GetPropValueT("value", &ACTIONPARA67,sizeof(ACTIONPARA67));
+		printf("Set %s=%d\n",pDataID,ACTIONPARA67);
+		SetDBValue(pDataID,ACTIONPARA67);
+	}
+	if(pwndEditPos_X != NULL) // // 軸動作 點到點 X座標
+	{
+		memset(pDataID, 0 ,sizeof(pDataID));
+		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1",SelectNo);
+		pwndEditPos_X->GetPropValueT("value", &ACTIONPARA1,sizeof(ACTIONPARA1));
+		printf("Set %s=%d\n",pDataID,ACTIONPARA1);
+		SetDBValue(pDataID,ACTIONPARA1);
+	}
+	if(pwndEditPos_Y != NULL) // // 軸動作 點到點 Y座標
+	{
+		memset(pDataID, 0 ,sizeof(pDataID));
+		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7",SelectNo);
+		pwndEditPos_Y->GetPropValueT("value", &ACTIONPARA7,sizeof(ACTIONPARA7));
+		printf("Set %s=%d\n",pDataID,ACTIONPARA7);
+		SetDBValue(pDataID,ACTIONPARA7);
+	}
+	if(pwndEditPos_Z != NULL) // // 軸動作 點到點 Z座標
+	{
+		memset(pDataID, 0 ,sizeof(pDataID));
+		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8",SelectNo);
+		pwndEditPos_Z->GetPropValueT("value", &ACTIONPARA8,sizeof(ACTIONPARA8));
+		printf("Set %s=%d\n",pDataID,ACTIONPARA8);
+		SetDBValue(pDataID,ACTIONPARA8);
+	}
+	if(pwndPerAdv != NULL) // 軸動作 點到點 提前百分比 PARA3
+	{
+		memset(pDataID, 0 ,sizeof(pDataID));
+		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3",SelectNo);
+		pwndPerAdv->GetPropValueT("value", &ACTIONPARA3,sizeof(ACTIONPARA3));
+		printf("Set %s=%d\n",pDataID,ACTIONPARA3);
+		SetDBValue(pDataID,ACTIONPARA3);
+	}
+	if(pwndPerEnd != NULL) // 軸動作 點到點 末段百分比 PARA6
+	{
+		memset(pDataID, 0 ,sizeof(pDataID));
+		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6",SelectNo);
+		pwndPerEnd->GetPropValueT("value", &ACTIONPARA6,sizeof(ACTIONPARA6));
+		printf("Set %s=%d\n",pDataID,ACTIONPARA6);
+		SetDBValue(pDataID,ACTIONPARA6);
 	}
 	
 	if(pwndEditACTIONPARA1 != NULL)
@@ -1868,7 +2150,7 @@ void	Save()
 		{
 			pwndEditACTIONPARA2->GetPropValueT("value", &ACTIONPARA2,sizeof(ACTIONPARA2));
 		}
-		if(ActionType==1 && (EditNUM <= 5) && ACTIONPARA2<=1)// 速度最小值為1
+		if((ActionType==1||ActionType==0x10) && (EditNUM <= 5) && ACTIONPARA2<=1)// 速度最小值為1
 			{ACTIONPARA2=80;}		
 		printf("Set %s=%d\n",pDataID,ACTIONPARA2);
 		SetDBValue(pDataID, ACTIONPARA2);
@@ -1900,6 +2182,37 @@ void	Save()
 		SetDBValue(pDataID, ACTIONPARA6);
 	}
 	
+	
+	if(AutoMode) // 自動下儲存
+		{
+			char*       u_pszDBString=NULL;
+			u_pszDBString = (char*)malloc(256);
+			memset(u_pszDBString, 0 ,sizeof(u_pszDBString));
+			sprintf(u_pszDBString, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1", SelectNo);
+			g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString);
+			memset(u_pszDBString, 0 ,sizeof(u_pszDBString));
+			sprintf(u_pszDBString, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2", SelectNo);
+			g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString);
+			memset(u_pszDBString, 0 ,sizeof(u_pszDBString));
+			sprintf(u_pszDBString, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3", SelectNo);
+			g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString);
+			memset(u_pszDBString, 0 ,sizeof(u_pszDBString));
+			sprintf(u_pszDBString, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER5", SelectNo);
+			g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString);
+			if(iEndMode)
+			{
+				memset(u_pszDBString, 0 ,sizeof(u_pszDBString));
+				sprintf(u_pszDBString, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7", SelectNo);
+				g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString);
+			}
+			else
+			{
+				memset(u_pszDBString, 0 ,sizeof(u_pszDBString));
+				sprintf(u_pszDBString, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6", SelectNo);
+				g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString);
+			}
+			free(u_pszDBString);
+		}
 	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED42", 1);
 }
 
