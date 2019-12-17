@@ -102,7 +102,8 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	pwndButtonReturn		= pwndSender->FindControlFromName("ButtonReturn");
 	char temp[128];
 	char szTemp[256];
-	iNumButtonAct 	 = GetSpecialControlNum(pwndSender, "ButtonAct", "CtmToolButton", pwndButtonAct);
+	//iNumButtonAct 	 = GetSpecialControlNum(pwndSender, "ButtonAct", "CtmToolButton", pwndButtonAct);
+	printf("iNumButtonAct=%d\n");
 	char 	pDataID[256];
 	memset(pDataID, 0 ,sizeof(pDataID));
 	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",SelectNo);
@@ -162,55 +163,61 @@ WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
 
 WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 {
+	printf("wKey=%d\n",wKey);
+	if(wKey>0)
+	{
+		SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+		printf("Set wKey=%d\n",wKey);
+	}
 	switch(wKey)
 	{
 		case 1:		// 軸動作
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			//SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
 			MsgBoxCall("EditWindow_AxisAct.txt");
 			Exit();
 		break;
 		case 2:		// 等待
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			//SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
 			MsgBoxCall("EditWindow_Wait.txt");
 			Exit();
 		break;
 		case 3:		// 允許
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			//SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
 			MsgBoxCall("EditWindow_Permit.txt");
 			Exit();
 		break;
 		case 4:		// 閥門
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			//SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
 			MsgBoxCall("EditWindow_Valve.txt");
 			Exit();
 		break;
 		case 5:		// 標籤
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			//SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
 			MsgBoxCall("EditWindow_Tag.txt");
 			Exit();
 		break;
 		case 6:		// 跳轉
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			//SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
 			MsgBoxCall("EditWindow_Goto.txt");
 			Exit();
 		break;
 		case 8:		// 檢測
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			//SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
 			MsgBoxCall("EditWindow_Detect.txt");
 			Exit();
 		break;
 		case 12:	// 堆疊
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			//SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
 			MsgBoxCall("EditWindow_Pile.txt");
 			Exit();
 		break;
 		case 13:	// 副程式
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			//SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
 			MsgBoxCall("EditWindow_Sub.txt");
 			Exit();
 		break;
 		case 0x10:	// P2P
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
+			//SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", wKey);
 			MsgBoxCall("EditWindow_P2P.txt");
 			Exit();
 		break;

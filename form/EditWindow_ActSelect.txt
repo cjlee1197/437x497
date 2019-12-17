@@ -51,23 +51,6 @@ ViewPG_1:CtmFormView
     downbitmap =res_tm640/pic/PGBtnDown.bmp
     key =5
   end
-  ButtonAct6:CtmToolButton
-    left =274
-    top =248
-    right =384
-    bottom =308
-    wtype =48
-    taborder =-1
-    bgc =54970
-    fontsize =1
-    leftcontrol =buttonDOWNTWENTY
-    upcontrol =editTAXISMEDIA
-    downcontrol =editNEWNAME
-    align =34
-    upbitmap =res_tm640/pic/PGBtn_Goto.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
-    key =6
-  end
   ButtonAct2:CtmToolButton
     left =272
     top =40
@@ -118,23 +101,6 @@ ViewPG_1:CtmFormView
     upbitmap =res_tm640/pic/PGBtn_Pile.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
     key =12
-  end
-  ButtonAct3:CtmToolButton
-    left =16
-    top =144
-    right =126
-    bottom =204
-    wtype =48
-    taborder =-1
-    bgc =54970
-    fontsize =1
-    leftcontrol =buttonDOWNTWENTY
-    upcontrol =editTAXISMEDIA
-    downcontrol =editNEWNAME
-    align =34
-    upbitmap =res_tm640/pic/PGBtn_Allow.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
-    key =3
   end
   ButtonAct7:CtmToolButton
     left =273
@@ -332,5 +298,39 @@ ViewPG_1:CtmFormView
     bordercolor =35953
     textID =PICKER_P2P
     align =34
+  end
+  ButtonAct6:CtmToolButton
+    left =274
+    top =248
+    right =384
+    bottom =308
+    wtype =48
+    taborder =-1
+    bgc =54970
+    fontsize =1
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    upbitmap =res_tm640/pic/PGBtn_Goto.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    key =6
+  end
+  LinuxCtmToolButton1:CtmToolButton
+    left =16
+    top =144
+    right =126
+    bottom =204
+    wtype =48
+    taborder =-1
+    bgc =54970
+    fontsize =1
+    leftcontrol =buttonDOWNTWENTY
+    upcontrol =editTAXISMEDIA
+    downcontrol =editNEWNAME
+    align =34
+    upbitmap =res_tm640/pic/PGBtn_Allow.bmp
+    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    key =3
   end
 end
