@@ -7,9 +7,9 @@ ViewOver_IML:CtmFormView
   titleID =VW_PAT_OVERVIEW
   printname =Over.bmp
   BtnClose:CtmToolButton
-    left =260
-    top =404
-    right =360
+    left =235
+    top =374
+    right =385
     bottom =434
     wtype =48
     taborder =88
@@ -106,7 +106,7 @@ ViewOver_IML:CtmFormView
     top =163
     right =190
     bottom =195
-    wtype =33
+    wtype =39
     taborder =-3
     fgc =65535
     bgc =33808
@@ -121,7 +121,7 @@ ViewOver_IML:CtmFormView
     top =125
     right =190
     bottom =157
-    wtype =33
+    wtype =39
     taborder =-3
     fgc =65535
     bgc =33808
@@ -135,7 +135,7 @@ ViewOver_IML:CtmFormView
     top =87
     right =190
     bottom =119
-    wtype =33
+    wtype =39
     taborder =-3
     fgc =65535
     bgc =33808
