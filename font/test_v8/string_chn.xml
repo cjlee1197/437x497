@@ -940,6 +940,10 @@
 	<string name="PICKER_M3_ALARM3615">橫行姿態未到位不可橫行，請檢查教導或橫行姿態</string>
 	<string name="PICKER_M3_ALARM3616">橫行姿態未到位不可移動，請檢查教導或模內姿態</string>
 	<string name="PICKER_M3_ALARM3618">模內不允許旋轉姿態</string>
+	<string name="PICKER_M3_ALARM3700">姿態垂直未到位或超時</string>
+	<string name="PICKER_M3_ALARM3701">姿態水平未到位或超時</string>
+	<string name="PICKER_M3_ALARM3702">姿態B+未到位或超時</string>
+	<string name="PICKER_M3_ALARM3703">姿態B-未到位或超時</string>
 	<string name="PICKER_M3_ALARM4000">教導資料解析錯誤，請重新下載</string>
 	<string name="PICKER_M3_ALARM4001">教導資料錯誤，請重新下載</string>
 	<string name="PICKER_M3_ALARM4002">沒有跳轉命令，請檢查教導</string>
@@ -982,6 +986,7 @@
 	<string name="PICKER_M3_ALARM5026">氣源壓力過低</string>
 	<string name="PICKER_M3_ALARM5027">與面板通訊斷線</string>
 	<string name="PICKER_M3_ALARM5028">無開模完成訊號，無法進行單循環</string>
+	<string name="PICKER_M3_ALARM5029">尋零中</string>
 	<string name="VW_ENERGY_TOTAL_NUM">總產量</string>
 	<string name="VW_ENERGY_TOTAL_GPROC">總良品</string>
 	<string name="VW_ENERGY_TOTAL_BPROC">總不良品</string>
