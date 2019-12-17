@@ -23,8 +23,9 @@
 /*===========================================================================+
 |           Constant                                                         |
 +===========================================================================*/
-#define		UNWORD(hw,lw)       (((DWORD)(hw) << 16) | lw)/*Double Word*/
+#define		CONST_REQ_COMMAND   6
 
+#define		UNWORD(hw,lw)       (((DWORD)(hw) << 16) | lw)/*Double Word*/
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/            
@@ -119,6 +120,9 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		case 72: // Back
 			::PutCommand("Index.txt");
 			break;
+		case 0xFF4A: // ²£«~²M¹s
+			SendCommand(0xFF4A);
+			break;
 		default:
 			break;
 	}
@@ -167,3 +171,22 @@ void		SetEditValue(CtmWnd* pwnd)
 	}	
 }
 
+/*---------------------------------------------------------------------------+
+|  Function : SendCommand()                      	     	                     |
+|  Task     :   						     	                                           |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	SendCommand(int	CommandID)
+{
+	
+	 	if(g_ptaskpicker != NULL)
+ 		{			
+			g_ptaskpicker->ReqValues(CONST_REQ_COMMAND, 1, &CommandID, NULL);
+ 	  	printf("Send Command = %x\n", CommandID);
+		}
+}

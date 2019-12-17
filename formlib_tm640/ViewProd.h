@@ -28,5 +28,6 @@ extern  "C"	WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl);
 
 void		SetVisible(CtmWnd* pwnd,BOOL  bVisible,WORD  wType);
 void		SetEditValue(CtmWnd* pwnd);
+void		SendCommand(int	CommandID);
 
 #endif
