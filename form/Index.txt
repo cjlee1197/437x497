@@ -14,8 +14,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
-    align =16
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_MCH_P
     key =1
     action =255
     formname =Param.txt
@@ -39,8 +40,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
-    align =16
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_ZERO
     key =3
     LinuxCtmImageBox4:CtmImageBox
       left =29
@@ -62,8 +64,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
-    align =16
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_SPD_P
     key =2
     action =255
     formname =Pile_1.txt
@@ -100,7 +103,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_ZONE_SET
     key =4
     action =255
     formname =Param.txt
@@ -124,8 +129,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
-    align =16
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_TEACHFILE
     key =7
     LinuxCtmImageBox7:CtmImageBox
       left =29
@@ -173,7 +179,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =TEACH_QTEACH
     key =11
     action =255
     formname =Param.txt
@@ -197,7 +205,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =TEACH_ADVANCE
     key =12
     action =255
     formname =Pile_1.txt
@@ -221,7 +231,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_PILE
     key =13
     LinuxCtmImageBox18:CtmImageBox
       left =29
@@ -243,7 +255,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_SUB
     key =14
     LinuxCtmImageBox20:CtmImageBox
       left =29
@@ -304,7 +318,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_ALRAM_HIS
     key =22
     LinuxCtmImageBox12:CtmImageBox
       left =29
@@ -326,7 +342,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_OP_HIS
     key =23
     action =255
     formname =Param.txt
@@ -363,7 +381,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_OP_MANAGE
     key =31
     action =255
     formname =Param.txt
@@ -387,7 +407,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_SYS_UPDATE
     key =33
     LinuxCtmImageBox14:CtmImageBox
       left =29
@@ -409,7 +431,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_SYS_SET
     key =32
     action =255
     formname =Pile_1.txt
@@ -433,7 +457,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_VERINFO
     key =34
     action =255
     formname =Param.txt
@@ -522,7 +548,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_MODE_SLC
     key =15
     action =255
     formname =Param.txt
@@ -546,7 +574,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_DTC
     key =16
     action =255
     formname =Param.txt
@@ -561,227 +591,6 @@ ViewIndex:CtmFormView
       imagepath =res_tm640/pic/Index_Detect.bmp
     end
   end
-  LinuxCtmStaticX21:CtmStaticX2
-    left =12
-    top =92
-    right =147
-    bottom =122
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_MCH_P
-    align =34
-  end
-  LinuxCtmStaticX25:CtmStaticX2
-    left =156
-    top =92
-    right =291
-    bottom =124
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_SPD_P
-    align =34
-  end
-  LinuxCtmStaticX26:CtmStaticX2
-    left =300
-    top =92
-    right =435
-    bottom =124
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_ZERO
-    align =34
-  end
-  LinuxCtmStaticX27:CtmStaticX2
-    left =444
-    top =438
-    right =579
-    bottom =470
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_TEACHFILE
-    align =34
-  end
-  LinuxCtmStaticX28:CtmStaticX2
-    left =12
-    top =192
-    right =147
-    bottom =224
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_ZONE_SET
-    align =34
-  end
-  LinuxCtmStaticX211:CtmStaticX2
-    left =12
-    top =338
-    right =147
-    bottom =370
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TEACH_QTEACH
-    align =34
-  end
-  LinuxCtmStaticX213:CtmStaticX2
-    left =156
-    top =338
-    right =291
-    bottom =370
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_MODE_SLC
-    align =34
-  end
-  LinuxCtmStaticX214:CtmStaticX2
-    left =300
-    top =338
-    right =435
-    bottom =370
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_DTC
-    align =34
-  end
-  LinuxCtmStaticX215:CtmStaticX2
-    left =12
-    top =438
-    right =147
-    bottom =470
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =TEACH_ADVANCE
-    align =34
-  end
-  LinuxCtmStaticX216:CtmStaticX2
-    left =156
-    top =438
-    right =291
-    bottom =470
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_PILE
-    align =34
-  end
-  LinuxCtmStaticX217:CtmStaticX2
-    left =300
-    top =438
-    right =435
-    bottom =470
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_SUB
-    align =34
-  end
-  LinuxCtmStaticX218:CtmStaticX2
-    left =12
-    top =584
-    right =147
-    bottom =616
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_ALRAM_HIS
-    align =34
-  end
-  LinuxCtmStaticX219:CtmStaticX2
-    left =156
-    top =584
-    right =291
-    bottom =616
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_OP_HIS
-    align =34
-  end
-  LinuxCtmStaticX221:CtmStaticX2
-    left =12
-    top =734
-    right =147
-    bottom =766
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_OP_MANAGE
-    align =34
-  end
-  LinuxCtmStaticX222:CtmStaticX2
-    left =156
-    top =734
-    right =291
-    bottom =766
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_SYS_SET
-    align =34
-  end
-  LinuxCtmStaticX223:CtmStaticX2
-    left =300
-    top =734
-    right =435
-    bottom =766
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_SYS_UPDATE
-    align =34
-  end
-  LinuxCtmStaticX224:CtmStaticX2
-    left =444
-    top =734
-    right =579
-    bottom =766
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_VERINFO
-    align =34
-  end
   LinuxCtmToolButton4:CtmToolButton
     left =460
     top =286
@@ -791,8 +600,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
-    align =16
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_DELAY_ADJ
     key =17
     LinuxCtmImageBox3:CtmImageBox
       left =29
@@ -805,19 +615,6 @@ ViewIndex:CtmFormView
       imagepath =res_tm640/pic/Index_Pos_Adj.bmp
     end
   end
-  LinuxCtmStaticX210:CtmStaticX2
-    left =444
-    top =338
-    right =579
-    bottom =370
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_DELAY_ADJ
-    align =34
-  end
   LinuxCtmToolButton19:CtmToolButton
     left =316
     top =532
@@ -827,7 +624,9 @@ ViewIndex:CtmFormView
     taborder =-1
     bgc =65535
     fontsize =1
+    align =18
     upbitmap =res_tm640/pic/Button.bmp
+    captionID0 =INDEX_DRIVE_INFO
     key =24
     action =255
     formname =Param.txt
@@ -841,19 +640,6 @@ ViewIndex:CtmFormView
       style =3
       imagepath =res_tm640/pic/Index_DriveInfo.bmp
     end
-  end
-  LinuxCtmStaticX220:CtmStaticX2
-    left =300
-    top =584
-    right =435
-    bottom =616
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =INDEX_DRIVE_INFO
-    align =34
   end
   LinuxCtmImageBox2:CtmImageBox
     left =-2
