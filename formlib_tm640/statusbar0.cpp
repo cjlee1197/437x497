@@ -694,7 +694,7 @@ void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
 					pwndEditPostionX->SetPropValueT("fgc",0xFFFF);
 					pwndEditPostionY->SetPropValueT("fgc",0xFFFF);
 					pwndEditPostionZ->SetPropValueT("fgc",0xFFFF);
-					FGC FgcTemp = ( u_PickerType==MechType5 ? 0xFFFF : 0x09A6 );
+					FGC FgcTemp = ( u_PickerType==MechType5 ? 0xFFFF : 63519 );
 					pwndEditPostionX2->SetPropValueT("fgc",FgcTemp);
 					pwndEditPostionY2->SetPropValueT("fgc",FgcTemp);
 				}
@@ -715,7 +715,7 @@ void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
 						 pwndEditPostionX->SetPropValueT("fgc",0xFFFF);
 							pwndEditPostionY->SetPropValueT("fgc",0xFFFF);
 							pwndEditPostionZ->SetPropValueT("fgc",0xFFFF);
-							FGC FgcTemp = ( u_PickerType==MechType5 ? 0xFFFF : 0x09A6 );
+							FGC FgcTemp = ( u_PickerType==MechType5 ? 0xFFFF : 63519 );
 							pwndEditPostionX2->SetPropValueT("fgc",FgcTemp);
 							pwndEditPostionY2->SetPropValueT("fgc",FgcTemp);
 						}	
@@ -1248,8 +1248,8 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		{
 			ChangeImage(pwndBmpAxis_X2, NULL , NO_FLASH, 0);	
 			ChangeImage(pwndBmpAxis_Y2, NULL , NO_FLASH, 0);
-			pwndEditPostionX2->SetPropValueT("fgc",0x09A6);
-			pwndEditPostionY2->SetPropValueT("fgc",0x09A6);
+			pwndEditPostionX2->SetPropValueT("fgc",63519);
+			pwndEditPostionY2->SetPropValueT("fgc",63519);
 		}
 		u_PickerType_old = u_PickerType;
 	}
