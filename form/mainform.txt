@@ -12,9 +12,9 @@ mainform:CtmMainFrame
     wtype =39
     bgc =63519
     DateTime:CtmStaticX2
-      left =447
+      left =454
       top =5
-      right =592
+      right =599
       bottom =33
       wtype =48
       fgc =0
@@ -22,9 +22,9 @@ mainform:CtmMainFrame
     end
     StaticPrompt:CtmStaticX2
       left =8
-      top =5
+      top =8
       right =418
-      bottom =33
+      bottom =36
       wtype =48
       fgc =0
       fontsize =2
@@ -146,9 +146,9 @@ mainform:CtmMainFrame
       keycolor =63519
     end
     BmpAxis_Z:CtmImageBox
-      left =185
+      left =180
       top =5
-      right =235
+      right =230
       bottom =45
       wtype =48
       type =2
@@ -157,9 +157,9 @@ mainform:CtmMainFrame
       keycolor =63519
     end
     EditZposition:CtmEditX1
-      left =235
+      left =230
       top =10
-      right =323
+      right =318
       bottom =42
       wtype =48
       taborder =-3
@@ -174,9 +174,9 @@ mainform:CtmMainFrame
       dbid1 =MACHINE_INTERFACE_CONTROL_ZAXISPOSITION
     end
     BmpAxis_X:CtmImageBox
-      left =323
+      left =318
       top =5
-      right =373
+      right =368
       bottom =45
       wtype =48
       type =2
@@ -185,9 +185,9 @@ mainform:CtmMainFrame
       keycolor =63519
     end
     EditXposition:CtmEditX1
-      left =373
+      left =368
       top =10
-      right =461
+      right =456
       bottom =42
       wtype =48
       taborder =-3
@@ -201,9 +201,9 @@ mainform:CtmMainFrame
       dbid1 =MACHINE_INTERFACE_CONTROL_XAXISPOSITION
     end
     BmpAxis_Y:CtmImageBox
-      left =461
+      left =456
       top =5
-      right =511
+      right =506
       bottom =45
       wtype =48
       type =2
@@ -228,9 +228,9 @@ mainform:CtmMainFrame
       dbid1 =MACHINE_INTERFACE_CONTROL_YAXISPOSITION
     end
     BmpAxis_X2:CtmImageBox
-      left =323
+      left =318
       top =48
-      right =373
+      right =368
       bottom =88
       wtype =48
       type =2
@@ -239,9 +239,9 @@ mainform:CtmMainFrame
       keycolor =63519
     end
     EditX2position:CtmEditX1
-      left =373
+      left =368
       top =53
-      right =461
+      right =456
       bottom =85
       wtype =48
       taborder =-3
@@ -255,9 +255,9 @@ mainform:CtmMainFrame
       dbid1 =MACHINE_INTERFACE_CONTROL_X2AXISPOSITION
     end
     BmpAxis_Y2:CtmImageBox
-      left =461
+      left =456
       top =48
-      right =511
+      right =506
       bottom =88
       wtype =48
       type =2
@@ -266,9 +266,9 @@ mainform:CtmMainFrame
       keycolor =63519
     end
     EditY2position:CtmEditX1
-      left =511
+      left =506
       top =53
-      right =599
+      right =594
       bottom =85
       wtype =48
       taborder =-3
@@ -308,9 +308,9 @@ mainform:CtmMainFrame
       keycolor =63519
     end
     BmpState:CtmImageBox
-      left =135
+      left =130
       top =5
-      right =185
+      right =180
       bottom =45
       wtype =48
       type =2
@@ -330,9 +330,9 @@ mainform:CtmMainFrame
     end
     MoldName:CtmStaticX2
       left =5
-      top =73
+      top =72
       right =83
-      bottom =90
+      bottom =89
       wtype =48
       fgc =65535
       textID =PICKER_FILE_FILENAME
@@ -348,18 +348,18 @@ mainform:CtmMainFrame
     maintool =toolbar_01.txt
   end
   StaticTitle:CtmStaticX2
-    left =48
+    left =46
     top =6
-    right =134
+    right =128
     bottom =40
     wtype =48
     fgc =65535
   end
   StaticTitle2:CtmStaticX2
     left =72
-    top =73
+    top =72
     right =184
-    bottom =90
+    bottom =89
     wtype =48
     fgc =65535
     align =34
@@ -367,7 +367,7 @@ mainform:CtmMainFrame
   StrUserNum:CtmStaticX2
     left =24
     top =5
-    right =56
+    right =63
     bottom =39
     wtype =48
     fgc =65535
