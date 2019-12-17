@@ -784,13 +784,13 @@ char* LG_String[] = // 語言選擇 文字
 {
 	"DLG_SYSTEM_LANGUAGE_CHINESE",  // 中文
 	"DLG_SYSTEM_LANGUAGE_ENGLISH",  // English
+	"DLG_SYSTEM_SIMCHINESE",  // 簡體中文
 	"DLG_SYSTEM_LANGUAGE_TURKISH",  // Trukish
-	"DLG_SYSTEM_RUSSIAN",  // Russian
 	"DLG_SYSTEM_LANGUAGE_SPANISH",  // Spanish
 	"DLG_SYSTEM_LANGUAGE_GREECE",  // Greece
 	"DLG_SYSTEM_LANGUAGE_PORTUGUESE",  // Protuguese
 	"DLG_SYSTEM_IRANIAN",  // Iranian
-	"DLG_SYSTEM_SIMCHINESE",  // 簡體中文
+	"DLG_SYSTEM_RUSSIAN",  // Russian
 	"DLG_SYSTEM_JAPANESE",  // Japan
 	"DLG_SYSTEM_KOREA", // Korea
 	"DLG_SYSTEM_VIETNAM", // Vietnam
@@ -965,7 +965,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
     // 取得語言 index
     languageindex = CtmConfig::GetInstance()->GetCurrentIndex();
     if(languageindex < 0)	languageindex = 0;
-    if(languageindex != 0)	LogoIndex =1;
+    if(languageindex != 0)	LogoIndex =1;    
     if(pwndSelectLanguage != NULL)
     {	
     	languageindex = CtmConfig::GetInstance()->GetCurrentIndex();

@@ -315,20 +315,19 @@ ViewSyst:CtmFormView
     keycolor =63519
   end
   BtnConfirm:CtmToolButton
-    left =219
+    left =235
     top =729
-    right =355
-    bottom =779
-    wtype =33
+    right =347
+    bottom =776
+    wtype =48
     taborder =5
     bgc =54970
     fontsize =1
     downcontrol =editNEWNAME
     colorcontrol =4
     destcolor =57182
-    buttontype =0
     captionID =VW_MOLD_PMD2
-    upbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/ButtonDown_Confirm.bmp
     downbitmap =res_tm640/pic/ButtonDown.bmp
   end
   String_LG2:CtmToolButton
