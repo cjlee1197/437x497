@@ -406,29 +406,29 @@ ViewDrive_Info:CtmFormView
   Btn_Axis_X1:CtmToolButton
     left =20
     top =37
-    right =130
-    bottom =97
+    right =120
+    bottom =87
     wtype =48
     taborder =51
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_XAXIS
-    upbitmap =res_tm640/pic/PileBtnSelect.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
+    downbitmap =res_tm640/pic/ButtonDown1.bmp
     key =1
   end
   Btn_Axis_Y1:CtmToolButton
     left =20
     top =101
-    right =130
-    bottom =161
+    right =120
+    bottom =151
     wtype =48
     taborder =52
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_YAXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    downbitmap =res_tm640/pic/ButtonDown1.bmp
     key =2
     action =255
     formname =Pile_2.txt
@@ -436,15 +436,15 @@ ViewDrive_Info:CtmFormView
   Btn_Axis_Z:CtmToolButton
     left =20
     top =165
-    right =130
-    bottom =225
+    right =120
+    bottom =215
     wtype =48
     taborder =53
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_ZAXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    downbitmap =res_tm640/pic/ButtonDown1.bmp
     key =3
     action =255
     formname =Pile_3.txt
@@ -452,15 +452,15 @@ ViewDrive_Info:CtmFormView
   Btn_Axis_X2:CtmToolButton
     left =20
     top =229
-    right =130
-    bottom =289
+    right =120
+    bottom =279
     wtype =48
     taborder =54
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_X2AXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    downbitmap =res_tm640/pic/ButtonDown1.bmp
     key =4
     action =255
     formname =Pile_4.txt
@@ -468,15 +468,15 @@ ViewDrive_Info:CtmFormView
   Btn_Axis_Y2:CtmToolButton
     left =20
     top =293
-    right =130
-    bottom =353
+    right =120
+    bottom =343
     wtype =48
     taborder =55
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_Y2AXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    downbitmap =res_tm640/pic/ButtonDown1.bmp
     key =5
     action =255
     formname =Pile_4.txt

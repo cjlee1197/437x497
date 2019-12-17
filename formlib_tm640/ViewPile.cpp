@@ -265,7 +265,9 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 				{
 					nTemp = nTemp + (b_Dir[i][k]<<k);
 				}
+				printf("Pile%d Dir%d=%d\n",i,j,nTemp);
 				SetDBValue(u_pszPileDirDB[i],nTemp); // ¼g¤J DB
+				printf("Set u_pszPileDirDB[%d]=%d\n",i,nTemp);
 				
 				//Update string
 				
@@ -320,8 +322,10 @@ void UpdateImg()
 		if(u_pwndBtn_Pile_Order[i] != NULL)
 		{
 			int Pile_Dir = (int)(GetDBValue(u_pszPileDirDB[i]).lValue);
+			printf("u_pszPileDirDB[%d]=Pile_Dir=%d\n",i,Pile_Dir);
 			u_pwndImg_Pile[i]->SetPropValueT("imagepath",PileImgpath[Pile_Dir]);
 			u_pwndImg_Pile[i]->Show();
+			printf("imagepath=%s\n",PileImgpath[Pile_Dir]);
 		}
 	}
 }

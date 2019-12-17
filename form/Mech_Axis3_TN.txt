@@ -8,43 +8,40 @@ ViewMech_Axis:CtmFormView
   Btn_Axis_ALL:CtmToolButton
     left =20
     top =29
-    right =130
-    bottom =89
+    right =120
+    bottom =79
     wtype =48
     taborder =48
     fontsize =1
     align =34
     captionID =ZONELIMIT_PARAM
-    upbitmap =res_tm640/pic/PileBtnSelect.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
     key =77
   end
   Btn_Axis_X1:CtmToolButton
     left =20
     top =93
-    right =130
-    bottom =153
+    right =120
+    bottom =143
     wtype =48
     taborder =51
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_XAXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
     key =1
   end
   Btn_Axis_Y1:CtmToolButton
     left =20
     top =157
-    right =130
-    bottom =217
+    right =120
+    bottom =207
     wtype =48
     taborder =52
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_YAXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
     key =2
     action =255
     formname =Pile_2.txt
@@ -52,15 +49,14 @@ ViewMech_Axis:CtmFormView
   Btn_Axis_Z:CtmToolButton
     left =20
     top =221
-    right =130
-    bottom =281
+    right =120
+    bottom =271
     wtype =48
     taborder =53
     fontsize =1
     align =34
     captionID =VW_HAP5_ROBOT_ZAXIS
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
     key =3
     action =255
     formname =Pile_3.txt
@@ -94,7 +90,7 @@ ViewMech_Axis:CtmFormView
   Btn_POS_INV:CtmToolButton
     left =301
     top =764
-    right =421
+    right =411
     bottom =814
     wtype =33
     taborder =6
@@ -102,12 +98,13 @@ ViewMech_Axis:CtmFormView
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   Btn_DOUBLE:CtmToolButton
     left =301
     top =708
-    right =421
+    right =411
     bottom =758
     wtype =33
     taborder =5
@@ -115,9 +112,8 @@ ViewMech_Axis:CtmFormView
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   edit_ENC_REZ:CtmEditX1
     left =301
@@ -149,7 +145,7 @@ ViewMech_Axis:CtmFormView
   Btn_MechType3:CtmToolButton
     left =301
     top =460
-    right =421
+    right =411
     bottom =510
     wtype =33
     taborder =64
@@ -157,15 +153,14 @@ ViewMech_Axis:CtmFormView
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =MECH_MECHTYPE3
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   Btn_MechType5:CtmToolButton
     left =426
     top =460
-    right =546
+    right =536
     bottom =510
     wtype =33
     taborder =65
@@ -173,15 +168,14 @@ ViewMech_Axis:CtmFormView
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =MECH_MECHTYPE5
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   Btn_Gear_D:CtmToolButton
     left =301
     top =556
-    right =421
+    right =411
     bottom =606
     wtype =33
     taborder =25
@@ -189,15 +183,14 @@ ViewMech_Axis:CtmFormView
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =MECH_GEAR_D
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   Btn_Tooth_M:CtmToolButton
     left =426
     top =556
-    right =546
+    right =536
     bottom =606
     wtype =33
     taborder =26
@@ -205,15 +198,14 @@ ViewMech_Axis:CtmFormView
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =MECH_TOOTHM_NUM
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   Btn_EncType_Abs:CtmToolButton
     left =301
     top =652
-    right =421
+    right =411
     bottom =702
     wtype =33
     taborder =32
@@ -221,15 +213,14 @@ ViewMech_Axis:CtmFormView
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =MECH_ENCTYPE_ABS
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   Btn_EncType_Res:CtmToolButton
     left =426
     top =652
-    right =546
+    right =536
     bottom =702
     wtype =33
     taborder =33
@@ -237,18 +228,17 @@ ViewMech_Axis:CtmFormView
     fontsize =1
     downcontrol =editNEWNAME
     destcolor =57182
-    buttontype =0
     captionID =MECH_ENCTYPE_RES
-    upbitmap =res_tm640/pic/ButtonDown.bmp
-    downbitmap =res_tm640/pic/ButtonDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   Str_ENC_REZ:CtmStaticX2
     left =140
     top =412
     right =290
     bottom =462
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -273,8 +263,8 @@ ViewMech_Axis:CtmFormView
     top =604
     right =290
     bottom =654
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -299,8 +289,8 @@ ViewMech_Axis:CtmFormView
     top =708
     right =290
     bottom =758
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -312,8 +302,8 @@ ViewMech_Axis:CtmFormView
     top =764
     right =290
     bottom =814
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -351,8 +341,8 @@ ViewMech_Axis:CtmFormView
     top =460
     right =290
     bottom =510
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -377,8 +367,8 @@ ViewMech_Axis:CtmFormView
     top =556
     right =290
     bottom =606
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -416,8 +406,8 @@ ViewMech_Axis:CtmFormView
     top =652
     right =290
     bottom =702
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -442,8 +432,8 @@ ViewMech_Axis:CtmFormView
     top =510
     right =290
     bottom =560
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -490,6 +480,6 @@ ViewMech_Axis:CtmFormView
     right =552
     bottom =821
     wtype =32
-    bgc =63422
+    bgc =59196
   end
 end

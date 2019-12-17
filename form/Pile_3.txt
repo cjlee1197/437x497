@@ -9,29 +9,29 @@ ViewPile:CtmFormView
   Pile_1:CtmToolButton
     left =20
     top =93
-    right =130
-    bottom =153
+    right =120
+    bottom =143
     wtype =48
     taborder =51
     fontsize =1
     align =34
     captionID =VW_PID_GROUP1
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    downbitmap =res_tm640/pic/ButtonDown1.bmp
     key =1
   end
   Pile_2:CtmToolButton
     left =20
     top =158
-    right =130
-    bottom =218
+    right =120
+    bottom =208
     wtype =48
     taborder =52
     fontsize =1
     align =34
     captionID =VW_PID_GROUP2
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    downbitmap =res_tm640/pic/ButtonDown1.bmp
     key =2
     action =255
     formname =Pile_2.txt
@@ -39,30 +39,30 @@ ViewPile:CtmFormView
   Pile_3:CtmToolButton
     left =20
     top =223
-    right =130
-    bottom =283
+    right =120
+    bottom =273
     wtype =48
     taborder =53
     fontsize =1
     align =34
     captionID =VW_PID_GROUP3
-    upbitmap =res_tm640/pic/PileBtnSelect.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonDown1.bmp
+    downbitmap =res_tm640/pic/ButtonDown1.bmp
     action =255
     formname =Pile_3.txt
   end
   Pile_4:CtmToolButton
     left =20
     top =288
-    right =130
-    bottom =348
+    right =120
+    bottom =338
     wtype =48
     taborder =54
     fontsize =1
     align =34
     captionID =VW_PID_GROUP4
-    upbitmap =res_tm640/pic/PileBtnUp.bmp
-    downbitmap =res_tm640/pic/PileBtnDown.bmp
+    upbitmap =res_tm640/pic/ButtonUp1.bmp
+    downbitmap =res_tm640/pic/ButtonDown1.bmp
     key =4
     action =255
     formname =Pile_4.txt

@@ -346,7 +346,7 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	
 	for(int i=0;i<iBtn_Axis;i++) // 軸按鍵變灰
 	{
-		pwndBtn_Axis[i]->SetPropValueT("upbitmap","res_tm640/pic/PileBtnUp.bmp");
+		pwndBtn_Axis[i]->SetPropValueT("upbitmap","res_tm640/pic/ButtonUp1.bmp");
 		pwndBtn_Axis[i]->CreateA();
 		pwndBtn_Axis[i]->Update();
 	}
@@ -395,7 +395,7 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 
 	if(pwndBtn_Axis[u_Axis_Num]) // 選取的軸按鍵
 	{	
-		pwndBtn_Axis[u_Axis_Num]->SetPropValueT("upbitmap","res_tm640/pic/PileBtnSelect.bmp");
+		pwndBtn_Axis[u_Axis_Num]->SetPropValueT("upbitmap","res_tm640/pic/ButtonDown1.bmp");
 		pwndBtn_Axis[u_Axis_Num]->CreateA();
 		pwndBtn_Axis[u_Axis_Num]->Update();
 	}
