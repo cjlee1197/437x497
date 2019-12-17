@@ -496,7 +496,7 @@ ViewQTeachSub:CtmFormView
     right =417
     bottom =516
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_X1:CtmImageBox
     left =317
@@ -513,7 +513,7 @@ ViewQTeachSub:CtmFormView
     right =417
     bottom =590
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_Y1:CtmImageBox
     left =317
@@ -530,7 +530,7 @@ ViewQTeachSub:CtmFormView
     right =417
     bottom =664
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_X2:CtmImageBox
     left =317
@@ -547,7 +547,7 @@ ViewQTeachSub:CtmFormView
     right =417
     bottom =738
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_Y2:CtmImageBox
     left =271
@@ -564,6 +564,6 @@ ViewQTeachSub:CtmFormView
     right =417
     bottom =812
     wtype =32
-    bgc =63422
+    bgc =59196
   end
 end

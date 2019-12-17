@@ -64,8 +64,8 @@ ViewQTeach:CtmFormView
     top =395
     right =187
     bottom =435
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -77,8 +77,8 @@ ViewQTeach:CtmFormView
     top =395
     right =417
     bottom =435
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -277,8 +277,8 @@ ViewQTeach:CtmFormView
     top =395
     right =299
     bottom =435
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -488,7 +488,7 @@ ViewQTeach:CtmFormView
     right =417
     bottom =516
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_X1:CtmImageBox
     left =317
@@ -505,7 +505,7 @@ ViewQTeach:CtmFormView
     right =417
     bottom =590
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_Y1:CtmImageBox
     left =317
@@ -522,7 +522,7 @@ ViewQTeach:CtmFormView
     right =417
     bottom =664
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_X2:CtmImageBox
     left =317
@@ -539,7 +539,7 @@ ViewQTeach:CtmFormView
     right =417
     bottom =738
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_Y2:CtmImageBox
     left =317
@@ -556,7 +556,7 @@ ViewQTeach:CtmFormView
     right =417
     bottom =812
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Btn_PosHV:CtmToolButton
     left =446

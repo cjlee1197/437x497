@@ -55,8 +55,8 @@ ViewQTeach:CtmFormView
     top =395
     right =187
     bottom =435
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -68,8 +68,8 @@ ViewQTeach:CtmFormView
     top =395
     right =417
     bottom =435
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -84,7 +84,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =0
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -103,7 +103,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =1
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -122,7 +122,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =2
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -141,7 +141,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =3
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -160,7 +160,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =4
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -179,7 +179,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =5
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -199,7 +199,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =6
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -220,7 +220,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =7
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -240,7 +240,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =8
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -261,7 +261,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =9
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -279,8 +279,8 @@ ViewQTeach:CtmFormView
     top =395
     right =299
     bottom =435
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -295,7 +295,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =10
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -316,7 +316,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =11
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -337,7 +337,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =12
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -358,7 +358,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =13
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -379,7 +379,7 @@ ViewQTeach:CtmFormView
     wtype =35
     taborder =14
     fgc =0
-    bgc =65535
+    bgc =57279
     fontsize =1
     enabled =FALSE
     bordercolor =0
@@ -504,7 +504,7 @@ ViewQTeach:CtmFormView
     right =417
     bottom =516
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_X1:CtmImageBox
     left =317
@@ -521,7 +521,7 @@ ViewQTeach:CtmFormView
     right =417
     bottom =590
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_Y1:CtmImageBox
     left =317
@@ -538,7 +538,7 @@ ViewQTeach:CtmFormView
     right =417
     bottom =664
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_X2:CtmImageBox
     left =317
@@ -555,7 +555,7 @@ ViewQTeach:CtmFormView
     right =417
     bottom =738
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Img_PosHint_Y2:CtmImageBox
     left =317
@@ -572,7 +572,7 @@ ViewQTeach:CtmFormView
     right =417
     bottom =812
     wtype =32
-    bgc =63422
+    bgc =59196
   end
   Btn_PosHV:CtmToolButton
     left =446

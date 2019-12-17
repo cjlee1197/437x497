@@ -20,6 +20,8 @@
 +===========================================================================*/
 #define		MechType3				0	 // 三軸
 #define		MechType5				1  // 五軸
+#define		EncWord 				0xFFFF0000 // High Word
+#define		MechWord 				0x0000FFFF // Low Word
 
 #define     CONST_REQ_COMMAND       6
 #define     CONST_REQ_WRITE         3
@@ -38,9 +40,14 @@
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
+/*--------------------------------------------------+
+| dw_MechType 機型選擇  														|
+|	Low WORD 0-三軸 1-五軸 	High WORD 0-絕對 1-增量		|
+| EX: 絕對/五軸 0x0000 0001;  0x0001 0000 增量/三軸 |
++--------------------------------------------------*/
+DWORD dw_MechType = 0; //紀錄 pMechTypeDB 的數值
 int u_PickerType = 0; // 機型選擇 0-三軸 1-五軸
 char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
-
 
 int				MaxDBNum = 100;
 char*     u_pszDBString[MAXSTEP*CONTROLTYPENUM] = {NULL};
@@ -146,8 +153,9 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
     }
 	
 	// 取得 機構設定 3 or 5軸
-	u_PickerType = (int)(GetDBValue(pMechTypeDB).lValue); // 讀取設定 機型選擇 三五軸
-	
+	dw_MechType 	 = (GetDBValue(pMechTypeDB).lValue); // 讀取設定 機型選擇 三五軸
+	u_PickerType = dw_MechType & MechWord;
+		
 	return TRUE;
 }
 
@@ -234,7 +242,8 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
  	if(pwnd == pwndButtonDownload) // 下載 Btn按下彈起
 	{	
 		printf("Pess Download\n");
-		if(u_wPickerOPSatus == STATE_MANUAL)
+		//if(u_wPickerOPSatus == STATE_MANUAL)
+		if(1)
 		{
 			Prompt(g_MultiLanguage["PICKER_DATADOWNLODING"],1); 
 			GetPosTag();
@@ -273,6 +282,8 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 	}
  	if(pwnd == pwndBtnLastP) // 返回上一頁 Btn按下彈起
 	{	
+		printf("pwndBtnLastP\n");
+		printf("u_PickerType=%d\n",u_PickerType);
 		if(u_PickerType==MechType5)
 			::PutCommand("QTeach_PlaceP.txt");
 		else if(u_PickerType==MechType3)
@@ -446,14 +457,14 @@ void	Download()
 	printf("MaxDBNum=%d\n",MaxDBNum);
 	
 	pwndButtonDownload->SetPropValueT("enabled", double(FALSE)); // "下載"按鍵上鎖
-	pwndLoadingBar->SetPropValueT("right",24); // 重置進度條
-	pwndLoadingBar->CreateA();
-	pwndLoadingBar->Update();
-	pwndLoadingMask->Update();
-	pwndLoadingMask2->Update();
-	pwndLoadingStr->SetPropValueT("bgc",0xF7BE); // 進度值
-	pwndLoadingStr->SetPropValueT("fgc",0x0001);
-	pwndLoadingStr->Update();
+//	pwndLoadingBar->SetPropValueT("right",24); // 重置進度條
+//	pwndLoadingBar->CreateA();
+//	pwndLoadingBar->Update();
+//	pwndLoadingMask->Update();
+//	pwndLoadingMask2->Update();
+//	pwndLoadingStr->SetPropValueT("bgc",0xF7BE); // 進度值
+//	pwndLoadingStr->SetPropValueT("fgc",0x0001);
+//	pwndLoadingStr->Update();
 	
 	for(int i =0;i<MaxDBNum;i++)
 	{
@@ -477,34 +488,34 @@ void	Download()
 				
 				printf("Send cmd\n");
 				char 	ptempDataID[256];
-				for(int i =0;i<Num*CONTROLTYPENUM;i++)
-				{
-					if((i%13)<8) // 參數6以後不送
-					{
-						memset(ptempDataID, 0 ,sizeof(ptempDataID));
-						sprintf(ptempDataID,u_pszDBString[i]);
-						printf("%s=%d\n",u_pszDBString[i],GetDBValue(ptempDataID));
-						g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString[i]);
-					}
-					
-					if(pwndLoadingStr!=NULL && pwndLoadingBar!=NULL)//顯示下載進度
-					{
-						pwndLoadingBar->SetPropValueT("right",96+u_loading*4);
-						pwndLoadingBar->CreateA();
-						pwndLoadingBar->Update();
-						u_loading = 1+((100*i)/(Num*CONTROLTYPENUM));
-						sprintf(str_loading ,"%d",u_loading);
-						if(u_loading>50)
-							{
-								pwndLoadingStr->SetPropValueT("bgc",0x09A6);
-								pwndLoadingStr->SetPropValueT("fgc",0xFFFF);
-								pwndLoadingStr->CreateA();
-							}
-						pwndLoadingStr->SetPropValueT("text",str_loading);
-						pwndLoadingStr->Update();
-					}
-				}
-				
+//				for(int i =0;i<Num*CONTROLTYPENUM;i++)
+//				{
+//					if((i%13)<8) // 參數6以後不送
+//					{
+//						memset(ptempDataID, 0 ,sizeof(ptempDataID));
+//						sprintf(ptempDataID,u_pszDBString[i]);
+//						printf("%s=%d\n",u_pszDBString[i],GetDBValue(ptempDataID));
+//						g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString[i]);
+//					}
+//					
+//					if(pwndLoadingStr!=NULL && pwndLoadingBar!=NULL)//顯示下載進度
+//					{
+//						pwndLoadingBar->SetPropValueT("right",96+u_loading*4);
+//						pwndLoadingBar->CreateA();
+//						pwndLoadingBar->Update();
+//						u_loading = 1+((100*i)/(Num*CONTROLTYPENUM));
+//						sprintf(str_loading ,"%d",u_loading);
+//						if(u_loading>50)
+//							{
+//								pwndLoadingStr->SetPropValueT("bgc",0x09A6);
+//								pwndLoadingStr->SetPropValueT("fgc",0xFFFF);
+//								pwndLoadingStr->CreateA();
+//							}
+//						pwndLoadingStr->SetPropValueT("text",str_loading);
+//						pwndLoadingStr->Update();
+//					}
+//				}
+				g_ptaskpicker->WriteValue(CONST_REQ_WRITE, Num*CONTROLTYPENUM ,u_pszDBString);
 				SetDBValue("MACHINE_PROFILE_STEPNUM", Num, TRUE);
 			}
 			pwndButtonDownload->SetPropValueT("enabled", double(TRUE)); // "下載"按鍵解鎖

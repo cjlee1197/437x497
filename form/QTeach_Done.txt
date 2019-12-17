@@ -20,30 +20,6 @@ ViewQTeachDone:CtmFormView
     upbitmap =res_tm640/pic/PGBtn_Download.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
   end
-  LoadingBar:CtmStaticX2
-    left =96
-    top =524
-    right =124
-    bottom =556
-    wtype =33
-    fgc =65535
-    bgc =2470
-    fontsize =1
-    bordercolor =35953
-    align =34
-  end
-  LoadingMask:CtmStaticX2
-    left =96
-    top =524
-    right =280
-    bottom =556
-    wtype =39
-    fgc =65535
-    bgc =63422
-    fontsize =1
-    bordercolor =35953
-    align =34
-  end
   LinuxCtmStaticX211:CtmStaticX2
     left =237
     top =484
@@ -55,31 +31,6 @@ ViewQTeachDone:CtmFormView
     fontsize =1
     bordercolor =35953
     textID =PICKER_DOWNLOAD
-    align =34
-  end
-  LoadingStr:CtmStaticX2
-    left =280
-    top =524
-    right =312
-    bottom =556
-    wtype =39
-    fgc =0
-    bgc =63422
-    fontsize =1
-    bordercolor =35953
-    text =100
-    align =34
-  end
-  LoadingMask2:CtmStaticX2
-    left =312
-    top =524
-    right =496
-    bottom =556
-    wtype =39
-    fgc =65535
-    bgc =63422
-    fontsize =1
-    bordercolor =35953
     align =34
   end
   BtnLastP:CtmToolButton
@@ -208,6 +159,6 @@ ViewQTeachDone:CtmFormView
     right =512
     bottom =800
     wtype =32
-    bgc =63422
+    bgc =59196
   end
 end

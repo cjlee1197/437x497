@@ -66,20 +66,20 @@
 #define		Wait_PullBack		7  // 頂退完成
 
 // 允許
-#define		Permit_MoldSafe				2  // 模區安全
-#define		Permit_MoldClose			3  // 允許關模
-#define		Permit_PushOut				4  // 允許頂出
-#define		Permit_PickerESTOP		5  // 機械手急停
-#define		Permit_MoldOpen				6  // 允許開模
-#define		Permit_PullBack				7  // 允許頂退
+#define		Permit_MoldSafe				1  // 模區安全
+#define		Permit_MoldClose			2  // 允許關模
+#define		Permit_PushOut				3  // 允許頂出
+#define		Permit_PickerESTOP		4  // 機械手急停
+#define		Permit_MoldOpen				5  // 允許開模
+#define		Permit_PullBack				6  // 允許頂退
 
 // 閥門
 #define		Valve_AxisC_V				1  // 主臂垂直
 #define		Valve_AxisC_H				2  // 主臂水平
 #define		Valve_Clamp1				3  // 夾1
 #define		Valve_Clamp2				4  // 夾2
-#define		Valve_Suck1					7  // 吸1
-#define		Valve_Suck2					8  // 吸2
+#define		Valve_Suck1					5  // 吸1
+#define		Valve_Suck2					6  // 吸2
 #define		Valve_Choose1				71 // 選擇1
 #define		Valve_Choose2				72 // 選擇2	
 #define		Valve_Choose3				73 // 選擇3
@@ -96,6 +96,7 @@
 #define		Color_White		0xFFFF
 #define		Color_Red			0xF800
 #define		Color_Yellow 	0xFF80
+#define		Color_LBlue		0xDFBF
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -343,10 +344,10 @@ char* u_pszClamp_SelectString[] = // 治具對應號碼
 	"",
 	"Select_Clamp1", // 3
 	"Select_Clamp2", // 4
+	"Select_Suck1", // 5
+	"Select_Suck2", // 6
 	"",
 	"",
-	"Select_Suck1", // 7
-	"Select_Suck2", // 8
 	"",
 	"",
 };
@@ -357,10 +358,10 @@ char* u_pszCheckBoxString[] = // 確認 治具選擇
 	"",
 	"Check_Clamp1",
 	"Check_Clamp2",
-	"",
-	"",
 	"Check_Suck1",
 	"Check_Suck2",
+	"",
+	"",
 };
 
 char* u_pszDetect_SelectString[] = // 治具檢測對應號碼
@@ -370,10 +371,10 @@ char* u_pszDetect_SelectString[] = // 治具檢測對應號碼
 	"",
 	"DetectSelect_Clamp1", // 3
 	"DetectSelect_Clamp2", // 4
-	"",
-	"",
 	"DetectSelect_Suck1", // 7
 	"DetectSelect_Suck2", // 8
+	"",
+	"",
 	"",
 	"",
 };
@@ -395,22 +396,22 @@ char* Clamp_ImgPath[] = // 治具顯示圖片
 	"",	// 0
 	"",	// 1
 	"",	// 2
-	"res_tm640/pic/picker/clamp1_off.bmp", // 3
-	"res_tm640/pic/picker/clamp2_off.bmp", //4
-	"",	// 5
-	"",	// 6
-	"res_tm640/pic/picker/CupulaClose1.bmp", // 7
-	"res_tm640/pic/picker/CupulaClose2.bmp",	// 8
+	"res_tm640/pic/picker/Qclamp1_off.bmp", // 3
+	"res_tm640/pic/picker/Qclamp2_off.bmp", //4
+	"res_tm640/pic/picker/QCupulaClose1.bmp", // 5
+	"res_tm640/pic/picker/QCupulaClose2.bmp",	// 6
+	"",	// 7
+	"",	// 8
 	"", // 9
 	"",	// 10
 	"",	// 11
 	"",	// 12
-	"res_tm640/pic/picker/clamp1_on.bmp",	// 13
-	"res_tm640/pic/picker/clamp2_on.bmp",	// 14
+	"res_tm640/pic/picker/Qclamp1_on.bmp",	// 13
+	"res_tm640/pic/picker/Qclamp2_on.bmp",	// 14
+	"res_tm640/pic/picker/QCupulaOpen1.bmp", // 15
+	"res_tm640/pic/picker/QCupulaOpen2.bmp",	// 16
 	"",	// 15
 	"",	// 16
-	"res_tm640/pic/picker/CupulaOpen1.bmp", // 17
-	"res_tm640/pic/picker/CupulaOpen2.bmp",	// 18
 	"", // 19
 	"",	// 20
 	"",	// 21
@@ -431,20 +432,20 @@ char* Clamp_Hint_ImgPath[] = // 治具提示顯示圖片
 	"",	// 2
 	"res_tm640/pic/picker/Hintclamp1_off.bmp", // 3
 	"res_tm640/pic/picker/Hintclamp2_off.bmp", //4
-	"",	// 5
-	"",	// 6
-	"res_tm640/pic/picker/HintCupulaClose1.bmp", // 7
-	"res_tm640/pic/picker/HintCupulaClose2.bmp",	// 8
+	"res_tm640/pic/picker/HintCupulaClose1.bmp", // 5
+	"res_tm640/pic/picker/HintCupulaClose2.bmp",	// 6
+	"",	// 7
+	"",	// 8
 	"", // 9
 	"",	// 10
 	"",	// 11
 	"",	// 12
 	"res_tm640/pic/picker/Hintclamp1_on.bmp",	// 13
 	"res_tm640/pic/picker/Hintclamp2_on.bmp",	// 14
-	"",	// 15
-	"",	// 16
-	"res_tm640/pic/picker/HintCupulaOpen1.bmp", // 17
-	"res_tm640/pic/picker/HintCupulaOpen2.bmp",	// 18
+	"res_tm640/pic/picker/HintCupulaOpen1.bmp", // 15
+	"res_tm640/pic/picker/HintCupulaOpen2.bmp",	// 16
+	"", // 17
+	"",	// 18
 	"", // 19
 	"",	// 20
 	"",	// 21
@@ -467,10 +468,10 @@ char* u_pszBtn_Clamp_String[] =
 	"",
 	"Btn_Clamp1", // 3
 	"Btn_Clamp2", // 4
+	"Btn_Suck1", // 5
+	"Btn_Suck2", // 6
 	"",
 	"",
-	"Btn_Suck1", // 7
-	"Btn_Suck2", // 8
 };
 char* P6_Clamp_onoff_DBString[] = // P6取件點 治具狀態 DB名稱
 {
@@ -479,10 +480,10 @@ char* P6_Clamp_onoff_DBString[] = // P6取件點 治具狀態 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM48_EQUIPMENT2_ACTION_TYPE", // 3 夾具1
 	"MACHINE_PROFILE_NUM48_EQUIPMENT2_ACTION_NUM", // 4 夾具2
+	"MACHINE_PROFILE_NUM49_EQUIPMENT2_ACTION_TYPE", // 5 吸盤1
+	"MACHINE_PROFILE_NUM49_EQUIPMENT2_ACTION_NUM", // 6 吸盤2
 	"",
 	"",
-	"MACHINE_PROFILE_NUM49_EQUIPMENT2_ACTION_TYPE", // 7 吸盤1
-	"MACHINE_PROFILE_NUM49_EQUIPMENT2_ACTION_NUM", // 8 吸盤2
 };
 char* P9_Clamp_onoff_DBString[] = // P9放置點 治具狀態 DB名稱
 {
@@ -491,10 +492,10 @@ char* P9_Clamp_onoff_DBString[] = // P9放置點 治具狀態 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM46_EQUIPMENT2_ACTION_TYPE", // 3 夾具1
 	"MACHINE_PROFILE_NUM46_EQUIPMENT2_ACTION_NUM", // 4 夾具2
+	"MACHINE_PROFILE_NUM47_EQUIPMENT2_ACTION_TYPE", // 5 吸盤1
+	"MACHINE_PROFILE_NUM47_EQUIPMENT2_ACTION_NUM", // 6 吸盤2
 	"",
 	"",
-	"MACHINE_PROFILE_NUM47_EQUIPMENT2_ACTION_TYPE", // 7 吸盤1
-	"MACHINE_PROFILE_NUM47_EQUIPMENT2_ACTION_NUM", // 8 吸盤2
 };
 
 
@@ -506,10 +507,10 @@ char* u_pszDetectBoxString[] = // 確認 治具檢測選擇
 	"",
 	"Detect_Clamp1",
 	"Detect_Clamp2",
-	"",
-	"",
 	"Detect_Suck1",
 	"Detect_Suck2",
+	"",
+	"",
 };
 
 char* P6_Clamp_detect_DBString[] = // P6取件點 治具檢測狀態 DB名稱
@@ -519,10 +520,10 @@ char* P6_Clamp_detect_DBString[] = // P6取件點 治具檢測狀態 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM44_EQUIPMENT2_ACTION_TYPE", // 3 夾具1
 	"MACHINE_PROFILE_NUM44_EQUIPMENT2_ACTION_NUM", // 4 夾具2
+	"MACHINE_PROFILE_NUM45_EQUIPMENT2_ACTION_TYPE", // 5 吸盤1
+	"MACHINE_PROFILE_NUM45_EQUIPMENT2_ACTION_NUM", // 6 吸盤2
 	"",
 	"",
-	"MACHINE_PROFILE_NUM45_EQUIPMENT2_ACTION_TYPE", // 7 吸盤1
-	"MACHINE_PROFILE_NUM45_EQUIPMENT2_ACTION_NUM", // 8 吸盤2
 };
 char* P9_Clamp_detect_DBString[] = // P9放置點 治具檢測狀態 DB名稱
 {
@@ -531,10 +532,10 @@ char* P9_Clamp_detect_DBString[] = // P9放置點 治具檢測狀態 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM42_EQUIPMENT2_ACTION_TYPE", // 3 夾具1
 	"MACHINE_PROFILE_NUM42_EQUIPMENT2_ACTION_NUM", // 4 夾具2
+	"MACHINE_PROFILE_NUM43_EQUIPMENT2_ACTION_TYPE", // 5 吸盤1
+	"MACHINE_PROFILE_NUM43_EQUIPMENT2_ACTION_NUM", // 6 吸盤2
 	"",
 	"",
-	"MACHINE_PROFILE_NUM43_EQUIPMENT2_ACTION_TYPE", // 7 吸盤1
-	"MACHINE_PROFILE_NUM43_EQUIPMENT2_ACTION_NUM", // 8 吸盤2
 };
 
 CtmWnd*   pwndQTeach_Clamp_DT[10] ={NULL}; // 快速教導 治具延時 數值輸入
@@ -545,10 +546,10 @@ char* u_pszQTeach_Clamp_DTString[] =
 	"",
 	"QTeach_DT_Clamp1", // 3
 	"QTeach_DT_Clamp2", // 4
+	"QTeach_DT_Suck1", // 5
+	"QTeach_DT_Suck2", // 6
 	"",
 	"",
-	"QTeach_DT_Suck1", // 7
-	"QTeach_DT_Suck2", // 8
 };
 long l_Clamp_Delaytime[10] = {0};
 char* P6_Clamp_DT_DBString[] = // P6取件點 治具延時 DB名稱
@@ -558,10 +559,10 @@ char* P6_Clamp_DT_DBString[] = // P6取件點 治具延時 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER1", // 3 夾具1
 	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER2", // 4 夾具2
+	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER3", // 5 吸盤1
+	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER4", // 6 吸盤2
 	"",
 	"",
-	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER3", // 7 吸盤1
-	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER4", // 8 吸盤2
 };
 char* P9_Clamp_DT_DBString[] = // P9取件點 治具延時 DB名稱
 {
@@ -570,10 +571,10 @@ char* P9_Clamp_DT_DBString[] = // P9取件點 治具延時 DB名稱
 	"",
 	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER5", // 3 夾具1
 	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER6", // 4 夾具2
+	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER7", // 5 吸盤1
+	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER8", // 6 吸盤2
 	"",
 	"",
-	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER7", // 7 吸盤1
-	"MACHINE_PROFILE_NUM2_EQUIPMENT2_ACTION_PARAMETER8", // 8 吸盤2
 };
 
 /*=================================副臂 設定=================================*/
@@ -1017,7 +1018,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	char	m_pszTitleID[256];	memset(m_pszTitleID, 0, sizeof(m_pszTitleID));
 	pwndSender->GetPropValueT("titleID", m_pszTitleID, sizeof(m_pszTitleID));
 	printf("Now at %s\n",m_pszTitleID);
-	
+
 	// 取得群組號碼 (位置代碼)
 	for(int i=0; i<sizeof(GroupName)/sizeof(GroupName[0]); i++)
 	{
@@ -1913,7 +1914,8 @@ void	Save()
 						
 						// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]
 						
-						g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
+						g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step-b_SubArmSync;// 設定Step數 若有同步(b_SubArmSync),Step數和上一步相同
+						printf("g_QTeach_Action_P[%d]=%d\n",QTeach_PGNo-1,Action_Step-b_SubArmSync);
 						
 						if(pwndQTeach_Pos[Axis_Y2]!=NULL) // 設定位置 P1為位置
 						{
@@ -1937,14 +1939,24 @@ void	Save()
 					}
 					if(i==3) // 加在第4步 設定動作 軸動作 新增動作
 					{
-						printf("Set AxisX\n");
+						printf("Set AxisX2\n");
 						QTeach_PGNo++;
-						//Action_Step++;
+						Action_Step++;
 						SaveAct_Axis2Temp(QTeach_PGNo,Axis_X2); // 寫入 軸動作 Axis_X2
 						
 						// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]
 						
-						g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
+						if(b_SubArmSync)
+						{
+							g_QTeach_Action_P[QTeach_PGNo-2].Step = 3;
+							g_QTeach_Action_P[QTeach_PGNo-1].Step = 3;// 設定Step數 若有同步(b_SubArmSync),Step數和上一步相同
+							printf("g_QTeach_Action_P[%d]=%d\n",QTeach_PGNo-1,3);
+						}
+						else
+						{
+							g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數 若有同步(b_SubArmSync),Step數和上一步相同
+							printf("g_QTeach_Action_P[%d]=%d\n",QTeach_PGNo-1,Action_Step);
+						}
 						
 						if(pwndQTeach_Pos[Axis_X2]!=NULL) // 設定位置 P1為位置
 						{
@@ -2026,6 +2038,13 @@ void	Save()
 				// 從Action_P[]讀取這點需要的步驟
 				printf("SaveAction2Temp %d\n",Action_PNo);
 				SaveAction2Temp(QTeach_PGNo,Action_PNo); // 將快速教導動作存入暫存位置
+				
+				if(i==1 && b_SubArmSync && u_PickerType==MechType5)
+					{
+						g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step-b_SubArmSync;// 設定Step數 若有同步(b_SubArmSync),Step數和上一步相同
+						printf("g_QTeach_Action_P[%d]=%d\n",QTeach_PGNo-1,2);
+					}
+				
 				
 				Action_PNo++;
 			}
@@ -3501,7 +3520,7 @@ void	UpdateTeach_Pos()
 			if(b_PosSet_OK[i]==OK)
 			{
 				u_All_PosSet_OK++;
-				pwndQTeach_Pos[i]->SetPropValueT("bgc",Color_White); // 白色
+				pwndQTeach_Pos[i]->SetPropValueT("bgc",Color_LBlue); // 白色
 			}
 			else
 			{
@@ -3531,7 +3550,7 @@ void	UpdateTeach_Speed()
 			if(b_SpdSet_OK[i]==OK)
 			{
 				u_All_SpdSet_OK++;
-				pwndQTeach_Speed[i]->SetPropValueT("bgc",Color_White); // 白色
+				pwndQTeach_Speed[i]->SetPropValueT("bgc",Color_LBlue); // 白色
 			}
 			else
 			{
@@ -3699,8 +3718,8 @@ void	SaveAction2Temp(int QTeach_PGNo,int j)
 }
 
 /*---------------------------------------------------------------------------+
-|  Function : SaveAct_Valve2Temp()                  												 |
-|       		: 將快速教導動作 閥門 存入暫存g_QTeach_Action_P									 |
+|  Function : SaveAct_Axis2Temp()                  													 |
+|       		: 將快速教導動作 軸動作 存入暫存g_QTeach_Action_P								 |
 +---------------------------------------------------------------------------*/
 void	SaveAct_Axis2Temp(int QTeach_PGNo,int Axis)
 {

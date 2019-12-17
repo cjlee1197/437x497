@@ -43,6 +43,7 @@
 #define		Color_White		0xFFFF
 #define		Color_Red			0xF800
 #define		Color_Yellow 	0xFF80
+#define		Color_LBlue		0xDFBF
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -605,7 +606,7 @@ void	UpdateTeach_Pos()
 			if(b_PosSet_OK[i]==OK)
 			{
 				u_All_PosSet_OK++;
-				pwndQTeach_Pos[i]->SetPropValueT("bgc",Color_White); // 白色
+				pwndQTeach_Pos[i]->SetPropValueT("bgc",Color_LBlue); // 白色
 			}
 			else
 			{
