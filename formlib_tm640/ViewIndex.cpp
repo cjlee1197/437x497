@@ -20,6 +20,8 @@
 +===========================================================================*/
 #define		MechType3				0	 // 三軸
 #define		MechType5				1  // 五軸
+#define		EncType_Abs			0x00000000  // 絕對
+#define		EncType_Res		  0x00010000  // 增量
 #define		TransType_D			0	// 節圓直徑
 #define		TransType_Tooth	1 // 齒數模數
 #define		EncWord 				0xFFFF0000 // High Word
@@ -38,6 +40,7 @@
 +--------------------------------------------------*/
 DWORD dw_MechType = 0; //紀錄 pMechTypeDB 的數值
 int u_PickerType = 0; // 機型選擇 0-三軸 1-五軸
+int u_EncType 	 = 0; // 編碼器選擇  0-絕對 1-增量
 int u_TransType  = 0; // 傳動方式  0-節圓直徑 1-齒數模數
 char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
 char* pTransTypeDB = "MACHINE_PROFILE_NUM1_EQUIPMENT2_ACTION_TYPE"; // 傳動方式DB
@@ -47,11 +50,13 @@ char* pTransTypeDB = "MACHINE_PROFILE_NUM1_EQUIPMENT2_ACTION_TYPE"; // 傳動方式D
 
 BOOL	OnCreateA(CtmWnd* pwndSender)
 {
+	//g_iPrivilege=15;
 	printf("g_iPrivilege=%d\n",g_iPrivilege); // 權限等級
 	//u_PickerType = (int)(GetDBValue(pMechTypeDB).lValue); // 讀取設定 機型選擇 三五軸
 	// 機型選擇 編碼器選擇
 	dw_MechType 	 = (GetDBValue(pMechTypeDB).lValue);
 	u_PickerType = dw_MechType & MechWord;
+	u_EncType		 = dw_MechType & EncWord;
 	
 	u_TransType  = (int)(GetDBValue(pTransTypeDB).lValue); // 讀取設定 傳動方式 齒數模數
 	
@@ -129,15 +134,31 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
 				strcpy(g_szLastFormName, "Index.txt");
 				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
-				if(u_PickerType == MechType5) // 五軸
+				if(u_EncType == EncType_Abs) // 絕對型 AUSTONE
 				{
-					strcpy(g_szCurrentFormName, "Zero.txt");
-					::PutCommand("Zero.txt");
+					if(u_PickerType == MechType5) // 五軸
+					{
+						strcpy(g_szCurrentFormName, "Zero.txt");
+						::PutCommand("Zero.txt");
+					}
+					else if(u_PickerType == MechType3) // 三軸
+					{
+						strcpy(g_szCurrentFormName, "Zero_Axis3.txt");
+						::PutCommand("Zero_Axis3.txt");
+					}
 				}
-				else if(u_PickerType == MechType3) // 三軸
+				else if(u_EncType == EncType_Res) // 增量刑 HDT
 				{
-					strcpy(g_szCurrentFormName, "Zero_Axis3.txt");
-					::PutCommand("Zero_Axis3.txt");
+					if(u_PickerType == MechType5) // 五軸
+					{
+						strcpy(g_szCurrentFormName, "Zero_HDT.txt");
+						::PutCommand("Zero_HDT.txt");
+					}
+					else if(u_PickerType == MechType3) // 三軸
+					{
+						strcpy(g_szCurrentFormName, "Zero_HDT_Axis3.txt");
+						::PutCommand("Zero_HDT_Axis3.txt");
+					}
 				}
 			}
 			else
@@ -389,6 +410,7 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		default:
 			break;
 	}
+	pwndSender->UpdateAll();
 	((CtmFormView*)pwndSender)->OnKey1(wKey);	
 	return wKey;
 }
