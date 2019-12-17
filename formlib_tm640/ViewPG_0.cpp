@@ -793,6 +793,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		}
 	if(GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED42").lValue)
 	{
+		printf("Get SYSX_OTHERS_OTHERS_INT_RESERVED42\n");
 		UpdateText();
 		SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED42", 0);
 	}
@@ -1079,6 +1080,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	if (wKey == 0x000B)		// 下一頁
 	{
 		PageDown(pwndSender);
+		printf("Page Dwon\n");
 		UpdateText();
 		UpdateNo();
 		return _NULL_KEY;
@@ -1087,8 +1089,10 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	{
 		//printf("PageUp\n");
 		PageUp(pwndSender);
+		printf("Page Up\n");
 		UpdateText();
 		UpdateNo();
+	
 		return _NULL_KEY;
 	}
 
@@ -1221,16 +1225,16 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 			pwndStaticAct[i]->CreateA();
 			pwndStaticAct[i]->Update();
 			//pwndCheckBoxAct[i]->Update();
+			UpdateText();
 		}
 	}
-
-	UpdateText();
 	
 	if(pwnd == NULL)	return wIDControl;
 	return TRUE;
 }
 WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 {
+	printf("OnMouseUp\n");
 	CtmWnd*     pwnd = pwndSender->FindControlFromTab(wIDControl);
  	if(pwnd == NULL)	return wIDControl;
  		
@@ -1244,7 +1248,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
  			printf("Folloew =%d\n",b_Follow);
  		}
  	
-	UpdateText();
+	//UpdateText();
 	return wIDControl;
  	
 }
@@ -1278,11 +1282,11 @@ void	PageDown(CtmWnd* pwndSender)		// 下一頁
 		pwndEditNo[i]->SetPropValueT("text",pNo);
 		pwndEditNo[i]->Update();
 		printf("No=%d\n",No);
-		if(pwndEditNo[i] != NULL)
-		{
-			pwndStaticAct[i]->SetPropValueT("bgc",BgColor[1]);
-			pwndStaticAct[i]->Update();
-		}
+//		if(pwndEditNo[i] != NULL)
+//		{
+//			pwndStaticAct[i]->SetPropValueT("bgc",BgColor[1]);
+//			pwndStaticAct[i]->Update();
+//		}
 		if( No<(StandbyStepNum+1) )
 		{
 			if(pwndEditNo[i] != NULL)
@@ -1314,7 +1318,7 @@ void	PageDown(CtmWnd* pwndSender)		// 下一頁
 		{
 			pwndEditNo[0]->GetPropValueT("text", pNo, sizeof(pNo));
 			sscanf(pNo,"%d",&SelectNo);
-			pwndStaticAct[0]->SetPropValueT("bgc",36256);
+			//pwndStaticAct[0]->SetPropValueT("bgc",36256);
 			//pwndCheckBoxAct[0]->SetPropValueT("bgc",36256);
 		}
 	}	
@@ -1342,13 +1346,13 @@ void	PageUp(CtmWnd* pwndSender)			// 上一頁
 		pwndEditNo[i]->SetPropValueT("text",pNo);
 		pwndEditNo[i]->Update();
 		printf("No=%d\n",No);
-		if(pwndEditNo[i] != NULL)
-		{
-			pwndStaticAct[i]->SetPropValueT("bgc",BgColor[1]);
-			pwndStaticAct[i]->Update();
-			//pwndCheckBoxAct[i]->SetPropValueT("bgc",0xFFDF);
-			//pwndCheckBoxAct[i]->Update();
-		}	
+//		if(pwndEditNo[i] != NULL)
+//		{
+//			pwndStaticAct[i]->SetPropValueT("bgc",BgColor[1]);
+//			pwndStaticAct[i]->Update();
+//			//pwndCheckBoxAct[i]->SetPropValueT("bgc",0xFFDF);
+//			//pwndCheckBoxAct[i]->Update();
+//		}	
 		if( No<(StandbyStepNum+1) )
 		{
 			if(pwndEditNo[i] != NULL)
@@ -1382,7 +1386,7 @@ void	PageUp(CtmWnd* pwndSender)			// 上一頁
 		{
 			pwndEditNo[0]->GetPropValueT("text", pNo, sizeof(pNo));
 			sscanf(pNo,"%d",&SelectNo);
-			pwndStaticAct[0]->SetPropValueT("bgc",36256);
+			//pwndStaticAct[0]->SetPropValueT("bgc",36256);
 			//pwndCheckBoxAct[0]->SetPropValueT("bgc",36256);
 		}
 	}	
