@@ -27,6 +27,7 @@ extern  "C"	void	OnUpdateA(CtmWnd* pwndSender);
 
 extern  "C"	WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl);
 extern  "C"	WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl);
+extern	"C"	void	OnMessage(CtmWnd* pwnd, int message, WPARAM wParam, LPARAM lParam);
  
 void 	ShowNumber(CtmWnd* pwndSender,int No);
 void	ChangeImage(CtmWnd* pimage, char* pszpath);

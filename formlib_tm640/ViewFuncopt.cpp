@@ -76,7 +76,8 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 |           Operations                                                       |
 +---------------------------------------------------------------------------*/
 WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
-{              
+{         
+	printf("OnChangeA\n");
 	return wIDControl;
 }
 
@@ -200,11 +201,28 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		SetMachineType();
 	}
 	
-	
   return wIDControl;	
 }
-
-
+/*---------------------------------------------------------------------------+
+|  Function : OnMessage()                      	     	                     |
+|  Task     :   						     	                                           |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	OnMessage(CtmWnd* pwnd, int message, WPARAM wParam, LPARAM lParam)
+{
+	if(message==MSG_MOUSELUP)
+	{
+		// 刷新功能模式
+		SetMovePType();
+		SetMoldPType();
+		SetMachineType();
+	}
+}
 void	OnUpdateA(CtmWnd* pwndSender)
 {
 }
