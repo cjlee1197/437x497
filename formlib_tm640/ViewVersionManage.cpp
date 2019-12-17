@@ -50,6 +50,7 @@
 #define D_PROGTYPE_MOTION 1
 #define D_PROGTYPE_PLC 2
 
+#define	STATE_STOP							0
 #define STATE_SINGLESTEP        2
 #define	STATE_MANUAL						3
 #define STATE_FULLAUTO          4 
@@ -89,7 +90,7 @@ CtmWnd*		u_BtnReadyUpdate			= NULL;
 CtmWnd*		u_BtnReStart					= NULL;
 CtmWnd*		u_BtnBkProgToUSB			= NULL;
 	
-WORD        u_wPickerOPSatus    = 0; // 機械手狀態
+WORD        u_wPickerOPSatus    = -1; // 機械手狀態
 
 char UpdatePath[1024];
 BOOL SelUpdate=FALSE;
@@ -155,7 +156,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 	{
 		printf("Press u_BtnReadyUpdate\n");
 		//if(g_TxCNCData.shmCNCData.CNC_mode_lgt != OP_JOG_MODE)
-		if(u_wPickerOPSatus  != STATE_MANUAL) // 不在手動狀態
+		if(u_wPickerOPSatus  != STATE_STOP) // 不在手動狀態
 		{
 			MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_SEITCH_MANUAL"); // 請切換至手動模式再進行操作
 			return wIDControl;
@@ -190,13 +191,14 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 	else	if(pwndTemp == u_BtnReStart) // 重啟系統
 	{
 		//if(g_TxCNCData.shmCNCData.CNC_mode_lgt != OP_JOG_MODE)
-		if(u_wPickerOPSatus  != STATE_MANUAL) // 不在手動狀態
+		if(u_wPickerOPSatus  != STATE_STOP) // 不在手動狀態
 		{
 			MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_SEITCH_MANUAL");
 			return wIDControl;
 		}
 		if(ReadyUpdate)
 			{
+				USB_umount();
 				printf("reboot!!!!\n");
 				system("reboot");
 			//MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_NO_SUP_REBOOT");
