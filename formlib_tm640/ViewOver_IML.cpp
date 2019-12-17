@@ -61,6 +61,12 @@
 #define		STEPMAX    						100
 
 #define		StaticBgc		0xFFFF
+
+#define		LGreen					0xCF90 // 0x8627 // 青綠
+#define		White						0xFFFF // 白
+#define		Gray						0xFFDF // 灰
+#define		Yellow					0xFFE0 // 黃
+#define		LBlue						0xD73D // 淺藍
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -73,12 +79,13 @@ DWORD dw_MechType = 0; //紀錄 pMechTypeDB 的數值
 int u_PickerType 	= 0; // 機型選擇 0-三軸 1-五軸
 int u_EncType 		= 0; // 編碼器選擇  0-絕對 1-增量
 char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
+int		StandbyStepNum=0; // 待機點步驟數量 3軸-5步 5軸-7步
 
 extern	int         g_nDemo;		
 int					u_nClickNum	= 0;
 		
 long        lSpeedValueOld=0; //2018-2-9 
-WORD   		wStepNumOld=0;
+WORD   		wStepNum=0,wStepNumOld=-1;
 int     	numStaticSpeed=0,u_nSelectBoxCount=0,iEditNo=0,iCheckBoxAct=0 ,iJumpBtn=0;
 int		u_nDetectBoxCount=0;
 int 	iStaticAct=0;
@@ -350,6 +357,11 @@ char*		u_ActionTypeString8[] =
 	NULL
 };
 
+long	NoColor[] =
+{
+	LBlue, // 青綠
+	White,	// 白
+};
 /*---------------------------------------------------------------------------+
 |           View Content - OverView                                          |
 +---------------------------------------------------------------------------*/ 
@@ -400,6 +412,10 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	// 取得 機構設定 3 or 5軸
 	dw_MechType = (GetDBValue(pMechTypeDB).lValue); // 讀取設定 機型選擇 三五軸
 	u_PickerType = dw_MechType & MechWord;
+	if(u_PickerType==MechType3)
+		StandbyStepNum = 5;
+	if(u_PickerType==MechType5)
+		StandbyStepNum = 7;
 	
 	pwndStaticStepType        = pwndSender->FindControlFromName("StaticActionnum1");
 	pwndStaticActionType      = pwndSender->FindControlFromName("StaticActionnum2");
@@ -474,6 +490,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	printf("u_nDetectBoxCount=%d\n",u_nDetectBoxCount);
 	CreateLEDSet();
 	CreateDetectLEDSet();
+	wStepNum =GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue;
 	ActionStep();
 	//CreateStringSet();
 	AddTimer(&u_lTimer);	
@@ -1165,32 +1182,32 @@ void	StepString()
 void	ActionStep()
 {
 	WORD 	wStepNum =GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue;
-	WORD    wProgNum =GetDBValue("MACHINE_PROFILE_STEPNUM").lValue;
+	WORD   wProgNum =GetDBValue("MACHINE_PROFILE_STEPNUM").lValue;
 	if((wStepNum>0)&&(wStepNum<=wProgNum))
 	{
 		if(wStepNum!=wStepNumOld)
 		{
 			//printf("wStepNum=%d\n",wStepNum);
-			if(wStepNum<=iCheckBoxAct/2+1)
+			if(wStepNum<=iCheckBoxAct/2+1) // 現在StepNum < 動作列表列數/2
 			{
 				ActionNum(iCheckBoxAct/2+1); //序號不變
 				ActionName(iCheckBoxAct/2+1); //序號不變
-				for(int i=0;i<iCheckBoxAct;i++)
-				{
-					if(i==wStepNum-1)
-					{ 
-						//SetTempColor(pwndCheckBoxAct[i], 0, 0xAE69);
-						SetTempColor(pwndStaticAct[i], 0, 0xAE69);
-						SetTempColor(pwndEditNo[i], 0, 0xAE69);
-					}
-					else
-					{
-						//SetTempColor(pwndCheckBoxAct[i], 0x4BAE, StaticBgc);//blue
-						SetTempColor(pwndStaticAct[i], 0, StaticBgc);//blue
-						SetTempColor(pwndEditNo[i], 0, StaticBgc);//blue
-						// cjlee changed 0x4BAE -> 0 2019/4/30 上午 08:58:24
-					}
-				}
+//				for(int i=0;i<iCheckBoxAct;i++)
+//				{
+//					if(i==wStepNum-1)
+//					{ 
+//						//SetTempColor(pwndCheckBoxAct[i], 0, 0xAE69);
+//						SetTempColor(pwndStaticAct[i], 0, 0xAE69);
+//						SetTempColor(pwndEditNo[i], 0, 0xAE69);
+//					}
+//					else
+//					{
+//						//SetTempColor(pwndCheckBoxAct[i], 0x4BAE, StaticBgc);//blue
+//						SetTempColor(pwndStaticAct[i], 0, StaticBgc);//blue
+//						SetTempColor(pwndEditNo[i], 0, StaticBgc);//blue
+//						// cjlee changed 0x4BAE -> 0 2019/4/30 上午 08:58:24
+//					}
+//				}
 				/*if(wStepNumOld<=iCheckBoxAct/2+1)
 				{
 					if((wStepNumOld-1)%2==1)
@@ -1218,22 +1235,22 @@ void	ActionStep()
 			{
 				ActionNum(wProgNum-iCheckBoxAct+iCheckBoxAct/2+1); //序號不變
 				ActionName(wProgNum-iCheckBoxAct+iCheckBoxAct/2+1); //序號不變
-				for(int i=0;i<iCheckBoxAct;i++)
-				{
-					if(i==iCheckBoxAct+wStepNum-wProgNum-1)
-					{ 
-						//SetTempColor(pwndCheckBoxAct[i], 0, 0xAE69);
-						SetTempColor(pwndStaticAct[i], 0, 0xAE69);	
-						SetTempColor(pwndEditNo[i], 0, 0xAE69);
-					}
-					else
-					{
-						//SetTempColor(pwndCheckBoxAct[i], 0x4BAE, StaticBgc);//blue
-						SetTempColor(pwndStaticAct[i], 0, StaticBgc);//blue
-						SetTempColor(pwndEditNo[i], 0, StaticBgc);//blue
-						// cjlee changed 0x4BAE -> 0 2019/4/30 上午 08:58:24
-					}
-				}
+//				for(int i=0;i<iCheckBoxAct;i++)
+//				{
+//					if(i==iCheckBoxAct+wStepNum-wProgNum-1)
+//					{ 
+//						//SetTempColor(pwndCheckBoxAct[i], 0, 0xAE69);
+//						SetTempColor(pwndStaticAct[i], 0, 0xAE69);	
+//						SetTempColor(pwndEditNo[i], 0, 0xAE69);
+//					}
+//					else
+//					{
+//						//SetTempColor(pwndCheckBoxAct[i], 0x4BAE, StaticBgc);//blue
+//						SetTempColor(pwndStaticAct[i], 0, StaticBgc);//blue
+//						SetTempColor(pwndEditNo[i], 0, StaticBgc);//blue
+//						// cjlee changed 0x4BAE -> 0 2019/4/30 上午 08:58:24
+//					}
+//				}
 				/*if(wStepNumOld>=wProgNum-iCheckBoxAct+iCheckBoxAct/2+1)
 				{
 					if((wStepNumOld-1)%2==1)
@@ -1268,22 +1285,22 @@ void	ActionStep()
 			{
 				ActionNum(wStepNum); //序號變化
 				ActionName(wStepNum); //序號變化
-				for(int i=0;i<iCheckBoxAct;i++)
-				{
-					if(i==iCheckBoxAct/2)
-					{ 
-						//SetTempColor(pwndCheckBoxAct[i], 0, 0xAE69);
-						SetTempColor(pwndStaticAct[i], 0, 0xAE69);
-						SetTempColor(pwndEditNo[i], 0, 0xAE69);
-					}
-					else
-					{
-						//SetTempColor(pwndCheckBoxAct[i], 0x4BAE, StaticBgc);//blue
-						SetTempColor(pwndStaticAct[i], 0, StaticBgc);//blue
-						SetTempColor(pwndEditNo[i], 0, StaticBgc);//blue
-						// cjlee changed 0x4BAE -> 0 2019/4/30 上午 08:58:24
-					}
-				}
+//				for(int i=0;i<iCheckBoxAct;i++)
+//				{
+//					if(i==iCheckBoxAct/2)
+//					{ 
+//						//SetTempColor(pwndCheckBoxAct[i], 0, 0xAE69);
+//						SetTempColor(pwndStaticAct[i], 0, 0xAE69);
+//						SetTempColor(pwndEditNo[i], 0, 0xAE69);
+//					}
+//					else
+//					{
+//						//SetTempColor(pwndCheckBoxAct[i], 0x4BAE, StaticBgc);//blue
+//						SetTempColor(pwndStaticAct[i], 0, StaticBgc);//blue
+//						SetTempColor(pwndEditNo[i], 0, StaticBgc);//blue
+//						// cjlee changed 0x4BAE -> 0 2019/4/30 上午 08:58:24
+//					}
+//				}
 				/*if(wStepNumOld==wProgNum-iCheckBoxAct+iCheckBoxAct/2+2)
 				{
 					SetTempColor(pwndCheckBoxAct[iCheckBoxAct/2+1], 0x4BAE, StaticBgc);
@@ -1295,55 +1312,72 @@ void	ActionStep()
 	}
 	if(wStepNum==0)
 	{
+		if(wStepNum!=wStepNumOld)
+		{
 			ActionNum(iCheckBoxAct/2+1);
 			ActionName(iCheckBoxAct/2+1);
-			for(int i=0;i<iCheckBoxAct;i++)
-			{
-				if(i==wStepNum-1)
-				{ 
-					SetTempColor(pwndStaticAct[i], 0, 0xAE69);
-					SetTempColor(pwndEditNo[i], 0, 0xAE69);
-				}
-				else
-				{
-					SetTempColor(pwndStaticAct[i], 0, StaticBgc);//blue
-					SetTempColor(pwndEditNo[i], 0, StaticBgc);//blue
-					// cjlee changed 0x4BAE -> 0 2019/4/30 上午 08:58:24
-				}
-			}
+//			for(int i=0;i<iCheckBoxAct;i++)
+//			{
+//				if(i==wStepNum-1)
+//				{ 
+//					SetTempColor(pwndStaticAct[i], 0, 0xAE69);
+//					SetTempColor(pwndEditNo[i], 0, 0xAE69);
+//				}
+//				else
+//				{
+//					SetTempColor(pwndStaticAct[i], 0, StaticBgc);//blue
+//					SetTempColor(pwndEditNo[i], 0, StaticBgc);//blue
+//					// cjlee changed 0x4BAE -> 0 2019/4/30 上午 08:58:24
+//				}
+//			}
+			wStepNumOld=wStepNum;
+		}
 	}
 }
 void   ActionNum(WORD wStepNo)
 {
+	char	pNoDataID[256] = {NULL};
 	char 	pNo[256]			={NULL}; 
 	memset(pNo, 0 ,sizeof(pNo));
-	for(int i=0;i<iEditNo;i++)
+	int value=0;
+	for(int i=0;i<iEditNo;i++)	//獲取序號
 	{
 		if(pwndEditNo[i]!=NULL)
-		{
-			if(i+wStepNo-iCheckBoxAct/2 >5)
+		{		
+			memset(pNoDataID, 0 ,sizeof(pNoDataID));
+			sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i+wStepNo-iCheckBoxAct/2);
+			value = GetDBValue(pNoDataID).lValue;
+			if(i+wStepNo-iCheckBoxAct/2 >StandbyStepNum)
 			{
-				sprintf(pNo,"%d",i+wStepNo-iCheckBoxAct/2-5);
+				memset(pNo, 0 ,sizeof(pNo));
+				sprintf(pNo,"%d",value-StandbyStepNum);
 				pwndEditNo[i]->SetPropValueT("text", pNo);
-				pwndEditNo[i]->UpdateAll();
 			}
 			else
 			{
 				pwndEditNo[i]->SetPropValueT("text", "WAIT");
-				pwndEditNo[i]->UpdateAll();
 			}
+			pwndEditNo[i]->SetPropValueT("bgc",NoColor[((value)%2)]);
+			pwndEditNo[i]->UpdateAll();
 		}
-	}
+	}	
 }
 
 void    ActionName(WORD wStepNo)
 {
+	printf("AcrionName wStepNo=%d\n",wStepNo);
+	WORD 	wStepNum =GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue;
+	WORD   wProgNum =GetDBValue("MACHINE_PROFILE_STEPNUM").lValue;
+	
 	char    szActTypeName[256];
 	char    szActNumName[256];
 	char    szActPara1[256];
 	char    szActPara2[256];
 	char    szActPara3[256];
 	char    szActPara5[256];
+	
+	char	pNoDataID[256] = {NULL};
+	int value;
 	
 	char 	pDataID[256];
 	char 	pDataID2[256];
@@ -1393,9 +1427,42 @@ void    ActionName(WORD wStepNo)
 		wActPara5  = GetDBValue(szActPara5).lValue;
 		//pwndCheckBoxAct[i]->SetPropValueT("captionID", "");
 		//pwndCheckBoxAct[i]->CreateA();   
-
 		//pwndCheckBoxAct[i]->Update();
 		//pwndCheckBoxAct[i]->UpdateAll(); 
+		
+		memset(pNoDataID, 0 ,sizeof(pNoDataID));
+		sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",ltemp);
+		value = GetDBValue(pNoDataID).lValue;
+		if(pwndStaticAct[i] != NULL)
+		{
+			pwndStaticAct[i]->SetPropValueT("bgc",NoColor[((value)%2)]);
+		}
+		
+		if(wStepNum<=iCheckBoxAct/2+1)
+		{
+			if( i == wStepNo-1)
+			{
+				SetTempColor(pwndStaticAct[i], 0, LGreen);	
+				SetTempColor(pwndEditNo[i], 0, LGreen);
+			}
+		}
+		else if(wStepNum>wProgNum-iCheckBoxAct+iCheckBoxAct/2+1)
+		{
+			if(i==iCheckBoxAct+wStepNum-wProgNum-1)
+			{ 
+				SetTempColor(pwndStaticAct[i], 0, LGreen);	
+				SetTempColor(pwndEditNo[i], 0, LGreen);
+			}
+		}
+		else
+		{
+			if(i==iCheckBoxAct/2)
+				{ 
+					//SetTempColor(pwndCheckBoxAct[i], 0, 0xAE69);
+					SetTempColor(pwndStaticAct[i], 0, LGreen);
+					SetTempColor(pwndEditNo[i], 0, LGreen);
+				}
+		}
 //		if(pwndCheckBoxAct[i]!=NULL)
 //		{
 //			pwndCheckBoxAct[i]->SetPropValueT("captionID", u_ActionStepString[wActType]);
