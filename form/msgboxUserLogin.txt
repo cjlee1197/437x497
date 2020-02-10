@@ -1,26 +1,26 @@
 ViewMsgBoxUserLogin:CtmFormView
-  left =125
+  left =0
   top =250
-  right =545
-  bottom =598
+  right =600
+  bottom =650
   wtype =34871
   bgc =65535
   extag =10000
   ImageBackGround:CtmImageBox
     left =0
     top =0
-    right =420
-    bottom =348
+    right =600
+    bottom =400
     wtype =55
     type =2
     style =3
-    imagepath =res_tm640/msgBG_420x348.bmp
+    imagepath =res_tm640/msgBG_600x400.bmp
     keycolor =63519
   end
   BtnCancel:CtmToolButton
-    left =228
+    left =364
     top =265
-    right =328
+    right =464
     bottom =315
     wtype =39
     taborder =4
@@ -30,9 +30,9 @@ ViewMsgBoxUserLogin:CtmFormView
     captionID =ROBOT_BTN_CANCEL
   end
   BtnLogin:CtmToolButton
-    left =59
+    left =139
     top =265
-    right =159
+    right =239
     bottom =315
     wtype =39
     taborder =3
@@ -42,9 +42,9 @@ ViewMsgBoxUserLogin:CtmFormView
     captionID =ROBOT_STR_LOGIN
   end
   StaticUserId:CtmStaticX2
-    left =75
+    left =187
     top =114
-    right =145
+    right =257
     bottom =164
     wtype =48
     fgc =0
@@ -53,9 +53,9 @@ ViewMsgBoxUserLogin:CtmFormView
     align =34
   end
   SelectEditUserId:CtmSelectEdit
-    left =185
+    left =297
     top =114
-    right =320
+    right =432
     bottom =164
     wtype =37
     taborder =1
@@ -65,9 +65,9 @@ ViewMsgBoxUserLogin:CtmFormView
     listnum =3
   end
   StaticUserPassword:CtmStaticX2
-    left =75
+    left =187
     top =174
-    right =145
+    right =257
     bottom =224
     wtype =48
     fgc =0
@@ -76,10 +76,10 @@ ViewMsgBoxUserLogin:CtmFormView
     align =34
   end
   StaticUserLogin:CtmStaticX2
-    left =43
-    top =46
-    right =147
-    bottom =96
+    left =155
+    top =54
+    right =259
+    bottom =104
     wtype =48
     fgc =0
     fontsize =2
@@ -87,9 +87,9 @@ ViewMsgBoxUserLogin:CtmFormView
     align =34
   end
   EditPassword:CtmEdit
-    left =185
+    left =297
     top =174
-    right =320
+    right =432
     bottom =224
     wtype =35
     taborder =2
@@ -100,15 +100,14 @@ ViewMsgBoxUserLogin:CtmFormView
     align =34
   end
   btnUserManager:CtmToolButton
-    left =231
-    top =46
-    right =331
-    bottom =96
-    wtype =39
+    left =471
+    top =14
+    right =571
+    bottom =64
+    wtype =16
     taborder =0
     bgc =36256
     fontsize =2
     buttontype =0
-    captionID =ROBOT_STR_USER_MANAGER
   end
 end
