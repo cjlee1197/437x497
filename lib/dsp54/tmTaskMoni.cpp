@@ -48,7 +48,6 @@ typedef void *(* PRSRUN)(void *);
 
 static		tmDATE	u_Currentdate;
 long			l_ALUB = 0;
-long		CtmTaskMoni::m_lSaveCounter = PER_MINUTE;
 BOOL		CtmTaskMoni::m_bCaton		= FALSE;
 BOOL	bBatPower = TRUE, bTimePast = FALSE, bMsgPower = FALSE;	//JOYCE2011-1-19 
 OPERATION  Operation01;			//JOYCE2011-1-19  
@@ -677,7 +676,6 @@ int		CtmTaskMoni::CreateSelf()
 	m_lCounter = GetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERTIME").lValue * PER_MINUTE -100;
 	m_lHeatCounter = 1000;
 	m_lCounterUpdate	= 50;
-	//m_lSaveCounter = PER_MINUTE;
 	m_bSaver = FALSE;
 	//m_bCaton = FALSE;
 	m_pwndScreen = NULL;
@@ -775,7 +773,6 @@ int		CtmTaskMoni::CreateSelf()
 	::AddCounter((long __far*)&m_lCounterSaveOpt, m_idMe);
 	
 	::AddCounter((long __far*)&m_lCounter, m_idMe);
-	::AddCounter((long __far*)&m_lSaveCounter, m_idMe);
 	::AddCounter((long __far*)&m_lHeatCounter, m_idMe);
 	::AddCounter((long __far*)&m_lCounterEnergydata, m_idMe);
 	::AddCounter((long __far*)&m_lCounterCoolFan, m_idMe);
@@ -798,7 +795,6 @@ int		CtmTaskMoni::FreeSelf()
 	::DeleteCounter((long __far*)&m_lCounterRun, m_idMe);
 	//#endif
 	::DeleteCounter((long __far*)&m_lCounter, m_idMe);
-	::DeleteCounter((long __far*)&m_lSaveCounter, m_idMe);
 	::DeleteCounter((long __far*)&m_lHeatCounter, m_idMe);
 	::DeleteCounter((long __far*)&m_lCounterEnergydata, m_idMe);
 	::DeleteCounter((long __far*)&m_lCounterCoolFan, m_idMe);
@@ -859,46 +855,32 @@ void	CtmTaskMoni::Run()
 	m_bIdle = g_ptaskCmd->IsIdle();
 	if(m_bIdle == TRUE)
 	{
+		printf("m_bIdle == TRUE\n");
+		printf("m_lCounter=%d\n",m_lCounter);
 		if (m_lCounter <= 0 || 
 			(nShotCount - nCount) >= GetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERSHOTCOUNT").lValue)
 		{
-				if(m_bSaver == FALSE && m_lCounter > -90)	//設定時間為0時關閉營保 ， 讀取設定時間會多-100
+			if(m_bSaver == FALSE )	
 			{
 				m_bSaver 	   = TRUE;
-				m_lSaveCounter = 60*1024;
+				ScreenSaverForm();
 				if(bScreenSaverLCDOFFOption)
-				{
-					m_bCaton 	   = TRUE;
+					system("echo 0 > /sys/class/backlight/backlight/brightness");
+				else
 					ScreenSaverForm();
-				}
 			}
-			else if((m_bSaver == TRUE)&&(bScreenSaverLCDOFFOption&&m_bCaton&&(m_lSaveCounter < 0)||!bScreenSaverLCDOFFOption))
-			{
-				//m_bCaton			 = FALSE;				
-					m_lCounter = GetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERTIME").lValue * PER_MINUTE ;
-				/*#ifndef      D_DEMO
-				if(bScreenSaverLCDOFFOption&&m_bCaton)
-				{
-					m_bCaton = FALSE;
-					Exit();
-				}
-				ActivateScreenSaver(TRUE);				
-				#endif*/
-			}		
 		}	
 	}
-	if(m_bIdle == FALSE)
+	else if(m_bIdle == FALSE)
 	{
+		printf("m_bIdle == FALSE\n");
 		if (m_bSaver == TRUE)	
 		{
-			if(bScreenSaverLCDOFFOption&&m_bCaton)
-			{
-				m_bCaton = FALSE;
-				Exit();
-			}
-			ActivateScreenSaver(FALSE);
+			if(bScreenSaverLCDOFFOption)
+				system("./SetBL");
+			m_bSaver = FALSE;
 		}
-		m_lCounter = GetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERTIME").lValue * PER_MINUTE -100;
+		m_lCounter = GetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERTIME").lValue * PER_MINUTE - 100;
 		nCount = nShotCount/*dbbuff.wSwitchToAutoShutCount*/;
 		
 		//printf("Idle FALSE Counter=%ld\n", m_lCounter);
@@ -1166,7 +1148,8 @@ void	 CtmTaskMoni::WndProc(int message, WPARAM wParam, LPARAM lParam) //Andy 201
 			if(g_ptaskdsp != NULL)                                
 	    		g_ptaskdsp->WriteValue(COMM_SENDPANEL,_KEY_PANEL_MANUAL);		//給主機送手動按鍵
 	    	SendMsg(MSG_NB_HMI_KEYNOCE, 0, 0, NULL);							//OK和C按鍵無效
-			MsgBox(g_MultiLanguage["MSG_BATTRYLOWER"], tmFT_CODE_TECH);
+			//MsgBox(g_MultiLanguage["MSG_BATTRYLOWER"], tmFT_CODE_TECH);
+	  MsgBoxCall("msgboxconfirm1.txt","MSG_BATTRYLOWER");
 			break;
 		case MSG_DSP54_GET_SHOTCOUNT:
 			ProcessPPHData();

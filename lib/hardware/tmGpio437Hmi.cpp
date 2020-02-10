@@ -20,6 +20,7 @@
 #include    "../../common.h"
 #include	"../../main.h"
 #include	"../../tmshmsg.h"
+#include    "../../taskmoni.h"
 
 /*==========================================================================+
 |           Constant                                                        |
@@ -125,6 +126,8 @@ void 	Gpio_InputRun()
 		{
 			if(Gpio_Input != data || KeyMode==-1)
 			{
+				g_ptaskCmd->SetIdle(FALSE);
+				if(g_ptaskMoni!=NULL && g_ptaskMoni->IsSleep()) continue;
 				Gpio_Input = data;
 				ReadGpio(Gpio_Input);
 			}

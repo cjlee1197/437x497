@@ -18,6 +18,7 @@
 #include 	"../../tmconfig.h"
 #include 	"../../utils.h"
 #include	"../../cursor.h"
+#include  "../../taskmoni.h"
 
 /*==========================================================================+
 |           Constant                                                        |
@@ -1203,8 +1204,8 @@ void	USB_MouseFunc(void* pdata)
     	//g_pApplication->QueueMessage(&msg); 
     	
     	if(g_ptaskCmd->IsIdle())			//如果屏保，則發生cancel按鍵取消屏保
-			g_ptaskCmd->SetIdle(FALSE);
-    
+    		g_ptaskCmd->SetIdle(FALSE);
+
         g_CursorX = m_nX;
         g_CursorY = m_nY;
         g_CursorChange = 1;
@@ -1431,8 +1432,8 @@ void	USB_MouseFunc2(void* pdata)
 	        	if(g_nWaitTime > 1)
 	        	{
         			if(g_ptaskCmd->IsIdle())			//如果屏保，則發生cancel按鍵取消屏保
-						g_ptaskCmd->SetIdle(FALSE);
-				}
+        				g_ptaskCmd->SetIdle(FALSE);
+						}
         		break;
         };
 	}
@@ -1881,6 +1882,8 @@ void	USB_MouseFunc4(void* pdata)
 		int ret;
 		//usleep(10); 
 		ret = read(tsrun->tshandle, &u_PMTouch, sizeof(u_PMTouch));
+		if( g_ptaskCmd!= NULL)
+			g_ptaskCmd->SetIdle(FALSE);
 		// 邊緣偏移
 		if((u_PMTouch.wCode == 53 || u_PMTouch.wCode == 54 ) && u_PMTouch.dwValue<10) u_PMTouch.dwValue=10;
 		if(u_PMTouch.wCode == 54 && u_PMTouch.dwValue > 590) u_PMTouch.dwValue =590;
@@ -1985,8 +1988,6 @@ void	USB_MouseFunc4(void* pdata)
 					//printf("up m_nX=%d m_nY=%d \n", m_nX, m_nY);	
 					//printf("up oreadbuf.x=%d oreadbuf.y=%d \n", oreadbuf.x, oreadbuf.y);	
 	    			//Beep();	
-					if( g_ptaskCmd!= NULL)
-						g_ptaskCmd->SetIdle(FALSE);
 				}
 				nTransFlag &= ~(0x3);
 				nTransFlag &= ~(0x4);

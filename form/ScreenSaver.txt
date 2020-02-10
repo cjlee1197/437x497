@@ -1,8 +1,8 @@
 ViewScreenSaver:CtmFormView
   left =0
   top =0
-  right =799
-  bottom =599
+  right =599
+  bottom =1024
   wtype =34919
   bgc =0
   ImageBG:CtmImageBox

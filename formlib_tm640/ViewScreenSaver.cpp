@@ -15,7 +15,7 @@
 #include 	"ViewScreenSaver.h"
 #include 	"../utils.h"
 #include	"../commonaction.h"
-
+#include    "../taskmoni.h"
 
 /*==========================================================================+
 |           Constants	                                                   	|
@@ -115,9 +115,10 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 
 void	OnUpdateA(CtmWnd* pwndSender)
 {
-	if(g_ptaskCmd->IsIdle() == FALSE)
+	if(g_ptaskMoni!=NULL && !(g_ptaskMoni->IsSleep())) 
+	{
 		Exit();
-
+	}
 	tmDATE  date;
 	tmTIME  time;
 	long	lYearMonthDay;

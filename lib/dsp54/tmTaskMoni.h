@@ -52,7 +52,6 @@ class  CtmTaskMoni: public CTaskMoni
 		void    ShowActStepLed();
 
 	private:
-		static		long		m_lSaveCounter;
 		static		BOOL		m_bCaton;
 		long	m_lCounterLoginIn;
 		long 	m_lCounterUpdate;
