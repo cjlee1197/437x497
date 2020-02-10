@@ -792,6 +792,7 @@
 	<string name="INDEX_SYS_RST">系统重置</string>
 	<string name="INDEX_SYS_UPDATE">系统更新</string>
 	<string name="INDEX_VERINFO">版本信息</string>
+	<string name="INDEX_AUTO_DENIED">自动下不可修改</string>
 	<string name="ROBOT_STR_LOGIN">登入</string>
 	<string name="ROBOT_STR_LOGIN_OUT">注销</string>
 	<string name="ROBOT_STR_USER_MANAGER">用户管理</string>
@@ -811,6 +812,9 @@
 	<string name="ROBOT_MSG_DEL_SUCCESS">删除用户完成</string>
 	<string name="ROBOT_MSG_MODIFY_SUCCESS">修改用户完成</string>
 	<string name="ROBOT_MSG_INSERT_ERROR">新增用户失败，用户重复或用户已满。</string>
+	<string name="USER_LOGIN_ID1">操作员</string>
+	<string name="USER_LOGIN_ID2">管理员</string>
+	<string name="USER_LOGIN_ID3">高级管理员</string>
 	<string name="ROBOT_STR_TOUCH_EXIT">任意触碰此画面关闭窗口</string>
 	<string name="PICKER_ACTION_LIST">动作列表</string>
 	<string name="PICKER_ACTION_POS">动作位置</string>
@@ -901,8 +905,8 @@
 	<string name="PICKER_M3_ALARM1400">未在安全区域</string>
 	<string name="PICKER_M3_ALARM1500">主副臂距离过近</string>
 	<string name="PICKER_M3_ALARM2010">编码器数据异常</string>
-	<string name="PICKER_M3_ALARM2011">机械参数料异常</string>
-	<string name="PICKER_M3_ALARM2012">速度参数料异常</string>
+	<string name="PICKER_M3_ALARM2011">机械参数异常</string>
+	<string name="PICKER_M3_ALARM2012">速度参数异常</string>
 	<string name="PICKER_M3_ALARM2500">单步执行超时</string>
 	<string name="PICKER_M3_ALARM2501">动作超时</string>
 	<string name="PICKER_M3_ALARM2600">单循环途中开模完成讯号异常</string>
@@ -1056,13 +1060,13 @@
 	<string name="VW_EJECT_RCUT_SPED">速度</string>
 	<string name="VW_ALARMPARA_TITLE">警报参数</string>
 	<string name="VW_ALARM_CODE">代码</string>
-	<string name="VW_ALARM_DESCRIPTION">警   示   说   明</string>
+	<string name="VW_ALARM_DESCRIPTION">警示说明</string>
 	<string name="VW_ALARM_NO">序号</string>
 	<string name="VW_ALARM_RESET">重       置</string>
 	<string name="VW_ALARM_RESETTIME">还原时间</string>
 	<string name="VW_ALARM_SHOTCOUNT">开模序号</string>
 	<string name="VW_ALARM_STARTNO">显 示 起 始 序 号</string>
-	<string name="VW_ALARM_STARTTIME">起始 时间</string>
+	<string name="VW_ALARM_STARTTIME">起始时间</string>
 	<string name="VW_ALARM_TOTALCOUNT">错 误 储 存 总 数</string>
 	<string name="VW_OTHER_NOUSE">不用</string>
 	<string name="VW_INJECT_RESET">重置</string>

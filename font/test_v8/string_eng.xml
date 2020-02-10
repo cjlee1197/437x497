@@ -766,6 +766,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="INDEX_SYS_RST">Sys Rst</string>
 	<string name="INDEX_SYS_UPDATE">Sys UPG</string>
 	<string name="INDEX_VERINFO">Ver Info</string>
+	<string name="INDEX_AUTO_DENIED">AUTO Mode Denied</string>
 	<string name="ROBOT_STR_LOGIN">Log In</string>
 	<string name="ROBOT_STR_LOGIN_OUT">Log Out</string>
 	<string name="ROBOT_STR_USER_MANAGER">User MNG</string>
@@ -785,6 +786,9 @@ Please delete unnecessary user then add again!</string>
 	<string name="ROBOT_MSG_DEL_SUCCESS">刪除用戶完成</string>
 	<string name="ROBOT_MSG_MODIFY_SUCCESS">修改用戶完成</string>
 	<string name="ROBOT_MSG_INSERT_ERROR">新增用戶失敗，用戶重複或用戶已滿。</string>
+	<string name="USER_LOGIN_ID1">Operate</string>
+	<string name="USER_LOGIN_ID2">Manage</string>
+	<string name="USER_LOGIN_ID3">SuperManage</string>
 	<string name="ROBOT_STR_TOUCH_EXIT">Touch to close this window</string>
 	<string name="PICKER_ACTION_LIST">Act Lst</string>
 	<string name="PICKER_ACTION_POS">Act Pos</string>
