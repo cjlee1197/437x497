@@ -66,6 +66,7 @@
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
+BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
 /*--------------------------------------------------+
 | dw_MechType 機型選擇  														|
 |	Low WORD 0-三軸 1-五軸 	High WORD 0-絕對 1-增量		|
@@ -786,6 +787,20 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 
 void	OnUpdateA(CtmWnd* pwndSender)
 {
+		if(!RunOnlyOne) // 開機只運行一次
+	{
+		if(pwndBtnFollow!=NULL)
+	 	{
+ 			pwndBtnFollow->SetPropValueT("upbitmap",Img_Select[b_Follow]);
+ 			pwndBtnFollow->SetPropValueT("captionID",Str_Follow[b_Follow]);
+ 			pwndBtnFollow->CreateA();
+ 			pwndBtnFollow->Update();
+ 			printf("Folloew =%d\n",b_Follow);
+ 		}
+ 		RunOnlyOne=TRUE;
+ 	}
+	
+	
 	u_wPickerOPSatus = GetDBValue("MACHINE_INTERFACE_WOPERATINGSTATE").lValue; // 機械手狀態
 	if( (u_wPickerOPSatus_Old!=u_wPickerOPSatus) && (u_wPickerOPSatus!=STATE_SINGLESTEP) ) // 跳出單步 狀態更新
 		{
@@ -911,25 +926,29 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		}
 		else if (wKey == 0x0003)	//刪除
 		{
-			if(SelectNo > StandbyStepNum && SelectNo <= EditedStepNum) // (選擇步驟 > 等待點步驟) && (選擇步驟 < 編輯步驟數) 
-			{
-				if(ActionType != 5 && ActionType != 6) // 步驟不能為 開始 或結束
+			MsgBox(g_MultiLanguage["PICKER_CONFIRMDELETE"], tmFT_CODE_TECH);
+	    if(g_bMsgBoxFlag)
+	    {
+				if(SelectNo > StandbyStepNum && SelectNo <= EditedStepNum) // (選擇步驟 > 等待點步驟) && (選擇步驟 < 編輯步驟數) 
 				{
-					UnSync(SelectNo);
-					UnSync(SelectNo+1);
-					Delete(SelectNo);
-					EditedStepNum--;
-					UpdateText();
-					UpdateNo();
-				}
-				else if(ACTIONNUM != 1)
-				{
-					UnSync(SelectNo);
-					UnSync(SelectNo+1);
-					Delete(SelectNo);
-					EditedStepNum--;
-					UpdateText();
-					UpdateNo();
+					if(ActionType != 5 && ActionType != 6) // 步驟不能為 開始 或結束
+					{
+						UnSync(SelectNo);
+						UnSync(SelectNo+1);
+						Delete(SelectNo);
+						EditedStepNum--;
+						UpdateText();
+						UpdateNo();
+					}
+					else if(ACTIONNUM != 1)
+					{
+						UnSync(SelectNo);
+						UnSync(SelectNo+1);
+						Delete(SelectNo);
+						EditedStepNum--;
+						UpdateText();
+						UpdateNo();
+					}
 				}
 			}
 		}
