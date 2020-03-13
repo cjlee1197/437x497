@@ -36,4 +36,16 @@ void   		ReadDingDanFrom();
 
 char*		DW2Str_ASCII(DWORD dw_dbvalue); //cjlee 2019/5/12 下午 09:51:01
 
+void	GetValueFrom28(); // 取得28設定值
+void	SetChosenDB(char* dbIDName, int Param497, int Param28, int iDBSelect); // 設定選擇DB數值
+
+typedef struct tagParam
+{
+	int iMechType;  		// 機型選擇 機型&編碼器
+	int iTransType; 		// 傳動方式
+	int iDouble; 				// 倍數機構 
+	int iPosInv; 				// 位置反向
+	
+}tmParam;
+
 #endif

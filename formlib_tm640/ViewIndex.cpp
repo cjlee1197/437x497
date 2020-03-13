@@ -27,12 +27,17 @@
 #define		EncWord 				0xFFFF0000 // High Word
 #define 	MechWord 				0x0000FFFF // Low Word
 
-#define   MANAGE					5 // 管理
-#define   MACHINE					7 // 機械
-#define   ENGINEER				10 // 工程
+#define   MANAGE					2 // 管理
+#define   ENGINEER				3 // 工程
+
+#define     STATE_SINGLESTEP        2
+#define			STATE_HAND							3
+#define     STATE_FULLAUTO          4 
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
+WORD        u_wPickerOPSatus    = 0;
+WORD        u_wPickerOPSatus_Old    = 0;
 /*--------------------------------------------------+
 | dw_MechType 機型選擇  														|
 |	Low WORD 0-三軸 1-五軸 	High WORD 0-絕對 1-增量		|
@@ -50,7 +55,7 @@ char* pTransTypeDB = "MACHINE_PROFILE_NUM1_EQUIPMENT2_ACTION_TYPE"; // 傳動方式D
 
 BOOL	OnCreateA(CtmWnd* pwndSender)
 {
-	//g_iPrivilege=15;
+	g_iPrivilege=16;
 	printf("g_iPrivilege=%d\n",g_iPrivilege); // 權限等級
 	//u_PickerType = (int)(GetDBValue(pMechTypeDB).lValue); // 讀取設定 機型選擇 三五軸
 	// 機型選擇 編碼器選擇
@@ -77,114 +82,134 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	{
 		case 1: // 機構參數
 			//MsgBoxCall("msgboxUserLogin.txt");
-			if(g_iPrivilege>=MACHINE)
+			if( u_wPickerOPSatus==STATE_HAND || g_iPrivilege==16)
 			{
-				memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
-				strcpy(g_szLastFormName, "Index.txt");
-				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
+				if(g_iPrivilege>=ENGINEER)
 				{
-					if( (u_PickerType==MechType3) && (u_TransType==TransType_D) )			 		 // 三軸 節圓直徑
+					memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
+					strcpy(g_szLastFormName, "Index.txt");
+					memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
 					{
-						strcpy(g_szCurrentFormName, "Mech_Axis3.txt");
-						::PutCommand("Mech_Axis3.txt");
-					}
-					else if( (u_PickerType==MechType3) && (u_TransType==TransType_Tooth) ) // 三軸 齒數模數
-					{
-						strcpy(g_szCurrentFormName, "Mech_Axis3_TN.txt");
-						::PutCommand("Mech_Axis3_TN.txt");
-					}
-					else if( (u_PickerType==MechType5) && (u_TransType==TransType_D) ) 		 // 五軸 節圓直徑
-					{
-						strcpy(g_szCurrentFormName, "Mech_Axis.txt");
-						::PutCommand("Mech_Axis.txt");
-					}
-					else if( (u_PickerType==MechType5) && (u_TransType==TransType_Tooth) ) // 五軸 齒數模數
-					{
-						strcpy(g_szCurrentFormName, "Mech_Axis_TN.txt");
-						::PutCommand("Mech_Axis_TN.txt");
+						if( (u_PickerType==MechType3) && (u_TransType==TransType_D) )			 		 // 三軸 節圓直徑
+						{
+							strcpy(g_szCurrentFormName, "Mech_Axis3.txt");
+							::PutCommand("Mech_Axis3.txt");
+						}
+						else if( (u_PickerType==MechType3) && (u_TransType==TransType_Tooth) ) // 三軸 齒數模數
+						{
+							strcpy(g_szCurrentFormName, "Mech_Axis3_TN.txt");
+							::PutCommand("Mech_Axis3_TN.txt");
+						}
+						else if( (u_PickerType==MechType5) && (u_TransType==TransType_D) ) 		 // 五軸 節圓直徑
+						{
+							strcpy(g_szCurrentFormName, "Mech_Axis.txt");
+							::PutCommand("Mech_Axis.txt");
+						}
+						else if( (u_PickerType==MechType5) && (u_TransType==TransType_Tooth) ) // 五軸 齒數模數
+						{
+							strcpy(g_szCurrentFormName, "Mech_Axis_TN.txt");
+							::PutCommand("Mech_Axis_TN.txt");
+						}
 					}
 				}
+				else
+					MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			}
 			else
-				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
+				MsgBoxCall("msgboxConfirm.txt","PICKER_M3_ALARM5025");
 			break;	
 		case 2: // 速度參數
-			if(g_iPrivilege>=MACHINE)
+			if( u_wPickerOPSatus==STATE_HAND  || g_iPrivilege==16)
 			{
-				memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
-				strcpy(g_szLastFormName, "Index.txt");
-				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
-				if(u_PickerType == MechType5) // 五軸
+				if(g_iPrivilege>=ENGINEER)
 				{
-					strcpy(g_szCurrentFormName, "SpeedSet.txt");
-					::PutCommand("SpeedSet.txt");
+					memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
+					strcpy(g_szLastFormName, "Index.txt");
+					memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
+					if(u_PickerType == MechType5) // 五軸
+					{
+						strcpy(g_szCurrentFormName, "SpeedSet.txt");
+						::PutCommand("SpeedSet.txt");
+					}
+					else if(u_PickerType == MechType3) // 三軸
+					{
+						strcpy(g_szCurrentFormName, "SpeedSet_Axis3.txt");
+						::PutCommand("SpeedSet_Axis3.txt");
+					}
 				}
-				else if(u_PickerType == MechType3) // 三軸
-				{
-					strcpy(g_szCurrentFormName, "SpeedSet_Axis3.txt");
-					::PutCommand("SpeedSet_Axis3.txt");
-				}
+				else
+					MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			}
 			else
-				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
+				MsgBoxCall("msgboxConfirm.txt","PICKER_M3_ALARM5025");
 			break;
 		case 3: // 歸零
-			if(g_iPrivilege>=MACHINE)
+			if( u_wPickerOPSatus!=STATE_FULLAUTO)
 			{
-				memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
-				strcpy(g_szLastFormName, "Index.txt");
-				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
-				if(u_EncType == EncType_Abs) // 絕對型 AUSTONE
+				if(g_iPrivilege>=MANAGE)
 				{
-					if(u_PickerType == MechType5) // 五軸
+					memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
+					strcpy(g_szLastFormName, "Index.txt");
+					memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
+					if(u_EncType == EncType_Abs) // 絕對型 AUSTONE
 					{
-						strcpy(g_szCurrentFormName, "Zero.txt");
-						::PutCommand("Zero.txt");
+						if(u_PickerType == MechType5) // 五軸
+						{
+							strcpy(g_szCurrentFormName, "Zero.txt");
+							::PutCommand("Zero.txt");
+						}
+						else if(u_PickerType == MechType3) // 三軸
+						{
+							strcpy(g_szCurrentFormName, "Zero_Axis3.txt");
+							::PutCommand("Zero_Axis3.txt");
+						}
 					}
-					else if(u_PickerType == MechType3) // 三軸
+					else if(u_EncType == EncType_Res) // 增量刑 HDT
 					{
-						strcpy(g_szCurrentFormName, "Zero_Axis3.txt");
-						::PutCommand("Zero_Axis3.txt");
+						if(u_PickerType == MechType5) // 五軸
+						{
+							strcpy(g_szCurrentFormName, "Zero_HDT.txt");
+							::PutCommand("Zero_HDT.txt");
+						}
+						else if(u_PickerType == MechType3) // 三軸
+						{
+							strcpy(g_szCurrentFormName, "Zero_HDT_Axis3.txt");
+							::PutCommand("Zero_HDT_Axis3.txt");
+						}
 					}
 				}
-				else if(u_EncType == EncType_Res) // 增量刑 HDT
-				{
-					if(u_PickerType == MechType5) // 五軸
-					{
-						strcpy(g_szCurrentFormName, "Zero_HDT.txt");
-						::PutCommand("Zero_HDT.txt");
-					}
-					else if(u_PickerType == MechType3) // 三軸
-					{
-						strcpy(g_szCurrentFormName, "Zero_HDT_Axis3.txt");
-						::PutCommand("Zero_HDT_Axis3.txt");
-					}
-				}
+				else
+					MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			}
 			else
-				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
+				MsgBoxCall("msgboxConfirm.txt","INDEX_AUTO_DENIED");
 			break;	
 		case 4: // 區域設定
-			if(g_iPrivilege>=MANAGE)
+			if( u_wPickerOPSatus==STATE_HAND || g_iPrivilege==16)
 			{
-				memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
-				strcpy(g_szLastFormName, "Index.txt");
-				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
-				if(u_PickerType == MechType5) // 五軸
+				if(g_iPrivilege>=MANAGE)
 				{
-					strcpy(g_szCurrentFormName, "ZoneLimit.txt");
-					::PutCommand("ZoneLimit.txt");
+					memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
+					strcpy(g_szLastFormName, "Index.txt");
+					memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
+					if(u_PickerType == MechType5) // 五軸
+					{
+						strcpy(g_szCurrentFormName, "ZoneLimit.txt");
+						::PutCommand("ZoneLimit.txt");
+					}
+					else if(u_PickerType == MechType3) // 三軸
+					{
+						strcpy(g_szCurrentFormName, "ZoneLimit_Axis3.txt");
+						::PutCommand("ZoneLimit_Axis3.txt");
+					}
 				}
-				else if(u_PickerType == MechType3) // 三軸
-				{
-					strcpy(g_szCurrentFormName, "ZoneLimit_Axis3.txt");
-					::PutCommand("ZoneLimit_Axis3.txt");
-				}
+				else
+					MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			}
 			else
-				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
-			break;
-		case 5: // 安全限制
+				MsgBoxCall("msgboxConfirm.txt","PICKER_M3_ALARM5025");
+			break;	
+		case 5: // 安全區域
 			memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
 			strcpy(g_szLastFormName, "Index.txt");
 			memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
@@ -197,22 +222,27 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 			{
 				strcpy(g_szCurrentFormName, "LimitSet_Axis3.txt");
 				::PutCommand("LimitSet_Axis3.txt");
-			}				
+			}		
 			break;	
 		case 6: // 禁區設定
 			//::PutCommand(".txt");
 			break;
 		case 7: // 檔案模組
-			if(g_iPrivilege>=MANAGE)
+			if( u_wPickerOPSatus!=STATE_FULLAUTO)
 			{
-				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
-				strcpy(g_szCurrentFormName, "MldS.txt");
-				memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
-				strcpy(g_szLastFormName, "Index.txt");
-				::PutCommand("MldS.txt");
+				if(g_iPrivilege>=MANAGE)
+				{
+					memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
+					strcpy(g_szCurrentFormName, "MldS.txt");
+					memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
+					strcpy(g_szLastFormName, "Index.txt");
+					::PutCommand("MldS.txt");
+				}
+				else
+					MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			}
 			else
-				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
+				MsgBoxCall("msgboxConfirm.txt","INDEX_AUTO_DENIED");
 			break;
 		case 8: // 手動操作
 				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
@@ -222,16 +252,21 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				::PutCommand("Hand_1.txt");
 			break;
 		case 11: // 快速教導
-			if(g_iPrivilege>=MANAGE)
+			if( u_wPickerOPSatus!=STATE_FULLAUTO)
 			{
-				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
-				strcpy(g_szCurrentFormName, "QTeach_Mode.txt");
-				memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
-				strcpy(g_szLastFormName, "Index.txt");
-				::PutCommand("QTeach_Mode.txt");
+				if(g_iPrivilege>=MANAGE)
+				{
+					memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
+					strcpy(g_szCurrentFormName, "QTeach_Mode.txt");
+					memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
+					strcpy(g_szLastFormName, "Index.txt");
+					::PutCommand("QTeach_Mode.txt");
+				}
+				else
+					MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			}
 			else
-				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
+				MsgBoxCall("msgboxConfirm.txt","INDEX_AUTO_DENIED");
 			break;
 		case 12: // 進階教導
 			if(g_iPrivilege>=MANAGE)
@@ -258,28 +293,38 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			break;
 		case 14: // 副程式
-			if(g_iPrivilege>=MANAGE)
+			if( u_wPickerOPSatus!=STATE_FULLAUTO)
 			{
-				memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
-				strcpy(g_szLastFormName, "Index.txt");
-				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
-				strcpy(g_szCurrentFormName, "SUB_PG_0_1.txt");
-				::PutCommand("SUB_PG_0_1.txt");
+				if(g_iPrivilege>=MANAGE)
+				{
+					memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
+					strcpy(g_szLastFormName, "Index.txt");
+					memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
+					strcpy(g_szCurrentFormName, "SUB_PG_0_1.txt");
+					::PutCommand("SUB_PG_0_1.txt");
+				}
+				else
+					MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			}
 			else
-				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
+				MsgBoxCall("msgboxConfirm.txt","INDEX_AUTO_DENIED");
 			break;
 		case 15: // 模式選擇
-			if(g_iPrivilege>=MANAGE)
+			if( u_wPickerOPSatus!=STATE_FULLAUTO)
 			{
-				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
-				strcpy(g_szCurrentFormName, "Funcopt.txt");
-				memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
-				strcpy(g_szLastFormName, "Index.txt");
-				::PutCommand("Funcopt.txt");
+				if(g_iPrivilege>=MANAGE)
+				{
+					memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
+					strcpy(g_szCurrentFormName, "Funcopt.txt");
+					memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
+					strcpy(g_szLastFormName, "Index.txt");
+					::PutCommand("Funcopt.txt");
+				}
+				else
+					MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			}
 			else
-				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
+				MsgBoxCall("msgboxConfirm.txt","INDEX_AUTO_DENIED");
 			break;
 		case 16: // 檢測設定
 			if(g_iPrivilege>=MANAGE)
@@ -364,33 +409,43 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			break;
 		case 32:// 系統設置
-			if(g_iPrivilege>=MANAGE)
-			{
-				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
-				strcpy(g_szCurrentFormName, "Syst.txt");
-				memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
-				strcpy(g_szLastFormName, "Index.txt");
-				::PutCommand("Syst.txt");
+			if( u_wPickerOPSatus!=STATE_FULLAUTO)
+			{	
+				if(g_iPrivilege>=MANAGE)
+				{
+					memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
+					strcpy(g_szCurrentFormName, "Syst.txt");
+					memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
+					strcpy(g_szLastFormName, "Index.txt");
+					::PutCommand("Syst.txt");
+				}
+				else
+					MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
 			}
 			else
-				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");
-			break;	
-		case 33:// 系統重置
+				MsgBoxCall("msgboxConfirm.txt","INDEX_AUTO_DENIED");
+			break;		
+		case 33:// 版本更新
 //			memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
 //			strcpy(g_szCurrentFormName, "Reset.txt");
 //			memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
 //			strcpy(g_szLastFormName, "Index.txt");
 //			::PutCommand("Reset.txt");
-			if(g_iPrivilege>=MANAGE)
+			if( u_wPickerOPSatus!=STATE_FULLAUTO)
 			{
-				memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
-				strcpy(g_szCurrentFormName, "VersionManage.txt");
-				memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
-				strcpy(g_szLastFormName, "Index.txt");
-				::PutCommand("VersionManage.txt");	
+				if(g_iPrivilege>=MANAGE)
+				{
+					memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName));
+					strcpy(g_szCurrentFormName, "VersionManage.txt");
+					memset(g_szLastFormName, 0, sizeof(g_szLastFormName));
+					strcpy(g_szLastFormName, "Index.txt");
+					::PutCommand("VersionManage.txt");	
+				}
+				else
+					MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");			
 			}
 			else
-				MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_AUTHNOENOUGH");			
+				MsgBoxCall("msgboxConfirm.txt","INDEX_AUTO_DENIED");
 			break;
 		case 34: //版本資訊
 			memset(g_szLastFormName, 0, sizeof(g_szLastFormName)); // 紀錄上一頁
@@ -442,6 +497,7 @@ void	OnMessage(CtmWnd* pwnd, int message, WPARAM wParam, LPARAM lParam)
 
 void	OnUpdateA(CtmWnd* pwndSender)
 {
+	u_wPickerOPSatus = GetDBValue("MACHINE_INTERFACE_WOPERATINGSTATE").lValue; // 機械手狀態
 }
 
 /*---------------------------------------------------------------------------+

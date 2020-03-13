@@ -439,7 +439,12 @@ void	UpdateData()
 		if(pwndStr_ZoneLimit[i]!=NULL) // Update Data def
 		{
 			pwndData_ZoneLimit[i]->SetPropValueT("dbid0",dbid0_ZoneLimit[u_Axis_Num][i]);
-			if (u_Axis_Num>0)
+			
+			//WORD		wNum = 0;
+			//wNum = sizeof(u_pszStrID_X1)/sizeof(char*);
+			//g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_X1); // Update Data from 28
+			
+			if (u_Axis_Num>0) // N¶b
 			{
 				if(i!=0)
 					pwndData_ZoneLimit[i]->SetPropValueT("maxid",maxid_ZoneLimit[u_Axis_Num][i]);

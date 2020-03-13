@@ -1216,6 +1216,10 @@
 	<string name="UserLog_ACT10019">減速時間Z</string>
 	<string name="UserLog_ACT10020">減速時間X2</string>
 	<string name="UserLog_ACT10021">減速時間Y2</string>
+	<string name="ParamDif">參數不同</string>
+	<string name="FollowTP">以示教器為主</string>
+	<string name="FollowCON">以控制器為主</string>
+	<string name="SELECT_CONFIRM">選擇確認</string>
 
 </resources>
 

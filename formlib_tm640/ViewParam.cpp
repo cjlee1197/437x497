@@ -30,6 +30,9 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	pwndButton_Funcopt     = pwndSender->FindControlFromName("LinuxCtmToolButton3"); 
 	pwndButton_Back     = pwndSender->FindControlFromName("Button_Para2");
 	
+	long temp = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+	printf("DB value =%d\n",temp);
+	
 	return TRUE;
 }
 /*---------------------------------------------------------------------------+
@@ -42,6 +45,10 @@ WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
 
 WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 {
+	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71", 1);
+	long temp = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+	printf("DB value =%d\n",temp);
+	
 	/*switch(wKey)
 	{
 		case 1:

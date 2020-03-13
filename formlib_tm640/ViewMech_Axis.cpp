@@ -29,6 +29,7 @@
 /*===========================================================================
 |           Constant                                                         |
 +===========================================================================*/
+#define		REQ_READMOTOR    				2
 #define		MechType3				0	 // 三軸
 #define		MechType5				1  // 五軸
 #define		TransType_D			0	// 節圓直徑
@@ -37,17 +38,26 @@
 #define		EncType_Res		  0x00010000  // 增量
 #define		EncWord 				0xFFFF0000 // High Word
 #define		MechWord 				0x0000FFFF // Low Word
+
+#define		DB_TP						1 // 選擇示教器參數資料
+#define		DB_CON					2 // 選擇控制器參數資料
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
 BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
 
 int u_Axis_Num = 0;
-BOOL 				b_Dir[5] ={FALSE};
-BOOL 				b_Double[5] ={FALSE};
+BOOL 				b_Dir[6] ={FALSE};
+BOOL 				b_Double[6] ={FALSE};
 
 CtmWnd*	u_pwndEdit_DOUBLE[5] = {NULL}; // 倍數機構
 CtmWnd*	u_pwndDOUBLE_POS_INV[5] = {NULL}; // 位置反向
+
+char* pszStrID_Mech[] = 
+{
+	"MACHINE_CONFIGURATION_MACHINETYPE", // 機型選擇DB 三軸 五軸
+	"MACHINE_PROFILE_NUM1_EQUIPMENT2_ACTION_TYPE", // 傳動方式DB
+};
 
 /*--------------------------------------------------+
 | dw_MechType 機型選擇  														|
@@ -141,6 +151,7 @@ BOOL TF[] =
 
 char*	u_pszEditDoubleDB[] = // 紀錄倍數機構是否使用DB名稱
 {
+	"",
 	"PICKER_PARAMETER_DOUBLE_X1",
 	"PICKER_PARAMETER_DOUBLE_Y1",
 	"PICKER_PARAMETER_DOUBLE_Z",
@@ -150,6 +161,7 @@ char*	u_pszEditDoubleDB[] = // 紀錄倍數機構是否使用DB名稱
 
 char*	u_pszEditPOSINVDB[] = // 紀錄位置反向是否使用DB名稱
 {
+	"",
 	"PICKER_PARAMETER_POS_INV_X1",
 	"PICKER_PARAMETER_POS_INV_Y1",
 	"PICKER_PARAMETER_POS_INV_Z",
@@ -272,8 +284,8 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	{
 		if(u_pwndEdit_DOUBLE[i] != NULL) // 倍數機構
 			{
-				int u_Double = (int)(GetDBValue(u_pszEditDoubleDB[i]).lValue);
-				//printf("%s=%d\n",u_pszEditDoubleDB[i],u_Double);
+				int u_Double = (int)(GetDBValue(u_pszEditDoubleDB[i+1]).lValue);
+				printf("%s=%d\n",u_pszEditDoubleDB[i+1],u_Double);
 				b_Double[i]=TF[u_Double];
 				u_pwndEdit_DOUBLE[i]->SetPropValueT("captionID",Str_Double[u_Double]);
 				u_pwndEdit_DOUBLE[i]->SetPropValueT("bgc",Color_Btn[u_Double]);		
@@ -284,7 +296,8 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 			}
 		if(u_pwndDOUBLE_POS_INV[i] != NULL) // 位置反向
 			{
-				int u_POSINV = (int)(GetDBValue(u_pszEditPOSINVDB[i]).lValue);
+				int u_POSINV = (int)(GetDBValue(u_pszEditPOSINVDB[i+1]).lValue);
+				printf("%s=%d\n",u_pszEditPOSINVDB[i+1],u_POSINV);
 				b_Dir[i]=TF[u_POSINV];
 				u_pwndDOUBLE_POS_INV[i]->SetPropValueT("captionID",Str_POSINV[u_POSINV]);
 				u_pwndDOUBLE_POS_INV[i]->SetPropValueT("bgc",Color_Btn[u_POSINV]);	
@@ -304,6 +317,10 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	// 傳動方式
 	u_TransType = (int)(GetDBValue(pTransTypeDB).lValue);
 	UpdateTransType();
+	
+	
+	long temp = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+	printf("DB value =%d\n");
 	
 	return TRUE;
 }
@@ -392,6 +409,11 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		default:
 			break;
 	}
+	if(wKey<6)
+	{
+		GetValueFrom28();
+		((CtmFormView*)pwndSender)->OnLoseFocus(); // 取消光標
+	}
 
 	if(pwndBtn_Axis[u_Axis_Num]) // 選取的軸按鍵
 	{	
@@ -462,10 +484,10 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		if(pwnd == pwndPOS_INV) // 位置反向 Btn
 			{
 				int nTemp =0;
-				b_Dir[u_Axis_Num-1] = !b_Dir[u_Axis_Num-1];
-				nTemp = b_Dir[u_Axis_Num-1];
-				SetDBValue(u_pszEditPOSINVDB[u_Axis_Num-1],nTemp);
-				int u_POSINV = (int)(GetDBValue(u_pszEditPOSINVDB[u_Axis_Num-1]).lValue);
+				b_Dir[u_Axis_Num] = !b_Dir[u_Axis_Num];
+				nTemp = b_Dir[u_Axis_Num];
+				SetDBValue(u_pszEditPOSINVDB[u_Axis_Num],nTemp);
+				int u_POSINV = (int)(GetDBValue(u_pszEditPOSINVDB[u_Axis_Num]).lValue);
 
 				//Update string
 				pwndPOS_INV->SetPropValueT("captionID",Str_POSINV[u_POSINV]);
@@ -480,11 +502,11 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 				printf("Press pwndDOUBLE\n");
 				printf("u_Axis_Num=%d\n",u_Axis_Num);
 				int nTemp =0;
-				b_Double[u_Axis_Num-1] = !b_Double[u_Axis_Num-1];
-				nTemp = b_Double[u_Axis_Num-1];
-				SetDBValue(u_pszEditDoubleDB[u_Axis_Num-1],nTemp);
-				int u_Double = (int)(GetDBValue(u_pszEditDoubleDB[u_Axis_Num-1]).lValue);
-				printf("Set %s =%d\n",u_pszEditDoubleDB[u_Axis_Num-1],u_Double);
+				b_Double[u_Axis_Num] = !b_Double[u_Axis_Num];
+				nTemp = b_Double[u_Axis_Num];
+				SetDBValue(u_pszEditDoubleDB[u_Axis_Num],nTemp);
+				int u_Double = (int)(GetDBValue(u_pszEditDoubleDB[u_Axis_Num]).lValue);
+				printf("Set %s =%d\n",u_pszEditDoubleDB[u_Axis_Num],u_Double);
 				//Update string
 				pwndDOUBLE->SetPropValueT("captionID",Str_Double[u_Double]);
 				pwndDOUBLE->SetPropValueT("bgc",Color_Btn[u_Double]);
@@ -507,13 +529,13 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		for(int i = 0; i < 5; i++) // 偵測按下放開 Btn
 		{
 			printf("%d", (int)GetDBValue(pTransTypeDB).lValue); 					// bit 0 傳動方式
-			printf("%d", (int)GetDBValue(u_pszEditDoubleDB[i]).lValue); 	// bit 1 倍數機構
-			printf("%d\n", (int)GetDBValue(u_pszEditPOSINVDB[i]).lValue); // bit 2 位置反向
+			printf("%d", (int)GetDBValue(u_pszEditDoubleDB[i+1]).lValue); 	// bit 1 倍數機構
+			printf("%d\n", (int)GetDBValue(u_pszEditPOSINVDB[i+1]).lValue); // bit 2 位置反向
 			
-			printf(" <<1 = %d", (int)GetDBValue(u_pszEditDoubleDB[i]).lValue <<1); 
-			printf(" <<1 <<1= %d\n", (int)GetDBValue(u_pszEditPOSINVDB[i]).lValue <<2); 
+			printf(" <<1 = %d", (int)GetDBValue(u_pszEditDoubleDB[i+1]).lValue <<1); 
+			printf(" <<1 <<1= %d\n", (int)GetDBValue(u_pszEditPOSINVDB[i+1]).lValue <<2); 
 			
-			MechPara = (int)GetDBValue(pTransTypeDB).lValue + ((int)GetDBValue(u_pszEditDoubleDB[i]).lValue<<1) + ((int)GetDBValue(u_pszEditPOSINVDB[i]).lValue<<2);
+			MechPara = (int)GetDBValue(pTransTypeDB).lValue + ((int)GetDBValue(u_pszEditDoubleDB[i+1]).lValue<<1) + ((int)GetDBValue(u_pszEditPOSINVDB[i+1]).lValue<<2);
 			printf("MechPara = %x\n",MechPara);
 			SetDBValue(u_pszMechPara[i],MechPara);
 			SendCommand(0xFF32);
@@ -626,11 +648,13 @@ void	OnUpdateA(CtmWnd* pwndSender)
 {
 	if(!RunOnlyOne)
 	{
+		printf("RunOnlyOne\n");
 		RunOnlyOne=TRUE;
 		((CtmFormView*)pwndSender)->OnLoseFocus(); // 取消光標
 
 		ShowAxisData(FALSE); // 遮蓋 各軸參數
 		ShowMechData(TRUE);  // 顯示 機構參數
+		GetValueFrom28();
 	}
 }
 
@@ -650,7 +674,7 @@ void	SendCommand(int	CommandID)
 	 	if(g_ptaskpicker != NULL)
  		{			
 			g_ptaskpicker->ReqValues(6, 1, &CommandID, NULL);
- 	  	printf("Send Command = %x\n", CommandID);
+ 	  	//printf("Send Command = %x\n", CommandID);
 		}
 }
 
@@ -771,13 +795,14 @@ void	UpdateEncType()
 +---------------------------------------------------------------------------*/
 void	UpdateData()
 {
-	//printf("UpdateData\n");
+	printf("UpdateData\n");
+	printf("u_Axis_Num=%d\n",u_Axis_Num);
 	for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ ) // Update Data def
 	{
 		if(pwndMech_Data[i]!=NULL) // Update Data def
 		{
 			pwndMech_Data[i]->SetPropValueT("dbid0",dbid0_Mech[u_Axis_Num][i]);
-			//printf("Set pwndMech_Data[%d] = %s\n",i,dbid0_Mech[u_Axis_Num][i]);
+			printf("Set pwndMech_Data[%d] = %s\n",i,dbid0_Mech[u_Axis_Num][i]);
 			pwndMech_Data[i]->CreateA();
 			pwndMech_Data[i]->Update();
 		}
@@ -795,10 +820,11 @@ void	UpdateData()
 +---------------------------------------------------------------------------*/
 void	UpdateBtnData()
 {
+	printf("UpdateBtnData\n");
 	if(pwndDOUBLE!=NULL)
 	{
-		int u_Double = (int)(GetDBValue(u_pszEditDoubleDB[u_Axis_Num-1]).lValue);
-		b_Double[u_Axis_Num-1]=TF[u_Double];
+		int u_Double = (int)(GetDBValue(u_pszEditDoubleDB[u_Axis_Num]).lValue);
+		b_Double[u_Axis_Num]=TF[u_Double];
 		pwndDOUBLE->SetPropValueT("captionID",Str_Double[u_Double]);
 		pwndDOUBLE->SetPropValueT("bgc",Color_Btn[u_Double]);	
 		pwndDOUBLE->CreateA();
@@ -808,8 +834,8 @@ void	UpdateBtnData()
 	}
 	if(pwndPOS_INV!=NULL)
 	{
-		int u_POSINV = (int)(GetDBValue(u_pszEditPOSINVDB[u_Axis_Num-1]).lValue);
-		b_Dir[u_Axis_Num-1]=TF[u_POSINV];
+		int u_POSINV = (int)(GetDBValue(u_pszEditPOSINVDB[u_Axis_Num]).lValue);
+		b_Dir[u_Axis_Num]=TF[u_POSINV];
 		pwndPOS_INV->SetPropValueT("captionID",Str_POSINV[u_POSINV]);
 		pwndPOS_INV->SetPropValueT("bgc",Color_Btn[u_POSINV]);	
 		pwndPOS_INV->CreateA();
@@ -895,4 +921,78 @@ void	ShowAxisData(BOOL enabled) // 顯示各軸參數
 		ShowE(pwndStrAxisData[i],enabled); 	 // 顯示 各軸參數 文字
 	} 	
 	
+}
+/*---------------------------------------------------------------------------+
+|  Function : GetValueFrom28()                       					    		       |
+|  Task     : 取得28設定值	     	                                           |
++----------------------------------------------------------------------------+
+|  Parameter:             enabled TRUE-顯示 FALSE                            |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	GetValueFrom28() // 取得28設定值
+{
+	if(g_ptaskpicker != NULL)
+	{
+		printf("Get 28 data value\n");
+		printf("u_Axis_Num=%d\n",u_Axis_Num);
+		int i_dbvalue_497[6][5] = {0};// 參數數值 db// 示教器暫存值
+		int i_dbvalue_different = 0; // 參數數值差異個數
+		int iDBSelect=0; // 參數依據選擇  1:以示教器為主 2:以控制器為主
+				
+		WORD		wNum = 0;
+		wNum = sizeof(pszStrID_Mech)/sizeof(char*);
+		g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,pszStrID_Mech); // Update Data from 28
+		int itemp=0;
+		
+		for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ ) // 紀錄497數值
+		{			
+			itemp = (int)(GetDBValue(dbid0_Mech[u_Axis_Num][i]).lValue);
+			i_dbvalue_497[u_Axis_Num][i] = itemp;
+			
+		}
+		
+		
+		wNum = sizeof(dbid0_Mech[u_Axis_Num])/sizeof(char*);
+		g_ptaskpicker->ReqValues(REQ_READMOTOR, wNum ,dbid0_Mech[u_Axis_Num]); // 向 28 請求資料
+
+		for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
+		{			
+			printf("Get = %s\n",dbid0_Mech[u_Axis_Num][i]);
+			itemp = (int)(GetDBValue(dbid0_Mech[u_Axis_Num][i]).lValue);
+			
+			if (itemp != i_dbvalue_497[u_Axis_Num][i] )
+				i_dbvalue_different++;
+			
+			printf("%s=%d\n",dbid0_Mech[u_Axis_Num][i],itemp); // 28的值
+			printf("497=%d\n",i_dbvalue_497[u_Axis_Num][i]); // 497的值
+		}
+		
+		printf("i_dbvalue_different=%d\n",i_dbvalue_different);
+		if(i_dbvalue_different>0)
+		{
+			MsgBoxCall("DB_Choose.txt");
+			
+			iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+			printf("Choose %d\n",iDBSelect);
+			if(iDBSelect == DB_TP) // 497為主
+			{
+				for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
+				{			
+					printf("Set %s = %d\n",dbid0_Mech[u_Axis_Num][i],i_dbvalue_497[u_Axis_Num][i]);
+					SetDBValue(dbid0_Mech[u_Axis_Num][i],i_dbvalue_497[u_Axis_Num][i]);
+				}
+			}
+			else if(iDBSelect == DB_CON) // 28控制器為主
+			{
+				for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
+				{			
+					itemp = (int)(GetDBValue(dbid0_Mech[u_Axis_Num][i]).lValue);
+					SetDBValue(dbid0_Mech[u_Axis_Num][i],0);
+					printf("Set %s = %d\n",dbid0_Mech[u_Axis_Num][i],itemp);
+					SetDBValue(dbid0_Mech[u_Axis_Num][i],itemp);
+				}
+			}
+		}
+	}
 }

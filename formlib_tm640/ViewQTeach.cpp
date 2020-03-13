@@ -1232,7 +1232,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	UpdateShow();
 	
 	// 計算各點步驟
-	//printf("Action_P[] = %d\n",Action_P_ListNum);
+	printf("Action_P[] = %d\n",Action_P_ListNum);
 	for(int Group=0;Group<20;Group++)
 	{
 		StepNum[Group]=0;
@@ -1240,11 +1240,11 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 		{
 			if(Action_P[i].QTP == Group)
 				{
-					//printf("Action_P[%d].QTP=%d\n",i,Action_P[i].QTP);
+					printf("Action_P[%d].QTP=%d\n",i,Action_P[i].QTP);
 					StepNum[Group]++;
 				}	
 		}
-		//printf("StepNum[%d]=%d\n",Group,StepNum[Group]);
+		printf("StepNum[%d]=%d\n",Group,StepNum[Group]);
 	}
 
 	if(u_Group==2)
@@ -1646,6 +1646,11 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 	{
 		b_SubArmUse = !b_SubArmUse;
 		SetDBValue(Check_SubUse_DB,b_SubArmUse);
+		if(!b_SubArmUse) // 不選擇 副臂使用 時 副臂同動自動取消
+			{
+				b_SubArmSync=FALSE;
+				SetDBValue(Check_SubSync_DB,b_SubArmSync);
+			}
 		UpdateSubArm();
 	}
 	if(pwnd == pwndCheck_SubSync || (pwnd == pwndBtn_SubSync) ) // 副臂與主臂同動 Btn按下彈起
@@ -1703,7 +1708,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 	}
 	for(int i = 0; i < sizeof(PileNum_String)/sizeof(PileNum_String[0]); i++ )
 	{
-		if( (pwnd == pwndBtn_PileNum[i]) || (pwnd ==pwndBtn_PileChoose)) // 堆疊組數 || 堆疊組數選擇鈕 被選擇
+		if( (pwnd == pwndBtn_PileNum[i]) || (pwnd ==pwndBtn_PileChoose[i])) // 堆疊組數 || 堆疊組數選擇鈕 被選擇
 		{
 			PileNum=i;
 			SetDBValue(Check_Pile_DB, PileNum); // 寫入 DB

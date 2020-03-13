@@ -53,4 +53,5 @@ void	UpdateBtnData();
 void	ShowE(CtmWnd* pwnd,BOOL enabled); // 陪ボじン
 void	ShowMechData(BOOL enabled); // 陪ボ诀篶把计
 void	ShowAxisData(BOOL enabled); // 陪ボ禸把计
+void	GetValueFrom28(); // 眔28砞﹚
 #endif

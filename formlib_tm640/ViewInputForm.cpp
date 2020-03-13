@@ -250,7 +250,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	{
 		char	sz[256];
 		g_pWndInput->GetPropValueT("dbid0", sz, sizeof(sz));	
-		if (sz[0] =='\0' || u_pWndInput->Is("CtmEditX1") || u_pWndInput->Is("CtmEditX2"))
+		if (sz[0] !='\0' || u_pWndInput->Is("CtmEditX1") || u_pWndInput->Is("CtmEditX2"))
 			g_pWndInput->SetPropValueT("value", Old_Value);
 		else if(u_pWndInput->Is("CtmEdit"))
 			g_pWndInput->SetPropValueT("text", old_sz);
@@ -262,6 +262,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	if (g_pWndInput != NULL && u_pWndInput != NULL && wKey != _EXT_ALT_ENTER)
 	{
 		g_pWndInput->OnKey(wKey);
+		g_pWndInput->Show();
 			
 		if (g_pWndInput->Is("CtmEditX1") || g_pWndInput->Is("CtmEditX2"))
 		{
@@ -283,7 +284,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	}
 	
 	if (pwndSender->Is("CtmFormView"))
-		return ((CtmFormView*)pwndSender)->OnKey1(wKey);
+		return _NULL_KEY;//return ((CtmFormView*)pwndSender)->OnKey1(wKey);
 	else
 		return _NULL_KEY;
 }

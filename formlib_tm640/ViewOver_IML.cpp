@@ -35,9 +35,8 @@
 #define		EncWord 				0xFFFF0000 // High Word
 #define		MechWord 				0x0000FFFF // Low Word
 
-#define   MANAGE					5 // 管理
-#define   MACHINE					7 // 機械
-#define   ENGINEER				10 // 工程
+#define   MANAGE					2 // 管理
+#define   ENGINEER				3 // 工程
 
 #define		CONST_REQ_COMMAND				6
 
@@ -1350,7 +1349,10 @@ void   ActionNum(WORD wStepNo)
 			if(i+wStepNo-iCheckBoxAct/2 >StandbyStepNum)
 			{
 				memset(pNo, 0 ,sizeof(pNo));
-				sprintf(pNo,"%d",value-StandbyStepNum);
+				if(value-StandbyStepNum>0)
+					sprintf(pNo,"%d",value-StandbyStepNum);
+				else
+					sprintf(pNo,"");
 				pwndEditNo[i]->SetPropValueT("text", pNo);
 			}
 			else

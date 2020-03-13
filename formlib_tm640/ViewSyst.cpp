@@ -1212,7 +1212,7 @@ WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
     		languageindex = ((CtmSelectEdit *)pwndSelectLanguage)->GetIndex();
     		CtmConfig::GetInstance()->SetCurrentIndex(languageindex);
     		//::Reset();
-    		g_pDatabase->Reset();
+    		//g_pDatabase->Reset();
     		long long temp = 0;
     		if(pwndEditConfirm->Is("CtmEditX1"))
     			pwndEditConfirm->SetPropValueT("value",temp);
@@ -1220,8 +1220,10 @@ WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
     			((CtmSelectEdit*)pwndEditConfirm)->SetIndex(temp);
     		pwndEditConfirm->Update();
     		
+    		SendMsg(MSG_KEY, _KEY_LANGUAGE,0,NULL);
+    		
     		//system("sh restart_hmi.sh"); // 重啟 mmi
-    		system("reboot");
+    		//system("reboot");
     	}
     }
     else  if((pwnd == pwndLocalIP[0]) ||(pwnd == pwndLocalIP[1]) ||(pwnd == pwndLocalIP[2]) ||(pwnd == pwndLocalIP[3]))		//fuxy, 2011-1-21，修改IP地址  
@@ -2425,10 +2427,12 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 				SetLogoToLanguage();
 				languageindex = LG_selected;
 				CtmConfig::GetInstance()->SetCurrentIndex(languageindex);
-				g_pDatabase->Reset();
+				//g_pDatabase->Reset();
 				usleep(1000*1000);
 				printf("Change LG done\n");
-				system("reboot"); // 重啟
+				
+				SendMsg(MSG_KEY, _KEY_LANGUAGE,0,NULL);
+				//system("reboot"); // 重啟
   	}
 	}
 	

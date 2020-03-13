@@ -6,10 +6,10 @@
 |  Link     :G++(GCC)2.3                                                     |
 |  Call     :                                                                |
 |----------------------------------------------------------------------------|
-|  Author   : 		                                                         |
+|  Author   : 		                                                       		 |
 |  Version  : V1.00                                                          |
-|  Creation : 			                                                     |
-|  Revision :           			                                         |
+|  Creation : 			                                                   		 	 |
+|  Revision :           			                                       		 		 |
 +===========================================================================*/
 #include	"ViewVers.h"
 #include	"../commonaction.h"
@@ -44,10 +44,13 @@ const		int MAXCONTROLS =8;
 #define		NAME_EDIT02F0	  	"edit02F0_"
 #define		NAME_EDIT0600	  	"edit0600_"
 
-#define		REQ_READMOTOR    				2   
+#define		REQ_READMOTOR    	 2   
+#define		DB_TP						1 // 選擇示教器參數資料
+#define		DB_CON					2 // 選擇控制器參數資料
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
+BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
 /*--------------------------------------------------+
 | dw_MechType 機型選擇  														|
 |	Low WORD 0-三軸 1-五軸 	High WORD 0-絕對 1-增量		|
@@ -160,6 +163,44 @@ CTaskHost*	g_ptaskdspCH = NULL;
 extern	DWORD	g_dwM3KeyboardVers;
 #endif
 
+char* ParamStr[] = // 參數文字 
+{
+	/*機構參數*/
+	"MECH_MECHTYPE", // 機型選擇
+	"TRANS_TYPE",		 // 傳動方式
+	"MECH_ENCTYPE",	 // 編碼器選擇
+	"MOTOR_ENC_REZ", // 編碼器解析度
+	"MECH_GEAR_D",	 // 每轉距離
+	"MOTOR_RATIO",	 // 減速比 
+	"MECH_DOUB_MECH",// 倍數機構 
+	"MECH_POS_INV",	 // 位置反向
+	/*速度參數*/
+	"SPEED_MAX",	 // 最高轉速
+	"SPEED_ACC_T",	 // 加速時間
+	"SPEED_DCC_T",	 // 減速時間
+	"SPEED_RATIO",	 // 平滑比例
+	"SPEED_POS_KP",	 // 到位響應
+	"SPEED_SPEED_KP",	 // 追隨響應
+	/*區域設定*/
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+	"",	 // 
+};
+
 char* u_pszStrID[] = 
 {
 	"MACHINE_INTERFACE_Ver",
@@ -188,6 +229,51 @@ char* u_pszImageBoxString[] =
 	"BmpDrive3",
 	"BmpDrive4",
 	"BmpDrive5",
+};
+
+/*============================比對參數============================*/
+int NumofMechType[] = {3,5}; // 三五軸機型對應軸數
+
+char* Mech_Data_String[] = // 參數 元件 名稱
+{
+	"edit_ENC_REZ", 				// 編碼器解析度
+	"edit_Motor_Ratio", 	  // 減速比
+	"edit_Motor_Diameter",	// 節圓直徑
+	"edit_Tooth_Num",				// 齒數
+	"edit_M_Num",						// 模數
+};
+char* dbid_MechType[] = 
+{
+	"MACHINE_CONFIGURATION_MACHINETYPE", // 機型選擇DB 三軸 五軸
+	"MACHINE_PROFILE_NUM1_EQUIPMENT2_ACTION_TYPE", // 傳動方式DB
+};
+
+/*---------------------------------------------------------------------------+
+| u_pszMechPara 傳動方式  																									 |
+|							   _____________________________________        							 |	
+|   						|	Bit |				0				|				1				| 										 |		
+|								|	 0	|	使用節圓直徑	|	使用齒數模數  |       							 |
+|								|	 1	|			不使用 		|	使用倍數機構  |       							 |
+|								|__2__|_____不使用____|_使用位置反向__|       							 |
+|													        																					 |
++---------------------------------------------------------------------------*/
+char*	u_pszMechPara[] =
+{
+	"MACHINE_FUNCTION_OPTIONS_RSV07", // X1
+	"MACHINE_FUNCTION_OPTIONS_RSV08", // Y1
+	"MACHINE_FUNCTION_OPTIONS_RSV09", // Z
+	"MACHINE_FUNCTION_OPTIONS_RSV10", // X2
+	"MACHINE_FUNCTION_OPTIONS_RSV11"  // Y2
+}; 
+
+char* dbid_Mech[6][5] = // 參數數值 db
+{	//  編碼器解析度									,減速比														,節圓直徑													,齒數														 ,模數
+	{NULL,NULL,NULL,NULL,NULL},	// 共同
+	{"MACHINE_INTERFACE_CONTROL_RSV05","MACHINE_INTERFACE_CONTROL_RSV10","MACHINE_FUNCTION_OPTIONS_RSV22","MACHINE_FUNCTION_OPTIONS_RSV12","MACHINE_FUNCTION_OPTIONS_RSV17"},		// X1軸
+	{"MACHINE_INTERFACE_CONTROL_RSV06","MACHINE_INTERFACE_CONTROL_RSV11","MACHINE_FUNCTION_OPTIONS_RSV23","MACHINE_FUNCTION_OPTIONS_RSV13","MACHINE_FUNCTION_OPTIONS_RSV18"},		// Y1軸
+	{"MACHINE_INTERFACE_CONTROL_RSV07","MACHINE_INTERFACE_CONTROL_RSV12","MACHINE_FUNCTION_OPTIONS_RSV24","MACHINE_FUNCTION_OPTIONS_RSV14","MACHINE_FUNCTION_OPTIONS_RSV19"},		// Z軸
+	{"MACHINE_INTERFACE_CONTROL_RSV08","MACHINE_INTERFACE_CONTROL_RSV13","MACHINE_FUNCTION_OPTIONS_RSV25","MACHINE_FUNCTION_OPTIONS_RSV15","MACHINE_FUNCTION_OPTIONS_RSV20"},		// X2軸
+	{"MACHINE_INTERFACE_CONTROL_RSV09","MACHINE_INTERFACE_CONTROL_RSV14","MACHINE_FUNCTION_OPTIONS_RSV26","MACHINE_FUNCTION_OPTIONS_RSV16","MACHINE_FUNCTION_OPTIONS_RSV21"}			// Y2軸
 };
 
 /*===========================================================================+
@@ -714,6 +800,14 @@ void	OnMessage(CtmWnd* pwnd, int message, WPARAM wParam, LPARAM lParam)
 
 void	OnUpdateA(CtmWnd* pwndSender)
 {
+	if(!RunOnlyOne)
+	{
+		printf("RunOnlyOne\n");
+		RunOnlyOne=TRUE;
+		GetValueFrom28(); // 參數比較
+	}
+	
+	
 	if(g_ptaskdspCH != NULL)
 	{
 		ShowTransmitCom(pwndSender);
@@ -954,4 +1048,160 @@ char*	DW2Str_ASCII(DWORD dw_dbvalue)
 		//printf("ACII_value=%s\n",ACII_value);
 	}
 	return strp;
+}
+
+
+/*---------------------------------------------------------------------------+
+|  Function : GetValueFrom28()                       					    		       |
+|  Task     : 取得28設定值 比對參數                                          |
++----------------------------------------------------------------------------+
+|  Parameter:   																	                           |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	GetValueFrom28() // 取得28設定值 比對參數
+{
+	if(g_ptaskpicker != NULL)
+	{
+		printf("Get 28 data value\n");
+		int i_dbvalue_497[6][5] = {0};// 參數數值 db// 示教器暫存值
+		int i_dbvalue_different = 0; // 參數數值差異個數
+		int iDBSelect=0; // 參數依據選擇  1:以示教器為主 2:以控制器為主
+		
+		WORD wNum = 0;
+		int  itemp=0;
+		tmParam Param497; // 497 示教器上參數
+		tmParam Param28;
+		
+		// 機型選擇
+		// 紀錄497數值
+		Param497.iMechType = (int)(GetDBValue(dbid_MechType[0]).lValue);
+		
+		wNum = sizeof(dbid_MechType)/sizeof(char*);
+		g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,dbid_MechType); // Update Data from 28
+		
+		printf("Get = %s\n",dbid_MechType[0]);
+		Param28.iMechType = (int)(GetDBValue(dbid_MechType[0]).lValue); // 機型選擇
+		printf("%s=%d\n",dbid_MechType[0],Param28.iMechType); // 28的值
+		printf("497=%d\n",Param497.iMechType); // 497的值
+
+		if(Param497.iMechType != Param28.iMechType) // 497和28三五軸選擇不同 機型選擇
+		{
+			MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[0]]);
+			iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+			printf("Choose %d\n",iDBSelect);
+			SetChosenDB(dbid_MechType[0],Param497.iMechType,Param28.iMechType,iDBSelect);
+		}
+		
+		// 紀錄497數值 傳動方式 倍數機構 位置反向
+//		Param497.iTransType = ((int)(GetDBValue(u_pszMechPara[0]).lValue) & 0x001); // 傳動方式
+//		Param497.iDouble = ((int)(GetDBValue(u_pszMechPara[0]).lValue) & 0x002)>>1; // 倍數機構
+//		Param497.iPosInv = ((int)(GetDBValue(u_pszMechPara[0]).lValue) & 0x004)>>2; // 位置反向
+		for(int NumofAxis=0; NumofAxis<NumofMechType[dw_MechType]; NumofAxis++)
+		{
+			printf("NumofAxis=%d\n",NumofAxis);
+			// 紀錄497數值 傳動方式 + 倍數機構 + 位置反向
+			Param497.iTransType = (int)(GetDBValue(u_pszMechPara[NumofAxis]).lValue); // 傳動方式 + 倍數機構 + 位置反向
+			// 向 28 請求資料 傳動方式 + 倍數機構 + 位置反向
+			wNum = 1;
+			g_ptaskpicker->ReqValues(REQ_READMOTOR, wNum ,&u_pszMechPara[NumofAxis]);
+			
+		
+			printf("Get = %s\n",u_pszMechPara[NumofAxis]);
+			Param28.iTransType = (int)(GetDBValue(u_pszMechPara[NumofAxis]).lValue);
+			
+			if (itemp != i_dbvalue_497[NumofAxis] )
+				i_dbvalue_different++;
+			
+			printf("%s=%d\n",u_pszMechPara[NumofAxis],Param28.iTransType); // 28的值
+			printf("497=%d\n",Param497.iTransType); // 497的值
+			
+			if(Param497.iTransType != Param28.iTransType) // 497和28 傳動方式 + 倍數機構 + 位置反向 不同
+			{
+				MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[1]]);
+				iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+				printf("Choose %d\n",iDBSelect);
+				SetChosenDB(u_pszMechPara[NumofAxis],Param497.iTransType,Param28.iTransType,iDBSelect);
+			}
+		}
+
+		
+//		printf("dw_MechType=%d\n",NumofMechType[dw_MechType]);
+//		// 依據 機構選擇dw_MechType 決定比對軸數NumofMechType[dw_MechType]
+//		for(int NumofAxis=0; NumofAxis<NumofMechType[dw_MechType]; NumofAxis++)
+//		{
+//			// 紀錄497數值
+//			for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
+//			{			
+//				itemp = (int)(GetDBValue(dbid_Mech[NumofAxis+1][i]).lValue);
+//				i_dbvalue_497[NumofAxis+1][i] = itemp;
+//			}
+//			
+//			// 向 28 請求資料 Mech 機械參數
+//			wNum = sizeof(dbid_Mech[NumofAxis+1])/sizeof(char*);
+//			g_ptaskpicker->ReqValues(REQ_READMOTOR, wNum ,dbid_Mech[NumofAxis+1]);
+//
+//			for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
+//			{			
+//				printf("Get = %s\n",dbid_Mech[NumofAxis+1][i]);
+//				itemp = (int)(GetDBValue(dbid_Mech[NumofAxis+1][i]).lValue);
+//				
+//				if (itemp != i_dbvalue_497[NumofAxis+1][i] )
+//					i_dbvalue_different++;
+//				
+//				printf("%s=%d\n",dbid_Mech[NumofAxis+1][i],itemp); // 28的值
+//				printf("497=%d\n",i_dbvalue_497[NumofAxis+1][i]); // 497的值
+//			}
+//			printf("i_dbvalue_different=%d\n",i_dbvalue_different);
+//			// 示教器和控制器參數數值不同
+//			if(i_dbvalue_different>0)
+//			{
+//				MsgBoxCall("DB_Choose.txt");
+//				
+//				iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+//				printf("Choose %d\n",iDBSelect);
+//				if(iDBSelect == DB_TP) // 497為主
+//				{
+//					for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
+//					{			
+//						printf("Set %s = %d\n",dbid_Mech[NumofAxis+1][i],i_dbvalue_497[NumofAxis+1][i]);
+//						SetDBValue(dbid_Mech[NumofAxis+1][i],i_dbvalue_497[NumofAxis+1][i]);
+//					}
+//				}
+//				else if(iDBSelect == DB_CON) // 28控制器為主
+//				{
+//					for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
+//					{			
+//						itemp = (int)(GetDBValue(dbid_Mech[NumofAxis+1][i]).lValue);
+//						SetDBValue(dbid_Mech[NumofAxis+1][i],0);
+//						printf("Set %s = %d\n",dbid_Mech[NumofAxis+1][i],itemp);
+//						SetDBValue(dbid_Mech[NumofAxis+1][i],itemp);
+//					}
+//				}
+//				i_dbvalue_different=0;
+//			}
+//		}
+	}
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : SetChosenDB()                       						    		       |
+|  Task     : 設定選擇DB數值				                                         |
++----------------------------------------------------------------------------+
+|  Parameter: dbIDName:DB名稱, Param497:示教器數值, Param28:28數值           |
+|							iDBSelect: 選擇來源																						 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	SetChosenDB(char* dbIDName, int Param497, int Param28, int iDBSelect)
+{
+	if(iDBSelect == DB_TP) // 497為主
+	{
+		SetDBValue(dbIDName,Param497);
+	}
+	else if(iDBSelect == DB_CON) // 28控制器為主
+	{
+		SetDBValue(dbIDName,0);
+		SetDBValue(dbIDName,Param28);
+	}
 }

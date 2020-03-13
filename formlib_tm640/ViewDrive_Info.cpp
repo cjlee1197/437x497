@@ -28,6 +28,8 @@
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
+BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
+
 int u_Axis_Num = 1;
 CtmWnd*		pwndDriveInfoSTR[11] 	={NULL}; 	
 int iDriveInfoSTR = 0;
@@ -165,35 +167,59 @@ WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
 
 void	OnUpdateA(CtmWnd* pwndSender)
 {
-   if(g_ptaskpicker != NULL)
+//	struct timeval tv;
+//	static struct timeval tv_old;
+//	static int msg_last;
+//	long lagtime=0;
+//	
+//	gettimeofday(&tv,NULL);
+//  lagtime = (tv.tv_usec - tv_old.tv_usec)/1000;
+//  printf("Update time = %d\n",lagtime);
+//  
+//	gettimeofday(&tv_old,NULL);
+	
+	if(!RunOnlyOne)
 	{
-		WORD		wNum = 0;
-		switch(u_Axis_Num)
+		RunOnlyOne=TRUE;
+		
+		int		nTime 	= 0;
+		
+	  if(g_ptaskpicker != NULL)
 		{
-			case 1: // X1
-				wNum = sizeof(u_pszStrID_X1)/sizeof(char*);
-				g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_X1); // Update Data from 28
-				break;
-			case 2: // Y1
-				wNum = sizeof(u_pszStrID_Y1)/sizeof(char*);
-				g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_Y1); // Update Data from 28
-				break;
-			case 3: // Z
-				wNum = sizeof(u_pszStrID_Z)/sizeof(char*);
-				g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_Z); // Update Data from 28
-				break;
-			case 4: // X2
-				wNum = sizeof(u_pszStrID_X2)/sizeof(char*);
-				g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_X2); // Update Data from 28
-				break;
-			case 5: // Y2
-				wNum = sizeof(u_pszStrID_Y2)/sizeof(char*);
-				g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_Y2); // Update Data from 28
-				break;
-			default:
-				break;
-		}		
-	}	
+			WORD		wNum = 0;
+			switch(u_Axis_Num)
+			{
+				case 1: // X1
+					wNum = sizeof(u_pszStrID_X1)/sizeof(char*);
+					nTime = 50;	//	the unit is ms, 
+					g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_X1, &nTime); // Update Data from 28
+					break;
+				case 2: // Y1
+					wNum = sizeof(u_pszStrID_Y1)/sizeof(char*);
+					nTime = 50;	//	the unit is ms, 
+					g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_Y1, &nTime); // Update Data from 28
+					break;
+				case 3: // Z
+					wNum = sizeof(u_pszStrID_Z)/sizeof(char*);
+					nTime = 50;	//	the unit is ms, 
+					g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_Z, &nTime); // Update Data from 28
+					break;
+				case 4: // X2
+					wNum = sizeof(u_pszStrID_X2)/sizeof(char*);
+					nTime = 50;	//	the unit is ms, 
+					g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_X2, &nTime); // Update Data from 28
+					break;
+				case 5: // Y2
+					wNum = sizeof(u_pszStrID_Y2)/sizeof(char*);
+					nTime = 50;	//	the unit is ms, 
+					g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_Y2, &nTime); // Update Data from 28
+					break;
+				default:
+					break;
+			}		
+		}	
+	}
+	
 
 
 	for(int i=0;i<iDriveInfoSTR;i++) // Update String value
@@ -299,6 +325,41 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	pwndIMG_Axis->SetPropValueT("imagepath",szImagePath);
 	pwndIMG_Axis->Show();
 
+	 if(g_ptaskpicker != NULL)
+	{
+		WORD		wNum = 0;
+		int		nTime 	= 0;
+		switch(u_Axis_Num)
+		{
+			case 1: // X1
+				wNum = sizeof(u_pszStrID_X1)/sizeof(char*);
+				nTime = 50;	//	the unit is ms, 
+				g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_X1, &nTime); // Update Data from 28
+				break;
+			case 2: // Y1
+				wNum = sizeof(u_pszStrID_Y1)/sizeof(char*);
+				nTime = 50;	//	the unit is ms, 
+				g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_Y1, &nTime); // Update Data from 28
+				break;
+			case 3: // Z
+				wNum = sizeof(u_pszStrID_Z)/sizeof(char*);
+				nTime = 50;	//	the unit is ms, 
+				g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_Z, &nTime); // Update Data from 28
+				break;
+			case 4: // X2
+				wNum = sizeof(u_pszStrID_X2)/sizeof(char*);
+				nTime = 50;	//	the unit is ms, 
+				g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_X2, &nTime); // Update Data from 28
+				break;
+			case 5: // Y2
+				wNum = sizeof(u_pszStrID_Y2)/sizeof(char*);
+				nTime = 50;	//	the unit is ms, 
+				g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,u_pszStrID_Y2, &nTime); // Update Data from 28
+				break;
+			default:
+				break;
+		}		
+	}
 	
 	if(pwndSender->Is("CtmFormView")) return ((CtmFormView*)pwndSender)->OnKey1(wKey);
 	else return _NULL_KEY;
