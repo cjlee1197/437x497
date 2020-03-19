@@ -1873,11 +1873,14 @@ void	SaveMode()
 	}
 	printf("Set ClampSelect=%d\n",ClampSelect);
 	SetDBValue(ClampSelect_DB,ClampSelect);
+	if(ClampSelect==0)
+		SetDBValue(ClampDetectSelect_DB,0);
 	
 	ClampDetectSelect=0; // ªv¨ãÀË´ú
 	for(int i=0;i<10;i++)
 	{
-		ClampDetectSelect=ClampDetectSelect+(b_DetectSelect[i]<<i);
+		if(b_Select[i]==1)
+			ClampDetectSelect=ClampDetectSelect+(b_DetectSelect[i]<<i);
 	}
 	printf("Set ClampDetectSelect=%d\n",ClampDetectSelect);
 	SetDBValue(ClampDetectSelect_DB,ClampDetectSelect);
