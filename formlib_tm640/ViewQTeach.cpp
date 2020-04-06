@@ -2219,30 +2219,30 @@ void	Save()
 			break;
 		/*=====================================P6取件點=====================================*/
 		case PickP: // 取件點
+			
 			for(int i =0;i<StepNum[u_Group];i++) // 從Action_P[]讀取這點需要的步驟
 			{
-				if(i==0 && u_SelectClamp>0) // 設定動作 閥門  新增動作
+				if(i==0 && u_SelectClamp>0) // 設定動作 閥門  新增動作 吸
 				{
 					for(int j=0;j<u_SelectClamp;j++) // 所選 治具數量
 					{
-						printf("Set Valve%d\n",j);
-						QTeach_PGNo++;
-						Action_Step++;
-						SaveAct_Valve2Temp(QTeach_PGNo,j);
-					
-						// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]		
-						g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
 						int choose=0;
 						int on_off=0;
 						int detect=0;
 						int DelayTime=0;
 						for(int k=0;k<10;k++) // 設定 (治具j+1) 
 						{
-							if(b_Select[k]==1) // 第k個治具 被選用 k對照u_pszClamp_SelectString[]
+							if(b_Select[k]==1) // 第k個治具 被選用 k對照 u_pszClamp_SelectString[]
 							{
 								choose++;
-								if(choose == j+1)
+								if(choose == j+1 && k>4)
 								{
+									printf("Set Valve%d\n",j);
+									QTeach_PGNo++;
+									Action_Step++;
+									SaveAct_Valve2Temp(QTeach_PGNo,j);
+									// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]		
+									g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
 									g_QTeach_Action_P[QTeach_PGNo-1].Num = k; // 類型k k對照u_pszClamp_SelectString[]
 									
 									on_off = GetDBValue(P6_Clamp_onoff_DBString[k]).lValue;
@@ -2324,6 +2324,47 @@ void	Save()
 				}
 				
 				SaveAction2Temp(QTeach_PGNo,Action_PNo); // 將快速教導動作存入暫存位置
+				
+				if(i==1 && u_SelectClamp>0) // 設定動作 閥門  新增動作 夾
+				{
+					for(int j=0;j<u_SelectClamp;j++) // 所選 治具數量
+					{
+						int choose=0;
+						int on_off=0;
+						int detect=0;
+						int DelayTime=0;
+						for(int k=0;k<10;k++) // 設定 (治具j+1) 
+						{
+							if(b_Select[k]==1) // 第k個治具 被選用 k對照 u_pszClamp_SelectString[]
+							{
+								choose++;
+								if(choose == j+1 && k<5)
+								{
+									printf("Set Valve%d\n",j);
+									QTeach_PGNo++;
+									Action_Step++;
+									SaveAct_Valve2Temp(QTeach_PGNo,j);
+									// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]		
+									g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
+												
+									g_QTeach_Action_P[QTeach_PGNo-1].Num = k; // 類型k k對照u_pszClamp_SelectString[]
+									
+									on_off = GetDBValue(P6_Clamp_onoff_DBString[k]).lValue;
+									g_QTeach_Action_P[QTeach_PGNo-1].P1 = on_off; // 開關 P1
+									detect = GetDBValue(P6_Clamp_detect_DBString[k]).lValue;
+									g_QTeach_Action_P[QTeach_PGNo-1].P2 = detect; // 檢測 P2
+									if(pwndQTeach_Clamp_DT[k]!=NULL) // 設定延時 P5為延時 
+									{
+										pwndQTeach_Clamp_DT[k]->GetPropValueT("value", &l_Clamp_Delaytime[k],sizeof(l_Clamp_Delaytime[k]));
+										if(l_Clamp_Delaytime[k]!=0) // 0為不用
+											g_QTeach_Action_P[QTeach_PGNo-1].P5 = l_Clamp_Delaytime[k]*10; // 寫入參數數值 g_QTeach_Action_P[]
+										SetDBValue(P6_Clamp_DT_DBString[k], l_Clamp_Delaytime[k]); // 寫入 PickP db
+									}
+								}
+							}
+						}		
+					}
+				}
 				Action_PNo++;
 			}
 			break;
@@ -2430,6 +2471,7 @@ void	Save()
 				
 				// 依照使用者設定寫入參數數值 至列表Action_P[]		
 				Action_P[Action_PNo].Step = Action_Step;// 設定Step數
+				printf("\n\nAction_P[Action_PNo].Type=%d Action_P[Action_PNo].Num=%d\n\n",Action_P[Action_PNo].Type,Action_P[Action_PNo].Num);
 				if(Action_P[Action_PNo].Type == Action_Axis) //軸動作 
 				{
 					int WhichAxis = Action_P[Action_PNo].Num; // 哪一軸
@@ -2460,9 +2502,10 @@ void	Save()
 					}
 				}
 				if(Action_P[Action_PNo].Type == Action_Valve 
-					&& Action_P[Action_PNo].Num == Valve_AxisC_V) // 閥門 姿態 Num為姿態 水平/垂直
+					&& Action_P[Action_PNo].Num == Valve_AxisC_H) // 閥門 姿態 Num為姿態 水平/垂直
 				{
 					Action_P[Action_PNo].Num = GetDBValue(PosStatus_DBString[MoveOutP]).lValue; // 寫入參數數值 至列表Action_P[]
+					printf("\n\n!!!!!!!!!!!!!MoveOutP =%d !!!!!!!!!!!!!!\n\n",Action_P[Action_PNo].Num);
 				}
 				
 				SaveAction2Temp(QTeach_PGNo,Action_PNo); // 將快速教導動作存入暫存位置
@@ -3929,22 +3972,22 @@ void	Update_PosHint(int Axis)
 		if(AxisPosNow[Axis]>Max_value) // 現在位置超過最大值
 		{
 			pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_NO.bmp");
-			pwndImg_PosHint[Axis]->SetPropValueT("left",221+(80)); // 標示 顯示位置
-			pwndImg_PosHint[Axis]->SetPropValueT("right",221+(80)+20); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("left",317+(80)); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("right",317+(80)+20); // 標示 顯示位置
 		}
 		else if(AxisPosNow[Axis]<Min_value) // 現在位置 小於最小值
 		{
 			pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_NO.bmp");
-			pwndImg_PosHint[Axis]->SetPropValueT("left",221); // 標示 顯示位置
-			pwndImg_PosHint[Axis]->SetPropValueT("right",221+20); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("left",317); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("right",317+20); // 標示 顯示位置
 		}
 		else // 合理的位置
 		{
 			if((Max_value-Min_value)!=0)
 			{
 				pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_OK.bmp");
-				pwndImg_PosHint[Axis]->SetPropValueT("left",221+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))); // 標示 顯示位置
-				pwndImg_PosHint[Axis]->SetPropValueT("right",221+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))+20); // 標示 顯示位置
+				pwndImg_PosHint[Axis]->SetPropValueT("left",317+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))); // 標示 顯示位置
+				pwndImg_PosHint[Axis]->SetPropValueT("right",317+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))+20); // 標示 顯示位置
 			}
 		}
 		pwndImg_PosHint[Axis]->CreateA();
