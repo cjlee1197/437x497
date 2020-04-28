@@ -209,13 +209,15 @@ char* ParamStr_Mech[] = // 把计ゅ  /*诀篶把计*/
 	"MECH_TOOTHM_NUM",// 睛计
 	"MECH_TOOTHM_NUM"	 // 家计
 };
-char* ParamStr_Speed[] = // 把计ゅ  /*硉计*/
+char* ParamStr_Speed[] = // 把计ゅ  /*硉把计*/
 {
-	"MOTOR_ENC_REZ", // 絪絏竟秆猂
-	"MECH_GEAR_D",	 // –锣禯瞒
-	"MOTOR_RATIO",	 // 搭硉ゑ 
-	"MECH_DOUB_MECH",// 计诀篶 
-	"MECH_POS_INV"	 // 竚は
+	"SPEED_MAX", 			// 程蔼锣硉
+	"SPEED_ACC_T", 		// 硉丁
+	"SPEED_DCC_T",		// 搭硉丁
+	"SPEED_RATIO", 		// 硉キ菲ゑㄒ
+	"SPEED_RATIO",		// 搭硉キ菲ゑㄒ
+	"SPEED_POS_KP",		// 臫莱 竚Kp
+	"SPEED_SPEED_KP",	// 發繦臫莱 硉Kp
 };
 
 
@@ -418,13 +420,13 @@ char* ParamStr_Pile[] = // 帮舼把计 陪ボゅ
 	"VW_PID_GROUP4",		// 材舱
 };
 
-int Precision[5][5] = // 禸把计 计翴计
+int Precision[5][7] = // 禸把计 计翴计 [ぐ或摸把计][材碭把计]
 {
-	{0,0,2,0,0},
-	{0,0,2,0,0},
-	{0,0,2,0,0},
-	{0,0,2,0,0},
-	{0,0,2,0,0},
+	{0,0,2,0,0,0,0},	// 诀篶把计
+	{0,0,0,0,0,3,3},	// 硉把计
+	{2,2,2,0,0,0,0},	// 跋办把计
+	{0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0},
 };
 
 /*===========================================================================+
@@ -1223,6 +1225,7 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 		int  itemp=0;
 		tmParam Param497; // 497 ボ毙竟把计
 		tmParam Param28; // 28 北竟把计
+		int iPre=0;
 		
 		// 诀匡拒
 		// 魁497计
@@ -1306,8 +1309,11 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 					if(Param497.Axis[AxisNum][i] != Param28.Axis[AxisNum][i]) // 497㎝28 ぃ
 					{
 						printf("%d is diff\n",i);
-						g_DBVale_497=Param497.Axis[AxisNum][i];g_DBVale_28=Param28.Axis[AxisNum][i];
-						g_DBPrecision=Precision[AxisNum][i];
+						g_DBVale_497=Param497.Axis[AxisNum][i];g_DBVale_28=Param28.Axis[AxisNum][i]; // ボ毙竟の北竟计
+						g_DBPrecision=Precision[PAxis][i]; // 把计弘
+						
+						SprintfDBValue(Param497.Axis[AxisNum][i],Param28.Axis[AxisNum][i]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
+
 						MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr_Mech[i]]);
 						iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
 						printf("Choose %d\n",iDBSelect);
@@ -1333,6 +1339,9 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 					// ゑ耕 硉把计
 					if(Param497.Speed[AxisNum][i] != Param28.Speed[AxisNum][i]) // 497㎝28 ぃ
 					{
+						g_DBVale_497=Param497.Speed[AxisNum][i];g_DBVale_28=Param28.Speed[AxisNum][i]; // ボ毙竟の北竟计
+						g_DBPrecision=Precision[PSpeed][i]; // 把计弘
+						
 						MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr_Speed[i]]);
 						iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
 						printf("Choose %d\n",iDBSelect);
@@ -1359,6 +1368,9 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 					// ゑ耕 硉把计
 					if(Param497.ZoneLimit[AxisNum+1][i] != Param28.ZoneLimit[AxisNum+1][i]) // 497㎝28 ぃ
 					{
+						g_DBVale_497=Param497.ZoneLimit[AxisNum+1][i];g_DBVale_28=Param28.ZoneLimit[AxisNum+1][i]; // ボ毙竟の北竟计
+						g_DBPrecision=Precision[PZoneLimit][i]; // 把计弘
+						
 						MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ZoneLimit_String[AxisNum+1][i]]);
 						iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
 						printf("Choose %d\n",iDBSelect);
@@ -1582,5 +1594,34 @@ void	SetChosenDB(char* dbIDName, int Param497, int Param28, int iDBSelect)
 	{
 		SetDBValue(dbIDName,-1);
 		SetDBValue(dbIDName,Param28);
+	}
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : SprintfDBValue()                       					    		       |
+|  Task     : 矪瞶DB计陪ボゅ		                                         |
++----------------------------------------------------------------------------+
+|  Parameter: 																															 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void SprintfDBValue(int iParam497, int iParam28)
+{
+	printf("SprintfDBValue g_DBPrecision=%d\n",g_DBPrecision);
+	int iPre=0;
+
+	memset(gstr_DBValue_497, 0, sizeof(gstr_DBValue_497));
+	memset(gstr_DBValue_28, 0, sizeof(gstr_DBValue_28));
+	
+	if(g_DBPrecision>0)
+	{
+		iPre = pow(10,g_DBPrecision); // 弘
+		sprintf(gstr_DBValue_497,"%d"".""%d", (iParam497/iPre), (iParam497%iPre));
+		sprintf(gstr_DBValue_28,"%d"".""%d", (iParam28/iPre), (iParam28%iPre));
+	}
+	else
+	{
+		sprintf(gstr_DBValue_497,"%d",iParam497);
+		sprintf(gstr_DBValue_28,"%d",iParam28);
 	}
 }

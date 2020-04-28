@@ -1110,6 +1110,7 @@
 	<string name="ROBOT_STR_PLEASE_MOUNT_USB">请先成功开启USB设备</string>
 	<string name="UPDATE_STR_UPDATE_CONFIRM">确认更新所选版本?</string>
 	<string name="CHECK_MOLDOPEN_CONFIRM">未检测「等待开模完成」，确认下载?</string>
+	<string name="CHECK_DOWNLOAD_CONFIRM">确认下载?</string>
 	<string name="ZONELIMIT_Zone">移动最大位置</string>
 	<string name="ZONELIMIT_X1_MIN">1.允许下降模内最小位置</string>
 	<string name="ZONELIMIT_X1_MAX">2.允许下降模内最大位置</string>

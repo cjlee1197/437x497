@@ -1081,6 +1081,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="ROBOT_STR_UPDATE_NOT_READY">Not Ready for Update</string>
 	<string name="UPDATE_STR_UPDATE_CONFIRM">Confirm SEL VER?</string>
 	<string name="CHECK_MOLDOPEN_CONFIRM">Missing「OPEN DETC」,Confirm to DNLD?</string>
+	<string name="CHECK_DOWNLOAD_CONFIRM">Confirm to DNLD?</string>
 	<string name="ZONELIMIT_Zone">Max Pos</string>
 	<string name="ZONELIMIT_X1_MIN">1.Min Pos in Mold Pick</string>
 	<string name="ZONELIMIT_X1_MAX">2.Max Pos in Mold Pick</string>
