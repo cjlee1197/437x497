@@ -42,10 +42,10 @@ char        u_acSelBoxString[ID_MAX_SELECT][STR_MAX_COUNT];
 int 				u_nSelectBoxCount 	= 0;
 
 DBVIEWVALUE u_dbInputValue;
-DWORD        u_wInputValue;
+DWORD        u_wInputValue,u_wInputValue_Old=-2;
 
 DBVIEWVALUE u_dbOutputValue;
-DWORD        u_wOutputValue;
+DWORD        u_wOutputValue,u_wOutputValue_Old=-2;
 
 CtmWnd*			pwndButton_IO2       = NULL;    
 CtmWnd*			pwndButton_Alarm     = NULL;    
@@ -91,27 +91,34 @@ void       CreateLEDSet()
 	
 	//printf("u_wInputValue = %X\n",u_wInputValue);
 	//printf("u_wOutputValue = %X\n",u_wOutputValue);
- 
-	for(int i = 0; i < u_nSelectBoxCount; i++)
+	
+	//if(u_wInputValue!=u_wInputValue_Old || u_wOutputValue!=u_wOutputValue_Old)
 	{
-		if(u_pwndSelectBox[i] != NULL)
+		for(int i = 0; i < u_nSelectBoxCount; i++)
 		{
-			if(i < PB_MAXNUM)     // PB
+			if(u_pwndSelectBox[i] != NULL)
 			{
-	   		if( (u_wInputValue>>(i))&1 ) bSelected = TRUE;
-		 		else 							bSelected = FALSE;
-		 		u_pwndSelectBox[i]->SetPropValueT("selected", bSelected);
-		 		u_pwndSelectBox[i]->Update();
-			}
-			else                 //PC
-			{
-				if( u_wOutputValue>>(i-PB_MAXNUM)&1 ) bSelected = TRUE;
-		 		else 							bSelected = FALSE;
-		 		u_pwndSelectBox[i]->SetPropValueT("selected", bSelected);
-		 		u_pwndSelectBox[i]->Update();
-			}
-		}		
+				if(i < PB_MAXNUM)     // PB
+				{
+		   		if( (u_wInputValue>>(i))&1 ) bSelected = TRUE;
+			 		else 							bSelected = FALSE;
+			 		u_pwndSelectBox[i]->SetPropValueT("selected", bSelected);
+			 		u_pwndSelectBox[i]->Update();
+				}
+				else                 //PC
+				{
+					if( u_wOutputValue>>(i-PB_MAXNUM)&1 ) bSelected = TRUE;
+			 		else 							bSelected = FALSE;
+			 		u_pwndSelectBox[i]->SetPropValueT("selected", bSelected);
+			 		u_pwndSelectBox[i]->Update();
+				}
+			}		
+		}
+		
+		//u_wInputValue_Old=u_wInputValue;
+		//u_wOutputValue_Old=u_wOutputValue;
 	}
+	
 }
 
 void	CreateStringSet()

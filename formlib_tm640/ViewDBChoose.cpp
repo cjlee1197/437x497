@@ -37,6 +37,8 @@ BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
 CtmWnd*		pwndStaticText			= NULL; // Static 顯示文字
 CtmWnd*		pwndBtnFlwTP				= NULL; // Btn 以示教器為主
 CtmWnd*		pwndBtnFlwCON				= NULL; // Btn 以控制器為主
+CtmWnd*		pwndValue_TP				= NULL; // Edit 示教器數值
+CtmWnd*		pwndValue_CON				= NULL; // Edit 控制器數值
 
 /*---------------------------------------------------------------------------+
 |           View Content - GuideSet                                          |
@@ -57,6 +59,9 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	pwndStaticText			= pwndSender->FindControlFromName("StaticText");
 	pwndBtnFlwTP				= pwndSender->FindControlFromName("BtnFlwTP");
 	pwndBtnFlwCON				= pwndSender->FindControlFromName("BtnFlwCON");
+	
+	pwndValue_TP				= pwndSender->FindControlFromName("Value_TP");
+	pwndValue_CON				= pwndSender->FindControlFromName("Value_CON");
 	
 	return TRUE;
 }
@@ -185,5 +190,12 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	{
 		RunOnlyOne=TRUE;
 		((CtmFormView*)pwndSender)->OnLoseFocus(); // 取消光標
+		
+		pwndValue_TP->SetPropValueT("value", g_DBVale_497);
+		pwndValue_TP->SetPropValueT("precision", g_DBPrecision);
+		pwndValue_TP->Update();
+		pwndValue_CON->SetPropValueT("value", g_DBVale_28);
+		pwndValue_CON->SetPropValueT("precision", g_DBPrecision);
+		pwndValue_CON->Update();
 	}
 }
