@@ -972,17 +972,21 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		{
 			if(u_wPickerOPSatus == STATE_HAND)
 			{
-				Cleanhelp =0;
-				Clean();
-				Prompt(g_MultiLanguage["PICKER_DATADOWNLODING"],1); 
-				GetPosTag();
-				SendCommand(0xF600); // Servo Off
-				Download();
-				g_Hint_Download = 0; // 完成下載
-				Update_Download_Hint();
-				UpdateNo();
-				UpdateText();
-				Prompt(g_MultiLanguage["PICKER_DATADOWNLOADFINISH"],1); 
+				MsgBox(g_MultiLanguage["CHECK_DOWNLOAD_CONFIRM"], tmFT_CODE_TECH);
+	    	if(g_bMsgBoxFlag)
+	    	{
+					Cleanhelp =0;
+					Clean();
+					Prompt(g_MultiLanguage["PICKER_DATADOWNLODING"],1); 
+					GetPosTag();
+					SendCommand(0xF600); // Servo Off
+					Download();
+					g_Hint_Download = 0; // 完成下載
+					Update_Download_Hint();
+					UpdateNo();
+					UpdateText();
+					Prompt(g_MultiLanguage["PICKER_DATADOWNLOADFINISH"],1); 
+				}
 			}
 			else
 			{
