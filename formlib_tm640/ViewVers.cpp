@@ -968,7 +968,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	{
 		printf("RunOnlyOne\n");
 		RunOnlyOne=TRUE;
-		GetValueFrom28(); // 把计ゑ耕
+		//GetValueFrom28(); // 把计ゑ耕
 	}
 	
 	
