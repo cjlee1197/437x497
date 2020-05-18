@@ -855,10 +855,11 @@ void	CtmTaskMoni::Run()
 	m_bIdle = g_ptaskCmd->IsIdle();
 	if(m_bIdle == TRUE)
 	{
-		printf("m_bIdle == TRUE\n");
-		printf("m_lCounter=%d\n",m_lCounter);
+		//printf("m_bIdle == TRUE\n");
+		//printf("m_lCounter=%d\n",m_lCounter);
 		if (m_lCounter <= 0 || 
-			(nShotCount - nCount) >= GetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERSHOTCOUNT").lValue)
+			(nShotCount - nCount) >= GetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERSHOTCOUNT").lValue &&
+			GetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERSHOTCOUNT").lValue >0 )
 		{
 			if(m_bSaver == FALSE )	
 			{
@@ -873,7 +874,7 @@ void	CtmTaskMoni::Run()
 	}
 	else if(m_bIdle == FALSE)
 	{
-		printf("m_bIdle == FALSE\n");
+		//printf("m_bIdle == FALSE\n");
 		if (m_bSaver == TRUE)	
 		{
 			if(bScreenSaverLCDOFFOption)
