@@ -58,7 +58,9 @@ BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
 | EX: 絕對/五軸 0x0000 0001;  0x0001 0000 增量/三軸 |
 +--------------------------------------------------*/
 DWORD dw_MechType = 0; //紀錄 pMechTypeDB 的數值
+int u_PickerType = 0; // 機型選擇 0-三軸 1-五軸
 int u_EncType 		= 0; // 編碼器選擇  0-絕對 1-增量
+
 char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
 
 //short   	FlowStep;
@@ -167,14 +169,14 @@ extern	DWORD	g_dwM3KeyboardVers;
 char* ParamStr[] = // 參數文字 
 {
 	/*機構參數*/
-	"MECH_MECHTYPE", // 機型選擇
-	"TRANS_TYPE",		 // 傳動方式
-	"MECH_ENCTYPE",	 // 編碼器選擇
-	"MOTOR_ENC_REZ", // 編碼器解析度
-	"MOTOR_RATIO",	 // 減速比
-	"MECH_GEAR_D",	 // 每轉距離
-	"MECH_DOUB_MECH",// 倍數機構 
-	"MECH_POS_INV",	 // 位置反向
+	"MECH_MECHTYPE", //0 機型選擇
+	"TRANS_TYPE",		 //1 傳動方式
+	"MECH_ENCTYPE",	 //2 編碼器選擇
+	"MOTOR_ENC_REZ", //3 編碼器解析度
+	"MOTOR_RATIO",	 //4 減速比
+	"MECH_GEAR_D",	 //5 每轉距離
+	"MECH_DOUB_MECH",//6 倍數機構 
+	"MECH_POS_INV",	 //7 位置反向
 	/*速度參數*/
 	"SPEED_MAX",	 // 最高轉速
 	"SPEED_ACC_T",	 // 加速時間
@@ -429,6 +431,14 @@ int Precision[5][7] = // 軸參數 小數點位數 [什麼類參數][第幾個參數]
 	{0,0,0,0,0,0,0},
 };
 
+//參數數值 (文字)
+char* ParamStr_TransType[] = // 傳動方式 參數數值 (文字)
+{
+	"MECH_GEAR_D", // 每轉距離
+	"MECH_TOOTHM_NUM", // 齒數、模數
+};
+int iTransType=0,iDouble=0,iPosInv=0;; // 傳動方式,倍數機構,位置反向
+
 /*===========================================================================+
 |           Function                                                         |
 +===========================================================================*/
@@ -448,6 +458,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 {
 	// 讀取設定 機型選擇 三五軸
 	dw_MechType 	 = (GetDBValue(pMechTypeDB).lValue);
+	u_PickerType = dw_MechType & MechWord;
 	u_EncType		 = dw_MechType & EncWord;
 	
 	//printf("MACHINE_INTERFACE_Ver ID=%d\n",g_pDatabase->GetIndex("MACHINE_CONFSYS_ELECNAMEPLATE_SOFTWARE_PN"));
@@ -1260,12 +1271,7 @@ void	GetValueFrom28() // 取得28設定值 比對參數
 //		}
 		
 		
-		// 紀錄497數值 傳動方式 倍數機構 位置反向
-//		Param497.iTransType = ((int)(GetDBValue(u_pszMechPara[0]).lValue) & 0x001); // 傳動方式
-//		Param497.iDouble = ((int)(GetDBValue(u_pszMechPara[0]).lValue) & 0x002)>>1; // 倍數機構
-//		Param497.iPosInv = ((int)(GetDBValue(u_pszMechPara[0]).lValue) & 0x004)>>2; // 位置反向
-
-		for(int AxisNum=0; AxisNum<NumofMechType[dw_MechType]; AxisNum++) // 依據 NumofMechType[dw_MechType] 3軸或5軸
+		for(int AxisNum=0; AxisNum<NumofMechType[u_PickerType]; AxisNum++) // 依據 NumofMechType[u_PickerType] 3軸或5軸
 		{
 			printf("AxisNum=%d\n",AxisNum);
 			{/*傳動方式 + 倍數機構 + 位置反向*/
@@ -1279,18 +1285,78 @@ void	GetValueFrom28() // 取得28設定值 比對參數
 				Param28.iTransType = (int)(GetDBValue(u_pszMechPara[AxisNum]).lValue);
 				
 				printf("%s=%d\n",u_pszMechPara[AxisNum],Param28.iTransType); // 28的值
-				printf("497=%d\n",Param497.iTransType); // 497的值
+				printf("497=%d\n",Param497.iTransType); // 497的值  
 				
+	
 				// 比較
-				if(Param497.iTransType != Param28.iTransType) // 497和28 傳動方式 + 倍數機構 + 位置反向 不同
+				if(Param497.iTransType != Param28.iTransType) // 497和28 bit 0 傳動方式 + bit 1 倍數機構 + bit 2 位置反向 不同
 				{
-					MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[1]]);
-					iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
-					printf("Choose %d\n",iDBSelect);
-					SetChosenDB(u_pszMechPara[AxisNum],Param497.iTransType,Param28.iTransType,iDBSelect);
+					Param497.iDouble 	= ((Param497.iTransType) & 0x002)>>1; // 倍數機構 
+					Param497.iPosInv 	= ((Param497.iTransType) & 0x004)>>2; // 位置反向 
+					Param28.iDouble 	= ((Param28.iTransType) & 0x002)>>1; // 倍數機構 
+					Param28.iPosInv 	= ((Param28.iTransType) & 0x004)>>2; // 位置反向 
+					
+					printf("TransType Double Inverse diff\n");
+					// 比較一次 傳動方式
+					if(AxisNum<1) // 497和28 傳動方式 不同 Param497.iTransType != Param28.iTransType
+					{
+						int iTransType497=0,iTransType28=0;
+						iTransType497 = int(Param497.iTransType & 0x001); // 傳動方式
+						iTransType28 = int(Param28.iTransType & 0x001); // 傳動方式
+						if( iTransType497 != iTransType28 )
+						{
+							printf("TransType diff\n");
+							SprintfDBValue(ParamStr_TransType[iTransType497],ParamStr_TransType[iTransType28]);  // 處理DB數值顯示文字
+							MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[TRANS_TYPE]]);
+							iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+							printf("Choose %d\n",iDBSelect);
+							iTransType = (iDBSelect==DB_CON) ? (Param28.iTransType & 0x001):(Param497.iTransType & 0x001);
+							printf("TransType=%x\n",iTransType);
+						}
+					}
+
+					if(Param497.iDouble != Param28.iDouble) //  497和28 倍數機構 不同
+						{
+							printf("Double diff\n");
+							SprintfDBValue(Param497.iDouble,Param28.iDouble); // 參數數值 轉換成字串 供DBChoose 使用
+							MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[MECH_DOUB_MECH]]);
+							iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+							printf("Choose %d\n",iDBSelect);
+							iDouble=(iDBSelect==DB_CON)?Param28.iDouble:Param497.iDouble;
+							printf("iDouble=%x\n",iDouble);
+						}
+					else
+						iDouble=Param497.iDouble;
+					if(Param497.iPosInv != Param28.iPosInv) //  497和28 位置反向 不同
+						{
+							printf("PosInv diff\n");
+							SprintfDBValue(Param497.iPosInv,Param28.iPosInv); // 參數數值 轉換成字串 供DBChoose 使用
+							MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[MECH_POS_INV]]);
+							iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+							printf("Choose %d\n",iDBSelect);
+							iPosInv=(iDBSelect==DB_CON)?Param28.iPosInv:Param497.iPosInv;
+							printf("iPosInv=%x\n",iPosInv);
+						}		
+					else
+						iPosInv=Param497.iPosInv;
+					
+					iTransType = iTransType + (iDouble<<1) + (iPosInv<<2);
+					printf("Set TransType = %x\n",iTransType);
+					
+					/*----------------------------------------+
+					| 傳動方式						  									|
+					|	___________0_________________1__________|
+					|	bit0 	使用每轉距離	|		使用齒數模數		|
+					| bit1 		不使用			|		使用倍數機構		|
+					| bit2 		不使用			|		使用反向位置		|
+					+----------------------------------------*/
+					
+					//SetChosenDB(u_pszMechPara[AxisNum],iTransType,iTransType,iDBSelect);
+					
 				}
 			}
 			
+			printf("\n\nAxis Check!!!!!!\n\n");
 			{/*軸參數*/
 				// 紀錄497數值 軸參數
 				for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
@@ -1598,10 +1664,10 @@ void	SetChosenDB(char* dbIDName, int Param497, int Param28, int iDBSelect)
 }
 
 /*---------------------------------------------------------------------------+
-|  Function : SprintfDBValue()                       					    		       |
+|  Function : SprintfDBValue(int iParam497, int iParam28)                    |
 |  Task     : 處理DB數值顯示文字		                                         |
 +----------------------------------------------------------------------------+
-|  Parameter: 																															 |
+|  Parameter: iParam497:497參數數值	iParam28:28參數數值											 |
 |                                                                            |
 |  Return   :                           -                                    |
 +---------------------------------------------------------------------------*/
@@ -1624,4 +1690,21 @@ void SprintfDBValue(int iParam497, int iParam28)
 		sprintf(gstr_DBValue_497,"%d",iParam497);
 		sprintf(gstr_DBValue_28,"%d",iParam28);
 	}
+}
+/*---------------------------------------------------------------------------+
+|  Function : SprintfDBValue(char* strParam497,char* strParam28)             |
+|  Task     : 處理DB數值顯示文字		                                         |
++----------------------------------------------------------------------------+
+|  Parameter: iParam497:497參數值	iParam28:28參數值													 |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void SprintfDBValue(char* strParam497,char* strParam28)
+{
+printf("SprintfDBValue %s,%s\n",strParam497,strParam28);
+	memset(gstr_DBValue_497, 0, sizeof(gstr_DBValue_497));
+	memset(gstr_DBValue_28, 0, sizeof(gstr_DBValue_28));
+	
+	sprintf(gstr_DBValue_497,"%s",strParam497);
+	sprintf(gstr_DBValue_28,"%s",strParam28);
 }
