@@ -815,7 +815,11 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 {
     long long       PartYear;
     BGC TempBgc     = RGB2PIXEL(49, 89, 114);
-    
+
+  SetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERLCDPOWEROFF", 0);
+  int svaeflag = GetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERSHOTCOUNT").lValue;
+  printf("svaeflag=%d\n",svaeflag);
+   
 	//	Get the iNet func
 	u_biNet = CtmConfig::GetInstance()->GetINETFlag();
 	u_bKeyLock= CtmConfig::GetInstance()->GetKeyLockFlag();
