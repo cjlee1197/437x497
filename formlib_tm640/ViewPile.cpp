@@ -49,10 +49,10 @@ char*	u_pszBtnPileGroupName[PileNum] =  // 第n組 堆疊 Btn名稱
 
 char*	u_pszBtnPileDirName[PileNum][3] =  // 各軸方向 Btn名稱
 {
-	{"Btn_Pile1_Dir_X","","Btn_Pile1_Dir_Z",}, //第一組
-	{"Btn_Pile2_Dir_X","","Btn_Pile2_Dir_Z",}, //第二組
-	{"Btn_Pile3_Dir_X","","Btn_Pile3_Dir_Z",}, //第三組
-	{"Btn_Pile4_Dir_X","","Btn_Pile4_Dir_Z",}	//第四組
+	{"Btn_Pile1_Dir_X","Btn_Pile1_Dir_Y","Btn_Pile1_Dir_Z",}, //第一組
+	{"Btn_Pile2_Dir_X","Btn_Pile2_Dir_Y","Btn_Pile2_Dir_Z",}, //第二組
+	{"Btn_Pile3_Dir_X","Btn_Pile3_Dir_Y","Btn_Pile3_Dir_Z",}, //第三組
+	{"Btn_Pile4_Dir_X","Btn_Pile4_Dir_Y","Btn_Pile4_Dir_Z",}	//第四組
 }; 
 
 char*	u_pszPileDirDB[] =  // 各軸方向DB
@@ -104,12 +104,14 @@ char*	u_pszImgPile[] =  // 各組 顯示圖片 名稱
 };
 char* PileImgpath[] = // 顯示圖片
 {																				// 	(bit0 X, bit1 Y, bit3 Z) 0=正向 1=反向
-	"res_tm640/pic/picker/Pile_XP_ZP.bmp",// 0( 		0,			0,			0)
-	"res_tm640/pic/picker/Pile_XN_ZP.bmp",// 1(			1,			0,			0)
 	"",
 	"",
-	"res_tm640/pic/picker/Pile_XP_ZN.bmp",// 4( 		0,			0,			1)
-	"res_tm640/pic/picker/Pile_XN_ZN.bmp",// 5(			1,			0,			1)
+	"res_tm640/pic/picker/Pile_XP_ZP.bmp",// 2( 		0,			1,			0)
+	"res_tm640/pic/picker/Pile_XN_ZP.bmp",// 3(			1,			1,			0)
+	"",
+	"",
+	"res_tm640/pic/picker/Pile_XP_ZN.bmp",// 6( 		0,			1,			1)
+	"res_tm640/pic/picker/Pile_XN_ZN.bmp",// 7(			1,			1,			1)
 };
 
 BOOL TF[] =
@@ -163,7 +165,6 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 				int u_PileDir = (int)(GetDBValue(u_pszPileDirDB[i]).lValue);
 				printf("u_PileDir[%d][%d]=%d\n",i,j,u_PileDir);
 				u_PileDir = ((u_PileDir>>j) & 1); // 讀取第j個bit
-
 				b_Dir[i][j]=TF[u_PileDir]; // 讀取方向紀錄
 				u_pwndBtn_Pile_Dir[i][j]->SetPropValueT("captionID",Str_PileDir[u_PileDir]);
 				u_pwndBtn_Pile_Dir[i][j]->CreateA();
@@ -256,6 +257,8 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
  	{
  		for(int j=0;j<3;j++)
  		{
+			if(j==1) //Y軸方向強制 =1
+				b_Dir[i][j]=1;
  			if(pwnd == u_pwndBtn_Pile_Dir[i][j]) // 堆疊方向 [第n組][XYZ]
  			{
 				b_Dir[i][j] = !b_Dir[i][j];
@@ -264,7 +267,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 				for(int k=0;k<3;k++)
 				{
 					nTemp = nTemp + (b_Dir[i][k]<<k);
-				}
+				}					
 				printf("Pile%d Dir%d=%d\n",i,j,nTemp);
 				SetDBValue(u_pszPileDirDB[i],nTemp); // 寫入 DB
 				printf("Set u_pszPileDirDB[%d]=%d\n",i,nTemp);
