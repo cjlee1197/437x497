@@ -45,6 +45,7 @@ extern  "C"	WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl);
 extern  "C"	BOOL	OnCreateA(CtmWnd* pwndSender);
 extern  "C"	WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey);
 extern  "C"	void	OnUpdateA(CtmWnd* pwndSender);
+extern	"C"	void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam);
 extern	"C"	void	OnDestroyA(CtmWnd* pwndSender);
 extern  "C"	WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl);
 extern  "C"	WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl);
@@ -77,6 +78,8 @@ void	SaveAction2Temp(int QTeach_PGNo,int j);
 void	SaveAct_Axis2Temp(int QTeach_PGNo,int j);
 void	SaveAct_Valve2Temp(int QTeach_PGNo,int j);
 void	SaveAct_Detect2Temp(int QTeach_PGNo,int j);
+
+void	SaveAct_Wait2Temp(int QTeach_PGNo,int j);
 void	SaveAct_Pile2Temp(int QTeach_PGNo,int j);
 void	UnLockBtn(CtmWnd* pwnd);
 void	LockBtn(CtmWnd* pwnd);

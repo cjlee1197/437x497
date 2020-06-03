@@ -1084,6 +1084,7 @@
 	<string name="PICKER_FILE_SAVE">檔案儲存</string>
 	<string name="MSG_INPUT_ALPHA">請輸入英文字母</string>
 	<string name="MSG_INPUT_ALPHANUMERIC">請輸入字母或數位</string>
+	<string name="MSG_INPUT_NUMERIC">請輸入數字</string>
 	<string name="ROBOT_BTN_OPEN_USB">開啟USB設備</string>
 	<string name="ROBOT_BTN_OPEN_BK">開啟版本備份</string>
 	<string name="ROBOT_BTN_VERSION_UPDATE">版本更新</string>
@@ -1221,6 +1222,7 @@
 	<string name="FollowTP">以示教器為主</string>
 	<string name="FollowCON">以控制器為主</string>
 	<string name="SELECT_CONFIRM">選擇確認</string>
+	<string name="Start2Eject">檢測開始頂出</string>
 
 </resources>
 

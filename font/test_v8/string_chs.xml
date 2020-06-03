@@ -1084,6 +1084,7 @@
 	<string name="PICKER_FILE_SAVE">档案储存</string>
 	<string name="MSG_INPUT_ALPHA">请输入英文字母</string>
 	<string name="MSG_INPUT_ALPHANUMERIC">请输入字母或数字</string>
+	<string name="MSG_INPUT_NUMERIC">請輸入數字</string>
 	<string name="ROBOT_BTN_OPEN_USB">开启USB设备</string>
 	<string name="ROBOT_BTN_OPEN_BK">开启版本备份</string>
 	<string name="ROBOT_BTN_VERSION_UPDATE">版本更新</string>
@@ -1217,4 +1218,10 @@
 	<string name="UserLog_ACT10019">减速时间Z</string>
 	<string name="UserLog_ACT10020">减速时间X2</string>
 	<string name="UserLog_ACT10021">减速时间Y2</string>
+	<string name="ParamDif">参数不同</string>
+	<string name="FollowTP">以示教器为主</string>
+	<string name="FollowCON">以控制器为主</string>
+	<string name="SELECT_CONFIRM">选择确认</string>
+	<string name="Start2Eject">检测开始顶出</string>
+
 </resources>

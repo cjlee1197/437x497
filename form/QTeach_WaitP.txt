@@ -179,7 +179,7 @@ ViewQTeach:CtmFormView
     left =317
     top =444
     right =417
-    bottom =494
+    bottom =479
     wtype =35
     taborder =5
     fgc =0
@@ -199,7 +199,7 @@ ViewQTeach:CtmFormView
     left =317
     top =518
     right =417
-    bottom =568
+    bottom =553
     wtype =35
     taborder =6
     fgc =0
@@ -218,7 +218,7 @@ ViewQTeach:CtmFormView
     left =317
     top =592
     right =417
-    bottom =642
+    bottom =627
     wtype =35
     taborder =7
     fgc =0
@@ -238,7 +238,7 @@ ViewQTeach:CtmFormView
     left =317
     top =666
     right =417
-    bottom =716
+    bottom =701
     wtype =35
     taborder =8
     fgc =0
@@ -257,7 +257,7 @@ ViewQTeach:CtmFormView
     left =317
     top =740
     right =417
-    bottom =790
+    bottom =775
     wtype =35
     taborder =9
     fgc =0
@@ -606,5 +606,115 @@ ViewQTeach:CtmFormView
     bottom =770
     type =2
     keycolor =63519
+  end
+  Pos_Max_Z:CtmStaticX2
+    left =367
+    top =479
+    right =417
+    bottom =499
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Max_X1:CtmStaticX2
+    left =367
+    top =553
+    right =417
+    bottom =573
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Max_Y1:CtmStaticX2
+    left =367
+    top =627
+    right =417
+    bottom =647
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Max_X2:CtmStaticX2
+    left =367
+    top =701
+    right =417
+    bottom =721
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Max_Y2:CtmStaticX2
+    left =367
+    top =775
+    right =417
+    bottom =795
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Min_Z:CtmStaticX2
+    left =317
+    top =479
+    right =367
+    bottom =499
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Min_X1:CtmStaticX2
+    left =317
+    top =553
+    right =367
+    bottom =573
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Min_Y1:CtmStaticX2
+    left =317
+    top =627
+    right =367
+    bottom =647
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Min_X2:CtmStaticX2
+    left =317
+    top =701
+    right =367
+    bottom =721
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Min_Y2:CtmStaticX2
+    left =317
+    top =775
+    right =367
+    bottom =795
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
   end
 end

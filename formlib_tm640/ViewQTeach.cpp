@@ -12,6 +12,7 @@
 |  Revision : V2.00                                                          |
 +===========================================================================*/
 #include	"ViewQTeach.h"
+#include	"../commonaction.h"
 #include	"../font.h"
 #include	"../utils.h"
 
@@ -24,6 +25,13 @@
 #define		EncType_Res		  0x00010000  // 增量
 #define		EncWord 				0xFFFF0000 // High Word
 #define		MechWord 				0x0000FFFF // Low Word
+#define		GPIO_SAFEKEY_BIT	0x14 // 安全按鈕
+#define		GPIO_SAFEKEY_0 0x4
+#define		GPIO_SAFEKEY_1 0x10
+#define		GPIO_SAFEKEY_2 0x14
+#define		MANUAL_CONTINUE_MODE	0
+#define		MANUAL_JOG_MODE	1
+#define		MANUAL_STOP_MODE	2
 // 流程 區域點
 #define		Origin			1 // 原點
 #define		WaitP				2 // 待機點
@@ -97,6 +105,9 @@
 #define		Color_Red			0xF800
 #define		Color_Yellow 	0xFF80
 #define		Color_LBlue		0xDFBF
+
+#define		MIN				0  //
+#define		MAX				1  //
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -113,8 +124,10 @@ BOOL b_RunOnlyOne = FALSE; // 利用 Update() 來到這頁 只執行一次
 BOOL b_SaveFlag = FALSE; // 是否儲存數值
 
 int WhichAxis=0;
-int WhichAxis_Old=0;
+int WhichAxis_Old=-1;
 char* pWhichAxisDB	 = "MACHINE_PROFILE_NUM7_EQUIPMENT2_ACTION_TYPE"; // 偵測哪一軸 DB
+
+int 	Manual_Type=MANUAL_STOP_MODE; // 背後安全按鈕
 
 int			u_QTeach_Type=0,u_QTeach_Pos=0;
 
@@ -191,7 +204,7 @@ CtmWnd*		pwndSLVL_Logo	= NULL; // 柔性使用 Logo
 CtmWnd*		pwndPick_Dis			= NULL; // 下降距離 數值顯示
 CtmWnd*		pwndPickOut_Dis		= NULL; // 後退距離 數值顯示
 
-
+CtmWnd*		pwndCheck_Ejector	= NULL; // 檢測 頂退完成(開始頂出) 勾勾
 
 CtmWnd*		pwndBtn_PileUse	= NULL; // 堆疊選用 Btn
 CtmWnd*		pwndCheck_Pile	= NULL; // 堆疊選用 勾勾
@@ -603,6 +616,11 @@ char* Pick_SLVL_DB ="MACHINE_PROFILE_NUM3_EQUIPMENT2_ACTION_PARAMETER1"; // 下降
 char* PickOut_SLVL_DB ="MACHINE_PROFILE_NUM3_EQUIPMENT2_ACTION_PARAMETER2"; // 上拉出模 提前距離 DB
 
 
+/*==========================頂退完成(開始頂出) 設定==============================*/
+BOOL b_Check_Ejector = FALSE; // 開始頂出 選用與否
+int u_Check_Ejector =0; // 開始頂出 增加步數
+char* Check_Ejector_DB = "MACHINE_PROFILE_NUM4_EQUIPMENT2_ACTION_STEP"; // 確認是否選用 開始頂出 DB
+
 /*=================================堆疊 設定=================================*/
 int PileNum = 0; // 堆疊 組號碼
 int u_PileNum =0; // 堆疊 使用 增加步數
@@ -626,6 +644,27 @@ char* u_pszQTeach_PosString[] =
 	"QTeach_Pos_X2",
 	"QTeach_Pos_Y2",
 };
+CtmWnd*   pwndQTeach_Pos_Max[6] ={NULL}; // 快速教導 位置 上下限 顯示文字
+CtmWnd*   pwndQTeach_Pos_Min[6] ={NULL};
+char* u_pszQTeach_Pos_MaxString[] =
+{
+	"",
+	"Pos_Max_X1",
+	"Pos_Max_Y1",
+	"Pos_Max_Z",
+	"Pos_Max_X2",
+	"Pos_Max_Y2",
+};
+char* u_pszQTeach_Pos_MinString[] =
+{
+	"",
+	"Pos_Min_X1",
+	"Pos_Min_Y1",
+	"Pos_Min_Z",
+	"Pos_Min_X2",
+	"Pos_Min_Y2",
+};
+
 long l_Position[6] = {0};
 char* P2_POSSET_DBString[] = // P2 等待點 位置設定 DB名稱
 {
@@ -986,7 +1025,20 @@ ACTION_P Action_Detect_P[]= // 教導動作 檢測
 	{	0,	0,	Action_Detect,Valve_Choose4,		ON,	0,	0,	0,	0, }, //	檢測 選4 打開
 };
 
-ACTION_P Action_Pile_P[]= // 教導動作 軸動作
+ACTION_P Action_Wait_P[]= // 教導動作 等待
+{
+	{	0,	0,	Action_Wait,	0,								ON,	0,	0,	0,	0, }, //	等待
+	{	0,	0,	Action_Wait,	Wait_IMEStop,			ON,	0,	0,	0,	0, }, //	等待
+	{	0,	0,	Action_Wait,	Wait_MoldOpen,		ON,	0,	0,	0,	0, }, //	等待
+	{	0,	0,	Action_Wait,	Wait_MoldClose,		ON,	0,	0,	0,	0, }, //	等待
+	{	0,	0,	Action_Wait,	Wait_SDoorClose,	ON,	0,	0,	0,	0, }, //	等待
+	{	0,	0,	Action_Wait,	Wait_IMAuto,			ON,	0,	0,	0,	0, }, //	等待
+	{	0,	0,	Action_Wait,	Wait_PushOut,			ON,	0,	0,	0,	0, }, //	等待
+	{	0,	0,	Action_Wait,	Wait_PullBack,		ON,	0,	0,	0,	0, }, //	等待
+};
+
+
+ACTION_P Action_Pile_P[]= // 教導動作 堆疊
 {
 	{	0,	0,	Action_Pile,						0,		ON,	0,	0,	0,	0, }, //  堆疊 推疊0 開始
 	{	0,	0,	Action_Pile,						1,		ON,	0,	0,	0,	0, }, //  堆疊 推疊1 開始
@@ -1072,6 +1124,16 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	{
 		pwndQTeach_Pos[i] = pwndSender->FindControlFromName(u_pszQTeach_PosString[i]);
 	} 
+	// 取得座標位置 上下限顯示文字
+	for(int i = 0; i < sizeof(u_pszQTeach_Pos_MaxString)/sizeof(u_pszQTeach_Pos_MaxString[0]); i++ )
+	{
+		pwndQTeach_Pos_Max[i] = pwndSender->FindControlFromName(u_pszQTeach_Pos_MaxString[i]);
+	} 	
+	for(int i = 0; i < sizeof(u_pszQTeach_Pos_MinString)/sizeof(u_pszQTeach_Pos_MinString[0]); i++ )
+	{
+		pwndQTeach_Pos_Min[i] = pwndSender->FindControlFromName(u_pszQTeach_Pos_MinString[i]);
+	} 	
+	
 	// 取得指標 速度設定
 	for(int i = 0; i < sizeof(u_pszQTeach_SpeedString)/sizeof(u_pszQTeach_SpeedString[0]); i++ )
 	{
@@ -1185,6 +1247,11 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	// 取得指標 移動後下降 顯示圖片
 	pwndImg_QTeach_ReadyDownP	= pwndSender->FindControlFromName("Img_QTeach_ReadyDownP");
 	
+	// 取得指標 檢測 頂退完成(開始頂出) 選擇勾勾
+	pwndCheck_Ejector 	 = pwndSender->FindControlFromName("Check_Ejector");
+	u_Check_Ejector = GetDBValue(Check_Ejector_DB).lValue; // 取得db數值
+	b_Check_Ejector = u_Check_Ejector & 1; // 確認此u_Group bit 是否為1
+	printf("u_Check_Ejector=%x, b_Check_Ejector=%d\n",u_Check_Ejector,b_Check_Ejector);
 	
 	// 取得指標 堆疊選用
 	pwndCheck_Pile = pwndSender->FindControlFromName("Check_Pile"); // 堆疊選用
@@ -1696,6 +1763,19 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		}
 		Update_SLVL();
 	}
+	
+	if(pwnd ==pwndCheck_Ejector) // 勾勾 檢測 頂退完成(開始頂出)
+	{
+		b_Check_Ejector = !b_Check_Ejector;
+		u_Check_Ejector = b_Check_Ejector; // 設定 b_Check_Ejector
+		SetDBValue(Check_Ejector_DB,u_Check_Ejector);
+		printf("u_Check_Ejector=%d\n",u_Check_Ejector);
+
+		pwndCheck_Ejector->SetPropValueT("upbitmap",CheckBox_ImgPath[b_Check_Ejector]);
+		pwndCheck_Ejector->CreateA();
+		pwndCheck_Ejector->Update();
+	}
+		
 
 	if( (pwnd == pwndCheck_Pile) || (pwnd == pwndBtn_PileUse) ) // 堆疊勾勾 || 堆疊選擇 Btn按下彈起
 	{
@@ -1747,21 +1827,24 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED43",0x0000);
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED44",0x0000);// 監測移動軸 清0
 			
+			WhichAxis_Old = WhichAxis;
+			
 			b_RunOnlyOne = TRUE;// 完成 執行一次
 		}
 		
 	WhichAxis = GetDBValue(pWhichAxisDB).lValue; // 偵測哪一軸被按下
 	
-	if(WhichAxis<6 && WhichAxis!=WhichAxis_Old)
+	if(WhichAxis<6 && WhichAxis!=WhichAxis_Old && Manual_Type != MANUAL_STOP_MODE)
 	{
 		b_PosSet_OK[WhichAxis]=0; // 位置需重新確認
 		UpdateTeach_Pos(); // 更新 位置設定
-		Update_AxisMoveNow(WhichAxis); // 更新 現在移動軸 圖片
+		//Update_AxisMoveNow(WhichAxis); // 更新 現在移動軸 圖片
+		//MsgBoxCall("MsgBox_QTeachAxisSet.txt"); // 顯示 移動軸視窗
 		WhichAxis_Old =WhichAxis;
 	}	
 	else if(WhichAxis>=6 && WhichAxis!=WhichAxis_Old) // 按鈕放開
 	{
-		Update_AxisMoveNow(0); // 更新 現在移動軸 圖片 顯示無
+		//Update_AxisMoveNow(0); // 更新 現在移動軸 圖片 顯示無
 		WhichAxis_Old =WhichAxis;
 	}
 	
@@ -1776,6 +1859,57 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		}
 	}
 	
+}
+/*---------------------------------------------------------------------------+
+|  Function : OnMessage()                      	     	                       |
+|  Task     :   						     	                                           |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
+{
+    switch(message)
+	{
+		case	MSG_GPIO_READ:
+		{
+			printf("MSG_GPIO_READ\n");
+			// 背面安全按鈕
+			{
+			char gpio_safekey;
+			gpio_safekey = wParam&GPIO_SAFEKEY_BIT;
+			printf("gpio_safekey = %x\n",gpio_safekey);
+			if(gpio_safekey==GPIO_SAFEKEY_0) // 放開 停止
+				{
+					//printf("ACT=STOP\n");
+					Manual_Type = MANUAL_STOP_MODE;
+				}
+			else if(gpio_safekey==GPIO_SAFEKEY_1) // 1段 點動
+				{
+					//printf("ACT=JOG\n");
+					Manual_Type = MANUAL_JOG_MODE;
+					WhichAxis_Old=WhichAxis;
+				}
+			else if(gpio_safekey==GPIO_SAFEKEY_2) // 2段 連續動
+				{
+					//printf("ACT=CONTINUE\n");
+					Manual_Type = MANUAL_CONTINUE_MODE;
+					WhichAxis_Old=WhichAxis;
+				}
+			}
+		}
+		break;
+		case	MSG_PANEL_KEY: //hotkey
+		{
+			
+		}
+		break;
+		default:
+			break;	
+	}	
 }
 /*---------------------------------------------------------------------------+
 |  Function : OnDestroyA()                     	     	                       |
@@ -1827,21 +1961,21 @@ void    OnDestroyA(CtmWnd* pwndSender)
 			break;
 		case MoveOutP: // 離開P7
 			StartNo_W=(1+StartNum + u_SubArmUse_WaitP + u_Check_Move + u_SubArmUse_PickDownP + u_SubArmUse_PickP
-			+ u_SelectClamp);  // +從頭到尾增加的 跟 前一步增加的 
+			+ u_SelectClamp + b_Check_Ejector);  // +從頭到尾增加的 跟 前一步增加的 
 			Action_Step = StartNo_W-1 - b_SubArmSync - b_SubArmSync;
 			if(b_SaveFlag)
 				Save();
 			break;
 		case PlaceDownP: // 離開P8
 			StartNo_W=(1+StartNum + u_SubArmUse_WaitP + u_Check_Move + u_SubArmUse_PickDownP + u_SubArmUse_PickP + u_SubArmUse_MoveOutP + u_SubArmUse_SubPlaceP
-			+ u_SelectClamp + u_SelectDetect); // +從頭到尾增加的 跟 前一步增加的 
+			+ u_SelectClamp + b_Check_Ejector + u_SelectDetect); // +從頭到尾增加的 跟 前一步增加的 
 			Action_Step = StartNo_W-1 - b_SubArmSync - b_SubArmSync - b_SubArmSync*2;
 			if(b_SaveFlag)
 				Save();
 			break;
 		case PlaceP: // 離開P9
 			StartNo_W=(1+StartNum + u_SubArmUse_WaitP + u_Check_Move + u_SubArmUse_PickDownP + u_SubArmUse_PickP + u_SubArmUse_MoveOutP + u_SubArmUse_SubPlaceP
-			+ u_PileNum + u_SelectClamp + u_SelectDetect); // +從頭到尾增加的 跟 前一步增加的 
+			+ u_PileNum + u_SelectClamp + b_Check_Ejector + u_SelectDetect); // +從頭到尾增加的 跟 前一步增加的 
 			Action_Step = StartNo_W-1 - b_SubArmSync - b_SubArmSync - b_SubArmSync*2;
 			if(b_SaveFlag)
 				{
@@ -2364,6 +2498,18 @@ void	Save()
 							}
 						}		
 					}
+				}
+				
+				if(i==2 && b_Check_Ejector) // 設定動作 等待 
+				{
+					printf("Check Ejector!!!\n");
+					QTeach_PGNo++;
+					Action_Step++;
+					SaveAct_Wait2Temp(QTeach_PGNo,Wait_PullBack);
+					
+					// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]
+					g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
+					g_QTeach_Action_P[QTeach_PGNo-1].P1 = OFF; // 開關 P1
 				}
 				Action_PNo++;
 			}
@@ -3046,6 +3192,14 @@ void	UpdateImg()
 				u_clamp_onoff[i] = GetDBValue(P6_Clamp_onoff_DBString[i]).lValue; // 治具 ON/OFF 狀態
 				u_detect_onoff[i] = GetDBValue(P6_Clamp_detect_DBString[i]).lValue; // 治具 檢測 狀態 
 			}
+			
+			if(pwndCheck_Ejector!=NULL) // 顯示 檢測頂退完成(頂出開始)
+			{
+				pwndCheck_Ejector->SetPropValueT("upbitmap",CheckBox_ImgPath[b_Check_Ejector]);
+				pwndCheck_Ejector->CreateA();
+				pwndCheck_Ejector->Update();
+			}
+			
 			break;
 		case MoveOutP: // 橫出點
 			if(pwndBtn_PosHV !=NULL) // 姿態選擇存在
@@ -3863,6 +4017,40 @@ void	SaveAct_Detect2Temp(int QTeach_PGNo,int j)
 	//printf("Save g_QTeach_Action_P[%d].P5 = %d\n",QTeach_PGNo-1,Action_Detect_P[j].P5);
 }
 /*---------------------------------------------------------------------------+
+|  Function : SaveAct_Wait2Temp()                  												 |
+|       		: 將快速教導動作 等待 存入暫存g_QTeach_Action_P									 |
++---------------------------------------------------------------------------*/
+void	SaveAct_Wait2Temp(int QTeach_PGNo,int j)
+{
+	printf("SaveAct_Wait2Temp(%d,%d)\n",QTeach_PGNo,j);
+	/*======================================= 步驟序號 STEP =======================================*/
+	g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Wait_P[j].Step;
+	printf("Save g_QTeach_Action_P[%d].Step = %d\n",QTeach_PGNo-1,Action_Wait_P[j].Step);
+	/*======================================= 動作類型 TYPE =======================================*/
+	g_QTeach_Action_P[QTeach_PGNo-1].Type = Action_Wait_P[j].Type;
+	printf("Save g_QTeach_Action_P[%d].Type = %d\n",QTeach_PGNo-1,Action_Wait_P[j].Type);
+	/*======================================= 動作形式 NUM =======================================*/
+	g_QTeach_Action_P[QTeach_PGNo-1].Num = Action_Wait_P[j].Num;
+	printf("Save g_QTeach_Action_P[%d].Num = %d\n",QTeach_PGNo-1,Action_Wait_P[j].Num);
+	/*======================================= 參數1 =======================================*/
+	g_QTeach_Action_P[QTeach_PGNo-1].P1 = Action_Wait_P[j].P1;
+	//printf("Save g_QTeach_Action_P[%d].P1 = %d\n",QTeach_PGNo-1,Action_Wait_P[j].P1);
+	/*======================================= 參數2 =======================================*/
+	g_QTeach_Action_P[QTeach_PGNo-1].P2 = Action_Wait_P[j].P2;
+	//printf("Save g_QTeach_Action_P[%d].P2 = %d\n",QTeach_PGNo-1,Action_Wait_P[j].P2);
+	/*======================================= 參數3 =======================================*/
+	g_QTeach_Action_P[QTeach_PGNo-1].P3 = Action_Wait_P[j].P3;
+	//printf("Save g_QTeach_Action_P[%d].P3 = %d\n",QTeach_PGNo-1,Action_Wait_P[j].P3);
+	/*======================================= 參數4 =======================================*/
+	g_QTeach_Action_P[QTeach_PGNo-1].P4 = Action_Wait_P[j].P4;
+	//printf("Save g_QTeach_Action_P[%d].P4 = %d\n",QTeach_PGNo-1,Action_Wait_P[j].P4);
+	/*======================================= 參數5 =======================================*/
+	g_QTeach_Action_P[QTeach_PGNo-1].P5 = Action_Wait_P[j].P5;
+	//printf("Save g_QTeach_Action_P[%d].P5 = %d\n",QTeach_PGNo-1,Action_Wait_P[j].P5);
+}
+
+
+/*---------------------------------------------------------------------------+
 |  Function : SaveAct_Pile2Temp()                  													 |
 |       		: 將快速教導動作 堆疊 存入暫存g_QTeach_Action_P									 |
 +---------------------------------------------------------------------------*/
@@ -3964,10 +4152,12 @@ void	Update_PosHint(int Axis)
 		if(pwndQTeach_Pos[Axis]!=NULL)
 			pwndQTeach_Pos[Axis]->GetPropValueT("maxid", MAX_DBID, sizeof(MAX_DBID));
 		Max_value = GetDBValue(MAX_DBID).lValue;
+		gQTeach_PosLimt[Axis][MAX]=Max_value; // 紀錄位置設定的最大值上限
 		char	MIN_DBID[256];	memset(MIN_DBID, 0, sizeof(MIN_DBID));
 		pwndQTeach_Pos[Axis]->GetPropValueT("minid", MIN_DBID, sizeof(MIN_DBID));
-		Min_value = GetDBValue(MIN_DBID).lValue;
-			
+		Min_value = GetDBValue(MIN_DBID).lValue;			
+		gQTeach_PosLimt[Axis][MIN]=Min_value; // 紀錄位置設定的最小值上限
+		
 		pwndMask_PosHint[Axis]->Show(); // 遮罩
 		if(AxisPosNow[Axis]>Max_value) // 現在位置超過最大值
 		{
@@ -3992,7 +4182,28 @@ void	Update_PosHint(int Axis)
 		}
 		pwndImg_PosHint[Axis]->CreateA();
 		pwndImg_PosHint[Axis]->Show();
+		
+		if(pwndQTeach_Pos_Max[Axis]!=NULL) // 位置上下限 顯示文字
+		{
+			char StrValue[10]="\0";
+			memset(StrValue, 0, sizeof(StrValue));
+			sprintf(StrValue,"%d"".""%d", (Max_value/100), (Max_value%100)); // 2位小數
+			pwndQTeach_Pos_Max[Axis]->SetPropValueT("text",StrValue);
+			pwndQTeach_Pos_Max[Axis]->CreateA();
+			pwndQTeach_Pos_Max[Axis]->Show();
+		}
+		if(pwndQTeach_Pos_Min[Axis]!=NULL) // 位置上下限 顯示文字
+		{
+			char StrValue[10]="\0";
+			memset(StrValue, 0, sizeof(StrValue));
+			sprintf(StrValue,"%d"".""%d~", (Min_value/100), (Min_value%100)); // 2位小數
+			pwndQTeach_Pos_Min[Axis]->SetPropValueT("text",StrValue);
+			pwndQTeach_Pos_Min[Axis]->CreateA();
+			pwndQTeach_Pos_Min[Axis]->Show();
+		}
 	}
+	
+
 }
 /*---------------------------------------------------------------------------+
 |  Function : Update_Check_Move()               														 |
