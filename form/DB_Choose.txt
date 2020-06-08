@@ -1,0 +1,97 @@
+ViewDBChoose:CtmFormView
+  left =100
+  top =463
+  right =548
+  bottom =679
+  wtype =34871
+  bgc =65535
+  extag =10000
+  imageBackGround1:CtmImageBox
+    left =0
+    top =0
+    right =448
+    bottom =216
+    wtype =55
+    type =2
+    style =3
+    imagepath =res_tm640/msgBG_448X216.png
+    keycolor =63519
+  end
+  BtnFlwTP:CtmToolButton
+    left =130
+    top =72
+    right =380
+    bottom =132
+    wtype =48
+    taborder =21
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =FollowTP
+    upbitmap =res_tm640/pic/EditBtnUp_db.bmp
+    downbitmap =res_tm640/pic/EditBtnDown_db.bmp
+  end
+  BtnFlwCON:CtmToolButton
+    left =130
+    top =144
+    right =380
+    bottom =204
+    wtype =48
+    taborder =20
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    captionID =FollowCON
+    upbitmap =res_tm640/pic/EditBtnUp_db.bmp
+    downbitmap =res_tm640/pic/EditBtnDown_db.bmp
+  end
+  StaticText:CtmStaticX2
+    privilege =-5
+    left =56
+    top =12
+    right =200
+    bottom =64
+    wtype =48
+    fgc =0
+    fontsize =2
+    text =ParamDif
+  end
+  StaticMessage:CtmStaticX2
+    privilege =-5
+    left =200
+    top =12
+    right =380
+    bottom =64
+    wtype =48
+    fgc =0
+    fontsize =2
+  end
+  Value_497:CtmStaticX2
+    left =34
+    top =72
+    right =120
+    bottom =128
+    wtype =33
+    fgc =65535
+    bgc =33808
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+  Value_28:CtmStaticX2
+    left =34
+    top =144
+    right =120
+    bottom =200
+    wtype =33
+    fgc =65535
+    bgc =33808
+    fontsize =1
+    bordercolor =35953
+    align =34
+  end
+end
