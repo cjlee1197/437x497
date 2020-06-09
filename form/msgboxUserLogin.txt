@@ -41,34 +41,11 @@ ViewMsgBoxUserLogin:CtmFormView
     buttontype =0
     captionID =ROBOT_STR_LOGIN
   end
-  StaticUserId:CtmStaticX2
-    left =187
-    top =114
-    right =257
-    bottom =164
-    wtype =48
-    fgc =0
-    fontsize =2
-    textID =ROBOT_STR_USER_ID
-    align =34
-  end
-  SelectEditUserId:CtmSelectEdit
-    left =297
-    top =114
-    right =432
-    bottom =164
-    wtype =37
-    taborder =1
-    bgc =36256
-    fontsize =2
-    maxchar =15
-    listnum =3
-  end
   StaticUserPassword:CtmStaticX2
-    left =187
-    top =174
-    right =257
-    bottom =224
+    left =59
+    top =182
+    right =129
+    bottom =232
     wtype =48
     fgc =0
     fontsize =2
@@ -76,10 +53,10 @@ ViewMsgBoxUserLogin:CtmFormView
     align =34
   end
   StaticUserLogin:CtmStaticX2
-    left =155
-    top =54
-    right =259
-    bottom =104
+    left =27
+    top =78
+    right =131
+    bottom =128
     wtype =48
     fgc =0
     fontsize =2
@@ -87,9 +64,9 @@ ViewMsgBoxUserLogin:CtmFormView
     align =34
   end
   EditPassword:CtmEdit
-    left =297
+    left =201
     top =174
-    right =432
+    right =400
     bottom =224
     wtype =35
     taborder =2
@@ -109,5 +86,41 @@ ViewMsgBoxUserLogin:CtmFormView
     bgc =36256
     fontsize =2
     buttontype =0
+  end
+  BtnUser1:CtmToolButton
+    left =139
+    top =78
+    right =239
+    bottom =128
+    wtype =39
+    taborder =11
+    bgc =50712
+    fontsize =2
+    buttontype =0
+    captionID =USER_LOGIN_ID1
+  end
+  BtnUser2:CtmToolButton
+    left =251
+    top =78
+    right =351
+    bottom =128
+    wtype =39
+    taborder =12
+    bgc =50712
+    fontsize =2
+    buttontype =0
+    captionID =USER_LOGIN_ID2
+  end
+  BtnUser3:CtmToolButton
+    left =363
+    top =78
+    right =463
+    bottom =128
+    wtype =39
+    taborder =13
+    bgc =50712
+    fontsize =2
+    buttontype =0
+    captionID =USER_LOGIN_ID3
   end
 end

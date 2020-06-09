@@ -168,7 +168,13 @@ QTEACH_ACTION_P g_QTeach_Action_P[100]; // 快速教導 動作程式暫時存 cjlee add 201
 BOOL g_Hint_Download; // 提醒下載 0-下載完成 1-需要下載 cjlee add 2019/7/1 上午 10:50:38
 int g_Pile_Select; // 是否有選擇堆疊 n=第n組堆疊 cjlee add 2019/7/8 下午 03:49:27
 BOOL g_bMute=FALSE; // 按鍵靜音 FALSE-按鍵音 TRUE-靜音 cjlee add 2019/9/12 下午 03:14:41
-
+BOOL g_AutoMode=FALSE; // 全自動 Flag cjlee add 2019/12/11 下午 04:05:41
+int	g_DBVale_497=0; // Database 數值 示教器 cjlee 2020/4/1 上午 10:50:20
+int	g_DBVale_28=0; // Database 數值 控制器 cjlee 2020/4/1 上午 10:50:17
+int g_DBPrecision=0; // Database 小數點位數 cjlee 2020/4/1 下午 01:41:05
+char  gstr_DBValue_497[256] = "\0"; // Database 數值 cjlee 2020/4/9 下午 03:02:21
+char  gstr_DBValue_28[256] = "\0"; // Database 數值 cjlee 2020/4/9 下午 03:02:21
+extern		int  gQTeach_PosLimt[6][2] = {0}; // 快速教導 位置點上下限[軸1-5][MIN-0;MAX-1] cjlee 2020/5/25 上午 10:48:53
 /*---------------------------------------------------------------------------+
 |  Function :  OnKeyCommon   	                                             |
 |  Task     :  View 標準OnChange事件                                         |

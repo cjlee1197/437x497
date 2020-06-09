@@ -242,5 +242,11 @@ extern		QTEACH_ACTION_P g_QTeach_Action_P[100]; // 快速教導 動作程式暫時存 cjlee
 extern		BOOL g_Hint_Download; // 提醒下載 0-下載完成 1-需要下載
 extern		int g_Pile_Select; // 是否有選擇堆疊 n=第n組堆疊 cjlee add 2019/7/8 下午 03:49:27
 extern		BOOL g_bMute; // 按鍵靜音 FALSE-按鍵音 TRUE-靜音 cjlee add 2019/9/12 下午 03:14:41
-
+extern		BOOL g_AutoMode; // 按鍵靜音 FALSE-按鍵音 TRUE-靜音 cjlee add 2019/9/12 下午 03:14:41
+extern		int	g_DBVale_497; // Database 數值 示教器 cjlee 2020/4/1 上午 10:50:20
+extern		int	g_DBVale_28; // Database 數值 控制器 cjlee 2020/4/1 上午 10:50:17
+extern		int g_DBPrecision; // Database 小數點位數 cjlee 2020/4/1 下午 01:41:05
+extern		char  gstr_DBValue_497[256]; // Database 數值 cjlee 2020/4/9 下午 03:02:21
+extern		char  gstr_DBValue_28[256]; // Database 數值 cjlee 2020/4/9 下午 03:02:21
+extern		int  gQTeach_PosLimt[6][2]; // 快速教導 位置點上下限[軸1-5][MIN-0;MAX-1] cjlee 2020/5/25 上午 10:48:53
 #endif

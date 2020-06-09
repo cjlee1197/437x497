@@ -93,7 +93,7 @@ ViewDelay_ADJ:CtmFormView
     right =389
     bottom =366
     wtype =35
-    taborder =0
+    taborder =2
     fgc =0
     bgc =57279
     fontsize =1
@@ -124,7 +124,7 @@ ViewDelay_ADJ:CtmFormView
     right =389
     bottom =422
     wtype =35
-    taborder =1
+    taborder =3
     fgc =0
     bgc =57279
     fontsize =1
