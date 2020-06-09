@@ -992,6 +992,10 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			memset(pDataID, 0 ,sizeof(pDataID));
 			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2",SelectNo);
 			ACTIONPARA2 = GetDBValue(pDataID).lValue;
+			if(ActionType == Action_Axis && ACTIONPARA2<=0) // 軸動作 預設值
+			{
+				ACTIONPARA2=80;
+			}
 			if(pwndEditACTIONPARA2->Is("CtmSelectEdit"))
 			{
 				((CtmSelectEdit*)pwndEditACTIONPARA2)->SetIndex(ACTIONPARA2);
