@@ -55,8 +55,8 @@ char* pTransTypeDB = "MACHINE_PROFILE_NUM1_EQUIPMENT2_ACTION_TYPE"; // 傳動方式D
 
 BOOL	OnCreateA(CtmWnd* pwndSender)
 {
-	g_iPrivilege=16;
-	printf("g_iPrivilege=%d\n",g_iPrivilege); // 權限等級
+	//g_iPrivilege=16;
+	//printf("g_iPrivilege=%d\n",g_iPrivilege); // 權限等級
 	//u_PickerType = (int)(GetDBValue(pMechTypeDB).lValue); // 讀取設定 機型選擇 三五軸
 	// 機型選擇 編碼器選擇
 	dw_MechType 	 = (GetDBValue(pMechTypeDB).lValue);
