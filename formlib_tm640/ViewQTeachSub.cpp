@@ -349,7 +349,7 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				if(b_BtnNextP_OK) // 往上一頁 或是 設定完成往下一頁
 				{
 					// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]
-					QTeach_PGNo++;
+					//QTeach_PGNo++;
 					// Z 橫出
 					{
 						if(pwndQTeach_Pos[Axis_Z]!=NULL) // 設定位置 P1為位置
@@ -421,6 +421,13 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 							SetDBValue(Sub_DT_DBString[Axis_Y2], l_Delaytime[Axis_Y2]); // 寫入 WaitP db
 						}	
 					}			
+					QTeach_PGNo++;
+					// 副臂閥門關 (丟水口)
+					{
+						printf("Set Sub VALVE OFF\n");
+						g_QTeach_Action_P[QTeach_PGNo-1].Num = 14; // 副臂閥門 
+						g_QTeach_Action_P[QTeach_PGNo-1].P1 = 0; // 開關 P1 OFF
+					}
 					QTeach_PGNo++;
 					// Y2 上升 回位
 					{
