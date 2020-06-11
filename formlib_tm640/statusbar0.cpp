@@ -399,6 +399,24 @@ char*	u_pszMechPara[] =
 	"MACHINE_FUNCTION_OPTIONS_RSV10", // X2
 	"MACHINE_FUNCTION_OPTIONS_RSV11"  // Y2
 }; 
+char*	u_pszEditDoubleDB[] = // 魁计诀篶琌ㄏノDB嘿
+{
+	"",
+	"PICKER_PARAMETER_DOUBLE_X1",
+	"PICKER_PARAMETER_DOUBLE_Y1",
+	"PICKER_PARAMETER_DOUBLE_Z",
+	"PICKER_PARAMETER_DOUBLE_X2",
+	"PICKER_PARAMETER_DOUBLE_Y2"
+}; 
+char*	u_pszEditPOSINVDB[] = // 魁竚は琌ㄏノDB嘿
+{
+	"",
+	"PICKER_PARAMETER_POS_INV_X1",
+	"PICKER_PARAMETER_POS_INV_Y1",
+	"PICKER_PARAMETER_POS_INV_Z",
+	"PICKER_PARAMETER_POS_INV_X2",
+	"PICKER_PARAMETER_POS_INV_Y2"
+}; 
 
 char* Mech_Data_String[] = // 诀篶把计 じン 嘿
 {
@@ -544,13 +562,30 @@ char* ParamStr_Pile[] = // 帮舼把计 陪ボゅ
 	"VW_PID_GROUP4",		// 材舱
 };
 
-int Precision[5][7] = // 禸把计 计翴计 [ぐ或摸把计][材碭把计]
+char* Manul_String[] = // も笆把计 じン 嘿
+{
+	"PICKER_FORWARDSPEED", 	// 玡秈硉
+	"PICKER_POINTDISTANCE", 	  // 翴笆禯瞒
+};
+char* dbid_Manul[5][2] =  //も笆把计 db
+{	/*玡秈硉																									,翴笆禯瞒*/
+	{"MACHINE_CONFIGURATION_MANUAL_AXIS1_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS1_MINPOSITION"}, // X1
+	{"MACHINE_CONFIGURATION_MANUAL_AXIS2_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS2_MINPOSITION"}, // Y1
+	{"MACHINE_CONFIGURATION_MANUAL_AXIS3_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS3_MINPOSITION"}, // Z
+	{"MACHINE_CONFIGURATION_MANUAL_AXIS4_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS4_MINPOSITION"}, // X2
+	{"MACHINE_CONFIGURATION_MANUAL_AXIS5_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS5_MINPOSITION"}, // Y2
+};
+
+
+int Precision[7][7] = // 禸把计 计翴计 [ぐ或摸把计][材碭把计]
 {
 	{0,0,2,0,0,0,0},	// 诀篶把计
 	{0,0,0,0,0,3,3},	// 硉把计
 	{2,2,2,0,0,0,0},	// 跋办把计
 	{0,0,0,0,0,0,0},
 	{0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0},
+	{0,2,0,0,0,0,0},	// も笆把计
 };
 
 //把计计 (ゅ)
@@ -559,10 +594,7 @@ char* ParamStr_TransType[] = // 肚笆よΑ 把计计 (ゅ)
 	"MECH_GEAR_D", // –锣禯瞒
 	"MECH_TOOTHM_NUM", // 睛计家计
 };
-int iTransType=0,iDouble[5]={0},iPosInv[5]={0};; // 肚笆よΑ,计诀篶,竚は
-
-
-
+int iTransType=0,iDouble[5]={0},iPosInv[5]={0}; // 肚笆よΑ,计诀篶,竚は
 
 /*把计ゑ癸*/
 
@@ -1844,6 +1876,8 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 			iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
 			printf("Choose %d\n",iDBSelect);
 			SetChosenDB(dbid_MechType[0],Param497.iMechType,Param28.iMechType,iDBSelect);
+			dw_MechType  = (GetDBValue(pMechTypeDB).lValue);
+			u_PickerType = dw_MechType & MechWord;
 		}
 //		if(Param497.iEncType != Param28.iEncType) // 497㎝28 絪絏竟匡拒
 //		{
@@ -1853,9 +1887,10 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 //			SetChosenDB(dbid_MechType[0],Param497.iMechType,Param28.iMechType,iDBSelect);
 //		}
 		
-		
+		printf("NumofMechType=%d\n",NumofMechType[u_PickerType]);
 		for(int AxisNum=0; AxisNum<NumofMechType[u_PickerType]; AxisNum++) // ㄌ沮 NumofMechType[u_PickerType] 3禸┪5禸
 		{
+			
 			printf("AxisNum=%d\n",AxisNum);
 			{/*肚笆よΑ + 计诀篶 + 竚は*/
 				// 魁497计 肚笆よΑ + 计诀篶 + 竚は
@@ -1922,9 +1957,9 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 					else
 						iPosInv[AxisNum]=Param497.iPosInv[AxisNum];
 					
-					iTransType = iTransType + (iDouble[AxisNum]<<1) + (iPosInv[AxisNum]<<2);
-					printf("Set TransType = %x\n",iTransType);
-					
+					int TempValue = iTransType + (iDouble[AxisNum]<<1) + (iPosInv[AxisNum]<<2);
+					printf("iTransType=%d,iDouble=%d, iPosInv=%d\n",iTransType,iDouble[AxisNum],iPosInv[AxisNum]);
+					printf("iTransType=%d,iDouble=%d, iPosInv=%d\n",iTransType,iDouble[AxisNum],iPosInv[AxisNum]);
 					/*----------------------------------------+
 					| 肚笆よΑ						  									|
 					|	___________0_________________1__________|
@@ -1932,9 +1967,13 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 					| bit1 		ぃㄏノ			|		ㄏノ计诀篶		|
 					| bit2 		ぃㄏノ			|		ㄏノは竚		|
 					+----------------------------------------*/
+					printf("Set TransType = %x\n",TempValue);
+					SetDBValue(u_pszMechPara[AxisNum],TempValue);
+					printf("Get TransType=%d\n",int(GetDBValue(u_pszMechPara[AxisNum]).lValue));
+					SetDBValue(u_pszEditDoubleDB[AxisNum+1],iDouble[AxisNum]); // 计诀篶 DB
+					SetDBValue(u_pszEditPOSINVDB[AxisNum+1],iPosInv[AxisNum]); // 竚は DB
 					
-					//SetChosenDB(u_pszMechPara[AxisNum],iTransType,iTransType,iDBSelect);
-					
+					SetChosenDB(u_pszMechPara[AxisNum],Param497.iTransType,Param28.iTransType,iDBSelect);// 糶 (肚笆よΑ + 计诀篶 + 竚は) ノDB
 				}
 			}
 			
@@ -1989,6 +2028,7 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 					{
 						g_DBVale_497=Param497.Speed[AxisNum][i];g_DBVale_28=Param28.Speed[AxisNum][i]; // ボ毙竟の北竟计
 						g_DBPrecision=Precision[PSpeed][i]; // 把计弘
+						SprintfDBValue(Param497.Speed[AxisNum][i],Param28.Speed[AxisNum][i]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
 						
 						MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr_Speed[i]]);
 						iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
@@ -2000,12 +2040,12 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 			
 			{/*跋办砞﹚*/
 				printf("Compare ZoneLimit Param\n");
-				// 魁497计 硉把计
+				// 魁497计 跋办砞﹚把计
 				for(int i = 0; i < sizeof(ZoneLimit_String[AxisNum+1])/sizeof(ZoneLimit_String[AxisNum+1][0]); i++ )
 				{	 
 					Param497.ZoneLimit[AxisNum+1][i] = (int)(GetDBValue(dbid_ZoneLimit[AxisNum+1][i]).lValue);
 				}
-				//  28 叫―戈 硉把计
+				//  28 叫―戈 跋办砞﹚把计
 				wNum = sizeof(ZoneLimit_String[AxisNum+1])/sizeof(ZoneLimit_String[AxisNum+1][0]);
 				g_ptaskpicker->ReqValues(REQ_READMOTOR, wNum ,dbid_ZoneLimit[AxisNum+1]);
 				for(int i = 0; i < sizeof(ZoneLimit_String[AxisNum+1])/sizeof(ZoneLimit_String[AxisNum+1][0]); i++ ) // 沮 ZoneLimit_String[AxisNum+1] ず甧∕﹚把计计秖 
@@ -2018,6 +2058,7 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 					{
 						g_DBVale_497=Param497.ZoneLimit[AxisNum+1][i];g_DBVale_28=Param28.ZoneLimit[AxisNum+1][i]; // ボ毙竟の北竟计
 						g_DBPrecision=Precision[PZoneLimit][i]; // 把计弘
+						SprintfDBValue(Param497.ZoneLimit[AxisNum][i],Param28.ZoneLimit[AxisNum][i]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
 						
 						MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ZoneLimit_String[AxisNum+1][i]]);
 						iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
@@ -2025,8 +2066,77 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 						SetChosenDB(dbid_ZoneLimit[AxisNum+1][i],Param497.ZoneLimit[AxisNum+1][i],Param28.ZoneLimit[AxisNum+1][i],iDBSelect);
 					}
 				}
+				
+				//
+				// 魁497计 跋办砞﹚把计
+				Param497.ZoneLimit[0][1] = (int)(GetDBValue(dbid_ZoneLimit[0][1]).lValue);//禯瞒絯侥跋
+				Param497.ZoneLimit[0][2] = (int)(GetDBValue(dbid_ZoneLimit[0][2]).lValue);//矗玡肝
+				//  28 叫―戈 跋办砞﹚把计
+				wNum = sizeof(ZoneLimit_String[0])/sizeof(ZoneLimit_String[0][0]);
+				g_ptaskpicker->ReqValues(REQ_READMOTOR, wNum ,dbid_ZoneLimit[0]);
+				
+				Param28.ZoneLimit[0][1] = (int)(GetDBValue(dbid_ZoneLimit[0][1]).lValue);
+				Param28.ZoneLimit[0][2] = (int)(GetDBValue(dbid_ZoneLimit[0][2]).lValue);
+				
+				printf("Get %s=%d\n",dbid_ZoneLimit[0][1],Param28.ZoneLimit[0][1]); // 28
+				printf("497=%d\n",Param497.ZoneLimit[0][1]); // 497				
+				if(Param497.ZoneLimit[0][1] != Param28.ZoneLimit[0][1]) // 497㎝28 ぃ
+				{
+					g_DBVale_497=Param497.ZoneLimit[0][1];g_DBVale_28=Param28.ZoneLimit[0][1]; // ボ毙竟の北竟计
+					g_DBPrecision=Precision[PZoneLimit][1]; // 把计弘
+					SprintfDBValue(Param497.ZoneLimit[0][1],Param28.ZoneLimit[0][1]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
+					
+					MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ZoneLimit_String[0][1]]);
+					iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+					printf("Choose %d\n",iDBSelect);
+					SetChosenDB(dbid_ZoneLimit[0][1],Param497.ZoneLimit[0][1],Param28.ZoneLimit[0][1],iDBSelect);
+				}
+				
+				printf("Get %s=%d\n",dbid_ZoneLimit[0][2],Param28.ZoneLimit[0][2]); // 28
+				printf("497=%d\n",Param497.ZoneLimit[0][2]); // 497
+				if(Param497.ZoneLimit[0][2] != Param28.ZoneLimit[0][2]) // 497㎝28 ぃ
+				{
+					g_DBVale_497=Param497.ZoneLimit[0][2];g_DBVale_28=Param28.ZoneLimit[0][2]; // ボ毙竟の北竟计
+					g_DBPrecision=Precision[PZoneLimit][2]; // 把计弘
+					SprintfDBValue(Param497.ZoneLimit[0][2],Param28.ZoneLimit[0][2]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
+					
+					MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ZoneLimit_String[0][2]]);
+					iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+					printf("Choose %d\n",iDBSelect);
+					SetChosenDB(dbid_ZoneLimit[0][2],Param497.ZoneLimit[0][2],Param28.ZoneLimit[0][2],iDBSelect);
+				}
 			}
-		}
+			
+			{/*も笆把计*/
+				// 魁497计 硉把计
+				for(int i = 0; i < sizeof(Manul_String)/sizeof(Manul_String[0]); i++ )
+				{	 
+					Param497.Manual[AxisNum][i] = (int)(GetDBValue(dbid_Manul[AxisNum][i]).lValue);
+				}
+				//  28 叫―戈 硉把计
+				wNum = sizeof(Manul_String)/sizeof(Manul_String[0]);
+				g_ptaskpicker->ReqValues(REQ_READMOTOR, wNum ,dbid_Manul[AxisNum]);
+				for(int i = 0; i < sizeof(Manul_String)/sizeof(Manul_String[0]); i++ ) // 沮 Manul_String ず甧∕﹚把计计秖 
+				{	
+					Param28.Manual[AxisNum][i] = (int)(GetDBValue(dbid_Manul[AxisNum][i]).lValue);
+					printf("Get %s=%d\n",dbid_Manul[AxisNum][i],Param28.Manual[AxisNum][i]); // 28
+					printf("497=%d\n",Param497.Manual[AxisNum][i]); // 497
+					// ゑ耕 硉把计
+					if(Param497.Manual[AxisNum][i] != Param28.Manual[AxisNum][i]) // 497㎝28 ぃ
+					{
+						g_DBVale_497=Param497.Manual[AxisNum][i];g_DBVale_28=Param28.Manual[AxisNum][i]; // ボ毙竟の北竟计
+						g_DBPrecision=Precision[PManual][i]; // 把计弘
+						SprintfDBValue(Param497.Manual[AxisNum][i],Param28.Manual[AxisNum][i]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
+						printf("MsgBoxCall\n");
+						MsgBoxCall("DB_Choose.txt",g_MultiLanguage[Manul_String[i]]);
+						iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+						printf("Choose %d\n",iDBSelect);
+						SetChosenDB(dbid_Manul[AxisNum][i],Param497.Manual[AxisNum][i],Param28.Manual[AxisNum][i],iDBSelect);
+					}
+				}
+			}
+			
+		} // ㄌ沮 NumofMechType[u_PickerType] 3禸┪5禸
 		{/*家Α匡拒*/
 			// 魁497计 家Α匡拒 把计
 			for(int i = 0; i < sizeof(dbid_Mode)/sizeof(dbid_Mode[0]); i++ )
@@ -2164,62 +2274,6 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 				}
 			}
 		}
-		
-//		printf("dw_MechType=%d\n",NumofMechType[dw_MechType]);
-//		// ㄌ沮 诀篶匡拒dw_MechType ∕﹚ゑ癸禸计NumofMechType[dw_MechType]
-//		for(int AxisNum=0; AxisNum<NumofMechType[dw_MechType]; AxisNum++)
-//		{
-//			// 魁497计
-//			for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
-//			{			
-//				itemp = (int)(GetDBValue(dbid_Mech[AxisNum+1][i]).lValue);
-//				i_dbvalue_497[AxisNum+1][i] = itemp;
-//			}
-//			
-//			//  28 叫―戈 Mech 诀瘪把计
-//			wNum = sizeof(dbid_Mech[AxisNum+1])/sizeof(char*);
-//			g_ptaskpicker->ReqValues(REQ_READMOTOR, wNum ,dbid_Mech[AxisNum+1]);
-//
-//			for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
-//			{			
-//				printf("Get = %s\n",dbid_Mech[AxisNum+1][i]);
-//				itemp = (int)(GetDBValue(dbid_Mech[AxisNum+1][i]).lValue);
-//				
-//				if (itemp != i_dbvalue_497[AxisNum+1][i] )
-//					i_dbvalue_different++;
-//				
-//				printf("%s=%d\n",dbid_Mech[AxisNum+1][i],itemp); // 28
-//				printf("497=%d\n",i_dbvalue_497[AxisNum+1][i]); // 497
-//			}
-//			printf("i_dbvalue_different=%d\n",i_dbvalue_different);
-//			// ボ毙竟㎝北竟把计计ぃ
-//			if(i_dbvalue_different>0)
-//			{
-//				MsgBoxCall("DB_Choose.txt");
-//				
-//				iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
-//				printf("Choose %d\n",iDBSelect);
-//				if(iDBSelect == DB_TP) // 497
-//				{
-//					for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
-//					{			
-//						printf("Set %s = %d\n",dbid_Mech[AxisNum+1][i],i_dbvalue_497[AxisNum+1][i]);
-//						SetDBValue(dbid_Mech[AxisNum+1][i],i_dbvalue_497[AxisNum+1][i]);
-//					}
-//				}
-//				else if(iDBSelect == DB_CON) // 28北竟
-//				{
-//					for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
-//					{			
-//						itemp = (int)(GetDBValue(dbid_Mech[AxisNum+1][i]).lValue);
-//						SetDBValue(dbid_Mech[AxisNum+1][i],0);
-//						printf("Set %s = %d\n",dbid_Mech[AxisNum+1][i],itemp);
-//						SetDBValue(dbid_Mech[AxisNum+1][i],itemp);
-//					}
-//				}
-//				i_dbvalue_different=0;
-//			}
-//		}
 	}
 }
 
@@ -2234,15 +2288,19 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 +---------------------------------------------------------------------------*/
 void	SetChosenDB(char* dbIDName, int Param497, int Param28, int iDBSelect)
 {
+	printf("SetChosenDB\n");
 	if(iDBSelect == DB_TP) // 497
 	{
 		SetDBValue(dbIDName,Param497);
+		printf("SetDBValue %s=%d\n",dbIDName,Param497);
 	}
 	else if(iDBSelect == DB_CON) // 28北竟
 	{
-		SetDBValue(dbIDName,-1);
+		SetDBValue(dbIDName,-99);
 		SetDBValue(dbIDName,Param28);
+		printf("SetDBValue %s=%d\n",dbIDName,Param28);
 	}
+	
 }
 
 /*---------------------------------------------------------------------------+

@@ -52,6 +52,7 @@ typedef struct tagParam
 	int Delay[4];				// ┑匡拒
 	int Prod[2];				// ネ玻把计
 	int	Pile[4][6];			// 帮舼把计
+	int Manual[5][2];		// も笆把计
 }tmParam;
 
 enum PrecisionList		// 把计弘 计翴竚计
@@ -59,6 +60,10 @@ enum PrecisionList		// 把计弘 计翴竚计
 	PAxis,			// 禸把计
 	PSpeed,			// 硉把计
 	PZoneLimit,	// 跋办把计
+	P,
+	PP,
+	PPP,
+	PManual,		// も笆把计
 };
 
 enum
