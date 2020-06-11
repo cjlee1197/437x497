@@ -427,6 +427,35 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		UpdateData(); // 更新資料 定義
 		UpdateBtnData(); // 更新資料 倍數機構 位置反向
 	}
+	
+	printf("Update String\n");
+	for(int i = 0; i < 5; i++)
+	{
+		if(u_pwndEdit_DOUBLE[i] != NULL) // 倍數機構
+			{
+				int u_Double = (int)(GetDBValue(u_pszEditDoubleDB[i+1]).lValue);
+				printf("%s=%d\n",u_pszEditDoubleDB[i+1],u_Double);
+				b_Double[i]=TF[u_Double];
+				u_pwndEdit_DOUBLE[i]->SetPropValueT("captionID",Str_Double[u_Double]);
+				u_pwndEdit_DOUBLE[i]->SetPropValueT("bgc",Color_Btn[u_Double]);		
+				u_pwndEdit_DOUBLE[i]->CreateA();
+				u_pwndEdit_DOUBLE[i]->Update();
+				if(u_Double == 1)
+					((CtmButton*)u_pwndEdit_DOUBLE[i])->Press(tmBUTTON_DOWN);
+			}
+		if(u_pwndDOUBLE_POS_INV[i] != NULL) // 位置反向
+			{
+				int u_POSINV = (int)(GetDBValue(u_pszEditPOSINVDB[i+1]).lValue);
+				printf("%s=%d\n",u_pszEditPOSINVDB[i+1],u_POSINV);
+				b_Dir[i]=TF[u_POSINV];
+				u_pwndDOUBLE_POS_INV[i]->SetPropValueT("captionID",Str_POSINV[u_POSINV]);
+				u_pwndDOUBLE_POS_INV[i]->SetPropValueT("bgc",Color_Btn[u_POSINV]);	
+				u_pwndDOUBLE_POS_INV[i]->CreateA();
+				u_pwndDOUBLE_POS_INV[i]->Update();	
+				if(u_POSINV == 1)
+					((CtmButton*)u_pwndDOUBLE_POS_INV[i])->Press(tmBUTTON_DOWN);
+			}
+	}
 
 	if(pwndSender->Is("CtmFormView")) return ((CtmFormView*)pwndSender)->OnKey1(wKey);
 	else return _NULL_KEY;
@@ -824,6 +853,7 @@ void	UpdateBtnData()
 	if(pwndDOUBLE!=NULL)
 	{
 		int u_Double = (int)(GetDBValue(u_pszEditDoubleDB[u_Axis_Num]).lValue);
+		printf("Axis%d u_Double=%d\n",u_Axis_Num,u_Double);
 		b_Double[u_Axis_Num]=TF[u_Double];
 		pwndDOUBLE->SetPropValueT("captionID",Str_Double[u_Double]);
 		pwndDOUBLE->SetPropValueT("bgc",Color_Btn[u_Double]);	
