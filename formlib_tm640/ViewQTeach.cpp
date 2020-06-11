@@ -1212,7 +1212,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 			u_SubArmUse_PickDownP  = 1; // 副臂 增加步數 下降點
 			u_SubArmUse_PickP			 = 1; // 副臂 增加步數 取件點
 			u_SubArmUse_MoveOutP	 = 2; // 副臂 增加步數 橫出點
-			u_SubArmUse_SubPlaceP  = 5; // 副臂 增加步數 橫出點 (丟水口)
+			u_SubArmUse_SubPlaceP  = 6; // 副臂 增加步數 橫出點 (丟水口)
 		}
 	// 取得指標 副臂與主臂同動 勾勾
 	pwndCheck_SubSync	= pwndSender->FindControlFromName("Check_SubSync");	
@@ -1961,21 +1961,21 @@ void    OnDestroyA(CtmWnd* pwndSender)
 			break;
 		case MoveOutP: // 離開P7
 			StartNo_W=(1+StartNum + u_SubArmUse_WaitP + u_Check_Move + u_SubArmUse_PickDownP + u_SubArmUse_PickP
-			+ u_SelectClamp + b_Check_Ejector);  // +從頭到尾增加的 跟 前一步增加的 
+			+ u_SelectClamp + b_Check_Ejector + b_SubArmUse/*副臂夾具閥*/);  // +從頭到尾增加的 跟 前一步增加的 
 			Action_Step = StartNo_W-1 - b_SubArmSync - b_SubArmSync;
 			if(b_SaveFlag)
 				Save();
 			break;
 		case PlaceDownP: // 離開P8
 			StartNo_W=(1+StartNum + u_SubArmUse_WaitP + u_Check_Move + u_SubArmUse_PickDownP + u_SubArmUse_PickP + u_SubArmUse_MoveOutP + u_SubArmUse_SubPlaceP
-			+ u_SelectClamp + b_Check_Ejector + u_SelectDetect); // +從頭到尾增加的 跟 前一步增加的 
+			+ u_SelectClamp + b_Check_Ejector + u_SelectDetect + b_SubArmUse/*副臂夾具閥*/); // +從頭到尾增加的 跟 前一步增加的 
 			Action_Step = StartNo_W-1 - b_SubArmSync - b_SubArmSync - b_SubArmSync*2;
 			if(b_SaveFlag)
 				Save();
 			break;
 		case PlaceP: // 離開P9
 			StartNo_W=(1+StartNum + u_SubArmUse_WaitP + u_Check_Move + u_SubArmUse_PickDownP + u_SubArmUse_PickP + u_SubArmUse_MoveOutP + u_SubArmUse_SubPlaceP
-			+ u_PileNum + u_SelectClamp + b_Check_Ejector + u_SelectDetect); // +從頭到尾增加的 跟 前一步增加的 
+			+ u_PileNum + u_SelectClamp + b_Check_Ejector + u_SelectDetect + b_SubArmUse/*副臂夾具閥*/); // +從頭到尾增加的 跟 前一步增加的 
 			Action_Step = StartNo_W-1 - b_SubArmSync - b_SubArmSync - b_SubArmSync*2;
 			if(b_SaveFlag)
 				{
@@ -2394,7 +2394,9 @@ void	Save()
 							}
 						}		
 					}
-				}
+				}	
+				
+				
 				if(b_SubArmUse) // 副臂使用
 				{
 					if(i==1) // 加在第2步 設定動作 軸動作 新增動作 
@@ -2499,6 +2501,27 @@ void	Save()
 						}		
 					}
 				}
+				if(i==1 && b_SubArmUse) // 設定動作 閥門  新增動作 副臂閥門
+				{
+					QTeach_PGNo++;
+					Action_Step++;
+					SaveAct_Valve2Temp(QTeach_PGNo,0);
+		
+					g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
+					g_QTeach_Action_P[QTeach_PGNo-1].Num = 14; // 
+								
+					//on_off = GetDBValue(P6_Clamp_onoff_DBString[k]).lValue;
+					g_QTeach_Action_P[QTeach_PGNo-1].P1 = ON; // 開關 P1
+					//detect = GetDBValue(P6_Clamp_detect_DBString[k]).lValue;
+					//g_QTeach_Action_P[QTeach_PGNo-1].P2 = detect; // 檢測 P2
+//								if(pwndQTeach_Clamp_DT[k]!=NULL) // 設定延時 P5為延時 
+//								{
+//									pwndQTeach_Clamp_DT[k]->GetPropValueT("value", &l_Clamp_Delaytime[k],sizeof(l_Clamp_Delaytime[k]));
+//									if(l_Clamp_Delaytime[k]!=0) // 0為不用
+//										g_QTeach_Action_P[QTeach_PGNo-1].P5 = l_Clamp_Delaytime[k]*10; // 寫入參數數值 g_QTeach_Action_P[]
+//									SetDBValue(P6_Clamp_DT_DBString[k], l_Clamp_Delaytime[k]); // 寫入 PickP db
+//								}
+				}		
 				
 				if(i==2 && b_Check_Ejector) // 設定動作 等待 
 				{
@@ -2670,6 +2693,10 @@ void	Save()
 				
 				QTeach_PGNo++;Action_Step++;
 				SaveAct_Axis2Temp(QTeach_PGNo,Axis_Y2); // 寫入 軸動作 Axis_Y2 (下降)
+				g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
+				
+				QTeach_PGNo++;Action_Step++;
+				SaveAct_Valve2Temp(QTeach_PGNo,0); // 寫入 閥門 副臂閥門 OFF
 				g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
 				
 				QTeach_PGNo++;Action_Step++;
