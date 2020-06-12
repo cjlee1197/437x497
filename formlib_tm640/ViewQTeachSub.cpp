@@ -44,9 +44,14 @@
 #define		Color_Red			0xF800
 #define		Color_Yellow 	0xFF80
 #define		Color_LBlue		0xDFBF
+
+#define		MIN				0  //
+#define		MAX				1  //
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
+BOOL b_RunOnlyOne = FALSE; // 利用 Update() 來到這頁 只執行一次
+
 int		AxisXOld =0,AxisYOld =0,AxisZOld =0,AxisX2Old =0,AxisY2Old =0,AxisCOld=0,
 AxisXNew =0,AxisYNew =0,AxisX2New =0,AxisY2New =0,AxisZNew =0;// 偵測HotKey按下的軸
 int GetAxisPos=0; //取得哪一軸
@@ -69,6 +74,40 @@ char* GetPos_String[] = // 取得位置Btn 名稱
 	"Btn_GetPos_Y2",
 };
 
+CtmWnd*		pwndBar_PosHint[6] = {NULL}; // 位置提示 bar
+char* Bar_PosHint_String[] = // 位置提示 bar 名稱
+{
+	"",
+	"PosHint_X1",
+	"PosHint_Y1",
+	"PosHint_Z",
+	"PosHint_X2",
+	"PosHint_Y2",
+};
+
+CtmWnd*		pwndImg_PosHint[6] = {NULL}; // 位置提示 圖片
+char* Img_PosHint_String[] = // 位置提示 圖片 名稱
+{
+	"",
+	"Img_PosHint_X1",
+	"Img_PosHint_Y1",
+	"Img_PosHint_Z",
+	"Img_PosHint_X2",
+	"Img_PosHint_Y2",
+};
+CtmWnd*		pwndMask_PosHint[6] = {NULL}; // 位置提示 遮罩
+char* Mask_PosHint_String[] = // 位置提示 圖片 名稱
+{
+	"",
+	"Mask_PosHint_X1",
+	"Mask_PosHint_Y1",
+	"Mask_PosHint_Z",
+	"Mask_PosHint_X2",
+	"Mask_PosHint_Y2",
+};
+long AxisPosNow_Old[6]={0};
+long AxisPosNow[6]={0};
+
 char* AxisPosNow_DBString[] = // 紀錄現在位置 DB名稱
 {
 	"",
@@ -89,6 +128,26 @@ char* u_pszQTeach_PosString[] =
 	"QTeach_Pos_Z",
 	"QTeach_Pos_X2",
 	"QTeach_Pos_Y2",
+};
+CtmWnd*   pwndQTeach_Pos_Max[6] ={NULL}; // 快速教導 位置 上下限 顯示文字
+CtmWnd*   pwndQTeach_Pos_Min[6] ={NULL};
+char* u_pszQTeach_Pos_MaxString[] =
+{
+	"",
+	"Pos_Max_X1",
+	"Pos_Max_Y1",
+	"Pos_Max_Z",
+	"Pos_Max_X2",
+	"Pos_Max_Y2",
+};
+char* u_pszQTeach_Pos_MinString[] =
+{
+	"",
+	"Pos_Min_X1",
+	"Pos_Min_Y1",
+	"Pos_Min_Z",
+	"Pos_Min_X2",
+	"Pos_Min_Y2",
 };
 
 CtmWnd*   pwndQTeach_Speed[6] ={NULL}; // 快速教導 速度設定
@@ -175,11 +234,37 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 		pwndBtn_GetPos[i] = pwndSender->FindControlFromName(GetPos_String[i]);
 	} 
 	
+	// 取得指標 位置提示 圖片
+	for(int i = 0; i < sizeof(Bar_PosHint_String)/sizeof(Bar_PosHint_String[0]); i++ )
+	{
+		pwndBar_PosHint[i] = pwndSender->FindControlFromName(Bar_PosHint_String[i]);
+	}
+	// 取得指標 位置提示 圖片
+	for(int i = 0; i < sizeof(Img_PosHint_String)/sizeof(Img_PosHint_String[0]); i++ )
+	{
+		pwndImg_PosHint[i] = pwndSender->FindControlFromName(Img_PosHint_String[i]);
+	}
+	// 取得指標 位置提示 遮罩
+	for(int i = 0; i < sizeof(Img_PosHint_String)/sizeof(Img_PosHint_String[0]); i++ )
+	{
+		pwndMask_PosHint[i] = pwndSender->FindControlFromName(Mask_PosHint_String[i]);
+	}
+	
+	
 	// 取得指標 座標位置設定
 	for(int i = 0; i < sizeof(u_pszQTeach_PosString)/sizeof(u_pszQTeach_PosString[0]); i++ )
 	{
 		pwndQTeach_Pos[i] = pwndSender->FindControlFromName(u_pszQTeach_PosString[i]);
 	} 
+	// 取得座標位置 上下限顯示文字
+	for(int i = 0; i < sizeof(u_pszQTeach_Pos_MaxString)/sizeof(u_pszQTeach_Pos_MaxString[0]); i++ )
+	{
+		pwndQTeach_Pos_Max[i] = pwndSender->FindControlFromName(u_pszQTeach_Pos_MaxString[i]);
+	} 	
+	for(int i = 0; i < sizeof(u_pszQTeach_Pos_MinString)/sizeof(u_pszQTeach_Pos_MinString[0]); i++ )
+	{
+		pwndQTeach_Pos_Min[i] = pwndSender->FindControlFromName(u_pszQTeach_Pos_MinString[i]);
+	} 	
 	// 取得指標 速度設定
 	for(int i = 0; i < sizeof(u_pszQTeach_SpeedString)/sizeof(u_pszQTeach_SpeedString[0]); i++ )
 	{
@@ -264,7 +349,15 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	AxisZNew = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED43").lValue & 0x0004;
 	AxisX2New = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED44").lValue & 0x0001;
 	AxisY2New = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED44").lValue & 0x0002;
-	
+
+	if(!b_RunOnlyOne)
+	{
+		for(int i = 0; i < sizeof(Img_PosHint_String)/sizeof(Img_PosHint_String[0]); i++ )
+		{
+			Update_PosHint(i);
+		}
+	}
+
 	if(AxisXNew != AxisXOld)	//X1軸 被按下
 	{
 		printf("AxisXNew\n");
@@ -319,6 +412,16 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			pwndQTeach_Pos[Axis_Y2]->Update();
 		}
 		AxisY2Old = AxisY2New;
+	}
+	
+	for(int i = 0; i < sizeof(Img_PosHint_String)/sizeof(Img_PosHint_String[0]); i++ )
+	{
+		AxisPosNow[i] = GetDBValue(AxisPosNow_DBString[i]).lValue; // 取得數值
+		if(AxisPosNow_Old[i]!=AxisPosNow[i])
+		{
+			Update_PosHint(i);
+			AxisPosNow_Old[i] = AxisPosNow[i];
+		}
 	}
 }
 
@@ -651,4 +754,72 @@ void	UpdateBtnNextP()
 		pwndBtnNextP->CreateA();
 		pwndBtnNextP->Update();
 	}
+}
+
+/*---------------------------------------------------------------------------+
+|  Function : Update_PosHint(int Axis)               												 |
+|       		: 更新 位置提示																									 |
++---------------------------------------------------------------------------*/
+void	Update_PosHint(int Axis)
+{
+	printf("Update_PosHint(%d)\n",Axis);
+	if(pwndImg_PosHint[Axis]!=NULL)
+	{
+		long Max_value=0,Min_value=0;
+		char	MAX_DBID[256];	memset(MAX_DBID, 0, sizeof(MAX_DBID));
+		if(pwndQTeach_Pos[Axis]!=NULL)
+			pwndQTeach_Pos[Axis]->GetPropValueT("maxid", MAX_DBID, sizeof(MAX_DBID));
+		Max_value = GetDBValue(MAX_DBID).lValue;
+		gQTeach_PosLimt[Axis][MAX]=Max_value; // 紀錄位置設定的最大值上限
+		char	MIN_DBID[256];	memset(MIN_DBID, 0, sizeof(MIN_DBID));
+		pwndQTeach_Pos[Axis]->GetPropValueT("minid", MIN_DBID, sizeof(MIN_DBID));
+		Min_value = GetDBValue(MIN_DBID).lValue;			
+		gQTeach_PosLimt[Axis][MIN]=Min_value; // 紀錄位置設定的最小值上限
+		
+		pwndMask_PosHint[Axis]->Show(); // 遮罩
+		if(AxisPosNow[Axis]>Max_value) // 現在位置超過最大值
+		{
+			pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_NO.bmp");
+			pwndImg_PosHint[Axis]->SetPropValueT("left",317+(80)); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("right",317+(80)+20); // 標示 顯示位置
+		}
+		else if(AxisPosNow[Axis]<Min_value) // 現在位置 小於最小值
+		{
+			pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_NO.bmp");
+			pwndImg_PosHint[Axis]->SetPropValueT("left",317); // 標示 顯示位置
+			pwndImg_PosHint[Axis]->SetPropValueT("right",317+20); // 標示 顯示位置
+		}
+		else // 合理的位置
+		{
+			if((Max_value-Min_value)!=0)
+			{
+				pwndImg_PosHint[Axis]->SetPropValueT("imagepath","res_tm640/pic/picker/PosHint_OK.bmp");
+				pwndImg_PosHint[Axis]->SetPropValueT("left",317+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))); // 標示 顯示位置
+				pwndImg_PosHint[Axis]->SetPropValueT("right",317+((AxisPosNow[Axis]-Min_value)*80/(Max_value-Min_value))+20); // 標示 顯示位置
+			}
+		}
+		pwndImg_PosHint[Axis]->CreateA();
+		pwndImg_PosHint[Axis]->Show();
+		
+		if(pwndQTeach_Pos_Max[Axis]!=NULL) // 位置上下限 顯示文字
+		{
+			char StrValue[10]="\0";
+			memset(StrValue, 0, sizeof(StrValue));
+			sprintf(StrValue,"%d"".""%d", (Max_value/100), (Max_value%100)); // 2位小數
+			pwndQTeach_Pos_Max[Axis]->SetPropValueT("text",StrValue);
+			pwndQTeach_Pos_Max[Axis]->CreateA();
+			pwndQTeach_Pos_Max[Axis]->Show();
+		}
+		if(pwndQTeach_Pos_Min[Axis]!=NULL) // 位置上下限 顯示文字
+		{
+			char StrValue[10]="\0";
+			memset(StrValue, 0, sizeof(StrValue));
+			sprintf(StrValue,"%d"".""%d~", (Min_value/100), (Min_value%100)); // 2位小數
+			pwndQTeach_Pos_Min[Axis]->SetPropValueT("text",StrValue);
+			pwndQTeach_Pos_Min[Axis]->CreateA();
+			pwndQTeach_Pos_Min[Axis]->Show();
+		}
+	}
+	
+
 }
