@@ -355,6 +355,8 @@ ViewSyst:CtmFormView
     taborder =116
     bgc =59196
     fontsize =1
+    visible =FALSE
+    enabled =FALSE
   end
   Choose_LG0:CtmToolButton
     left =86
@@ -410,6 +412,8 @@ ViewSyst:CtmFormView
     taborder =100
     bgc =54970
     downcontrol =editNEWNAME
+    visible =FALSE
+    enabled =FALSE
     colorcontrol =4
     destcolor =57182
     upbitmap =res_tm640/pic/picker/Check_No.bmp
@@ -457,6 +461,8 @@ ViewSyst:CtmFormView
     bottom =696
     wtype =48
     taborder =32
+    visible =FALSE
+    enabled =FALSE
     align =18
     upbitmap =res_tm640/pic/LG_Next.bmp
     key =32
@@ -470,6 +476,8 @@ ViewSyst:CtmFormView
     bottom =696
     wtype =48
     taborder =31
+    visible =FALSE
+    enabled =FALSE
     align =18
     upbitmap =res_tm640/pic/LG_Last.bmp
     key =31
