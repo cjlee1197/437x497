@@ -39,7 +39,7 @@
 #define	UPDATEPATH "/work/UpdateFile"
 #define	NOWPATH "./"
 
-#define USB_DRIVE_MAX_NUM 3
+#define USB_DRIVE_MAX_NUM 8
 #define USB_MODE_MAX_NUM 3
 #define Mount_Path"./usb/"
 
@@ -60,6 +60,8 @@ char*	u_pszUSB_Drive_Path[] =
 	"/dev/sda1",
 	"/dev/sda2",
 	"/dev/sda3",
+	"/dev/sda4",
+	"/dev/sda5",
 	"/dev/sdb1",
 	"/dev/sdc1",
 	"/dev/sdd1",
@@ -158,7 +160,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		//if(g_TxCNCData.shmCNCData.CNC_mode_lgt != OP_JOG_MODE)
 		if(u_wPickerOPSatus  != STATE_STOP) // 不在手動狀態
 		{
-			MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_SEITCH_MANUAL"); // 請切換至手動模式再進行操作
+			MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_SWITCH_STOP"); // 請切換至停止模式再進行操作
 			return wIDControl;
 		}
 		//printf("pwndTemp == u_BtnReadyUpdate\n");
@@ -193,7 +195,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		//if(g_TxCNCData.shmCNCData.CNC_mode_lgt != OP_JOG_MODE)
 		if(u_wPickerOPSatus  != STATE_STOP) // 不在手動狀態
 		{
-			MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_SEITCH_MANUAL");
+			MsgBoxCall("msgboxConfirm.txt","ROBOT_STR_SWITCH_STOP");
 			return wIDControl;
 		}
 		if(ReadyUpdate)
@@ -334,17 +336,28 @@ void	USB_mount()
 		while(state!=0 && USBModeCnt<USB_MODE_MAX_NUM)	
 		{
 			state = mount(u_pszUSB_Drive_Path[g_Drive_Num-1] , Mount_Path , u_pszUSB_Mode[USBModeCnt] , 0 , "shortname=winnt" );
+			printf("Type=%s\n",u_pszUSB_Mode[USBModeCnt]);
 			if(state == 0)	
 				break;
 			USBModeCnt++;
-			//perror("mount");
+			perror("mount");
+		}
+		if(state == -1) // 無法掛載ntfs
+		{
+			char cmd[128];
+			sprintf(cmd,"mount -t ntfs %s %s",u_pszUSB_Drive_Path[g_Drive_Num-1],Mount_Path);
+			printf("cmd=%s\n",cmd);
+			state = system(cmd);
+			printf("State = %d\n",state);
+			printf("ls /work/437xhmi/usb\n");
+			system("ls /work/437xhmi/usb");
 		}
 		if(state == 0)	
 				break;
 		driveCnt++;
 	}
 	
-	//printf("u_pszUSB_Drive_Path[%d] = %s\n",g_Drive_Num-1,u_pszUSB_Drive_Path[g_Drive_Num-1]);
+	printf("u_pszUSB_Drive_Path[%d] = %s\n",g_Drive_Num-1,u_pszUSB_Drive_Path[g_Drive_Num-1]);
 	if(state == 0)
 	{
 		u_USB_Drive_Num = g_Drive_Num;
@@ -375,6 +388,7 @@ void	USB_umount()
 		{
 			memset(umount_path,0,sizeof(umount_path));
 			sprintf(umount_path,"%s%s",AM437_USB_MOUNT_PATH,file->d_name);
+			printf("umount_path=%s\n",umount_path);
 			umount2(umount_path,MNT_FORCE);
 		}
 	}

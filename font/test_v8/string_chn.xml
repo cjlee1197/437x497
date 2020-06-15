@@ -1106,6 +1106,7 @@
 	<string name="ROBOT_STR_READY_UPDATE_OK1">下次重啟系統後將自動更新</string>
 	<string name="ROBOT_STR_READY_UPDATE_OK2">依照更新情況可能需要重啟兩次(注意)</string>
 	<string name="ROBOT_STR_SEITCH_MANUAL">請切換至手動模式再進行操作</string>
+	<string name="ROBOT_STR_SWITCH_STOP">請切換至停止模式再進行操作</string>
 	<string name="ROBOT_STR_NO_SUP_REBOOT">此機型不支援軟體重啟，請斷電重新開機</string>
 	<string name="ROBOT_STR_UPDATE_NOT_READY">尚未好準備更新資料</string>
 	<string name="ROBOT_STR_PLEASE_MOUNT_USB">請先成功開啟USB設備</string>

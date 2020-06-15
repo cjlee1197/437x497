@@ -1079,6 +1079,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="ROBOT_STR_READY_UPDATE_OK1">RSTRT to Complete Update</string>
 	<string name="ROBOT_STR_READY_UPDATE_OK2">RSTRT twice to Complete Update</string>
 	<string name="ROBOT_STR_SEITCH_MANUAL">Oper in Manual Mode</string>
+	<string name="ROBOT_STR_SWITCH_STOP">Oper in Stop Mode</string>
 	<string name="ROBOT_STR_UPDATE_NOT_READY">Not Ready for Update</string>
 	<string name="UPDATE_STR_UPDATE_CONFIRM">Confirm SEL VER?</string>
 	<string name="CHECK_MOLDOPEN_CONFIRM">Missing「OPEN DETC」,Confirm to DNLD?</string>
