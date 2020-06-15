@@ -509,6 +509,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 				pwndEditCurrentMold->SetPropValueT("text", CtmMoldSet::GetInstance()->GetCurrentMold());
 				pwndEditCurrentMold->Update();
 			}
+			Prompt(g_MultiLanguage["MSG_DUMMY"], 1); //讀取完成
 		}
 	}
 
@@ -637,6 +638,7 @@ WORD	OnChangeBM(CtmWnd* pwndSender, WORD wIDControl)		//ycfan 20080129
 					pwndEditCurrentMold->SetPropValueT("text", CtmMoldSet::GetInstance()->GetCurrentMold());
 					pwndEditCurrentMold->Update();
 				}
+				Prompt(g_MultiLanguage["MSG_DUMMY"], 1); //讀取完成
 			}
 		}
 	}
