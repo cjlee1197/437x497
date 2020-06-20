@@ -151,6 +151,8 @@ char* Str_Follow[] = // 追隨 文字
 };
 
 int		iNum_Page	= 15; // 每頁動作行數
+
+static int showFlag = -1;
 /*---------------------------------------------------------------------------+
 |  Function : OnCreateA()                     	     	                       |
 |  Task     :   						     	                                           |
@@ -1245,10 +1247,12 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 				pwndEditNo[i]->GetPropValueT("text", pNo, sizeof(pNo));
 				sscanf(pNo,"%d",&SelectNo);
 			}
-			pwndStaticAct[i]->CreateA();
-			pwndStaticAct[i]->Update();
+			//pwndStaticAct[i]->CreateA();
+			//pwndStaticAct[i]->Update();
+			pwndStaticAct[i]->Show();
 			//pwndCheckBoxAct[i]->Update();
 			UpdateText();
+			showFlag = i;
 		}
 	}
 	
@@ -1270,7 +1274,8 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
  			pwndBtnFollow->Update();
  			printf("Folloew =%d\n",b_Follow);
  		}
- 	
+ 		
+ 	pwndStaticAct[showFlag]->Show();
 	//UpdateText();
 	return wIDControl;
  	
