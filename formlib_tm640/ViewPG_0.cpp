@@ -16,7 +16,6 @@
 #include    "../init.h"
 #include    "../selectedit.h"
 #include    "../tmconfig.h"
-//#include    "../lib/hmi_control_data/tmControl_CurveExData.h"
 #include    "../dialog.h" 
 /*===========================================================================
 |           Constant                                                         |
