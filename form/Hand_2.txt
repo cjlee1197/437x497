@@ -6,9 +6,9 @@ ViewHand:CtmFormView
   titleID =PICKER_HAND
   printname =Hand.bmp
   BmpClamp2:CtmImageBox
-    left =84
+    left =44
     top =263
-    right =109
+    right =69
     bottom =288
     wtype =48
     type =2
@@ -16,9 +16,9 @@ ViewHand:CtmFormView
     imagepath =res_tm640/pic/picker/unselected.bmp
   end
   BmpClamp1:CtmImageBox
-    left =84
+    left =44
     top =166
-    right =109
+    right =69
     bottom =191
     wtype =48
     type =2
@@ -116,9 +116,9 @@ ViewHand:CtmFormView
     upbitmap =res_tm640/pic/ButtonDown1.bmp
   end
   Btn_Clamp1:CtmToolButton
-    left =110
+    left =70
     top =128
-    right =220
+    right =180
     bottom =196
     wtype =33
     taborder =-1
@@ -158,9 +158,9 @@ ViewHand:CtmFormView
     key =9
   end
   Btn_Clamp2:CtmToolButton
-    left =110
+    left =70
     top =225
-    right =220
+    right =180
     bottom =293
     wtype =33
     taborder =-1
@@ -220,12 +220,12 @@ ViewHand:CtmFormView
     imagepath =res_tm640/pic/picker/unselected.bmp
   end
   LinuxCtmStaticX20:CtmStaticX2
-    left =95
+    left =55
     top =84
-    right =225
+    right =185
     bottom =116
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -237,8 +237,8 @@ ViewHand:CtmFormView
     top =84
     right =505
     bottom =116
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -250,8 +250,8 @@ ViewHand:CtmFormView
     top =363
     right =225
     bottom =395
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -263,8 +263,8 @@ ViewHand:CtmFormView
     top =363
     right =505
     bottom =395
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -276,8 +276,8 @@ ViewHand:CtmFormView
     top =486
     right =225
     bottom =518
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -289,8 +289,8 @@ ViewHand:CtmFormView
     top =486
     right =505
     bottom =518
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -336,88 +336,10 @@ ViewHand:CtmFormView
     action =255
     formname =Param.txt
   end
-  LinuxCtmImageBox13:CtmImageBox
-    left =79
-    top =84
-    right =95
-    bottom =116
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox5:CtmImageBox
-    left =359
-    top =84
-    right =375
-    bottom =116
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox1:CtmImageBox
-    left =359
-    top =364
-    right =375
-    bottom =396
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox6:CtmImageBox
-    left =79
-    top =363
-    right =95
-    bottom =395
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox7:CtmImageBox
-    left =79
-    top =486
-    right =95
-    bottom =518
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox8:CtmImageBox
-    left =359
-    top =486
-    right =375
-    bottom =518
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
   OutClamp1:CtmImageBox
-    left =84
+    left =44
     top =134
-    right =109
+    right =69
     bottom =159
     wtype =48
     type =2
@@ -425,9 +347,9 @@ ViewHand:CtmFormView
     imagepath =res_tm640/pic/picker/unselected.bmp
   end
   OutClamp2:CtmImageBox
-    left =84
+    left =44
     top =231
-    right =109
+    right =69
     bottom =256
     wtype =48
     type =2
@@ -503,5 +425,52 @@ ViewHand:CtmFormView
     type =2
     style =3
     imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  Btn_SubClamp:CtmToolButton
+    left =230
+    top =128
+    right =340
+    bottom =196
+    wtype =33
+    taborder =-1
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =14
+  end
+  OutSubClamp:CtmImageBox
+    left =204
+    top =134
+    right =229
+    bottom =159
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  BmpSubClamp:CtmImageBox
+    left =204
+    top =166
+    right =229
+    bottom =191
+    wtype =48
+    type =2
+    style =3
+    imagepath =res_tm640/pic/picker/unselected.bmp
+  end
+  LinuxCtmStaticX26:CtmStaticX2
+    left =207
+    top =84
+    right =337
+    bottom =116
+    wtype =48
+    fgc =647
+    bgc =36256
+    fontsize =1
+    bordercolor =35953
+    textID =PICKER_REMOTE_O_14
+    align =34
   end
 end
