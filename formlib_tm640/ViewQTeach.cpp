@@ -4223,7 +4223,7 @@ void	Update_PosHint(int Axis)
 		{
 			char StrValue[10]="\0";
 			memset(StrValue, 0, sizeof(StrValue));
-			sprintf(StrValue,"%d"".""%d~", (Min_value/100), (Min_value%100)); // 2位小數
+			sprintf(StrValue,"%d"".""%d", (Min_value/100), (Min_value%100)); // 2位小數
 			pwndQTeach_Pos_Min[Axis]->SetPropValueT("text",StrValue);
 			pwndQTeach_Pos_Min[Axis]->CreateA();
 			pwndQTeach_Pos_Min[Axis]->Show();
