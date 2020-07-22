@@ -16,156 +16,37 @@
 #include    "../init.h"
 #include    "../selectedit.h"
 #include    "../tmconfig.h"
+#include "omp.h"
 #include    "../dialog.h" 
-/*===========================================================================
-|           Constant                                                         |
-+===========================================================================*/
-#define		MechType3				0	 // 三軸
-#define		MechType5				1  // 五軸
-#define		EncWord 				0xFFFF0000 // High Word
-#define		MechWord 				0x0000FFFF // Low Word
+#include "time.h"
 
-#define     CONST_REQ_COMMAND       6
-#define     CONST_REQ_WRITE         3
-#define     CONTROLTYPENUM          13
-#define     MAXSTEP               100
-#define     STATE_SINGLESTEP        2
-#define			STATE_HAND							3
-#define     STATE_FULLAUTO          4 
-#define     PARA_NUM	            10 
-
-#define		MODE_NULL						0xF000
-#define		MODE_HOMING					0xF100
-#define		MODE_MOTORENABLE		0xF200
-#define		MODE_MANUAL					0xF300
-#define		MODE_SINGLESTEP			0xF400
-#define		MODE_AUTO						0xF500
-
-#define		LGreen					0xCF90 //0xD796 // 0x8627 // 青綠
-#define		White						0xFFFF // 白
-#define		Gray						0xD6BA // 0xFFDF //0xF79E // 灰
-#define		Yellow					0xFFE0 // 黃
-#define		LBlue						0xD73D // 淺藍
-
-// 動作類型
-#define		Action_Axis				1  // 軸動作
-#define		Action_Wait				2  // 等待
-#define		Action_Permit			3  // 允許
-#define		Action_Valve			4	 // 閥門
-#define		Action_Tag				5  // 標籤
-#define		Action_Goto				6  // 跳轉
-#define		Action_Detect			8  // 檢測
-#define		Action_Pile				12 // 堆疊
-#define		Action_Sub				13 // 副程式
-
-// 動作列表顯示攔
-#define Bar_Heigh 90
-#define Bar_Position 127
-#define Bar_Step 55
-/*===========================================================================+
-|           Global variable                                                  |
-+===========================================================================*/
-BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
-/*--------------------------------------------------+
-| dw_MechType 機型選擇  														|
-|	Low WORD 0-三軸 1-五軸 	High WORD 0-絕對 1-增量		|
-| EX: 絕對/五軸 0x0000 0001;  0x0001 0000 增量/三軸 |
-+--------------------------------------------------*/
-DWORD dw_MechType = 0; //紀錄 pMechTypeDB 的數值
+DWORD dw_MechType = 0; 
 int u_PickerType = 0; // 機型選擇 0-三軸 1-五軸
-char* pMechTypeDB	 = "MACHINE_CONFIGURATION_MACHINETYPE"; // 機型選擇DB 三軸 五軸
+char* pMechTypeDB = "MACHINE_CONFIGURATION_MACHINETYPE";
+int	StandbyStepNum = 0;
+MachineState u_wPickerOPSatus = STATE_IDLE;
+MachineState u_wPickerOPSatus_Old = STATE_IDLE;
 
-int   iEditNo=0,iCheckBoxAct=0,iEditACTION=0,iSelectEditACTION=0,iStaticACTION=0,iStaticEditNo=0;
-int 	iStaticAct=0;
-int 	No1=0,No=0;
-int		SelectNo = 0;
-int		Cleanhelp =0;
-int		MaxDBNum = 100;
-int		EditedStepNum = 0;
-bool	m_bEnterKey = FALSE;
-char 	pNo[256]	={NULL}; 
-char 	pStaticNo[256]	={NULL}; 
-char	pNoDataID[256] = {NULL};
-WORD        u_wPickerOPSatus    = 0;
-WORD        u_wPickerOPSatus_Old    = 0;
-WORD        wStep  = 0,wStepOld;
-WORD        wSingle_Step  = 0,wSingle_StepOld;
-char*       u_pszDBString[MAXSTEP*CONTROLTYPENUM] = {NULL};
-int		StandbyStepNum=0; // 待機點步驟數量 3軸-5步 5軸-7步
-
-CtmWnd*		pwndEditNo[32] 	={NULL}; 		// 序號列
-CtmWnd*		pwndStaticEditNo[32] 	={NULL}; 		// 序號列
-CtmWnd*		pwndCheckBoxAct[32] ={NULL}; 	// 動作列
-CtmWnd*		pwndStaticAct[32] ={NULL}; 	//動作列文字
-CtmWnd*		pwndButtonPageDown	= NULL;
-CtmWnd*		pwndButtonPageUp	= NULL;
-CtmWnd*		pwndSelectEditACTIONTYPE	= NULL;
-CtmWnd*		pwndSelectEditACTIONNUM	= NULL;
-CtmWnd*		pwndEditACTIONNUM	= NULL;
-CtmWnd*		pwndEditSelectNo	= NULL;
-CtmWnd*		pwndEditACTION[32] ={NULL};
-CtmWnd*		pwndSelectEditACTION[32] ={NULL};
-CtmWnd*		pwndStaticACTION[32] ={NULL};
-CtmWnd*		pwndButtonSAVE	= NULL;
-CtmWnd*		pwndButtonCANEL	= NULL;
-CtmWnd*		pwndButtonInsert	= NULL;
-CtmWnd*		pwndButtonDelete	= NULL;
-CtmWnd*		pwndButtonStartEdit	= NULL;
-
-CtmWnd*		pwndButtonDownload	= NULL; // 下載按鈕
-CtmWnd*		pwndLoadingStr	= NULL; // 下載進度文字
-CtmWnd*		pwndLoadingBar	= NULL; // 下載進度條
-CtmWnd*		pwndLoadingMask	= NULL; // 下載進度條遮罩
-CtmWnd*		pwndLoadingMask2	= NULL; // 下載進度條遮罩2
-
-CtmWnd*		pwndImgBarPlace	= NULL; // 動作列表 位置顯示
-CtmWnd*		pwndImgBarMask	= NULL; // 動作列表 位置顯示 遮罩
-
-CtmWnd* pwndBtnFollow = NULL; // 跟隨Btn
-bool	b_Follow = TRUE;
-
-CtmWnd* u_pwndSingle = NULL;
+PG_0 *actionTable = new PG_0;
+char *u_pszDBString[MAXSTEP*CONTROLTYPENUM] = {NULL};
+WORD wSingle_Step, wSingle_StepOld;
+WORD wStep  = 0,wStepOld;
+char pNoDataID[1024];
+static int showFlag = -1;
 
 long	NoColor[] =
 {
-	//LGreen, // 青綠
-	LBlue,
-	White,	// 白
+	LBLUE_,
+	WHITE_,	// 白
 };
 long	BgColor[] =
 {
-	//LGreen, // 青綠
-	LBlue,
-	White,	// 白
-};
-char* Img_Select[] = // 選取 圖片
-{
-	"res_tm640/pic/PGBtnUp.bmp",
-	"res_tm640/pic/PGBtnSelect.bmp",
-};
-char* Str_Follow[] = // 追隨 文字
-{
-	"PICKER_UNFOLLOW",
-	"PICKER_FOLLOW",
+	LBLUE_,
+	WHITE_,	// 白
 };
 
-int		iNum_Page	= 15; // 每頁動作行數
-
-static int showFlag = -1;
-/*---------------------------------------------------------------------------+
-|  Function : OnCreateA()                     	     	                       |
-|  Task     :   						     	                                           |
-+----------------------------------------------------------------------------+
-|  Call     :                                                                |
-|                                                                            |
-|  Parameter:                           -                                    |
-|                                                                            |
-|  Return   :                           -                                    |
-+---------------------------------------------------------------------------*/
 BOOL	OnCreateA(CtmWnd* pwndSender)
 {
-	//u_PickerType = (int)(GetDBValue(pMechTypeDB).lValue); // 讀取設定 機型選擇 三五軸
-	// 機型選擇 編碼器選擇
 	dw_MechType 	 = (GetDBValue(pMechTypeDB).lValue);
 	u_PickerType = dw_MechType & MechWord;
 	if(u_PickerType==MechType3)
@@ -173,1565 +54,1144 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	if(u_PickerType==MechType5)
 		StandbyStepNum = 7;
 	
-	{	// 初始定義
-		iEditNo 	 				= GetSpecialControlNum(pwndSender, "EditNo", "CtmEdit", pwndEditNo);					// 序號列數量
-		iStaticEditNo 		= GetSpecialControlNum(pwndSender, "StaticNo", "CtmEdit", pwndStaticEditNo);	// 序號列數量
-		iCheckBoxAct			= GetSpecialControlNum(pwndSender, "ToolButtonBoxAct", "CtmToolButton", pwndCheckBoxAct);	// 動作列數量
-		iStaticAct				= GetSpecialControlNum(pwndSender, "StaticAct", "CtmStaticX2", pwndStaticAct);	// 動作列數量
-		iEditACTION				= GetSpecialControlNum(pwndSender, "EditACTION", "CtmEditX1", pwndEditACTION);
-		iSelectEditACTION	= GetSpecialControlNum(pwndSender, "SelectEditACTION", "CtmSelectEdit", pwndSelectEditACTION);
-		iStaticACTION			= GetSpecialControlNum(pwndSender, "StaticACTION", "CtmStaticX2", pwndStaticACTION);
-		No1								= GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED39").lValue;	
-		SelectNo 					= GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED40").lValue;	
-		//printf("No1=%d,SelectNo=%d\n ",No1,SelectNo);
-		//SetDBValue("MACHINE_PROFILE_STEPNUM", 0);		// 數量清零
-		pwndButtonPageDown	 			= pwndSender->FindControlFromName("buttonDOWNTWENTY");
-		pwndButtonPageUp	 				= pwndSender->FindControlFromName("buttonUPTWENTY");
-		pwndEditSelectNo					= pwndSender->FindControlFromName("EditSelectNo");
-		pwndSelectEditACTIONTYPE	= pwndSender->FindControlFromName("SelectEditTYPE");
-		pwndSelectEditACTIONNUM		= pwndSender->FindControlFromName("SelectEditNUM");
-		pwndEditACTIONNUM					= pwndSender->FindControlFromName("Edit1NUM");
-		pwndButtonSAVE						= pwndSender->FindControlFromName("ButtonSAVE");
-		pwndButtonCANEL						= pwndSender->FindControlFromName("ButtonCANEL");
-		pwndButtonInsert					= pwndSender->FindControlFromName("ButtonInsert");
-		pwndButtonDelete					= pwndSender->FindControlFromName("ButtonDelete");
-		pwndButtonStartEdit				= pwndSender->FindControlFromName("ButtonStartEdit"); //2018-8-1
-		
-		pwndBtnFollow 			= pwndSender->FindControlFromName("BtnFollow");
-		
-		u_pwndSingle 				= pwndSender->FindControlFromName("ButtonSingle");
-		u_wPickerOPSatus 		= GetDBValue("MACHINE_INTERFACE_WOPERATINGSTATE").lValue;
-		char temp[128];
-		char szTemp[256];
-				
-		pwndLoadingStr  		= pwndSender->FindControlFromName("LoadingStr");
-		pwndLoadingBar  		= pwndSender->FindControlFromName("LoadingBar");
-		pwndLoadingMask 		= pwndSender->FindControlFromName("LoadingMask");
-		pwndLoadingMask2 		= pwndSender->FindControlFromName("LoadingMask2");
-		pwndButtonDownload  = pwndSender->FindControlFromName("ButtonDownload");
-		
-		pwndImgBarPlace  		= pwndSender->FindControlFromName("ImgBarPlace");
-		pwndImgBarMask	  	= pwndSender->FindControlFromName("ImgBarMask");
-	}
+	actionTable->num_of_action = GetSpecialControlNum(pwndSender, "StaticAct", "CtmStaticX2", actionTable->pwndStaticAct);
+	GetSpecialControlNum(pwndSender, "ToolButtonBoxAct", "CtmToolButton", actionTable->pwndCheckBoxAct);
+	GetSpecialControlNum(pwndSender, "StaticNo", "CtmEdit", actionTable->pwndStaticEditNo);
+	actionTable->pwndBtnPageUp = pwndSender->FindControlFromName("buttonUPTWENTY");
+	actionTable->pwndBtnPageDown = pwndSender->FindControlFromName("buttonDOWNTWENTY");
+	actionTable->pwndImgBar = pwndSender->FindControlFromName("ImgBarPlace");
+	actionTable->pwndImgBarMask	= pwndSender->FindControlFromName("ImgBarMask");
+	actionTable->pwndBtnFollow = pwndSender->FindControlFromName("BtnFollow");
 	
+	actionTable->pwndBtnExecute = pwndSender->FindControlFromName("LinuxCtmToolButton2");
+	actionTable->pwndBtnEdit = pwndSender->FindControlFromName("ButtonStartEdit");
+	actionTable->pwndBtnClear = pwndSender->FindControlFromName("ButtonClear");
+	actionTable->pwndBtnDownload = pwndSender->FindControlFromName("ButtonDownload");
+	actionTable->pwndBtnInsert = pwndSender->FindControlFromName("ButtonInsert");
+	actionTable->pwndBtnDelete = pwndSender->FindControlFromName("ButtonDelete");
+	actionTable->pwndBtnCombine = pwndSender->FindControlFromName("ButtonSync");
+	actionTable->pwndBtnSplit = pwndSender->FindControlFromName("ButtonUnSync");
+	actionTable->pwndBtnSingle = pwndSender->FindControlFromName("ButtonSingle");
+	
+	//actionTable->headNo = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED39").lValue;
+	//actionTable->page = actionTable->headNo / 15;
+	//cout << "actionTable->headNo  = " << actionTable->headNo  << endl;
+	actionTable->headNo = 0;
+	actionTable->page = 0;
+	
+	actionTable->iPageturn = actionTable->num_of_action;
+	
+	actionTable->pwndBtnFollow->SetPropValueT("upbitmap", "res_tm640/pic/PGBtnSelect.bmp");
+ 	actionTable->pwndBtnFollow->SetPropValueT("captionID", "PICKER_FOLLOW");
+ 	actionTable->pwndBtnFollow->CreateA();
+ 	actionTable->pwndBtnFollow->Update();
+ 	
 	int nStep = 0;
 	for(int i = 1; i <= MAXSTEP; i++ )
-    {       
-        u_pszDBString[nStep] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep], "MACHINE_PROFILE_NUM%d_ACTION_STEP", i);
-        u_pszDBString[nStep+1] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+1], "MACHINE_PROFILE_NUM%d_ACTION_TYPE", i);
-        u_pszDBString[nStep+2] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+2], "MACHINE_PROFILE_NUM%d_ACTION_NUM", i);
-        u_pszDBString[nStep+3] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+3], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1", i);  
-        u_pszDBString[nStep+4] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+4], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2", i); 
-        u_pszDBString[nStep+5] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+5], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3", i);  
-        u_pszDBString[nStep+6] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+6], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER4", i);  
-        u_pszDBString[nStep+7] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+7], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER5", i);  
-        u_pszDBString[nStep+8] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+8], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6", i);  
-        u_pszDBString[nStep+9] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+9], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7", i);  
-        u_pszDBString[nStep+10] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+10], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8", i);  
-        u_pszDBString[nStep+11] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+11], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER9", i);  
-        u_pszDBString[nStep+12] = (char*)malloc(256);
-        sprintf(u_pszDBString[nStep+12], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER10", i);  
-        nStep += 13;     
-    }
-    nStep = 0;
-    {
-    /*=========================TEST============================*/
-    printf("No1=%d\n",No1);
-    {
-	//printf("UpdateText\n");
-	char 	pDataID[256];
-	char 	pDataID2[256];
-	char 	pDataID3[256];
-	char 	pDataID4[256];
-	char 	pDataID5[256];
-	char 	pDataID6[256];
-	char 	pDataID7[256];
-	char 	pDataID8[256];
-	char 	pDataID9[256];
-	char 	pDataID10[256];
-	char 	pDataID11[256];
-	char 	pDataID12[256];
-	char  ACTION_STEP_ID[256];
-	char    szActPara1[256];
-	char    szActPara2[256];
-	char    szActPara3[256];
-	char    szActPara5[256];
-	int	ACTION_STEP =0,ACTIONTYPE =0,ACTIONNUM =0;
-	DWORD   wActPara1=0,wActPara2=0,wActPara3=0,wActPara5=0;
-	// ↓ 字串合併顯示 cjlee add 	
-	int index_1,index_2,index_3,index_4,index_5,index_6,index_7,index_8,index_9,index_10,index_11,index_12;
-	char	str[1024]; // 顯示字串用
-	char	path[1024]; // 顯示字串用
-	char* str_1;
-	char* str_2;
-	char* str_3;
-	char* str_4;
-	char* str_5;
-	char* str_6;
-	char* str_7;
-	char* str_8;
-	char* str_9;
-	char* str_10;
-	char* str_11;
-	char* str_12;
+  {       
+      u_pszDBString[nStep] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep], "MACHINE_PROFILE_NUM%d_ACTION_STEP", i);
+      u_pszDBString[nStep+1] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+1], "MACHINE_PROFILE_NUM%d_ACTION_TYPE", i);
+      u_pszDBString[nStep+2] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+2], "MACHINE_PROFILE_NUM%d_ACTION_NUM", i);
+      u_pszDBString[nStep+3] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+3], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1", i);  
+      u_pszDBString[nStep+4] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+4], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2", i); 
+      u_pszDBString[nStep+5] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+5], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3", i);  
+      u_pszDBString[nStep+6] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+6], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER4", i);  
+      u_pszDBString[nStep+7] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+7], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER5", i);  
+      u_pszDBString[nStep+8] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+8], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6", i);  
+      u_pszDBString[nStep+9] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+9], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7", i);  
+      u_pszDBString[nStep+10] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+10], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8", i);  
+      u_pszDBString[nStep+11] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+11], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER9", i);  
+      u_pszDBString[nStep+12] = (char*)malloc(256);
+      sprintf(u_pszDBString[nStep+12], "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER10", i);  
+      nStep += 13;     
+  }
+  nStep = 0;
+ 	
 	
-	// ↑ 字串合併顯示 cjlee add 
-	for(int i=0;i<iCheckBoxAct;i++)
+	int actionType;
+	int actionNum;
+	char tmp[256];
+	for(int i =0 ; i < MAXDBNUM ; i++) // 計數有編寫的教導有幾步驟
 	{
-		memset(str,0,sizeof(str));
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1+No1);
-		memset(pDataID2, 0 ,sizeof(pDataID2));
-		sprintf(pDataID2,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i+1+No1);
-		sprintf(szActPara1,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1", i+1+No1); 
-		sprintf(szActPara2,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2", i+1+No1); 
-		sprintf(szActPara3,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3", i+1+No1); 
-		sprintf(szActPara5,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER5", i+1+No1); 
-		ACTIONTYPE =GetDBValue(pDataID).lValue;
-		ACTIONNUM =GetDBValue(pDataID2).lValue;
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i + 1);
+		actionType = GetDBValue(tmp).lValue;
+		
+		//memset(tmp, '\0' ,sizeof(tmp));
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i + 1);
+		actionNum = GetDBValue(tmp).lValue;
+
+		if(actionType == 6 && actionNum == 1) // "結束"type=6 num=1
+			actionTable->editedStepNum= i + 1;
+	}
+	actionTable->ShowText();
+	actionTable->UpdatePageBar();
+
+	return TRUE;
+}
+ListNode::ListNode()
+{
+	memset(reference,0,sizeof(reference));
+	readFlag = false;
+}
+PG_0::PG_0():lastSelect(-1), b_Follow(false), finishPoint(100)
+{
+	for(int i = 0 ; i < 20 ; i++)
+		strList.push_back(new ListNode);
+}
+PG_0::~PG_0()
+{
+	for(int i = 0 ; i < 20 ; i++)
+		delete strList[i];
+}
+inline void PG_0::AddStr(char *str, int &k)
+{
+	strList[k]->readFlag = true;
+	sprintf(strList[k]->reference, str);
+	k++;
+}
+void PG_0::ShowText()
+{
+	cout << "ShowText"<< endl;
+	char tmp[256];
+	int actionType;
+	int actionNum;
+	
+	DWORD   wActPara1=0, wActPara2=0, wActPara3=0, wActPara5=0, wActPara6 = 0, wActPara7 = 0, wActPara8 = 0;
+	char    szActPara1[256], szActPara2[256], szActPara3[256], szActPara5[256], szActPara6[256], szActPara7[256], szActPara8[256];
+	
+	//#pragma omp parallel
+	for(int i = 0, k = 0 ; i < num_of_action ; i++)
+	{
+		for(int j = 0 ; j < 20 ; j++)
+			strList[j]->readFlag = false;
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i + 1 + headNo);
+		actionType =GetDBValue(tmp).lValue;
+		
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i + 1 + headNo);
+		actionNum =GetDBValue(tmp).lValue;
+		
+		sprintf(szActPara1,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1", i + 1 + headNo); 
+		sprintf(szActPara2,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2", i + 1 + headNo); 
+		sprintf(szActPara3,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3", i + 1 + headNo); 
+		sprintf(szActPara5,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER5", i + 1 + headNo); 
+		sprintf(szActPara6,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6", i + 1 + headNo); 
+		sprintf(szActPara7,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7", i + 1 + headNo); 
+		sprintf(szActPara8,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8", i + 1 + headNo); 
+		
 		wActPara1  = GetDBValue(szActPara1).lValue;
 		wActPara2  = GetDBValue(szActPara2).lValue;
 		wActPara3  = GetDBValue(szActPara3).lValue;
 		wActPara5  = GetDBValue(szActPara5).lValue;
+		wActPara6  = GetDBValue(szActPara6).lValue;
+		wActPara7  = GetDBValue(szActPara7).lValue;
+		wActPara8  = GetDBValue(szActPara8).lValue;
 		
-		sprintf(ACTION_STEP_ID,"MACHINE_PROFILE_NUM%d_ACTION_STEP", i+1+No1);
-		ACTION_STEP = GetDBValue(ACTION_STEP_ID).lValue;
-		//printf("LINE%d, ACTION_STEP:%d, ACTIONTYPE:%d, ACTIONNUM:%d, Para1:%d, Para2:%d, Para3:%d, Para5:%d\n",i+1+No1,ACTION_STEP,ACTIONTYPE,ACTIONNUM,wActPara1,wActPara2,wActPara3,wActPara5);
-		memset(pDataID, 0 ,sizeof(pDataID));
-		memset(pDataID2, 0 ,sizeof(pDataID2));
-		memset(pDataID3, 0 ,sizeof(pDataID3));
-		memset(pDataID4, 0 ,sizeof(pDataID4));
-		memset(pDataID5, 0 ,sizeof(pDataID5));
-		memset(pDataID6, 0 ,sizeof(pDataID6));
-		memset(pDataID7, 0 ,sizeof(pDataID7));
-		memset(pDataID8, 0 ,sizeof(pDataID8));
-		memset(pDataID9, 0 ,sizeof(pDataID9));
-		memset(pDataID10,0 ,sizeof(pDataID10));
-		memset(pDataID11,0 ,sizeof(pDataID11));
-		memset(pDataID12,0 ,sizeof(pDataID12));
+		char str[256];
 
-		//printf("Line%d:ACTIONTYPE=%d,ACTIONNUM=%d\n",i,ACTIONTYPE,ACTIONNUM);
-		switch(ACTIONTYPE)
+		switch(actionType)
 		{
-			case 0:		//
-				sprintf(pDataID,"VW_PICKER_NULL");
+			case 0:	
+				AddStr("VW_PICKER_NULL", k);
 				break;
-			case 1:		//軸動作
+			case 1: // 軸動作
 				if(wActPara5) // 延時
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4"); // "延時"
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8"); // "秒"
+					AddStr("PICKER_DESCRIBE_AXIS_4", k); // "延時"
+					sprintf(str,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_8", k); // "秒"
+					
 				}
-				switch(ACTIONNUM)
+				switch(actionNum)
 				{
 					case 0:
-						sprintf(pDataID4,"VW_PICKER_NULL");
+						AddStr("VW_PICKER_NULL", k);
 						break;
 					case 1:
-						sprintf(pDataID4,"VW_HAP5_ROBOT_XAXIS"); // "X軸"
+						AddStr("VW_HAP5_ROBOT_XAXIS", k); // "X軸"
 						break;
 					case 2:
-						sprintf(pDataID4,"VW_HAP5_ROBOT_YAXIS"); // "Y軸"
+						AddStr("VW_HAP5_ROBOT_YAXIS", k); // "Y軸"
 						break;
 					case 3:
-						sprintf(pDataID4,"VW_HAP5_ROBOT_ZAXIS"); // "Z軸"
+						AddStr("VW_HAP5_ROBOT_ZAXIS", k); // "Z軸"
 						break;
 					case 4: // cjlee 2019/4/6 下午 05:44:41
-						sprintf(pDataID4,"VW_HAP5_ROBOT_X2AXIS"); // "X2軸"
+						AddStr("VW_HAP5_ROBOT_X2AXIS", k); // "X2軸"
 						break;
 					case 5: // cjlee 2019/4/6 下午 05:44:41
-						sprintf(pDataID4,"VW_HAP5_ROBOT_Y2AXIS"); // "Y2軸"
+						AddStr("VW_HAP5_ROBOT_Y2AXIS", k); // "Y2軸"
 						break;
 					default:
 						break;
 				}
-				if(ACTIONNUM <= 5)//if(ACTIONNUM <= 3 || ACTIONNUM >= 5) // cjlee 2019/4/6 下午 05:44:41
+				
+				if(actionNum <= 5)//if(ACTIONNUM <= 3 || ACTIONNUM >= 5) // cjlee 2019/4/6 下午 05:44:41
 				{
-					sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_1"); // "以"
-					sprintf(pDataID6,"%3d",wActPara2);
-					sprintf(pDataID7,"PICKER_DESCRIBE_AXIS_2"); // "的速度移動到"
-					sprintf(pDataID8,"%3d.%02d",wActPara1/100,wActPara1%100);
-					sprintf(pDataID9,"PICKER_DESCRIBE_AXIS_3");// "mm的位置"
+					AddStr("PICKER_DESCRIBE_AXIS_1", k); // "以"
+					sprintf(str,"%3d",wActPara2);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_2", k); // "的速度移動到"
+					sprintf(str,"%3d.%02d",wActPara1/100,wActPara1%100);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_3", k);
 					if(wActPara3)
 					{
-						sprintf(pDataID10,"PICKER_DESCRIBE_AXIS_7"); // "提前"
-						sprintf(pDataID11,"%3d.%02d",wActPara3/100,wActPara3%100);
-						sprintf(pDataID12,"VW_CHARGE_MM"); // "mm"
+						if(wActPara8) // 1-兩段變速 0-提前完成
+							AddStr("PICKER_CHG_DIST", k); // "變速"
+						else
+							AddStr("PICKER_DESCRIBE_AXIS_7", k); // "提前"
+						
+						sprintf(str,"%3d.%02d",wActPara3/100,wActPara3%100);
+						AddStr(str, k);
+						AddStr("PICKER_DESCRIBE_AXIS_3", k); // "mm"
 					}
 				}
-				else if(ACTIONNUM == 6)//(ACTIONNUM == 4) // cjlee 2019/4/6 下午 05:44:41
+				else if(actionNum == 6)//(ACTIONNUM == 4) // cjlee 2019/4/6 下午 05:44:41
 				{
 					if(wActPara2)
-						sprintf(pDataID4,"PICKER_REMOTE_O_14");
+						AddStr("PICKER_REMOTE_O_14", k);
 					else
-						sprintf(pDataID4,"PICKER_REMOTE_O_13");
+						AddStr("PICKER_REMOTE_O_13", k);
 					if(wActPara3)
-						sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_5");
+						AddStr("PICKER_DESCRIBE_AXIS_5", k);
 					else
-						sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_6");
+						AddStr("PICKER_DESCRIBE_AXIS_6", k);
 				}
 				break;
 			case 2:		//等待
 				if(wActPara5)
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
+					AddStr("PICKER_DESCRIBE_AXIS_4", k);	
+					sprintf(str,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_8", k);	
 				}
-				sprintf(pDataID4,"PICKER_WAIT");
-				sprintf(pDataID5,"PCIKER_INNER_I_0%d",ACTIONNUM);
+				AddStr("PICKER_WAIT", k);
+				sprintf(str,"PCIKER_INNER_I_0%d",actionNum);
+				AddStr(str, k);
 				if(wActPara1)
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_5"); // "打開"
+					AddStr("PICKER_DESCRIBE_AXIS_5", k); // "打開"
 				else
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_6"); // "確認"
+					AddStr("PICKER_DESCRIBE_AXIS_6", k); // "確認"
 				break;
-			case 3:		//
+			case 3:		
 				if(wActPara5)
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
+					AddStr("PICKER_DESCRIBE_AXIS_4", k);
+					sprintf(str,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_8", k);
 				}
-				sprintf(pDataID4,"PICKER_INNER_O_0%d",ACTIONNUM);
+				sprintf(str,"PICKER_INNER_O_0%d",actionNum);
+				AddStr(str, k);
 				if(wActPara1)
-					sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_5");
+					AddStr("PICKER_DESCRIBE_AXIS_5", k);
 				else
-					sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_6");
+					AddStr("PICKER_DESCRIBE_AXIS_6", k);
 				break;
 			case 4:		//閥門
 				if(wActPara5)
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
+					AddStr("PICKER_DESCRIBE_AXIS_4", k);
+					sprintf(str,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_8", k);
 				}
-				sprintf(pDataID4,"PICKER_VALVE");
-				sprintf(pDataID5,"DLG_DATETIME_COLON");
-				sprintf(pDataID6,"PICKER_REMOTE_O_%02d",ACTIONNUM);
+				AddStr("PICKER_VALVE", k);
+				AddStr("DLG_DATETIME_COLON", k);
+				sprintf(str,"PICKER_REMOTE_O_%02d",actionNum);
+				AddStr(str, k);
+				
 				if(wActPara1)
-					sprintf(pDataID7,"PICKER_DESCRIBE_AXIS_5");
+					AddStr("PICKER_DESCRIBE_AXIS_5", k);
 				else
-					sprintf(pDataID7,"PICKER_DESCRIBE_AXIS_6");
+					AddStr("PICKER_DESCRIBE_AXIS_6", k);
 				if(wActPara2) // "檢測"
-					sprintf(pDataID8,"VW_PUMP_TEST");
-//				if(wActPara2)
-//				{
-//					sprintf(pDataID8,"PICKER_ACTTIME");
-//					sprintf(pDataID9,"%2d.%02d",wActPara2/100,wActPara2%100);
-//					sprintf(pDataID10,"VW_INJPRO_SECOND");
-//				}
+					AddStr("VW_PUMP_TEST", k);
 				break;
-			case 5:		//標籤
+			case 5:	//標籤	
 				if(wActPara5)
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
+					AddStr("PICKER_DESCRIBE_AXIS_4", k);
+					sprintf(str,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_8", k);
 				}
-				if(ACTIONNUM == 1)
+				if(actionNum == 1)
+					AddStr("ACTIONPOINT_START", k);
+				else
 				{
-					sprintf(pDataID4,"ACTIONPOINT_START");
+					sprintf(str,"PICKER_LABEL_%d",actionNum);
+					AddStr(str, k);
+				}
+				break;
+			case 6: //跳轉	
+				if(wActPara5)
+				{
+					AddStr("PICKER_DESCRIBE_AXIS_4", k);
+					sprintf(str,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_8", k);
+				}
+				if(actionNum == 1)
+				{
+					AddStr("ACTIONPOINT_END", k);
+					finishPoint = i + 1 + headNo;
 				}
 				else
 				{
-					sprintf(pDataID4,"PICKER_LABEL_%d",ACTIONNUM);
+					AddStr("PICKER_JUMP", k);
+					sprintf(str,"PICKER_LABEL_%d",actionNum);
+					AddStr(str, k);
 				}
 				break;
-			case 6:		//跳轉
-				if(wActPara5)
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
-				}
-				if(ACTIONNUM == 1)
-				{
-					sprintf(pDataID4,"ACTIONPOINT_END");
-				}
-				else
-				{
-					sprintf(pDataID4,"PICKER_JUMP");
-					sprintf(pDataID5,"PICKER_LABEL_%d",ACTIONNUM);
-				}
-				break;
-			case 8:		//檢測
+			case 8:			//檢測
 				if(wActPara5) // 延時
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4"); // 延時
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8"); // 秒
+					AddStr("PICKER_DESCRIBE_AXIS_4", k); // 延時
+					sprintf(str,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_8", k); // 秒
 				}
 				if(wActPara2) // 檢測模式:區域
-					{
-						sprintf(pDataID5,"PICKER_PER"); // 持續
-						if(wActPara1) // 開始結束
-							sprintf(pDataID4,"PICKER_STRT"); // 開始
-						else
-							sprintf(pDataID4,"PICKER_STOP"); // 結束
-					}
+				{
+					AddStr("PICKER_PER", k); // 持續
+					if(wActPara1) // 開始結束
+						AddStr("PICKER_STRT", k); // 開始
+					else
+						AddStr("PICKER_STOP", k); // 結束
+				}
 				else // 檢測模式:單點
-					{
-						sprintf(pDataID5,"PICKER_SGL"); // 單點
-					}
-				sprintf(pDataID6,"VW_PUMP_TEST"); // 檢測
-				sprintf(pDataID7,"PICKER_REMOTE_I_0%d",ACTIONNUM); // 檢測點
+					AddStr("PICKER_SGL", k); // 單點
+				AddStr("VW_PUMP_TEST", k); // 檢測
+				sprintf(str,"PICKER_REMOTE_I_0%d",actionNum); // 檢測點
+				AddStr(str, k);
+
 				if(wActPara1) // On/Off
-					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_5"); // 打開
+					AddStr("PICKER_DESCRIBE_AXIS_5", k); // 打開
+
 				else
-					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_6"); // 關閉
+					AddStr("PICKER_DESCRIBE_AXIS_6", k); // 關閉
 				break;
-			case 12:	//
+			case 12:	
 				if(wActPara5)
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
+					AddStr("PICKER_DESCRIBE_AXIS_4", k);
+					sprintf(str,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_8", k);
 				}
-				if(ACTIONNUM)
-					sprintf(pDataID4,"VW_PID_GROUP%d",ACTIONNUM);
+				if(actionNum)
+				{
+					sprintf(str,"VW_PID_GROUP%d",actionNum);
+					AddStr(str, k);
+				}
 				else
-					sprintf(pDataID4,"VW_PICKER_NULL");
-				sprintf(pDataID5,"VW_PICKER_PILE");
+					AddStr("VW_PICKER_NULL", k);
+				AddStr("VW_PICKER_PILE", k);
 				if(wActPara1)
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_5");
+					AddStr("PICKER_DESCRIBE_AXIS_5", k);
 				else
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_6");
+					AddStr("PICKER_DESCRIBE_AXIS_6", k);
 				break;
-			case 13:	//
+			case 13:	
 				if(wActPara5)
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
+					AddStr("PICKER_DESCRIBE_AXIS_4", k);
+					sprintf(str,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_8", k);
 				}
-				sprintf(pDataID4,"PICKER_SUBTECH_1");
-				switch(ACTIONNUM)
+				AddStr("PICKER_SUBTECH_1", k);
+				switch(actionNum)
 				{
 					case 0:
-						sprintf(pDataID5,"VW_PICKER_NULL");
+						AddStr("VW_PICKER_NULL", k);
 						break;
 					case 1:
-						sprintf(pDataID5,"PICKER_PROD_BAD");
+						AddStr("PICKER_PROD_BAD", k);
 						break;
 					case 2:
-						sprintf(pDataID5,"PICKER_PROD_SAMPLE");
+						AddStr("PICKER_PROD_SAMPLE", k);
 						break;
 					case 3:
-						sprintf(pDataID5,"PICKER_PROD_TEST");
+						AddStr("PICKER_PROD_TEST", k);
 						break;
 					case 4:
-						sprintf(pDataID5,"VW_AD_RESERVED");
+						AddStr("VW_AD_RESERVED", k);
 						break;
 					case 5:
-						sprintf(pDataID5,"VW_AD_RESERVED");
+						AddStr("VW_AD_RESERVED", k);
 						break;
 					default:
 						break;
 				}
 				if(wActPara1)
-					sprintf(pDataID6,"ACTIONPOINT_START");
+					AddStr("ACTIONPOINT_START", k);
 				else
-					sprintf(pDataID6,"ACTIONPOINT_END");
-				sprintf(pDataID7,"PICKER_SUBTECH_2");
-				sprintf(pDataID8,"%2d",wActPara2);
+				{
+					AddStr("ACTIONPOINT_END", k);
+					finishPoint = i + 1 + headNo;
+				}
+				AddStr("PICKER_SUBTECH_2", k);
+				sprintf(str,"%2d",wActPara2);
+				AddStr(str, k);
 				break;
+			case 0x10: // P2P
+				if(wActPara5) // 延時
+				{
+					AddStr("PICKER_DESCRIBE_AXIS_4", k);
+					sprintf(str,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10); // 
+					AddStr(str, k);
+					AddStr("PICKER_DESCRIBE_AXIS_8", k);
+				}
+				AddStr("PICKER_P2P", k);
+				if(wActPara2) //速度
+				{
+					AddStr("PICKER_DESCRIBE_AXIS_1", k);
+					sprintf(str,"%3d",wActPara2);
+					AddStr(str, k);
+				}
+				AddStr("PICKER_DESCRIBE_AXIS_2", k);
+				sprintf(str,"%3d.%02d",wActPara1/100,wActPara1%100); // "X"
+				AddStr(str, k);
+				sprintf(str,"%3d.%02d",wActPara7/100,wActPara1%100); // "Y"
+				AddStr(str, k);
+				sprintf(str,"%3d.%02d",wActPara8/100,wActPara1%100); // "Z"
+				AddStr(str, k);
 			default: 
 				break;	
 		}
-		//printf("Line%d DataID: %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s\n",i+1+No1,pDataID,pDataID2,pDataID3,pDataID4,pDataID5,pDataID6,pDataID7,pDataID8,pDataID9,pDataID10,pDataID11,pDataID12);
-		// ↓ 字串合併顯示 cjlee add 
-		index_1 = g_MultiLanguage.GetStrKeyIndex(pDataID);
-		index_2 = g_MultiLanguage.GetStrKeyIndex(pDataID2);	
-		index_3 = g_MultiLanguage.GetStrKeyIndex(pDataID3);	
-		index_4 = g_MultiLanguage.GetStrKeyIndex(pDataID4);
-		index_5 = g_MultiLanguage.GetStrKeyIndex(pDataID5);	
-		index_6 = g_MultiLanguage.GetStrKeyIndex(pDataID6);	
-		index_7 = g_MultiLanguage.GetStrKeyIndex(pDataID7);
-		index_8 = g_MultiLanguage.GetStrKeyIndex(pDataID8);	
-		index_9 = g_MultiLanguage.GetStrKeyIndex(pDataID9);	
-		index_10 = g_MultiLanguage.GetStrKeyIndex(pDataID10);
-		index_11 = g_MultiLanguage.GetStrKeyIndex(pDataID11);	
-		index_12 = g_MultiLanguage.GetStrKeyIndex(pDataID12);	
+		int index[13];
+		char str_[1024];
 		
-		if (index_1<0)
-			index_1 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_2<0)
-			str_2 = pDataID2;
-		else
-			str_2 = g_MultiLanguage[index_2];
-		if (index_3<0)
-			index_3 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_4<0)
-			index_4 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_5<0)
-			index_5 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_6<0)
-			str_6 = pDataID6;
-		else
-			str_6 = g_MultiLanguage[index_6];
-		if (index_7<0)
-			index_7 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_8<0)
-			str_8 = pDataID8;
-		else
-			str_8 = g_MultiLanguage[index_8];
-		if (index_9<0)
-			str_9 = pDataID9;
-		else
-			str_9 = g_MultiLanguage[index_9];
-		if (index_10<0)
-			index_10 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_11<0)
-			str_11= pDataID11;
-		else
-			str_11 = g_MultiLanguage[index_11];
-		if (index_12<0)
-			index_12 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		//printf("Line%d = %d  %d  %d %d  %d  %d %d  %d  %d %d  %d  %d\n",i+1+No1,index_1,index_2,index_3,index_4,index_5,index_6,index_7,index_8,index_9,index_10,index_11,index_12);
-		
-		str_1 = g_MultiLanguage[index_1];
-		//str_2 = g_MultiLanguage[index_2];
-		str_3 = g_MultiLanguage[index_3];
-		str_4 = g_MultiLanguage[index_4];
-		str_5 = g_MultiLanguage[index_5];
-		//str_6 = g_MultiLanguage[index_6];
-		str_7 = g_MultiLanguage[index_7];
-		//str_8 = g_MultiLanguage[index_8];
-		//str_9 = g_MultiLanguage[index_9];
-		str_10 = g_MultiLanguage[index_10];
-		//str_11 = g_MultiLanguage[index_11];
-		str_12 = g_MultiLanguage[index_12];
-		
-		memset(str,0,sizeof(str));
-		//printf("sl_1=%d, sl_2=%d, sl_3=%d, sl_4=%d, sl_5=%d, sl_6=%d, sl_7=%d, sl_8=%d, sl_9=%d, sl_10=%d, sl_11=%d, sl_12=%d\n",strlen(str_1),strlen(str_2),strlen(str_3),strlen(str_4),strlen(str_5),strlen(str_6),strlen(str_7),strlen(str_8),strlen(str_9),strlen(str_10),strlen(str_11),strlen(str_12));
-		strncat(str, str_1, strlen(str_1));
-		strncat(str, str_2, strlen(str_2));
-		strncat(str, str_3, strlen(str_3));
-		strncat(str, str_4, strlen(str_4));
-		strncat(str, str_5, strlen(str_5));
-		strncat(str, str_6, strlen(str_6));
-		strncat(str, str_7, strlen(str_7));
-		strncat(str, str_8, strlen(str_8));
-		strncat(str, str_9, strlen(str_9));
-		strncat(str, str_10, strlen(str_10));
-		strncat(str, str_11, strlen(str_11));
-		strncat(str, str_12, strlen(str_12));
-		//printf("Line%d = %s\n",i+1+No1-5,str);
-		//printf("strlen=%d\n",strlen(str));
-		//strncpy(path, str, strlen(str)+1);
-		//path[strlen(str)]= '\0';
-		//printf("path=%d\n",path);
-/*
-		memset(str,0,sizeof(str));
-		printf("strlen:%d\n",strlen(str));
-		memcpy(str,str_1,strlen(str_1));
-		memcpy(str+strlen(str_1),str_2,strlen(str_2));
-		memcpy(str+strlen(str_1)+strlen(str_2),str_3,strlen(str_3));
-		memcpy(str+strlen(str_1)+strlen(str_2)+strlen(str_3),str_4,strlen(str_4));
-		memcpy(str+strlen(str_1)+strlen(str_2)+strlen(str_3)+strlen(str_4),str_5,strlen(str_5));
-		memcpy(str+strlen(str_1)+strlen(str_2)+strlen(str_3)+strlen(str_4)+strlen(str_5),str_6,strlen(str_6));
-		memcpy(str+strlen(str_1)+strlen(str_2)+strlen(str_3)+strlen(str_4)+strlen(str_5)+strlen(str_6),str_7,strlen(str_7));	
-		memcpy(str+strlen(str_1)+strlen(str_2)+strlen(str_3)+strlen(str_4)+strlen(str_5)+strlen(str_6)+strlen(str_7),str_8,strlen(str_8));		
-		memcpy(str+strlen(str_1)+strlen(str_2)+strlen(str_3)+strlen(str_4)+strlen(str_5)+strlen(str_6)+strlen(str_7)+strlen(str_8),str_9,strlen(str_9));	
-		memcpy(str+strlen(str_1)+strlen(str_2)+strlen(str_3)+strlen(str_4)+strlen(str_5)+strlen(str_6)+strlen(str_7)+strlen(str_8)+strlen(str_9),str_10,strlen(str_10));	
-		memcpy(str+strlen(str_1)+strlen(str_2)+strlen(str_3)+strlen(str_4)+strlen(str_5)+strlen(str_6)+strlen(str_7)+strlen(str_8)+strlen(str_9)+strlen(str_10),str_11,strlen(str_11));
-		memcpy(str+strlen(str_1)+strlen(str_2)+strlen(str_3)+strlen(str_4)+strlen(str_5)+strlen(str_6)+strlen(str_7)+strlen(str_8)+strlen(str_9)+strlen(str_10)+strlen(str_11),str_12,strlen(str_12));
-		memcpy(str+strlen(str_1)+strlen(str_2)+strlen(str_3)+strlen(str_4)+strlen(str_5)+strlen(str_6)+strlen(str_7)+strlen(str_8)+strlen(str_9)+strlen(str_10)+strlen(str_11)+strlen(str_12),"",strlen(""));
-		printf("%d str%d strlen: %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d\n",i+1+No1,strlen(str),strlen(str_1),strlen(str_2),strlen(str_3),strlen(str_4),strlen(str_5),strlen(str_6),strlen(str_7),strlen(str_8),strlen(str_9),strlen(str_10),strlen(str_11),strlen(str_12));
-*/
-		if(pwndCheckBoxAct[i] != NULL)
+		memset(str_,0,sizeof(str_));
+		for(int j = 0 ; j < 13 ; j++)
 		{
-			//pwndCheckBoxAct[i]->SetPropValueT("captionID","");
-			//pwndCheckBoxAct[i]->CreateA();
-			//pwndCheckBoxAct[i]->Show();
-			//pwndCheckBoxAct[i]->Update();
-			//pwndCheckBoxAct[i]->UpdateAll();
+			if(!strList[j]->readFlag)
+				break;
+			index[j] = g_MultiLanguage.GetStrKeyIndex(strList[j]->reference);
+			
+			if(index[j] < 0)
+				strncat(str_, strList[j]->reference, strlen(strList[j]->reference));
+			else
+				strncat(str_, g_MultiLanguage[index[j]], strlen(g_MultiLanguage[index[j]]));
 		}
+		
 		if(pwndStaticAct[i] != NULL)
-		{
-			RegionUpdateStop_APP = TRUE; //停止元件獨立刷新，記錄未刷新範圍
+		{	
+			char tmp[256];
+			int temp=0;
+			sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_STEP",headNo + i +1);
+			temp = GetDBValue(tmp).lValue;		
+												
+			pwndStaticAct[i]->SetPropValueT("text",str_);
 			
-			pwndStaticAct[i]->SetPropValueT("text",str);
-			pwndStaticAct[i]->CreateA();
+			if((headNo + i ) < StandbyStepNum)
+				pwndStaticAct[i]->SetPropValueT("bgc",GRAY_);
+			else
+				pwndStaticAct[i]->SetPropValueT("bgc",BgColor[((temp)%2)]);
+//			else
+//			{
+//				if((i % 2) && (headNo + i + 1) <= finishPoint)
+//					pwndStaticAct[i]->SetPropValueT("bgc", LBLUE_);
+//				else
+//					pwndStaticAct[i]->SetPropValueT("bgc", WHITE_);
+//			}		
 			pwndStaticAct[i]->Show();
-			pwndStaticAct[i]->Update();
-			pwndStaticAct[i]->UpdateAll();
-			
-			ChangePos(1);  //將未刷新的部分一次刷新
-			
-
 		}
-		//pwndCheckBoxAct[i]->Update();
-		// ↑ 字串合併顯示 cjlee add 
-		/*
-		pwndCheckBoxAct[i]->SetPropValueT("captionID1", pDataID);printf("pDataID1:%s",pDataID);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID2", pDataID2);printf("pDataID2:%s",pDataID2);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID3", pDataID3);printf("pDataID3:%s",pDataID3);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID4", pDataID4);printf("pDataID4:%s",pDataID4);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID5", pDataID5);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID6", pDataID6);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID7", pDataID7);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID8", pDataID8);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID9", pDataID9);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID10", pDataID10);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID11", pDataID11);
-		pwndCheckBoxAct[i]->SetPropValueT("captionID12", pDataID12);
-		pwndCheckBoxAct[i]->CreateA();
-		pwndCheckBoxAct[i]->Update();
-		pwndCheckBoxAct[i]->UpdateAll();*/		
-	}
-		}
-    /*=========================TEST============================*/
-  	}
-
-	int SelectFlag =0;
-	for (int i = 0; i < iEditNo; i++)	// 獲參序號
-	{
-		No = i+1+No1;
-		memset(pNo, 0 ,sizeof(pNo));
-		sprintf(pNo,"%d",No);
-		if(pwndEditNo[i] != NULL)
+		if(pwndStaticEditNo[i] != NULL)
 		{
-			pwndEditNo[i]->SetPropValueT("text",pNo);
-			pwndEditNo[i]->Update();
-		}
+			char tmp[256];
+			int value;
+			int preValue;
+			int nextValue;
+			sprintf(tmp, "MACHINE_PROFILE_NUM%d_ACTION_STEP", headNo + i +1);
+			value = GetDBValue(tmp).lValue;
 
-		if( No<(StandbyStepNum+1) ) // 設置等待點 序號
-		{
-			RegionUpdateStop_APP = TRUE; //停止元件獨立刷新，記錄未刷新範圍
-			if(pwndEditNo[i] != NULL)
-			{
-				pwndStaticAct[i]->SetPropValueT("bgc",50712);
-				pwndStaticAct[i]->Update();
-			}
-			if(pwndStaticEditNo[i] != NULL)
-			{
+			sprintf(tmp, "MACHINE_PROFILE_NUM%d_ACTION_STEP", headNo + i );
+			preValue = GetDBValue(tmp).lValue;
+
+			sprintf(tmp, "MACHINE_PROFILE_NUM%d_ACTION_STEP",  headNo + i + 2 );
+			nextValue = GetDBValue(tmp).lValue;
+			if((headNo + i ) < StandbyStepNum)
 				pwndStaticEditNo[i]->SetPropValueT("text","WAIT");
-				pwndStaticEditNo[i]->Update();
-			}
-			ChangePos(1);  //將未刷新的部分一次刷新
-		}
-
-		else
-		{
-			RegionUpdateStop_APP = TRUE; //停止元件獨立刷新，記錄未刷新範圍
-			
-			memset(pNoDataID, 0 ,sizeof(pNoDataID));
-			sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
-			memset(pStaticNo, 0 ,sizeof(pStaticNo));
-			int value = GetDBValue(pNoDataID).lValue;
-			if(No>EditedStepNum)value=StandbyStepNum; // 未編輯的動作
-			sprintf(pStaticNo,"%d",value-StandbyStepNum);
-			
-			//memset(pStaticNo, 0 ,sizeof(pStaticNo));
-			//sprintf(pStaticNo,"%d",No-5);
-			pwndStaticEditNo[i]->SetPropValueT("text",pStaticNo);
-			pwndStaticEditNo[i]->Update();
-			ChangePos(1);  //將未刷新的部分一次刷新
-		}
-		if(pwndEditNo[i] != NULL)			//
-		{
-			if(No==SelectNo)
+			else
 			{
-				pwndStaticAct[i]->SetPropValueT("bgc",36256);
-				//pwndCheckBoxAct[i]->SetPropValueT("bgc",36256);
-				SelectFlag =1;
+				sprintf(tmp, "%d", value - StandbyStepNum);		
+				if(headNo + i +1 > actionTable->editedStepNum)
+					pwndStaticEditNo[i]->SetPropValueT("text","0");
+				else
+					pwndStaticEditNo[i]->SetPropValueT("text",tmp);
 			}
-		}
-	}
-	if(pwndEditNo[0] != NULL && !SelectFlag)			//嫖梓詢謠
-	{
-		pwndEditNo[0]->GetPropValueT("text", pNo, sizeof(pNo));
-		sscanf(pNo,"%d",&SelectNo);
-		pwndStaticAct[0]->SetPropValueT("bgc",36256);
-		//pwndCheckBoxAct[0]->SetPropValueT("bgc",36256);
-	}
-	
-	char 	pDataID[256],pDataID2[256];
-	int		type = 0,num = 0;
-	for(int i =0;i<MaxDBNum;i++) // 計數有編寫的教導有幾步驟
-	{
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1);
-		type = GetDBValue(pDataID).lValue;
-		memset(pDataID2, 0 ,sizeof(pDataID));
-		sprintf(pDataID2,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i+1);
-		num = GetDBValue(pDataID2).lValue;
 
-		if(type ==6 && num ==1) // "結束"type=6 num=1
-		{
-			EditedStepNum=i+1;
+//			if(( nextValue == value || preValue == value) && (headNo + i ) > StandbyStepNum && (headNo + i + 1 ) <= finishPoint)
+//				pwndStaticEditNo[i]->SetPropValueT("bgc", 0xFFE0);
+//			else if((i % 2) && (headNo + i + 1) <= finishPoint)
+//				pwndStaticEditNo[i]->SetPropValueT("bgc",BLUE_);
+//			else
+//				pwndStaticEditNo[i]->SetPropValueT("bgc",WHITE_);
+			
+			pwndStaticEditNo[i]->SetPropValueT("bgc",NoColor[((value)%2)]); // 動作背景顏色
+			pwndStaticEditNo[i]->Show();
 		}
+		
+		k = 0;
 	}
-	printf("EditedStepNum=%d\n",EditedStepNum);
-	
-	UpdateText();
-	UpdateNo();
-	Update_Download_Hint();
-	UpdatePageBar(No1/15);
-	
-	return TRUE;
+
+	ChangePos(1);
 }
 
 void	OnUpdateA(CtmWnd* pwndSender)
 {
-		if(!RunOnlyOne) // 開機只運行一次
-	{
-		if(pwndBtnFollow!=NULL)
-	 	{
- 			pwndBtnFollow->SetPropValueT("upbitmap",Img_Select[b_Follow]);
- 			pwndBtnFollow->SetPropValueT("captionID",Str_Follow[b_Follow]);
- 			pwndBtnFollow->CreateA();
- 			pwndBtnFollow->Update();
- 			printf("Folloew =%d\n",b_Follow);
- 		}
- 		RunOnlyOne=TRUE;
- 	}
-	
-	
-	u_wPickerOPSatus = GetDBValue("MACHINE_INTERFACE_WOPERATINGSTATE").lValue; // 機械手狀態
-	if( (u_wPickerOPSatus_Old!=u_wPickerOPSatus) && (u_wPickerOPSatus!=STATE_SINGLESTEP) ) // 跳出單步 狀態更新
-		{
+	u_wPickerOPSatus = (MachineState)GetDBValue("MACHINE_INTERFACE_WOPERATINGSTATE").lValue; // 機械手狀態
+
+	if( (u_wPickerOPSatus_Old != u_wPickerOPSatus) && (u_wPickerOPSatus != STATE_SINGLESTEP) ) // 跳出單步 狀態更新
   		::PutCommand("PG_0.txt");
-		}
+
 	if(GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED42").lValue)
 	{
 		printf("Get SYSX_OTHERS_OTHERS_INT_RESERVED42\n");
-		UpdateText();
+		actionTable->ShowText();
 		SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED42", 0);
 	}
-	if((u_wPickerOPSatus == STATE_SINGLESTEP || u_wPickerOPSatus == STATE_FULLAUTO) && b_Follow) // 顯示當前執行步驟 && 跟隨
-    {
-        wStep = (WORD)GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue; // 執行步驟
-        int StepNumMin = 1+No1;
-        int StepNumMax = iNum_Page+No1;
-        if(wStep >0 && wStep < StepNumMin)
+	if((u_wPickerOPSatus == STATE_SINGLESTEP || u_wPickerOPSatus == STATE_FULLAUTO) &&  actionTable->b_Follow) // 顯示當前執行步驟 && 跟隨
+    {	
+		wStep = (WORD)GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue; // 執行步驟
+        int StepNumMin = 1 + actionTable->headNo;
+        int StepNumMax = actionTable->num_of_action + actionTable->headNo;
+		if(wStep >0 && wStep < StepNumMin)
+        	actionTable->PageUp();
+		else if(wStep <= 100 && wStep > StepNumMax)
+        	actionTable->PageDown();
+		else if(wStep >0 && wStep != wStepOld) // 執行步驟變化
         {
-        	PageUp(pwndSender);
-        	UpdateText();
-        	UpdateNo();
-        }
-        else if(wStep <=100 && wStep > StepNumMax)
-        {
-        	PageDown(pwndSender);
-        	UpdateText();
-        	UpdateNo();
-        }
-        else if(wStep >0 && wStep != wStepOld) // 執行步驟變化
-        {
-        	printf("wStep=%d\n",wStep);
-        	int temp;
-        	UpdateText(); // 刷新文字
-        	for(int i =0; i < iCheckBoxAct; i++)
+			int temp;
+        	actionTable->ShowText(); 
+			for(int i =0; i < actionTable->num_of_action; i++)
+			{
+				int StepNum = i + 1 + actionTable->headNo;
+				if(wStep == StepNum && actionTable->pwndCheckBoxAct[i] != NULL && actionTable->pwndStaticAct[i] != NULL)
+				{
+					for(int k = 0; k < actionTable->num_of_action ; k++)
 					{
-						int StepNum = i+1+No1;
-						if(wStep == StepNum && pwndCheckBoxAct[i] != NULL && pwndStaticAct[i] != NULL)
+						if(k + 1 + actionTable->headNo <(StandbyStepNum + 1))
+							 actionTable->pwndStaticAct[k]->SetPropValueT("bgc",50712);
+						else
 						{
-							for(int k =0; k < iCheckBoxAct; k++)		//詢謠珆尨
-							{
-								No = k+1+No1;
-								if(No <(StandbyStepNum+1))
+							sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",k + 1 + actionTable->headNo);
+							temp = GetDBValue(pNoDataID).lValue;		
+							if(k + 1 + actionTable->headNo > actionTable->editedStepNum) temp = StandbyStepNum; // 未編輯的動作	
 								{
-									pwndStaticAct[k]->SetPropValueT("bgc",50712);
+									actionTable->pwndStaticAct[k]->SetPropValueT("bgc",BgColor[((temp)%2)]); // 動作背景顏色
 								}
-								else
-								{
-									memset(pNoDataID, 0 ,sizeof(pNoDataID));
-									sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
-									memset(pStaticNo, 0 ,sizeof(pStaticNo));
-									temp = GetDBValue(pNoDataID).lValue;		
-									if(No>EditedStepNum)temp=StandbyStepNum; // 未編輯的動作	
-									pwndStaticAct[k]->SetPropValueT("bgc",BgColor[((temp)%2)]);
-								}								
-							}
-							((CtmFormView*)pwndSender)->Goto(pwndStaticAct[i]->GetTabOrder());
-							pwndStaticAct[i]->SetPropValueT("bgc",LGreen);
-							pwndStaticAct[i]->CreateA();
-							pwndStaticAct[i]->Show();
-							pwndStaticAct[i]->Update();
-							pwndStaticEditNo[i]->SetPropValueT("bgc",LGreen);
-							pwndStaticEditNo[i]->CreateA();
-							pwndStaticEditNo[i]->Show();
-							pwndStaticEditNo[i]->Update();
-						}
+//								if(temp % 2)
+//									actionTable->pwndStaticAct[k]->SetPropValueT("bgc",WHITE_);
+//								else
+//									actionTable->pwndStaticAct[k]->SetPropValueT("bgc",LBLUE_);
+						}								
 					}
-        	wStepOld = wStep;
-        }
-    }
-  u_wPickerOPSatus_Old = u_wPickerOPSatus;
+					((CtmFormView*)pwndSender)->Goto(actionTable->pwndStaticAct[i]->GetTabOrder());
+					actionTable->pwndStaticAct[i]->SetPropValueT("bgc",GREEN_);
+					actionTable->pwndStaticAct[i]->CreateA();
+					actionTable->pwndStaticAct[i]->Show();
+					actionTable->pwndStaticAct[i]->Update();
+					actionTable->pwndStaticEditNo[i]->SetPropValueT("bgc",GREEN_);
+					actionTable->pwndStaticEditNo[i]->CreateA();
+					actionTable->pwndStaticEditNo[i]->Show();
+					actionTable->pwndStaticEditNo[i]->Update();
+				}
+			}
+			wStepOld = wStep;
+		}
+	}
+
+	u_wPickerOPSatus_Old = u_wPickerOPSatus;
 }
 
 WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
-{
-	printf("OnChangeA\n");
-	CtmWnd*	pwnd = pwndSender->FindControlFromTab(wIDControl);
-
-	return wIDControl;
-}
+{	return wIDControl;	}
 
 WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 {
-	printf("OnKey = %d\n",wKey);
-	int         nCMDValue       = 0xFF0D;
-	int         nCMDLastStep    = 0xFF26;
-	int         nCMDSingleCycle = 0xFF25;
-	char 	pDataID[256];
-	int		ActionType = 0, ACTIONNUM = 0; // 動作類型 編號
-	int		ActionType_Pre = 0; // 前一步動作類型
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",SelectNo);
-	ActionType =GetDBValue(pDataID).lValue;
-	if(SelectNo>1)
+	int nCMDValue = 0xFF0D;
+	int nCMDSingleCycle = 0xFF25;
+	int actionType;
+	int actionTypePre;
+	int actionNum;
+	char pDataID[256];
+	sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", actionTable->selectNo );
+	actionType =GetDBValue(pDataID).lValue;
+	sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_NUM", actionTable->selectNo); 
+	actionNum = GetDBValue(pDataID).lValue;
+	if(u_wPickerOPSatus != STATE_FULLAUTO)
 	{
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",SelectNo-1);
-		ActionType_Pre = GetDBValue(pDataID).lValue;
-	}
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM", SelectNo); 
-	ACTIONNUM =GetDBValue(pDataID).lValue;
-	if(u_wPickerOPSatus != STATE_FULLAUTO) // 自動下限制
-	{
-		if (wKey == 0x0002)	//插入��
+		switch(wKey)
 		{
-			if(SelectNo > StandbyStepNum && SelectNo <= EditedStepNum) // (選擇步驟 > 等待點步驟) && (選擇步驟 <= 編輯步驟數) 
-			{
-				if(ActionType != 5)
+			case 0x0001:
+				if(u_wPickerOPSatus == STATE_SINGLESTEP)
 				{
-					Insert(SelectNo);
-					EditedStepNum++;
-					UpdateText();
-					UpdateNo();
-				}
-				else if(ACTIONNUM != 1)
-				{
-					Insert(SelectNo);
-					EditedStepNum++;
-					UpdateText();
-					UpdateNo();
-				}
-			}
-		}
-		else if (wKey == 0x0003)	//刪除
-		{
-			MsgBox(g_MultiLanguage["PICKER_CONFIRMDELETE"], tmFT_CODE_TECH);
-	    if(g_bMsgBoxFlag)
-	    {
-				if(SelectNo > StandbyStepNum && SelectNo <= EditedStepNum) // (選擇步驟 > 等待點步驟) && (選擇步驟 < 編輯步驟數) 
-				{
-					if(ActionType != 5 && ActionType != 6) // 步驟不能為 開始 或結束
-					{
-						UnSync(SelectNo);
-						UnSync(SelectNo+1);
-						Delete(SelectNo);
-						EditedStepNum--;
-						UpdateText();
-						UpdateNo();
-					}
-					else if(ACTIONNUM != 1)
-					{
-						UnSync(SelectNo);
-						UnSync(SelectNo+1);
-						Delete(SelectNo);
-						EditedStepNum--;
-						UpdateText();
-						UpdateNo();
-					}
-				}
-			}
-		}
-		else if (wKey == 0x0007)	//ь清理
-		{
-			Cleanhelp =0;
-			Clean();
-			UpdateText();
-		}
-		else if (wKey == 0x0008)	//ь清除資料
-		{
-			MsgBox(g_MultiLanguage["PICKER_CONFIRMDELETE"], tmFT_CODE_TECH);
-		    if(g_bMsgBoxFlag)
-		    {
-		    	Clear();
-		    	UpdateText();
-		    	UpdateNo();
-		    }
-		}
-		else if (wKey == 0x0004)	//下載
-		{
-			if(u_wPickerOPSatus == STATE_HAND)
-			{
-				MsgBox(g_MultiLanguage["CHECK_DOWNLOAD_CONFIRM"], tmFT_CODE_TECH);
-	    	if(g_bMsgBoxFlag)
-	    	{
-					Cleanhelp =0;
-					Clean();
-					Prompt(g_MultiLanguage["PICKER_DATADOWNLODING"],1); 
-					GetPosTag();
-					SendCommand(0xF600); // Servo Off
-					Download();
-					g_Hint_Download = 0; // 完成下載
-					Update_Download_Hint();
-					UpdateNo();
-					UpdateText();
-					Prompt(g_MultiLanguage["PICKER_DATADOWNLOADFINISH"],1); 
-				}
-			}
-			else
-			{
-				MsgBox(g_MultiLanguage["PICKER_M3_ALARM5025"], tmFT_CODE_TECH);
-			}
-		}
-		else if(wKey == 0x0001) //下一步
-    	{
-    	    if(u_wPickerOPSatus == STATE_SINGLESTEP)
-    	    {
     	    		wSingle_Step = (WORD)GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue;
-    	        if(g_ptaskpicker != NULL && wSingle_Step != wSingle_StepOld)
-    	        {
-    	        		printf("Now step=%d\n",wSingle_Step);
-    	            g_ptaskpicker->ReqValues(CONST_REQ_COMMAND, 1, &nCMDValue, NULL);
-    	            printf("SendCMD%d:%x=1\n",CONST_REQ_COMMAND,nCMDValue);
-    	            wSingle_StepOld = wSingle_Step;    	            
-    	        }
-    	        if(u_pwndSingle != NULL)
-    	        {
-    	            u_pwndSingle->SetPropValueT("upbitmap", "res_tm640/pic/ButtonDown.bmp");
-    	            u_pwndSingle->Update();
-    	        }
-    	    }
-    	    else
-    	    {
-    	         MsgBox(g_MultiLanguage["PICKER_NOTSINGLESTEP"], tmFT_CODE_TECH);
-    	    }
-    	    return _NULL_KEY;
-    	}
-    else if(wKey == 0x0009)// 上一步
-    	{
-    	    if(u_wPickerOPSatus == STATE_SINGLESTEP)
-    	    {
-    	    		//wSingle_Step = (WORD)GetDBValue("MACHINE_INTERFACE_WSTEPNUMBER").lValue;
-    	        if(g_ptaskpicker != NULL )//&& wSingle_Step != wSingle_StepOld)
-    	        {
-  	        		//printf("Now step=%d\n",wSingle_Step);
-  	            g_ptaskpicker->ReqValues(CONST_REQ_COMMAND, 1, &nCMDLastStep, NULL);
-  	            printf("nCMDLastStep:%X\n",nCMDLastStep);
-  	            //wSingle_StepOld = wSingle_Step;
-    	        }
-    	    }
-    	    else
-    	    {
-    	         MsgBox(g_MultiLanguage["PICKER_NOTSINGLESTEP"], tmFT_CODE_TECH);
-    	    }
-    	    return _NULL_KEY;
-    	}
-    else if(wKey == 0x000F) // 單循環
-    	{
-    		if(u_wPickerOPSatus == STATE_SINGLESTEP)
-    	    {
-    	    	if(g_ptaskpicker != NULL)
-    	    	{
-    	       		g_ptaskpicker->ReqValues(CONST_REQ_COMMAND, 1, &nCMDSingleCycle, NULL);
-    	      	 	printf("nCMDSingleCycle:%X\n",nCMDSingleCycle);
-    	    	}   
-    	    }
-    	    else
-    	    {
-    	         MsgBox(g_MultiLanguage["PICKER_NOTSINGLESTEP"], tmFT_CODE_TECH);
-    	    }
-    	    return _NULL_KEY;
-    	}
-    else if(wKey == 0x000C) // 合併
-    	{
-				if(SelectNo > StandbyStepNum) // (SelectNo > 5)
-				{
-					//if(ActionType != 5)
-					if( ((ActionType==Action_Axis)||(ActionType==Action_Permit)) && ((ActionType_Pre==Action_Axis)||(ActionType_Pre==Action_Permit))) // 所選動作及合併動作，皆須是軸動作或是允許動作
+					if(g_ptaskpicker != NULL && wSingle_Step != wSingle_StepOld)
 					{
-						Sync(SelectNo);
-						UpdateText();
+						printf("Now step=%d\n",wSingle_Step);
+						g_ptaskpicker->ReqValues(CONST_REQ_COMMAND, 1, &nCMDValue, NULL);
+						printf("SendCMD%d:%x=1\n",CONST_REQ_COMMAND,nCMDValue);
+						wSingle_StepOld = wSingle_Step;    	            
 					}
-//					else if(ACTIONNUM != 1)
-//					{
-//						Sync(SelectNo);
-//						UpdateText();
-//					}
-				}
-    	}
-    else if(wKey == 0x000D) // 分解
-    	{
-    		if(SelectNo > StandbyStepNum) //(SelectNo > 6)
-				{
-					if(ActionType != StandbyStepNum)
+					if(actionTable->pwndBtnSingle != NULL)
 					{
-						UnSync(SelectNo);
-						UpdateText();
-					}
-					else if(ACTIONNUM != 1)
-					{
-						UnSync(SelectNo);
-						UpdateText();
+						actionTable->pwndBtnSingle->SetPropValueT("upbitmap", "res_tm640/pic/ButtonDown.bmp");
+						actionTable->pwndBtnSingle->Update();
 					}
 				}
-    	}
-    else if(wKey == 0x000E) // 執行單步
-    	{
-    		if(u_wPickerOPSatus == STATE_HAND)
-  			{
-	    		SendCommand(MODE_SINGLESTEP);	
-	    		::PutCommand("PG_0_SINGLE.txt");
-  			}
-    	}   
-    else if(wKey == 0x0010) // 結束單步
-    	{
-    		SendCommand(MODE_MANUAL);
-    		::PutCommand("PG_0.txt");
-    	}  
+				else
+					MsgBox(g_MultiLanguage["PICKER_NOTSINGLESTEP"], tmFT_CODE_TECH);
+				return _NULL_KEY;
+				break;
+			case 0x0002:
+				if(actionTable->selectNo > StandbyStepNum && actionTable->selectNo <= actionTable->editedStepNum) // (選擇步驟 > 等待點步驟) && (選擇步驟 <= 編輯步驟數)
+					if(actionType != 5)
+						actionTable->Insert();
+					else if(actionNum != 1)
+						actionTable->Insert();
+				break;
+			case 0x0003:
+				MsgBox(g_MultiLanguage["PICKER_CONFIRMDELETE"], tmFT_CODE_TECH);
+				if(g_bMsgBoxFlag)
+					if(actionTable->selectNo > StandbyStepNum && actionTable->selectNo <= actionTable->editedStepNum)
+						if(actionType != 5 && actionType != 6)
+						{
+							actionTable->UnSync(actionTable->selectNo);
+							actionTable->UnSync(actionTable->selectNo + 1);
+							actionTable->Delete(actionTable->selectNo);
+						}
+						else if(actionNum != 1)
+						{
+							actionTable->UnSync(actionTable->selectNo);
+							actionTable->UnSync(actionTable->selectNo + 1);
+							actionTable->Delete(actionTable->selectNo);
+						}
+				break;
+			case 0x0004:
+				if(u_wPickerOPSatus == STATE_HAND)
+				{
+					MsgBox(g_MultiLanguage["CHECK_DOWNLOAD_CONFIRM"], tmFT_CODE_TECH);
+					if(g_bMsgBoxFlag)
+					{
+						actionTable->Clean();
+						Prompt(g_MultiLanguage["PICKER_DATADOWNLODING"],1); 
+						actionTable->GetPosTag();
+						actionTable->SendCommand(0xF600); // Servo Off
+						actionTable->Download();
+						g_Hint_Download = 0; // 完成下載
+						actionTable->Update_Download_Hint();
+						actionTable->ShowText();
+						Prompt(g_MultiLanguage["PICKER_DATADOWNLOADFINISH"],1); 
+					}
+				}
+				else
+					MsgBox(g_MultiLanguage["PICKER_M3_ALARM5025"], tmFT_CODE_TECH);
+				break;
+			case 0x0008:
+				MsgBox(g_MultiLanguage["PICKER_CONFIRMDELETE"], tmFT_CODE_TECH);
+				if(g_bMsgBoxFlag)
+					actionTable->Clear();
+				break;
+			case 0x000C:
+				if(actionTable->selectNo > StandbyStepNum) // (SelectNo > 5)
+				{
+					sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", actionTable->selectNo - 1);
+					actionTypePre = GetDBValue(pDataID).lValue;
+					if( ((actionType == Action_Axis) || (actionType == Action_Permit)) && ((actionTypePre == Action_Axis) || (actionTypePre == Action_Permit))) // 所選動作及合併動作，皆須是軸動作或是允許動作
+						actionTable->Sync();
+				}
+				break;
+			case 0x000D:
+				if(actionTable->selectNo > StandbyStepNum) //(SelectNo > 6)
+				{
+					if(actionType != StandbyStepNum)
+						actionTable->UnSync(actionTable->selectNo);
+					else if(actionNum != 1)
+						actionTable->UnSync(actionTable->selectNo);
+				}
+				break;
+			case 0x0010:
+				actionTable->SendCommand(MODE_MANUAL);
+				::PutCommand("PG_0.txt");
+				break;
+			case 0x000E:
+				if(u_wPickerOPSatus == STATE_HAND)
+				{
+					actionTable->SendCommand(MODE_SINGLESTEP);	
+					::PutCommand("PG_0_SINGLE.txt");
+				}
+				break;
+			case 0x000F:
+				if(u_wPickerOPSatus == STATE_SINGLESTEP)
+				{
+					if(g_ptaskpicker != NULL)
+					{
+						g_ptaskpicker->ReqValues(CONST_REQ_COMMAND, 1, &nCMDSingleCycle, NULL);
+						printf("nCMDSingleCycle:%X\n",nCMDSingleCycle);
+					}   
+				}
+				else
+					MsgBox(g_MultiLanguage["PICKER_NOTSINGLESTEP"], tmFT_CODE_TECH);
+				return _NULL_KEY;
+				break;
+		}
 	}
 	
 	if (wKey == 0x000B)		// 下一頁
 	{
-		PageDown(pwndSender);
-		printf("Page Dwon\n");
-		UpdateText();
-		UpdateNo();
+		actionTable->PageDown();
+		
 		return _NULL_KEY;
 	}
 	else if (wKey == 0x000A)	// 上一頁
 	{
-		//printf("PageUp\n");
-		PageUp(pwndSender);
-		printf("Page Up\n");
-		UpdateText();
-		UpdateNo();
+		actionTable->PageUp();
 	
 		return _NULL_KEY;
 	}
-
-	if(pwndSender->Is("CtmFormView")) return ((CtmFormView*)pwndSender)->OnKey1(wKey);
-	else return _NULL_KEY;
 }
 
 WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 {
 	CtmWnd*     pwnd = pwndSender->FindControlFromTab(wIDControl);
-
-	//if(u_wPickerOPSatus != STATE_FULLAUTO) // 自動下限制  //cjlee changed 自動下編輯2019/12/3 下午 05:11:53
+	char tmp[256];
+	if( (u_wPickerOPSatus != STATE_FULLAUTO) || (!actionTable->b_Follow) ) // 自動下限制 || 不跟隨
 	{
-		if(pwnd == pwndButtonStartEdit) // 開始編輯
- 		{
- 			if(SelectNo < EditedStepNum)
+		for(int i =0; i < actionTable->num_of_action ; i++)
+		{
+			if(actionTable->pwndCheckBoxAct[i] != NULL && pwnd == actionTable->pwndCheckBoxAct[i]) // press selected btn
 			{
-	 			printf("Start Edit\n");
-	 			char 	pDataID[256];
-				int		ActionType = 0, ACTIONNUM = 0;
-				memset(pDataID, 0 ,sizeof(pDataID));
-				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",SelectNo);
-				ActionType =GetDBValue(pDataID).lValue;
-				memset(pDataID, 0 ,sizeof(pDataID));
-				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM", SelectNo); 
-				ACTIONNUM =GetDBValue(pDataID).lValue;
-	 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED40", SelectNo);
-	 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType); // cjlee 確保儲存動作類型 2019/2/20 下午 08:13:15
-	 			printf("PG0 Set SelectNo%d ActionType=%d\n",SelectNo,ActionType); 
-				if(ActionType != 0)
+				if(actionTable->lastSelect >= 0 && actionTable->lastSelect != i )
 				{
-					switch(ActionType)
+					actionTable->pwndStaticAct[actionTable->lastSelect]->SetPropValueT("bgc",actionTable->lastSelectColor_1);
+					actionTable->pwndStaticEditNo[actionTable->lastSelect]->SetPropValueT("bgc",actionTable->lastSelectColor_2);
+					actionTable->pwndStaticEditNo[actionTable->lastSelect]->Show();
+					actionTable->pwndStaticAct[actionTable->lastSelect]->Show();
+				
+				}
+				if(actionTable->lastSelect != i)
+				{
+					actionTable->pwndStaticAct[i]->GetPropValueT("bgc", &actionTable->lastSelectColor_1, sizeof(DWORD));
+					actionTable->pwndStaticEditNo[i]->GetPropValueT("bgc", &actionTable->lastSelectColor_2, sizeof(DWORD));
+				}
+				
+				actionTable->pwndStaticAct[i]->SetPropValueT("bgc",GREEN_);
+				actionTable->pwndStaticEditNo[i]->SetPropValueT("bgc",GREEN_);
+				
+				actionTable->pwndStaticEditNo[i]->Show();
+				actionTable->pwndStaticAct[i]->Show();
+				actionTable->lastSelect = i;
+				actionTable->selectNo = actionTable->headNo + i + 1;
+				//actionTable->pwndStaticAct[i]->GetPropValueT("text", tmp, sizeof(tmp));
+				//cout << "actionTable->selectNo = " << actionTable->selectNo << endl;
+				//cout << "tmp = " << tmp << endl;
+				ChangePos(1);
+				showFlag = i;
+				break;
+			}
+		}
+	}	
+	if(pwnd == actionTable->pwndBtnEdit) // edit
+ 	{
+		if(actionTable->selectNo < actionTable->editedStepNum)
+		{
+			int actionType;
+			int actionNum;
+			char tmp[256];
+			
+			sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_TYPE", actionTable->selectNo);
+			actionType =GetDBValue(tmp).lValue;
+			//memset(tmp, '\0' ,sizeof(tmp));
+			sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_NUM", actionTable->selectNo); 
+			actionNum =GetDBValue(tmp).lValue;
+			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED40", actionTable->selectNo);
+			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
+			if(actionType != 0)
+			{
+					switch(actionType)
 					{
 						case 1:		// 軸動作
-							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
 							MsgBoxCall("EditWindow_AxisAct.txt");
 							usleep(100*1000);
-						break;
+							break;
 						case 2:		// 等待
-							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
 							MsgBoxCall("EditWindow_Wait.txt");
 							usleep(100*1000);
-						break;
+							break;
 						case 3:		// 允許
-							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
 							MsgBoxCall("EditWindow_Permit.txt");
 							usleep(100*1000);
-						break;
+							break;
 						case 4:		// 閥門
-							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
 							MsgBoxCall("EditWindow_Valve.txt");
 							usleep(100*1000);
-						break;
+							break;
 						case 5:		// 標籤
-							if(ACTIONNUM != 1)
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
+							if(actionNum != 1)
 							{
-								SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
 								MsgBoxCall("EditWindow_Tag.txt");
 								usleep(100*1000);
 							}
-						break;
+							break;
 						case 6:		// 趟轉
-							if(ACTIONNUM != 1)
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
+							if(actionNum != 1)
 							{
-								SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
 								MsgBoxCall("EditWindow_Goto.txt");
 								usleep(100*1000);
 							}
-						break;
+							break;
 						case 8:		// 檢測
-							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
 							MsgBoxCall("EditWindow_Detect.txt");
 							usleep(100*1000);
-						break;
+							break;
 						case 12:	// 堆疊
-							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
 							MsgBoxCall("EditWindow_Pile.txt");
 							usleep(100*1000);
-						break;
+							break;
 						case 13:	// 副程式
-							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
 							MsgBoxCall("EditWindow_Sub.txt");
 							usleep(100*1000);
-						break;
+							break;
 						case 0x10:	// P2P
-							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", ActionType);
+							SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED41", actionType);
 							MsgBoxCall("EditWindow_P2P.txt");
 							usleep(100*1000);
-						break;
+							break;
 						default:
 							MsgBoxCall("EditWindow_ActSelect.txt");
 							usleep(100*1000);
-						break;
+							break;
 					}
-				}
-				else
-				{
-					MsgBoxCall("EditWindow_ActSelect.txt");
-					usleep(100*1000);
-				}
 			}
- 		}
-	}
-	
-	for(int i =0; i < iCheckBoxAct; i++)
-	{
-		if(pwndCheckBoxAct[i] != NULL && pwnd == pwndCheckBoxAct[i]) // 按下選擇 動作
-		{			
-//			for(int k =0; k < iCheckBoxAct; k++) //
-//			{
-//				No = k+1+No1;
-//				if( No<(StandbyStepNum+1) )
-//				{
-//					pwndStaticAct[k]->SetPropValueT("bgc",50712);
-//				}
-//				else
-//				{
-//					pwndStaticAct[k]->SetPropValueT("bgc",BgColor[1]);
-//				}
-//				pwndStaticAct[k]->Update();
-//			}
-			((CtmFormView*)pwndSender)->Goto(pwndStaticAct[i]->GetTabOrder());
-			//pwndStaticAct[i]->SetPropValueT("bgc",36256);
-			
-			if(pwndEditNo[i] != NULL)					//鳳��唗瘍
+			else
 			{
-				pwndEditNo[i]->GetPropValueT("text", pNo, sizeof(pNo));
-				sscanf(pNo,"%d",&SelectNo);
+				MsgBoxCall("EditWindow_ActSelect.txt");
+				usleep(100*1000);
 			}
-			//pwndStaticAct[i]->CreateA();
-			//pwndStaticAct[i]->Update();
-			pwndStaticAct[i]->Show();
-			//pwndCheckBoxAct[i]->Update();
-			UpdateText();
-			showFlag = i;
+			actionTable->ShowText();
 		}
 	}
-	
-	if(pwnd == NULL)	return wIDControl;
-	return TRUE;
 }
 WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
-{
-	printf("OnMouseUp\n");
+{	
 	CtmWnd*     pwnd = pwndSender->FindControlFromTab(wIDControl);
- 	if(pwnd == NULL)	return wIDControl;
- 		
- 	if(pwnd == pwndBtnFollow)
- 		{
- 			b_Follow = !b_Follow;
- 			pwndBtnFollow->SetPropValueT("upbitmap",Img_Select[b_Follow]);
- 			pwndBtnFollow->SetPropValueT("captionID",Str_Follow[b_Follow]);
- 			pwndBtnFollow->CreateA();
- 			pwndBtnFollow->Update();
- 			printf("Folloew =%d\n",b_Follow);
- 		}
- 		
- 	pwndStaticAct[showFlag]->Show();
-	//UpdateText();
-	return wIDControl;
- 	
+	char tmp[256];
+	if(showFlag >= 0 )
+		actionTable->pwndStaticAct[showFlag]->Show();
+	if(pwnd == actionTable->pwndBtnFollow)
+ 	{
+ 		if(actionTable->b_Follow)
+		{
+			actionTable->pwndBtnFollow->SetPropValueT("upbitmap","res_tm640/pic/PGBtnSelect.bmp");
+			actionTable->pwndBtnFollow->SetPropValueT("captionID","PICKER_FOLLOW");
+		}
+		else
+		{
+			actionTable->pwndBtnFollow->SetPropValueT("upbitmap","res_tm640/pic/PGBtnUp.bmp");
+			actionTable->pwndBtnFollow->SetPropValueT("captionID","PICKER_UNFOLLOW");
+		}
+		
+		actionTable->b_Follow = !actionTable->b_Follow;
+ 		actionTable->pwndBtnFollow->CreateA();
+ 		actionTable->pwndBtnFollow->Update();
+ 	}
+
+	return wIDControl;	
 }
 
 void    OnDestroyA(CtmWnd* pwndSender)
 {
-	//MsgBox(g_MultiLanguage["PICKER_DATADOWNLODING"], tmFT_CODE_TECH); // 修改完確認是否下載 
-    for(int i = 0; i < MAXSTEP*CONTROLTYPENUM; i++)
+	for(int i = 0; i < MAXSTEP * CONTROLTYPENUM ; i++)
     {
         if(u_pszDBString[i] != NULL)
             free(u_pszDBString[i]);
         u_pszDBString[i] = NULL;
     }
-    
 }
-void	PageDown(CtmWnd* pwndSender)		// 下一頁
+void PG_0::PageDown()		// 下一頁
 {
-	int iPageturn = iNum_Page;
-	int		SelectNoHelp =0;
-	SelectNoHelp = SelectNo-No1;
-	for (int i = 0; i < iEditNo; i++)
+	cout << "Page Down" << endl;
+	if(headNo + iPageturn > 100)
+		headNo = 90;
+	else
 	{
-		if(No1 + iPageturn + iPageturn> 100)
-		{
-			No1 = 90;
-			iPageturn =0;
-		}
-		No = i+1+No1+iPageturn;
-		memset(pNo, 0 ,sizeof(pNo));
-		sprintf(pNo,"%d",No);
-		pwndEditNo[i]->SetPropValueT("text",pNo);
-		pwndEditNo[i]->Update();
-		printf("No=%d\n",No);
-//		if(pwndEditNo[i] != NULL)
-//		{
-//			pwndStaticAct[i]->SetPropValueT("bgc",BgColor[1]);
-//			pwndStaticAct[i]->Update();
-//		}
-		if( No<(StandbyStepNum+1) )
-		{
-			if(pwndEditNo[i] != NULL)
-			{
-				pwndStaticAct[i]->SetPropValueT("bgc",50712);
-				pwndStaticAct[i]->Update();
-			}
-			if(pwndStaticEditNo[i] != NULL)
-			{
-				pwndStaticEditNo[i]->SetPropValueT("text","WAIT");
-				pwndStaticEditNo[i]->Update();
-			}
-		}
-		else
-		{
-			if(pwndStaticEditNo[i] != NULL)
-			{
-				memset(pNoDataID, 0 ,sizeof(pNoDataID));
-				sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
-				memset(pStaticNo, 0 ,sizeof(pStaticNo));
-				int value = GetDBValue(pNoDataID).lValue;
-				if(No>EditedStepNum)value=StandbyStepNum; // 未編輯的動作
-				sprintf(pStaticNo,"%d",value-StandbyStepNum);
-				pwndStaticEditNo[i]->SetPropValueT("text",pStaticNo);
-				pwndStaticEditNo[i]->Update();
-			}
-		}
-		if(pwndEditNo[0] != NULL)			//嫖梓詢謠
-		{
-			pwndEditNo[0]->GetPropValueT("text", pNo, sizeof(pNo));
-			sscanf(pNo,"%d",&SelectNo);
-			//pwndStaticAct[0]->SetPropValueT("bgc",36256);
-			//pwndCheckBoxAct[0]->SetPropValueT("bgc",36256);
-		}
-	}	
-	No1 = No1 +iPageturn;
-	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED39", No1);
-	UpdatePageBar(int(No1/iNum_Page));
-	//((CtmFormView*)pwndSender)->Goto(pwndButtonPageDown->GetTabOrder());
+		headNo += iPageturn;
+		page += 1;
+	}
+
+
+	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED39", headNo);
+	UpdatePageBar();
+	
+	ShowText();
+	lastSelect = -1;
+}
+void PG_0::PageUp()	
+{
+	cout << "Page Up" << endl;
+	if(headNo - iPageturn  < 0)
+		headNo = 0;
+	else
+	{
+		headNo -= iPageturn;
+		page -= 1;
+	}
+
+	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED39", headNo);
+	UpdatePageBar();
+	ShowText();
+	lastSelect = -1;
 }
 
-void	PageUp(CtmWnd* pwndSender)			// 上一頁
+void PG_0::UpdatePageBar()
 {
-	int iPageturn = iNum_Page;
-	int		SelectNoHelp =0;
-	SelectNoHelp = SelectNo-No1;
-	for (int i = 0; i < iEditNo; i++)
-	{
-		if(No1 -iPageturn  < 0)
-		{
-			No1 = 0;
-			iPageturn =0;
-		}
-		No = i+1+No1-iPageturn;
-		memset(pNo, 0 ,sizeof(pNo));
-		sprintf(pNo,"%d",No);
-		pwndEditNo[i]->SetPropValueT("text",pNo);
-		pwndEditNo[i]->Update();
-		printf("No=%d\n",No);
-//		if(pwndEditNo[i] != NULL)
-//		{
-//			pwndStaticAct[i]->SetPropValueT("bgc",BgColor[1]);
-//			pwndStaticAct[i]->Update();
-//			//pwndCheckBoxAct[i]->SetPropValueT("bgc",0xFFDF);
-//			//pwndCheckBoxAct[i]->Update();
-//		}	
-		if( No<(StandbyStepNum+1) )
-		{
-			if(pwndEditNo[i] != NULL)
-			{
-				pwndStaticAct[i]->SetPropValueT("bgc",50712);
-				pwndStaticAct[i]->Update();
-			}
-			if(pwndStaticEditNo[i] != NULL)
-			{
-				pwndStaticEditNo[i]->SetPropValueT("text","WAIT");
-				pwndStaticEditNo[i]->Update();
-			}
-		}
-		else
-		{
-			if(pwndStaticEditNo[i] != NULL)
-			{
-				memset(pNoDataID, 0 ,sizeof(pNoDataID));
-				sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
-				memset(pStaticNo, 0 ,sizeof(pStaticNo));
-				int value = GetDBValue(pNoDataID).lValue;
-				if(No>EditedStepNum)value=StandbyStepNum; // 未編輯的動作
-				sprintf(pStaticNo,"%d",value-StandbyStepNum);
-				//memset(pStaticNo, 0 ,sizeof(pStaticNo));
-				//sprintf(pStaticNo,"%d",No-5);
-				pwndStaticEditNo[i]->SetPropValueT("text",pStaticNo);
-				pwndStaticEditNo[i]->Update();
-			}
-		}
-		if(pwndEditNo[0] != NULL)			//嫖梓詢謠
-		{
-			pwndEditNo[0]->GetPropValueT("text", pNo, sizeof(pNo));
-			sscanf(pNo,"%d",&SelectNo);
-			//pwndStaticAct[0]->SetPropValueT("bgc",36256);
-			//pwndCheckBoxAct[0]->SetPropValueT("bgc",36256);
-		}
-	}	
-	No1 = No1 -iPageturn;
-	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED39", No1);
-	UpdatePageBar(int(No1/iNum_Page));
-}
-
-void UpdatePageBar(int iPage) // 更新 動作列表位置顯示列
-{
-	printf("UpdatePageBar =%d\n",iPage);
 	pwndImgBarMask->CreateA();
 	pwndImgBarMask->Show();
-	pwndImgBarPlace->SetPropValueT("top",(Bar_Position+iPage*Bar_Step));
-	pwndImgBarPlace->SetPropValueT("bottom",(Bar_Position+(iPage*Bar_Step)+Bar_Heigh));
-	pwndImgBarPlace->CreateA();
-	pwndImgBarPlace->Show();
+	pwndImgBar->SetPropValueT("top",(Bar_Position + page * Bar_Step));
+	pwndImgBar->SetPropValueT("bottom",(Bar_Position + (page * Bar_Step) + Bar_Heigh));
+	pwndImgBar->CreateA();
+	pwndImgBar->Show();
 }
 
-void	Insert(int SelectNo)				//脣��
+void PG_0::Insert()	
 {
-	char 	pDataID[256];
-	int		value = 0;
-	//for(int i=MaxDBNum;i>SelectNo;i--)// 把每一步的資料 往下一步移 直到SelectNo這一步
-	for(int i=EditedStepNum+1;i>SelectNo;i--)// 把每一步的資料 往下一步移 直到SelectNo這一步
+	char tmp[256];
+	int	value;
+	for(int i = editedStepNum + 1; i > selectNo ; i--)
 	{
-		// 步數 往下移 還要+1
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i-1);
-		value = GetDBValue(pDataID).lValue;
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i);
-		SetDBValue(pDataID, value+1);
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i - 1);
+		value = GetDBValue(tmp).lValue;
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i);
+		SetDBValue(tmp, value + 1);
 		
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i-1);
-		value = GetDBValue(pDataID).lValue;
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i);
-		SetDBValue(pDataID, value);
-
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i-1);
-		value = GetDBValue(pDataID).lValue;
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i);
-		SetDBValue(pDataID, value);
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i - 1);
+		value = GetDBValue(tmp).lValue;
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i);
+		SetDBValue(tmp, value);
 		
-		for(int j=0;j<PARA_NUM;j++)
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i - 1);
+		value = GetDBValue(tmp).lValue;
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i);
+		SetDBValue(tmp, value);
+		
+		for(int j = 0 ; j < PARA_NUM ; j++)
 		{
-			memset(pDataID, 0 ,sizeof(pDataID));
-			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d",i-1,j+1);
-			value = GetDBValue(pDataID).lValue;
-			memset(pDataID, 0 ,sizeof(pDataID));
-			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d",i,j+1);
-			SetDBValue(pDataID, value);
+			sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d",i - 1, j + 1);
+			value = GetDBValue(tmp).lValue;
+			sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d",i, j + 1);
+			SetDBValue(tmp, value);
 		}
 	}
-	// 新增的這步 初始化
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",SelectNo-1);
-	value = GetDBValue(pDataID).lValue;
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",SelectNo);
-	SetDBValue(pDataID, value+1);
+	sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_STEP", selectNo - 1);
+	value = GetDBValue(tmp).lValue;
+	sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_STEP", selectNo);
+	SetDBValue(tmp, value+1);
 	
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",SelectNo);
-	SetDBValue(pDataID, 0);
+	sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_TYPE", selectNo);
+	SetDBValue(tmp, 0);
 	
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",SelectNo);
-	SetDBValue(pDataID, 0);
+	sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_NUM", selectNo);
+	SetDBValue(tmp, 0);
 	
-	for(int j=0;j<PARA_NUM;j++)
+	for(int j = 0;j < PARA_NUM ; j++)
 	{
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d",SelectNo,j+1);
-		SetDBValue(pDataID, 0);
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d", selectNo, j + 1);
+		SetDBValue(tmp, 0);
 	}
+	
+	editedStepNum++;
+	ShowText();
 }
 
-void	Delete(int SelectNo)				//刉壺
+void PG_0::Delete(int selectNo)				
 {
-	char 	pDataID[256];
-	int		value = 0;
-	//for(int i=SelectNo;i<MaxDBNum;i++) // 從SelectNo開始 把每下一步資料 移到這一步
-	for(int i=SelectNo;i<EditedStepNum+1;i++) // 從SelectNo開始 把每下一步資料 移到這一步
+	char tmp[256];
+	int value;
+
+	for(int i = selectNo ; i < editedStepNum + 1 ; i++) 
 	{
-		// 步數往上移 還要 -1
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i+1);
-		value = GetDBValue(pDataID).lValue;
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i);
-		SetDBValue(pDataID, value-1);
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_STEP", i + 1);
+		value = GetDBValue(tmp).lValue;
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_STEP", i);
+		SetDBValue(tmp, value - 1);
 		
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1);
-		value = GetDBValue(pDataID).lValue;
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i);
-		SetDBValue(pDataID, value);
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_TYPE", i + 1);
+		value = GetDBValue(tmp).lValue;
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_TYPE", i);
+		SetDBValue(tmp, value);
 		
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i+1);
-		value = GetDBValue(pDataID).lValue;
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i);
-		SetDBValue(pDataID, value);
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_NUM", i + 1);
+		value = GetDBValue(tmp).lValue;
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_NUM", i);
+		SetDBValue(tmp, value);
 		
-		for(int j=0;j<PARA_NUM;j++)
+		for(int j = 0 ; j < PARA_NUM ; j++)
 		{
-			memset(pDataID, 0 ,sizeof(pDataID));
-			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d",i+1,j+1);
-			value = GetDBValue(pDataID).lValue;
-			memset(pDataID, 0 ,sizeof(pDataID));
-			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d",i,j+1);
-			SetDBValue(pDataID, value);
+			sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d", i + 1, j + 1);
+			value = GetDBValue(tmp).lValue;
+			sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d", i, j + 1);
+			SetDBValue(tmp, value);
 		}
 	}
 	
-	//最後一步 初始化
+	sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_TYPE", MAXDBNUM);
+	SetDBValue(tmp, 0);
 	
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",MaxDBNum);
-	SetDBValue(pDataID, 0);
+	sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_NUM", MAXDBNUM);
+	SetDBValue(tmp, 0);
 	
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",MaxDBNum);
-	SetDBValue(pDataID, 0);
-	
-	for(int j=0;j<PARA_NUM;j++)
+	for(int j = 0;  j < PARA_NUM ; j++)
 	{
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d",MaxDBNum,j+1);
-		SetDBValue(pDataID, 0);
+		sprintf(tmp,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d", MAXDBNUM, j + 1);
+		SetDBValue(tmp, 0);
 	}
+	
+	editedStepNum--;
+	lastSelect = -1;
+	ShowText();
 }
 
-void	Clear()								//ь清除資料
+void PG_0::Clear()								//ь清除資料
 {
-	printf("Clear\n");
 	char 	pDataID[256];
-	for(int i=StandbyStepNum;i<MaxDBNum;i++) // 從等待點步驟 之後開始清空
+	for(int i = StandbyStepNum ; i <= editedStepNum ; i++) // 從等待點步驟 之後開始清空
 	{
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i+1);
+		sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_STEP", i + 1);
 		SetDBValue(pDataID, 0);
 		
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1);
+		sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", i + 1);
 		SetDBValue(pDataID, 0);
 		
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i+1);
+		sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_NUM", i + 1);
 		SetDBValue(pDataID, 0);
 		
-		for(int j=0;j<PARA_NUM;j++)
+		for(int j = 0 ; j < PARA_NUM ; j++)
 		{
-			memset(pDataID, 0 ,sizeof(pDataID));
-			sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d",i+1,j+1);
+			sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER%d", i + 1, j + 1);
 			SetDBValue(pDataID, 0);
 		}
 	}
-	
-	// 設定開始、結束
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",StandbyStepNum+1);
+	sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", StandbyStepNum + 1);
 	SetDBValue(pDataID, 5); // 開始
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",StandbyStepNum+1);
-	SetDBValue(pDataID, 1);
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",StandbyStepNum+2);
-	SetDBValue(pDataID, 6); // 結束
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",StandbyStepNum+2);
-	SetDBValue(pDataID, 1);
-//	SetDBValue("MACHINE_PROFILE_NUM6_ACTION_TYPE", 5);  開始
-//	SetDBValue("MACHINE_PROFILE_NUM6_ACTION_NUM", 1);
-//	SetDBValue("MACHINE_PROFILE_NUM7_ACTION_TYPE", 6);  結束
-//	SetDBValue("MACHINE_PROFILE_NUM7_ACTION_NUM", 1);
 	
-	// Set ACTION_STEP 前StandbyStepNum+2步 (等待步數+開始+結束)
-	for(int i=0; i<(StandbyStepNum+2); i++) 
+	sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_NUM", StandbyStepNum + 1);
+	SetDBValue(pDataID, 1);
+
+	sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", StandbyStepNum + 2);
+	SetDBValue(pDataID, 6); // 結束
+
+	sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_NUM", StandbyStepNum + 2);
+	SetDBValue(pDataID, 1);
+	
+	for(int i = 0 ; i < (StandbyStepNum + 2) ; i++) 
 	{
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i+1);
-		SetDBValue(pDataID, i+1);
+		sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_STEP", i + 1);
+		SetDBValue(pDataID, i + 1);
 	}
-	EditedStepNum = (StandbyStepNum+2);
+	editedStepNum = (StandbyStepNum + 2);
+	ShowText();
 }
 
-void	Clean()								//ь情除"空"動作
+void PG_0::Clean()								//ь情除"空"動作
 {
-	printf("Clean\n");
 	Prompt(g_MultiLanguage["MSG_DISK_PROCESSING"],1); 
-	char 	pDataID[256];
-	int value =0;
-	int CleanFlag =0;
-	for(int i =0;i<MaxDBNum;i++)
+	char pDataID[256];
+	int value ;
+	int cleanFlag = 0;
+	
+	cleanhelp = 0;
+	for(int i = 0 ; i < MAXDBNUM ; i++)
 	{
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1);
+		sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", i + 1);
 		value = GetDBValue(pDataID).lValue;
-		printf("%s=%d\n",pDataID,value);
-		if(value ==0 && CleanFlag !=1)
+
+		if(value == 0 && cleanFlag != 1)
 		{
-			Cleanhelp = i;
-			CleanFlag = 1;
+			cleanhelp = i;
+			cleanFlag = 1;
 		}
-		if(i>Cleanhelp && value !=0 && CleanFlag ==1)
+		if(i > cleanhelp && value != 0 && cleanFlag == 1)
 		{
-			UnSync(Cleanhelp+1);
-			Delete(Cleanhelp+1);
+			UnSync(cleanhelp + 1);
+			Delete(cleanhelp + 1);
 			Clean();
 		}
 	}
 	Prompt(g_MultiLanguage["MSG_DUMMY"]);
+
 }
 
-void	Download()							//下載資料至主機
+void PG_0::Download()							//下載資料至主機
 {					
-//	clock_t start,finish;
-//	double duration;
-//	start = clock();
-//					finish = clock();
-//					duration = (double)(finish - start);
-//					printf( "%f seconds\n", duration );
-	
-	printf("Download\n");
 	char 	pDataID[256];
-	int value =0;
-	int value1=0,value2=0;
-	int Check_MoldOpen=0;
-	int Num =0;
-	char  str_loading[256] = "\0"; // 下載進度
-	int u_loading=0;
-	printf("MaxDBNum=%d\n",MaxDBNum);
-	
-	pwndButtonDownload->SetPropValueT("taborder", -2); // "下載"按鍵上鎖
-//	pwndLoadingBar->SetPropValueT("right",24); // 重置進度條
-//	pwndLoadingBar->CreateA();
-//	pwndLoadingBar->Update();
-//	pwndLoadingMask->Update();
-//	pwndLoadingMask2->Update();
-//	pwndLoadingStr->SetPropValueT("bgc",0xF7BE); // 進度值
-//	pwndLoadingStr->SetPropValueT("fgc",0x0001);
-//	pwndLoadingStr->Update();
-	
-	for(int i =0;i<MaxDBNum;i++)
+	int value ;
+	int value1, value2;
+	int Check_MoldOpen = 0;
+	int Num = 0;
+
+	printf("MaxDBNum=%d\n",MAXDBNUM);
+	pwndBtnDownload->SetPropValueT("taborder", -2);
+
+	for(int i =0 ; i < MAXDBNUM ; i++)
 	{
-		memset(pDataID, 0 ,sizeof(pDataID));
 		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1);
 		value = GetDBValue(pDataID).lValue;
-		printf("%s=%d\n",pDataID,value);
-		if(value !=0) // ACTION_TYPE 有值
-		{
-			//memset(pDataID, 0 ,sizeof(pDataID));
-			//sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i+1);
-			//SetDBValue(pDataID, i+1);
-			//printf("Set mem %s=%d\n",pDataID,i+1);
+		if(value != 0) // ACTION_TYPE 有值
 			Num++; // 計數 教導有幾步驟
-		}
+
 		else // 數完步數
 		{
-			for(int i =0;i<Num;i++) // 檢查是否有『等待開模完成』
+			for(int i = 0 ; i < Num ; i++) // 檢查是否有『等待開模完成』
 			{
-				memset(pDataID, 0 ,sizeof(pDataID));
-				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1);
+				sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", i + 1);
 				value1 = GetDBValue(pDataID).lValue;
-				memset(pDataID, 0 ,sizeof(pDataID));
-				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i+1);
+				sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_NUM", i + 1);
 				value2 = GetDBValue(pDataID).lValue;
-				if(value1==2 && value2==2) // 等待 // 開模完成
+				if(value1 == 2 && value2 == 2) // 等待 // 開模完成
 					Check_MoldOpen = TRUE;
 			}
 			if(!Check_MoldOpen) // 未編寫檢測 『等待開模完成』
 			{
 				MsgBox(g_MultiLanguage["CHECK_MOLDOPEN_CONFIRM"], tmFT_CODE_TECH);//未檢測『等待開模完成』，確認下載?
-		    if(g_bMsgBoxFlag)
-		    {
+				if(g_bMsgBoxFlag)
+				{
 					if(g_ptaskpicker != NULL) // 傳送教導至28
 					{
 						SetDBValue("MACHINE_PROFILE_STEPNUM", 0, TRUE);
-						
 						printf("Send cmd\n");
-						char 	ptempDataID[256];
-//						for(int i =0;i<Num*CONTROLTYPENUM;i++)
-//						{
-//							if((i%13)<8) // 參數6以後不送
-//							{
-//								memset(ptempDataID, 0 ,sizeof(ptempDataID));
-//								sprintf(ptempDataID,u_pszDBString[i]);
-//								printf("%s=%d\n",u_pszDBString[i],GetDBValue(ptempDataID));
-//								g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString[i]);
-//							}
-//							
-//							if(pwndLoadingStr!=NULL && pwndLoadingBar!=NULL)//顯示下載進度
-//							{
-//								pwndLoadingBar->SetPropValueT("right",152+u_loading*4);
-//								pwndLoadingBar->CreateA();
-//								pwndLoadingBar->Update();
-//								u_loading = 1+((100*i)/(Num*CONTROLTYPENUM));
-//								sprintf(str_loading ,"%d",u_loading);
-//								if(u_loading>50)
-//									{
-//										pwndLoadingStr->SetPropValueT("bgc",0x09A6);
-//										pwndLoadingStr->SetPropValueT("fgc",0xFFFF);
-//										pwndLoadingStr->CreateA();
-//									}
-//								pwndLoadingStr->SetPropValueT("text",str_loading);
-//								pwndLoadingStr->Update();
-//							}
-//						}
-						g_ptaskpicker->WriteValue(CONST_REQ_WRITE, Num*CONTROLTYPENUM ,u_pszDBString);
-						
+						for(int step=0; step<Num * CONTROLTYPENUM; step++)
+						{
+							printf("u_pszDBString[%d]=%d\n",step,u_pszDBString[step]);
+						}
+						g_ptaskpicker->WriteValue(CONST_REQ_WRITE, Num * CONTROLTYPENUM ,u_pszDBString);
 						SetDBValue("MACHINE_PROFILE_STEPNUM", Num, TRUE);
 					}
 					MsgBoxCall("msgboxConfirm.txt","PICKER_DATADOWNLOADFINISH"); // 下載完成
@@ -1742,131 +1202,50 @@ void	Download()							//下載資料至主機
 				if(g_ptaskpicker != NULL) // 傳送教導至28
 				{
 					SetDBValue("MACHINE_PROFILE_STEPNUM", 0, TRUE);
-					
 					printf("Send cmd\n");
-					char 	ptempDataID[256];
-//					for(int i =0;i<Num*CONTROLTYPENUM;i++)
-//					{
-////						if((i%13)<8) // 參數6以後不送
-////						{
-////							memset(ptempDataID, 0 ,sizeof(ptempDataID));
-////							sprintf(ptempDataID,u_pszDBString[i]);
-////							printf("%s=%d\n",u_pszDBString[i],GetDBValue(ptempDataID));
-////							g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 1 ,&u_pszDBString[i]);
-////						}
-//						
-//						if(pwndLoadingStr!=NULL && pwndLoadingBar!=NULL)//顯示下載進度
-//						{
-//							pwndLoadingBar->SetPropValueT("right",152+u_loading*4);
-//							pwndLoadingBar->CreateA();
-//							pwndLoadingBar->Update();
-//							u_loading = 1+((100*i)/(Num*CONTROLTYPENUM));
-//							sprintf(str_loading ,"%d",u_loading);
-//							if(u_loading>50)
-//								{
-//									pwndLoadingStr->SetPropValueT("bgc",0x09A6);
-//									pwndLoadingStr->SetPropValueT("fgc",0xFFFF);
-//									pwndLoadingStr->CreateA();
-//								}
-//							pwndLoadingStr->SetPropValueT("text",str_loading);
-//							pwndLoadingStr->Update();
-//						}
-//					}
-					
-					g_ptaskpicker->WriteValue(CONST_REQ_WRITE, Num*CONTROLTYPENUM ,u_pszDBString);
-//					{
-//						char temp[25];
-//						int value =123;
-//						for(int i = 1; i <= MAXSTEP; i++ )
-//				    {       
-//				    	memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_STEP", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", i);
-//			        SetDBValue(temp, value, TRUE);
-//				      memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_NUM", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER4", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER5", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER9", i);
-//			        SetDBValue(temp, value, TRUE);
-//			        memset(temp, 0 ,sizeof(temp));
-//			        sprintf(temp, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER10", i);
-//			        SetDBValue(temp, value, TRUE);    
-//				    }
-//				    g_ptaskpicker->WriteValue(CONST_REQ_WRITE, 100*CONTROLTYPENUM ,u_pszDBString);
-//					}
+				
+					g_ptaskpicker->WriteValue(CONST_REQ_WRITE, Num * CONTROLTYPENUM ,u_pszDBString);
 					SetDBValue("MACHINE_PROFILE_STEPNUM", Num, TRUE);
 					MsgBoxCall("msgboxConfirm.txt","PICKER_DATADOWNLOADFINISH"); // 下載完成
 				}
 			}
-			pwndButtonDownload->SetPropValueT("taborder", 0xFFFFFFFF); // "下載"按鍵解鎖
-	
+			pwndBtnDownload->SetPropValueT("taborder", 0xFFFFFFFF); // "下載"按鍵解鎖
+		
 			printf("Num=%d\n",Num);
-			EditedStepNum = Num;
-			
+			editedStepNum = Num;
+				
 			return;
 		}
-	}	
+	}
 }
 
-void	GetPosTag()							//紀錄 位置標籤 參數4 提供首頁位置補正用
+void PG_0::GetPosTag()							//紀錄 位置標籤 參數4 提供首頁位置補正用
 {
 	char 	pDBID[256];
-	int type=0,group=0,axis=0,pos=0;
-	
-	// 清空原有 紀錄 取出、置放 位置
-	for(int i=0;i<10;i++)
+	int type, group, axis, pos;
+
+	for(int i = 0 ; i < 10 ; i++)
 	{
-		memset(pDBID, 0 ,sizeof(pDBID));
-		sprintf(pDBID,"AUSTON3_PARAMETER_MOTION_PROFILE_TARGET_POSITION%d",i+1);
+		sprintf(pDBID, "AUSTON3_PARAMETER_MOTION_PROFILE_TARGET_POSITION%d", i + 1);
 		SetDBValue(pDBID, 0);
 	}
-	
-	for(int i =0;i<MaxDBNum;i++)	// 紀錄 取出、置放 位置
+
+	for(int i = 0 ; i< MAXDBNUM ; i++)	// 紀錄 取出、置放 位置
 	{
 		memset(pDBID, 0 ,sizeof(pDBID));
 		sprintf(pDBID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1);
 		type = GetDBValue(pDBID).lValue;
 
-		if(type==1) // ACTION_TYPE = 軸動作
+		if(type == 1) // ACTION_TYPE = 軸動作
 		{
-			memset(pDBID, 0 ,sizeof(pDBID));
-			sprintf(pDBID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER4",i+1); // 群組
+			sprintf(pDBID, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER4", i + 1); // 群組
 			group = GetDBValue(pDBID).lValue;
 
-			if(group==6) // 6=取物取件
+			if(group == 6) // 6=取物取件
 			{
-				printf("Set Group 6\n");
-				memset(pDBID, 0 ,sizeof(pDBID));
-				sprintf(pDBID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i+1); // 哪一軸
-				axis = GetDBValue(pDBID).lValue;
-				memset(pDBID, 0 ,sizeof(pDBID));
-				sprintf(pDBID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1",i+1); // 位置
+				sprintf(pDBID, "MACHINE_PROFILE_NUM%d_ACTION_NUM", i + 1); // 哪一軸
+				axis = GetDBValue(pDBID).lValue; 
+				sprintf(pDBID, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1", i + 1); // 位置
 				pos = GetDBValue(pDBID).lValue;
 				switch(axis)
 				{
@@ -1889,13 +1268,11 @@ void	GetPosTag()							//紀錄 位置標籤 參數4 提供首頁位置補正用
 						break;
 				}
 			}
-			else if(group==9) // 9=置物放置
+			else if(group == 9) // 9=置物放置
 			{
-				memset(pDBID, 0 ,sizeof(pDBID));
-				sprintf(pDBID,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i+1); // 哪一軸
+				sprintf(pDBID, "MACHINE_PROFILE_NUM%d_ACTION_NUM", i + 1); // 哪一軸
 				axis = GetDBValue(pDBID).lValue;
-				memset(pDBID, 0 ,sizeof(pDBID));
-				sprintf(pDBID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1",i+1); // 位置
+				sprintf(pDBID, "MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1", i+ 1); // 位置
 				pos = GetDBValue(pDBID).lValue;
 				switch(axis)
 				{
@@ -1919,579 +1296,58 @@ void	GetPosTag()							//紀錄 位置標籤 參數4 提供首頁位置補正用
 				}
 			}
 		}				
-		else if(type==0)// 數完步數
+		else if(type == 0)// 數完步數
 		{
 			return;
 		}
 	}
 }
 
-void	UpdateText()						//更新顯示字串
+void PG_0::Sync() // 合併動作
 {
-	printf("UpdateText\n");
 	char 	pDataID[256];
-	char 	pDataID2[256];
-	char 	pDataID3[256];
-	char 	pDataID4[256];
-	char 	pDataID5[256];
-	char 	pDataID6[256];
-	char 	pDataID7[256];
-	char 	pDataID8[256];
-	char 	pDataID9[256];
-	char 	pDataID10[256];
-	char 	pDataID11[256];
-	char 	pDataID12[256];
-	
-	char  szActPara1[256];
-	char  szActPara2[256];
-	char  szActPara3[256];
-	char  szActPara5[256];
-	char  szActPara6[256];
-	char  szActPara7[256];
-	char  szActPara8[256];
-	
-	int	ACTIONTYPE =0,ACTIONNUM =0;
-	DWORD   wActPara1=0,wActPara2=0,wActPara3=0,wActPara5=0,wActPara6=0,wActPara7=0,wActPara8=0;
-	// ↓ 字串合併顯示 cjlee add 	
-	int index_1,index_2,index_3,index_4,index_5,index_6,index_7,index_8,index_9,index_10,index_11,index_12;
-	char	str[1024]; // 顯示字串用
-	char	path[1024]; // 顯示字串用
-	char* str_1;
-	char* str_2;
-	char* str_3;
-	char* str_4;
-	char* str_5;
-	char* str_6;
-	char* str_7;
-	char* str_8;
-	char* str_9;
-	char* str_10;
-	char* str_11;
-	char* str_12;
-	
-	// ↑ 字串合併顯示 cjlee add 
-	RegionUpdateStop_APP = TRUE; //停止元件獨立刷新，記錄未刷新範圍
-	for(int i=0;i<iCheckBoxAct;i++)
+	int 	actionStep, actionStepPre, value;
+
+	sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_STEP", selectNo - 1);
+	actionStepPre = GetDBValue(pDataID).lValue;
+	sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_STEP", selectNo);
+	actionStep = GetDBValue(pDataID).lValue;
+	cout << "Sync" << endl;
+	cout << actionStep << endl;
+	cout << actionStepPre << endl;
+	if (actionStep != actionStepPre)
 	{
-		memset(str,0,sizeof(str));
-		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_TYPE",i+1+No1);
-		memset(pDataID2, 0 ,sizeof(pDataID2));
-		sprintf(pDataID2,"MACHINE_PROFILE_NUM%d_ACTION_NUM",i+1+No1);
-		sprintf(szActPara1,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER1", i+1+No1); 
-		sprintf(szActPara2,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER2", i+1+No1); 
-		sprintf(szActPara3,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER3", i+1+No1); 
-		sprintf(szActPara5,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER5", i+1+No1); 
-		sprintf(szActPara6,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER6", i+1+No1); 
-		sprintf(szActPara7,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER7", i+1+No1); 
-		sprintf(szActPara8,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER8", i+1+No1); 
-		ACTIONTYPE =GetDBValue(pDataID).lValue;
-		ACTIONNUM =GetDBValue(pDataID2).lValue;
-		wActPara1  = GetDBValue(szActPara1).lValue;
-		wActPara2  = GetDBValue(szActPara2).lValue;
-		wActPara3  = GetDBValue(szActPara3).lValue;
-		wActPara5  = GetDBValue(szActPara5).lValue;
-		wActPara6  = GetDBValue(szActPara6).lValue;
-		wActPara7  = GetDBValue(szActPara7).lValue;
-		wActPara8  = GetDBValue(szActPara8).lValue;
-		//printf("LINE%d, ACTIONTYPE:%d, ACTIONNUM:%d, Para1:%d, Para2:%d, Para3:%d, Para5:%d\n",i+1+No1,ACTIONTYPE,ACTIONNUM,wActPara1,wActPara2,wActPara3,wActPara5);
-		memset(pDataID, 0 ,sizeof(pDataID));
-		memset(pDataID2, 0 ,sizeof(pDataID2));
-		memset(pDataID3, 0 ,sizeof(pDataID3));
-		memset(pDataID4, 0 ,sizeof(pDataID4));
-		memset(pDataID5, 0 ,sizeof(pDataID5));
-		memset(pDataID6, 0 ,sizeof(pDataID6));
-		memset(pDataID7, 0 ,sizeof(pDataID7));
-		memset(pDataID8, 0 ,sizeof(pDataID8));
-		memset(pDataID9, 0 ,sizeof(pDataID9));
-		memset(pDataID10,0 ,sizeof(pDataID10));
-		memset(pDataID11,0 ,sizeof(pDataID11));
-		memset(pDataID12,0 ,sizeof(pDataID12));
-
-		//printf("Line%d:ACTIONTYPE=%d,ACTIONNUM=%d\n",i,ACTIONTYPE,ACTIONNUM);
-		switch(ACTIONTYPE)
+		SetDBValue(pDataID, actionStepPre);
+		for(int i = MAXDBNUM ; i > selectNo ; i--) // 此步以下步驟皆上移一個ACTION_STEP
 		{
-			case 0:		//
-				sprintf(pDataID,"VW_PICKER_NULL");
-				break;
-			case 1:		//軸動作
-				if(wActPara5) // 延時
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4"); // "延時"
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8"); // "秒"
-				}
-				switch(ACTIONNUM)
-				{
-					case 0:
-						sprintf(pDataID4,"VW_PICKER_NULL");
-						break;
-					case 1:
-						sprintf(pDataID4,"VW_HAP5_ROBOT_XAXIS"); // "X軸"
-						break;
-					case 2:
-						sprintf(pDataID4,"VW_HAP5_ROBOT_YAXIS"); // "Y軸"
-						break;
-					case 3:
-						sprintf(pDataID4,"VW_HAP5_ROBOT_ZAXIS"); // "Z軸"
-						break;
-					case 4: // cjlee 2019/4/6 下午 05:41:56
-						sprintf(pDataID4,"VW_HAP5_ROBOT_X2AXIS"); // "X2軸"
-						break;
-					case 5: // cjlee 2019/4/6 下午 05:41:56
-						sprintf(pDataID4,"VW_HAP5_ROBOT_Y2AXIS"); // "Y2軸"
-						break;
-					default:
-						break;
-				}
-				if(ACTIONNUM <= 5) //(ACTIONNUM <= 3 || ACTIONNUM >= 5) // cjlee 2019/4/6 下午 05:41:56
-				{
-					sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_1"); // "以"
-					sprintf(pDataID6,"%3d",wActPara2);
-					sprintf(pDataID7,"PICKER_DESCRIBE_AXIS_2"); // "的速度移動到"
-					sprintf(pDataID8,"%3d.%02d",wActPara1/100,wActPara1%100);
-					sprintf(pDataID9,"PICKER_DESCRIBE_AXIS_3");
-					
-					if(wActPara3) // 
-					{
-						if(wActPara8) // 1-兩段變速 0-提前完成
-							sprintf(pDataID10,"PICKER_CHG_DIST"); // "變速"
-						else
-							sprintf(pDataID10,"PICKER_DESCRIBE_AXIS_7"); // "提前"
-						sprintf(pDataID11,"%3d.%02d",wActPara3/100,wActPara3%100);
-						sprintf(pDataID12,"VW_CHARGE_MM");
-					}
-				}
-				else if(ACTIONNUM == 6)//if(ACTIONNUM == 4)  // cjlee 2019/4/6 下午 05:41:56
-				{
-					if(wActPara2)
-						sprintf(pDataID4,"PICKER_REMOTE_O_14");
-					else
-						sprintf(pDataID4,"PICKER_REMOTE_O_13");
-					if(wActPara3)
-						sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_5");
-					else
-						sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_6");
-				}
-				break;
-			case 2:		//等待
-				if(wActPara5)
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
-				}
-				sprintf(pDataID4,"PICKER_WAIT");
-				sprintf(pDataID5,"PCIKER_INNER_I_0%d",ACTIONNUM);
-				if(wActPara1)
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_5");
-				else
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_6");
-				break;
-			case 3:		// 允許
-				// 行數make 出問題 cjlee 2019/12/9 下午 05:09:34
-				if(wActPara5)
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
-				}
-				sprintf(pDataID4,"PICKER_INNER_O_0%d",ACTIONNUM);
-				if(wActPara1)
-					sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_5");
-				else
-					sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_6");
-				break;
-			case 4:		//閥門
-				if(wActPara5) // "延時"
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
-				}
-				sprintf(pDataID4,"PICKER_VALVE"); // "閥門"
-				sprintf(pDataID5,"DLG_DATETIME_COLON"); // ":"
-				sprintf(pDataID6,"PICKER_REMOTE_O_%02d",ACTIONNUM);
-				if(wActPara1) // "打開/關閉"
-					sprintf(pDataID7,"PICKER_DESCRIBE_AXIS_5");
-				else
-					sprintf(pDataID7,"PICKER_DESCRIBE_AXIS_6");
-				if(wActPara2) // "檢測"
-					sprintf(pDataID8,"VW_PUMP_TEST");
-//				if(wActPara2)
-//				{
-//					sprintf(pDataID8,"PICKER_ACTTIME");
-//					sprintf(pDataID9,"%2d.%02d",wActPara2/100,wActPara2%100);
-//					sprintf(pDataID10,"VW_INJPRO_SECOND");
-//				}
-				break;
-			case 5:		//標籤
-				if(wActPara5)
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
-				}
-				if(ACTIONNUM == 1)
-				{
-					sprintf(pDataID4,"ACTIONPOINT_START");
-				}
-				else
-				{
-					sprintf(pDataID4,"PICKER_LABEL_%d",ACTIONNUM);
-				}
-				break;
-			case 6:		//跳轉
-				if(wActPara5)
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
-				}
-				if(ACTIONNUM == 1)
-				{
-					sprintf(pDataID4,"ACTIONPOINT_END");
-				}
-				else
-				{
-					sprintf(pDataID4,"PICKER_JUMP");
-					sprintf(pDataID5,"PICKER_LABEL_%d",ACTIONNUM);
-				}
-				break;
-			case 8:		//檢測
-				if(wActPara5) // 延時
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4"); // 延時
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8"); // 秒
-				}
-				if(wActPara2) // 檢測模式:區域
-					{
-						sprintf(pDataID5,"PICKER_PER"); // 持續
-						if(wActPara3) // 開始結束
-							sprintf(pDataID4,"PICKER_STRT"); // 開始
-						else
-							sprintf(pDataID4,"PICKER_STOP"); // 結束
-					}
-				else // 檢測模式:單點
-					{
-						sprintf(pDataID5,"PICKER_SGL"); // 單點
-					}
-				sprintf(pDataID6,"VW_PUMP_TEST"); // 檢測
-				sprintf(pDataID7,"PICKER_REMOTE_I_0%d",ACTIONNUM); // 檢測點
-				if(wActPara1) // On/Off
-					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_5"); // 打開
-				else
-					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_6"); // 關閉
-				break;
-			case 12:	//堆疊
-				if(wActPara5)
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
-				}
-				if(ACTIONNUM)
-					sprintf(pDataID4,"VW_PID_GROUP%d",ACTIONNUM);
-				else
-					sprintf(pDataID4,"VW_PICKER_NULL");
-				sprintf(pDataID5,"VW_PICKER_PILE");
-				if(wActPara1)
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_5");
-				else
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_6");
-				break;
-			case 13:	//副程式
-				if(wActPara5)
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
-				}
-				sprintf(pDataID4,"PICKER_SUBTECH_1");
-				switch(ACTIONNUM)
-				{
-					case 0:
-						sprintf(pDataID5,"VW_PICKER_NULL");
-						break;
-					case 1:
-						sprintf(pDataID5,"PICKER_PROD_BAD");
-						break;
-					case 2:
-						sprintf(pDataID5,"PICKER_PROD_SAMPLE");
-						break;
-					case 3:
-						sprintf(pDataID5,"PICKER_PROD_TEST");
-						break;
-					case 4:
-						sprintf(pDataID5,"VW_AD_RESERVED");
-						break;
-					case 5:
-						sprintf(pDataID5,"VW_AD_RESERVED");
-						break;
-					default:
-						break;
-				}
-				if(wActPara1)
-					sprintf(pDataID6,"ACTIONPOINT_START");
-				else
-					sprintf(pDataID6,"ACTIONPOINT_END");
-				sprintf(pDataID7,"PICKER_SUBTECH_2");
-				sprintf(pDataID8,"%2d",wActPara2);
-				break;
-			case 0x10: // P2P
-				if(wActPara5) // 延時
-				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4"); // "延時"
-					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10); // 
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8"); // "秒"
-				}
-				sprintf(pDataID4,"PICKER_P2P"); // "點到點"
-				if(wActPara2) //速度
-				{
-					sprintf(pDataID5,"PICKER_DESCRIBE_AXIS_1"); // "S"
-					sprintf(pDataID6,"%3d",wActPara2);
-				}
-				sprintf(pDataID7,"PICKER_DESCRIBE_AXIS_2"); // "的速度移動到"
-				sprintf(pDataID8,"%3d.%02d",wActPara1/100,wActPara1%100); // "X"
-				sprintf(pDataID9,"%3d.%02d",wActPara7/100,wActPara1%100); // "Y"
-				sprintf(pDataID11,"%3d.%02d",wActPara8/100,wActPara1%100); // "Z"
-				
-				break;
-			default: 
-				break;	
+			sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_STEP", i);
+			value = GetDBValue(pDataID).lValue;
+			SetDBValue(pDataID, value - 1);
 		}
-		//printf("Line%d DataID: %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s\n",i+1+No1,pDataID,pDataID2,pDataID3,pDataID4,pDataID5,pDataID6,pDataID7,pDataID8,pDataID9,pDataID10,pDataID11,pDataID12);
-		// ↓ 字串合併顯示 cjlee add 
-		index_1 = g_MultiLanguage.GetStrKeyIndex(pDataID);
-		index_2 = g_MultiLanguage.GetStrKeyIndex(pDataID2);	
-		index_3 = g_MultiLanguage.GetStrKeyIndex(pDataID3);	
-		index_4 = g_MultiLanguage.GetStrKeyIndex(pDataID4);
-		index_5 = g_MultiLanguage.GetStrKeyIndex(pDataID5);	
-		index_6 = g_MultiLanguage.GetStrKeyIndex(pDataID6);	
-		index_7 = g_MultiLanguage.GetStrKeyIndex(pDataID7);
-		index_8 = g_MultiLanguage.GetStrKeyIndex(pDataID8);	
-		index_9 = g_MultiLanguage.GetStrKeyIndex(pDataID9);	
-		index_10 = g_MultiLanguage.GetStrKeyIndex(pDataID10);
-		index_11 = g_MultiLanguage.GetStrKeyIndex(pDataID11);	
-		index_12 = g_MultiLanguage.GetStrKeyIndex(pDataID12);	
-		
-		if (index_1<0)
-			index_1 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_2<0)
-			str_2 = pDataID2;
-		else
-			str_2 = g_MultiLanguage[index_2];
-		if (index_3<0)
-			index_3 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_4<0)
-			index_4 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_5<0)
-			index_5 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_6<0)
-			str_6 = pDataID6;
-		else
-			str_6 = g_MultiLanguage[index_6];
-		if (index_7<0)
-			index_7 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_8<0)
-			str_8 = pDataID8;
-		else
-			str_8 = g_MultiLanguage[index_8];
-		if (index_9<0)
-			str_9 = pDataID9;
-		else
-			str_9 = g_MultiLanguage[index_9];
-		if (index_10<0)
-			index_10 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		if (index_11<0)
-			str_11= pDataID11;
-		else
-			str_11 = g_MultiLanguage[index_11];
-		if (index_12<0)
-			index_12 = g_MultiLanguage.GetStrKeyIndex("ROBOT_STR_DUMP");
-		//printf("Line%d = %d  %d  %d %d  %d  %d %d  %d  %d %d  %d  %d\n",i+1+No1,index_1,index_2,index_3,index_4,index_5,index_6,index_7,index_8,index_9,index_10,index_11,index_12);
-		
-		str_1 = g_MultiLanguage[index_1];
-		//str_2 = g_MultiLanguage[index_2];
-		str_3 = g_MultiLanguage[index_3];
-		str_4 = g_MultiLanguage[index_4];
-		str_5 = g_MultiLanguage[index_5];
-		//str_6 = g_MultiLanguage[index_6];
-		str_7 = g_MultiLanguage[index_7];
-		//str_8 = g_MultiLanguage[index_8];
-		//str_9 = g_MultiLanguage[index_9];
-		str_10 = g_MultiLanguage[index_10];
-		//str_11 = g_MultiLanguage[index_11];
-		str_12 = g_MultiLanguage[index_12];
-		
-		memset(str,0,sizeof(str));
-		//printf("sl_1=%d, sl_2=%d, sl_3=%d, sl_4=%d, sl_5=%d, sl_6=%d, sl_7=%d, sl_8=%d, sl_9=%d, sl_10=%d, sl_11=%d, sl_12=%d\n",strlen(str_1),strlen(str_2),strlen(str_3),strlen(str_4),strlen(str_5),strlen(str_6),strlen(str_7),strlen(str_8),strlen(str_9),strlen(str_10),strlen(str_11),strlen(str_12));
-		strncat(str, str_1, strlen(str_1));
-		strncat(str, str_2, strlen(str_2));
-		strncat(str, str_3, strlen(str_3));
-		strncat(str, str_4, strlen(str_4));
-		strncat(str, str_5, strlen(str_5));
-		strncat(str, str_6, strlen(str_6));
-		strncat(str, str_7, strlen(str_7));
-		strncat(str, str_8, strlen(str_8));
-		strncat(str, str_9, strlen(str_9));
-		strncat(str, str_10, strlen(str_10));
-		strncat(str, str_11, strlen(str_11));
-		strncat(str, str_12, strlen(str_12));
-		//printf("Line%d = %s\n",i+1+No1-5,str);
-		//printf("strlen=%d\n",strlen(str));
-		//strncpy(path, str, strlen(str)+1);
-		//path[strlen(str)]= '\0';
-		//printf("path=%d\n",path);
-
-		if(pwndCheckBoxAct[i] != NULL)
-		{
-			//pwndCheckBoxAct[i]->SetPropValueT("captionID","");
-			//pwndCheckBoxAct[i]->CreateA();
-			//pwndCheckBoxAct[i]->Show();
-			//pwndCheckBoxAct[i]->Update();
-			//pwndCheckBoxAct[i]->UpdateAll();
-		}
-		int temp;
-		if(pwndStaticAct[i] != NULL) // 動作列表
-		{		
-			pwndStaticAct[i]->SetPropValueT("text",str);
-			
-			No = i+1+No1;
-			memset(pNoDataID, 0 ,sizeof(pNoDataID));
-			sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
-			memset(pStaticNo, 0 ,sizeof(pStaticNo));
-			temp = GetDBValue(pNoDataID).lValue;			
-			if(No>EditedStepNum)temp=StandbyStepNum; // 未編輯的動作			
-			pwndStaticAct[i]->SetPropValueT("bgc",NoColor[((temp)%2)]); // 動作背景顏色
-			pwndStaticAct[i]->Show();
-			pwndStaticEditNo[i]->SetPropValueT("bgc",NoColor[((temp)%2)]); // 動作背景顏色
-			pwndStaticEditNo[i]->Show();
-		}
-		if( No<(StandbyStepNum+1) ) // 設置等待點 序號
-		{
-			if(pwndEditNo[i] != NULL)
-			{
-				pwndStaticAct[i]->SetPropValueT("bgc",50712);
-				pwndStaticAct[i]->Show();
-			}
-			if(pwndStaticEditNo[i] != NULL)
-			{
-				pwndStaticEditNo[i]->SetPropValueT("text","WAIT");
-				pwndStaticEditNo[i]->Show();
-			}
-		}
-		if( (u_wPickerOPSatus != STATE_FULLAUTO) || (!b_Follow) ) // 自動下限制 || 不跟隨
-		{
-			if(pwndStaticAct[i] != NULL) // 動作列表 目前選擇動作
-			{
-				if((i+1)==SelectNo-No1)
-				{
-					pwndStaticAct[i]->SetPropValueT("bgc",LGreen);
-					pwndStaticEditNo[i]->SetPropValueT("bgc",LGreen);
-				}
-				pwndStaticAct[i]->Show();
-				pwndStaticEditNo[i]->Show();
-			}
-		}
-		//pwndCheckBoxAct[i]->Update();
-		// ↑ 字串合併顯示 cjlee add 
-	}	
-	ChangePos(1);  //將未刷新的部分一次刷新
+		ShowText();
+	}
 }
 
-void	Sync(int SelectNo) // 合併動作
+void PG_0::UnSync(int selectNo) // 分解動作
 {
-	printf("Sync SelectNo=%d\n",SelectNo);
-		
 	char 	pDataID[256];
-	int 	ACTION_STEP = 0,ACTION_STEP_Pre = 0,value = 0;;
+	int 	actionStep, actionStepPre, value;
 	
-	// 取得上一步ACTION_STEP
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",SelectNo-1);
-	ACTION_STEP_Pre = GetDBValue(pDataID).lValue;
-	// 取得這一步ACTION_STEP
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",SelectNo);
-	ACTION_STEP = GetDBValue(pDataID).lValue;
-	if (ACTION_STEP !=ACTION_STEP_Pre)
-		{
-			SetDBValue(pDataID, ACTION_STEP_Pre);
-			printf("Set No%d Step=%d\n",ACTION_STEP,ACTION_STEP_Pre);
-			for(int i=MaxDBNum;i>SelectNo;i--) // 此步以下步驟皆上移一個ACTION_STEP
-			{
-				memset(pDataID, 0 ,sizeof(pDataID));
-				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i);
-				value = GetDBValue(pDataID).lValue;
-				SetDBValue(pDataID, value-1);
-			}
-			UpdateNo();
-		}
-}
-
-void	UnSync(int SelectNo) // 分解動作
-{
-	printf("UnSync SelectNo=%d\n",SelectNo);
-	char 	pDataID[256];
-	int 	ACTION_STEP = 0,ACTION_STEP_Pre = 0,value = 0;;
+	sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_STEP", selectNo - 1);
+	actionStepPre = GetDBValue(pDataID).lValue;
+	sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_STEP", selectNo);
+	actionStep = GetDBValue(pDataID).lValue;
 	
-	// 取得上一步ACTION_STEP
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",SelectNo-1);
-	ACTION_STEP_Pre = GetDBValue(pDataID).lValue;
-	// 取得這一步ACTION_STEP
-	memset(pDataID, 0 ,sizeof(pDataID));
-	sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",SelectNo);
-	ACTION_STEP = GetDBValue(pDataID).lValue;
-	if (ACTION_STEP == ACTION_STEP_Pre)
-		{
-			SetDBValue(pDataID, ACTION_STEP+1);
-			//printf("Set No%d Step=%d\n",ACTION_STEP,ACTION_STEP+1);
-			for(int i=MaxDBNum;i>SelectNo;i--) // 此步以下步驟皆下移一個ACTION_STEP
-			{
-				memset(pDataID, 0 ,sizeof(pDataID));
-				sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",i);
-				value = GetDBValue(pDataID).lValue;
-				SetDBValue(pDataID, value+1);
-			}
-			UpdateNo();
-		}
-}
-void	UpdateNo() // 刷新序號顯示
-{
-	printf("UpdateNo\n");
-	int value=0;
-	for (int i = 0; i < iEditNo; i++)	//獲取序號
+	if (actionStep == actionStepPre)
 	{
-		No = i+1+No1;
-		memset(pNoDataID, 0 ,sizeof(pNoDataID));
-		sprintf(pNoDataID,"MACHINE_PROFILE_NUM%d_ACTION_STEP",No);
-		memset(pStaticNo, 0 ,sizeof(pStaticNo));
-		value = GetDBValue(pNoDataID).lValue;
-		printf("MACHINE_PROFILE_NUM%d_ACTION_STEP=%d\n",No,value);
-		if( No<(StandbyStepNum+1) )
+		SetDBValue(pDataID, actionStep + 1);
+		for(int i = MAXDBNUM ; i > selectNo ; i--) // 此步以下步驟皆下移一個ACTION_STEP
 		{
-			if(pwndStaticEditNo[i] != NULL)
-			{
-				pwndStaticEditNo[i]->SetPropValueT("bgc",NoColor[(value)%2]);
-				pwndStaticEditNo[i]->SetPropValueT("text","WAIT");
-				pwndStaticEditNo[i]->Update();
-			}
+			sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_STEP", i);
+			value = GetDBValue(pDataID).lValue;
+			SetDBValue(pDataID, value + 1);
 		}
-		else
-		{
-			if(pwndStaticEditNo[i] != NULL)
-			{
-				//printf("Get %s=%d\n",pNoDataID,value);
-				if(No>EditedStepNum)value=StandbyStepNum; // 未編輯的動作
-				sprintf(pStaticNo,"%d",value-StandbyStepNum);				
-				pwndStaticEditNo[i]->SetPropValueT("bgc",NoColor[((value)%2)]);
-				pwndStaticEditNo[i]->SetPropValueT("text",pStaticNo);
-				pwndStaticEditNo[i]->Update();
-			}
-		}
+		ShowText();
 	}
 }
 
@@ -2499,40 +1355,27 @@ void	UpdateNo() // 刷新序號顯示
 |  Function : Update_Download_Hint()                  										   |
 |       		: 刷新提示 是否需要下載																					 |
 +---------------------------------------------------------------------------*/
-void	Update_Download_Hint()
+void PG_0::Update_Download_Hint()
 {
 	printf("Update_Download_Hint()\n");
-	if(pwndButtonDownload!=NULL)
+	if(pwndBtnDownload != NULL)
 	{
-		if(g_Hint_Download==1) // 需要下載
-		{
-			pwndButtonDownload->SetPropValueT("upbitmap","res_tm640/pic/PGBtn_Download_Needed.bmp");
-		}
+		if(g_Hint_Download == 1) // 需要下載
+			pwndBtnDownload->SetPropValueT("upbitmap", "res_tm640/pic/PGBtn_Download_Needed.bmp");
 		else
 		{
-			pwndButtonDownload->SetPropValueT("upbitmap","res_tm640/pic/PGBtn_Download.bmp");
+			pwndBtnDownload->SetPropValueT("upbitmap", "res_tm640/pic/PGBtn_Download.bmp");
 		}
-		pwndButtonDownload->CreateA();
-		pwndButtonDownload->Update();
+		pwndBtnDownload->CreateA();
+		pwndBtnDownload->Update();
 	}
 }
 
-/*---------------------------------------------------------------------------+
-|  Function : SendCommand()                      	     	                     |
-|  Task     :   						     	                                           |
-+----------------------------------------------------------------------------+
-|  Call     :                                                                |
-|                                                                            |
-|  Parameter:                           -                                    |
-|                                                                            |
-|  Return   :                           -                                    |
-+---------------------------------------------------------------------------*/
-void	SendCommand(int	CommandID)
+void PG_0::SendCommand(int	CommandID)
 {
-	
-	 	if(g_ptaskpicker != NULL)
- 		{			
-			g_ptaskpicker->ReqValues(CONST_REQ_COMMAND, 1, &CommandID, NULL);
+	if(g_ptaskpicker != NULL)
+ 	{			
+		g_ptaskpicker->ReqValues(CONST_REQ_COMMAND, 1, &CommandID, NULL);
  	  	printf("Send Command = %x\n", CommandID);
-		}
+	}
 }
