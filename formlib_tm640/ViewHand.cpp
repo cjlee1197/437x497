@@ -216,6 +216,8 @@
 #define		COMMAND_SUCK3OFF     0xFF38
 #define		COMMAND_SUCK4ON      0xFF39
 #define		COMMAND_SUCK4OFF     0xFF3A
+#define		COMMAND_SUBCLAMPON   0xFF4B
+#define		COMMAND_SUBCLAMPOFF  0xFF4C
 
 #define		COMMAND_VACUUMON     0xFF1F  //真空閥
 #define		COMMAND_VACUUMOFF    0xFF20  
@@ -227,6 +229,7 @@
 #define		KEY_CLAMP2     0x0003
 #define		KEY_SUCK1      0x0009
 #define		KEY_SUCK2      0x000B
+#define		KEY_SUBCLAMP   0x000E
 
 #define		KEY_HORIZONTAL		0x0011 // 水平
 #define		KEY_VERICAL				0x0012 // 垂直
@@ -444,6 +447,10 @@ char* u_pszImageBoxString_EXIO_OUT[] = // IO指示燈 輸出指令
 	"OutStatic", // 8
 	"", // 9
 	"OutConveyor", // 10
+	"", // 11
+	"", // 12
+	"", // 13
+	"OutSubClamp", // 14
 };
 char* u_pszImageBoxString_EXIO_IN[] = // IO指示燈 限位偵測
 {
@@ -453,6 +460,9 @@ char* u_pszImageBoxString_EXIO_IN[] = // IO指示燈 限位偵測
 	"BmpClamp2",
 	"BmpBlow1",
 	"BmpBlow2",
+	"",
+	"",
+	"BmpSubClamp", // 9
 };
 
 char* u_pszBtnImgString_INIO[] =
@@ -470,14 +480,18 @@ char* u_pszBtnImgString_EXIO[] =
 {
 	"",
 	"",
-	"Btn_Clamp1",
-	"Btn_Clamp2",
-	"Btn_Suck1",	
-	"Btn_Suck2",
-	"Btn_VACUUMON",
-	"Btn_STATICON",
+	"Btn_Clamp1", 		// 3
+	"Btn_Clamp2", 		// 4
+	"Btn_Suck1", 			// 5	
+	"Btn_Suck2", 			// 6
+	"Btn_VACUUMON", 	// 7
+	"Btn_STATICON", 	// 8
 	"",
-	"Btn_CONVEYERON",
+	"Btn_CONVEYERON", // 10
+	"",
+	"",
+	"",
+	"Btn_SubClamp", 	// 14
 };
 char* BtnImgOn_INIO[] = // 按鈕ON 圖片路徑
 {
@@ -496,14 +510,18 @@ char* BtnImgOn_EXIO[] = // 按鈕OFF 圖片路徑
 {
 	"",
 	"",
-	"clamp1_on.bmp",
-	"clamp2_on.bmp",
-	"CupulaOpen1.bmp",	
-	"CupulaOpen2.bmp",
-	"vacuum_on.bmp",
-	"static_on.bmp",
+	"clamp1_on.bmp",		// 3
+	"clamp2_on.bmp",		// 4
+	"CupulaOpen1.bmp",	// 5
+	"CupulaOpen2.bmp",	// 6
+	"vacuum_on.bmp",		// 7
+	"static_on.bmp",		// 8
 	"",
-	"vonveyor_on.bmp",
+	"vonveyor_on.bmp",	// 10
+	"",
+	"",
+	"",
+	"SubClamp_on.bmp",	// 14
 };
 char* BtnImgOff_INIO[] =
 {
@@ -520,14 +538,18 @@ char* BtnImgOff_EXIO[] =
 {
 	"",
 	"",
-	"clamp1_off.bmp",
-	"clamp2_off.bmp",
-	"CupulaClose1.bmp",	
-	"CupulaClose2.bmp",
-	"vacuum_off.bmp",
-	"static_off.bmp",
+	"clamp1_off.bmp",		// 3
+	"clamp2_off.bmp",		// 4
+	"CupulaClose1.bmp",	// 5
+	"CupulaClose2.bmp", // 6
+	"vacuum_off.bmp",		// 7
+	"static_off.bmp",		// 8
 	"",
-	"vonveyor_off.bmp",
+	"vonveyor_off.bmp",	// 10
+	"",
+	"",
+	"",
+	"SubClamp_off.bmp",	// 14
 };
 
 
@@ -1033,6 +1055,10 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		case KEY_CONVEYER: // 輸送帶
 			if(_TestBit(lExOutValue, 10-1)) SendCommand(COMMAND_CONVEYEROFF);
 			else SendCommand(COMMAND_CONVEYERON);
+			break;	
+		case KEY_SUBCLAMP: // 副臂夾具閥
+			if(_TestBit(lExOutValue, 14-1)) SendCommand(COMMAND_SUBCLAMPOFF);
+			else SendCommand(COMMAND_SUBCLAMPON);
 			break;	
 		default:
 			break;
