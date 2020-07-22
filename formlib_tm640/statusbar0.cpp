@@ -899,6 +899,8 @@ void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
 		break;
 		case	MSG_PANEL_KEY: //hotkey
 		{
+			if(!g_bMute)
+				Beep();
 			char keycode;
 			keycode = wParam;
 			KeyCodeNow = keycode;
@@ -2058,7 +2060,7 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 					{
 						g_DBVale_497=Param497.ZoneLimit[AxisNum+1][i];g_DBVale_28=Param28.ZoneLimit[AxisNum+1][i]; // ボ毙竟の北竟计
 						g_DBPrecision=Precision[PZoneLimit][i]; // 把计弘
-						SprintfDBValue(Param497.ZoneLimit[AxisNum][i],Param28.ZoneLimit[AxisNum][i]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
+						SprintfDBValue(Param497.ZoneLimit[AxisNum+1][i],Param28.ZoneLimit[AxisNum+1][i]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
 						
 						MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ZoneLimit_String[AxisNum+1][i]]);
 						iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
@@ -2313,6 +2315,7 @@ void	SetChosenDB(char* dbIDName, int Param497, int Param28, int iDBSelect)
 +---------------------------------------------------------------------------*/
 void SprintfDBValue(int iParam497, int iParam28)
 {
+	printf("iParam497=%d,iParam28=%d\n",iParam497,iParam28);
 	printf("SprintfDBValue g_DBPrecision=%d\n",g_DBPrecision);
 	int iPre=0;
 
@@ -2322,6 +2325,9 @@ void SprintfDBValue(int iParam497, int iParam28)
 	if(g_DBPrecision>0)
 	{
 		iPre = pow(10,g_DBPrecision); // 弘
+		printf("iPre=%d\n",iPre);
+		printf("28.=%d\n",(iParam28/iPre));
+		printf(".28=%d\n",(iParam28%iPre));
 		sprintf(gstr_DBValue_497,"%d"".""%d", (iParam497/iPre), (iParam497%iPre));
 		sprintf(gstr_DBValue_28,"%d"".""%d", (iParam28/iPre), (iParam28%iPre));
 	}
