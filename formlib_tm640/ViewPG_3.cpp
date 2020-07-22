@@ -78,6 +78,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	
 	pwndStaticACTION_NUM = pwndSender->FindControlFromName("StaticACTION_NUM");
 	nChkBoxNum 			 = GetSpecialControlNum(pwndSender, "buttonACT_",  "CtmToolButton", pwndButtonNum);
+	printf("nChkBoxNum=%d\n",nChkBoxNum);
 	pwndMovMld	= pwndSender->FindControlFromName("editMOVMOLDNUM");
 	/*-----------------------------------Åã¥Ü°Ê§@¦Cªí--------------------------------------*/
 	iEditNo 	 			= GetSpecialControlNum(pwndSender, "EditNo", "CtmEdit", pwndEditNo);					//
@@ -247,20 +248,21 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 			}
 		break;
 		case 8:		// ÀË´ú
-			for(int i=0;i<9;i++)
+			for(int i=0;i<16;i++)
 			{
 				if(pwndButtonNum[i]!=NULL)
 				{
 					sprintf(pDataID,"PICKER_REMOTE_I_0%d",i);
 					pwndButtonNum[i]->SetPropValueT("captionID", pDataID);
 					pwndButtonNum[i]->CreateA();
+					printf("Set pwndButtonNum[%d]=%s\n",i,pDataID);
 					//pwndButtonNum[i]->UpdateAll();
 				}
 			}
-			for(int i=9;i<nChkBoxNum;i++)
-			{
-				SetVisible(pwndButtonNum[i], FALSE ,0x0030);
-			}
+//			for(int i=9;i<nChkBoxNum;i++)
+//			{
+//				SetVisible(pwndButtonNum[i], FALSE ,0x0030);
+//			}
 		break;
 		case 12:	//Èþ†åÈþ
 		break;
@@ -292,36 +294,37 @@ void OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	if(wKey>=0 && wKey<=16)
 		{
 			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46", wKey);
-			switch(iActionName)
-			{
-				case 1:		// ¶b°Ê§@
-				break;
-				case 2:		// µ¥«Ý
-					::PutCommand("PG_2_WAIT.txt");
-				break;
-				case 3:		// ¤¹³\
-					printf("GOTO PG_2_PERMIT.txt\n");
-					::PutCommand("PG_2_PERMIT.txt");
-				break;
-				case 4:		// »Öªù
-					::PutCommand("PG_2_VALVE.txt");
-				break;
-				case 5:		// ¼ÐÅÒ
-					::PutCommand("PG_2_LABEL.txt");
-				break;
-				case 6:		// ¸õÂà
-					::PutCommand("PG_2_GOTO.txt");
-				break;
-				case 8:		// ÀË´ú
-					::PutCommand("PG_2_TEST.txt");
-				break;
-				case 12:	//Èþ†åÈþ
-				break;
-				case 13:	//å­çÈþåº
-				break;
-				default:
-				break;
-			}
+//			switch(iActionName)
+//			{
+//				case 1:		// ¶b°Ê§@
+//				break;
+//				case 2:		// µ¥«Ý
+//					::PutCommand("PG_2_WAIT.txt");
+//				break;
+//				case 3:		// ¤¹³\
+//					printf("GOTO PG_2_PERMIT.txt\n");
+//					::PutCommand("PG_2_PERMIT.txt");
+//				break;
+//				case 4:		// »Öªù
+//					::PutCommand("PG_2_VALVE.txt");
+//				break;
+//				case 5:		// ¼ÐÅÒ
+//					::PutCommand("PG_2_LABEL.txt");
+//				break;
+//				case 6:		// ¸õÂà
+//					::PutCommand("PG_2_GOTO.txt");
+//				break;
+//				case 8:		// ÀË´ú
+//					::PutCommand("PG_2_TEST.txt");
+//				break;
+//				case 12:	//Èþ†åÈþ
+//				break;
+//				case 13:	//å­çÈþåº
+//				break;
+//				default:
+//				break;
+//			}
+			Exit();
 		}
 }
 void		SetVisible(CtmWnd* pwnd, BOOL  bVisible, WORD  wType)
