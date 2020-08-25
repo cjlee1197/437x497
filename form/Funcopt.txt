@@ -31,19 +31,6 @@ ViewFuncopt:CtmFormView
     textID =PICKER_POSE_INMOLD
     align =34
   end
-  LinuxCtmStaticX25:CtmStaticX2
-    left =30
-    top =326
-    right =190
-    bottom =358
-    wtype =48
-    fgc =647
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_MACHINE_AUTOSTOP
-    align =34
-  end
   MovePostType0:CtmToolButton
     left =205
     top =184
@@ -131,36 +118,6 @@ ViewFuncopt:CtmFormView
     downcontrol =editNEWNAME
     destcolor =57182
     captionID =PICKER_HORIZONTAL
-    upbitmap =res_tm640/pic/EditBtnUp.bmp
-    downbitmap =res_tm640/pic/EditBtnDown.bmp
-  end
-  MachineZero:CtmToolButton
-    left =205
-    top =318
-    right =315
-    bottom =378
-    wtype =48
-    taborder =7
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    destcolor =57182
-    captionID =PICKER_MACHINE_ZERO
-    upbitmap =res_tm640/pic/EditBtnUp.bmp
-    downbitmap =res_tm640/pic/EditBtnDown.bmp
-  end
-  MachineNext:CtmToolButton
-    left =333
-    top =318
-    right =443
-    bottom =378
-    wtype =48
-    taborder =8
-    bgc =54970
-    fontsize =1
-    downcontrol =editNEWNAME
-    destcolor =57182
-    captionID =PICKER_MACHINE_NEXT
     upbitmap =res_tm640/pic/EditBtnUp.bmp
     downbitmap =res_tm640/pic/EditBtnDown.bmp
   end

@@ -62,8 +62,8 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 
 	MovePTypeNo = GetSpecialControlNum(pwndSender, "MovePostType", "CtmToolButton", pwndBtn_MovePType);
 	MoldPTypeNo = GetSpecialControlNum(pwndSender, "MoldPostType", "CtmToolButton", pwndBtn_MoldPType);
-	pwndBtn_MachineZero     = pwndSender->FindControlFromName("MachineZero");
-	pwndBtn_MachineNext     = pwndSender->FindControlFromName("MachineNext");
+	pwndBtn_MachineZero = pwndSender->FindControlFromName("MachineZero");
+	pwndBtn_MachineNext = pwndSender->FindControlFromName("MachineNext");
 	
 	// 刷新功能模式
 	SetMovePType();
@@ -279,29 +279,44 @@ void	SetMachineType()
 	switch(u_nMachineType)
 	{
 		case 0:
-				pwndBtn_MachineZero->SetPropValueT("bgc",Btn_bgc[ON]);
-				pwndBtn_MachineZero->SetPropValueT("fgc",Btn_fgc[ON]);
-				
-				pwndBtn_MachineNext->SetPropValueT("bgc",Btn_bgc[OFF]);
-				pwndBtn_MachineNext->SetPropValueT("fgc",Btn_fgc[OFF]);
+			  if(pwndBtn_MachineZero!=NULL)
+		  	{
+					pwndBtn_MachineZero->SetPropValueT("bgc",Btn_bgc[ON]);
+					pwndBtn_MachineZero->SetPropValueT("fgc",Btn_fgc[ON]);
+				}
+			  if(pwndBtn_MachineNext!=NULL)
+		  	{
+					pwndBtn_MachineNext->SetPropValueT("bgc",Btn_bgc[OFF]);
+					pwndBtn_MachineNext->SetPropValueT("fgc",Btn_fgc[OFF]);
+				}
 			break;
 		case 1:
-    		pwndBtn_MachineZero->SetPropValueT("bgc",Btn_bgc[OFF]);	
-				pwndBtn_MachineZero->SetPropValueT("fgc",Btn_fgc[OFF]);
-				
-				pwndBtn_MachineNext->SetPropValueT("bgc",Btn_bgc[ON]);
-				pwndBtn_MachineNext->SetPropValueT("fgc",Btn_fgc[ON]);
-
+			  if(pwndBtn_MachineZero!=NULL)
+		  	{
+	    		pwndBtn_MachineZero->SetPropValueT("bgc",Btn_bgc[OFF]);	
+					pwndBtn_MachineZero->SetPropValueT("fgc",Btn_fgc[OFF]);
+				}
+			  if(pwndBtn_MachineNext!=NULL)
+		  	{
+					pwndBtn_MachineNext->SetPropValueT("bgc",Btn_bgc[ON]);
+					pwndBtn_MachineNext->SetPropValueT("fgc",Btn_fgc[ON]);
+				}
 			break;
 		default:
 			break;
 	}			
-	pwndBtn_MachineZero->CreateA();
-	pwndBtn_MachineZero->Update();
-	pwndBtn_MachineNext->CreateA();
-	pwndBtn_MachineNext->Update();
-	if(u_nMachineType == 0)
-		((CtmButton*)pwndBtn_MachineZero)->Press(tmBUTTON_DOWN);
-	else if(u_nMachineType == 1)
-		((CtmButton*)pwndBtn_MachineNext)->Press(tmBUTTON_DOWN);
+  if(pwndBtn_MachineZero!=NULL && pwndBtn_MachineNext!=NULL)
+	{
+		pwndBtn_MachineZero->CreateA();
+		pwndBtn_MachineZero->Update();
+
+
+		pwndBtn_MachineNext->CreateA();
+		pwndBtn_MachineNext->Update();
+
+		if(u_nMachineType == 0)
+			((CtmButton*)pwndBtn_MachineZero)->Press(tmBUTTON_DOWN);
+		else if(u_nMachineType == 1)
+			((CtmButton*)pwndBtn_MachineNext)->Press(tmBUTTON_DOWN);
+	}
 }
