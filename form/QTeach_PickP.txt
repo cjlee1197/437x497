@@ -908,21 +908,6 @@ ViewQTeach:CtmFormView
     wtype =32
     bgc =59196
   end
-  Check_Ejector:CtmToolButton
-    left =486
-    top =440
-    right =526
-    bottom =480
-    wtype =33
-    taborder =80
-    bgc =54970
-    downcontrol =editNEWNAME
-    colorcontrol =4
-    destcolor =57182
-    upbitmap =res_tm640/pic/picker/Check_No.bmp
-    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =48
-  end
   LinuxCtmStaticX21:CtmStaticX2
     left =439
     top =400
@@ -1045,5 +1030,20 @@ ViewQTeach:CtmFormView
     bgc =36256
     bordercolor =35953
     align =34
+  end
+  Check_Ejector:CtmToolButton
+    left =486
+    top =440
+    right =526
+    bottom =480
+    wtype =33
+    taborder =80
+    bgc =54970
+    downcontrol =editNEWNAME
+    colorcontrol =4
+    destcolor =57182
+    upbitmap =res_tm640/pic/picker/Check_No.bmp
+    downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
+    key =80
   end
 end
