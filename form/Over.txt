@@ -102,7 +102,7 @@ ViewOver_IML:CtmFormView
     bordercolor =36256
     maxchar =14
     align =32
-    dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED8
+    dbid1 =MACHINE_INTERFACE_MONITOR_RSV02
   end
   TotalGoodCount:CtmEditX1
     left =102
@@ -117,6 +117,7 @@ ViewOver_IML:CtmFormView
     bordercolor =36256
     maxchar =14
     align =32
+    dbid1 =MACHINE_INTERFACE_MONITOR_RSV09
   end
   TotalCount:CtmEditX1
     left =102
@@ -131,8 +132,7 @@ ViewOver_IML:CtmFormView
     bordercolor =36256
     maxchar =14
     align =32
-    dbid0 =MACHINE_INTERFACE_MONITORMODES
-    dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED6
+    dbid1 =MACHINE_INTERFACE_MONITORMODES
   end
   LinuxCtmStaticX217:CtmStaticX2
     left =17

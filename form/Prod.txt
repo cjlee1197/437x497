@@ -114,6 +114,7 @@ ViewProd:CtmFormView
     bordercolor =53039
     maxchar =14
     align =32
+    dbid1 =MACHINE_INTERFACE_MONITOR_RSV09
   end
   TotalCount:CtmEditX1
     left =258
@@ -128,7 +129,7 @@ ViewProd:CtmFormView
     bordercolor =53039
     maxchar =14
     align =32
-    dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED6
+    dbid1 =MACHINE_INTERFACE_MONITORMODES
   end
   TotalSampleCount:CtmEditX1
     left =258
@@ -143,6 +144,7 @@ ViewProd:CtmFormView
     bordercolor =53039
     maxchar =14
     align =32
+    dbid0 =MACHINE_INTERFACE_MONITOR_RSV01
     dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED7
   end
   LinuxCtmStaticX28:CtmStaticX2
@@ -170,7 +172,7 @@ ViewProd:CtmFormView
     bordercolor =53039
     maxchar =14
     align =32
-    dbid1 =SYSX_OTHERS_OTHERS_DWORD_RESERVED8
+    dbid1 =MACHINE_INTERFACE_MONITOR_RSV02
   end
   LinuxCtmStaticX21:CtmStaticX2
     left =423
