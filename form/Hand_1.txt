@@ -674,8 +674,8 @@ ViewHand:CtmFormView
     top =212
     right =154
     bottom =244
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -687,8 +687,8 @@ ViewHand:CtmFormView
     top =212
     right =290
     bottom =244
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
@@ -700,51 +700,12 @@ ViewHand:CtmFormView
     top =84
     right =488
     bottom =116
-    wtype =33
-    fgc =0
+    wtype =48
+    fgc =647
     bgc =36256
     fontsize =1
     bordercolor =35953
     textID =O_SDR_067
     align =34
-  end
-  LinuxCtmImageBox5:CtmImageBox
-    left =352
-    top =84
-    right =368
-    bottom =116
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox14:CtmImageBox
-    left =28
-    top =212
-    right =44
-    bottom =244
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
-  end
-  LinuxCtmImageBox15:CtmImageBox
-    left =164
-    top =212
-    right =180
-    bottom =244
-    wtype =48
-    fgc =0
-    fontsize =2
-    type =2
-    style =3
-    imagepath =res_tm640/pic/ListMark.bmp
-    keycolor =63519
   end
 end

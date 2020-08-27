@@ -28,42 +28,6 @@ ViewPG_3:CtmFormView
     textID =PICKER_WAIT
     align =36
   end
-  SelectEditNUM:CtmSelectEdit
-    left =88
-    top =44
-    right =208
-    bottom =84
-    wtype =33
-    taborder =-1
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    dbid1 =MACHINE_PROFILE_NUM1_ACTION_NUM
-    maxchar =40
-    listnum =8
-    strID0 =VW_PICKER_NULL
-    strID1 =PCIKER_INNER_I_01
-    strID2 =PCIKER_INNER_I_02
-    strID3 =PCIKER_INNER_I_03
-    strID4 =PCIKER_INNER_I_04
-    strID5 =PCIKER_INNER_I_05
-    strID6 =PCIKER_INNER_I_06
-    strID7 =PCIKER_INNER_I_07
-  end
-  BtnWait:CtmToolButton
-    left =214
-    top =44
-    right =289
-    bottom =84
-    wtype =33
-    taborder =-1
-    bgc =65503
-    bordercolor =57182
-    align =34
-    upbitmap =res_tm640/pic/ButtonMore.bmp
-    downbitmap =res_tm640/pic/ButtonMoreDown.bmp
-    key =2
-  end
   buttonACT_1:CtmToolButton
     left =30
     top =116

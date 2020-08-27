@@ -134,10 +134,10 @@ mainform:CtmMainFrame
       keycolor =63519
     end
     UserLoginBtn:CtmToolButton
-      left =8
-      top =5
+      left =0
+      top =0
       right =40
-      bottom =37
+      bottom =40
       wtype =48
       taborder =101
       fontsize =2

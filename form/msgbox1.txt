@@ -34,7 +34,7 @@ ViewMsgBox:CtmFormView
     wtype =39
     taborder =0
     fgc =65535
-    bgc =1046
+    bgc =36256
     fontsize =2
     buttontype =0
     captionID =ROBOT_BTN_OK
@@ -47,7 +47,7 @@ ViewMsgBox:CtmFormView
     wtype =39
     taborder =1
     fgc =65535
-    bgc =1046
+    bgc =36256
     fontsize =2
     buttontype =0
     captionID =ROBOT_BTN_CANCEL

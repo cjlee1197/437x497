@@ -28,24 +28,6 @@ ViewEditWindow:CtmFormView
     textID =PICKER_FUNC_SUBTECH
     align =36
   end
-  SelectEditNUM:CtmSelectEdit
-    left =112
-    top =44
-    right =232
-    bottom =84
-    wtype =33
-    taborder =0
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    dbid1 =MACHINE_PROFILE_NUM1_ACTION_NUM
-    maxchar =40
-    listnum =5
-    strID0 =VW_PICKER_NULL
-    strID1 =PICKER_PROD_BAD
-    strID2 =PICKER_PROD_SAMPLE
-    strID3 =PICKER_PROD_TEST
-  end
   EditACTIONPARA1:CtmSelectEdit
     left =112
     top =112
@@ -132,8 +114,8 @@ ViewEditWindow:CtmFormView
     destcolor =57182
     align =34
     captionID =VW_MACH_SAVE
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
   BtnCancel:CtmToolButton
     left =210
@@ -148,7 +130,22 @@ ViewEditWindow:CtmFormView
     destcolor =57182
     align =34
     captionID =VW_PLAN_ESC
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
-    downbitmap =res_tm640/pic/PGBtnDown.bmp
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  SelectEditNUM:CtmToolButton
+    left =112
+    top =32
+    right =222
+    bottom =92
+    wtype =48
+    taborder =0
+    bgc =54970
+    titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
   end
 end

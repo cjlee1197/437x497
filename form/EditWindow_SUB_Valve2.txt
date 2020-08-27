@@ -28,52 +28,6 @@ ViewSUB_PG_3:CtmFormView
     textID =PICKER_VALVE
     align =36
   end
-  BtnValve:CtmToolButton
-    left =206
-    top =44
-    right =281
-    bottom =84
-    wtype =33
-    taborder =-1
-    bgc =65503
-    bordercolor =57182
-    align =34
-    upbitmap =res_tm640/pic/ButtonMore.bmp
-    downbitmap =res_tm640/pic/ButtonMoreDown.bmp
-    key =7
-  end
-  SelectEditNUM:CtmSelectEdit
-    left =88
-    top =44
-    right =198
-    bottom =84
-    wtype =33
-    taborder =-1
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    dbid1 =MACHINE_PROFILE_NUM1_ACTION_NUM
-    maxchar =40
-    listnum =7
-    strID0 =VW_PICKER_NULL
-    strID1 =PICKER_REMOTE_O_01
-    strID2 =PICKER_REMOTE_O_02
-    strID3 =PICKER_REMOTE_O_03
-    strID4 =PICKER_REMOTE_O_04
-    strID5 =PICKER_REMOTE_O_05
-    strID6 =PICKER_REMOTE_O_06
-    strID7 =PICKER_REMOTE_O_07
-    strID8 =PICKER_REMOTE_O_08
-    strID9 =PICKER_REMOTE_O_09
-    strID10 =PICKER_REMOTE_O_10
-    strID11 =PICKER_REMOTE_O_11
-    strID12 =PICKER_REMOTE_O_12
-    strID13 =PICKER_REMOTE_O_13
-    strID14 =PICKER_REMOTE_O_14
-    strID15 =PICKER_REMOTE_O_15
-    strID16 =PICKER_REMOTE_O_16
-  end
   buttonACT_1:CtmToolButton
     left =30
     top =92

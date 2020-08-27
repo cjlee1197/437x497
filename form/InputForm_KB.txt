@@ -65,7 +65,7 @@ ViewInputForm:CtmFormView
   btnClose:CtmToolButton
     left =560
     top =3
-    right =595
+    right =600
     bottom =38
     wtype =55
     taborder =-1
@@ -189,7 +189,7 @@ ViewInputForm:CtmFormView
   btnNum0:CtmToolButton
     left =540
     top =85
-    right =598
+    right =600
     bottom =143
     wtype =39
     taborder =-1
@@ -203,7 +203,7 @@ ViewInputForm:CtmFormView
   btnBackspace:CtmToolButton
     left =512
     top =267
-    right =598
+    right =600
     bottom =325
     wtype =39
     taborder =-1
@@ -344,7 +344,7 @@ ViewInputForm:CtmFormView
   btnCharP:CtmToolButton
     left =540
     top =147
-    right =598
+    right =600
     bottom =205
     wtype =39
     taborder =-1
@@ -635,7 +635,7 @@ ViewInputForm:CtmFormView
   btnEnter:CtmToolButton
     left =450
     top =327
-    right =598
+    right =600
     bottom =385
     wtype =39
     taborder =-1

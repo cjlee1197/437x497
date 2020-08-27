@@ -4,7 +4,7 @@ ViewAlarm:CtmFormView
   right =599
   bottom =829
   wtype =48
-  titleID =VW_ALARM
+  titleID =INDEX_ALRAM_HIS
   printname =Alarm.bmp
   LineTableTABLE1:CtmLineTable
     left =10
@@ -129,9 +129,9 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE002:CtmStaticX2
-    left =59
+    left =56
     top =190
-    right =97
+    right =94
     bottom =210
     wtype =48
     fgc =0
@@ -147,9 +147,9 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE004:CtmStaticX2
-    left =104
+    left =102
     top =190
-    right =344
+    right =346
     bottom =212
     wtype =48
     fgc =0
@@ -165,18 +165,18 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE006:CtmStaticX2
-    left =430
+    left =434
     top =190
-    right =496
+    right =500
     bottom =210
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE007:CtmStaticX2
-    left =514
+    left =515
     top =190
-    right =580
+    right =581
     bottom =210
     wtype =48
     fgc =0
@@ -184,18 +184,18 @@ ViewAlarm:CtmFormView
   end
   StaticTABLE011:CtmStaticX2
     left =16
-    top =228
+    top =227
     right =48
-    bottom =248
+    bottom =247
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE012:CtmStaticX2
-    left =59
-    top =228
-    right =97
-    bottom =248
+    left =56
+    top =227
+    right =94
+    bottom =247
     wtype =48
     fgc =0
     bgc =55167
@@ -209,37 +209,37 @@ ViewAlarm:CtmFormView
     fgc =0
   end
   StaticTABLE014:CtmStaticX2
-    left =104
-    top =228
-    right =344
-    bottom =250
+    left =102
+    top =227
+    right =346
+    bottom =249
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE015:CtmStaticX2
     left =354
-    top =228
+    top =227
     right =425
-    bottom =248
+    bottom =247
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE016:CtmStaticX2
-    left =430
-    top =228
-    right =496
-    bottom =248
+    left =434
+    top =227
+    right =500
+    bottom =247
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE017:CtmStaticX2
-    left =514
-    top =228
-    right =580
-    bottom =248
+    left =515
+    top =227
+    right =581
+    bottom =247
     wtype =48
     fgc =0
     bgc =55167
@@ -254,9 +254,9 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE022:CtmStaticX2
-    left =59
+    left =56
     top =264
-    right =97
+    right =94
     bottom =284
     wtype =48
     fgc =0
@@ -272,10 +272,10 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE024:CtmStaticX2
-    left =104
-    top =262
-    right =344
-    bottom =284
+    left =102
+    top =264
+    right =346
+    bottom =286
     wtype =48
     fgc =0
     bgc =55167
@@ -290,18 +290,18 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE026:CtmStaticX2
-    left =430
+    left =434
     top =264
-    right =496
+    right =500
     bottom =284
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE027:CtmStaticX2
-    left =514
+    left =515
     top =264
-    right =580
+    right =581
     bottom =284
     wtype =48
     fgc =0
@@ -309,18 +309,18 @@ ViewAlarm:CtmFormView
   end
   StaticTABLE031:CtmStaticX2
     left =16
-    top =302
+    top =301
     right =48
-    bottom =322
+    bottom =321
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE032:CtmStaticX2
-    left =59
-    top =302
-    right =97
-    bottom =322
+    left =56
+    top =301
+    right =94
+    bottom =321
     wtype =48
     fgc =0
     bgc =55167
@@ -335,55 +335,55 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE034:CtmStaticX2
-    left =104
-    top =300
-    right =344
-    bottom =322
+    left =102
+    top =301
+    right =346
+    bottom =323
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE035:CtmStaticX2
     left =354
-    top =302
+    top =301
     right =425
-    bottom =322
+    bottom =321
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE036:CtmStaticX2
-    left =430
-    top =302
-    right =496
-    bottom =322
+    left =434
+    top =301
+    right =500
+    bottom =321
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE037:CtmStaticX2
-    left =514
-    top =302
-    right =580
-    bottom =322
+    left =515
+    top =301
+    right =581
+    bottom =321
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE041:CtmStaticX2
     left =16
-    top =340
+    top =338
     right =48
-    bottom =360
+    bottom =358
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE042:CtmStaticX2
-    left =59
-    top =340
-    right =97
-    bottom =360
+    left =56
+    top =338
+    right =94
+    bottom =358
     wtype =48
     fgc =0
     bgc =55167
@@ -398,9 +398,9 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE044:CtmStaticX2
-    left =104
+    left =102
     top =338
-    right =344
+    right =346
     bottom =360
     wtype =48
     fgc =0
@@ -408,45 +408,45 @@ ViewAlarm:CtmFormView
   end
   StaticTABLE045:CtmStaticX2
     left =354
-    top =340
+    top =338
     right =425
-    bottom =360
+    bottom =358
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE046:CtmStaticX2
-    left =430
-    top =340
-    right =496
-    bottom =360
+    left =434
+    top =338
+    right =500
+    bottom =358
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE047:CtmStaticX2
-    left =514
-    top =340
-    right =580
-    bottom =360
+    left =515
+    top =338
+    right =581
+    bottom =358
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE051:CtmStaticX2
     left =16
-    top =378
+    top =375
     right =48
-    bottom =398
+    bottom =395
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE052:CtmStaticX2
-    left =59
-    top =378
-    right =97
-    bottom =398
+    left =56
+    top =375
+    right =94
+    bottom =395
     wtype =48
     fgc =0
     bgc =55167
@@ -461,55 +461,55 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE054:CtmStaticX2
-    left =104
-    top =376
-    right =344
-    bottom =398
+    left =102
+    top =375
+    right =346
+    bottom =397
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE055:CtmStaticX2
     left =354
-    top =378
+    top =375
     right =425
-    bottom =398
+    bottom =395
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE056:CtmStaticX2
-    left =430
-    top =378
-    right =496
-    bottom =398
+    left =434
+    top =375
+    right =500
+    bottom =395
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE057:CtmStaticX2
-    left =514
-    top =378
-    right =580
-    bottom =398
+    left =515
+    top =375
+    right =581
+    bottom =395
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE061:CtmStaticX2
     left =16
-    top =416
+    top =412
     right =48
-    bottom =436
+    bottom =432
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE062:CtmStaticX2
-    left =59
-    top =416
-    right =97
-    bottom =436
+    left =56
+    top =412
+    right =94
+    bottom =432
     wtype =48
     fgc =0
     bgc =55167
@@ -524,55 +524,55 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE064:CtmStaticX2
-    left =104
-    top =414
-    right =344
-    bottom =436
+    left =102
+    top =412
+    right =346
+    bottom =434
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE065:CtmStaticX2
     left =354
-    top =416
+    top =412
     right =425
-    bottom =436
+    bottom =432
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE066:CtmStaticX2
-    left =430
-    top =416
-    right =496
-    bottom =436
+    left =434
+    top =412
+    right =500
+    bottom =432
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE067:CtmStaticX2
-    left =514
-    top =416
-    right =580
-    bottom =436
+    left =515
+    top =412
+    right =581
+    bottom =432
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE071:CtmStaticX2
     left =16
-    top =454
+    top =449
     right =48
-    bottom =474
+    bottom =469
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE072:CtmStaticX2
-    left =59
-    top =454
-    right =97
-    bottom =474
+    left =56
+    top =449
+    right =94
+    bottom =469
     wtype =48
     fgc =0
     bgc =55167
@@ -587,55 +587,55 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE074:CtmStaticX2
-    left =104
-    top =452
-    right =344
-    bottom =474
+    left =102
+    top =449
+    right =346
+    bottom =471
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE075:CtmStaticX2
     left =354
-    top =454
+    top =449
     right =425
-    bottom =474
+    bottom =469
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE076:CtmStaticX2
-    left =430
-    top =454
-    right =496
-    bottom =474
+    left =434
+    top =449
+    right =500
+    bottom =469
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE077:CtmStaticX2
-    left =514
-    top =454
-    right =580
-    bottom =474
+    left =515
+    top =449
+    right =581
+    bottom =469
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE081:CtmStaticX2
     left =16
-    top =487
+    top =486
     right =48
-    bottom =507
+    bottom =506
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE082:CtmStaticX2
-    left =59
-    top =487
-    right =97
-    bottom =507
+    left =56
+    top =486
+    right =94
+    bottom =506
     wtype =48
     fgc =0
     bgc =55167
@@ -650,55 +650,55 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE084:CtmStaticX2
-    left =104
-    top =487
-    right =344
-    bottom =509
+    left =102
+    top =486
+    right =346
+    bottom =508
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE085:CtmStaticX2
     left =354
-    top =487
+    top =486
     right =425
-    bottom =507
+    bottom =506
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE086:CtmStaticX2
-    left =430
-    top =487
-    right =496
-    bottom =507
+    left =434
+    top =486
+    right =500
+    bottom =506
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE087:CtmStaticX2
-    left =514
-    top =487
-    right =580
-    bottom =507
+    left =515
+    top =486
+    right =581
+    bottom =506
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE091:CtmStaticX2
     left =16
-    top =527
+    top =523
     right =48
-    bottom =547
+    bottom =543
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE092:CtmStaticX2
-    left =59
-    top =527
-    right =97
-    bottom =547
+    left =56
+    top =523
+    right =94
+    bottom =543
     wtype =48
     fgc =0
     bgc =55167
@@ -713,37 +713,37 @@ ViewAlarm:CtmFormView
     bgc =55167
   end
   StaticTABLE094:CtmStaticX2
-    left =104
-    top =525
-    right =344
-    bottom =547
+    left =102
+    top =523
+    right =346
+    bottom =545
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE095:CtmStaticX2
     left =354
-    top =527
+    top =523
     right =425
-    bottom =547
+    bottom =543
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE096:CtmStaticX2
-    left =430
-    top =527
-    right =496
-    bottom =547
+    left =434
+    top =523
+    right =500
+    bottom =543
     wtype =48
     fgc =0
     bgc =55167
   end
   StaticTABLE097:CtmStaticX2
-    left =514
-    top =527
-    right =580
-    bottom =547
+    left =515
+    top =523
+    right =581
+    bottom =543
     wtype =48
     fgc =0
     bgc =55167

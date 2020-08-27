@@ -15,6 +15,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_MCH_P
     key =1
@@ -41,6 +42,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_ZERO
     key =3
@@ -65,6 +67,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_SPD_P
     key =2
@@ -104,6 +107,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_ZONE_SET
     key =4
@@ -130,6 +134,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_TEACHFILE
     key =7
@@ -180,6 +185,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =TEACH_QTEACH
     key =11
@@ -206,6 +212,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =TEACH_ADVANCE
     key =12
@@ -232,6 +239,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_PILE
     key =13
@@ -256,6 +264,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_SUB
     key =14
@@ -319,6 +328,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_ALRAM_HIS
     key =22
@@ -343,6 +353,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_OP_HIS
     key =23
@@ -376,12 +387,13 @@ ViewIndex:CtmFormView
     left =28
     top =682
     right =136
-    bottom =765
+    bottom =775
     wtype =48
     taborder =-1
     bgc =65535
     fontsize =1
     align =18
+    space =15
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_OP_MANAGE
     key =31
@@ -408,6 +420,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_SYS_UPDATE
     key =33
@@ -432,6 +445,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_SYS_SET
     key =32
@@ -458,6 +472,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_VERINFO
     key =34
@@ -476,9 +491,9 @@ ViewIndex:CtmFormView
   end
   LinuxCtmImageBox23:CtmImageBox
     left =82
-    top =652
+    top =644
     right =118
-    bottom =688
+    bottom =680
     wtype =48
     visible =FALSE
     enabled =FALSE
@@ -549,6 +564,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_MODE_SLC
     key =15
@@ -575,6 +591,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_DTC
     key =16
@@ -601,6 +618,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_DELAY_ADJ
     key =17
@@ -625,6 +643,7 @@ ViewIndex:CtmFormView
     bgc =65535
     fontsize =1
     align =18
+    space =5
     upbitmap =res_tm640/pic/Button.bmp
     captionID0 =INDEX_DRIVE_INFO
     key =24

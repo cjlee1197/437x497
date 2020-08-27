@@ -151,6 +151,7 @@ ViewQTeachSub:CtmFormView
     align =36
     precision =2
     max =999999
+    mindb =FALSE
     maxdb =FALSE
     minid =MACHINE_LIMITS_AXIS_Z_MAXPOSTION
     maxid =MACHINE_LIMITS_AXIS3_MAXPOSTION
@@ -172,6 +173,7 @@ ViewQTeachSub:CtmFormView
     align =36
     precision =2
     max =999999
+    mindb =FALSE
     maxdb =FALSE
     minid =MACHINE_LIMITS_AXIS_X1_MINPOSTION
     maxid =MACHINE_LIMITS_AXIS_X1_MAXPOSTION
@@ -193,6 +195,7 @@ ViewQTeachSub:CtmFormView
     align =36
     precision =2
     max =999999
+    mindb =FALSE
     maxdb =FALSE
     maxid =MACHINE_LIMITS_AXIS_Y1_MAXPOSTION
     dbid1 =MACHINE_PROFILE_NUM46_EQUIPMENT2_ACTION_PARAMETER2
@@ -212,6 +215,7 @@ ViewQTeachSub:CtmFormView
     align =36
     precision =2
     max =999999
+    mindb =FALSE
     maxdb =FALSE
     minid =MACHINE_LIMITS_AXIS_X2_MINPOSTION
     maxid =MACHINE_LIMITS_AXIS4_MAXPOSTION
@@ -481,91 +485,6 @@ ViewQTeachSub:CtmFormView
     upbitmap =res_tm640/pic/picker/GetPos_Axis_Y1.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
   end
-  Img_PosHint_Z:CtmImageBox
-    left =271
-    top =501
-    right =291
-    bottom =521
-    type =2
-    imagepath =res_tm640/pic/picker/PosHint.bmp
-    keycolor =63519
-  end
-  Mask_PosHint_Z:CtmStaticX2
-    left =317
-    top =494
-    right =417
-    bottom =516
-    wtype =32
-    bgc =59196
-  end
-  Img_PosHint_X1:CtmImageBox
-    left =317
-    top =568
-    right =337
-    bottom =588
-    type =2
-    imagepath =res_tm640/pic/picker/PosHint.bmp
-    keycolor =63519
-  end
-  Mask_PosHint_X1:CtmStaticX2
-    left =317
-    top =568
-    right =417
-    bottom =590
-    wtype =32
-    bgc =59196
-  end
-  Img_PosHint_Y1:CtmImageBox
-    left =317
-    top =642
-    right =337
-    bottom =662
-    type =2
-    imagepath =res_tm640/pic/picker/PosHint.bmp
-    keycolor =63519
-  end
-  Mask_PosHint_Y1:CtmStaticX2
-    left =317
-    top =642
-    right =417
-    bottom =664
-    wtype =32
-    bgc =59196
-  end
-  Img_PosHint_X2:CtmImageBox
-    left =317
-    top =716
-    right =337
-    bottom =736
-    type =2
-    imagepath =res_tm640/pic/picker/PosHint.bmp
-    keycolor =63519
-  end
-  Mask_PosHint_X2:CtmStaticX2
-    left =317
-    top =716
-    right =417
-    bottom =738
-    wtype =32
-    bgc =59196
-  end
-  Img_PosHint_Y2:CtmImageBox
-    left =271
-    top =740
-    right =291
-    bottom =760
-    type =2
-    imagepath =res_tm640/pic/picker/PosHint.bmp
-    keycolor =63519
-  end
-  Mask_PosHint_Y2:CtmStaticX2
-    left =317
-    top =790
-    right =417
-    bottom =812
-    wtype =32
-    bgc =59196
-  end
   Pos_Min_Z:CtmStaticX2
     left =317
     top =479
@@ -675,5 +594,90 @@ ViewQTeachSub:CtmFormView
     bgc =36256
     bordercolor =35953
     align =34
+  end
+  Img_PosHint_Y2:CtmImageBox
+    left =317
+    top =790
+    right =337
+    bottom =810
+    type =2
+    imagepath =res_tm640/pic/picker/PosHint.bmp
+    keycolor =63519
+  end
+  Mask_PosHint_Y2:CtmStaticX2
+    left =317
+    top =790
+    right =417
+    bottom =812
+    wtype =32
+    bgc =59196
+  end
+  Img_PosHint_X2:CtmImageBox
+    left =317
+    top =716
+    right =337
+    bottom =736
+    type =2
+    imagepath =res_tm640/pic/picker/PosHint.bmp
+    keycolor =63519
+  end
+  Mask_PosHint_X2:CtmStaticX2
+    left =317
+    top =716
+    right =417
+    bottom =738
+    wtype =32
+    bgc =59196
+  end
+  Img_PosHint_Y1:CtmImageBox
+    left =317
+    top =642
+    right =337
+    bottom =662
+    type =2
+    imagepath =res_tm640/pic/picker/PosHint.bmp
+    keycolor =63519
+  end
+  Mask_PosHint_Y1:CtmStaticX2
+    left =317
+    top =642
+    right =417
+    bottom =664
+    wtype =32
+    bgc =59196
+  end
+  Img_PosHint_X1:CtmImageBox
+    left =317
+    top =569
+    right =337
+    bottom =589
+    type =2
+    imagepath =res_tm640/pic/picker/PosHint.bmp
+    keycolor =63519
+  end
+  Mask_PosHint_X1:CtmStaticX2
+    left =317
+    top =568
+    right =417
+    bottom =590
+    wtype =32
+    bgc =59196
+  end
+  Img_PosHint_Z:CtmImageBox
+    left =317
+    top =494
+    right =337
+    bottom =514
+    type =2
+    imagepath =res_tm640/pic/picker/PosHint.bmp
+    keycolor =63519
+  end
+  Mask_PosHint_Z:CtmStaticX2
+    left =317
+    top =494
+    right =417
+    bottom =516
+    wtype =32
+    bgc =59196
   end
 end

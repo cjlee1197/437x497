@@ -28,44 +28,6 @@ ViewEditWindow:CtmFormView
     textID =VW_PUMP_TEST
     align =36
   end
-  SelectEditNUM:CtmSelectEdit
-    left =88
-    top =40
-    right =198
-    bottom =80
-    wtype =33
-    taborder =0
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    dbid1 =MACHINE_PROFILE_NUM1_ACTION_NUM
-    maxchar =40
-    listnum =8
-    strID0 =VW_PICKER_NULL
-    strID1 =PICKER_REMOTE_I_01
-    strID2 =PICKER_REMOTE_I_02
-    strID3 =PICKER_REMOTE_I_03
-    strID4 =PICKER_REMOTE_I_04
-    strID5 =PICKER_REMOTE_I_05
-    strID6 =PICKER_REMOTE_I_06
-    strID7 =PICKER_REMOTE_I_07
-    strID8 =PICKER_REMOTE_I_08
-  end
-  BtnDetect:CtmToolButton
-    left =206
-    top =40
-    right =281
-    bottom =80
-    wtype =33
-    taborder =104
-    fgc =19374
-    bgc =65503
-    fontsize =1
-    bordercolor =57182
-    align =34
-    upbitmap =res_tm640/pic/ButtonMore.bmp
-    key =8
-  end
   StaticACTIONPARA1:CtmStaticX2
     left =32
     top =112
@@ -172,6 +134,20 @@ ViewEditWindow:CtmFormView
     bottom =164
     wtype =48
     taborder =17
+    bgc =54970
+    fontsize =1
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  SelectEditNUM:CtmToolButton
+    left =88
+    top =32
+    right =198
+    bottom =92
+    wtype =48
+    taborder =0
     bgc =54970
     fontsize =1
     destcolor =57182

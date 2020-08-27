@@ -129,7 +129,7 @@ ViewSpeedSet:CtmFormView
     bordercolor =1055
     maxchar =10
     align =36
-    min =10
+    min =100
     max =1000
     mindb =FALSE
     maxdb =FALSE
@@ -160,7 +160,7 @@ ViewSpeedSet:CtmFormView
     bordercolor =64512
     maxchar =10
     align =36
-    min =10
+    min =100
     max =1000
     mindb =FALSE
     maxdb =FALSE
@@ -296,7 +296,7 @@ ViewSpeedSet:CtmFormView
     maxchar =10
     align =36
     precision =3
-    max =40000
+    max =10000
     maxdb =FALSE
     dbid0 =MACHINE_INTERFACE_SPEED_POS_KP_X1
   end
@@ -326,7 +326,7 @@ ViewSpeedSet:CtmFormView
     maxchar =10
     align =36
     precision =3
-    max =20000
+    max =2000
     maxdb =FALSE
     dbid0 =MACHINE_INTERFACE_SPEED_SPEED_KP_X1
   end

@@ -20,55 +20,39 @@ ViewPG_0:CtmFormView
   end
   ButtonInsert:CtmToolButton
     left =21
-    top =735
-    right =131
-    bottom =795
+    top =743
+    right =136
+    bottom =818
     wtype =48
     taborder =-1
     bgc =54970
     titleID =PICKER_ACTION
     fontsize =1
     destcolor =57182
-    align =34
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    align =18
+    space =8
+    upbitmap =res_tm640/pic/PGBtn_Insert.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
+    captionID0 =PICKER_INSERT
     key =2
-    LinuxCtmImageBox4:CtmImageBox
-      left =0
-      top =0
-      right =110
-      bottom =60
-      wtype =48
-      type =2
-      style =3
-      imagepath =res_tm640/pic/PGBtn_Insert.bmp
-    end
   end
   ButtonDelete:CtmToolButton
     left =168
-    top =735
-    right =278
-    bottom =795
+    top =743
+    right =283
+    bottom =818
     wtype =48
     taborder =-1
     bgc =54970
     titleID =PICKER_ACTION
     fontsize =1
     destcolor =57182
-    align =34
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    align =18
+    space =8
+    upbitmap =res_tm640/pic/PGBtn_Delete.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
+    captionID0 =BTN_02_05_03
     key =3
-    LinuxCtmImageBox5:CtmImageBox
-      left =0
-      top =0
-      right =110
-      bottom =60
-      wtype =48
-      type =2
-      style =3
-      imagepath =res_tm640/pic/PGBtn_Delete.bmp
-    end
   end
   LinuxCtmStaticX21:CtmStaticX2
     left =60
@@ -445,28 +429,20 @@ ViewPG_0:CtmFormView
   end
   LinuxCtmToolButton2:CtmToolButton
     left =21
-    top =642
-    right =131
-    bottom =702
+    top =648
+    right =136
+    bottom =723
     wtype =48
     taborder =-1
     bgc =54970
     fontsize =1
     destcolor =57182
-    align =34
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    align =18
+    space =8
+    upbitmap =res_tm640/pic/PGBtn_SingleRun.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
+    captionID0 =PICKER_SINGLE_START
     key =14
-    LinuxCtmImageBox8:CtmImageBox
-      left =0
-      top =0
-      right =110
-      bottom =60
-      wtype =48
-      type =2
-      style =3
-      imagepath =res_tm640/pic/PGBtn_SingleRun.bmp
-    end
   end
   EditNo1:CtmEdit
     left =-1
@@ -620,215 +596,91 @@ ViewPG_0:CtmFormView
   end
   ButtonSync:CtmToolButton
     left =317
-    top =735
-    right =427
-    bottom =795
+    top =743
+    right =432
+    bottom =818
     wtype =48
     taborder =-1
     bgc =54970
     titleID =PICKER_ACTION
     fontsize =1
     destcolor =57182
-    align =34
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    align =18
+    space =8
+    upbitmap =res_tm640/pic/PGBtn_Sync.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
+    captionID0 =PICKER_SYNC
     key =12
-    LinuxCtmImageBox6:CtmImageBox
-      left =0
-      top =0
-      right =110
-      bottom =60
-      wtype =48
-      type =2
-      style =3
-      imagepath =res_tm640/pic/PGBtn_Sync.bmp
-    end
   end
   ButtonUnSync:CtmToolButton
     left =464
-    top =735
-    right =574
-    bottom =795
+    top =743
+    right =579
+    bottom =818
     wtype =48
     taborder =-1
     bgc =54970
     titleID =PICKER_ACTION
     fontsize =1
     destcolor =57182
-    align =34
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    align =18
+    space =8
+    upbitmap =res_tm640/pic/PGBtn_UnSync.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
+    captionID0 =PICKER_UNSYNC
     key =13
-    LinuxCtmImageBox7:CtmImageBox
-      left =0
-      top =0
-      right =110
-      bottom =60
-      wtype =48
-      type =2
-      style =3
-      imagepath =res_tm640/pic/PGBtn_UnSync.bmp
-    end
-  end
-  LinuxCtmStaticX24:CtmStaticX2
-    left =21
-    top =795
-    right =131
-    bottom =827
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_INSERT
-    align =34
-  end
-  LinuxCtmStaticX25:CtmStaticX2
-    left =168
-    top =795
-    right =278
-    bottom =827
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =BTN_02_05_03
-    align =34
-  end
-  LinuxCtmStaticX26:CtmStaticX2
-    left =317
-    top =795
-    right =427
-    bottom =827
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_SYNC
-    align =34
-  end
-  LinuxCtmStaticX27:CtmStaticX2
-    left =464
-    top =795
-    right =574
-    bottom =827
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_UNSYNC
-    align =34
-  end
-  LinuxCtmStaticX28:CtmStaticX2
-    left =21
-    top =702
-    right =131
-    bottom =734
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_SINGLE_START
-    align =34
   end
   ButtonDownload:CtmToolButton
     left =464
-    top =640
-    right =574
-    bottom =700
+    top =648
+    right =579
+    bottom =723
     wtype =48
     taborder =-1
     bgc =54970
     titleID =PICKER_ACTION
     fontsize =1
     destcolor =57182
-    align =34
+    align =18
+    space =8
     upbitmap =res_tm640/pic/PGBtn_Download.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
+    captionID0 =PICKER_DOWNLOAD
     key =4
   end
   ButtonStartEdit:CtmToolButton
     left =168
-    top =640
-    right =278
-    bottom =700
+    top =648
+    right =283
+    bottom =723
     wtype =48
     taborder =20
     bgc =54970
     titleID =PICKER_ACTION
     fontsize =1
     destcolor =57182
-    align =34
+    align =18
+    space =8
     upbitmap =res_tm640/pic/PGBtn_Edit.bmp
     downbitmap =res_tm640/pic/PGBtn_Edit.bmp
+    captionID0 =PICKER_STARTEDIT
   end
   ButtonClear:CtmToolButton
     left =317
-    top =640
-    right =427
-    bottom =700
+    top =648
+    right =432
+    bottom =723
     wtype =48
     taborder =-1
     bgc =54970
     fontsize =1
     destcolor =57182
-    align =34
-    upbitmap =res_tm640/pic/PGBtnUp.bmp
+    align =18
+    space =8
+    upbitmap =res_tm640/pic/PGBtn_Clean.bmp
     downbitmap =res_tm640/pic/PGBtnDown.bmp
+    captionID0 =VW_PARA_CLEARDATA
     key =8
-    LinuxCtmImageBox1:CtmImageBox
-      left =0
-      top =0
-      right =110
-      bottom =60
-      wtype =48
-      type =2
-      style =3
-      imagepath =res_tm640/pic/PGBtn_Clean.bmp
-    end
-  end
-  LinuxCtmStaticX211:CtmStaticX2
-    left =464
-    top =700
-    right =574
-    bottom =732
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_DOWNLOAD
-    align =34
-  end
-  LinuxCtmStaticX22:CtmStaticX2
-    left =168
-    top =700
-    right =278
-    bottom =732
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =PICKER_STARTEDIT
-    align =34
-  end
-  LinuxCtmStaticX23:CtmStaticX2
-    left =317
-    top =700
-    right =427
-    bottom =732
-    wtype =48
-    fgc =0
-    bgc =36256
-    fontsize =1
-    bordercolor =35953
-    textID =VW_PARA_CLEARDATA
-    align =34
   end
   BtnFollow:CtmToolButton
     left =485

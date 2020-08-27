@@ -28,47 +28,6 @@ ViewSUB_PG_3:CtmFormView
     textID =PICKER_LABEL
     align =36
   end
-  BtmTag:CtmToolButton
-    left =206
-    top =40
-    right =281
-    bottom =80
-    wtype =33
-    taborder =-1
-    bgc =65503
-    fontsize =1
-    bordercolor =57182
-    align =34
-    upbitmap =res_tm640/pic/ButtonMore.bmp
-    downbitmap =res_tm640/pic/ButtonMoreDown.bmp
-    key =5
-  end
-  SelectEditNUM:CtmSelectEdit
-    left =88
-    top =40
-    right =198
-    bottom =80
-    wtype =33
-    taborder =-1
-    fgc =0
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    dbid1 =MACHINE_PROFILE_NUM1_ACTION_NUM
-    maxchar =40
-    listnum =8
-    strID0 =VW_PICKER_NULL
-    strID1 =PICKER_LABEL_1
-    strID2 =PICKER_LABEL_2
-    strID3 =PICKER_LABEL_3
-    strID4 =PICKER_LABEL_4
-    strID5 =PICKER_LABEL_5
-    strID6 =PICKER_LABEL_6
-    strID7 =PICKER_LABEL_7
-    strID8 =PICKER_LABEL_8
-    strID9 =PICKER_LABEL_9
-    strID10 =PICKER_LABEL_10
-  end
   buttonACT_1:CtmToolButton
     left =30
     top =92
