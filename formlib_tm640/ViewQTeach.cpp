@@ -1319,8 +1319,21 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 			int getvalue = GetDBValue(P2_POSSET_DBString[Axis_Y2]).lValue;
 			printf("OnCreateA %s=%d\n",P2_POSSET_DBString[Axis_Y2],getvalue);
 		}
-		
 	
+	// 設定速度預設值 80
+	long ltemp=0;
+	for(int i = 0; i < sizeof(u_pszQTeach_SpeedString)/sizeof(u_pszQTeach_SpeedString[0]); i++ )
+	{
+		if(pwndQTeach_Speed[i]!=NULL)
+		{
+			pwndQTeach_Speed[i]->GetPropValueT("value", &ltemp,sizeof(ltemp));
+			if(ltemp==0)
+			{
+				pwndQTeach_Speed[i]->SetPropValueT("value",80); // 寫入數值 80
+				pwndQTeach_Speed[i]->Update();
+			}
+		}
+	}
 	return TRUE;
 }
 /*---------------------------------------------------------------------------+
