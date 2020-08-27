@@ -166,7 +166,7 @@ void Update_UserLog() // 更新履歷內容
 		printf("dNewValue=%d\n",Log->dNewValue);
 		printf("dOldValue=%d\n",Log->dOldValue);
 		printf("%02d:%02d:%02d\n"	, Log->timeStart.hour, Log->timeStart.minute, Log->timeStart.second);
-		if( (iPage*10+i+1) < LogCount) // 需小於總紀錄數目
+		if( (iPage*10+i+1) <= LogCount) // 需小於總紀錄數目
 		{
 			if(pwndStr_No[i]!=NULL) // 序號
 			{
