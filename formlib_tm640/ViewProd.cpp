@@ -155,17 +155,21 @@ void		SetEditValue(CtmWnd* pwnd)
 	long long lTemp =0;
 	if(pwnd != NULL)
 	{
-		pwnd->GetPropValueT("dbid1", pDataID,sizeof(pDataID));
 		WORD wMoldNum =GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED2").lValue;
-		
-		if(pDataID != NULL && pDataID[0] != '\0')
-		{
-			lTemp = GetDBValue(pDataID).lValue * wMoldNum;
-		}
-		else
-		{
-			lTemp = (GetDBValue("SYSX_OTHERS_OTHERS_DWORD_RESERVED6").lValue - GetDBValue("SYSX_OTHERS_OTHERS_DWORD_RESERVED8").lValue)* wMoldNum;
-		}
+		pwnd->GetPropValueT("dbid1", pDataID,sizeof(pDataID));
+
+		if( strcmp(pDataID,"MACHINE_INTERFACE_MONITORMODES")==0 ) // 羆玻秖
+			{
+				lTemp = GetDBValue(pDataID).lValue * wMoldNum; // 虫家玻珇计*秨家计
+			}
+		else if( strcmp(pDataID,"MACHINE_INTERFACE_MONITOR_RSV02")==0 ) // 羆ぃ▆珇
+			{
+				lTemp = GetDBValue(pDataID).lValue * wMoldNum; // 虫家玻珇计*秨家计
+			} 
+		else if( strcmp(pDataID,"MACHINE_INTERFACE_MONITOR_RSV09")==0 ) // 羆▆珇
+			{
+				lTemp = ( GetDBValue("MACHINE_INTERFACE_MONITORMODES").lValue - GetDBValue("MACHINE_INTERFACE_MONITOR_RSV02").lValue )* wMoldNum; // (羆玻秖-羆ぃ▆珇)*秨家计
+			} 
 		pwnd->SetPropValueT("value",lTemp);
 		pwnd->UpdateAll();
 	}	
