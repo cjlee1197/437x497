@@ -51,12 +51,6 @@
 #define			SINGLE_PAUSE 0x22 // 狀態 單步暫停 
 #define			AUTO_PAUSE 0x24 // 狀態 自動暫停
 
-#define 		CNT_INT_DEMO_TIMER 		2000;//1000; 50
-#define 		GPIO_LED_DEFINE  		0x07;//1000; 50
-#define 		GPIO_BIT_AUTO 0x01
-#define 		GPIO_BIT_ALARM 0x02
-#define 		GPIO_BIT_ENABLE 0x03
-
 const			int	CNT_INT_UPDATE_DATE_TIMER = 1000;	//Delay time.
 
 #define		CONST_REQ_COMMAND   6
@@ -538,7 +532,6 @@ char* ParamStr_Detect[] = // 檢測設定 顯示文字
 };
 char* dbid_Prod[] = // 生產參數 db 
 {
-	"SYSX_OTHERS_OTHERS_INT_RESERVED2",		// 單模產品總數
 	"MACHINE_CONFIGURATION_CAROUSELOPERATIONTIME",	// 輸送帶時間
 };
 char* ParamStr_Prod[] = // 生產參數 顯示文字
@@ -674,6 +667,14 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 {
 	printf("OnCreateA\n");
 	printf("CurrentMold=%s\n",CtmMoldSet::GetInstance()->GetCurrentMold());
+	
+	BOOL	bScreenSaverLCDOFFOption=GetDBValue("SYS_HMI_NULL_NULL_SCREENSAVERLCDPOWEROFF").lValue;
+	printf("bScreenSaverLCDOFFOption=%d\n",bScreenSaverLCDOFFOption);
+	if(bScreenSaverLCDOFFOption)
+	{
+		system("./SetBL");
+		printf("SetBL\n");
+	}
     AddTimer(&u_lDateTimer);
     #ifdef      D_DEMO
     g_bKeyLockFlag = FALSE;
