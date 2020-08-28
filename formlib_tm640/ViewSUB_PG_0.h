@@ -52,5 +52,6 @@ void	Single(CtmWnd* pwndSender);
 void	SetVisible(CtmWnd* pwnd, BOOL  bVisible, WORD  wType);
 void	SetEnabled(CtmWnd* pwnd, BOOL  bVisible,int taborder);
 void	Update_Download_Hint();
+void	SendCommand(int	CommandID);
 
 #endif

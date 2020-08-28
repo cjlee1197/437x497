@@ -870,6 +870,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				Clean();
 				Prompt(g_MultiLanguage["PICKER_DATADOWNLODING"],1); 
 				GetPosTag();
+				SendCommand(0xF600); // Servo Off
 				Download();
 				g_Hint_Download = 0; // §¹¦¨¤U¸ü
 				Update_Download_Hint();
@@ -2189,4 +2190,23 @@ void	Update_Download_Hint()
 		pwndButtonDownload->CreateA();
 		pwndButtonDownload->Update();
 	}
+}
+/*---------------------------------------------------------------------------+
+|  Function : SendCommand()                      	     	                     |
+|  Task     :   						     	                                           |
++----------------------------------------------------------------------------+
+|  Call     :                                                                |
+|                                                                            |
+|  Parameter:                           -                                    |
+|                                                                            |
+|  Return   :                           -                                    |
++---------------------------------------------------------------------------*/
+void	SendCommand(int	CommandID)
+{
+	
+	 	if(g_ptaskpicker != NULL)
+ 		{			
+			g_ptaskpicker->ReqValues(CONST_REQ_COMMAND, 1, &CommandID, NULL);
+ 	  	printf("Send Command = %x\n", CommandID);
+		}
 }
