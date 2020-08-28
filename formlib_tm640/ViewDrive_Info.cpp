@@ -136,7 +136,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	SetDBValue("MACHINE_CONFIGURATION_IO_REFERENCE_POINT", 0x01); // 送28命令 開始跟驅動器要資料
 	
 	iDriveInfoSTR	 	= GetSpecialControlNum(pwndSender, "STR", "CtmStaticX2", pwndDriveInfoSTR);
-
+	
 	pwndIMG_Axis    = pwndSender->FindControlFromName("IMG_Axis");
 	
 	iBtn_Axis	 	= GetSpecialControlNum(pwndSender, "Btn_Axis_", "CtmToolButton", pwndBtn_Axis);
@@ -252,11 +252,16 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		{
 			if(u_EncType==EncType_Abs) // 絕對型 ENC for AUSTONE
 			{
-				f_value = Conv2Float(dw);
-				if(f_value >= 65535)
-					sprintf(str_temp ,"NULL");
+				if(i!=10)
+				{
+					f_value = Conv2Float(dw);
+					if(f_value >= 65535)
+						sprintf(str_temp ,"NULL");
+					else
+						sprintf(str_temp ,"%.02f",f_value);
+				}
 				else
-					sprintf(str_temp ,"%.02f",f_value);
+					sprintf(str_temp ,"%d",dw);	
 			}
 			else if(u_EncType==EncType_Res) // 增量式 for HDT
 			{
