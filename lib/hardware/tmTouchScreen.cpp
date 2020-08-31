@@ -1370,7 +1370,7 @@ void	USB_MouseFunc2(void* pdata)
         		//nMouseLDownFlag = (u_UNtiecTouch.dwValue & 0x00FF0000) >> 16;
         		//nTouchIndex		= (u_UNtiecTouch.dwValue & 0xFF000000) >> 24;
         		
-        		//printf("nreadbuf.x=%d nreadbuf.y=%d nMouseLDownFlag=%d \n", nreadbuf.x, nreadbuf.y, nMouseLDownFlag);
+        		printf("nreadbuf.x=%d nreadbuf.y=%d nMouseLDownFlag=%d \n", nreadbuf.x, nreadbuf.y, nMouseLDownFlag);
         		if(g_TSAdjustState == 1)
 				{
 					oreadbuf.x = nreadbuf.x;
@@ -1886,10 +1886,10 @@ void	USB_MouseFunc4(void* pdata)
 		if( g_ptaskCmd!= NULL)
 			g_ptaskCmd->SetIdle(FALSE);
 		// √‰Ωt∞æ≤æ
-		if((u_PMTouch.wCode == 1 || u_PMTouch.wCode == 3 ) && u_PMTouch.dwValue<10) u_PMTouch.dwValue=10;
-		if(u_PMTouch.wCode == 3 && u_PMTouch.dwValue > 590) u_PMTouch.dwValue =590;
-		if(u_PMTouch.wCode == 1 && u_PMTouch.dwValue >1014) u_PMTouch.dwValue =1014;
-		//printf("wtype=%d code=%d value=%d \n", u_PMTouch.wType, u_PMTouch.wCode, u_PMTouch.dwValue);
+		if((u_PMTouch.wCode == 0 || u_PMTouch.wCode == 1 || u_PMTouch.wCode == 53 || u_PMTouch.wCode == 54) && u_PMTouch.dwValue<10) u_PMTouch.dwValue=10;
+		if( (u_PMTouch.wCode == 1 || u_PMTouch.wCode == 54) && u_PMTouch.dwValue > 590) u_PMTouch.dwValue =590;
+		if( (u_PMTouch.wCode == 0 || u_PMTouch.wCode == 53) && u_PMTouch.dwValue >1014) u_PMTouch.dwValue =1014;
+		printf("wtype=%d code=%d value=%d \n", u_PMTouch.wType, u_PMTouch.wCode, u_PMTouch.dwValue);
 		switch(u_PMTouch.wType)
 		{
 			case 3:			//Read x y
