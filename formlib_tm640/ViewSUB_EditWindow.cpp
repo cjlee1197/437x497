@@ -167,6 +167,103 @@ char*	Str_Axis[] =
 	"VW_HAP5_ROBOT_Y2AXIS",
 	"VW_HAP5_ROBOT_CAXIS",
 };
+char*	Str_Pile[] =
+{
+	"VW_PICKER_NULL",
+	"VW_PID_GROUP1",
+	"VW_PID_GROUP2",
+	"VW_PID_GROUP3",
+	"VW_PID_GROUP4",
+};
+char*	Str_Sub[] =
+{
+	"VW_PICKER_NULL",
+	"PICKER_PROD_BAD",
+	"PICKER_PROD_SAMPLE",
+	"PICKER_PROD_TEST",
+	"PICKER_FUNC_SUBTECH",
+	"PICKER_FUNC_SUBTECH",
+};
+
+
+
+char* Str_InnerI[] =
+{
+	"VW_PICKER_NULL",
+	"PCIKER_INNER_I_01",
+	"PCIKER_INNER_I_02",
+	"PCIKER_INNER_I_03",
+	"PCIKER_INNER_I_04",
+	"PCIKER_INNER_I_05",
+	"PCIKER_INNER_I_06",
+	"PCIKER_INNER_I_07",
+};
+char* Str_InnerO[] =
+{
+	"VW_PICKER_NULL",
+	"PICKER_INNER_O_01",
+	"PICKER_INNER_O_02",
+	"PICKER_INNER_O_03",
+	"PICKER_INNER_O_04",
+	"PICKER_INNER_O_05",
+	"PICKER_INNER_O_06",
+	"PICKER_INNER_O_07",
+};
+
+char*	Str_RemoteI[] =
+{
+	"VW_PICKER_NULL",
+	"PICKER_REMOTE_I_01",
+	"PICKER_REMOTE_I_02",
+	"PICKER_REMOTE_I_03",
+	"PICKER_REMOTE_I_04",
+	"PICKER_REMOTE_I_05",
+	"PICKER_REMOTE_I_06",
+	"PICKER_REMOTE_I_07",
+	"PICKER_REMOTE_I_08",
+	"PICKER_REMOTE_I_09",
+	"PICKER_REMOTE_I_10",
+	"PICKER_REMOTE_I_11",
+	"PICKER_REMOTE_I_12",
+	"PICKER_REMOTE_I_13",
+	"PICKER_REMOTE_I_14",
+	"PICKER_REMOTE_I_15",
+	"PICKER_REMOTE_I_16",
+};
+char*	Str_RemoteO[] =
+{
+	"VW_PICKER_NULL",
+	"PICKER_REMOTE_O_01",
+	"PICKER_REMOTE_O_02",
+	"PICKER_REMOTE_O_03",
+	"PICKER_REMOTE_O_04",
+	"PICKER_REMOTE_O_05",
+	"PICKER_REMOTE_O_06",
+	"PICKER_REMOTE_O_07",
+	"PICKER_REMOTE_O_08",
+	"PICKER_REMOTE_O_09",
+	"PICKER_REMOTE_O_10",
+	"PICKER_REMOTE_O_11",
+	"PICKER_REMOTE_O_12",
+	"PICKER_REMOTE_O_13",
+	"PICKER_REMOTE_O_14",
+	"PICKER_REMOTE_O_15",
+	"PICKER_REMOTE_O_16",
+};
+char*	Str_Label[] =
+{
+	"VW_PICKER_NULL",
+	"PICKER_LABEL_1",
+	"PICKER_LABEL_2",
+	"PICKER_LABEL_3",
+	"PICKER_LABEL_4",
+	"PICKER_LABEL_5",
+	"PICKER_LABEL_6",
+	"PICKER_LABEL_7",
+	"PICKER_LABEL_8",
+	"PICKER_LABEL_9",
+	"PICKER_LABEL_10",
+};
 
 char*	Str_Group[] =
 {
@@ -491,9 +588,13 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			}
 			else if(pwndSelectEditNUM->Is("CtmToolButton"))
 			{
-				pwndSelectEditNUM->SetPropValueT("captionID",Str_Axis[EditNUM]);	
-				if(ActionType==1) // 軸動作
+				iSelectIndex = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46").lValue;
+				printf("iSelectIndex=%d EditNUM=%d\n",iSelectIndex,EditNUM);
+				if(iSelectIndex==0xFFFF)
+					iSelectIndex=EditNUM;
+				if(ActionType==1) //
 				{
+					pwndSelectEditNUM->SetPropValueT("captionID",Str_Axis[EditNUM]);	
 					SetDBValue("MACHINE_FUNCTION_OPTIONS_RSV04", 1);//進入編程畫面送1 離開送0 主機判斷
 					if(pwndStaticPreDistance != NULL) // 文字:"n軸" 點動距離
 					{
@@ -580,8 +681,38 @@ void	OnUpdateA(CtmWnd* pwndSender)
 						pwndEditACTIONPARA1->Update();
 					}
 				}
-				//pwndSelectEditNUM->CreateA();
-				//pwndSelectEditNUM->Update();
+				else if(ActionType==Action_Wait) // Wait
+					{
+						pwndSelectEditNUM->SetPropValueT("captionID",Str_InnerI[iSelectIndex]);	
+					}
+				else if(ActionType==Action_Permit) // Permit
+					{
+						pwndSelectEditNUM->SetPropValueT("captionID",Str_InnerO[iSelectIndex]);	
+					}
+				else if(ActionType==Action_Valve) // Valve
+					{
+						pwndSelectEditNUM->SetPropValueT("captionID",Str_RemoteO[iSelectIndex]);	
+					}
+				else if(ActionType==Action_Detect) // Detect
+					{
+						pwndSelectEditNUM->SetPropValueT("captionID",Str_RemoteI[iSelectIndex]);	
+					}
+				else if(ActionType==Action_Tag) // Tag
+					{
+						pwndSelectEditNUM->SetPropValueT("captionID",Str_Label[iSelectIndex]);	
+					}
+				else if(ActionType==Action_Goto) // Goto
+					{
+						pwndSelectEditNUM->SetPropValueT("captionID",Str_Label[iSelectIndex]);	
+					}
+				else if(ActionType==Action_Pile) // Pile
+					{
+						pwndSelectEditNUM->SetPropValueT("captionID",Str_Pile[EditNUM]);	
+					}
+				else if(ActionType==Action_Sub) // Sub
+					{
+						pwndSelectEditNUM->SetPropValueT("captionID",Str_Sub[EditNUM]);	
+					}
 			}
 			else
 			{
@@ -1203,11 +1334,142 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	}
 	if(iSelectIndex!=iSelectIndexOld) // 更新標籤
 	{
+		printf("Update Tag\n");
 		iSelectIndexOld=iSelectIndex;
-		if(pwndSelectEditNUM!=NULL)
+//		if(pwndSelectEditNUM!=NULL)
+//		{
+//			((CtmSelectEdit*)pwndSelectEditNUM)->SetIndex(iSelectIndex);
+//			((CtmSelectEdit*)pwndSelectEditNUM)->Update();
+//		}
+		if(pwndSelectEditNUM->Is("CtmToolButton"))
 		{
-			((CtmSelectEdit*)pwndSelectEditNUM)->SetIndex(iSelectIndex);
-			((CtmSelectEdit*)pwndSelectEditNUM)->Update();
+			iSelectIndex = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46").lValue;
+			if(iSelectIndex<0)
+				iSelectIndex=EditNUM;
+			printf("iSelectIndex=%d\n",iSelectIndex);
+			if(ActionType==1) // 軸動作
+			{
+				pwndSelectEditNUM->SetPropValueT("captionID",Str_Axis[EditNUM]);	
+				SetDBValue("MACHINE_FUNCTION_OPTIONS_RSV04", 1);//進入編程畫面送1 離開送0 主機判斷
+				if(pwndStaticPreDistance != NULL) // 文字:"n軸" 點動距離
+				{
+					if(EditNUM ==1)	//X1軸
+					{
+						pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_XAXIS");
+					}
+					else if(EditNUM ==2)	//Y1軸
+					{
+						pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_YAXIS");
+					}
+					else if(EditNUM ==3)	//Z軸
+					{
+						pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_ZAXIS");
+					}
+					else if(EditNUM ==6)	//C嵞
+					{
+						pwndStaticPreDistance->SetPropValueT("textID","MSG_DUMMY");
+						SetEnabled( pwndEditSet_PreDistance, 0);	
+						SetEnabled( pwndSelectEditManualType, 0);	
+						SetVisible( pwndStaticACTIONPARA1, 0,0x0030);
+						if(pwndButton_GetPosi!=NULL)
+						{
+							pwndButton_GetPosi->SetPropValueT("taborder",(double)-3);
+							pwndButton_GetPosi->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA2!=NULL)
+						{
+							pwndStaticACTIONPARA2->SetPropValueT("textID","MOTION_GATE");
+							pwndStaticACTIONPARA2->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA3!=NULL)
+						{
+							pwndStaticACTIONPARA3->SetPropValueT("textID","MOTION_ONOFF");
+							pwndStaticACTIONPARA3->UpdateAll();
+						}
+						if(pwndEditACTIONPARA2 != NULL)
+						{
+							pwndEditACTIONPARA2->SetPropValueT("max",(double)1);
+							pwndEditACTIONPARA2->SetPropValueT("promptID","PICKER_AXISC_VALVE");
+							pwndEditACTIONPARA2	->UpdateAll();
+						}
+						if(pwndEditACTIONPARA3 != NULL)
+						{
+							pwndEditACTIONPARA3->SetPropValueT("max",(double)1);
+							pwndEditACTIONPARA3->SetPropValueT("precision",(double)0);
+							pwndEditACTIONPARA3->SetPropValueT("promptID","PICKER_AXISC_ONOFF");
+							pwndEditACTIONPARA3	->UpdateAll();
+						}
+					}
+					else if(EditNUM ==4)	//X2軸
+					{
+						pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_X2AXIS");
+					}
+					else if(EditNUM ==5)	//Y2軸
+					{
+						pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_Y2AXIS");
+					}
+					pwndStaticPreDistance->Update();
+				}
+				if(pwndEditACTIONPARA1 != NULL) // 位置 上限值
+				{
+					//printf("Set Position Maxdb\n");
+					if(EditNUM ==1)	//X1軸
+					{
+						pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS1_MAXPOSTION");
+					}
+					else if(EditNUM ==2)	//Y1軸
+					{
+						pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS2_MAXPOSTION");
+					}
+					else if(EditNUM ==3)	//Z軸
+					{
+						pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS3_MAXPOSTION");
+					}
+					else if(EditNUM ==4)	//X2軸
+					{
+						pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS4_MAXPOSTION");
+					}
+					else if(EditNUM ==5)	//Y2軸
+					{
+						pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS5_MAXPOSTION");
+					}
+					pwndEditACTIONPARA1->Update();
+				}
+			}
+			else if(ActionType==Action_Wait) // Wait
+				{
+					pwndSelectEditNUM->SetPropValueT("captionID",Str_InnerI[iSelectIndex]);	
+				}
+			else if(ActionType==Action_Permit) // Permit
+				{
+					pwndSelectEditNUM->SetPropValueT("captionID",Str_InnerO[iSelectIndex]);	
+				}
+			else if(ActionType==Action_Valve) // Valve
+				{
+					pwndSelectEditNUM->SetPropValueT("captionID",Str_RemoteO[iSelectIndex]);	
+				}
+			else if(ActionType==Action_Detect) // Detect
+				{
+					pwndSelectEditNUM->SetPropValueT("captionID",Str_RemoteI[iSelectIndex]);	
+				}
+				else if(ActionType==Action_Tag) // Tag
+					{
+						pwndSelectEditNUM->SetPropValueT("captionID",Str_Label[iSelectIndex]);	
+					}
+				else if(ActionType==Action_Goto) // Goto
+					{
+						pwndSelectEditNUM->SetPropValueT("captionID",Str_Label[iSelectIndex]);	
+					}
+			else if(ActionType==Action_Pile) // Pile
+				{
+					pwndSelectEditNUM->SetPropValueT("captionID",Str_Pile[EditNUM]);	
+				}
+			else if(ActionType==Action_Sub) // Sub
+				{
+					pwndSelectEditNUM->SetPropValueT("captionID",Str_Sub[EditNUM]);	
+				}
+			pwndSelectEditNUM->CreateA();	
+			pwndSelectEditNUM->Update();
 		}
 //		if(ActionType==4) // cjlee changed 2019/4/26 上午 10:25:53
 //		{
@@ -1531,275 +1793,318 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
  		
 	else if(pwnd == pwndSelectEditNUM) // 軸動作選擇
 	{
-		EditNUM++;
-		if(EditNUM>6)
-			EditNUM=0;
-		printf("EditNUM=%d\n",EditNUM);
-		
-		pwndSelectEditNUM->SetPropValueT("captionID",Str_Axis[EditNUM]);	
-		if(ActionType==1)
+		if(ActionType==1) // 軸動作
 		{
-			SetDBValue("MACHINE_FUNCTION_OPTIONS_RSV04", 1);//進入編程畫面送1 離開送0 主機判斷
-			if(pwndStaticPreDistance != NULL)
+			EditNUM++;
+			if(EditNUM>6)
+				EditNUM=0;
+			printf("EditNUM=%d\n",EditNUM);
+			
+			pwndSelectEditNUM->SetPropValueT("captionID",Str_Axis[EditNUM]);	
+			if(ActionType==1)
 			{
-				if(EditNUM ==1)	//X1軸
+				SetDBValue("MACHINE_FUNCTION_OPTIONS_RSV04", 1);//進入編程畫面送1 離開送0 主機判斷
+				if(pwndStaticPreDistance != NULL)
 				{
-					pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_XAXIS");
-					SetEnabled( pwndEditSet_PreDistance, 1);	
-					SetEnabled( pwndSelectEditManualType, 1);	
-					SetVisible( pwndStaticACTIONPARA1, 1,0x0030);
-					SetEnabled( pwndEditACTIONPARA1, 1);
-					if(pwndButton_GetPosi!=NULL)
+					if(EditNUM ==1)	//X1軸
 					{
-						pwndButton_GetPosi->SetPropValueT("taborder",(double)-1);
-						pwndButton_GetPosi->UpdateAll();
+						pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_XAXIS");
+						SetEnabled( pwndEditSet_PreDistance, 1);	
+						SetEnabled( pwndSelectEditManualType, 1);	
+						SetVisible( pwndStaticACTIONPARA1, 1,0x0030);
+						SetEnabled( pwndEditACTIONPARA1, 1);
+						if(pwndButton_GetPosi!=NULL)
+						{
+							pwndButton_GetPosi->SetPropValueT("taborder",(double)-1);
+							pwndButton_GetPosi->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA2!=NULL)
+						{
+							pwndStaticACTIONPARA2->SetPropValueT("textID","VW_EJECT_RCUT_SPED");
+							pwndStaticACTIONPARA2->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA3!=NULL)
+						{
+							pwndStaticACTIONPARA3->SetPropValueT("textID","VW_PICKER_ADVANCE");
+							pwndStaticACTIONPARA3->UpdateAll();
+						}
+						if(pwndEditACTIONPARA2 != NULL)
+						{
+							pwndEditACTIONPARA2->SetPropValueT("max",(double)100);
+							pwndEditACTIONPARA2->SetPropValueT("promptID","");
+							pwndEditACTIONPARA2	->Update();
+							pwndEditACTIONPARA2	->UpdateAll();
+						}
+						if(pwndEditACTIONPARA3 != NULL)
+						{
+							pwndEditACTIONPARA3->SetPropValueT("max",(double)99999);
+							pwndEditACTIONPARA3->SetPropValueT("precision",(double)2);
+							pwndEditACTIONPARA3->SetPropValueT("promptID","");
+							pwndEditACTIONPARA3	->Update();
+							pwndEditACTIONPARA3	->UpdateAll();
+						}
 					}
-					if(pwndStaticACTIONPARA2!=NULL)
+					else if(EditNUM ==2)	//Y1軸
 					{
-						pwndStaticACTIONPARA2->SetPropValueT("textID","VW_EJECT_RCUT_SPED");
-						pwndStaticACTIONPARA2->UpdateAll();
+						pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_YAXIS");
+						SetEnabled( pwndEditSet_PreDistance, 1);	
+						SetEnabled( pwndSelectEditManualType, 1);	
+						SetVisible( pwndStaticACTIONPARA1, 1,0x0030);
+						SetEnabled( pwndEditACTIONPARA1, 1);
+						if(pwndButton_GetPosi!=NULL)
+						{
+							pwndButton_GetPosi->SetPropValueT("taborder",(double)-1);
+							pwndButton_GetPosi->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA2!=NULL)
+						{
+							pwndStaticACTIONPARA2->SetPropValueT("textID","VW_EJECT_RCUT_SPED");
+							pwndStaticACTIONPARA2->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA3!=NULL)
+						{
+							pwndStaticACTIONPARA3->SetPropValueT("textID","VW_PICKER_ADVANCE");
+							pwndStaticACTIONPARA3->UpdateAll();
+						}
+						if(pwndEditACTIONPARA2 != NULL)
+						{
+							pwndEditACTIONPARA2->SetPropValueT("max",(double)100);
+							pwndEditACTIONPARA2->SetPropValueT("promptID","");
+							pwndEditACTIONPARA2	->Update();
+							pwndEditACTIONPARA2	->UpdateAll();
+						}
+						if(pwndEditACTIONPARA3 != NULL)
+						{
+							pwndEditACTIONPARA3->SetPropValueT("max",(double)99999);
+							pwndEditACTIONPARA3->SetPropValueT("precision",(double)2);
+							pwndEditACTIONPARA3->SetPropValueT("promptID","");
+							pwndEditACTIONPARA3	->Update();
+							pwndEditACTIONPARA3	->UpdateAll();
+						}
 					}
-					if(pwndStaticACTIONPARA3!=NULL)
+					else if(EditNUM ==3)	//Z軸
 					{
-						pwndStaticACTIONPARA3->SetPropValueT("textID","VW_PICKER_ADVANCE");
-						pwndStaticACTIONPARA3->UpdateAll();
+						pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_ZAXIS");
+						SetEnabled( pwndEditSet_PreDistance, 1);	
+						SetEnabled( pwndSelectEditManualType, 1);	
+						SetVisible( pwndStaticACTIONPARA1, 1,0x0030);
+						SetEnabled( pwndEditACTIONPARA1, 1);
+						if(pwndButton_GetPosi!=NULL)
+						{
+							pwndButton_GetPosi->SetPropValueT("taborder",(double)-1);
+							pwndButton_GetPosi->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA2!=NULL)
+						{
+							pwndStaticACTIONPARA2->SetPropValueT("textID","VW_EJECT_RCUT_SPED");
+							pwndStaticACTIONPARA2->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA3!=NULL)
+						{
+							pwndStaticACTIONPARA3->SetPropValueT("textID","VW_PICKER_ADVANCE");
+							pwndStaticACTIONPARA3->UpdateAll();
+						}
+						if(pwndEditACTIONPARA2 != NULL)
+						{
+							pwndEditACTIONPARA2->SetPropValueT("max",(double)100);
+							pwndEditACTIONPARA2->SetPropValueT("promptID","");
+							pwndEditACTIONPARA2	->Update();
+							pwndEditACTIONPARA2	->UpdateAll();
+						}
+						if(pwndEditACTIONPARA3 != NULL)
+						{
+							pwndEditACTIONPARA3->SetPropValueT("max",(double)99999);
+							pwndEditACTIONPARA3->SetPropValueT("precision",(double)2);
+							pwndEditACTIONPARA3->SetPropValueT("promptID","");
+							pwndEditACTIONPARA3	->Update();
+							pwndEditACTIONPARA3	->UpdateAll();
+						}
 					}
-					if(pwndEditACTIONPARA2 != NULL)
+					else if(EditNUM ==6)	//C嵞
 					{
-						pwndEditACTIONPARA2->SetPropValueT("max",(double)100);
-						pwndEditACTIONPARA2->SetPropValueT("promptID","");
-						pwndEditACTIONPARA2	->Update();
-						pwndEditACTIONPARA2	->UpdateAll();
+						pwndStaticPreDistance->SetPropValueT("textID","MSG_DUMMY");
+						SetEnabled( pwndEditSet_PreDistance, 0);	
+						SetEnabled( pwndSelectEditManualType, 0);	
+						SetVisible( pwndStaticACTIONPARA1, 0,0x0030);
+						SetEnabled( pwndEditACTIONPARA1, 0);	
+						if(pwndButton_GetPosi!=NULL)
+						{
+							pwndButton_GetPosi->SetPropValueT("taborder",(double)-3);
+							pwndButton_GetPosi->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA2!=NULL)
+						{
+							pwndStaticACTIONPARA2->SetPropValueT("textID","MOTION_GATE");
+							pwndStaticACTIONPARA2->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA3!=NULL)
+						{
+							pwndStaticACTIONPARA3->SetPropValueT("textID","MOTION_ONOFF");
+							pwndStaticACTIONPARA3->UpdateAll();
+						}
+						if(pwndEditACTIONPARA2 != NULL)
+						{
+							pwndEditACTIONPARA2->SetPropValueT("max",(double)1);
+							pwndEditACTIONPARA2->SetPropValueT("promptID","PICKER_AXISC_VALVE");
+							pwndEditACTIONPARA2	->UpdateAll();
+						}
+						if(pwndEditACTIONPARA3 != NULL)
+						{
+							pwndEditACTIONPARA3->SetPropValueT("max",(double)1);
+							pwndEditACTIONPARA3->SetPropValueT("precision",(double)0);
+							pwndEditACTIONPARA3->SetPropValueT("promptID","PICKER_AXISC_ONOFF");
+							pwndEditACTIONPARA3	->UpdateAll();
+						}
 					}
-					if(pwndEditACTIONPARA3 != NULL)
+					else if(EditNUM ==4)	//X2軸
 					{
-						pwndEditACTIONPARA3->SetPropValueT("max",(double)99999);
-						pwndEditACTIONPARA3->SetPropValueT("precision",(double)2);
-						pwndEditACTIONPARA3->SetPropValueT("promptID","");
-						pwndEditACTIONPARA3	->Update();
-						pwndEditACTIONPARA3	->UpdateAll();
+						pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_X2AXIS");
+						SetEnabled( pwndEditSet_PreDistance, 1);	
+						SetEnabled( pwndSelectEditManualType, 1);	
+						SetVisible( pwndStaticACTIONPARA1, 1,0x0030);
+						SetEnabled( pwndEditACTIONPARA1, 1);
+						if(pwndButton_GetPosi!=NULL)
+						{
+							pwndButton_GetPosi->SetPropValueT("taborder",(double)-1);
+							pwndButton_GetPosi->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA2!=NULL)
+						{
+							pwndStaticACTIONPARA2->SetPropValueT("textID","VW_EJECT_RCUT_SPED");
+							pwndStaticACTIONPARA2->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA3!=NULL)
+						{
+							pwndStaticACTIONPARA3->SetPropValueT("textID","VW_PICKER_ADVANCE");
+							pwndStaticACTIONPARA3->UpdateAll();
+						}
+						if(pwndEditACTIONPARA2 != NULL)
+						{
+							pwndEditACTIONPARA2->SetPropValueT("max",(double)100);
+							pwndEditACTIONPARA2->SetPropValueT("promptID","");
+							pwndEditACTIONPARA2	->Update();
+							pwndEditACTIONPARA2	->UpdateAll();
+						}
+						if(pwndEditACTIONPARA3 != NULL)
+						{
+							pwndEditACTIONPARA3->SetPropValueT("max",(double)99999);
+							pwndEditACTIONPARA3->SetPropValueT("precision",(double)2);
+							pwndEditACTIONPARA3->SetPropValueT("promptID","");
+							pwndEditACTIONPARA3	->Update();
+							pwndEditACTIONPARA3	->UpdateAll();
+						}
 					}
+					else if(EditNUM ==5)	//Y2軸
+					{
+						pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_Y2AXIS");
+						SetEnabled( pwndEditSet_PreDistance, 1);	
+						SetEnabled( pwndSelectEditManualType, 1);	
+						SetVisible( pwndStaticACTIONPARA1, 1,0x0030);
+						SetEnabled( pwndEditACTIONPARA1, 1);
+						if(pwndButton_GetPosi!=NULL)
+						{
+							pwndButton_GetPosi->SetPropValueT("taborder",(double)-1);
+							pwndButton_GetPosi->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA2!=NULL)
+						{
+							pwndStaticACTIONPARA2->SetPropValueT("textID","VW_EJECT_RCUT_SPED");
+							pwndStaticACTIONPARA2->UpdateAll();
+						}
+						if(pwndStaticACTIONPARA3!=NULL)
+						{
+							pwndStaticACTIONPARA3->SetPropValueT("textID","VW_PICKER_ADVANCE");
+							pwndStaticACTIONPARA3->UpdateAll();
+						}
+						if(pwndEditACTIONPARA2 != NULL)
+						{
+							pwndEditACTIONPARA2->SetPropValueT("max",(double)100);
+							pwndEditACTIONPARA2->SetPropValueT("promptID","");
+							pwndEditACTIONPARA2	->Update();
+							pwndEditACTIONPARA2	->UpdateAll();
+						}
+						if(pwndEditACTIONPARA3 != NULL)
+						{
+							pwndEditACTIONPARA3->SetPropValueT("max",(double)99999);
+							pwndEditACTIONPARA3->SetPropValueT("precision",(double)2);
+							pwndEditACTIONPARA3->SetPropValueT("promptID","");
+							pwndEditACTIONPARA3	->Update();
+							pwndEditACTIONPARA3	->UpdateAll();
+						}
+					}
+					pwndStaticPreDistance->Update();
 				}
-				else if(EditNUM ==2)	//Y1軸
+				if(pwndEditACTIONPARA1 != NULL)//依照軸改變位置最大值
 				{
-					pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_YAXIS");
-					SetEnabled( pwndEditSet_PreDistance, 1);	
-					SetEnabled( pwndSelectEditManualType, 1);	
-					SetVisible( pwndStaticACTIONPARA1, 1,0x0030);
-					SetEnabled( pwndEditACTIONPARA1, 1);
-					if(pwndButton_GetPosi!=NULL)
+					//printf("Set Position Maxdb\n");
+					if(EditNUM ==1)	//X1軸
 					{
-						pwndButton_GetPosi->SetPropValueT("taborder",(double)-1);
-						pwndButton_GetPosi->UpdateAll();
+						pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS1_MAXPOSTION");
 					}
-					if(pwndStaticACTIONPARA2!=NULL)
+					else if(EditNUM ==2)	//Y1軸
 					{
-						pwndStaticACTIONPARA2->SetPropValueT("textID","VW_EJECT_RCUT_SPED");
-						pwndStaticACTIONPARA2->UpdateAll();
+						pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS2_MAXPOSTION");
 					}
-					if(pwndStaticACTIONPARA3!=NULL)
+					else if(EditNUM ==3)	//Z軸
 					{
-						pwndStaticACTIONPARA3->SetPropValueT("textID","VW_PICKER_ADVANCE");
-						pwndStaticACTIONPARA3->UpdateAll();
+						pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS3_MAXPOSTION");
 					}
-					if(pwndEditACTIONPARA2 != NULL)
+					else if(EditNUM ==4)	//X2軸
 					{
-						pwndEditACTIONPARA2->SetPropValueT("max",(double)100);
-						pwndEditACTIONPARA2->SetPropValueT("promptID","");
-						pwndEditACTIONPARA2	->Update();
-						pwndEditACTIONPARA2	->UpdateAll();
+						pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS4_MAXPOSTION");
 					}
-					if(pwndEditACTIONPARA3 != NULL)
+					else if(EditNUM ==5)	//Y2軸
 					{
-						pwndEditACTIONPARA3->SetPropValueT("max",(double)99999);
-						pwndEditACTIONPARA3->SetPropValueT("precision",(double)2);
-						pwndEditACTIONPARA3->SetPropValueT("promptID","");
-						pwndEditACTIONPARA3	->Update();
-						pwndEditACTIONPARA3	->UpdateAll();
+						pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS5_MAXPOSTION");
 					}
+					pwndEditACTIONPARA1->Update();
 				}
-				else if(EditNUM ==3)	//Z軸
-				{
-					pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_ZAXIS");
-					SetEnabled( pwndEditSet_PreDistance, 1);	
-					SetEnabled( pwndSelectEditManualType, 1);	
-					SetVisible( pwndStaticACTIONPARA1, 1,0x0030);
-					SetEnabled( pwndEditACTIONPARA1, 1);
-					if(pwndButton_GetPosi!=NULL)
-					{
-						pwndButton_GetPosi->SetPropValueT("taborder",(double)-1);
-						pwndButton_GetPosi->UpdateAll();
-					}
-					if(pwndStaticACTIONPARA2!=NULL)
-					{
-						pwndStaticACTIONPARA2->SetPropValueT("textID","VW_EJECT_RCUT_SPED");
-						pwndStaticACTIONPARA2->UpdateAll();
-					}
-					if(pwndStaticACTIONPARA3!=NULL)
-					{
-						pwndStaticACTIONPARA3->SetPropValueT("textID","VW_PICKER_ADVANCE");
-						pwndStaticACTIONPARA3->UpdateAll();
-					}
-					if(pwndEditACTIONPARA2 != NULL)
-					{
-						pwndEditACTIONPARA2->SetPropValueT("max",(double)100);
-						pwndEditACTIONPARA2->SetPropValueT("promptID","");
-						pwndEditACTIONPARA2	->Update();
-						pwndEditACTIONPARA2	->UpdateAll();
-					}
-					if(pwndEditACTIONPARA3 != NULL)
-					{
-						pwndEditACTIONPARA3->SetPropValueT("max",(double)99999);
-						pwndEditACTIONPARA3->SetPropValueT("precision",(double)2);
-						pwndEditACTIONPARA3->SetPropValueT("promptID","");
-						pwndEditACTIONPARA3	->Update();
-						pwndEditACTIONPARA3	->UpdateAll();
-					}
-				}
-				else if(EditNUM ==6)	//C嵞
-				{
-					pwndStaticPreDistance->SetPropValueT("textID","MSG_DUMMY");
-					SetEnabled( pwndEditSet_PreDistance, 0);	
-					SetEnabled( pwndSelectEditManualType, 0);	
-					SetVisible( pwndStaticACTIONPARA1, 0,0x0030);
-					SetEnabled( pwndEditACTIONPARA1, 0);	
-					if(pwndButton_GetPosi!=NULL)
-					{
-						pwndButton_GetPosi->SetPropValueT("taborder",(double)-3);
-						pwndButton_GetPosi->UpdateAll();
-					}
-					if(pwndStaticACTIONPARA2!=NULL)
-					{
-						pwndStaticACTIONPARA2->SetPropValueT("textID","MOTION_GATE");
-						pwndStaticACTIONPARA2->UpdateAll();
-					}
-					if(pwndStaticACTIONPARA3!=NULL)
-					{
-						pwndStaticACTIONPARA3->SetPropValueT("textID","MOTION_ONOFF");
-						pwndStaticACTIONPARA3->UpdateAll();
-					}
-					if(pwndEditACTIONPARA2 != NULL)
-					{
-						pwndEditACTIONPARA2->SetPropValueT("max",(double)1);
-						pwndEditACTIONPARA2->SetPropValueT("promptID","PICKER_AXISC_VALVE");
-						pwndEditACTIONPARA2	->UpdateAll();
-					}
-					if(pwndEditACTIONPARA3 != NULL)
-					{
-						pwndEditACTIONPARA3->SetPropValueT("max",(double)1);
-						pwndEditACTIONPARA3->SetPropValueT("precision",(double)0);
-						pwndEditACTIONPARA3->SetPropValueT("promptID","PICKER_AXISC_ONOFF");
-						pwndEditACTIONPARA3	->UpdateAll();
-					}
-				}
-				else if(EditNUM ==4)	//X2軸
-				{
-					pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_X2AXIS");
-					SetEnabled( pwndEditSet_PreDistance, 1);	
-					SetEnabled( pwndSelectEditManualType, 1);	
-					SetVisible( pwndStaticACTIONPARA1, 1,0x0030);
-					SetEnabled( pwndEditACTIONPARA1, 1);
-					if(pwndButton_GetPosi!=NULL)
-					{
-						pwndButton_GetPosi->SetPropValueT("taborder",(double)-1);
-						pwndButton_GetPosi->UpdateAll();
-					}
-					if(pwndStaticACTIONPARA2!=NULL)
-					{
-						pwndStaticACTIONPARA2->SetPropValueT("textID","VW_EJECT_RCUT_SPED");
-						pwndStaticACTIONPARA2->UpdateAll();
-					}
-					if(pwndStaticACTIONPARA3!=NULL)
-					{
-						pwndStaticACTIONPARA3->SetPropValueT("textID","VW_PICKER_ADVANCE");
-						pwndStaticACTIONPARA3->UpdateAll();
-					}
-					if(pwndEditACTIONPARA2 != NULL)
-					{
-						pwndEditACTIONPARA2->SetPropValueT("max",(double)100);
-						pwndEditACTIONPARA2->SetPropValueT("promptID","");
-						pwndEditACTIONPARA2	->Update();
-						pwndEditACTIONPARA2	->UpdateAll();
-					}
-					if(pwndEditACTIONPARA3 != NULL)
-					{
-						pwndEditACTIONPARA3->SetPropValueT("max",(double)99999);
-						pwndEditACTIONPARA3->SetPropValueT("precision",(double)2);
-						pwndEditACTIONPARA3->SetPropValueT("promptID","");
-						pwndEditACTIONPARA3	->Update();
-						pwndEditACTIONPARA3	->UpdateAll();
-					}
-				}
-				else if(EditNUM ==5)	//Y2軸
-				{
-					pwndStaticPreDistance->SetPropValueT("textID","VW_HAP5_ROBOT_Y2AXIS");
-					SetEnabled( pwndEditSet_PreDistance, 1);	
-					SetEnabled( pwndSelectEditManualType, 1);	
-					SetVisible( pwndStaticACTIONPARA1, 1,0x0030);
-					SetEnabled( pwndEditACTIONPARA1, 1);
-					if(pwndButton_GetPosi!=NULL)
-					{
-						pwndButton_GetPosi->SetPropValueT("taborder",(double)-1);
-						pwndButton_GetPosi->UpdateAll();
-					}
-					if(pwndStaticACTIONPARA2!=NULL)
-					{
-						pwndStaticACTIONPARA2->SetPropValueT("textID","VW_EJECT_RCUT_SPED");
-						pwndStaticACTIONPARA2->UpdateAll();
-					}
-					if(pwndStaticACTIONPARA3!=NULL)
-					{
-						pwndStaticACTIONPARA3->SetPropValueT("textID","VW_PICKER_ADVANCE");
-						pwndStaticACTIONPARA3->UpdateAll();
-					}
-					if(pwndEditACTIONPARA2 != NULL)
-					{
-						pwndEditACTIONPARA2->SetPropValueT("max",(double)100);
-						pwndEditACTIONPARA2->SetPropValueT("promptID","");
-						pwndEditACTIONPARA2	->Update();
-						pwndEditACTIONPARA2	->UpdateAll();
-					}
-					if(pwndEditACTIONPARA3 != NULL)
-					{
-						pwndEditACTIONPARA3->SetPropValueT("max",(double)99999);
-						pwndEditACTIONPARA3->SetPropValueT("precision",(double)2);
-						pwndEditACTIONPARA3->SetPropValueT("promptID","");
-						pwndEditACTIONPARA3	->Update();
-						pwndEditACTIONPARA3	->UpdateAll();
-					}
-				}
-				pwndStaticPreDistance->Update();
 			}
-			if(pwndEditACTIONPARA1 != NULL)//依照軸改變位置最大值
-			{
-				//printf("Set Position Maxdb\n");
-				if(EditNUM ==1)	//X1軸
-				{
-					pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS1_MAXPOSTION");
-				}
-				else if(EditNUM ==2)	//Y1軸
-				{
-					pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS2_MAXPOSTION");
-				}
-				else if(EditNUM ==3)	//Z軸
-				{
-					pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS3_MAXPOSTION");
-				}
-				else if(EditNUM ==4)	//X2軸
-				{
-					pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS4_MAXPOSTION");
-				}
-				else if(EditNUM ==5)	//Y2軸
-				{
-					pwndEditACTIONPARA1->SetPropValueT("maxid","MACHINE_LIMITS_AXIS5_MAXPOSTION");
-				}
-				pwndEditACTIONPARA1->Update();
-			}
+			pwndSelectEditNUM->CreateA();
+			pwndSelectEditNUM->Update();
 		}
-		pwndSelectEditNUM->CreateA();
-		pwndSelectEditNUM->Update();
-		
-		
+		else if(ActionType==Action_Pile) // Pile
+		{
+			EditNUM++;
+			if(EditNUM>4)
+				EditNUM=0;
+			pwndSelectEditNUM->SetPropValueT("captionID",Str_Pile[EditNUM]);
+			pwndSelectEditNUM->CreateA();
+			pwndSelectEditNUM->Update();
+		}
+		else if(ActionType==Action_Sub) // Sub
+		{
+			EditNUM++;
+			if(EditNUM>5)
+				EditNUM=0;
+			pwndSelectEditNUM->SetPropValueT("captionID",Str_Sub[EditNUM]);
+			pwndSelectEditNUM->CreateA();
+			pwndSelectEditNUM->Update();
+		}
+		else if(ActionType == Action_Wait) // Wait
+		{
+			MsgBoxCall("EditWindow_SUB_Wait2.txt");
+		}
+		else if(ActionType == Action_Permit) // Permit
+		{
+			MsgBoxCall("EditWindow_SUB_Permit2.txt");
+		}
+		else if (ActionType == Action_Tag) // 標籤
+		{
+			MsgBoxCall("EditWindow_SUB_Tag2.txt");
+		}
+		else if (ActionType == Action_Goto) // 跳轉
+		{
+			MsgBoxCall("EditWindow_SUB_Goto2.txt");
+		}
+		else if (ActionType == Action_Valve) // 閥門
+		{
+			MsgBoxCall("EditWindow_SUB_Valve2.txt");
+		}
+		else if (ActionType == Action_Detect) // 檢測
+		{
+			MsgBoxCall("EditWindow_SUB_Detect2.txt");
+		}
 	}
 	
 	else if(pwnd == pwndSelectGroupNum) // 群組選擇
@@ -1915,16 +2220,19 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 	{
 		Save();
 		g_Hint_Download = 1; // 提醒下載
+		SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46", 0xFFFF); // Clear iSelectIndex
 		Exit();
 	}
 	else if(pwnd == pwndBtnCancel) // 取消
 	{
 		if(SelectNo <= StandbyStepNum)
 		{
+			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46", 0xFFFF); // Clear iSelectIndex
 			Exit();
 		}
 		else
 		{
+			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46", 0xFFFF); // Clear iSelectIndex
 			Exit();
 		}
 	}
@@ -1987,6 +2295,11 @@ void	Save()
 //		{
 //			pwndSelectEditNUM->GetPropValueT("value", &EditNUM,sizeof(EditNUM));
 //		}
+		if(pwndSelectEditNUM->Is("CtmToolButton"))
+		{
+			if(ActionType!=Action_Axis && ActionType!=Action_Pile && ActionType!=Action_Sub)
+				EditNUM=iSelectIndex;
+		}
 		printf("Set %s=%d\n",pDataID,EditNUM);
 		SetDBValue(pDataID, EditNUM);
 	}
