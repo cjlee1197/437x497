@@ -1139,7 +1139,24 @@
 	<string name="UserLog_ACT9599">查看驅動器</string>
 	<string name="UserLog_ACT9603">機型選擇</string>
 	<string name="UserLog_ACT9630">整體速度</string>
-	<string name="UserLog_ACT9647"></string>
+	<string name="UserLog_ACT9647">X1移動最大位置</string>
+
+	<string name="UserLog_ACT9649">Y1移動最大位置</string>
+
+	<string name="UserLog_ACT9651">Z移動最大位置</string>
+
+	<string name="UserLog_ACT9653">X2移動最大位置</string>
+
+	<string name="UserLog_ACT9655">Y2移動最大位置</string>
+	<string name="UserLog_ACT9656">允許橫出最大高度</string>
+	<string name="UserLog_ACT9657">允許關模最大待機高度</string>
+	<string name="UserLog_ACT9658">允許下降模內最小位置</string>
+	<string name="UserLog_ACT9659">允許下降模內最大位置</string>
+
+	<string name="UserLog_ACT9668">安全距離緩衝區</string>
+	<string name="UserLog_ACT9669">到位提前裕度</string>
+	<string name="UserLog_ACT96"></string>
+	<string name="UserLog_ACT96"></string>
 	<string name="UserLog_ACT9685">堆疊1 堆疊順序</string>
 	<string name="UserLog_ACT9686">堆疊1 各軸方向 0-正 1-反</string>
 	<string name="UserLog_ACT9687">堆疊1 X軸堆疊個數</string>
