@@ -81,8 +81,16 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	
 	actionTable->iPageturn = actionTable->num_of_action;
 	
-	actionTable->pwndBtnFollow->SetPropValueT("upbitmap", "res_tm640/pic/PGBtnSelect.bmp");
- 	actionTable->pwndBtnFollow->SetPropValueT("captionID", "PICKER_FOLLOW");
+	if(actionTable->b_Follow)
+	{
+		actionTable->pwndBtnFollow->SetPropValueT("upbitmap", "res_tm640/pic/PGBtnSelect.bmp");
+		actionTable->pwndBtnFollow->SetPropValueT("captionID", "PICKER_FOLLOW");
+	}
+	else
+	{
+		actionTable->pwndBtnFollow->SetPropValueT("upbitmap","res_tm640/pic/PGBtnUp.bmp");
+		actionTable->pwndBtnFollow->SetPropValueT("captionID","PICKER_UNFOLLOW");
+	}
  	actionTable->pwndBtnFollow->CreateA();
  	actionTable->pwndBtnFollow->Update();
  	
@@ -711,7 +719,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				if(g_bMsgBoxFlag)
 					actionTable->Clear();
 				break;
-			case 0x000C:
+			case 0x000C: // 合併
 				if(actionTable->selectNo > StandbyStepNum) // (SelectNo > 5)
 				{
 					sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", actionTable->selectNo - 1);
@@ -720,7 +728,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 						actionTable->Sync();
 				}
 				break;
-			case 0x000D:
+			case 0x000D: // 分解
 				if(actionTable->selectNo > StandbyStepNum) //(SelectNo > 6)
 				{
 					if(actionType != StandbyStepNum)
@@ -908,12 +916,12 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		actionTable->pwndStaticAct[showFlag]->Show();
 	if(pwnd == actionTable->pwndBtnFollow)
  	{
- 		if(actionTable->b_Follow)
+ 		if(actionTable->b_Follow) // 跟隨
 		{
 			actionTable->pwndBtnFollow->SetPropValueT("upbitmap","res_tm640/pic/PGBtnSelect.bmp");
 			actionTable->pwndBtnFollow->SetPropValueT("captionID","PICKER_FOLLOW");
 		}
-		else
+		else // 不跟隨
 		{
 			actionTable->pwndBtnFollow->SetPropValueT("upbitmap","res_tm640/pic/PGBtnUp.bmp");
 			actionTable->pwndBtnFollow->SetPropValueT("captionID","PICKER_UNFOLLOW");
