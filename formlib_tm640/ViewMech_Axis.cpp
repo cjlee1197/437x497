@@ -411,7 +411,7 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	}
 	if(wKey<6)
 	{
-		GetValueFrom28();
+		//GetValueFrom28();
 		((CtmFormView*)pwndSender)->OnLoseFocus(); // 夹
 	}
 
@@ -552,7 +552,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		if(pwnd == pwndBtn_Tooth_M) // 肚笆よΑ 睛计家计 Btn
 			{
 				u_TransType = TransType_Tooth;
-				SetDBValue(pTransTypeDB,TransType_Tooth);
+				SetDBValue(pTransTypeDB,u_TransType);
 			}
 			
 		for(int i = 0; i < 5; i++) // 盎代秨 Btn
@@ -683,7 +683,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 
 		ShowAxisData(FALSE); // 綛籠 禸把计
 		ShowMechData(TRUE);  // 陪ボ 诀篶把计
-		GetValueFrom28();
+		//GetValueFrom28();
 	}
 }
 
@@ -951,78 +951,4 @@ void	ShowAxisData(BOOL enabled) // 陪ボ禸把计
 		ShowE(pwndStrAxisData[i],enabled); 	 // 陪ボ 禸把计 ゅ
 	} 	
 	
-}
-/*---------------------------------------------------------------------------+
-|  Function : GetValueFrom28()                       					    		       |
-|  Task     : 眔28砞﹚	     	                                           |
-+----------------------------------------------------------------------------+
-|  Parameter:             enabled TRUE-陪ボ FALSE                            |
-|                                                                            |
-|  Return   :                           -                                    |
-+---------------------------------------------------------------------------*/
-void	GetValueFrom28() // 眔28砞﹚
-{
-	if(g_ptaskpicker != NULL)
-	{
-		printf("Get 28 data value\n");
-		printf("u_Axis_Num=%d\n",u_Axis_Num);
-		int i_dbvalue_497[6][5] = {0};// 把计计 db// ボ毙竟既
-		int i_dbvalue_different = 0; // 把计计畉钵计
-		int iDBSelect=0; // 把计ㄌ沮匡拒  1:ボ毙竟 2:北竟
-				
-		WORD		wNum = 0;
-		wNum = sizeof(pszStrID_Mech)/sizeof(char*);
-		g_ptaskpicker->WriteValue(REQ_READMOTOR, wNum ,pszStrID_Mech); // Update Data from 28
-		int itemp=0;
-		
-		for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ ) // 魁497计
-		{			
-			itemp = (int)(GetDBValue(dbid0_Mech[u_Axis_Num][i]).lValue);
-			i_dbvalue_497[u_Axis_Num][i] = itemp;
-			
-		}
-		
-		
-		wNum = sizeof(dbid0_Mech[u_Axis_Num])/sizeof(char*);
-		g_ptaskpicker->ReqValues(REQ_READMOTOR, wNum ,dbid0_Mech[u_Axis_Num]); //  28 叫―戈
-
-		for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
-		{			
-			printf("Get = %s\n",dbid0_Mech[u_Axis_Num][i]);
-			itemp = (int)(GetDBValue(dbid0_Mech[u_Axis_Num][i]).lValue);
-			
-			if (itemp != i_dbvalue_497[u_Axis_Num][i] )
-				i_dbvalue_different++;
-			
-			printf("%s=%d\n",dbid0_Mech[u_Axis_Num][i],itemp); // 28
-			printf("497=%d\n",i_dbvalue_497[u_Axis_Num][i]); // 497
-		}
-		
-		printf("i_dbvalue_different=%d\n",i_dbvalue_different);
-		if(i_dbvalue_different>0)
-		{
-			MsgBoxCall("DB_Choose.txt");
-			
-			iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
-			printf("Choose %d\n",iDBSelect);
-			if(iDBSelect == DB_TP) // 497
-			{
-				for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
-				{			
-					printf("Set %s = %d\n",dbid0_Mech[u_Axis_Num][i],i_dbvalue_497[u_Axis_Num][i]);
-					SetDBValue(dbid0_Mech[u_Axis_Num][i],i_dbvalue_497[u_Axis_Num][i]);
-				}
-			}
-			else if(iDBSelect == DB_CON) // 28北竟
-			{
-				for(int i = 0; i < sizeof(Mech_Data_String)/sizeof(Mech_Data_String[0]); i++ )
-				{			
-					itemp = (int)(GetDBValue(dbid0_Mech[u_Axis_Num][i]).lValue);
-					SetDBValue(dbid0_Mech[u_Axis_Num][i],0);
-					printf("Set %s = %d\n",dbid0_Mech[u_Axis_Num][i],itemp);
-					SetDBValue(dbid0_Mech[u_Axis_Num][i],itemp);
-				}
-			}
-		}
-	}
 }
