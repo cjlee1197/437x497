@@ -833,16 +833,20 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		}
 		else if (wKey == 0x0003)	//刪除
 		{
-			if(SelectNo <= EditedStepNum)
+			MsgBox(g_MultiLanguage["PICKER_CONFIRMDELETE"], tmFT_CODE_TECH);
+			if(g_bMsgBoxFlag)
 			{
-				if(ActionType != 14) // 副程式結束(14) 不能刪除
+				if(SelectNo <= EditedStepNum)
 				{
-					UnSync(SelectNo);
-					UnSync(SelectNo+1);
-					Delete(SelectNo);
-					EditedStepNum--;
-					UpdateText();
-					UpdateNo();
+					if(ActionType != 14) // 副程式結束(14) 不能刪除
+					{
+						UnSync(SelectNo);
+						UnSync(SelectNo+1);
+						Delete(SelectNo);
+						EditedStepNum--;
+						UpdateText();
+						UpdateNo();
+					}
 				}
 			}
 		}
