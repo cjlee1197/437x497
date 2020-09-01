@@ -277,10 +277,17 @@ void	CtmControl_User::InitCurrentUser()
 +---------------------------------------------------------------------------*/
 WORD    CtmControl_User::LoginLocal(char* pszID, char* pszPassword)
 {
+	printf("LoginLocal\n");
+	printf("pszID=%s\n",pszID);
 	short       i = 0;;
 	if(Encode("TECHEDO") == Encode(pszPassword))	//root不判斷ｕｓｅｒ
 		return 16;	
-		
+	if(Encode(pszID)==Encode("OP") && Encode(pszPassword)==Encode("1111"))// 預設使用者1
+		return 1;
+	if(Encode(pszID)==Encode("MANAGE") && Encode(pszPassword)==Encode("1234"))// 預設使用者2
+		return 2;
+	if(Encode(pszID)==Encode("ENG") && Encode(pszPassword)==Encode("123456"))// 預設使用者3
+		return 3;
 	if ((i = FindUser(pszID)) == tmMAX_USER)
 	    return LOGIN_INVALIDID; 
 	if (GetDBValue(g_apszPasswdID[i]).lValue != Encode(pszPassword))
@@ -383,7 +390,7 @@ WORD    CtmControl_User::Encode(char* psz)
 	nLength = strlen(psz);
 	for (i=0; i<nLength; i++)
 		w += (*psz++)*(i+1);
-	//printf("w = %d\n",w);
+	printf("w = %d\n",w);
 	return w;	
 }
 
