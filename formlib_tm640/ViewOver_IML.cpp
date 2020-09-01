@@ -1615,7 +1615,12 @@ void    ActionName(WORD wStepNo)
 					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
 					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
 				}
-				sprintf(pDataID4,"ACTIONPOINT_START");
+				if(wActNum == 1)
+					sprintf(pDataID4,"ACTIONPOINT_START");
+				else
+				{
+					sprintf(pDataID4,"PICKER_LABEL_%d",wActNum);
+				}
 				break;
 			case 6:		//¸õÂà
 				if(wActPara5)
@@ -1624,7 +1629,13 @@ void    ActionName(WORD wStepNo)
 					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
 					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
 				}
-				sprintf(pDataID4,"ACTIONPOINT_END");
+				if(wActNum == 1)
+					sprintf(pDataID4,"ACTIONPOINT_END");
+				else
+				{
+					sprintf(pDataID4,"PICKER_JUMP");
+					sprintf(pDataID5,"PICKER_LABEL_%d",wActNum);
+				}
 				break;
 			case 8:		//´ú¸Õ
 				if(wActPara5)
