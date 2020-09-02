@@ -39,7 +39,11 @@ CtmWnd*		pwndBtnFlwTP				= NULL; // Btn 以示教器為主
 CtmWnd*		pwndBtnFlwCON				= NULL; // Btn 以控制器為主
 CtmWnd*		pwndValue_TP				= NULL; // Edit 示教器數值
 CtmWnd*		pwndValue_CON				= NULL; // Edit 控制器數值
+CtmWnd*		pwndBtnAllFlwTP			= NULL; // Btn 全部以示教器為主
+CtmWnd*		pwndBtnAllFlwCON		= NULL; // Btn 全部以控制器為主
 
+CtmWnd*		pwndValue_497				= NULL; // 示教器數值 顯示文字
+CtmWnd*		pwndValue_28				= NULL; // 示教器數值 顯示文字
 /*---------------------------------------------------------------------------+
 |           View Content - GuideSet                                          |
 +---------------------------------------------------------------------------*/ 
@@ -59,9 +63,22 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	pwndStaticText			= pwndSender->FindControlFromName("StaticText");
 	pwndBtnFlwTP				= pwndSender->FindControlFromName("BtnFlwTP");
 	pwndBtnFlwCON				= pwndSender->FindControlFromName("BtnFlwCON");
+	pwndBtnAllFlwTP			= pwndSender->FindControlFromName("BtnAllFlwTP");
+	pwndBtnAllFlwCON		= pwndSender->FindControlFromName("BtnAllFlwCON");
 	
 	pwndValue_TP				= pwndSender->FindControlFromName("Value_TP");
 	pwndValue_CON				= pwndSender->FindControlFromName("Value_CON");
+	
+	pwndValue_497				= pwndSender->FindControlFromName("Value_497");
+	pwndValue_28				= pwndSender->FindControlFromName("Value_28");
+	
+	// 若以選擇 全部套用 1:示教器 或 2:控制器 參數
+	int iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED72").lValue;
+	if(iDBSelect > 0) // 全部套用1:示教器 或 2:控制器
+	{
+  	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71", iDBSelect); // 1:以示教器為主 2:以控制器為主
+  	Exit();
+	}
 	
 	return TRUE;
 }
@@ -136,7 +153,26 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
     	Exit();
     }
 	}
-	
+ 	if(pwnd == pwndBtnAllFlwTP) // 全部以示教器為主
+	{
+		MsgBox(g_MultiLanguage["SELECT_CONFIRM"], tmFT_CODE_TECH);
+    if(g_bMsgBoxFlag)
+    {
+    	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71", 1); // 1:以示教器為主 2:以控制器為主
+    	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED72", 1); // 1:全部以示教器為主 2:全部以控制器為主
+    	Exit();
+    }
+	}
+ 	if(pwnd == pwndBtnAllFlwCON) // 全部以控制器為主
+	{
+		MsgBox(g_MultiLanguage["SELECT_CONFIRM"], tmFT_CODE_TECH);
+    if(g_bMsgBoxFlag)
+    {
+    	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71", 2); // 1:以示教器為主 2:以控制器為主
+    	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED72", 2); // 1:全部以示教器為主 2:全部以控制器為主
+    	Exit();
+    }
+	}
  	
   return wIDControl;	
 }
@@ -191,11 +227,9 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		RunOnlyOne=TRUE;
 		((CtmFormView*)pwndSender)->OnLoseFocus(); // 取消光標
 		
-		pwndValue_TP->SetPropValueT("value", g_DBVale_497);
-		pwndValue_TP->SetPropValueT("precision", g_DBPrecision);
-		pwndValue_TP->Update();
-		pwndValue_CON->SetPropValueT("value", g_DBVale_28);
-		pwndValue_CON->SetPropValueT("precision", g_DBPrecision);
-		pwndValue_CON->Update();
+		pwndValue_497->SetPropValueT("text", gstr_DBValue_497);
+		pwndValue_497->Update();
+		pwndValue_28->SetPropValueT("text", gstr_DBValue_28);
+		pwndValue_28->Update();
 	}
 }
