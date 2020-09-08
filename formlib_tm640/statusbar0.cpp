@@ -589,6 +589,26 @@ char* ParamStr_TransType[] = // 肚笆よΑ 把计计 (ゅ)
 };
 int iTransType=0,iDouble[5]={0},iPosInv[5]={0}; // 肚笆よΑ,计诀篶,竚は
 
+char* ParamStr_Double[] = // 计诀篶 把计计 (ゅ)
+{
+	"MECH_UNUSE", // ぃㄏノ
+	"MECH_USE", // ㄏノ
+};
+char* ParamStr_PosInv[] = // 竚は 把计计 (ゅ)
+{
+	"VW_ROTATELOC_ANGELREVERSED_OPT1", // ぃㄏノ
+	"VW_ROTATELOC_ANGELREVERSED_OPT2", // ㄏノ
+};
+char* ParamStr_PickerType[] = // 诀匡拒 把计计 (ゅ)
+{
+	"MECH_MECHTYPE3", // 禸
+	"MECH_MECHTYPE5", // き禸
+};
+char* ParamStr_EncType[] = // 絪絏竟匡拒 把计计 (ゅ)
+{
+	"MECH_ENCTYPE_ABS", // ぃㄏノ
+	"MECH_ENCTYPE_RES", // ㄏノ
+};
 /*把计ゑ癸*/
 
 long 	u_lTimer;
@@ -1860,7 +1880,7 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 		// 魁497计
 		Param497.iMechType = (int)(GetDBValue(dbid_MechType[0]).lValue);
 		Param497.iPickerType = Param497.iMechType & MechWord; // 诀
-		Param497.iEncType		 = Param497.iMechType & EncWord; // 絪絏竟
+		Param497.iEncType		 = (Param497.iMechType & EncWord)>>16; // 絪絏竟
 		
 		//  28 叫―戈
 		wNum = sizeof(dbid_MechType)/sizeof(char*);
@@ -1868,32 +1888,34 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 		printf("Get = %s\n",dbid_MechType[0]);
 		Param28.iMechType = (int)(GetDBValue(dbid_MechType[0]).lValue); // 诀匡拒
 		Param28.iPickerType = Param28.iMechType & MechWord; // 诀
-		Param28.iEncType		 = Param28.iMechType & EncWord; // 絪絏竟
+		Param28.iEncType		 = (Param28.iMechType & EncWord)>>16; // 絪絏竟
 		
 		printf("%s=%d\n",dbid_MechType[0],Param28.iMechType); // 28
 		printf("497=%d\n",Param497.iMechType); // 497
 
-		if(Param497.iMechType != Param28.iMechType) // 497㎝28き禸匡拒ぃ 诀匡拒
+		if(Param497.iPickerType != Param28.iPickerType) // 497㎝28き禸匡拒ぃ 诀匡拒
 		{
-			MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[0]]);
+			SprintfDBValue(ParamStr_PickerType[Param497.iPickerType],ParamStr_PickerType[Param28.iPickerType]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
+			MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[MECH_MECHTYPE]]);
 			iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
 			printf("Choose %d\n",iDBSelect);
 			SetChosenDB(dbid_MechType[0],Param497.iMechType,Param28.iMechType,iDBSelect);
 			dw_MechType  = (GetDBValue(pMechTypeDB).lValue);
 			u_PickerType = dw_MechType & MechWord;
-		}
-//		if(Param497.iEncType != Param28.iEncType) // 497㎝28 絪絏竟匡拒
-//		{
-//			MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[2]]);
-//			iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
-//			printf("Choose %d\n",iDBSelect);
-//			SetChosenDB(dbid_MechType[0],Param497.iMechType,Param28.iMechType,iDBSelect);
-//		}
+		}		
+		if(Param497.iEncType != Param28.iEncType) // 497㎝28 絪絏竟匡拒 ぃ
+		{
+			printf("Param497.iEncType=%d, Param28.iEncType=%d\n",Param497.iEncType,Param28.iEncType);
+			SprintfDBValue(ParamStr_EncType[Param497.iEncType],ParamStr_EncType[Param28.iEncType]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
+			MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[MECH_ENCTYPE]]);
+			iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
+			printf("Choose %d\n",iDBSelect);
+			SetChosenDB(dbid_MechType[0],Param497.iMechType,Param28.iMechType,iDBSelect);
+		}		
 		
 		printf("NumofMechType=%d\n",NumofMechType[u_PickerType]);
 		for(int AxisNum=0; AxisNum<NumofMechType[u_PickerType]; AxisNum++) // ㄌ沮 NumofMechType[u_PickerType] 3禸┪5禸
 		{
-			
 			printf("AxisNum=%d\n",AxisNum);
 			{/*肚笆よΑ + 计诀篶 + 竚は*/
 				// 魁497计 肚笆よΑ + 计诀篶 + 竚は
@@ -1938,11 +1960,11 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 					if(Param497.iDouble[AxisNum] != Param28.iDouble[AxisNum]) //  497㎝28 计诀篶 ぃ
 						{
 							printf("Double diff\n");
-							SprintfDBValue(Param497.iDouble[AxisNum],Param28.iDouble[AxisNum]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
+							SprintfDBValue(ParamStr_Double[Param497.iDouble[AxisNum]],ParamStr_Double[Param28.iDouble[AxisNum]]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
 							MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[MECH_DOUB_MECH]]);
 							iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
 							printf("Choose %d\n",iDBSelect);
-							iDouble[AxisNum]=(iDBSelect==DB_CON)?Param28.iDouble[AxisNum]:Param497.iDouble[AxisNum];
+							iDouble[AxisNum] = (iDBSelect==DB_CON)?Param28.iDouble[AxisNum]:Param497.iDouble[AxisNum];
 							printf("iDouble[%d]=%x\n",AxisNum,iDouble[AxisNum]);
 						}
 					else
@@ -1950,7 +1972,7 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 					if(Param497.iPosInv[AxisNum] != Param28.iPosInv[AxisNum]) //  497㎝28 竚は ぃ
 						{
 							printf("PosInv diff\n");
-							SprintfDBValue(Param497.iPosInv[AxisNum],Param28.iPosInv[AxisNum]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
+							SprintfDBValue(ParamStr_PosInv[Param497.iPosInv[AxisNum]],ParamStr_PosInv[Param28.iPosInv[AxisNum]]); // 把计计 锣传Θ﹃ ㄑDBChoose ㄏノ
 							MsgBoxCall("DB_Choose.txt",g_MultiLanguage[ParamStr[MECH_POS_INV]]);
 							iDBSelect = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED71").lValue;
 							printf("Choose %d\n",iDBSelect);
@@ -1959,7 +1981,7 @@ void	GetValueFrom28() // 眔28砞﹚ ゑ癸把计
 						}		
 					else
 						iPosInv[AxisNum]=Param497.iPosInv[AxisNum];
-					
+										
 					int TempValue = iTransType + (iDouble[AxisNum]<<1) + (iPosInv[AxisNum]<<2);
 					printf("iTransType=%d,iDouble=%d, iPosInv=%d\n",iTransType,iDouble[AxisNum],iPosInv[AxisNum]);
 					printf("iTransType=%d,iDouble=%d, iPosInv=%d\n",iTransType,iDouble[AxisNum],iPosInv[AxisNum]);
