@@ -19,9 +19,9 @@ ViewEditWindow:CtmFormView
   end
   StaticACTIONPARA0:CtmStaticX2
     left =32
-    top =48
+    top =40
     right =82
-    bottom =88
+    bottom =80
     wtype =48
     fgc =0
     fontsize =1
@@ -30,36 +30,20 @@ ViewEditWindow:CtmFormView
   end
   StaticACTIONPARA1:CtmStaticX2
     left =32
-    top =124
+    top =112
     right =82
-    bottom =164
+    bottom =152
     wtype =48
     fgc =0
     fontsize =1
     textID =MOTION_ONOFF
     align =36
   end
-  EditACTIONPARA1:CtmSelectEdit
-    left =88
-    top =124
-    right =208
-    bottom =164
-    wtype =33
-    taborder =1
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER1
-    maxchar =40
-    listnum =2
-    strID0 =VW_BUTTON_OFF
-    strID1 =VW_BUTTON_ON
-  end
   StaticACTIONPARA5:CtmStaticX2
     left =32
-    top =196
+    top =180
     right =82
-    bottom =236
+    bottom =220
     wtype =48
     fgc =0
     fontsize =1
@@ -68,9 +52,9 @@ ViewEditWindow:CtmFormView
   end
   EditACTIONPARA5:CtmEditX1
     left =88
-    top =196
+    top =180
     right =218
-    bottom =236
+    bottom =220
     wtype =33
     taborder =4
     bgc =65535
@@ -117,13 +101,27 @@ ViewEditWindow:CtmFormView
   end
   SelectEditNUM:CtmToolButton
     left =88
-    top =40
+    top =32
     right =198
-    bottom =100
+    bottom =92
     wtype =48
     taborder =0
     bgc =54970
     titleID =VW_PLAN_ESC
+    fontsize =1
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  ON_OFF:CtmToolButton
+    left =88
+    top =104
+    right =198
+    bottom =164
+    wtype =48
+    taborder =17
+    bgc =54970
     fontsize =1
     destcolor =57182
     align =34

@@ -187,7 +187,7 @@ char*	Str_Sub[] =
 	"PICKER_PROD_SAMPLE",
 	"PICKER_PROD_TEST",
 	"PICKER_FUNC_SUBTECH",
-	"PICKER_FUNC_SUBTECH",
+	"PICKER_FUNC_SUBTECH2",
 };
 
 
@@ -303,6 +303,11 @@ char*	Str_ON_OFF[] =
 {
 	"PICKER_DESCRIBE_AXIS_6", // 關閉
 	"PICKER_DESCRIBE_AXIS_5", // 打開
+};
+char*	Str_STRT_END[] =
+{
+	"ACTIONPOINT_END", 	 // 結束
+	"ACTIONPOINT_START", // 開始
 };
 
 char*	Str_ValveCheck[] =
@@ -802,11 +807,17 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			iON_OFF = GetDBValue(pDataID).lValue;
 			if(iON_OFF == 1) // ON
 			{
-				pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[iON_OFF]);
+				if(ActionType==Action_Sub) // Sub
+					pwndON_OFF->SetPropValueT("captionID",Str_STRT_END[iON_OFF]);
+				else
+					pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[iON_OFF]);
 			}
 			else // 單點撿測
 			{
-				pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[0]);
+				if(ActionType==Action_Sub) // Sub
+					pwndON_OFF->SetPropValueT("captionID",Str_STRT_END[0]);
+				else
+					pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[0]);
 			}
 			pwndON_OFF	->CreateA();
 			pwndON_OFF	->Update();
@@ -2185,7 +2196,10 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		iON_OFF++;
 		if(iON_OFF>1)
 			iON_OFF=0;
-		pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[iON_OFF]);	
+		if(ActionType==Action_Sub) // Sub
+			pwndON_OFF->SetPropValueT("captionID",Str_STRT_END[iON_OFF]);
+		else
+			pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[iON_OFF]);	
 		pwndON_OFF->CreateA();
 		pwndON_OFF->Update();
 	}
