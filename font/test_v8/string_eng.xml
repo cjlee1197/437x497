@@ -332,6 +332,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="PICKER_PROD_SAMPLE">Sample</string>
 	<string name="PICKER_PROD_TEST">Moulding</string>
 	<string name="PICKER_FUNC_SUBTECH">Sub Prog</string>
+	<string name="PICKER_FUNC_SUBTECH2">Sub Prog2</string>
 	<string name="PICKER_SUBTECH_1">Sub Prog：</string>
 	<string name="PICKER_SUBTECH_2">,then goto No.</string>
 	<string name="PICKER_SAMPLECOUNT">SPL Num</string>

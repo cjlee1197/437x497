@@ -351,6 +351,7 @@
 	<string name="PICKER_PROD_SAMPLE">取样</string>
 	<string name="PICKER_PROD_TEST">试模</string>
 	<string name="PICKER_FUNC_SUBTECH">子程序</string>
+	<string name="PICKER_FUNC_SUBTECH2">子程序2</string>
 	<string name="PICKER_SUBTECH_1">子程序：</string>
 	<string name="PICKER_SUBTECH_2">，结束后跳转到序号</string>
 	<string name="PICKER_SAMPLECOUNT">取样模数</string>

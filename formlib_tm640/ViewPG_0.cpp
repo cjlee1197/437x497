@@ -439,10 +439,10 @@ void PG_0::ShowText()
 						AddStr("PICKER_PROD_TEST", k);
 						break;
 					case 4:
-						AddStr("VW_AD_RESERVED", k);
+						AddStr("PICKER_FUNC_SUBTECH", k);
 						break;
 					case 5:
-						AddStr("VW_AD_RESERVED", k);
+						AddStr("PICKER_FUNC_SUBTECH2", k);
 						break;
 					default:
 						break;
@@ -695,7 +695,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 						}
 				break;
 			case 0x0004:
-				if(u_wPickerOPSatus == STATE_HAND)
+				if(u_wPickerOPSatus != STATE_FULLAUTO) // 非自動模式下 可下載
 				{
 					MsgBox(g_MultiLanguage["CHECK_DOWNLOAD_CONFIRM"], tmFT_CODE_TECH);
 					if(g_bMsgBoxFlag)
@@ -712,7 +712,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 					}
 				}
 				else
-					MsgBox(g_MultiLanguage["PICKER_M3_ALARM5025"], tmFT_CODE_TECH);
+					MsgBox(g_MultiLanguage["INDEX_AUTO_DENIED"], tmFT_CODE_TECH);
 				break;
 			case 0x0008:
 				MsgBox(g_MultiLanguage["PICKER_CONFIRMDELETE"], tmFT_CODE_TECH);
