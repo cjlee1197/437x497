@@ -1137,8 +1137,21 @@
 	<string name="UserLog_DATE">修改日期</string>
 	<string name="UserLog_RESET">重置</string>
 	<string name="UserLog_ACT9599">查看驅動器</string>
+	<string name="UserLog_ACT9600">單步執行最大時間</string>
+	<string name="UserLog_ACT9601">輸送帶時間</string>
+
 	<string name="UserLog_ACT9603">機型選擇</string>
 	<string name="UserLog_ACT9630">整體速度</string>
+	<string name="UserLog_ACT9631">X1歸零偏移延時</string>
+	<string name="UserLog_ACT9632">Y1歸零偏移延時</string>
+	<string name="UserLog_ACT9633">Z歸零偏移延時</string>
+	<string name="UserLog_ACT9634">X2歸零偏移延時</string>
+	<string name="UserLog_ACT9635">Y2歸零偏移延時</string>
+	<string name="UserLog_ACT9636">氣閥檢測-垂直</string>
+	<string name="UserLog_ACT9637">氣閥檢測-水平</string>
+	<string name="UserLog_ACT9638">氣閥檢測-B軸+</string>
+	<string name="UserLog_ACT9639">氣閥檢測-B軸-</string>
+
 	<string name="UserLog_ACT9647">X1移動最大位置</string>
 
 	<string name="UserLog_ACT9649">Y1移動最大位置</string>
@@ -1152,11 +1165,18 @@
 	<string name="UserLog_ACT9657">允許關模最大待機高度</string>
 	<string name="UserLog_ACT9658">允許下降模內最小位置</string>
 	<string name="UserLog_ACT9659">允許下降模內最大位置</string>
+	<string name="UserLog_ACT9660">允許下降模內最大位置</string>
+	<string name="UserLog_ACT9661">允許置物型外最小位置</string>
+	<string name="UserLog_ACT9662">允許橫出最小高度</string>
+	<string name="UserLog_ACT9663">允許關模最大待機高度</string>
+	<string name="UserLog_ACT9664">允許下降模內最小位置</string>
+	<string name="UserLog_ACT9665">允許下降模內最大位置</string>
 
 	<string name="UserLog_ACT9668">安全距離緩衝區</string>
 	<string name="UserLog_ACT9669">到位提前裕度</string>
-	<string name="UserLog_ACT96"></string>
-	<string name="UserLog_ACT96"></string>
+
+	<string name="UserLog_ACT9680">橫出姿態</string>
+	<string name="UserLog_ACT9681">模內姿態</string>
 	<string name="UserLog_ACT9685">堆疊1 堆疊順序</string>
 	<string name="UserLog_ACT9686">堆疊1 各軸方向 0-正 1-反</string>
 	<string name="UserLog_ACT9687">堆疊1 X軸堆疊個數</string>
@@ -1210,6 +1230,9 @@
 	<string name="UserLog_ACT9746">Z每轉距離</string>
 	<string name="UserLog_ACT9747">X2每轉距離</string>
 	<string name="UserLog_ACT9748">Y2每轉距離</string>
+	
+	<string name="UserLog_ACT9866">開模隨動起始位置</string>
+
 	<string name="UserLog_ACT9992">編碼器解析度X1</string>
 	<string name="UserLog_ACT9993">編碼器解析度Y1</string>
 	<string name="UserLog_ACT9994">編碼器解析度Z</string>
@@ -1256,9 +1279,12 @@
 	<string name="UserLog_ACT10044">追隨響應Z</string>
 	<string name="UserLog_ACT10045">追隨響應X2</string>
 	<string name="UserLog_ACT10046">追隨響應Y2</string>
+	<string name="UserLog_ACT10047">主副臂安全距離</string>
 	<string name="ParamDif">參數不同</string>
 	<string name="FollowTP">以示教器為主</string>
 	<string name="FollowCON">以控制器為主</string>
+	<string name="AllFollowTP">全部以示教器為主</string>
+	<string name="AllFollowCON">全部以控制器為主</string>
 	<string name="SELECT_CONFIRM">選擇確認</string>
 	<string name="Start2Eject">檢測開始頂出</string>
 

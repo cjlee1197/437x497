@@ -1108,9 +1108,46 @@ Please delete unnecessary user then add again!</string>
 	<string name="UserLog_DATE">Chg Date</string>
 	<string name="UserLog_RESET">RESET</string>
 	<string name="UserLog_ACT9599">Drive Info</string>
+	<string name="UserLog_ACT9600">Max Time SGL Step</string>
+	<string name="UserLog_ACT9601">Conv Time</string>
+
 	<string name="UserLog_ACT9603">Mech Type</string>
 	<string name="UserLog_ACT9630">Auto Spd</string>
-	<string name="UserLog_ACT9647"></string>
+	<string name="UserLog_ACT9631">X1 Zero OFS DLY</string>
+	<string name="UserLog_ACT9632">Y1 Zero OFS DLY</string>
+	<string name="UserLog_ACT9633">Z Zero OFS DLY</string>
+	<string name="UserLog_ACT9634">X2 Zero OFS DLY</string>
+	<string name="UserLog_ACT9635">Y2 Zero OFS DLY</string>
+	<string name="UserLog_ACT9636">Valve-H</string>
+	<string name="UserLog_ACT9637">Valve-V</string>
+	<string name="UserLog_ACT9638">Valve-B+</string>
+	<string name="UserLog_ACT9639">Valve-B-</string>
+
+	<string name="UserLog_ACT9647">X1 Max Pos</string>
+
+	<string name="UserLog_ACT9649">Y1 Max Pos</string>
+
+	<string name="UserLog_ACT9651">Z Max Pos</string>
+
+	<string name="UserLog_ACT9653">X2 Max Pos</string>
+
+	<string name="UserLog_ACT9655">Y2 Max Pos</string>
+	<string name="UserLog_ACT9656">Max Pos MoveOut</string>
+	<string name="UserLog_ACT9657">Max WaitPos Close</string>
+	<string name="UserLog_ACT9658">Min Pos in Mold Pick</string>
+	<string name="UserLog_ACT9659">Max Pos in Mold Pick</string>
+	<string name="UserLog_ACT9660">Max Pos in Mold Pick</string>
+	<string name="UserLog_ACT9661">ZONELIMIT_Z_MAX</string>
+	<string name="UserLog_ACT9662">Max Pos MoveOut</string>
+	<string name="UserLog_ACT9663">Max Wait Pos Close</string>
+	<string name="UserLog_ACT9664">Min Pos in Mold Pick</string>
+	<string name="UserLog_ACT9665">Min Pos EXTR Place</string>
+
+	<string name="UserLog_ACT9668">SFTY Dist Buff</string>
+	<string name="UserLog_ACT9669">Pos Tol</string>
+
+	<string name="UserLog_ACT9680">MoveOut Pos</string>
+	<string name="UserLog_ACT9681">InMLD Pos</string>
 	<string name="UserLog_ACT9685">STK1 Order</string>
 	<string name="UserLog_ACT9686">STK1 STK Dir</string>
 	<string name="UserLog_ACT9687">STK1 X STK Num</string>
@@ -1300,9 +1337,12 @@ Please delete unnecessary user then add again!</string>
 	<string name="UserLog_ACT10044">SPD KP Z</string>
 	<string name="UserLog_ACT10045">SPD KP X2</string>
 	<string name="UserLog_ACT10046">SPD KP Y2</string>
+	<string name="UserLog_ACT10047">MS SFTY Dist</string>
 	<string name="ParamDif">Param Diff</string>
 	<string name="FollowTP">Set TP</string>
 	<string name="FollowCON">Set Con</string>
+	<string name="AllFollowTP">All Set TP</string>
+	<string name="AllFollowCON">All Set Con</string>
 	<string name="SELECT_CONFIRM">Select Confirm</string>
 	<string name="Start2Eject">DECT Eject</string>
 
