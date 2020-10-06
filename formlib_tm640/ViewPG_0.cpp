@@ -377,7 +377,7 @@ void PG_0::ShowText()
 				if(wActPara2) // 檢測模式:區域
 				{
 					AddStr("PICKER_PER", k); // 持續
-					if(wActPara1) // 開始結束
+					if(wActPara3) // 開始結束
 						AddStr("PICKER_STRT", k); // 開始
 					else
 						AddStr("PICKER_STOP", k); // 結束

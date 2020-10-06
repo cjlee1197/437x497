@@ -229,12 +229,15 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	char 	pDataID11[256];
 	char 	pDataID12[256];
 	char  ACTION_STEP_ID[256];
-	char    szActPara1[256];
-	char    szActPara2[256];
-	char    szActPara3[256];
-	char    szActPara5[256];
+	char  szActPara1[256];
+	char  szActPara2[256];
+	char  szActPara3[256];
+	char  szActPara5[256];
+	char  szActPara6[256];
+	char  szActPara7[256];
+	char  szActPara8[256];
 	int	ACTION_STEP =0,ACTIONTYPE =0,ACTIONNUM =0;
-	DWORD   wActPara1=0,wActPara2=0,wActPara3=0,wActPara5=0;
+	DWORD   wActPara1=0,wActPara2=0,wActPara3=0,wActPara5=0, wActPara6 = 0, wActPara7 = 0, wActPara8 = 0;
 	// ↓ 字串合併顯示 cjlee add 	
 	int index_1,index_2,index_3,index_4,index_5,index_6,index_7,index_8,index_9,index_10,index_11,index_12;
 	char	str[1024]; // 顯示字串用
@@ -264,12 +267,18 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 		sprintf(szActPara2,"MACHINE_PROFILE_SUB%d_NUM%d_ACTION_PARAMETER2",u_SubGroup, i+1+No1); 
 		sprintf(szActPara3,"MACHINE_PROFILE_SUB%d_NUM%d_ACTION_PARAMETER3",u_SubGroup, i+1+No1); 
 		sprintf(szActPara5,"MACHINE_PROFILE_SUB%d_NUM%d_ACTION_PARAMETER5",u_SubGroup, i+1+No1); 
+		sprintf(szActPara6,"MACHINE_PROFILE_SUB%d_NUM%d_ACTION_PARAMETER6",u_SubGroup, i+1+No1); 
+		sprintf(szActPara7,"MACHINE_PROFILE_SUB%d_NUM%d_ACTION_PARAMETER7",u_SubGroup, i+1+No1); 
+		sprintf(szActPara8,"MACHINE_PROFILE_SUB%d_NUM%d_ACTION_PARAMETER8",u_SubGroup, i+1+No1);
 		ACTIONTYPE =GetDBValue(pDataID).lValue;
 		ACTIONNUM =GetDBValue(pDataID2).lValue;
 		wActPara1  = GetDBValue(szActPara1).lValue;
 		wActPara2  = GetDBValue(szActPara2).lValue;
 		wActPara3  = GetDBValue(szActPara3).lValue;
 		wActPara5  = GetDBValue(szActPara5).lValue;
+		wActPara6  = GetDBValue(szActPara6).lValue;
+		wActPara7  = GetDBValue(szActPara7).lValue;
+		wActPara8  = GetDBValue(szActPara8).lValue;
 		
 		sprintf(ACTION_STEP_ID,"MACHINE_PROFILE_SUB%d_NUM%d_ACTION_STEP",u_SubGroup, i+1+No1);
 		ACTION_STEP = GetDBValue(ACTION_STEP_ID).lValue;
@@ -332,11 +341,14 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 					sprintf(pDataID9,"PICKER_DESCRIBE_AXIS_3");// "mm的位置"
 					if(wActPara3)
 					{
-						sprintf(pDataID10,"PICKER_DESCRIBE_AXIS_7"); // "提前"
+						if(wActPara8) // 1-兩段變速 0-提前完成
+							sprintf(pDataID10,"PICKER_CHG_DIST"); // "變速"
+						else
+							sprintf(pDataID10,"PICKER_DESCRIBE_AXIS_7"); // "提前"
 						sprintf(pDataID11,"%3d.%02d",wActPara3/100,wActPara3%100);
 						sprintf(pDataID12,"VW_CHARGE_MM"); // "mm"
 					}
-				}
+				}				
 				else if(ACTIONNUM == 6)//(ACTIONNUM == 4) // cjlee 2019/4/6 下午 05:44:41
 				{
 					if(wActPara2)
@@ -432,21 +444,33 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 					sprintf(pDataID5,"PICKER_LABEL_%d",ACTIONNUM);
 				}
 				break;
-			case 8:		//
-				if(wActPara5)
+			case 8:		// 檢測
+				if(wActPara5) // 延時
 				{
-					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
+					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4"); // 延時
 					sprintf(pDataID2,"%3d.%02d",wActPara5/1000,(wActPara5%1000)/10);
-					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8");
+					sprintf(pDataID3,"PICKER_DESCRIBE_AXIS_8"); // 秒
 				}
-				sprintf(pDataID4,"VW_PUMP_TEST");
-				sprintf(pDataID5,"PICKER_REMOTE_I_0%d",ACTIONNUM);
-				if(wActPara1)
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_5");
+				if(wActPara2) // 檢測模式:區域
+					{
+						sprintf(pDataID5,"PICKER_PER"); // 持續
+						if(wActPara3) // 開始結束
+							sprintf(pDataID4,"PICKER_STRT"); // 開始
+						else
+							sprintf(pDataID4,"PICKER_STOP"); // 結束
+					}
+				else // 檢測模式:單點
+					{
+						sprintf(pDataID5,"PICKER_SGL"); // 單點
+					}
+				sprintf(pDataID6,"VW_PUMP_TEST"); // 檢測
+				sprintf(pDataID7,"PICKER_REMOTE_I_0%d",ACTIONNUM); // 檢測點
+				if(wActPara1) // On/Off
+					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_5"); // 打開
 				else
-					sprintf(pDataID6,"PICKER_DESCRIBE_AXIS_6");
+					sprintf(pDataID8,"PICKER_DESCRIBE_AXIS_6"); // 關閉
 				break;
-			case 12:	//
+			case 12:	//堆疊
 				if(wActPara5)
 				{
 					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4");
@@ -1602,7 +1626,7 @@ void	GetPosTag()							//紀錄 位置標籤 參數4
 
 void	UpdateText()						//更新顯示字串
 {
-	//printf("UpdateText\n");
+	printf("UpdateText\n");
 	char 	pDataID[256];
 	char 	pDataID2[256];
 	char 	pDataID3[256];
@@ -1664,9 +1688,9 @@ void	UpdateText()						//更新顯示字串
 		wActPara2  = GetDBValue(szActPara2).lValue;
 		wActPara3  = GetDBValue(szActPara3).lValue;
 		wActPara5  = GetDBValue(szActPara5).lValue;
-		wActPara6  = GetDBValue(szActPara2).lValue;
-		wActPara7  = GetDBValue(szActPara3).lValue;
-		wActPara8  = GetDBValue(szActPara5).lValue;
+		wActPara6  = GetDBValue(szActPara6).lValue;
+		wActPara7  = GetDBValue(szActPara7).lValue;
+		wActPara8  = GetDBValue(szActPara8).lValue;
 		//printf("LINE%d, ACTIONTYPE:%d, ACTIONNUM:%d, Para1:%d, Para2:%d, Para3:%d, Para5:%d\n",i+1+No1,ACTIONTYPE,ACTIONNUM,wActPara1,wActPara2,wActPara3,wActPara5);
 		memset(pDataID, 0 ,sizeof(pDataID));
 		memset(pDataID2, 0 ,sizeof(pDataID2));
@@ -1724,7 +1748,6 @@ void	UpdateText()						//更新顯示字串
 					sprintf(pDataID7,"PICKER_DESCRIBE_AXIS_2"); // "的速度移動到"
 					sprintf(pDataID8,"%3d.%02d",wActPara1/100,wActPara1%100);
 					sprintf(pDataID9,"PICKER_DESCRIBE_AXIS_3");
-					
 					if(wActPara3) // 
 					{
 						if(wActPara8) // 1-兩段變速 0-提前完成
@@ -1831,7 +1854,7 @@ void	UpdateText()						//更新顯示字串
 					sprintf(pDataID5,"PICKER_LABEL_%d",ACTIONNUM);
 				}
 				break;
-			case 8:		//檢測
+			case 8:	//檢測
 				if(wActPara5) // 延時
 				{
 					sprintf(pDataID,"PICKER_DESCRIBE_AXIS_4"); // 延時
