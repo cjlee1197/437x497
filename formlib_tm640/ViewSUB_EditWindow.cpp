@@ -2297,7 +2297,7 @@ void	Save()
 //		}
 		if(pwndSelectEditNUM->Is("CtmToolButton"))
 		{
-			if(ActionType!=Action_Axis && ActionType!=Action_Pile && ActionType!=Action_Sub)
+			if(ActionType!=Action_Axis && ActionType!=Action_Pile && ActionType!=Action_Sub && iSelectIndex!=0xFFFF)
 				EditNUM=iSelectIndex;
 		}
 		printf("Set %s=%d\n",pDataID,EditNUM);
@@ -2313,7 +2313,7 @@ void	Save()
 	if(pwndDetectMode != NULL) // 檢測模式：單點/區間
 	{
 		memset(pDataID, 0 ,sizeof(pDataID));
-		sprintf(pDataID,"MACHINE_PROFILE_SUB%d_NUM%d_ACTION_PARAMETER1",u_SubGroup,SelectNo);
+		sprintf(pDataID,"MACHINE_PROFILE_SUB%d_NUM%d_ACTION_PARAMETER2",u_SubGroup,SelectNo);
 		SetDBValue(pDataID, iDetectMode);
 	}
 	if(pwndSTRT_STOP != NULL) // 檢測：開始/停止
