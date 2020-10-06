@@ -1111,6 +1111,7 @@ Please delete unnecessary user then add again!</string>
 	<string name="UserLog_ACT9599">Drive Info</string>
 	<string name="UserLog_ACT9600">Max Time SGL Step</string>
 	<string name="UserLog_ACT9601">Conv Time</string>
+	<string name="UserLog_ACT9614">SFTY SW</string>
 
 	<string name="UserLog_ACT9603">Mech Type</string>
 	<string name="UserLog_ACT9630">Auto Spd</string>

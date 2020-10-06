@@ -1140,6 +1140,7 @@
 	<string name="UserLog_ACT9599">查看驅動器</string>
 	<string name="UserLog_ACT9600">單步執行最大時間</string>
 	<string name="UserLog_ACT9601">輸送帶時間</string>
+	<string name="UserLog_ACT9614">安全開關</string>
 
 	<string name="UserLog_ACT9603">機型選擇</string>
 	<string name="UserLog_ACT9630">整體速度</string>

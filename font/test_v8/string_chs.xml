@@ -1140,6 +1140,7 @@
 	<string name="UserLog_ACT9599">查看驱动器</string>
 	<string name="UserLog_ACT9600">单步执行最大时间</string>
 	<string name="UserLog_ACT9601">输送带时间</string>
+	<string name="UserLog_ACT9614">安全开关</string>
 
 	<string name="UserLog_ACT9603">机型选择</string>
 	<string name="UserLog_ACT9630">整体速度</string>
