@@ -675,7 +675,7 @@ char 			old_filename[INT_FN_LEN] = "\0";
 int 			KeyMode,Last_KeyMode;
 int 			u_nMANUAL_TYPE,Last_u_nMANUAL_TYPE;
 BOOL				RunOnlyOne				=	FALSE;	//利用update僅執行一次
-BOOL 				HomingEable 			= FALSE;
+BOOL 				HomingEnable 			= FALSE;
 
 BOOL				CheckOnlyOne			=	FALSE;	//利用update每連線上僅執行一次 
 
@@ -846,7 +846,7 @@ void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
 		//2012/6/20 上午 11:10:18 add for remote>>>>>		
 		case	MSG_GPIO_READ:
 		{
-			HomingEable =FALSE;
+			HomingEnable =FALSE;
 			printf("MSG_GPIO_READ\n");
 			// 旋轉鑰匙
 			{
@@ -1046,7 +1046,7 @@ void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
 						RunStopCmd = 0xFF50;
 					}
 					SendCommand(RunStopCmd);
-					HomingEable =TRUE;
+					HomingEnable =TRUE;
 				}
 				
 			if((keycode == 0x91) || (keycode == 0x81) || (keycode == 0x11) || (keycode == 0x01))
@@ -1063,18 +1063,7 @@ void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam)
 				{
 					RunStopCmd = 0xFF70;
 				}
-
-	  		if((g_ptaskpicker !=NULL) && (u_wPickerOPSatus != STATE_HAND))
-				{
-					SendCommand(RunStopCmd);
-					//g_ptaskpicker->ReqValues(CONST_REQ_COMMAND, 1, (int *)&RunStopCmd, NULL);
-					//printf("Send RunStopCmd=%x\n",RunStopCmd);
-				}
-				else if((g_ptaskpicker !=NULL) && (HomingEable == TRUE) )
-				{
-					SendCommand(RunStopCmd);
-				}
-
+				SendCommand(RunStopCmd);
 			} /*-------------------------------啟動、停止----------------------------------*/
 			
 			if((keycode==0x99)||(keycode ==0x89)) //速度增減
@@ -1437,8 +1426,8 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		else if(u_wPickerOPSatus==STATE_HAND)
 		{
 			memset(g_szCurrentFormName, 0, sizeof(g_szCurrentFormName)); // 前往下一頁
-			strcpy(g_szCurrentFormName, "Hand_1.txt");
-			::PutCommand("Hand_1.txt");
+			strcpy(g_szCurrentFormName, "Hand.txt");
+			::PutCommand("Hand.txt");
 		}
 		u_wPickerOPSatus_Old=u_wPickerOPSatus;
 	}
