@@ -1037,13 +1037,13 @@ ViewQTeach:CtmFormView
     right =526
     bottom =480
     wtype =33
-    taborder =80
+    taborder =82
     bgc =54970
     downcontrol =editNEWNAME
     colorcontrol =4
     destcolor =57182
     upbitmap =res_tm640/pic/picker/Check_No.bmp
     downbitmap =res_tm640/pic/picker/Hand_BtnDown.bmp
-    key =80
+    key =82
   end
 end
