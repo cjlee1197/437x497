@@ -410,31 +410,6 @@ ViewIndex:CtmFormView
       imagepath =res_tm640/pic/Index_Prod.bmp
     end
   end
-  LinuxCtmToolButton14:CtmToolButton
-    left =316
-    top =682
-    right =424
-    bottom =765
-    wtype =48
-    taborder =-1
-    bgc =65535
-    fontsize =1
-    align =18
-    space =5
-    upbitmap =res_tm640/pic/Button.bmp
-    captionID0 =INDEX_SYS_UPDATE
-    key =33
-    LinuxCtmImageBox14:CtmImageBox
-      left =29
-      top =3
-      right =79
-      bottom =53
-      wtype =48
-      type =2
-      style =3
-      imagepath =res_tm640/pic/Index_Reset.bmp
-    end
-  end
   LinuxCtmToolButton15:CtmToolButton
     left =172
     top =682
@@ -463,9 +438,9 @@ ViewIndex:CtmFormView
     end
   end
   LinuxCtmToolButton16:CtmToolButton
-    left =460
+    left =316
     top =682
-    right =568
+    right =424
     bottom =765
     wtype =48
     taborder =-1
