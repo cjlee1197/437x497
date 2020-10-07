@@ -356,6 +356,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		{
 			Update_PosHint(i);
 		}
+		b_RunOnlyOne = TRUE;// 完成 執行一次
 	}
 
 	if(AxisXNew != AxisXOld)	//X1軸 被按下
