@@ -263,6 +263,9 @@ int Num_of_Axis[]={3,5};
 CtmWnd*		pwndBtn_AxisNum       = NULL; // 軸選擇 Btn
 CtmWnd*		pwndEditSet_FWDSpeed	= NULL; // 前進速度
 CtmWnd*		pwndEditSet_PreDistance = NULL; // 點動距離
+CtmWnd*		pwndBtn_Move_FWD 			= NULL; // 軸前進
+CtmWnd*		pwndBtn_Move_Back 		= NULL; // 軸後退
+
 CtmWnd*		pwndButton_para       = NULL;
 CtmWnd*		pwndButton_out     		= NULL; 
 
@@ -272,8 +275,6 @@ CtmWnd*		u_pwndButtonHorizontal = NULL;
 CtmWnd*		u_pwndButtonVertical   = NULL;
 CtmWnd*		u_pwndButtonClampOpen  = NULL;
 CtmWnd*		u_pwndButtonClampClose = NULL;
-//CtmWnd*		u_pwndButtonEnableOn   = NULL;
-//CtmWnd*		u_pwndButtonEnableOff  = NULL;
 CtmWnd*		u_pwndBtnServo 				 = NULL;
 CtmWnd*   u_pwndValveState[16] ={NULL};
 CtmWnd*   u_pwndINIO_State[16] ={NULL};
@@ -290,9 +291,6 @@ long lInOutValue_Old = -1;
 DWORD lExOutValue_Old = -1;
 DWORD lExInValue_Old = -1;
 
-
-//CtmWnd*		u_pwndBmpEnableoff  = NULL;
-//CtmWnd*		u_pwndBmpEnableon   = NULL;
 CtmWnd*		u_pwndBmpServo  = NULL;
 
 CtmWnd*			pwndEditPostionX = NULL;
@@ -334,17 +332,20 @@ char* dbParam[6][3] = // 參數 前進速度 點動距離 db
 	{NULL,"MACHINE_CONFIGURATION_MANUAL_AXIS4_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS4_MINPOSITION"},				// X2軸
 	{NULL,"MACHINE_CONFIGURATION_MANUAL_AXIS5_FWD_PERCENTAGEOFSPEED","MACHINE_CONFIGURATION_MANUAL_AXIS5_MINPOSITION"}				// Y2軸
 };
-
-/*int 	u_nCommand[] = { COMMAND_X_FWD, 		COMMAND_X_BACK, 		COMMAND_X_HOME,
-                    	 COMMAND_Y_FWD, 		COMMAND_Y_BACK, 		COMMAND_Y_HOME,
-	                     COMMAND_Z_FWD, 		COMMAND_Z_BACK, 		COMMAND_Z_HOME,
-	                   };*/
+char* AxisImgPath[] = // 移動軸圖片路徑
+{
+	NULL,"X_Back","Y_Back","Z_Back","X2_Back","Y2_Back",
+	"X_FWD","Y_FWD","Z_FWD","X2_FWD","Y2_FWD",
+};
+ 
 int 	u_nCommand[] = { COMMAND_X_FWD,			COMMAND_X_BACK, 		
  											 COMMAND_Y_FWD,			COMMAND_Y_BACK,		 
  											 COMMAND_Z_FWD,			COMMAND_Z_BACK,		
  											 COMMAND_X2_FWD,		COMMAND_X2_BACK,		 		
  											 COMMAND_Y2_FWD, 		COMMAND_Y2_BACK,		   
 	                   };
+int 	uCMD_FWD[] = { NULL, COMMAND_X_FWD, COMMAND_Y_FWD, COMMAND_Z_FWD, COMMAND_X2_FWD, COMMAND_Y2_FWD, };
+int 	uCMD_Back[] = { NULL, COMMAND_X_BACK, COMMAND_Y_BACK, COMMAND_Z_BACK, COMMAND_X2_BACK, COMMAND_Y2_BACK, };
 
 char*	u_pszAxisSpeedID[] = 
 {
@@ -609,7 +610,9 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	pwndBtn_AxisNum  = pwndSender->FindControlFromName("Btn_AxisNum"); 
 	pwndEditSet_FWDSpeed  		= pwndSender->FindControlFromName("EditSet_FWDSpeed");
 	pwndEditSet_PreDistance  	= pwndSender->FindControlFromName("EditSet_PreDistance");
-
+	pwndBtn_Move_FWD  				= pwndSender->FindControlFromName("Btn_Move_FWD");
+	pwndBtn_Move_Back  				= pwndSender->FindControlFromName("Btn_Move_Back");
+	
 	pwndButton_para  = pwndSender->FindControlFromName("Button_para");  
 	pwndButton_out   = pwndSender->FindControlFromName("Button_out"); 
 	
@@ -644,8 +647,6 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	
 	u_nSelectBoxCount = GetSpecialControlNum(pwndSender, (char*)NULL, "CtmSelectBox", &u_pwndSelectBox[0]);//2017-8-3 16:11:41
 	
-	//u_pwndBmpEnableoff = pwndSender->FindControlFromName("BmpEnableoff");
-	//u_pwndBmpEnableon  = pwndSender->FindControlFromName("BmpEnableon");
 	u_pwndBmpServo		 = pwndSender->FindControlFromName("BmpServo");
 	
 	u_pwndBtnManualType0  = pwndSender->FindControlFromName("ManualType0");
@@ -714,27 +715,21 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	
 	// 首次刷新使能LED
 	wEnableStatus= (WORD)GetDBValue("MACHINE_INTERFACE_MOTORENABLESTATE").lValue;
-	//if((u_pwndBmpEnableon!=NULL)&&(u_pwndBmpEnableoff!=NULL))
+
 	if((u_pwndBmpServo!=NULL)&&(u_pwndBtnServo!=NULL))
 	{
 		u_pwndBtnServo->CreateA();
 		u_pwndBtnServo->Update();
 		if(wEnableStatus)
 		{
-			//u_pwndBmpEnableon->SetPropValueT("imagepath", "res_tm640/pic/picker/selected.bmp");
-			//u_pwndBmpEnableoff->SetPropValueT("imagepath", "res_tm640/pic/picker/unselected.bmp");
 			u_pwndBmpServo->SetPropValueT("imagepath", "res_tm640/pic/picker/selected.bmp");
 			((CtmButton*)u_pwndBtnServo)->Press(tmBUTTON_DOWN);
 		}
 		else
 		{
-			//u_pwndBmpEnableon->SetPropValueT("imagepath", "res_tm640/pic/picker/unselected.bmp");
-			//u_pwndBmpEnableoff->SetPropValueT("imagepath", "res_tm640/pic/picker/selected.bmp");
 			u_pwndBmpServo->SetPropValueT("imagepath", "res_tm640/pic/picker/unselected.bmp");
 			((CtmButton*)u_pwndBtnServo)->Press(tmBUTTON_UP);
 		}
-		//u_pwndBmpEnableon->Update();
-		//u_pwndBmpEnableoff->Update();
 		u_pwndBmpServo->Update();
 	}
 	
@@ -743,7 +738,15 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 		{
 			SetManualMode();
 		}
-
+	
+	// 首次刷新軸動作圖片
+	pwndBtn_Move_Back->SetPropValueT("upbitmap","res_tm640/pic/picker/X_Back.bmp");
+	pwndBtn_Move_Back->CreateA();
+	pwndBtn_Move_Back->Update();
+	pwndBtn_Move_FWD->SetPropValueT("upbitmap","res_tm640/pic/picker/X_FWD.bmp");
+	pwndBtn_Move_FWD->CreateA();
+	pwndBtn_Move_FWD->Update();
+	
 	SetDBValue("MACHINE_FUNCTION_OPTIONS_RSV04", 3);//進入手動畫面送3 離開送0 主機判斷
 				
 	u_nMANUAL_TYPE = GetDBValue("MACHINE_CONFIGURATION_MANUAL_TYPE").lValue;
@@ -819,6 +822,22 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				pwndEditSet_PreDistance->SetPropValueT("dbid0",dbParam[iAxisNum][2]);
 				pwndEditSet_PreDistance->CreateA();
 				pwndEditSet_PreDistance->Update();
+			}	
+			if(pwndBtn_Move_Back!=NULL) // 向後移動
+			{
+				char  pszPath[256] = "\0";
+				sprintf(pszPath,"%spic/picker/%s.bmp", u_szPath, AxisImgPath[iAxisNum]);
+				pwndBtn_Move_Back->SetPropValueT("upbitmap",pszPath);
+				pwndBtn_Move_Back->CreateA();
+				pwndBtn_Move_Back->Update();
+			}	
+			if(pwndBtn_Move_FWD!=NULL) // 向前移動
+			{
+				char  pszPath[256] = "\0";
+				sprintf(pszPath,"%spic/picker/%s.bmp", u_szPath, AxisImgPath[iAxisNum+5]);
+				pwndBtn_Move_FWD->SetPropValueT("upbitmap",pszPath);
+				pwndBtn_Move_FWD->CreateA();
+				pwndBtn_Move_FWD->Update();
 			}	
 			break;
 	}
@@ -1010,10 +1029,10 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	DWORD lExOutValue = 0;
 	lInOutValue   = GetDBValue("MACHINE_INTERFACE_DWINTERNALOUTPUTSTATE").lValue;	
 	lExOutValue   = GetDBValue("MACHINE_INTERFACE_DWEXTERNALOUTPUTSTATE").lValue;	
-			for(int i = 0; i < 15; i++)
-		{
-			printf("%d=%d\n",i,(lExOutValue>>i)&1);
-		}
+//			for(int i = 0; i < 15; i++)
+//		{
+//			printf("%d=%d\n",i,(lExOutValue>>i)&1);
+//		}
 	switch(wKey)
 	{
 		case KEY_HORIZONTAL: // 水平
@@ -1224,7 +1243,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
   SetEditValue(pwndEditPostionY2);
   
 	wEnableStatus= (WORD)GetDBValue("MACHINE_INTERFACE_MOTORENABLESTATE").lValue;
-	//if((u_pwndBmpEnableon!=NULL)&&(u_pwndBmpEnableoff!=NULL)&&(wEnableStatus!=wEnableStatus_Old))
+
 	if((u_pwndBmpServo!=NULL)&&(u_pwndBtnServo!=NULL)&&(wEnableStatus!=wEnableStatus_Old))			
 	{
 		printf("wEnableStatus=%d,wEnableStatus_Old=%d\n",wEnableStatus,wEnableStatus_Old);
@@ -1232,20 +1251,14 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		u_pwndBtnServo->Update();
 		if(wEnableStatus)
 		{
-			//u_pwndBmpEnableon->SetPropValueT("imagepath", "res_tm640/pic/picker/selected.bmp");
-			//u_pwndBmpEnableoff->SetPropValueT("imagepath", "res_tm640/pic/picker/unselected.bmp");
 			u_pwndBmpServo->SetPropValueT("imagepath", "res_tm640/pic/picker/selected.bmp");
 			((CtmButton*)u_pwndBtnServo)->Press(tmBUTTON_DOWN);
 		}
 		else
 		{
-			//u_pwndBmpEnableon->SetPropValueT("imagepath", "res_tm640/pic/picker/unselected.bmp");
-			//u_pwndBmpEnableoff->SetPropValueT("imagepath", "res_tm640/pic/picker/selected.bmp");
 			u_pwndBmpServo->SetPropValueT("imagepath", "res_tm640/pic/picker/unselected.bmp");
 			((CtmButton*)u_pwndBtnServo)->Press(tmBUTTON_UP);
 		}
-		//u_pwndBmpEnableon->Update();
-		//u_pwndBmpEnableoff->Update();
 		u_pwndBmpServo->Update();
 		wEnableStatus_Old = wEnableStatus;
 	}
@@ -1358,14 +1371,6 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
  	CtmWnd*     pwnd = pwndSender->FindControlFromTab(wIDControl);
  	if(pwnd == NULL) 		return wIDControl;
  		
-//	if(pwnd == u_pwndButtonEnableOff)
-//	{
-//		SendCommand(0xF600);
-//	}
-//	if(pwnd == u_pwndButtonEnableOn)
-//	{
-//		SendCommand(0xF200);
-//	}
 		if(pwnd == u_pwndBtnServo) // Servo On/Off
 	{
 		if(wEnableStatus)
@@ -1378,24 +1383,49 @@ WORD	OnMouseDown(CtmWnd* pwndSender, WORD wIDControl)
 			}
 	}
 	
-	for(int i = 0; i < BUTTONMAXNUM; i++) // 各軸命令
+//	for(int i = 0; i < BUTTONMAXNUM; i++) // 各軸命令
+//	{
+//		if(pwnd == u_pwndButtonHand[i])
+//		{
+//			printf("Send u_nCommand[%d] = %x\n", i,u_nCommand[i]);
+//			
+//			if(g_ptaskpicker != NULL) // 手動模式下
+//			{
+//				if(u_nMANUAL_TYPE != MANUAL_STOP_MODE) // 安全按鈕有按下
+//					SendCommand(u_nCommand[i]);
+//				else // 請按安全開關	
+//					 MsgBoxCall("msgboxConfirm.txt","PICKER_SAFEEYNOTPRESS");				
+//			}
+//			
+//			
+//			return wIDControl;
+//		}
+//	}
+
+
+	if(pwnd == pwndBtn_Move_FWD)
 	{
-		if(pwnd == u_pwndButtonHand[i])
+		printf("Send u_nCommand[%d] = %x\n", iAxisNum,uCMD_FWD[iAxisNum]);
+		if(g_ptaskpicker != NULL) // 手動模式下
 		{
-			printf("Send u_nCommand[%d] = %x\n", i,u_nCommand[i]);
-			
-			if(g_ptaskpicker != NULL) // 手動模式下
-			{
-				if(u_nMANUAL_TYPE != MANUAL_STOP_MODE) // 安全按鈕有按下
-					SendCommand(u_nCommand[i]);
-				else // 請按安全開關	
-					 MsgBoxCall("msgboxConfirm.txt","PICKER_SAFEEYNOTPRESS");				
-			}
-			
-			
-			return wIDControl;
+			if(u_nMANUAL_TYPE != MANUAL_STOP_MODE) // 安全按鈕有按下
+				SendCommand(uCMD_FWD[iAxisNum]);
+			else // 請按安全開關	
+				 MsgBoxCall("msgboxConfirm.txt","PICKER_SAFEEYNOTPRESS");				
 		}
 	}
+	if(pwnd == pwndBtn_Move_Back)
+	{
+		printf("Send u_nCommand[%d] = %x\n", iAxisNum,uCMD_Back[iAxisNum]);
+		if(g_ptaskpicker != NULL) // 手動模式下
+		{
+			if(u_nMANUAL_TYPE != MANUAL_STOP_MODE) // 安全按鈕有按下
+				SendCommand(uCMD_Back[iAxisNum]);
+			else // 請按安全開關	
+				 MsgBoxCall("msgboxConfirm.txt","PICKER_SAFEEYNOTPRESS");				
+		}
+	}
+	
   return wIDControl;	
 }
 
