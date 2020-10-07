@@ -1842,6 +1842,8 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			
 			WhichAxis_Old = WhichAxis;
 			
+			((CtmFormView*)pwndSender)->OnLoseFocus(); // 取消光標
+			
 			b_RunOnlyOne = TRUE;// 完成 執行一次
 		}
 		
@@ -1851,13 +1853,13 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	{
 		b_PosSet_OK[WhichAxis]=0; // 位置需重新確認
 		UpdateTeach_Pos(); // 更新 位置設定
-		//Update_AxisMoveNow(WhichAxis); // 更新 現在移動軸 圖片
+		Update_AxisMoveNow(WhichAxis); // 更新 現在移動軸 圖片
 		//MsgBoxCall("MsgBox_QTeachAxisSet.txt"); // 顯示 移動軸視窗
 		WhichAxis_Old =WhichAxis;
 	}	
 	else if(WhichAxis>=6 && WhichAxis!=WhichAxis_Old) // 按鈕放開
 	{
-		//Update_AxisMoveNow(0); // 更新 現在移動軸 圖片 顯示無
+		Update_AxisMoveNow(0); // 更新 現在移動軸 圖片 顯示無
 		WhichAxis_Old =WhichAxis;
 	}
 	
@@ -3787,26 +3789,26 @@ void	UpdateTeach_Pos()
 void	UpdateTeach_Speed()
 {
 	printf("UpdateTeach_Speed()\n");
-	int u_All_SpdSet_OK=0;
+//	int u_All_SpdSet_OK=0;
 	for(int i = 0; i < sizeof(u_pszQTeach_SpeedString)/sizeof(u_pszQTeach_SpeedString[0]); i++ )
 	{
 		if(pwndQTeach_Speed[i]!=NULL)
 		{
-			if(b_SpdSet_OK[i]==OK)
-			{
-				u_All_SpdSet_OK++;
-				pwndQTeach_Speed[i]->SetPropValueT("bgc",Color_LBlue); // 白色
-			}
-			else
-			{
-				pwndQTeach_Speed[i]->SetPropValueT("bgc",Color_Yellow); // 黃色
-			}
+//			if(b_SpdSet_OK[i]==OK)
+//			{
+//				u_All_SpdSet_OK++;
+//				pwndQTeach_Speed[i]->SetPropValueT("bgc",Color_LBlue); // 白色
+//			}
+//			else
+//			{
+//				pwndQTeach_Speed[i]->SetPropValueT("bgc",Color_Yellow); // 黃色
+//			}
 			pwndQTeach_Speed[i]->Show();
 			pwndQTeach_Speed[i]->OnLoseFocus();
 		}
 	} 
-	if(u_All_SpdSet_OK>=Teach_SetNum[u_PickerType][u_Group])
-		b_All_SpdSet_OK =OK; //全部位置皆設定完成
+//	if(u_All_SpdSet_OK>=Teach_SetNum[u_PickerType][u_Group])
+//		b_All_SpdSet_OK =OK; //全部位置皆設定完成
 }
 
 
@@ -3818,7 +3820,7 @@ void	UpdateHint()
 {
 	UpdateBtnTeachStart();
 	UpdateTeach_Pos(); // 更新 位置設定
-	//UpdateTeach_Speed(); // 更新 速度設定
+	UpdateTeach_Speed(); // 更新 速度設定
 	UpdateBtnNextP(); // 最後更新 下一位置 提示顯示
 }
 /*---------------------------------------------------------------------------+
