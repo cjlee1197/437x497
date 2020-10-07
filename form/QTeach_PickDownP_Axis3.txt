@@ -105,9 +105,9 @@ ViewQTeach:CtmFormView
     max =999999
   end
   Mask_SLVL:CtmStaticX2
-    left =336
+    left =320
     top =88
-    right =584
+    right =590
     bottom =360
     wtype =32
     bgc =59196

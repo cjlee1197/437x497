@@ -683,9 +683,9 @@ ViewQTeach:CtmFormView
     dbid1 =MACHINE_PROFILE_NUM3_EQUIPMENT2_ACTION_PARAMETER2
   end
   Mask_SLVL:CtmStaticX2
-    left =328
+    left =320
     top =80
-    right =584
+    right =590
     bottom =352
     wtype =32
     bgc =59196
