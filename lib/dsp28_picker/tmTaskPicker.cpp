@@ -253,12 +253,14 @@ void	CtmTaskPicker::_Open(void *pData)
 			//usleep(100);
 			int manual_state = 0xf300;
 			m_pSelf->ReqValues(6, 1, &manual_state, NULL);
+			printf("Manaul SwitchKwy\n");
 //			int manual_update = 0xFF32;
 //			m_pSelf->ReqValues(6, 1, &manual_update, NULL);
 //			printf("send init_data_done manual_state\n");
 		}
 	else
 		{
+			printf("Not Manaul SwitchKey\n");
 //			int init_data_done = 0xFF40;
 //			m_pSelf->ReqValues(6, 1, &init_data_done, NULL);
 //			printf("send init_data_done none_state\n");
@@ -306,7 +308,8 @@ void	CtmTaskPicker::_Open(void *pData)
 	printf("Part1Count =%d, wDataID = %d\n", nCount, wDataID);
 	g_pDatabase->Write(g_pDatabase->DataIDToIndex(wDataID), &nCount, TRUE);
 */
-	m_pSelf->WriteValue(CONST_REQ_MOLDSET, sizeof(u_pszDBStrID)/sizeof(char*) , u_pszDBStrID);
+	
+	//m_pSelf->WriteValue(CONST_REQ_MOLDSET, sizeof(u_pszDBStrID)/sizeof(char*) , u_pszDBStrID); /*cjlee µù¸Ñ 2020/4/1 ¤U¤È 03:01:01*/
 
 }
 
@@ -394,6 +397,12 @@ int		CtmTaskPicker::ReqValues(int nType, int nElements, int pIndexs[], void* pEx
     			//	printf(" %02x ", m_pData[i]);
     			//printf("\n");
     		  //}			
+//			  if(nType==CONST_REQ_WRITEMOTOR)
+//			  {
+//    			for(int i=0; i<nLen; i++)
+//    				printf(" %02x ", m_pData[i]);
+//    			printf("\n");
+//    		}		
 				SendData(m_nDeviceID, (char*)m_pData, nLen);
 				usleep(30 * 1000);
 			}

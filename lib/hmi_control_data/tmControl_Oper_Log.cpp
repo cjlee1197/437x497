@@ -124,7 +124,7 @@ int		CtmControl_Oper_Log::FreeSelf()
 +---------------------------------------------------------------------------*/
 BOOL   CtmControl_Oper_Log::AddOperLog(DWORD DBIndex , DWORD OldValue, DWORD NewValue)
 {
-	printf("AddOperLog\n");
+	printf("AddOperLog\n"); 
 	pthread_mutex_lock(&m_MutexOperLogMsg);
 	
 	NowOperLog.wDBIndex = DBIndex;
