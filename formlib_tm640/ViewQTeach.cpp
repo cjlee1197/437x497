@@ -992,11 +992,11 @@ ACTION_P Action_P[]= // 教導動作列表
 ///**/	{	9,		0, 	Action_Valve,	Valve_Choose3,		OFF,0,	0,	9,	0, }, //	閥門 選3 關
 ///**/	{	9,		0, 	Action_Valve,	Valve_Choose4,		OFF,0,	0,	9,	0, }, //	閥門 選4 關
 /*=====================================P10回等待點=====================================*/
-/*24*/	{	10,		0, 	Action_Axis,	Axis_Y1,					0,	80,	0,	2,	0, }, //	Y1軸
-/*25*/	{	10,		0, 	Action_Axis,	Axis_X1,					0,	80,	0,	2,	0, }, //	X1軸
-///*25*/	{	10,		0, 	Action_Axis,	Axis_X2,					0,	80,	0,	2,	0, }, //	X2軸 (副臂)
-/*26*/	{	10,		0, 	Action_Axis,	Axis_Z,						0,	80,	0,	6,	0, }, //	Z軸
-/*27*/	{	10,		0, 	Action_Valve,	Valve_AxisC_V,		ON,	ON,	0,	10,	0, }, //	閥門 主臂垂直 開 檢測
+/*24*/	{	10,		0, 	Action_Axis,	Axis_Y1,					0,	80,	0,	0,	0, }, //	Y1軸
+/*25*/	{	10,		0, 	Action_Axis,	Axis_X1,					0,	80,	0,	0,	0, }, //	X1軸
+///*25*/	{	10,		0, 	Action_Axis,	Axis_X2,					0,	80,	0,	0,	0, }, //	X2軸 (副臂)
+/*26*/	{	10,		0, 	Action_Axis,	Axis_Z,						0,	80,	0,	0,	0, }, //	Z軸
+/*27*/	{	10,		0, 	Action_Valve,	Valve_AxisC_V,		ON,	ON,	0,	0,	0, }, //	閥門 主臂垂直 開 檢測
 /*28*/	{	10,		0, 	Action_Goto,		END,						0,	0,	0,	0,	0, }, //	結束
 };
 
@@ -1083,6 +1083,13 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	//u_PickerType = (int)(GetDBValue(pMechTypeDB).lValue); // 讀取設定 機型選擇 三五軸
 	dw_MechType 	 = (GetDBValue(pMechTypeDB).lValue);// 讀取設定 機型選擇 三五軸
 	u_PickerType = dw_MechType & MechWord;
+	
+	for(int i=0;i<7;i++)
+	{
+		printf("%s=%d\n",P6_Clamp_DT_DBString[i],(GetDBValue(P6_Clamp_DT_DBString[i]).lValue));
+	}
+	
+	
 	
 	printf("u_PickerType=%d\n",u_PickerType);
 	if(u_PickerType==MechType5)
@@ -2812,47 +2819,59 @@ void	Save()
 				SaveAction2Temp(QTeach_PGNo,Action_PNo); // 將快速教導動作存入暫存位置
 				Action_PNo++;
 			}	
-				if(PileNum>0) // 有堆疊需求  新增動作
+			if(PileNum>0) // 有堆疊需求  新增動作
+			{
+				// 新增動作
+				QTeach_PGNo++;
+				Action_Step++;
+				SaveAct_Pile2Temp(QTeach_PGNo,PileNum); // 寫入 堆疊(動作)
+				
+				// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]
+				g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
+				g_QTeach_Action_P[QTeach_PGNo-1].Num = PileNum; // 堆疊 組
+				g_QTeach_Action_P[QTeach_PGNo-1].P1	= OFF; // 堆疊 結束
+			}
+			
+			if(u_SelectClamp>0) // 設定動作 閥門  新增動作 夾
+			{
+				for(int j=0;j<u_SelectClamp;j++) // 所選 治具數量
 				{
-					// 新增動作
-					QTeach_PGNo++;
-					Action_Step++;
-					SaveAct_Pile2Temp(QTeach_PGNo,PileNum); // 寫入 堆疊(動作)
-					
-					// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]
-					g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
-					g_QTeach_Action_P[QTeach_PGNo-1].Num = PileNum; // 堆疊 組
-					g_QTeach_Action_P[QTeach_PGNo-1].P1	= OFF; // 堆疊 結束
-				}
-				if(u_SelectClamp>0) // 設定動作 閥門  新增動作
-				{
-					for(int j=0;j<u_SelectClamp;j++) // 所選 治具數量
+					int choose=0;
+					int on_off=0;
+					int detect=0;
+					int DelayTime=0;
+					for(int k=0;k<10;k++) // 設定 (治具j+1) 
 					{
-						printf("Set Valve%d\n",j);
-						QTeach_PGNo++;
-						Action_Step++;
-						SaveAct_Valve2Temp(QTeach_PGNo,j);
-					
-						// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]		
-						g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
-						int choose=0;
-						int on_off=0;
-						for(int k=0;k<10;k++) // 設定 (治具j+1) 
+						if(b_Select[k]==1) // 第k個治具 被選用 k對照 u_pszClamp_SelectString[]
 						{
-							if(b_Select[k]==1)
+							choose++;
+							if(choose == j+1)
 							{
-								choose++;
-								if(choose == j+1)
+								printf("Set Valve%d\n",j);
+								QTeach_PGNo++;
+								Action_Step++;
+								SaveAct_Valve2Temp(QTeach_PGNo,j);
+								// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]		
+								g_QTeach_Action_P[QTeach_PGNo-1].Step = Action_Step;// 設定Step數
+											
+								g_QTeach_Action_P[QTeach_PGNo-1].Num = k; // 類型k k對照u_pszClamp_SelectString[]
+								
+								on_off = GetDBValue(P9_Clamp_onoff_DBString[k]).lValue;
+								g_QTeach_Action_P[QTeach_PGNo-1].P1 = on_off; // 開關 P1
+								detect = GetDBValue(P9_Clamp_detect_DBString[k]).lValue;
+								g_QTeach_Action_P[QTeach_PGNo-1].P2 = detect; // 檢測 P2
+								if(pwndQTeach_Clamp_DT[k]!=NULL) // 設定延時 P5為延時 
 								{
-									g_QTeach_Action_P[QTeach_PGNo-1].Num = k; // 類型k k對照u_pszClamp_SelectString[]
-									
-									on_off = GetDBValue(P9_Clamp_onoff_DBString[k]).lValue;
-									g_QTeach_Action_P[QTeach_PGNo-1].P1 = on_off; // 開關 P1
+									pwndQTeach_Clamp_DT[k]->GetPropValueT("value", &l_Clamp_Delaytime[k],sizeof(l_Clamp_Delaytime[k]));
+									if(l_Clamp_Delaytime[k]!=0) // 0為不用
+										g_QTeach_Action_P[QTeach_PGNo-1].P5 = l_Clamp_Delaytime[k]*10; // 寫入參數數值 g_QTeach_Action_P[]
+									SetDBValue(P9_Clamp_DT_DBString[k], l_Clamp_Delaytime[k]); // 寫入 PickP db
 								}
 							}
-						}		
-					}
+						}
+					}		
 				}
+			}
 		/*=====================================P10回等待點=====================================*/
 			// 回原點(等待點)
 			for(int i =0;i<StepNum[Homing];i++) // 從Action_P[]讀取這點需要的步驟
