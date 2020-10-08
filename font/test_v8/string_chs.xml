@@ -1140,7 +1140,18 @@
 	<string name="UserLog_ACT9599">查看驱动器</string>
 	<string name="UserLog_ACT9600">单步执行最大时间</string>
 	<string name="UserLog_ACT9601">输送带时间</string>
+
 	<string name="UserLog_ACT9614">安全开关</string>
+	<string name="UserLog_ACT9615">X1点动距离</string>
+	<string name="UserLog_ACT9616">X1前进速度</string>
+	<string name="UserLog_ACT9618">Y1点动距离</string>
+	<string name="UserLog_ACT9619">Y1前进速度</string>
+	<string name="UserLog_ACT9621">Z点动距离</string>
+	<string name="UserLog_ACT9622">Z前进速度</string>
+	<string name="UserLog_ACT9624">X2点动距离</string>
+	<string name="UserLog_ACT9625">X2前进速度</string>
+	<string name="UserLog_ACT9627">Y2点动距离</string>
+	<string name="UserLog_ACT9628">Y2前进速度</string>
 
 	<string name="UserLog_ACT9603">机型选择</string>
 	<string name="UserLog_ACT9630">整体速度</string>

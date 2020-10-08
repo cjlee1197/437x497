@@ -1140,7 +1140,18 @@
 	<string name="UserLog_ACT9599">查看驅動器</string>
 	<string name="UserLog_ACT9600">單步執行最大時間</string>
 	<string name="UserLog_ACT9601">輸送帶時間</string>
+
 	<string name="UserLog_ACT9614">安全開關</string>
+	<string name="UserLog_ACT9615">X1點動距離</string>
+	<string name="UserLog_ACT9616">X1前進速度</string>
+	<string name="UserLog_ACT9618">Y1點動距離</string>
+	<string name="UserLog_ACT9619">Y1前進速度</string>
+	<string name="UserLog_ACT9621">Z點動距離</string>
+	<string name="UserLog_ACT9622">Z前進速度</string>
+	<string name="UserLog_ACT9624">X2點動距離</string>
+	<string name="UserLog_ACT9625">X2前進速度</string>
+	<string name="UserLog_ACT9627">Y2點動距離</string>
+	<string name="UserLog_ACT9628">Y2前進速度</string>
 
 	<string name="UserLog_ACT9603">機型選擇</string>
 	<string name="UserLog_ACT9630">整體速度</string>
