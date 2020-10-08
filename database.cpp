@@ -2300,6 +2300,7 @@ WORD		SetDBString(char* pcID, char* pszStr, int nLength)
 
 WORD		SetDBValue(char* pcID, long lValue, BOOL bValue)
 {
+	//printf("SetDBValue_%s %d\n",pcID,lValue);
 	WORD		wIndex;
 	WORD		wState = DB_ERR_DB;
 	char 		cszStrID[256];
@@ -2351,6 +2352,7 @@ WORD		SetDBValue(WORD	wIndex, long lValue, BOOL bSend)
 {
 	pthread_mutex_lock(&g_DataWriteMutex);
 	
+	//printf("SetDBValue_%d %d\n",wIndex,lValue);
 	WORD		wState = DB_SUCCESS;
 	BOOL		bChange = FALSE;
 	char*		pszID;
@@ -2414,10 +2416,14 @@ WORD		SetDBValue(WORD	wIndex, long lValue, BOOL bSend)
 			if (dbValue.dwData != dwValue) 
 				{
 				bChange = TRUE;
+				//printf("write success , %d  -->  %d\n",dbValue.lData,iValue);
 				oldValue = (dbValue.dwData*nMultiple)+0.5;
 				dbValue.dwData = dwValue;
 				wState = (g_pDatabase->Write(wIndex, &dwValue)).dwState;
 				}
+			else
+				;
+				//printf("old value and new value is same %d, no write\n",iValue);
 			break;
 		case TYPE_CHAR:
 			cValue = (WORD)lValue / nMultiple;
@@ -2534,7 +2540,7 @@ WORD		SetDBValue(WORD	wIndex, long lValue, BOOL bSend)
 		//add by J.Wong 2016/4/14 19:45:54
 		if(g_ptaskpicker !=NULL )
 		{
-			printf("g_ptaskpicker TRUE!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+			//printf("g_ptaskpicker TRUE!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 			g_ptmControlServer->Oper_Log()->AddOperLog(wIndex,oldValue,lValue);
 			int nIndex=dbValue.lID;
 			g_ptaskpicker->WriteValue(3, 1, &nIndex);
