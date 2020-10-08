@@ -281,6 +281,7 @@ char*	Str_Group[] =
 	"PICKER_GROUP_6",
 	"PICKER_GROUP_7",
 	"PICKER_GROUP_8",
+	"PICKER_WITHOUT",
 };
 
 char*	Str_Detect[] =
