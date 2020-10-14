@@ -91,7 +91,7 @@ extern 		CtmMainFrame*		g_pMainFrame;   // Main window -- Defined in "main.cpp"	
 #define		ERROR_OBJECT_SIEMENS	101
 
 #define		MMI_KERNEL_VERSION1		12
-#define		MMI_KERNEL_VERSION2		20190910//20170426
+#define		MMI_KERNEL_VERSION2		20201008 //20200615//20200331//20191105//20170426
 #define		MMI_KERNEL_VERSION3		1
 /*===========================================================================+
 |           Global variable                                                  |

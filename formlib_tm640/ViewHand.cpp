@@ -675,7 +675,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 		u_pwndINIOBtn_State[i] = pwndSender->FindControlFromName(u_pszBtnImgString_INIO[i]);
 		if(u_pwndINIOBtn_State[i]!=NULL) GetIOBtn++;
 	}
-	printf("GetIOBtn=%d\n",GetIOBtn);
+	//printf("GetIOBtn=%d\n",GetIOBtn);
 	for(int i = 0; i < sizeof(u_pszBtnImgString_EXIO)/sizeof(u_pszBtnImgString_EXIO[0]); i++ )
 	{
 		u_pwndEXIOBtn_State[i] = pwndSender->FindControlFromName(u_pszBtnImgString_EXIO[i]);
@@ -789,7 +789,7 @@ WORD	OnChangeA(CtmWnd* pwndSender, WORD wIDControl)
 WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 {
   //printf("key = %d\n", wKey);
-	printf("OnKeyA\n");
+	//printf("OnKeyA\n");
 	((CtmFormView*)pwndSender)->OnLoseFocus(); // 取消光標
 	switch(wKey)
 	{
@@ -804,7 +804,7 @@ WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 			break;
 		case 7:
 			iAxisNum++;
-			printf("Num_of_Axis=%d\n",Num_of_Axis[u_PickerType]);
+			//printf("Num_of_Axis=%d\n",Num_of_Axis[u_PickerType]);
 			if(iAxisNum>Num_of_Axis[u_PickerType])
 				iAxisNum=1;			
 			pwndBtn_AxisNum->SetPropValueT("captionID",Str_Axis[iAxisNum]);
@@ -1147,28 +1147,28 @@ WORD	SetSpeedToDB(CtmWnd* pWnd)
 		{
 		 	lSpeedValue = u_lAxisSpeed[AXIS_X_SPEED]*wSpeedPercent/100;
 		 
-		  printf("u_lAxisSpeed[X] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_X_SPEED],wSpeedPercent,lSpeedValue);
+		  //printf("u_lAxisSpeed[X] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_X_SPEED],wSpeedPercent,lSpeedValue);
 	  	}
 	  else if(iAxisNum==2)
 	  {
 	  	lSpeedValue = u_lAxisSpeed[AXIS_Y_SPEED]*wSpeedPercent/100;
 	  	
-      printf("u_lAxisSpeed[Y] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Y_SPEED],wSpeedPercent,lSpeedValue);
+      //printf("u_lAxisSpeed[Y] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Y_SPEED],wSpeedPercent,lSpeedValue);
 	  }
 	  else if(iAxisNum==3)
 	  {
 	  	lSpeedValue = u_lAxisSpeed[AXIS_Z_SPEED]*wSpeedPercent/100;
-      printf("u_lAxisSpeed[Z] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Z_SPEED],wSpeedPercent,lSpeedValue);
+      //printf("u_lAxisSpeed[Z] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Z_SPEED],wSpeedPercent,lSpeedValue);
 	  }
 	  else if(iAxisNum==4)
 	  {
 	  	lSpeedValue = u_lAxisSpeed[AXIS_X2_SPEED]*wSpeedPercent/100;
-      printf("u_lAxisSpeed[X2] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_X2_SPEED],wSpeedPercent,lSpeedValue);
+      //printf("u_lAxisSpeed[X2] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_X2_SPEED],wSpeedPercent,lSpeedValue);
 	  }
 	  else if(iAxisNum==5)
 	  {
 	  	lSpeedValue = u_lAxisSpeed[AXIS_Y2_SPEED]*wSpeedPercent/100;
-      printf("u_lAxisSpeed[Y2] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Y2_SPEED],wSpeedPercent,lSpeedValue);
+      //printf("u_lAxisSpeed[Y2] = %d, wSpeedPercent = %d, speed = %d\n", u_lAxisSpeed[AXIS_Y2_SPEED],wSpeedPercent,lSpeedValue);
 	  }
 	  SetDBValue(u_pszRealSpeedID[iAxisNum],lSpeedValue,TRUE);
 	 // printf(" Set lSpeedValue = %d!\n", lSpeedValue);
@@ -1246,7 +1246,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 
 	if((u_pwndBmpServo!=NULL)&&(u_pwndBtnServo!=NULL)&&(wEnableStatus!=wEnableStatus_Old))			
 	{
-		printf("wEnableStatus=%d,wEnableStatus_Old=%d\n",wEnableStatus,wEnableStatus_Old);
+		//printf("wEnableStatus=%d,wEnableStatus_Old=%d\n",wEnableStatus,wEnableStatus_Old);
 		u_pwndBtnServo->CreateA();
 		u_pwndBtnServo->Update();
 		if(wEnableStatus)
@@ -1328,7 +1328,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 				else sprintf(pszPath, "%spic/picker/%s", u_szPath, BtnImgOff_EXIO[i]);
 				 if(u_pwndEXIOBtn_State[i] != NULL)
 				 {
-				 	printf("Set %s = %s\n",u_pszBtnImgString_EXIO[i],pszPath);
+				 	//printf("Set %s = %s\n",u_pszBtnImgString_EXIO[i],pszPath);
 					 u_pwndEXIOBtn_State[i]->SetPropValueT("upbitmap", pszPath);
 					 u_pwndEXIOBtn_State[i]->CreateA();
 					 u_pwndEXIOBtn_State[i]->Update();
@@ -1350,7 +1350,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 					 u_pwndEXIO_State_IN[i]->Update();
 				 }
 			}	
-			printf("lExInValue=%d\n",lExInValue);
+			//printf("lExInValue=%d\n",lExInValue);
 			lExInValue_Old = lExInValue;
 		}
 
