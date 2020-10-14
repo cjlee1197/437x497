@@ -35,6 +35,7 @@ typedef	struct tagtmNUMBERBMP
 extern  "C"	BOOL	OnCreateA(CtmWnd* pwndSender);
 extern  "C"	void	OnShowA(CtmWnd* pwndSender);
 extern  "C"	WORD	OnKeyA(CtmWnd* pwndSender, WORD wKey);
+extern	"C"	void	OnMessage(CtmWnd* pwndSender, int message, WPARAM wParam, LPARAM lParam);
 extern  "C"	void	OnUpdateA(CtmWnd* pwndSender);
 extern  "C"	void	OnDestroyA(CtmWnd* pwndSender);
 
@@ -46,5 +47,7 @@ void	AllControlMove(CtmWnd* pwndSender);
 void	GetOPStatus(); 	//Sunny<20070428>判斷機器當前操作狀態
 
 extern	    tmNUMBERBMP		m_NumberBmp[];	//Sunny<20070403>
+
+void	SendCommand(int	CommandID);
 
 #endif
