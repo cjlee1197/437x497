@@ -2097,7 +2097,7 @@ void	Save()
 						{
 							pwndQTeach_DT[Axis_Y2]->GetPropValueT("value", &l_Delaytime[Axis_Y2],sizeof(l_Delaytime[Axis_Y2]));
 							if(l_Delaytime[Axis_Y2]!=0) // 0ぃノ
-								Action_P[Action_PNo].P5 = l_Delaytime[Axis_Y2]*10; // 糶把计计 Action_P[]
+								g_QTeach_Action_P[QTeach_PGNo-1].P5 = l_Delaytime[Axis_Y2]*10; // 糶把计计 Action_P[]
 							SetDBValue(P2_DT_DBString[Axis_Y2], l_Delaytime[Axis_Y2]); // 糶 WaitP db
 						}	
 					}
@@ -2138,7 +2138,7 @@ void	Save()
 						{
 							pwndQTeach_DT[Axis_X2]->GetPropValueT("value", &l_Delaytime[Axis_X2],sizeof(l_Delaytime[Axis_X2]));
 							if(l_Delaytime[Axis_X2]!=0) // 0ぃノ
-								Action_P[Action_PNo].P5 = l_Delaytime[Axis_X2]*10; // 糶把计计 Action_P[]
+								g_QTeach_Action_P[QTeach_PGNo-1].P5 = l_Delaytime[Axis_X2]*10; // 糶把计计 Action_P[]
 							SetDBValue(P2_DT_DBString[Axis_X2], l_Delaytime[Axis_X2]); // 糶 WaitP db
 						}	
 					}
@@ -2284,7 +2284,7 @@ void	Save()
 						{
 							pwndQTeach_DT[Axis_X2]->GetPropValueT("value", &l_Delaytime[Axis_X2],sizeof(l_Delaytime[Axis_X2]));
 							if(l_Delaytime[Axis_X2]!=0) // 0ぃノ
-								Action_P[Action_PNo].P5 = l_Delaytime[Axis_X2]*10; // 糶把计计 Action_P[]
+								g_QTeach_Action_P[QTeach_PGNo-1].P5 = l_Delaytime[Axis_X2]*10; // 糶把计计 Action_P[]
 							SetDBValue(P4_DT_DBString[Axis_X2], l_Delaytime[Axis_X2]); // 糶 ReadyDownP db
 						}
 					}
@@ -2375,7 +2375,7 @@ void	Save()
 			break;
 		/*=====================================P6ン翴=====================================*/
 		case PickP: // ン翴
-			
+			printf("\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Set PickP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n");
 			for(int i =0;i<StepNum[u_Group];i++) // 眖Action_P[]弄硂翴惠璶˙艼
 			{
 				if(i==0 && u_SelectClamp>0) // 砞﹚笆 恢  穝糤笆 
@@ -2447,7 +2447,7 @@ void	Save()
 						{
 							pwndQTeach_DT[Axis_X2]->GetPropValueT("value", &l_Delaytime[Axis_X2],sizeof(l_Delaytime[Axis_X2]));
 							if(l_Delaytime[Axis_X2]!=0) // 0ぃノ
-								Action_P[Action_PNo].P5 = l_Delaytime[Axis_X2]*10; // 糶把计计 Action_P[]
+								g_QTeach_Action_P[QTeach_PGNo-1].P5 = l_Delaytime[Axis_X2]*10; // 糶把计计 Action_P[]
 							SetDBValue(P6_DT_DBString[Axis_X2], l_Delaytime[Axis_X2]); // 糶 WaitP db
 						}	
 					}
@@ -2478,6 +2478,7 @@ void	Save()
 						if(l_Delaytime[WhichAxis]!=0) // 0ぃノ
 							Action_P[Action_PNo].P5 = l_Delaytime[WhichAxis]*10; // 糶把计计 Action_P[]
 						SetDBValue(P6_DT_DBString[WhichAxis], l_Delaytime[WhichAxis]); // 糶 PickP db
+						printf("PickP Set %s=%d\n",P6_DT_DBString[WhichAxis],l_Delaytime[WhichAxis]);
 					}
 				}
 				
@@ -2557,6 +2558,12 @@ void	Save()
 					g_QTeach_Action_P[QTeach_PGNo-1].P1 = OFF; // 秨闽 P1
 				}
 				Action_PNo++;
+			}
+			for(int j=0;j<7;j++)
+			{
+				int t=j+QTeach_PGNo-7;
+				printf("g_QTeach_Action_P[%d]=%d\n",t,g_QTeach_Action_P[t]);
+				printf("g_QTeach_Action_P[%d].P5=%d\n",t,g_QTeach_Action_P[t].P5);
 			}
 			break;
 		/*=====================================P7绢翴=====================================*/
@@ -3008,6 +3015,7 @@ void	Save2PG()
 		memset(pDataID, 0 ,sizeof(pDataID));
 		sprintf(pDataID,"MACHINE_PROFILE_NUM%d_ACTION_PARAMETER5",i+1);
 		SetDBValue(pDataID, value);
+		printf("Set %s=%d\n",pDataID,value);
 	}
 }
 /*---------------------------------------------------------------------------+
@@ -3980,7 +3988,7 @@ void	SaveAction2Temp(int QTeach_PGNo,int j)
 	//printf("Save g_QTeach_Action_P[%d].P4 = %d\n",QTeach_PGNo-1,Action_P[j].P4);
 	/*======================================= 把计5 =======================================*/
 	g_QTeach_Action_P[QTeach_PGNo-1].P5 = Action_P[j].P5;
-	//printf("Save g_QTeach_Action_P[%d].P5 = %d\n",QTeach_PGNo-1,Action_P[j].P5);
+	printf("Save g_QTeach_Action_P[%d].P5 = %d\n",QTeach_PGNo-1,Action_P[j].P5);
 }
 
 /*---------------------------------------------------------------------------+
