@@ -418,7 +418,7 @@ ViewQTeach:CtmFormView
     left =317
     top =444
     right =417
-    bottom =494
+    bottom =479
     wtype =35
     taborder =5
     fgc =0
@@ -439,7 +439,7 @@ ViewQTeach:CtmFormView
     left =317
     top =518
     right =417
-    bottom =568
+    bottom =553
     wtype =35
     taborder =6
     fgc =0
@@ -459,7 +459,7 @@ ViewQTeach:CtmFormView
     left =317
     top =592
     right =417
-    bottom =642
+    bottom =627
     wtype =35
     taborder =7
     fgc =0
@@ -750,6 +750,72 @@ ViewQTeach:CtmFormView
     fontsize =1
     bordercolor =35953
     textID =Start2Eject
+    align =34
+  end
+  Pos_Min_Z:CtmStaticX2
+    left =317
+    top =479
+    right =367
+    bottom =499
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Max_Z:CtmStaticX2
+    left =367
+    top =479
+    right =417
+    bottom =499
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Min_X1:CtmStaticX2
+    left =317
+    top =553
+    right =367
+    bottom =573
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Max_X1:CtmStaticX2
+    left =367
+    top =553
+    right =417
+    bottom =573
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Min_Y1:CtmStaticX2
+    left =317
+    top =627
+    right =367
+    bottom =647
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
+    align =34
+  end
+  Pos_Max_Y1:CtmStaticX2
+    left =367
+    top =627
+    right =417
+    bottom =647
+    wtype =48
+    fgc =647
+    bgc =36256
+    bordercolor =35953
     align =34
   end
 end
