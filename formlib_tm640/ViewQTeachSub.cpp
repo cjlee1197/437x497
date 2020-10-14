@@ -225,6 +225,7 @@ char* P7_POSSET_DBString[] = // P7 取出側橫出點 位置設定 DB名稱
 +---------------------------------------------------------------------------*/
 BOOL	OnCreateA(CtmWnd* pwndSender)
 {
+	printf("\n\n Sub OnCreateA \n\n");
 	// 取得指標 下一位置按鈕
 	pwndBtnNextP	= pwndSender->FindControlFromName("BtnNextP");	
 	
@@ -285,11 +286,27 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	AxisZOld = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED43").lValue & 0x0004;
 	AxisX2Old = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED44").lValue & 0x0001;
 	AxisY2Old = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED44").lValue & 0x0002;
-	
+		
 	UpdateDataValue();
 	UpdateTeach_Pos();
 	UpdateBtnNextP();
 	
+	// 設定速度預設值 80
+	long ltemp=0;
+	for(int i = 0; i < sizeof(u_pszQTeach_SpeedString)/sizeof(u_pszQTeach_SpeedString[0]); i++ )
+	{
+		if(pwndQTeach_Speed[i]!=NULL)
+		{
+			pwndQTeach_Speed[i]->GetPropValueT("value", &ltemp,sizeof(ltemp));
+			printf("Get pwndQTeach_Speed[%d]=%d\n",i,ltemp);
+			if(ltemp==0)
+			{
+				pwndQTeach_Speed[i]->SetPropValueT("value",80); // 寫入數值 80
+				printf("Set pwndQTeach_Speed[%d]=%d\n",i,80);
+				pwndQTeach_Speed[i]->Update();
+			}
+		}
+	}
 	return TRUE;
 }
 
@@ -651,12 +668,12 @@ void	UpdateDataValue()
 			char	SetSpeed_DBID[256];	memset(SetSpeed_DBID, 0, sizeof(SetSpeed_DBID));
 			pwndQTeach_Speed[WhichAxis]->GetPropValueT("dbid1", SetSpeed_DBID, sizeof(SetSpeed_DBID));
 			AxisSetSpeed[WhichAxis] = GetDBValue(SetSpeed_DBID).lValue;
-			//printf("Get %s = %d\n",SetSpeed_DBID,AxisSetSpeed[WhichAxis]);
+			printf("Get %s = %d\n",SetSpeed_DBID,AxisSetSpeed[WhichAxis]);
 			// Update show data
 			pwndQTeach_Speed[WhichAxis]->SetPropValueT("value",AxisSetSpeed[WhichAxis]);
 			pwndQTeach_Speed[WhichAxis]->Update();
 			pwndQTeach_Speed[WhichAxis]->UpdateAll();
-			//printf("Set Axis%d Speed = %d\n",WhichAxis,AxisSetSpeed[WhichAxis]);
+			printf("Set Axis%d Speed = %d\n",WhichAxis,AxisSetSpeed[WhichAxis]);
 		}
 		
 		if(pwndQTeach_DT[WhichAxis] != NULL) // Set DelayTime
