@@ -1487,8 +1487,12 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		{
 			SendCommand(COMMAND_STOP);
 			return wIDControl;
- 	  	}
-  	}
+ 	  }
+  }
+	if(pwnd == pwndBtn_Move_Back || pwnd == pwndBtn_Move_FWD) // ¦V«á²¾°Ê
+	{
+		SendCommand(COMMAND_STOP);
+	}	
 	
   return wIDControl;	
 }
