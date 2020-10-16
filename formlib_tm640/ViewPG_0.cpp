@@ -671,11 +671,13 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				return _NULL_KEY;
 				break;
 			case 0x0002:
-				if(actionTable->selectNo > StandbyStepNum && actionTable->selectNo <= actionTable->editedStepNum) // (選擇步驟 > 等待點步驟) && (選擇步驟 <= 編輯步驟數)
+				if(actionTable->selectNo > StandbyStepNum && actionTable->selectNo <= actionTable->editedStepNum && actionTable->editedStepNum<100) // (選擇步驟 > 等待點步驟) && (選擇步驟 <= 編輯步驟數)
+				{
 					if(actionType != 5)
 						actionTable->Insert();
 					else if(actionNum != 1)
 						actionTable->Insert();
+				}
 				break;
 			case 0x0003:
 				MsgBox(g_MultiLanguage["PICKER_CONFIRMDELETE"], tmFT_CODE_TECH);
