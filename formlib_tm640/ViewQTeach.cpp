@@ -1237,7 +1237,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	pwndBtn_SLVL	= pwndSender->FindControlFromName("Btn_SLVL");	
 	u_Check_SLVL = GetDBValue(Check_SLVL_DB).lValue; // 取得db數值
 	b_Check_SLVL = (u_Check_SLVL>>u_Group) & 1; // 確認此u_Group bit 是否為1
-	//printf("u_Check_SLVL=%x, b_Check_SLVL=%d\n",u_Check_SLVL,b_Check_SLVL);
+	printf("u_Check_SLVL=%x, b_Check_SLVL=%d\n",u_Check_SLVL,b_Check_SLVL);
 
 	// 取得指標 取件柔性/取出柔性 數值設定 
 	pwndPick_SLVL 	 = pwndSender->FindControlFromName("Pick_SLVL");
@@ -1486,7 +1486,7 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 			break;
 		/*===============================PlaceDownP===============================*/
 		case PlaceDownP:
-			if( (u_Group<PlaceDownP) && (b_SubArmUse==1) )
+			if( (u_Group<PlaceDownP) && (b_SubArmUse==1) && b_BtnNextP_OK )
 				::PutCommand("QTeach_SubPlaceP.txt");
 			else
 			{
@@ -2295,6 +2295,7 @@ void	Save()
 			break;
 		/*=====================================P5下降點=====================================*/
 		case PickDownP: // 下降點
+			SaveSLVLData();
 			for(int i =0;i<StepNum[u_Group];i++) // 從Action_P[]讀取這點需要的步驟
 			{
 				QTeach_PGNo++;
@@ -2316,11 +2317,13 @@ void	Save()
 						Action_P[Action_PNo].P2 = l_Speed[WhichAxis]; // 寫入參數數值 至列表Action_P[]
 						SetDBValue(P5_Speed_DBString[WhichAxis], l_Speed[WhichAxis]); // 寫入 PickDownP db
 					}
+					printf("b_Check_SLVL=%d, (Action_P[%d].Num=%d\n",b_Check_SLVL,Action_PNo,Action_P[Action_PNo].Num);
 					if( (b_Check_SLVL) && (Action_P[Action_PNo].Num==Axis_Y1)) // 柔性使用 && Y1軸  設定提前 P3為提前 
 					{
 						long l_dis =0;
 						l_dis = GetDBValue(Pick_SLVL_DB).lValue;
 						Action_P[Action_PNo].P3 = l_dis; // 寫入參數數值 Action_P[Action_PNo]
+						printf("Action_P[%d].P3=%d\n",Action_PNo,l_dis);
 					}
 					if(pwndQTeach_DT[WhichAxis]!=NULL) // 設定延時 P5為延時
 					{
@@ -2371,7 +2374,6 @@ void	Save()
 					SetDBValue(P5_DT_DBString[Axis_Y2], l_Delaytime[Axis_Y2]); // 寫入 WaitP db
 				}	
 			}
-			SaveSLVLData();
 			break;
 		/*=====================================P6取件點=====================================*/
 		case PickP: // 取件點
@@ -2568,6 +2570,7 @@ void	Save()
 			break;
 		/*=====================================P7橫出點=====================================*/
 		case MoveOutP: // 橫出點
+			SaveSLVLData();
 			for(int i =0;i<StepNum[u_Group];i++) // 從Action_P[]讀取這點需要的步驟
 			{
 				if(b_SubArmUse) // 副臂使用
@@ -2738,7 +2741,6 @@ void	Save()
 				
 				SetDBValue(SubStartNo_DB, QTeach_PGNo-5); // 設定 水口資料寫入 開始序號
 			}
-			SaveSLVLData();
 			break;
 		/*=====================================P8下降點=====================================*/
 		case PlaceDownP: // 下降點
