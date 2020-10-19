@@ -282,7 +282,7 @@ void OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	
 	if(wKey>=0 && wKey<=16)
 		{
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46", wKey);
+			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED54", wKey);
 			Exit();
 		}
 }
