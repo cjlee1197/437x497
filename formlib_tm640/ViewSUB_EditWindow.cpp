@@ -182,7 +182,7 @@ char*	Str_Sub[] =
 	"PICKER_PROD_SAMPLE",
 	"PICKER_PROD_TEST",
 	"PICKER_FUNC_SUBTECH",
-	"PICKER_FUNC_SUBTECH",
+	"PICKER_FUNC_SUBTECH2",
 };
 
 
@@ -298,6 +298,12 @@ char*	Str_ON_OFF[] =
 {
 	"PICKER_DESCRIBE_AXIS_6", // 關閉
 	"PICKER_DESCRIBE_AXIS_5", // 打開
+};
+
+char*	Str_STRT_END[] =
+{
+	"ACTIONPOINT_END", 	 // 結束
+	"ACTIONPOINT_START", // 開始
 };
 
 char*	Str_ValveCheck[] =
@@ -588,7 +594,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			}
 			else if(pwndSelectEditNUM->Is("CtmToolButton"))
 			{
-				iSelectIndex = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46").lValue;
+				iSelectIndex = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED54").lValue;
 				printf("iSelectIndex=%d EditNUM=%d\n",iSelectIndex,EditNUM);
 				if(iSelectIndex==0xFFFF)
 					iSelectIndex=EditNUM;
@@ -782,11 +788,17 @@ void	OnUpdateA(CtmWnd* pwndSender)
 			iON_OFF = GetDBValue(pDataID).lValue;
 			if(iON_OFF == 1) // ON
 			{
-				pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[iON_OFF]);
+				if(ActionType==Action_Sub) // Sub
+					pwndON_OFF->SetPropValueT("captionID",Str_STRT_END[iON_OFF]);
+				else
+					pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[iON_OFF]);
 			}
 			else // 單點撿測
 			{
-				pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[0]);
+				if(ActionType==Action_Sub) // Sub
+					pwndON_OFF->SetPropValueT("captionID",Str_STRT_END[0]);
+				else
+					pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[0]);
 			}
 			pwndON_OFF	->CreateA();
 			pwndON_OFF	->Update();
@@ -1030,7 +1042,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		
 	}
 	
-	iSelectIndex = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46").lValue;
+	iSelectIndex = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED54").lValue;
 	AxisXNew = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED43").lValue & 0x0001;
 	AxisYNew = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED43").lValue & 0x0002;
 	AxisZNew = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED43").lValue & 0x0004;
@@ -1343,7 +1355,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 //		}
 		if(pwndSelectEditNUM->Is("CtmToolButton"))
 		{
-			iSelectIndex = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46").lValue;
+			iSelectIndex = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED54").lValue;
 			if(iSelectIndex<0)
 				iSelectIndex=EditNUM;
 			printf("iSelectIndex=%d\n",iSelectIndex);
@@ -2152,7 +2164,10 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		iON_OFF++;
 		if(iON_OFF>1)
 			iON_OFF=0;
-		pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[iON_OFF]);	
+		if(ActionType==Action_Sub) // Sub
+			pwndON_OFF->SetPropValueT("captionID",Str_STRT_END[iON_OFF]);
+		else
+			pwndON_OFF->SetPropValueT("captionID",Str_ON_OFF[iON_OFF]);	
 		pwndON_OFF->CreateA();
 		pwndON_OFF->Update();
 	}
@@ -2220,19 +2235,19 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 	{
 		Save();
 		g_Hint_Download = 1; // 提醒下載
-		SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46", 0xFFFF); // Clear iSelectIndex
+		SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED54", 0xFFFF); // Clear iSelectIndex
 		Exit();
 	}
 	else if(pwnd == pwndBtnCancel) // 取消
 	{
 		if(SelectNo <= StandbyStepNum)
 		{
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46", 0xFFFF); // Clear iSelectIndex
+			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED54", 0xFFFF); // Clear iSelectIndex
 			Exit();
 		}
 		else
 		{
-			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46", 0xFFFF); // Clear iSelectIndex
+			SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED54", 0xFFFF); // Clear iSelectIndex
 			Exit();
 		}
 	}
@@ -2266,7 +2281,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 void  OnDestroyA(CtmWnd* pwndSender)
 {
 	SetDBValue("MACHINE_FUNCTION_OPTIONS_RSV04", 0);
-	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED46", 0xFFFF);
+	SetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED54", 0xFFFF);
 }
 
 /*===========================================================================
@@ -2326,7 +2341,7 @@ void	Save()
 	{
 		memset(pDataID, 0 ,sizeof(pDataID));
 		sprintf(pDataID,"MACHINE_PROFILE_SUB%d_NUM%d_ACTION_PARAMETER1",u_SubGroup,SelectNo);
-		printf("Save %s=%d",pDataID,iON_OFF);
+		printf("Save %s=%d\n",pDataID,iON_OFF);
 		SetDBValue(pDataID, iON_OFF);
 	}
 	if(pwndValveCheck != NULL) // 閥門 檢測

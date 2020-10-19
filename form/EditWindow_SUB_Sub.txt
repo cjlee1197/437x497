@@ -17,33 +17,6 @@ ViewSUB_EditWindow:CtmFormView
     imagepath =res_tm640/msgBG_400x500.bmp
     keycolor =63519
   end
-  StaticACTIONPARA0:CtmStaticX2
-    left =32
-    top =44
-    right =102
-    bottom =84
-    wtype =48
-    fgc =0
-    fontsize =1
-    textID =PICKER_FUNC_SUBTECH
-    align =36
-  end
-  EditACTIONPARA1:CtmSelectEdit
-    left =112
-    top =112
-    right =232
-    bottom =152
-    wtype =33
-    taborder =1
-    bgc =65535
-    fontsize =1
-    bordercolor =33808
-    dbid1 =MACHINE_PROFILE_NUM1_ACTION_PARAMETER1
-    maxchar =40
-    listnum =2
-    strID0 =STR_TEACH_END
-    strID1 =STR_TEACH_START
-  end
   StaticACTIONPARA5:CtmStaticX2
     left =32
     top =180
@@ -147,5 +120,30 @@ ViewSUB_EditWindow:CtmFormView
     align =34
     upbitmap =res_tm640/pic/EditBtnUp.bmp
     downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  ON_OFF:CtmToolButton
+    left =112
+    top =104
+    right =222
+    bottom =164
+    wtype =48
+    taborder =17
+    bgc =54970
+    fontsize =1
+    destcolor =57182
+    align =34
+    upbitmap =res_tm640/pic/EditBtnUp.bmp
+    downbitmap =res_tm640/pic/EditBtnDown.bmp
+  end
+  StaticACTIONPARA0:CtmStaticX2
+    left =32
+    top =40
+    right =102
+    bottom =80
+    wtype =48
+    fgc =0
+    fontsize =1
+    textID =PICKER_FUNC_SUBTECH
+    align =36
   end
 end
