@@ -510,10 +510,10 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 						sprintf(pDataID5,"PICKER_PROD_TEST");
 						break;
 					case 4:
-						sprintf(pDataID5,"VW_AD_RESERVED");
+						sprintf(pDataID5,"PICKER_FUNC_SUBTECH");
 						break;
 					case 5:
-						sprintf(pDataID5,"VW_AD_RESERVED");
+						sprintf(pDataID5,"PICKER_FUNC_SUBTECH2");
 						break;
 					default:
 						break;
@@ -892,7 +892,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		}
 		else if (wKey == 0x0004)	//下載
 		{
-			if(u_wPickerOPSatus == STATE_HAND)
+			if(u_wPickerOPSatus != STATE_FULLAUTO) // 非自動模式下 可下載
 			{
 				Cleanhelp =0;
 				Clean();
@@ -907,9 +907,7 @@ WORD OnKeyA(CtmWnd* pwndSender, WORD wKey)
 				Prompt(g_MultiLanguage["PICKER_DATADOWNLOADFINISH"],1); 
 			}
 			else
-			{
-				MsgBox(g_MultiLanguage["PICKER_M3_ALARM5025"], tmFT_CODE_TECH);
-			}
+				MsgBox(g_MultiLanguage["INDEX_AUTO_DENIED"], tmFT_CODE_TECH);
 		}
 		else if(wKey == 0x0001) //下一步
     	{
@@ -1920,10 +1918,10 @@ void	UpdateText()						//更新顯示字串
 						sprintf(pDataID5,"PICKER_PROD_TEST");
 						break;
 					case 4:
-						sprintf(pDataID5,"VW_AD_RESERVED");
+						sprintf(pDataID5,"PICKER_FUNC_SUBTECH");
 						break;
 					case 5:
-						sprintf(pDataID5,"VW_AD_RESERVED");
+						sprintf(pDataID5,"PICKER_FUNC_SUBTECH2");
 						break;
 					default:
 						break;
