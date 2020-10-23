@@ -1459,23 +1459,6 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		SetManualMode();
 	}
 
-	if(pwnd ==pwndButton_para)
-	{
-		::PutCommand("Hand_1.txt");
-	}
-	if(pwnd ==pwndButton_out)
-	{
-		::PutCommand("Hand_2.txt");
-	}	
-	
-//	if(pwnd == u_pwndButtonEnableOff)
-//	{
-//		SendCommand(0xFF60);
-//	}
-//	if(pwnd == u_pwndButtonEnableOn)
-//	{
-//		SendCommand(0xFF60);
-//	}
 	if(pwnd == u_pwndBtnServo)
 	{
 		SendCommand(0xFF60);
@@ -1493,7 +1476,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 	{
 		SendCommand(COMMAND_STOP);
 	}	
-	
+	SendCommand(COMMAND_STOP);
   return wIDControl;	
 }
 /*---------------------------------------------------------------------------+
