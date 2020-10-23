@@ -91,8 +91,16 @@ extern 		CtmMainFrame*		g_pMainFrame;   // Main window -- Defined in "main.cpp"	
 #define		ERROR_OBJECT_SIEMENS	101
 
 #define		MMI_KERNEL_VERSION1		12
-#define		MMI_KERNEL_VERSION2		20201008 //20200615//20200331//20191105//20170426
+#define		MMI_KERNEL_VERSION2		20201023 //20200615//20200331//20191105//20170426
 #define		MMI_KERNEL_VERSION3		1
+
+char*	u_pszUSB_Mode[] =
+{
+	"msdos",
+	"vfat",
+	"ntfs",
+	NULL
+};
 /*===========================================================================+
 |           Global variable                                                  |
 +===========================================================================*/
@@ -2799,6 +2807,7 @@ void		SaveScreenToMMC(char* pcBuff, int nLength, char* szDir)
 	char	szFullName_reName[256];
 	char  	szTemp1[256], szTemp2[256];
 	int		nHandle;
+	int		nUsbExist=-1;
 	CtmWnd*	pCurrentView;
 	int		nStatus;
 	tmDATE        date;
@@ -2821,8 +2830,29 @@ void		SaveScreenToMMC(char* pcBuff, int nLength, char* szDir)
 		return;
 	}
 	nStatus = 1;
-	sprintf(szFullName, "./Data/ScreenShot/");
+	//sprintf(szFullName, "./Data/ScreenShot/");
+	sprintf(szFullName, "/run/media/sda1/"); // 圖片存入USB
 	ExistDir(szFullName);
+	
+	// 檢查有無USB裝置↓
+	int USBModeCnt = 0;
+	umount2("/run/media/sda1/",MNT_FORCE);
+	while(nUsbExist!=0 && USBModeCnt<4)	
+	{
+		nUsbExist = mount( "/dev/sda1" , "/run/media/sda1/" , u_pszUSB_Mode[USBModeCnt] , 0 , "shortname=winnt" );
+		printf("Type=%s\n",u_pszUSB_Mode[USBModeCnt]);
+		if(nUsbExist == 0)	
+			break;
+		USBModeCnt++;
+		perror("mount");
+	}
+	if(nUsbExist < 0)
+	{
+		MsgBoxConfirm(g_MultiLanguage["ROBOT_STR_FILE_USB_ERROR"], tmFT_CODE_TECH);
+		return;
+	}
+	// 檢查有無USB裝置↑
+	
 	strcat(szFullName, szName);	
 	
 	if (nStatus < 1)
@@ -2831,6 +2861,7 @@ void		SaveScreenToMMC(char* pcBuff, int nLength, char* szDir)
 	}
 	
 	nHandle = open(szFullName, O_RDWR);			//James add 2011/5/26 for rename saveformname
+	
 	if(nHandle < 0)			//No same name picture
 	{
 		nHandle = open(szFullName, O_RDWR | O_CREAT);
