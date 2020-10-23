@@ -1042,7 +1042,7 @@
 	<string name="VW_MONI1_PERCENT">%</string>
 	<string name="VW_UNIT_PERCENT">%</string>
 	<string name="VW_PUMP_TEST">检测</string>
-	<string name="EFFECT_PROGRAMMMIVERS">mmi版本</string>
+	<string name="EFFECT_PROGRAMMMIVERS">示教器版本</string>
 	<string name="VW_HMI_VERSION">面板版本</string>
 	<string name="VW_DSP_VERSION">主机版本</string>
 	<string name="VW_RESET_ALL">全部</string>
