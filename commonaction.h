@@ -249,4 +249,5 @@ extern		int g_DBPrecision; // Database 计翴计 cjlee 2020/4/1 と 01:41:05
 extern		char  gstr_DBValue_497[256]; // Database 计 cjlee 2020/4/9 と 03:02:21
 extern		char  gstr_DBValue_28[256]; // Database 计 cjlee 2020/4/9 と 03:02:21
 extern		int  gQTeach_PosLimt[6][2]; // е硉毙旧 竚翴[禸1-5][MIN-0;MAX-1] cjlee 2020/5/25 と 10:48:53
+extern		BOOL g_BkScreenSaver; // back from ScreenSaver  cjlee 2020/10/28 と 10:02:03
 #endif

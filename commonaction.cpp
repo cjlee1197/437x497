@@ -174,7 +174,8 @@ int	g_DBVale_28=0; // Database 计 北竟 cjlee 2020/4/1 と 10:50:17
 int g_DBPrecision=0; // Database 计翴计 cjlee 2020/4/1 と 01:41:05
 char  gstr_DBValue_497[256] = "\0"; // Database 计 cjlee 2020/4/9 と 03:02:21
 char  gstr_DBValue_28[256] = "\0"; // Database 计 cjlee 2020/4/9 と 03:02:21
-extern		int  gQTeach_PosLimt[6][2] = {0}; // е硉毙旧 竚翴[禸1-5][MIN-0;MAX-1] cjlee 2020/5/25 と 10:48:53
+int  gQTeach_PosLimt[6][2] = {0}; // е硉毙旧 竚翴[禸1-5][MIN-0;MAX-1] cjlee 2020/5/25 と 10:48:53
+BOOL g_BkScreenSaver; // back from ScreenSaver  cjlee 2020/10/28 と 10:02:03
 /*---------------------------------------------------------------------------+
 |  Function :  OnKeyCommon   	                                             |
 |  Task     :  View 夹非OnChangeㄆン                                         |

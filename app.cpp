@@ -24,6 +24,7 @@
 #include	"package.h"
 #include	"tmoper.h"
 //#include	"memwatch.h"
+#include	"commonaction.h"
 /*==========================================================================+
 |           Constant                                                        |
 +==========================================================================*/
@@ -125,6 +126,13 @@ void        CApp::Run()
 		{
 			SetDBValue("CNC_ACTION_ID", ID_CNC_EXIT);	//Sunny<20100408> F12 Exit,Tell P3 also.		//Mario debug
 			PostQuitMessage(HTSK_MAIN);
+			printf("CApp::Run() PostQuitMessage(HTSK_MAIN)\n");
+			continue;
+		}
+		if(msg.message == MSG_KEY && msg.wParam == _KEY_LANGUAGE)
+		{
+			printf(" CApp::Run() _KEY_LANGUAGE\n");
+			g_pMainFrame->OnKey(_KEY_LANGUAGE);
 			continue;
 		}
 		//	fans add 2008/6/16 11:42¤W¤È
@@ -227,6 +235,7 @@ void        CApp::Run()
                 break;
             case _SYS_EXIT:
                 PostQuitMessage(HTSK_MAIN);
+                printf("CApp::Run() _SYS_EXIT\n");
                 break;
             default:
                 SetMessage(CMD_SYSTEM, &msg);
@@ -260,6 +269,7 @@ void        CApp::Run2()
 		if(msg.message == MSG_KEY && msg.wParam == 0x5800)
 		{
 			PostQuitMessage(HTSK_MAIN);
+			printf("CApp::Run2() msg.wParam == 0x5800\n");
 			continue;
 		}
 		//	fans add 2008/6/16 11:42¤W¤È
@@ -358,6 +368,8 @@ void        CApp::Run2()
                 break;
             case _SYS_EXIT:
                 PostQuitMessage(HTSK_MAIN);
+                printf("CApp::Run2() _SYS_EXIT\n");
+                g_BkScreenSaver = 1; // Set Flag Back From Screen Saver
                 break;
             default:
                 SetMessage(CMD_SYSTEM, &msg);
@@ -562,6 +574,8 @@ checkagain:
         pMsg->pAdd 		= NULL;
 		
         pMsgQueue->dwState &= ~QS_QUIT;   
+        
+        printf("App.GetMessage QS_QUIT return0\n");
    
         return 0;
     }
@@ -689,6 +703,7 @@ int	CApp::PostQuitMessage(HWND hWnd)
 //    if(!(pMsgQueue = GetMsgQueue(hWnd))) 	return ERR_INV_HWND;
 
     pMsgQueue->dwState |= QS_QUIT;
+    printf("PostQuitMessage send QS_QUIT\n");
 
     // Signal that the msg queue contains one more element for reading
     sem_getvalue (&pMsgQueue->wait, &sem_value);
@@ -773,6 +788,7 @@ int	CApp::MainProc(int message, WPARAM wParam, LPARAM lParam)
 		case MSG_TIMER:
 //			//printf("timer Finished\n");
 			PostQuitMessage(HTSK_MAIN);	
+			printf("CApp::MainProc MSG_TIMER\n");
 			return 0;		
 			break;
 		default:

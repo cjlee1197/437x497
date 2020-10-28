@@ -146,7 +146,8 @@ void	ReadGpio(char /*KEYCODE*/ io)
 	msg.message		= MSG_GPIO_READ;
 	msg.wParam		= (WPARAM)io;
 	msg.lParam		= count;
-	//printf("CtmGpio437Hmi ReadGpio=%x cnt=%d\n",(char)msg.wParam,msg.lParam);
+	printf("CtmGpio437Hmi ReadGpio=%x cnt=%d\n",(char)msg.wParam,msg.lParam);
+	SetDBValue("MACHINE_INTERFACE_CONTROL_RSV15",(char)msg.wParam&0xb);
 	g_pApplication->QueueMessage(&msg);	
 }
 

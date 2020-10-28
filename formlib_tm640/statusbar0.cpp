@@ -1405,6 +1405,30 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	if(!lpickerStatus)  lpickerStatus = 1;
 	else		 		lpickerStatus = 0;
 	//printf("lpickerStatus=%d\n",lpickerStatus);	
+	
+	if(g_BkScreenSaver==1) // 判斷從螢幕保護程式回來 鑰匙變換
+		{
+			printf("Key Change\n");
+			printf("KeyMode=%d\n",KeyMode);
+			int KeyState = GetDBValue("MACHINE_INTERFACE_CONTROL_RSV15").lValue;
+			printf("KeyState=%d\n",KeyState);
+			if(KeyState == GPIO_KEY_STOP) // 手動
+			{
+				SetDBValue("MACHINE_INTERFACE_CONTROL_RSV15", 3);
+				SendCommand(MODE_MANUAL);
+			}
+			else if(KeyState == GPIO_KEY_AUTO) // 自動 
+			{
+				SetDBValue("MACHINE_INTERFACE_CONTROL_RSV15", 4);
+				SendCommand(MODE_AUTO);
+			}
+			else if(KeyState == GPIO_KEY_TEACH) // 停止
+			{
+				SetDBValue("MACHINE_INTERFACE_CONTROL_RSV15", 2);
+				SendCommand(MODE_NULL);//停止
+			}
+			g_BkScreenSaver = 0; // Set Flag Back From Screen Saver
+		}
 
 	u_wPickerOPSatus = GetDBValue("MACHINE_INTERFACE_WOPERATINGSTATE").lValue;
 	//printf("u_wPickerOPSatus=%d\n",u_wPickerOPSatus);	
