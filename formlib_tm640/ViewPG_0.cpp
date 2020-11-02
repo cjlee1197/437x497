@@ -81,6 +81,7 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	
 	actionTable->iPageturn = actionTable->num_of_action;
 	
+	printf("actionTable->b_Follow=%d\n",actionTable->b_Follow);
 	if(actionTable->b_Follow)
 	{
 		actionTable->pwndBtnFollow->SetPropValueT("upbitmap", "res_tm640/pic/PGBtnSelect.bmp");
@@ -918,6 +919,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 		actionTable->pwndStaticAct[showFlag]->Show();
 	if(pwnd == actionTable->pwndBtnFollow)
  	{
+ 		actionTable->b_Follow = !actionTable->b_Follow;
  		if(actionTable->b_Follow) // ¸òÀH
 		{
 			actionTable->pwndBtnFollow->SetPropValueT("upbitmap","res_tm640/pic/PGBtnSelect.bmp");
@@ -929,7 +931,6 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 			actionTable->pwndBtnFollow->SetPropValueT("captionID","PICKER_UNFOLLOW");
 		}
 		
-		actionTable->b_Follow = !actionTable->b_Follow;
  		actionTable->pwndBtnFollow->CreateA();
  		actionTable->pwndBtnFollow->Update();
  	}
