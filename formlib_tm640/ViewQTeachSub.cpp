@@ -286,6 +286,10 @@ BOOL	OnCreateA(CtmWnd* pwndSender)
 	AxisZOld = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED43").lValue & 0x0004;
 	AxisX2Old = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED44").lValue & 0x0001;
 	AxisY2Old = GetDBValue("SYSX_OTHERS_OTHERS_INT_RESERVED44").lValue & 0x0002;
+	
+	int All_PosSet_OK = GetDBValue(pAll_PosSet_OK_DB).lValue; // 返回前一頁 不需再次確認設定值
+	if(All_PosSet_OK)
+		b_All_PosSet_OK=OK;
 		
 	UpdateDataValue();
 	UpdateTeach_Pos();
@@ -465,10 +469,12 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 	{
 		case MoveOutP:
 			::PutCommand("QTeach_MoveOutP.txt");
+			SetDBValue(pAll_PosSet_OK_DB, 1);
 			break;
 		case PlaceDownP:
 				if(b_BtnNextP_OK) // 往上一頁 或是 設定完成往下一頁
 				{
+					SetDBValue(pAll_PosSet_OK_DB, 0); // 才會提示 設定位置
 					// 依照使用者設定寫入參數數值 至列表g_QTeach_Action_P[QTeach_PGNo-1]
 					//QTeach_PGNo++;
 					// Z 橫出

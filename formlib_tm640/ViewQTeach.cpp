@@ -1475,7 +1475,10 @@ WORD 	OnKeyA(CtmWnd* pwndSender, WORD wKey)
 		/*===============================MoveOutP===============================*/
 		case MoveOutP:
 			if( (u_Group>MoveOutP) && (b_SubArmUse==1) )
+			{
+				SetDBValue(pAll_PosSet_OK_DB, 1);
 				::PutCommand("QTeach_SubPlaceP.txt");
+			}
 			else
 			{
 				if( (u_Group > wKey) || b_BtnNextP_OK) // 往上一頁 或是 設定完成往下一頁
