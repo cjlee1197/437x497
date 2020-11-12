@@ -752,8 +752,8 @@ Please delete unnecessary user then add again!</string>
 	<string name="INDEX_ZONE_SET">Zone Set</string>
 	<string name="INDEX_LIMIT_SET">Lim Set</string>
 	<string name="INDEX_BLK_ZONE">BLK Set</string>
-	<string name="INDEX_MODE_SLC">Mode Sel</string>
-	<string name="INDEX_DTC">DETN Set</string>
+	<string name="INDEX_MODE_SLC">DETC Set</string>
+	<string name="INDEX_DTC">DETC T</string>
 	<string name="INDEX_POS_ADJ">Pos ADJ</string>
 	<string name="INDEX_DELAY_ADJ">Dly ADJ</string>
 	<string name="INDEX_PILE">STK Param</string>

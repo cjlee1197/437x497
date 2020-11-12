@@ -777,8 +777,8 @@
 	<string name="INDEX_ZONE_SET">区域设定</string>
 	<string name="INDEX_LIMIT_SET">安全限制</string>
 	<string name="INDEX_BLK_ZONE">禁区设定</string>
-	<string name="INDEX_MODE_SLC">模式选择</string>
-	<string name="INDEX_DTC">检测设定</string>
+	<string name="INDEX_MODE_SLC">检测设定</string>
+	<string name="INDEX_DTC">检测时间</string>
 	<string name="INDEX_POS_ADJ">位置修正</string>
 	<string name="INDEX_DELAY_ADJ">延时设定</string>
 	<string name="INDEX_PILE">堆栈参数</string>
