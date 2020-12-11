@@ -1410,7 +1410,7 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		{
 			printf("Key Change\n");
 			printf("KeyMode=%d\n",KeyMode);
-			int KeyState = GetDBValue("MACHINE_INTERFACE_CONTROL_RSV15").lValue;
+			int KeyState = GetDBValue("MACHINE_INTERFACE_CONTROL_RSV16").lValue;
 			printf("KeyState=%d\n",KeyState);
 			if(KeyState == GPIO_KEY_STOP) // ¤â°Ê
 			{
