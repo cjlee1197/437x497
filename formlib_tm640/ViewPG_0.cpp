@@ -1166,6 +1166,7 @@ void PG_0::Download()							//更戈诀
 	int value ;
 	int value1, value2;
 	int Check_MoldOpen = 0;
+	int Check_Detect = 0;
 	int Num = 0;
 
 	printf("MaxDBNum=%d\n",MAXDBNUM);
@@ -1189,6 +1190,15 @@ void PG_0::Download()							//更戈诀
 				if(value1 == 2 && value2 == 2) // 单 // 秨家ЧΘ
 					Check_MoldOpen = TRUE;
 			}
+			for(int i = 0 ; i < Num ; i++) // 浪琩琌Τ单秨家ЧΘ
+			{
+				sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_TYPE", i + 1);
+				value1 = GetDBValue(pDataID).lValue;
+				sprintf(pDataID, "MACHINE_PROFILE_NUM%d_ACTION_NUM", i + 1);
+				value2 = GetDBValue(pDataID).lValue;
+				if(value1 == 8 && value2 == 0) // 单 // 秨家ЧΘ
+					Check_Detect = TRUE;
+			}
 			if(!Check_MoldOpen) // ゼ絪糶浪代 单秨家ЧΘ
 			{
 				MsgBox(g_MultiLanguage["CHECK_MOLDOPEN_CONFIRM"], tmFT_CODE_TECH);//ゼ浪代单秨家ЧΘ絋粄更?
@@ -1207,6 +1217,11 @@ void PG_0::Download()							//更戈诀
 					}
 					MsgBoxCall("msgboxConfirm.txt","PICKER_DATADOWNLOADFINISH"); // 更ЧΘ
 				}
+			}
+			else if(Check_Detect) // ゼ絪糶浪代ず甧ゼ砞﹚
+			{
+				MsgBoxCall("msgboxConfirm.txt","CHECK_DETECT_CONFIRM"); // 浪代ず甧ゼ砞﹚
+				Check_Detect = FALSE;
 			}
 			else
 			{
