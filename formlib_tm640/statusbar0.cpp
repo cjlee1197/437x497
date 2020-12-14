@@ -1120,154 +1120,6 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	tmDATE        date;
 	tmTIME        time;	
 	
-	/*if(Jaws1_status!=g_pRxCNCData->s_mlc_s_bit[101])
-	{
-		Jaws1_status=g_pRxCNCData->s_mlc_s_bit[101];
-		pwndJaws1Image->SetPropValueT("imagepath",u_pszJawsImagePath[Jaws1_status]);
-		pwndJaws1Image->Update();
-		
-		if(g_TxCNCData.shmCNCData.CNC_mode_lgt == OP_MEMORY_MODE)
-		{
-			int tmp = g_TxCNCData.shmCNCData.CNC_jaws_control;
-			if(tmp%2>=1 && g_pRxCNCData->s_mlc_s_bit[101]==0)
-	      tmp-=1;
-			else if(tmp%2<1 && g_pRxCNCData->s_mlc_s_bit[101]==1)
-	      tmp+=1;
-			g_ptaskCNC->WriteValue((long)&g_TxCNCData.shmCNCData.CNC_jaws_control,&tmp,sizeof(g_TxCNCData.shmCNCData.CNC_jog_coor));
-		}
-	}*/
-	/*
-	static int Last_Jaws_Count = -1;
-	if(Last_Jaws_Count<2 && g_TxCNCData.shmCNCData.PARAM.maker_param[33]>=2)
-	{
-		Last_Jaws_Count = g_TxCNCData.shmCNCData.PARAM.maker_param[33];
-		pwndJaws2Image->Update();
-		pwndJaws2Static->Update();
-	}
-	else if (Last_Jaws_Count>=2 && g_TxCNCData.shmCNCData.PARAM.maker_param[33]<2)
-	{
-		Last_Jaws_Count = g_TxCNCData.shmCNCData.PARAM.maker_param[33];
-		pwndJaws2Mark->Update();
-	}
-	
-	if(Jaws2_status!=g_pRxCNCData->s_mlc_s_bit[102])
-	{
-		Jaws2_status=g_pRxCNCData->s_mlc_s_bit[102];
-		pwndJaws2Image->SetPropValueT("imagepath",u_pszJawsImagePath[Jaws2_status]);
-		if(g_TxCNCData.shmCNCData.PARAM.maker_param[33]>=2)
-			pwndJaws2Image->Update();
-		
-		if(g_TxCNCData.shmCNCData.CNC_mode_lgt == OP_MEMORY_MODE)
-		{
-			int tmp = g_TxCNCData.shmCNCData.CNC_jaws_control;
-			int tmp1 = g_TxCNCData.shmCNCData.CNC_jaws_control%4;
-			if(tmp%4>=2 && g_pRxCNCData->s_mlc_s_bit[102]==0)
-	      tmp-=2;
-			else if(tmp%4<2 && g_pRxCNCData->s_mlc_s_bit[102]==1)
-	      tmp+=2;
-	      
-			g_ptaskCNC->WriteValue((long)&g_TxCNCData.shmCNCData.CNC_jaws_control,&tmp,sizeof(g_TxCNCData.shmCNCData.CNC_jog_coor));
-		}
-	}
-	*/
-	
-		if(g_TxCNCData.shmCNCData.CNC_auto_status != RUN_STATUS_STOP)
-			SetGpioLed(TRUE,GPIO_BIT_AUTO);
-		else
-			SetGpioLed(FALSE,GPIO_BIT_AUTO);
-
-		
-	/*
-	if(g_TxCNCData.shmCNCData.CNC_auto_status == RUN_STATUS_STOP)
-	{
-		strcpy(old_filename,g_TxCNCData.shmCNCData.CNC_mem_part);
- 		g_pMainFrame->SetTitle2(g_TxCNCData.shmCNCData.CNC_mem_part);
-	}
-	else if(g_pRxCNCData->CNC_curr_blk.modal.fn[0] != 0  && (strcmp(old_filename,g_pRxCNCData->CNC_curr_blk.modal.fn) != 0) && (g_TxCNCData.shmCNCData.CNC_auto_status == RUN_STATUS_RUN || g_TxCNCData.shmCNCData.CNC_auto_status == RUN_STATUS_PAUSE) )
-	{
-		strcpy(old_filename,g_pRxCNCData->CNC_curr_blk.modal.fn);
- 		g_pMainFrame->SetTitle2(g_pRxCNCData->CNC_curr_blk.modal.fn);
-	}
-	*/
-//	if(Servo_status != g_pRxCNCData->CNC_servo_status)
-//	{
-//		Servo_status = g_pRxCNCData->CNC_servo_status;
-//		if(Servo_status==1)
-//			SetGpioLed(TRUE,GPIO_BIT_ENABLE);
-//		else
-//			SetGpioLed(FALSE,GPIO_BIT_ENABLE);
-//		/*pwndServoImage->SetPropValueT("imagepath",u_pszServoImagePath[(int)Servo_status]);
-//		pwndServoImage->Update();*/
-//	}
-
-	// cjlee test 2019/3/22 上午 11:01:55
-	/*{
-		static int nLEDState = 0;
-		static int nCount = 0;
-		
-		nCount ++;
-		if(nCount >= 5)
-		{
-				nCount = 0;
-			if(nLEDState == 0)
-				nLEDState = 1;
-			else
-				nLEDState = 0;
-		}
-		if(nLEDState==1)
-				SetGpioLed(TRUE,GPIO_BIT_ENABLE);
-			else
-				SetGpioLed(FALSE,GPIO_BIT_ENABLE);
-	}*/
-			
-	/*
-	if(old_NowRunStatus != g_TxCNCData.shmCNCData.CNC_auto_status)
-	{
-		old_NowRunStatus = g_TxCNCData.shmCNCData.CNC_auto_status;
-		//pwndAutoStatus->SetPropValueT("textID",u_pszRunStatus[(int)g_TxCNCData.shmCNCData.CNC_auto_status]);
-		//pwndAutoStatus->Update();
-	}
-	*/
-	/* 
-	if(Auto_status!=g_TxCNCData.shmCNCData.CNC_auto_status && pwndAutoStatusImage!=NULL)
-	{
-		Auto_status=g_TxCNCData.shmCNCData.CNC_auto_status;
-		//pwndAutoStatusImage->SetPropValueT("imagepath",u_pszAutoStatusImagePath[Auto_status]);
-		//pwndAutoStatusImage->Update();
-	}
-	*/
-	//------------HMI模式狀態---------------//
-	
-/*
-	if(KeyMode!=AUTO && (g_TxCNCData.shmCNCData.CNC_auto_status != RUN_STATUS_STOP))
-	{
-		char temp = RUN_STATUS_STOP;
-		g_ptaskCNC->WriteValue((long)&g_TxCNCData.shmCNCData.CNC_auto_status,&temp,sizeof(g_TxCNCData.shmCNCData.CNC_auto_status));
-	}
-	else if(KeyMode != MANUAL && KeyMode != REMOTE)
-	{
-		char temp_CHAT = 0;
-		int temp_INT = 0;
-		g_ptaskCNC->WriteValue((long)&g_TxCNCData.shmCNCData.CNC_jog_coor,&temp_CHAT,sizeof(g_TxCNCData.shmCNCData.CNC_jog_coor));
-		g_ptaskCNC->WriteValue((long)&g_TxCNCData.shmCNCData.CNC_jog_axis,&temp_INT,sizeof(g_TxCNCData.shmCNCData.CNC_jog_axis));
-		g_ptaskCNC->WriteValue((long)&g_TxCNCData.shmCNCData.CNC_jog_status,&temp_CHAT,sizeof(g_TxCNCData.shmCNCData.CNC_jog_status));
-	}
-	if(g_pRxCNCData->CNC_move_end==1)
-	{
-		if(KeyMode==AUTO)
-		//if((g_TxCNCData.shmCNCData.CNC_auto_status != RUN_STATUS_STOP) && g_TxCNCData.shmCNCData.CNC_mode_lgt != OP_MEMORY_MODE)  	//執行時強制auto狀態
-		{
-			int mode_lgt  = OP_MEMORY_MODE;
-			g_ptaskCNC->WriteValue((long)&g_TxCNCData.shmCNCData.CNC_mode_lgt,&mode_lgt,sizeof(g_TxCNCData.shmCNCData.CNC_mode_lgt));
-		}
-		else if(g_TxCNCData.shmCNCData.CNC_auto_status == RUN_STATUS_STOP && g_pRxCNCData->CNC_status==M_READY && g_TxCNCData.shmCNCData.CNC_mode_lgt != RobotStatus)								//停止時顯示目前狀態
-		{
-			int mode_lgt = RobotStatus;
-			if(mode_lgt==OP_MEMORY_MODE) mode_lgt=OP_EDIT_MODE;
-			g_ptaskCNC->WriteValue((long)&g_TxCNCData.shmCNCData.CNC_mode_lgt,&mode_lgt,sizeof(g_TxCNCData.shmCNCData.CNC_mode_lgt));
-		}
-	}
-*/
 
 	if(RunOnlyOne)
 {/*-----------------------------------機械手模式----------------------------------*/
@@ -1466,6 +1318,11 @@ void	OnUpdateA(CtmWnd* pwndSender)
 	{
 		ChangeImage(u_pwndBmpMode, NULL,NO_FLASH, 0);
 	}
+	
+	if(u_wPickerOPSatus==STATE_FULLAUTO) // 自動模式 RUN LED 狀態
+		SetGpioLed(TRUE,GPIO_BIT_AUTO);
+	else
+		SetGpioLed(FALSE,GPIO_BIT_AUTO);
 }/*-----------------------------------機械手狀態----------------------------------*/
 
 {/*-----------------------------------參數比對----------------------------------*/
@@ -1552,6 +1409,11 @@ void	OnUpdateA(CtmWnd* pwndSender)
 		//printf("u_pszPickerEnableImagePath=%s\n",sz);
 		ChangeImage(pwndBmpPickerEnable, sz, NO_FLASH, 0);
 	}
+	if(wEnableStatus)
+		SetGpioLed(TRUE,GPIO_BIT_ENABLE);
+	else
+		SetGpioLed(FALSE,GPIO_BIT_ENABLE);
+
 }/*-------------------------------------使能----------------------------------------*/
 	#ifdef	D_3354	
 {/*-------------------------------------通訊----------------------------------------*/
