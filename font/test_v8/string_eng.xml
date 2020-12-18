@@ -894,8 +894,8 @@ Please delete unnecessary user then add again!</string>
 	<string name="PICKER_M3_ALARM2953">X2 OGN SIG Err</string>
 	<string name="PICKER_M3_ALARM2954">Y2 OGN SIG Err</string>
 	<string name="PICKER_M3_ALARM2955">EXTR SFTY SIG Err</string>
-	<string name="PICKER_M3_ALARM2956">EXTR SFTY & Z OGN SIG Conflict</string>
-	<string name="PICKER_M3_ALARM2980">Verti & Horiz Pos Conflict</string>
+	<string name="PICKER_M3_ALARM2956">EXTR SFTY＆Z OGN SIG Conflict</string>
+	<string name="PICKER_M3_ALARM2980">Verti＆Horiz Pos Conflict</string>
 	<string name="PICKER_M3_ALARM3010">EJ-RET Fail</string>
 	<string name="PICKER_M3_ALARM3011">Suck/Grip Fail</string>
 	<string name="PICKER_M3_ALARM3012">Servo On Fail</string>
