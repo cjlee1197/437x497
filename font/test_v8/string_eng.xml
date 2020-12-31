@@ -813,11 +813,12 @@ Please delete unnecessary user then add again!</string>
 	<string name="PICKER_GROUP_1">Orign</string>
 	<string name="PICKER_GROUP_2">Wait</string>
 	<string name="PICKER_GROUP_3">DwnWait</string>
-	<string name="PICKER_GROUP_4">PickDwn</string>
-	<string name="PICKER_GROUP_5">PickOut</string>
-	<string name="PICKER_GROUP_6">MoveOut</string>
-	<string name="PICKER_GROUP_7">PlaceDwn</string>
-	<string name="PICKER_GROUP_8">Place</string>
+	<string name="PICKER_GROUP_3">ReadyDwn</string>
+	<string name="PICKER_GROUP_5">PickDwn</string>
+	<string name="PICKER_GROUP_6">PickOut</string>
+	<string name="PICKER_GROUP_7">MoveOut</string>
+	<string name="PICKER_GROUP_8">PlaceDwn</string>
+	<string name="PICKER_GROUP_9">Place</string>
 	<string name="VW_PID_GROUP1">STK1 </string>
 	<string name="VW_PID_GROUP2">STK2</string>
 	<string name="VW_PID_GROUP3">STK3</string>

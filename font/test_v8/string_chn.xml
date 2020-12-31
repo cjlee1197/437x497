@@ -838,11 +838,12 @@
 	<string name="PICKER_GROUP_1">原點</string>
 	<string name="PICKER_GROUP_2">等待點</string>
 	<string name="PICKER_GROUP_3">下待機</string>
-	<string name="PICKER_GROUP_4">取出側下降</string>
-	<string name="PICKER_GROUP_5">取出側取件</string>
-	<string name="PICKER_GROUP_6">取出側橫出</string>
-	<string name="PICKER_GROUP_7">置物側下降</string>
-	<string name="PICKER_GROUP_8">置物側放置</string>
+	<string name="PICKER_GROUP_4">準備下降點</string>
+	<string name="PICKER_GROUP_5">取出側下降</string>
+	<string name="PICKER_GROUP_6">取出側取件</string>
+	<string name="PICKER_GROUP_7">取出側橫出</string>
+	<string name="PICKER_GROUP_8">置物側下降</string>
+	<string name="PICKER_GROUP_9">置物側放置</string>
 	<string name="VW_PID_GROUP1">第一組</string>
 	<string name="VW_PID_GROUP2">第二組</string>
 	<string name="VW_PID_GROUP3">第三組</string>

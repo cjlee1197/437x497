@@ -281,7 +281,7 @@ char*	Str_Group[] =
 	"PICKER_GROUP_6",
 	"PICKER_GROUP_7",
 	"PICKER_GROUP_8",
-	"PICKER_WITHOUT",
+	"PICKER_GROUP_9",
 };
 
 char*	Str_Detect[] =
@@ -2155,7 +2155,7 @@ WORD	OnMouseUp(CtmWnd* pwndSender, WORD wIDControl)
 	else if(pwnd == pwndSelectGroupNum) // ¸s²Õ¿ï¾Ü
 	{
 		GroupNUM++;
-		if(GroupNUM>8)
+		if(GroupNUM>9)
 			GroupNUM=0;
 		printf("GroupNUM=%d\n",GroupNUM);
 		pwndSelectGroupNum->SetPropValueT("captionID",Str_Group[GroupNUM]);	
